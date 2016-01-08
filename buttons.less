@@ -1,0 +1,171 @@
+.button-color(@color, @f-color: @white) {
+	background-color: lighten(@color, 5%);
+	color: @f-color;
+	border: 1px solid darken(@color, 5%);
+
+	&:hover {
+		background-color: darken(@color, 5%);
+		.anim(0.3s);
+	}
+
+	&:disabled, &.button--disabled {
+		cursor: no-drop;
+		background-color: lighten(@color, 20%);
+		border-style: dotted;
+
+		&:hover, &:active, &.active {
+			background-color: lighten(@color, 20%);
+		}
+	}
+
+	&:active, .active {
+		background-color: darken(@color, 8%);
+		border-color: darken(@color, 10%);
+		.anim(0.3s);
+	}
+
+	&.button--only-borders, &.button--transparent, &.button--transparent-full {
+		color: @color;
+	}
+
+	&.button--transparent:hover {
+		color: @white;		
+	}
+
+	&.button--transparent-full:hover {
+		color: @color;
+	}
+}
+
+
+button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+	margin: 5px;
+	outline: none;
+	padding: 0.5em 1em;
+	border-radius: 0.2em;
+	display: inline-block;
+	box-sizing: border-box;
+	user-select: none;
+	cursor: pointer;
+	.pt();
+	.button-color(@u-gray, @d-gray);
+
+	&.button--color-red { .button-color(@red); }
+	&.button--color-orange { .button-color(@orange); }
+	&.button--color-yellow { .button-color(@yellow); }
+	&.button--color-olive { .button-color(@olive); }
+	&.button--color-green { .button-color(@green); }
+	&.button--color-teal { .button-color(@teal); }
+	&.button--color-blue { .button-color(@blue); }
+	&.button--color-violet { .button-color(@violet); }
+	&.button--color-purple { .button-color(@purple); }
+	&.button--color-pink { .button-color(@pink); }
+	&.button--color-brown { .button-color(@brown); }
+	&.button--color-black { .button-color(@d-gray, @u-gray); }
+
+	&.button {
+		&--smooth { border-radius: 0.5em;	}
+		&--rounded { border-radius: 1.25em;	}
+		&--circle { border-radius: 50%; padding: 0.5em 0.75em; }
+		&--no-smooth { border-radius: 0em;	}
+	}
+
+	&.button--icon {
+		i, .icon {
+			padding: 0em;
+			padding-right: 1em;
+		}
+
+		&-only {
+			i, .icon {
+				padding: 0em;				
+			}
+		}
+	}
+
+	&.button--size {
+		&-small { font-size: 0.8em; }
+		&-normal { font-size: 1em; }
+		&-large { font-size: 1.3em; }
+		&-xl { font-size: 2em; }		
+	}
+
+	&.button--only-borders {
+		background-color: transparent;
+
+		&:hover, &:active, &.active {
+			background-color: transparent;
+		}
+	}
+
+	&.button--transparent {
+		background-color: transparent ;
+		border-color: transparent;
+
+		&-full {
+			background-color: transparent;
+			border-color: transparent;
+			&:hover, &:active, &.active {
+				background-color: transparent;
+				border-color: transparent;				
+			}
+		}
+	}
+
+	&.button--fit {
+		width: ~'calc(100% - 10px)'; 
+	}
+}
+
+
+.button-group-smooth(@value-a, @value-b) {
+	&:first-child {
+		border-radius: @value-a @value-b @value-b @value-a;
+	}
+
+	&:last-child {
+		border-radius: @value-b @value-a @value-a @value-b;
+	}	
+}
+
+.button-group {
+	margin: 0em 1em;
+	clear: both;
+	display: inline-block;
+
+	button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+		margin: 0px;
+		float: left;
+		border-radius: 0px;
+
+		&:first-child {
+			border-radius: 0.2em 0em 0em 0.2em;
+		}
+
+		&:last-child {
+			border-radius: 0em 0.2em 0.2em 0em;
+		}
+
+		&:not(:last-child) {
+			border-right: none;
+		}
+	}
+
+	&.button-group {
+		&--smooth {
+			button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+				.button-group-smooth(0.5em, 0em);
+			}
+		}
+		&--rounded {
+			button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+				.button-group-smooth(1.25em, 0em);
+			}
+		}
+		&--no-smooth{
+			button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+				.button-group-smooth(0em, 0em);
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:700,400);
+
+.pt {
+	font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+
+.anim(@sec) {	
+	transition: all @sec linear;
+}
+
+.only-d { display: block !important; }
+.only-m, .only-t { display: none !important;}
+
+.hide-d { display: none !important; }
+.hide-m { display: block !important; }
+.hide-t { display: block !important; }
+
+@media (max-width: @tablet) {
+	.only-d, .only-m { display: none !important; }
+	.only-t { display: block !important; }
+
+	.hide-d { display: block !important; }
+	.hide-m { display: block !important; }
+	.hide-t { display: none !important; }
+}
+
+@media (max-width: @mobile) {
+	.only-d, .only-t { display: none !important; }
+	.only-m { display: block !important; }
+
+	.hide-d { display: block !important; }
+	.hide-m { display: none !important; }
+	.hide-t { display: block !important; }
+}
+
+.reg-bg { background-color: @red !important; }
+.orange-bg { background-color: @orange !important; }
+.yellow-bg { background-color: @yellow !important; }
+.olive-bg { background-color: @olive !important; }
+.green-bg { background-color: @green !important; }
+.teal-bg { background-color: @teal !important; }
+.blue-bg { background-color: @blue !important; }
+.violet-bg { background-color: @violet !important; }
+.purple-bg { background-color: @purple !important; }
+.pink-bg { background-color: @pink !important; }
+.brown-bg { background-color: @brown !important; }
+.u-gray-bg { background-color: @u-gray !important; }
+.l-gray-bg { background-color: @l-gray !important; }
+.m-gray-bg { background-color: @m-gray !important; }
+.d-gray-bg { background-color: @d-gray !important; }
+.black-bg { background-color: @black !important; }
+.white-bg { background-color: @white !important; }
+
+.red-fg { color: @red !important; }
+.orange-fg { color: @orange !important; }
+.yellow-fg { color: @yellow !important; }
+.olive-fg { color: @olive !important; }
+.green-fg { color: @green !important; }
+.teal-fg { color: @teal !important; }
+.blue-fg { color: @blue !important; }
+.violet-fg { color: @violet !important; }
+.purple-fg { color: @purple !important; }
+.pink-fg { color: @pink !important; }
+.brown-fg { color: @brown !important; }
+.u-gray-fg { color: @u-gray !important; }
+.l-gray-fg { color: @l-gray !important; }
+.m-gray-fg { color: @m-gray !important; }
+.d-gray-fg { color: @d-gray !important; }
+.black-fg { color: @black !important; }
+.white-fg { color: @white !important; }
+
+.no-padding { padding: 0px !important; }
+.no-margin { margin: 0px !important; }
+
+.card_shadow { box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); }
+.shadow-1 {	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important; }
+.shadow-2 {	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; }
+.shadow-3 {	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) !important; }
+.shadow-4 {	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21) !important; }
+.shadow-5 {	box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22) !important; }
+
+.center {
+	text-align: center;
+	width: 100%;
+}
+
+.hidden {display: none;}
+
+.pin-left {	float: left !important; }
+.pin-right { float: right !important; }
+
+a {
+	text-decoration: none;
+}
+
+code {
+	color: @red;
+	padding: 0.05em 0.1em;
+	font-size: 0.95em;
+	background-color: @u-gray;
+	border-radius: 0.05em;
+}

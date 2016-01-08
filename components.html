@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<title>Altrone CSS</title>
+		<link rel="stylesheet" type="text/css" href="altrone.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome.css">
+		<script src="dist/js/jquery-2.1.4.min.js"></script>
+		<script src="dist/js/altrone.js"></script>
+		<style>
+			.col-color {
+				background-color: #999999;
+				color: #333333;
+				border: 1px solid #666666;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body> 
+		<h1>Buttons</h1>
+		<button>OK</button>
+		<button class="button--red-bg">Cancel</button>
+		<button class="button--orange-bg button--circle button--icon-only"><i class="fa fa-check"></i></button>
+		<button class="button--yellow-bg button--transparent-full">Cancel</button>
+		<button class="button--olive-bg button--only-borders">Cancel</button>
+		<button class="button--green-bg button--transparent">Cancel</button>
+		<button class="button--teal-bg button--smooth">Cancel</button>
+		<button class="button--blue-bg button--rounded">Cancel</button>
+		<button class="button--violet-bg button--with-corners">Cancel</button>
+		<button class="button--purple-bg button--icon"><i class="fa fa-times"></i> Cancel</button>
+		<button class="button--pink-bg button--size-small">Cancel</button>		
+		<button class="button--brown-bg button--size-big">Cancel</button>
+		<button class="button--black-bg button--size-xl-big">Cancel</button>		
+
+		<br>
+		<div class="button-group">
+			<button class="button--orange-bg button--icon-only"><i class="fa fa-check"></i></button>
+			<button class="button--orange-bg">Action 2</button> 
+			<button class="button--orange-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+		</div>
+
+		<div class="button-group button-group--smooth">
+			<button class="button--teal-bg button--icon-only"><i class="fa fa-check"></i></button>
+			<button class="button--teal-bg">Action 2</button> 
+			<button class="button--teal-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+		</div>
+
+		<div class="button-group button-group--rounded">
+			<button class="button--purple-bg button--icon-only"><i class="fa fa-check"></i></button>
+			<button class="button--purple-bg">Action 2</button> 
+			<button class="button--purple-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+		</div>
+
+		<div class="button-group button-group--no-smooth">
+			<button class="button--black-bg button--icon-only"><i class="fa fa-check"></i></button>
+			<button class="button--black-bg">Action 2</button> 
+			<button class="button--black-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+		</div>
+
+
+		<h1>List</h1>
+		<div class="grid">
+			<div class="col col-4">
+				<div class="list list--icon list--animation-invert">
+					<div class="list__item list__item--active">Home</div>
+					<div class="list__item"><i class="fa fa-book"></i> Contacts</div>
+					<div class="list__separator"></div>
+					<div class="list__item">About us</div>
+				</div>
+				<div class="list list--icon list--color-yellow list--invert list--animation-mark-square">
+					<div class="list__item list__item--active">Home</div>
+					<div class="list__item"><i class="fa fa-book"></i> Contacts</div>
+					<div class="list__separator"></div>
+					<div class="list__item">About us</div>
+				</div>
+				<hr>
+				<div class="list list--icon list--color-purple list--animation-border list--orientation-horizontal">
+					<div class="list__item"><i class="fa fa-home"></i>Home</div>
+					<div class="list__item">Contacts</div>
+					<div class="list__separator"></div>
+					<div class="list__item">About us</div>
+				</div>
+				<hr>
+				<div class="list list--image list--animation-zoom list--invert list--color-orange">
+					<div class="list__item"><img src="images/radcliffe.jpg">Daniel Radcliffe</div>
+					<div class="list__item"><img src="images/grint.png">Rupert Grint</div>
+					<div class="list__item"><img src="images/watson.jpg">Emma Watson</div>
+				</div>
+			</div>
+			<div class="col col-4">
+				<div class="list list--icon list--animation-zoom list--invert list--color-orange">
+					<div class="list__item"><i class="fa fa-home"></i>Home Lorem Ipsum det color improve impress final cut pro</div>
+					<div class="list__item"><i class="fa fa-book"></i>Contacts</div>
+					<div class="list__item"><i class="fa fa-help"></i>About</div>
+				</div>
+			</div>
+			<div class="col col-4">
+				<div class="list-navigation list-navigation--invert list-navigation--color-purple">
+					<div class="list-navigation__item">
+						<div class="list-navigation__icon">
+							<i class="fa fa-check"></i>
+						</div>
+						<div class="list-navigation__content">
+							<div class="list-navigation__content__title">Hello, it's me</div>
+							<div class="list-navigation__content__meta">I was wondering if after all these years</div>
+						</div>
+						<div class="list-navigation__right-icon">
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+					<div class="list-navigation__item">
+						<div class="list-navigation__icon">
+							<i class="fa fa-at"></i>
+						</div>
+						<div class="list-navigation__content">
+							<div class="list-navigation__content__title">There's a fire starting in my heart</div>
+							<div class="list-navigation__content__meta">Reaching a fever pitch and it's bringing me out the dark</div>
+						</div>
+						<div class="list-navigation__right-icon">
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+					<div class="list-navigation__item">
+						<div class="list-navigation__icon">
+							<i class="fa fa-battery-half"></i>
+						</div>
+						<div class="list-navigation__content">
+							<div class="list-navigation__content__title">I let it fall, my heart</div>
+							<div class="list-navigation__content__meta">And as it fell you rose to claim it</div>
+						</div>
+						<div class="list-navigation__right-icon">
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col col-4">
+				<div class="card">
+					<div class="card__header">
+						<div class="card__header__icon"><i class="fa fa-home"></i></div>
+						<div class="card__header__title">Contacts</div>
+						<div class="card__header__icon"><i class="fa fa-times"></i></div>
+					</div>
+					<div class="card__content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec consectetur neque. Pellentesque molestie nibh id leo porttitor, malesuada condimentum massa volutpat. Mauris in dolor posuere, pharetra nulla vitae, efficitur libero. Suspendisse eu consectetur arcu.		
+					</div>
+					<div class="card__footer">
+						<div class="card__footer__meta">
+							<button class="button--color-purple button--transparent">GET STARTED</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card card--colored card--color-violet">
+					<div class="card__header">
+						<div class="card__header__icon"><i class="fa fa-home"></i></div>
+						<div class="card__header__title">Contacts</div>
+						<div class="card__header__icon"><i class="fa fa-times"></i></div>
+					</div>
+					<div class="card__content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec consectetur neque. Pellentesque molestie nibh id leo porttitor, malesuada condimentum massa volutpat. Mauris in dolor posuere, pharetra nulla vitae, efficitur libero. Suspendisse eu consectetur arcu.		
+					</div>
+					<div class="card__footer">
+						<button class="button--color-violet">GET STARTED</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card__image">
+						<img src="http://materializecss.com/images/sample-1.jpg">
+						<div class="card__image__header">
+							<div class="card__image__header__title">Заголовок картинки</div>
+							<div class="card__image__header__icon"><i class="fa fa-ellipsis-v"></i></div>
+						</div>
+					</div>
+					<div class="card__content">
+						Это моя фотография
+					</div>
+					<div class="card__footer">
+						<button class="button--color-blue button--size-small">Подтвердить</button><button class="button--size-small">Отмена</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-4">
+				<div class="toggle toggle--transparent">
+					<input type="checkbox" class="toggle" id="toggleExample">
+					<label for="toggleExample">
+						<div class="toggle__title">Заголовок переключателя</div>
+						<div class="toggle__meta">Информация о действии us lorem, sed auctor libero nibh vitae augue. Integer finibus nibh pharetra erat convallis pharetra. Maecenas at arcu et erat egestas ef</div>
+					</label>
+				</div>
+				<div class="toggle toggle--color-blue toggle--invert" style="background: #333333;">
+					<input type="checkbox" class="toggle" id="toggleExample2">
+					<label for="toggleExample2">
+						<div class="toggle__title">Заголовок переключателя</div>
+						<div class="toggle__meta">Информация о действии us lorem, sed auctor libero nibh vitae augue. Integer finibus nibh pharetra erat convallis pharetra. Maecenas at arcu et erat egestas ef</div>
+					</label>
+				</div>
+				<div class="toggle toggle--color-red">
+					<input type="checkbox" class="toggle" id="toggleExample3">
+					<label for="toggleExample3">
+						<div class="toggle__title">Заголовок переключателя</div>
+						<div class="toggle__meta">Информация о действии us lorem, sed auctor libero nibh vitae augue. Integer finibus nibh pharetra erat convallis pharetra. Maecenas at arcu et erat egestas ef</div>
+					</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="checkboxExample">
+					<label for="checkboxExample">
+						<div class="checkbox__title">Заголовок флажка</div>
+						<div class="checkbox__meta">Информация о действии</div>
+					</label>
+				</div>
+				<div class="checkbox checkbox--color-olive">
+					<input type="checkbox" id="checkboxExample2">
+					<label for="checkboxExample2">
+						<div class="checkbox__title">Заголовок флажка</div>
+						<div class="checkbox__meta">Информация о действии</div>
+					</label>
+				</div>
+				<div class="checkbox-inline-group">
+					<div class="checkbox">
+						<input type="checkbox" id="checkboxExample3">
+						<label for="checkboxExample3">
+							<div class="checkbox__title">Заголовок флажка</div>
+						</label>
+					</div>
+					<div class="checkbox checkbox--color-olive">
+						<input type="checkbox" id="checkboxExample4">
+						<label for="checkboxExample4">
+							<div class="checkbox__title">Заголовок флажка</div>
+						</label>
+					</div>
+				</div>
+				<div class="checkbox checkbox--color-blue d-gray-bg checkbox--invert">
+					<input type="checkbox" id="checkboxExample5">
+					<label for="checkboxExample5">
+						<div class="checkbox__title">Заголовок флажка</div>
+						<div class="checkbox__meta">Информация о действии</div>
+					</label>
+				</div>
+				<div class="radio radio--color-purple">
+					<input type="radio" name="radioExample" id="radioExample">
+					<label for="radioExample">
+						<div class="radio__title">Заголовок радио-кнопки</div>
+						<div class="radio__meta">Информация о действии</div>
+					</label>
+
+					<input type="radio" name="radioExample" id="radioExample2">
+					<label for="radioExample2">
+						<div class="radio__title">Заголовок радио-кнопки</div>
+						<div class="radio__meta">Информация о действии</div>
+					</label>
+
+					<input type="radio" name="radioExample" id="radioExample3">
+					<label for="radioExample3">
+						<div class="radio__title">Заголовок радио-кнопки</div>
+						<div class="radio__meta">Информация о действии</div>
+					</label>
+				</div>
+			</div>
+			<div class="col col-4">
+				<h2>Tags</h2>
+				<div class="tag">
+					<input type="checkbox" id="tagsExample1">
+					<label for="tagsExample1">Яблоки</label>
+				</div>
+				<div class="tag tag--color-blue" style="font-size: 2em;">
+					<input type="checkbox" id="tagsExample2">
+					<label for="tagsExample2">Груши</label>
+				</div>
+				<div class="tag tag--color-violet">
+					<input type="checkbox" id="tagsExample3">
+					<label for="tagsExample3">Сливы</label>
+				</div>
+			</div>
+		</div>
+
+	<h1>Flexbox Grid Demo</h1>
+	<h3>Стандартная flex-сетка</h3>
+	<div class="flex">
+		<div class="col col-1 col-color">col-1</div>
+		<div class="col col-3 col-color">col-3</div>
+		<div class="col col-5 col-color">col-5</div>
+	</div>
+	<h3>Сетка в столбец</h3>
+	<div class="flex direction-column">
+		<div class="col col-color">row 1</div>
+		<div class="col col-color">row 2</div>
+		<div class="col col-color">row 3</div>
+	</div>
+	<div class="flex main-align-around">
+		<div class="col-1">
+			<h3>Выравнивание по верху</h3>
+			<div class="flex">
+				<div style="width: 100px; height: 20px; background-color: red;"></div>
+				<div style="width: 80px; height: 80px; background-color: green;"></div>
+				<div style="width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+		<div class="col-1">
+			<h3>Выравнивание по центру</h3>
+			<div class="flex sub-align-center">
+				<div style="width: 100px; height: 20px; background-color: red;"></div>
+				<div style="width: 80px; height: 80px; background-color: green;"></div>
+				<div style="width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+		<div class="col-1">
+			<h3>Выравнивание по низу</h3>
+			<div class="flex sub-align-bottom">
+				<div style="width: 100px; height: 20px; background-color: red;"></div>
+				<div style="width: 80px; height: 80px; background-color: green;"></div>
+				<div style="width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+	</div>	
+
+	<h1>Table Grid Demo</h1>
+	<h3>Стандартная table-сетка</h3>
+	<div class="table-grid">
+		<div class="col col-1 col-color">col-1</div>
+		<div class="col col-3 col-color">col-3</div>
+		<div class="col col-5 col-color">col-5</div>
+	</div>
+	<h3>Сетка в столбец</h3>
+	<div class="table-grid direction-row">
+		<div class="col col-color">row 1</div>
+		<div class="col col-color">row 2</div>
+		<div class="col col-color">row 3</div>
+	</div>
+	<div class="table-grid main-align-center">
+		<div class="col col-4">
+			<h3>Выравнивание по верху</h3>
+			<div class="table-grid">
+				<div style="float: left; width: 100px; height: 20px; background-color: red;"></div>
+				<div style="float: left; width: 80px; height: 80px; background-color: green;"></div>
+				<div style="float: left; width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+		<div class="col col-4">
+			<h3>Выравнивание по центру</h3>
+			<div class="table-grid sub-align-baseline">
+				<div style="float: left; width: 100px; height: 20px; background-color: red;"></div>
+				<div style="float: left; width: 80px; height: 80px; background-color: green;"></div>
+				<div style="float: left; width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+		<div class="col col-4">
+			<h3>Выравнивание по низу</h3>
+			<div class="table-grid sub-align-bottom">
+				<div style="float: left; width: 100px; height: 20px; background-color: red;"></div>
+				<div style="float: left; width: 80px; height: 80px; background-color: green;"></div>
+				<div style="float: left; width: 50px; height: 120px; background-color: blue;"></div>
+			</div>
+		</div>
+	</div>	
+	</body>
+</html>

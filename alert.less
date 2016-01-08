@@ -1,0 +1,64 @@
+.set-alert-color(@color) {
+	background-color: lighten(@color, 20%);
+	color: @color;
+	border-color: lighten(@color, 10%);
+
+	.alert__header__close-btn {
+		color: @color;
+		&:hover {
+			color: darken(@color, 10%);
+		}
+	}
+}
+
+.alert {
+	display: block;
+	width: ~"calc(100% - 1em)";
+	.pt();
+	background-color: @u-gray;
+	border: 1px solid darken(@u-gray, 10%);
+	color: @d-gray;
+	padding: 0.2em 1em;
+	margin:0.5em;
+	box-sizing: border-box;
+
+	&.alert--red-bg { .set-alert-color(@red); }
+	&.alert--orange-bg { .set-alert-color(@orange); }
+	&.alert--yellow-bg { .set-alert-color(@yellow); }
+	&.alert--olive-bg { .set-alert-color(@olive); }
+	&.alert--green-bg { .set-alert-color(@green); }
+	&.alert--teal-bg { .set-alert-color(@teal); }
+	&.alert--blue-bg { .set-alert-color(@blue); }
+	&.alert--violet-bg { .set-alert-color(@violet); }
+	&.alert--purple-bg { .set-alert-color(@purple); }
+	&.alert--pink-bg { .set-alert-color(@pink); }
+	&.alert--brown-bg { .set-alert-color(@brown); }
+	&.alert--black-bg { .set-alert-color(@d-gray); color: @u-gray; }
+
+	&.alert--smooth {
+		border-radius: 0.5em;
+	}
+
+	.alert__header {
+		font-size: 1.2em;
+		font-weight: bold;
+
+		.alert__header__close-btn {
+			float: right;
+			cursor: pointer;	
+
+			&:hover {
+				color: @d-gray;
+			}	
+		}
+	}
+
+	.alert__content {
+		clear: both;
+		display: block;
+		width: 100%;
+		font-size: 0.9em;
+	}
+
+	
+}

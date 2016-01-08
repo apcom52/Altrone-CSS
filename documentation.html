@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>Altrone CSS Документация</title>
+	<link rel="stylesheet" type="text/css" href="altrone.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome.css">
+	<script src="dist/js/jquery-2.1.4.min.js"></script>
+	<script src="dist/js/altrone.js"></script>
+</head>
+
+<body>
+
+<div class="grid">
+	<div class="col col-2" style="position: fixed;">
+		<h2>Altrone CSS</h2>
+		<div class="alert">
+			<div class="content">Версия: <b>2.0 beta</b></div>
+		</div>
+
+		<div class="list list--color-olive list--animation-underline list--animation-invert">
+			<a href="#chapter1"><div class="list__item">Кнопки</div></a>
+			<a href="#chapter2"><div class="list__item">Группа кнопок</div></a>
+			<a href="#chapter3"><div class="list__item">Сообщения</div></a>
+			<a href="#chapter4"><div class="list__item">Списки</div></a>
+		</div>
+
+		<button class="button--olive-bg button--icon button--fit"><i class="fa fa-cloud-download"></i>Загрузить</button>
+	</div>
+	<div class="col col-9" style="margin-left:18%;">
+		<a name="chapter1"></a>
+		<h1>Кнопки</h1>
+		<p>Стандартный стиль кнопок применяется к тегам <code>&lt;button&gt;, &lt;input type=&quot;button&quot;&gt;, &lt;input type=&quot;submit&quot;&gt; и &lt;input type=&quot;reset&quot;&gt;</code>, Можно применить класс кнопок к другим тегам, присвоив им класс <code>.button</code></p>
+		<p><button>Стандартная кнопка</button><button class="button--red-bg" disabled>Неактивная кнопка</button></p>
+		<h3>Модификаторы</h3>
+		<table cellpadding="1" cellspacing="1" style="width: 100%;">
+			<tbody>
+				<tr>
+					<td><button class="button--orange-bg">Оранжевая кнопка</button></td>
+					<td>
+						<p><b>Цвета кнопок</b></p>
+						<p><code>.button--color-*</code>, где вместо * нужно подставить определенный цвет (red, orange, yellow, olive, green, teal, blue, violet, purple, pink, brown, black)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button class="button--color-blue">Стандартное скругление</button>
+						<button class="button--color-blue button--smooth">smooth</button>
+						<button class="button--color-blue button--rounded">rounded</button>
+						<button class="button--color-blue button--circle button--icon-only"><i class="fa fa-check"></i></button>
+						<button class="button--color-blue button--no-smooth">no-smooth</button>
+
+					</td>
+					<td>
+						<p><b>Скругление кнопок</b></p>
+						<p>Для скругления краев используются классы:</p>
+						<ul>
+							<li><code>.button--smooth</code> - небольшое скругление, чуть больше стандартного</li>
+							<li><code>.button--rounded</code> - большое скругление краев</li>
+							<li><code>.button--circle</code> - круглая кнопка</li>
+							<li><code>.button--no-smooth</code> - полностью убирает скругление</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button class="button--color-purple button--icon"><i class="fa fa-times"></i> Отменить</button>
+						<button class="button--color-purple button--icon-only"><i class="fa fa-times"></i></button>
+					</td>
+					<td>
+						<p><b>Кнопка с иконкой</b></p>
+						<p>Если в кнопке используется шрифтовая иконка, то нужно использовать следующие модификаторы:</p>
+						<ul>
+							<li><code>.button--icon</code> - если в кнопке есть иконка и название</li>
+							<li><code>.button--icon-only</code> - если в кнопке есть только иконка, без подписи&nbsp;</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button class="button--color-pink button--size-small">small</button>
+						<button class="button--color-pink button--size-normal">normal</button>
+						<button class="button--color-pink button--size-large">large</button>
+						<button class="button--color-pink button--size-xl">xl</button><br>
+						<button class="button--color-yellow button--fit">Fit</button>
+					</td>
+					<td>
+						<p><b>Размеры кнопок</b></p>
+						<ul>
+							<li><code>.button--size-small</code> - маленькая кнопка, на 20% меньше стандартной</li>
+							<li><code>.button--size-normal</code> - размер кнопки по умолчанию</li>
+							<li><code>.button--size-large</code> - размер кнопки на 30% больше стандартной</li>
+							<li><code>.button--size-xl</code> - размер кнопки на 100% больше стандартной</li>
+							<li><code>.button--fit</code> - кнопка растягивается на всю ширину родительского блока</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button class="button--color-brown button--only-borders">Только контуры</button>
+						<button class="button--color-brown button--transparent">Наведи на меня</button>
+						<button class="button--color-brown button--transparent-full">Всегда прозрачная</button>
+					</td>
+					<td>
+						<p><b>Прозрачность кнопок</b></p>
+						<ul>
+							<li><code>.button--only-borders</code> - показываются только границы кнопок, без заливки</li>
+							<li><code>.button-transparent</code> - по умолчанию кнопка без границ и без фона, при наведении мышки появляется фон</li>
+							<li><code>.button-transparent-full</code> - кнопка без границ и без фона, при наведении ничего не происходит</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+
+		<!-- Группа кнопок -->
+		<a name="chapter2"></a>
+		<h1>Группы кнопок</h1>
+		<div>Если кнопки имеют схожее поведение, то можно объединить их в единый блок с классом&nbsp;.<code>button-group</code></div>
+
+		<h3>Модификаторы</h3>
+
+		<table cellpadding="1" cellspacing="1" style="width:100%">
+			<tbody>
+				<tr>
+					<td>
+						<div class="button-group">
+							<button class="button--orange-bg button--icon-only"><i class="fa fa-check"></i></button>
+							<button class="button--orange-bg">Action 2</button> 
+							<button class="button--orange-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+						</div><br>
+
+						<div class="button-group button-group--smooth">
+							<button class="button--teal-bg button--icon-only"><i class="fa fa-check"></i></button>
+							<button class="button--teal-bg">Action 2</button> 
+							<button class="button--teal-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+						</div><br>
+
+						<div class="button-group button-group--rounded">
+							<button class="button--purple-bg button--icon-only"><i class="fa fa-check"></i></button>
+							<button class="button--purple-bg">Action 2</button> 
+							<button class="button--purple-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+						</div><br>
+
+						<div class="button-group button-group--no-smooth">
+							<button class="button--black-bg button--icon-only"><i class="fa fa-check"></i></button>
+							<button class="button--black-bg">Action 2</button> 
+							<button class="button--black-bg button--icon"><i class="fa fa-info"></i> Action 3</button> 
+						</div><br>
+					</td>
+					<td>
+					<p><strong>Скругление крайних кнопок</strong></p>
+
+					<p>Можно указать степень закругления крайней левой и крайней правой кнопки</p>
+
+					<ul>
+						<li><code>.button-group--smooth</code> - скругление, аналогично button--smooth</li>
+						<li><code>.button-group--rounded</code> - закругленные края, аналогично button--rounded</li>
+						<li><code>.button-group--no-smooth</code> - без скругления</li>
+					</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+		<!-- Сообщения -->
+		<a name="chapter3"></a>
+		<h1>Сообщения</h1>
+		<div>Сообщения оборачиваются в блок с классом <code>alert</code>. Он состоит из двух компонентов: заголовок <code>alert__header</code> и контент <code>alert__content</code>. В заголовке может быть добавлена кнопка закрытия <code>alert__header__close-btn</code>. Если у вас подключен файл <code>altrone.js</code>, то кнопка будет скрывать ваше сообщение.</div>
+		<div class="alert">
+			<div class="alert__header">Заголовок сообщения <span class="alert__header__close-btn"><i class="fa fa-times"></i></span></div>
+			<div class="alert__content">Содержимое сообщения</div>
+		</div>
+		<h3>Элементы</h3>
+		<p><strong>.alert__header</strong><br />
+		<span style="line-height:1.6em">Заголовок окна. Может включать в себя необязательный элемент <code>.alert__header__close-btn</code></span></p>
+
+		<p><strong>.alert__header &nbsp; &gt; &nbsp; .alert__header__close-btn</strong><br />
+		<span style="line-height:1.6em">Кнопка закрытия. Если подключен файл скриптов, то кнопка автоматически закрывает сообщение</span></p>
+
+		<p><strong>.alert__content</strong><br />
+		Содержимое сообщения</p>
+
+		<h3>Модификаторы</h3>
+		<table cellpadding="1" cellspacing="1" style="width:100%;">
+			<tbody>
+				<tr>
+					<td width=500>
+						<div class="alert alert--orange-bg">
+							<div class="alert__header">Заголовок сообщения</div>
+							<div class="alert__content">Содержимое сообщения</div>
+						</div>
+						<div class="alert alert--black-bg">
+							<div class="alert__header">Заголовок сообщения</div>
+							<div class="alert__content">Содержимое сообщения</div>
+						</div>
+					</td>
+					<td>
+					<p><strong>Цвет сообщения</strong></p>
+					<p><code>.alert--*-bg</code>, где вместо * нужно подставить определенный цвет (red, orange, yellow, olive, green, teal, blue, violet, purple, pink, brown, black)</span></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+		<!-- Списки -->
+		<a name="chapter4"></a>
+		<h1>Списки</h1>
+		<p>Чтобы создать список, нужно разметить элементы <code>&lt;div&gt;</code> или <code>&lt;li&gt;</code> внутри контейнера <code>&lt;div&gt;</code> или <code>&lt;ul&gt;</code>, к которому применен класс <code>.list</code></p>
+
+		<h3>Элементы</h3>
+		<p><strong>.list &nbsp; &gt; &nbsp; .list__item (или &lt;li&gt;)</strong><br />
+		<span style="line-height:1.6em">Элемент списка. Можно использовать как обычный <code>&lt;li&gt;</code>, так и <code>&lt;div class=&quot;list__item&quot;&gt;</code></span></p>
+
+		<p><strong>.list &nbsp; &gt; &nbsp; .list__separator</strong><br />
+		<span style="line-height:1.6em">Разделитель</span></p>
+
+		<h3>Модификаторы</h3>
+		<table cellpadding="5" cellspacing="0" style="border-collapse:collapse">
+			<tbody>
+				<tr>
+					<td width="300">
+						<div class="list list--color-olive">
+							<div class="list__item">Home</div>
+							<div class="list__item">Help</div>
+							<div class="list__item">About</div>
+						</div>
+					</td>
+					<td>
+					<p><strong>Цвет</strong></p>
+
+					<ul>
+						<li>
+						<div><code>.list--color-*</code>, где вместо * нужно подставить нужный цвет (<code>red, orange, yellow, olive, green, teal, blue, violet, purple, pink, brown, black</code>). Изменится цвет текста элементов. Также он влияет на такие модификаторы, как <code>.list--invert</code> и <code>.list--animation-invert</code></div>
+						</li>
+					</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="list list--color-olive list--invert">
+							<div class="list__item">Home</div>
+							<div class="list__item">Help</div>
+							<div class="list__item">About</div>
+						</div>						
+					</td>
+					<td>
+					<p><strong>Инверсия цветов</strong></p>
+
+					<ul>
+						<li><code>.list--invert</code> - меняет цвета. Создает темный фон и белый цвет текста, если не применен модификатор <code>.list--color-*</code></li>
+					</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="list list--color-brown list--image">
+							<div class="list__item"><img src="images/radcliffe.jpg">D. Radcliffe</div>
+							<div class="list__item"><img src="images/grint.png">R. Grint</div>
+							<div class="list__item"><img src="images/watson.jpg">E. Watson</div>
+						</div>	
+					</td>
+					<td>
+					<p><strong>Иконки и картинки</strong></p>
+
+					<ul>
+						<li><code>.list--icon</code> - модификатор указывает, что в списке могут находиться иконки. Иконки должны быть в теге <code>&lt;i&gt;</code> или обозначены классом <code>.icon</code></li>
+						<li><code>.list--image</code> - модификатор указывает, что в списке могут находиться изображения. Изображения должны быть в теге <code>&lt;img&gt;</code> или обозначены классом <code>.image</code></li>
+					</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="list list--color-red list--orientation-horizontal">
+							<div class="list__item">Home</div>
+							<div class="list__item">Help</div>
+							<div class="list__item">About</div>
+						</div>		
+					</td>
+					<td>
+					<p><strong>Ориентация</strong></p>
+
+					<ul>
+						<li><code>.list--orientation-horizontal</code> -&nbsp;список располагается горизонтально. Данный модификатор изменяет действие элемента <code>.list__separator</code> и модификаторов <code>.list--animation-border</code></li>
+					</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Animation Slide</b>
+						<div class="list list--color-red list--animation-slide">
+							<div class="list__item">Home</div>
+							<div class="list__item">Help</div>
+							<div class="list__item">About</div>
+						</div>	
+						<b>Animation Invert</b>
+						<div class="list list--color-red list--animation-invert">
+							<div class="list__item">Home</div>
+							<div class="list__item">Help</div>
+							<div class="list__item">About</div>
+						</div>	
+						<b>Animation Zoom + Invert</b>
+						<div class="list list--color-brown list--image list--animation-invert list--animation-zoom">
+							<div class="list__item"><img src="images/radcliffe.jpg">D. Radcliffe</div>
+							<div class="list__item"><img src="images/grint.png">R. Grint</div>
+							<div class="list__item"><img src="images/watson.jpg">E. Watson</div>
+						</div>	
+					</td>
+					<td>
+					<p><strong>Анимация</strong></p>
+
+					<ul>
+						<li><code>.list--animation-slide</code> - при наведении курсора текст сдвигается вправо</li>
+						<li><code>.list--animation-underline</code> - при наведении курсора текст подчеркивается</li>
+						<li><code>.list--animation-invert</code> - при наведении курсора фон заливается акцентным цветом (зависит от модификатора <code>.list-color-*</code>)</li>
+						<li><code>.list--animation-zoom</code> - при наведении курсора весь контент увеличивается на 50%</li>
+						<li><code>.list--animation-border</code> - при наведении появляется граница слева. Если используется <code>.list--orientation-horizontal</code>, то граница появляется снизу</li>
+						<li><code>.list--animation-mark-*</code> - при наведении появляется маркировка у списка (вместо * нужно указать <code>circle</code>, <code>disc</code> или <code>square</code>). Работает только в том случае, если вы использовали <code>&lt;ul&gt;</code> и <code>&lt;li&gt;</code></li>
+					</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+
+		<!-- Навигационный список -->
+		<h1>Навигационный список</h1>
+		<p>Данный вид списка лучше всего применять для создания навигационного меню. Он может содержать иконку, описание пункта меню, а также декоративную иконку, которая применяется при наведении</p>
+		<div class="list-navigation">
+			<div class="list-navigation__item">
+				<div class="list-navigation__icon">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="list-navigation__content">
+					<div class="list-navigation__content__title">Hello, it's me</div>
+					<div class="list-navigation__content__meta">I was wondering if after all these years</div>
+				</div>
+				<div class="list-navigation__right-icon">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<div class="list-navigation__item">
+				<div class="list-navigation__icon">
+					<i class="fa fa-at"></i>
+				</div>
+				<div class="list-navigation__content">
+					<div class="list-navigation__content__title">There's a fire starting in my heart</div>
+					<div class="list-navigation__content__meta">Reaching a fever pitch and it's bringing me out the dark</div>
+				</div>
+				<div class="list-navigation__right-icon">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<div class="list-navigation__item">
+				<div class="list-navigation__icon">
+					<i class="fa fa-battery-half"></i>
+				</div>
+				<div class="list-navigation__content">
+					<div class="list-navigation__content__title">I let it fall, my heart</div>
+					<div class="list-navigation__content__meta">And as it fell you rose to claim it</div>
+				</div>
+				<div class="list-navigation__right-icon">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+		</div>
+
+		<h3>Элементы</h3>
+
+		<p><strong>.list-navigation__item</strong><br />
+		Элемент списка</p>
+
+		<p><strong>.list-navigation__item &nbsp; &gt; &nbsp; .list-navigation__item__icon</strong><br />
+		Иконка списка</p>
+
+		<p><strong>.list-navigation__item &nbsp; &gt; &nbsp;&nbsp;.list-navigation__item__content</strong><br />
+		Контент списка</p>
+
+		<p><strong>.list-navigation__item &nbsp; &gt; &nbsp;&nbsp;.list-navigation__item__content &nbsp; &gt; &nbsp; .list-navigation__item__content__title</strong><br />
+		Заголовок элемента списка</p>
+
+		<p><strong>.list-navigation__item &nbsp; &gt; &nbsp;&nbsp;.list-navigation__item__content &nbsp; &gt; &nbsp; .list-navigation__item__content__meta</strong><br />
+		Описание элемента списка</p>
+
+		<p><strong>.list-navigation__item &nbsp; &gt; &nbsp;&nbsp;.list-navigation__item__right-icon</strong><br />
+		​Иконка, которая будет появляться при наведении. Необязательный элемент</p>
+
+		<h3>Модификаторы</h3>
+
+		<table cellpadding="1" cellspacing="1" style="width:100%">
+			<tbody>
+				<tr>
+					<td width="500">
+						<div class="list-navigation list-navigation--color-red">
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-check"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">Hello, it's me</div>
+									<div class="list-navigation__content__meta">I was wondering if after all these years</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-check"></i>
+								</div>
+							</div>
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-at"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">There's a fire starting in my heart</div>
+									<div class="list-navigation__content__meta">Reaching a fever pitch and it's bringing me out the dark</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-check"></i>
+								</div>
+							</div>
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-battery-half"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">I let it fall, my heart</div>
+									<div class="list-navigation__content__meta">And as it fell you rose to claim it</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-check"></i>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td>
+					<p><strong>Изменение цвета</strong></p>
+
+					<p><code>.list-navigation--color-*</code> - изменяет цвет активного элемента (вместо * нужно подставить <code>red, orange, yellow, olive, green, teal, blue, violet, purple, pink, brown, black</code>)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="list-navigation list-navigation--color-pink list-navigation--invert">
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-check"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">Hello, it's me</div>
+									<div class="list-navigation__content__meta">I was wondering if after all these years</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-arrow-right"></i>
+								</div>
+							</div>
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-at"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">There's a fire starting in my heart</div>
+									<div class="list-navigation__content__meta">Reaching a fever pitch and it's bringing me out the dark</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-arrow-right"></i>
+								</div>
+							</div>
+							<div class="list-navigation__item">
+								<div class="list-navigation__icon">
+									<i class="fa fa-battery-half"></i>
+								</div>
+								<div class="list-navigation__content">
+									<div class="list-navigation__content__title">I let it fall, my heart</div>
+									<div class="list-navigation__content__meta">And as it fell you rose to claim it</div>
+								</div>
+								<div class="list-navigation__right-icon">
+									<i class="fa fa-arrow-right"></i>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td>
+					<p><strong>Инверсия цветов</strong></p>
+
+					<p><code>.list-navigation--invert</code> - инвертирует цвета</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>&nbsp;</p>
+
+
+		
+	</div>
+</div>
+
+</body>
+</html>
