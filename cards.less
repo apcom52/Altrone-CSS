@@ -87,6 +87,19 @@
 		.card__content--padding {
 			padding: 0.5em 1em;
 		}
+
+		&.card__content--list {		
+			.list {
+				.list__item {
+					&:first-child {
+						border-radius: 0.5em 0.5em 0em 0em;
+					}
+					&:last-child {
+						border-radius: 0em 0em 0.5em 0.5em;
+					}
+				}
+			}
+		}
 	}
 
 	.card__footer {
@@ -113,6 +126,16 @@
 					border-radius: 0em;
 				}
 			}
+
+			.card__content {
+				&.card__content--list {
+					.list {
+						.list__item {
+							border-radius: 0em;
+						}
+					}
+				}
+			}
 		}
 
 		&-smooth {		
@@ -125,6 +148,21 @@
 			.card__image {
 				img {
 					border-radius: 1em 1em 0em 0em;
+				}
+			}
+
+			.card__content {
+				&.card__content--list {
+					.list {
+						.list__item {
+							&:first-child {
+								border-radius: 1em 1em 0em 0em;
+							}
+							&:last-child {
+								border-radius: 0em 0em 1em 1em;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -155,24 +193,5 @@
 		}
 	}
 
-	&.card--list {		
-		div {
-			&:first-of-type {	border-radius: 0.5em 0.5em 0em 0em;	}
-			&:last-of-type {	border-radius: 0em 0em 0.5em 0.5em;	}
-		}
 
-		&.card--no-smooth {
-			div {
-				&:first-of-type {	border-radius: 0em;	}
-				&:last-of-type {	border-radius: 0em;	}
-			}
-		}
-
-		&.card--rounded {
-			div {
-				&:first-of-type {	border-radius: 1em 1em 0em 0em;	}
-				&:last-of-type {	border-radius: 0em 0em 1em 1em;	}
-			}
-		}
-	}
 }

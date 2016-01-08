@@ -1,8 +1,12 @@
 .list-set-linked-color(@color) {
 	.list__item, li {
 		color: @color;
-		&:hover, &:active, &.list__item--active {
+
+		&:hover, &:active {
 			color: darken(@color, 10%);
+		}
+		&.list__item--active {
+			color: darken(@color, 15%);
 		}
 	}
 
@@ -18,14 +22,17 @@
 	}
 
 	&.list--animation {
-		&-invert {
+		&-invert {			
 			.list__item, li {
+				color: @color; 
+
 				&:hover {
 					color: @u-gray;
-					background-color: @color;
+					background-color: darken(@color, 10%);
 				}
-				&:not(:hover) {
-					color: @color;		
+				&.list__item--active {
+					background-color: @color;
+					color: @u-gray;
 				}
 			}
 		}
@@ -60,9 +67,13 @@
 		border-color: transparent;
 		list-style-type: none;
 
-		&:hover, &:active, &.list__item--active {
+		&:hover, &:active {
 			color: darken(@blue, 10%);
 			.anim(0.3s);
+		}
+
+		&.list__item--active {
+			color: darken(@blue, 15%);
 		}
 	}
 
@@ -95,7 +106,12 @@
 		.list__item, li {
 			color: @white;
 
-			&:hover, &:active, &.list__item--active {
+			&:hover, &:active {
+				color: @white;
+				background-color: darken(@blue, 10%);
+			}
+
+			&.list__item--active {
 				color: @white;
 				background-color: @blue;
 			}
@@ -148,15 +164,17 @@
 
 		&-invert {
 			.list__item, li {
-				&:hover, &.list__item--active {
+				color: @blue; 
+
+				&:hover {
 					color: @u-gray;
-					background-color: @blue;
+					background-color: darken(@blue, 10%);
 					.anim(0.3s);
 				}
-				&:not(:hover) {
-					color: @blue;
-					background-color: transparent;					
-					.anim(0.3s);
+				
+				&.list__item--active {
+					background-color: @blue;
+					color: @u-gray;
 				}
 			}
 		}
