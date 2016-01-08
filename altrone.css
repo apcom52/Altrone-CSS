@@ -852,7 +852,6 @@ code {
   width: 8.333%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-1.col--padding {
   padding: 5px;
@@ -867,7 +866,6 @@ code {
   width: 16.66%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-2.col--padding {
   padding: 5px;
@@ -882,7 +880,6 @@ code {
   width: 25%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-3.col--padding {
   padding: 5px;
@@ -897,7 +894,6 @@ code {
   width: 33.33%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-4.col--padding {
   padding: 5px;
@@ -912,7 +908,6 @@ code {
   width: 41.66%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-5.col--padding {
   padding: 5px;
@@ -927,7 +922,6 @@ code {
   width: 50%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-6.col--padding {
   padding: 5px;
@@ -942,7 +936,6 @@ code {
   width: 58.33%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-7.col--padding {
   padding: 5px;
@@ -957,7 +950,6 @@ code {
   width: 66.66%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-8.col--padding {
   padding: 5px;
@@ -972,7 +964,6 @@ code {
   width: 75%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-9.col--padding {
   padding: 5px;
@@ -987,7 +978,6 @@ code {
   width: 83.33%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-10.col--padding {
   padding: 5px;
@@ -1002,7 +992,6 @@ code {
   width: 91.66%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-11.col--padding {
   padding: 5px;
@@ -1017,7 +1006,6 @@ code {
   width: 100%;
   float: left;
   content: "";
-  background-color: #999999;
 }
 .grid .col-12.col--padding {
   padding: 5px;
