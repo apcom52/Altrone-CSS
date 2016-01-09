@@ -5109,10 +5109,6 @@ form.form--no-padding,
 .form.form--no-padding {
   padding: 0.25em 0em;
 }
-form.form--label-invert label,
-.form.form--label-invert label {
-  color: #ffffff;
-}
 form.form--color-red .input,
 .form.form--color-red .input,
 form.form--color-red input[type="text"],
