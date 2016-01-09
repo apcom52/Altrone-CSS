@@ -541,3 +541,175 @@
 		}
 	}
 }
+
+.set-form-color(@color) {
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+		border: 1px solid lighten(@color, 25%);
+		background: lighten(@color, 30%);
+
+		&:active, &:focus {
+			background-color: lighten(@color, 40%);
+		}
+
+		&::-webkit-input-placeholder {color: @white;}
+		&::-moz-placeholder          {color: @white;}
+		&:-moz-placeholder           {color: @white;}
+		&:-ms-input-placeholder      {color: @white;}
+	}
+}
+
+.set-form-invert-color(@color) {
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+		border: 1px solid darken(@color, 20%);
+		background: darken(@color, 15%);
+		color: @white;
+
+		&:active, &:focus {
+			background-color: darken(@color, 10%);
+		}
+	}
+}
+
+form, .form {
+	padding: 0.25em 1em;
+	.anim(0.3s);
+
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+		display: block;
+		margin: 0.25em 0em;
+		border: 1px solid darken(@u-gray, 5%);
+		border-radius: 0.25em;
+		padding: 0.5em 1em;
+		background-color: @u-gray;
+		color: @d-gray;
+		box-sizing: border-box;
+		.pt();		
+		.anim(0.3s);
+		outline: none;
+		resize: vertical;
+
+		&:active, &:focus {
+			background-color: @white;
+			.anim(0.3s);
+		}
+	}
+
+	label {
+		display: block;
+		.pt();
+		font-weight: bold;
+		cursor: pointer;
+		.anim(0.3s);
+	}
+
+	option {
+		background: @white;
+		color: @d-gray;
+		.pt();
+	}
+
+	optgroup {
+		background: @u-gray;
+		color: @d-gray;
+		font-weight: bold;
+		.pt();
+	}
+
+	&.form--no-smooth {	
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select { 
+			border-radius: 0em;
+		}
+	}
+	&.form--smooth {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+			border-radius: 0.25em;
+		}
+	}
+	&.form--rounded {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+			border-radius: 1em;
+		}
+	}
+
+	&.form--fit {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select { 
+			width: 100%;
+		}
+	}
+
+	&.form--no-padding {
+		padding: 0.25em 0em;
+	}
+
+	&.form--label-invert {
+		label {
+			color: @white;
+		}
+	}
+
+	&.form--color-red { .set-form-color(@red); }
+	&.form--color-orange { .set-form-color(@orange); }
+	&.form--color-yellow { .set-form-color(@yellow); }
+	&.form--color-olive { .set-form-color(@olive); }
+	&.form--color-green { .set-form-color(@green); }
+	&.form--color-teal { .set-form-color(@teal); }
+	&.form--color-blue { .set-form-color(@blue); }
+	&.form--color-violet { .set-form-color(@violet); }
+	&.form--color-purple { .set-form-color(@purple); }
+	&.form--color-pink { .set-form-color(@pink); }
+	&.form--color-brown { .set-form-color(@brown); }	
+
+	&.form--invert {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+			border: 1px solid darken(@d-gray, 5%);			
+			background-color: lighten(@d-gray, 5%);
+			color: @u-gray;
+
+			&:active, &:focus {
+				background-color: lighten(@d-gray, 15%);
+			}
+		}
+
+		label {
+			color: @white;
+		}
+
+		option {
+			background-color: @d-gray;
+			color: @white;
+		}
+
+		optgroup {
+			background-color: lighten(@d-gray, 10%);
+			color: @white;
+		}
+
+		&.form--color-red { .set-form-invert-color(@red); }
+		&.form--color-orange { .set-form-invert-color(@orange); }
+		&.form--color-yellow { .set-form-invert-color(@yellow); }
+		&.form--color-olive { .set-form-invert-color(@olive); }
+		&.form--color-green { .set-form-invert-color(@green); }
+		&.form--color-teal { .set-form-invert-color(@teal); }
+		&.form--color-blue { .set-form-invert-color(@blue); }
+		&.form--color-violet { .set-form-invert-color(@violet); }
+		&.form--color-purple { .set-form-invert-color(@purple); }
+		&.form--color-pink { .set-form-invert-color(@pink); }
+		&.form--color-brown { .set-form-invert-color(@brown); }	
+	}
+
+	&.form--no-border {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+			border: none;
+		}
+	}
+
+	&.form--transparent {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="phone"], input[type="password"], textarea, select {
+			opacity: 0.5;
+
+			&:active, &:focus {
+				opacity: 1;
+			}
+		}
+	}
+}
