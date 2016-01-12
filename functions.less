@@ -170,3 +170,57 @@ code {
 .padding-1 { padding: 1em; }
 .padding-3 { padding: 3em; }
 .padding-5 { padding: 5em; }
+
+.set-circle-color(@color) {
+	width: 1em;
+	height: 1em;
+	background-color: @color;
+	border-radius: 1em;
+	display: inline-block;
+}
+
+.red-circle { .set-circle-color(@red); }
+.orange-circle { .set-circle-color(@orange); }
+.yellow-circle { .set-circle-color(@yellow); }
+.olive-circle { .set-circle-color(@olive); }
+.green-circle { .set-circle-color(@green); }
+.teal-circle { .set-circle-color(@teal); }
+.blue-circle { .set-circle-color(@blue); }
+.violet-circle { .set-circle-color(@violet); }
+.purple-circle { .set-circle-color(@purple); }
+.pink-circle { .set-circle-color(@pink); }
+.brown-circle { .set-circle-color(@brown); }
+.u-gray-circle { .set-circle-color(@u-gray); }
+.l-gray-circle { .set-circle-color(@l-gray); }
+.m-gray-circle { .set-circle-color(@m-gray); }
+.d-gray-circle { .set-circle-color(@d-gray); }
+.black-circle { .set-circle-color(@black); }
+.white-circle { .set-circle-color(@white); }
+
+.set-ring-color(@color) {
+	width: 1em;
+	height: 1em;
+	background-color: transparent;
+	border: 1px solid @color;
+	box-sizing: border-box;
+	border-radius: 1em;
+	display: inline-block;
+}
+
+.reg-ring { .set-ring-color(@red); }
+.orange-ring { .set-ring-color(@orange); }
+.yellow-ring { .set-ring-color(@yellow); }
+.olive-ring { .set-ring-color(@olive); }
+.green-ring { .set-ring-color(@green); }
+.teal-ring { .set-ring-color(@teal); }
+.blue-ring { .set-ring-color(@blue); }
+.violet-ring { .set-ring-color(@violet); }
+.purple-ring { .set-ring-color(@purple); }
+.pink-ring { .set-ring-color(@pink); }
+.brown-ring { .set-ring-color(@brown); }
+.u-gray-ring { .set-ring-color(@u-gray); }
+.l-gray-ring { .set-ring-color(@l-gray); }
+.m-gray-ring { .set-ring-color(@m-gray); }
+.d-gray-ring { .set-ring-color(@d-gray); }
+.black-ring { .set-ring-color(@black); }
+.white-ring { .set-ring-color(@white); }
