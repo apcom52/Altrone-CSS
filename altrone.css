@@ -1569,7 +1569,8 @@ input[type="button"].button--transparent:hover,
 input[type="submit"].button--transparent:hover,
 input[type="reset"].button--transparent:hover,
 .button.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--transparent-full:hover,
 input[type="button"].button--transparent-full:hover,
@@ -1677,7 +1678,8 @@ input[type="button"].button--color-red.button--transparent:hover,
 input[type="submit"].button--color-red.button--transparent:hover,
 input[type="reset"].button--color-red.button--transparent:hover,
 .button.button--color-red.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-red.button--transparent-full:hover,
 input[type="button"].button--color-red.button--transparent-full:hover,
@@ -1785,7 +1787,8 @@ input[type="button"].button--color-orange.button--transparent:hover,
 input[type="submit"].button--color-orange.button--transparent:hover,
 input[type="reset"].button--color-orange.button--transparent:hover,
 .button.button--color-orange.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-orange.button--transparent-full:hover,
 input[type="button"].button--color-orange.button--transparent-full:hover,
@@ -1893,7 +1896,8 @@ input[type="button"].button--color-yellow.button--transparent:hover,
 input[type="submit"].button--color-yellow.button--transparent:hover,
 input[type="reset"].button--color-yellow.button--transparent:hover,
 .button.button--color-yellow.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-yellow.button--transparent-full:hover,
 input[type="button"].button--color-yellow.button--transparent-full:hover,
@@ -2001,7 +2005,8 @@ input[type="button"].button--color-olive.button--transparent:hover,
 input[type="submit"].button--color-olive.button--transparent:hover,
 input[type="reset"].button--color-olive.button--transparent:hover,
 .button.button--color-olive.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-olive.button--transparent-full:hover,
 input[type="button"].button--color-olive.button--transparent-full:hover,
@@ -2109,7 +2114,8 @@ input[type="button"].button--color-green.button--transparent:hover,
 input[type="submit"].button--color-green.button--transparent:hover,
 input[type="reset"].button--color-green.button--transparent:hover,
 .button.button--color-green.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-green.button--transparent-full:hover,
 input[type="button"].button--color-green.button--transparent-full:hover,
@@ -2217,7 +2223,8 @@ input[type="button"].button--color-teal.button--transparent:hover,
 input[type="submit"].button--color-teal.button--transparent:hover,
 input[type="reset"].button--color-teal.button--transparent:hover,
 .button.button--color-teal.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-teal.button--transparent-full:hover,
 input[type="button"].button--color-teal.button--transparent-full:hover,
@@ -2325,7 +2332,8 @@ input[type="button"].button--color-blue.button--transparent:hover,
 input[type="submit"].button--color-blue.button--transparent:hover,
 input[type="reset"].button--color-blue.button--transparent:hover,
 .button.button--color-blue.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-blue.button--transparent-full:hover,
 input[type="button"].button--color-blue.button--transparent-full:hover,
@@ -2433,7 +2441,8 @@ input[type="button"].button--color-violet.button--transparent:hover,
 input[type="submit"].button--color-violet.button--transparent:hover,
 input[type="reset"].button--color-violet.button--transparent:hover,
 .button.button--color-violet.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-violet.button--transparent-full:hover,
 input[type="button"].button--color-violet.button--transparent-full:hover,
@@ -2541,7 +2550,8 @@ input[type="button"].button--color-purple.button--transparent:hover,
 input[type="submit"].button--color-purple.button--transparent:hover,
 input[type="reset"].button--color-purple.button--transparent:hover,
 .button.button--color-purple.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-purple.button--transparent-full:hover,
 input[type="button"].button--color-purple.button--transparent-full:hover,
@@ -2649,7 +2659,8 @@ input[type="button"].button--color-pink.button--transparent:hover,
 input[type="submit"].button--color-pink.button--transparent:hover,
 input[type="reset"].button--color-pink.button--transparent:hover,
 .button.button--color-pink.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-pink.button--transparent-full:hover,
 input[type="button"].button--color-pink.button--transparent-full:hover,
@@ -2757,7 +2768,8 @@ input[type="button"].button--color-brown.button--transparent:hover,
 input[type="submit"].button--color-brown.button--transparent:hover,
 input[type="reset"].button--color-brown.button--transparent:hover,
 .button.button--color-brown.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-brown.button--transparent-full:hover,
 input[type="button"].button--color-brown.button--transparent-full:hover,
@@ -2865,7 +2877,8 @@ input[type="button"].button--color-black.button--transparent:hover,
 input[type="submit"].button--color-black.button--transparent:hover,
 input[type="reset"].button--color-black.button--transparent:hover,
 .button.button--color-black.button--transparent:hover {
-  color: #ffffff;
+  color: #333333;
+  background-color: #ffffff;
 }
 button.button--color-black.button--transparent-full:hover,
 input[type="button"].button--color-black.button--transparent-full:hover,
@@ -7487,6 +7500,12 @@ form.form--transparent textarea:focus,
 form.form--transparent select:focus,
 .form.form--transparent select:focus {
   opacity: 1;
+}
+form.form--center,
+.form.form--center {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tabs {
   width: 100%;
