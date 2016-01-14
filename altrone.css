@@ -4059,7 +4059,6 @@ input[type="reset"].button--fit,
 }
 .list-navigation .list-navigation__item:hover .list-navigation__right-icon {
   opacity: 1;
-  padding-left: 1em;
   color: #ffffff;
   transition: all 0.3s linear;
 }
