@@ -4199,6 +4199,48 @@ input[type="reset"].button--fit,
 .list-navigation.list-navigation--invert .list-navigation__right-icon {
   color: #f5f5f5;
 }
+.dropdown {
+  display: none;
+  position: absolute;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+}
+.dropdown .dropdown__item {
+  color: #333333;
+  background-color: #f5f5f5;
+  padding: 0.5em 3em;
+  cursor: pointer;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+  transition: all 0.3s linear;
+}
+.dropdown .dropdown__item:hover {
+  background-color: #dcdcdc;
+  transition: all 0.3s linear;
+}
+.dropdown .dropdown__item:active {
+  background-color: #cfcfcf;
+  transition: all 0.3s linear;
+}
+.dropdown .dropdown__item.dropdown__item--icon {
+  padding-left: 1em;
+}
+.dropdown .dropdown__item.dropdown__item--icon i,
+.dropdown .dropdown__item.dropdown__item--icon .icon {
+  padding-right: 1em;
+}
+.dropdown.dropdown--invert {
+  border: 1px solid #404040;
+}
+.dropdown.dropdown--invert .dropdown__item {
+  background-color: #333333;
+  color: #f5f5f5;
+}
+.dropdown.dropdown--invert .dropdown__item:hover {
+  background-color: #4d4d4d;
+}
+.dropdown.dropdown--invert .dropdown__item:active {
+  background-color: #595959;
+}
 .card {
   display: block;
   height: auto;

@@ -8,8 +8,8 @@
 		<title>Altrone CSS</title>
 		<link rel="stylesheet" type="text/css" href="altrone.css">
 		<link rel="stylesheet" type="text/css" href="font-awesome.css">
-		<script src="dist/js/jquery-2.1.4.min.js"></script>
-		<script src="dist/js/altrone.js"></script>
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="altrone.js"></script>
 		<style>
 			.col-color {
 				background-color: #999999;
@@ -513,7 +513,7 @@
 
 	<h2>Бары</h2>
 	<div class="taskbar">
-		<div class="taskbar__item taskbar__item--hover-color-purple"><i class="fa fa-bars"></i></div>
+		<div class="taskbar__item taskbar__item--hover-color-purple" data-dropdown-target="dropdownClassic"><i class="fa fa-bars"></i></div>
 		<div class="taskbar__item taskbar__item--logo taskbar__item--no-select">ЗАМЕТКИ</div>
 		<div class="taskbar__item">Справка + поддержка</div>
 		<div class="taskbar__item taskbar__item--hover-color-red"><i class="fa fa-windows"></i></div>
@@ -530,8 +530,32 @@
 		<div class="taskbar__item taskbar__item--hover-color-blue"><i class="fa fa-vk"></i></div>
 		<div class="taskbar__item taskbar__item--form"><div class="form form--invert"><input type="text"></div></div>
 		<div class="taskbar__item taskbar__item--pin-right taskbar__item--image"><img src="http://vsu-it.ru/media/img/2015/09/01/Team_Fortress_2__Sniper_by_jRace.jpg" class="img--circle"></div>
-		<div class="taskbar__item taskbar__item--pin-right"><i class="fa fa-paper-plane"></i></div>
+		<div class="taskbar__item taskbar__item--pin-right" data-dropdown-target="dropdownInvert"><i class="fa fa-paper-plane"></i></div>
 		<div class="taskbar__item taskbar__item--pin-right"><i class="fa fa-search"></i></div>
+	</div>
+
+	<div class="grid">
+		<div class="col-4">
+			<div class="dropdown" id="dropdownClassic">
+				<div class="dropdown__item">В профиль</div>
+				<div class="dropdown__item">Посещаемость</div>
+				<div class="dropdown__item">Долги</div>
+				<div class="dropdown__item dropdown__item--icon"><i class="fa fa-cogs"></i>Настройки</div>
+				<div class="dropdown__item">Выход</div>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="dropdown dropdown--invert" id="dropdownInvert">
+				<div class="dropdown__item">В профиль</div>
+				<div class="dropdown__item">Посещаемость</div>
+				<div class="dropdown__item">Долги</div>
+				<div class="dropdown__item dropdown__item--icon"><i class="fa fa-cogs"></i>Настройки</div>
+				<div class="dropdown__item">Выход</div>
+			</div>
+		</div>
+		<div class="col-4">
+
+		</div>
 	</div>
 
 	<div class="grid">
