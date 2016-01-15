@@ -1,0 +1,122 @@
+.taskbar {
+	display: block;
+	width: 100%;
+	height: auto;
+	background-color: darken(@u-gray, 5%);	
+	overflow: hidden;
+	.pt();
+
+	.taskbar__item {
+		width: auto;
+		display: inline-block;
+		color: @d-gray;
+		float: left;
+		cursor: pointer;
+		padding: 0.75em 1em;
+		overflow: hidden;
+		text-overflow: ellipsis; 
+		.anim(0.3s);
+
+		
+
+		&:hover {
+			background-color: darken(@u-gray, 10%);
+			.anim(0.3s);
+		}
+
+		&:active {
+			background-color: darken(@u-gray, 15%);
+		}
+
+		&.taskbar__item--logo {
+			font-weight: bold;
+		}
+
+		&.taskbar__item--no-select {
+			&:hover, &:active {
+				background-color: darken(@u-gray, 5%);
+			}
+		}
+
+		&.taskbar__item--pin-right {
+			float: right;
+		}
+
+		&.taskbar__item--form {
+			padding: 0.5em 1em;
+			&:hover, &:active {
+				background-color: darken(@u-gray, 5%);
+			}
+			.form {
+				input {
+					margin: -0.6em;
+				}
+			}
+		}
+
+		&.taskbar__item--button {
+			padding: 0em 1em;
+			&:hover, &:active {
+				background-color: darken(@u-gray, 5%);
+			}
+			button, input[type="submit"], input[type="reset"], input[type="button"], .button {
+				margin-top: 0.2em;
+				padding-top: 0.4em;
+			}
+		}
+
+		&.taskbar__item--image {
+			img {
+				width: 2em;
+				height: 2em;
+				margin: -0.4em -0.5em -0.7em -0.5em;
+			}
+		}
+
+		&.taskbar__item--hover-color-red{ .set-taskbar-item-hover-color(@red); }
+		&.taskbar__item--hover-color-orange { .set-taskbar-item-hover-color(@orange); }
+		&.taskbar__item--hover-color-yellow { .set-taskbar-item-hover-color(@yellow); }
+		&.taskbar__item--hover-color-olive { .set-taskbar-item-hover-color(@olive); }
+		&.taskbar__item--hover-color-green { .set-taskbar-item-hover-color(@green); }
+		&.taskbar__item--hover-color-teal { .set-taskbar-item-hover-color(@teal); }
+		&.taskbar__item--hover-color-blue { .set-taskbar-item-hover-color(@blue); }
+		&.taskbar__item--hover-color-violet { .set-taskbar-item-hover-color(@violet); }
+		&.taskbar__item--hover-color-purple { .set-taskbar-item-hover-color(@purple); }
+		&.taskbar__item--hover-color-pink { .set-taskbar-item-hover-color(@pink); }
+		&.taskbar__item--hover-color-brown { .set-taskbar-item-hover-color(@brown); }
+	}
+
+	&.taskbar--invert {
+		background-color: @d-gray;
+
+		.taskbar__item {
+			color: @u-gray;
+
+			&:hover {
+				background-color: lighten(@d-gray, 10%);
+			}
+			&:active {
+				background-color: lighten(@d-gray, 15%);
+			}
+
+			&.taskbar__item--no-select {
+				&:hover, &:active {
+					background-color: @d-gray;
+				}
+			}
+
+			&.taskbar__item--form {
+				&:hover, &:active {
+					background-color: @d-gray;
+				}
+			}
+		}
+	}
+}
+
+.set-taskbar-item-hover-color(@color) {
+	&:hover, &:active {
+		color: @color;
+	}
+
+}

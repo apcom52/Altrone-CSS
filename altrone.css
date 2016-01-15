@@ -9149,3 +9149,133 @@ img.img--circle {
 img.img--border {
   border: 0.25em solid #f5f5f5;
 }
+.taskbar {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #e8e8e8;
+  overflow: hidden;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+.taskbar .taskbar__item {
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  float: left;
+  cursor: pointer;
+  padding: 0.75em 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s linear;
+}
+.taskbar .taskbar__item:hover {
+  background-color: #dcdcdc;
+  transition: all 0.3s linear;
+}
+.taskbar .taskbar__item:active {
+  background-color: #cfcfcf;
+}
+.taskbar .taskbar__item.taskbar__item--logo {
+  font-weight: bold;
+}
+.taskbar .taskbar__item.taskbar__item--no-select:hover,
+.taskbar .taskbar__item.taskbar__item--no-select:active {
+  background-color: #e8e8e8;
+}
+.taskbar .taskbar__item.taskbar__item--pin-right {
+  float: right;
+}
+.taskbar .taskbar__item.taskbar__item--form {
+  padding: 0.5em 1em;
+}
+.taskbar .taskbar__item.taskbar__item--form:hover,
+.taskbar .taskbar__item.taskbar__item--form:active {
+  background-color: #e8e8e8;
+}
+.taskbar .taskbar__item.taskbar__item--form .form input {
+  margin: -0.6em;
+}
+.taskbar .taskbar__item.taskbar__item--button {
+  padding: 0em 1em;
+}
+.taskbar .taskbar__item.taskbar__item--button:hover,
+.taskbar .taskbar__item.taskbar__item--button:active {
+  background-color: #e8e8e8;
+}
+.taskbar .taskbar__item.taskbar__item--button button,
+.taskbar .taskbar__item.taskbar__item--button input[type="submit"],
+.taskbar .taskbar__item.taskbar__item--button input[type="reset"],
+.taskbar .taskbar__item.taskbar__item--button input[type="button"],
+.taskbar .taskbar__item.taskbar__item--button .button {
+  margin-top: 0.2em;
+  padding-top: 0.4em;
+}
+.taskbar .taskbar__item.taskbar__item--image img {
+  width: 2em;
+  height: 2em;
+  margin: -0.4em -0.5em -0.7em -0.5em;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-red:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-red:active {
+  color: #db2828;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-orange:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-orange:active {
+  color: #f2711c;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-yellow:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-yellow:active {
+  color: #fbbd08;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-olive:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-olive:active {
+  color: #b5cc18;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-green:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-green:active {
+  color: #21ba45;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-teal:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-teal:active {
+  color: #00b5ad;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-blue:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-blue:active {
+  color: #2185d0;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-violet:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-violet:active {
+  color: #6435c9;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-purple:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-purple:active {
+  color: #a333c8;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-pink:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-pink:active {
+  color: #e03997;
+}
+.taskbar .taskbar__item.taskbar__item--hover-color-brown:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-brown:active {
+  color: #a5673f;
+}
+.taskbar.taskbar--invert {
+  background-color: #333333;
+}
+.taskbar.taskbar--invert .taskbar__item {
+  color: #f5f5f5;
+}
+.taskbar.taskbar--invert .taskbar__item:hover {
+  background-color: #4d4d4d;
+}
+.taskbar.taskbar--invert .taskbar__item:active {
+  background-color: #595959;
+}
+.taskbar.taskbar--invert .taskbar__item.taskbar__item--no-select:hover,
+.taskbar.taskbar--invert .taskbar__item.taskbar__item--no-select:active {
+  background-color: #333333;
+}
+.taskbar.taskbar--invert .taskbar__item.taskbar__item--form:hover,
+.taskbar.taskbar--invert .taskbar__item.taskbar__item--form:active {
+  background-color: #333333;
+}
