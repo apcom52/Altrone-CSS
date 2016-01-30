@@ -13,8 +13,17 @@
 		background-color: lighten(@color, 20%);
 		border-style: dotted;
 
-		&:hover, &:active, &.active {
+		&:hover, &:active, &.active, &.button--transparent {
 			background-color: lighten(@color, 20%);
+		}
+
+		&.button--transparent-full {
+			color: lighten(@color, 30%);
+			background-color: transparent;
+
+			&:hover, &:active {
+				color: lighten(@color, 30%);
+			}
 		}
 	}
 

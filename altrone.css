@@ -1530,8 +1530,53 @@ button.button--disabled.active,
 input[type="button"].button--disabled.active,
 input[type="submit"].button--disabled.active,
 input[type="reset"].button--disabled.active,
-.button.button--disabled.active {
+.button.button--disabled.active,
+button:disabled.button--transparent,
+input[type="button"]:disabled.button--transparent,
+input[type="submit"]:disabled.button--transparent,
+input[type="reset"]:disabled.button--transparent,
+.button:disabled.button--transparent,
+button.button--disabled.button--transparent,
+input[type="button"].button--disabled.button--transparent,
+input[type="submit"].button--disabled.button--transparent,
+input[type="reset"].button--disabled.button--transparent,
+.button.button--disabled.button--transparent {
   background-color: #ffffff;
+}
+button:disabled.button--transparent-full,
+input[type="button"]:disabled.button--transparent-full,
+input[type="submit"]:disabled.button--transparent-full,
+input[type="reset"]:disabled.button--transparent-full,
+.button:disabled.button--transparent-full,
+button.button--disabled.button--transparent-full,
+input[type="button"].button--disabled.button--transparent-full,
+input[type="submit"].button--disabled.button--transparent-full,
+input[type="reset"].button--disabled.button--transparent-full,
+.button.button--disabled.button--transparent-full {
+  color: #ffffff;
+  background-color: transparent;
+}
+button:disabled.button--transparent-full:hover,
+input[type="button"]:disabled.button--transparent-full:hover,
+input[type="submit"]:disabled.button--transparent-full:hover,
+input[type="reset"]:disabled.button--transparent-full:hover,
+.button:disabled.button--transparent-full:hover,
+button.button--disabled.button--transparent-full:hover,
+input[type="button"].button--disabled.button--transparent-full:hover,
+input[type="submit"].button--disabled.button--transparent-full:hover,
+input[type="reset"].button--disabled.button--transparent-full:hover,
+.button.button--disabled.button--transparent-full:hover,
+button:disabled.button--transparent-full:active,
+input[type="button"]:disabled.button--transparent-full:active,
+input[type="submit"]:disabled.button--transparent-full:active,
+input[type="reset"]:disabled.button--transparent-full:active,
+.button:disabled.button--transparent-full:active,
+button.button--disabled.button--transparent-full:active,
+input[type="button"].button--disabled.button--transparent-full:active,
+input[type="submit"].button--disabled.button--transparent-full:active,
+input[type="reset"].button--disabled.button--transparent-full:active,
+.button.button--disabled.button--transparent-full:active {
+  color: #ffffff;
 }
 button:active,
 input[type="button"]:active,
@@ -1639,8 +1684,53 @@ button.button--color-red.button--disabled.active,
 input[type="button"].button--color-red.button--disabled.active,
 input[type="submit"].button--color-red.button--disabled.active,
 input[type="reset"].button--color-red.button--disabled.active,
-.button.button--color-red.button--disabled.active {
+.button.button--color-red.button--disabled.active,
+button.button--color-red:disabled.button--transparent,
+input[type="button"].button--color-red:disabled.button--transparent,
+input[type="submit"].button--color-red:disabled.button--transparent,
+input[type="reset"].button--color-red:disabled.button--transparent,
+.button.button--color-red:disabled.button--transparent,
+button.button--color-red.button--disabled.button--transparent,
+input[type="button"].button--color-red.button--disabled.button--transparent,
+input[type="submit"].button--color-red.button--disabled.button--transparent,
+input[type="reset"].button--color-red.button--disabled.button--transparent,
+.button.button--color-red.button--disabled.button--transparent {
   background-color: #ea7f7f;
+}
+button.button--color-red:disabled.button--transparent-full,
+input[type="button"].button--color-red:disabled.button--transparent-full,
+input[type="submit"].button--color-red:disabled.button--transparent-full,
+input[type="reset"].button--color-red:disabled.button--transparent-full,
+.button.button--color-red:disabled.button--transparent-full,
+button.button--color-red.button--disabled.button--transparent-full,
+input[type="button"].button--color-red.button--disabled.button--transparent-full,
+input[type="submit"].button--color-red.button--disabled.button--transparent-full,
+input[type="reset"].button--color-red.button--disabled.button--transparent-full,
+.button.button--color-red.button--disabled.button--transparent-full {
+  color: #f1abab;
+  background-color: transparent;
+}
+button.button--color-red:disabled.button--transparent-full:hover,
+input[type="button"].button--color-red:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-red:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-red:disabled.button--transparent-full:hover,
+.button.button--color-red:disabled.button--transparent-full:hover,
+button.button--color-red.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-red.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-red.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-red.button--disabled.button--transparent-full:hover,
+.button.button--color-red.button--disabled.button--transparent-full:hover,
+button.button--color-red:disabled.button--transparent-full:active,
+input[type="button"].button--color-red:disabled.button--transparent-full:active,
+input[type="submit"].button--color-red:disabled.button--transparent-full:active,
+input[type="reset"].button--color-red:disabled.button--transparent-full:active,
+.button.button--color-red:disabled.button--transparent-full:active,
+button.button--color-red.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-red.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-red.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-red.button--disabled.button--transparent-full:active,
+.button.button--color-red.button--disabled.button--transparent-full:active {
+  color: #f1abab;
 }
 button.button--color-red:active,
 input[type="button"].button--color-red:active,
@@ -1748,8 +1838,53 @@ button.button--color-orange.button--disabled.active,
 input[type="button"].button--color-orange.button--disabled.active,
 input[type="submit"].button--color-orange.button--disabled.active,
 input[type="reset"].button--color-orange.button--disabled.active,
-.button.button--color-orange.button--disabled.active {
+.button.button--color-orange.button--disabled.active,
+button.button--color-orange:disabled.button--transparent,
+input[type="button"].button--color-orange:disabled.button--transparent,
+input[type="submit"].button--color-orange:disabled.button--transparent,
+input[type="reset"].button--color-orange:disabled.button--transparent,
+.button.button--color-orange:disabled.button--transparent,
+button.button--color-orange.button--disabled.button--transparent,
+input[type="button"].button--color-orange.button--disabled.button--transparent,
+input[type="submit"].button--color-orange.button--disabled.button--transparent,
+input[type="reset"].button--color-orange.button--disabled.button--transparent,
+.button.button--color-orange.button--disabled.button--transparent {
   background-color: #f8ad7c;
+}
+button.button--color-orange:disabled.button--transparent-full,
+input[type="button"].button--color-orange:disabled.button--transparent-full,
+input[type="submit"].button--color-orange:disabled.button--transparent-full,
+input[type="reset"].button--color-orange:disabled.button--transparent-full,
+.button.button--color-orange:disabled.button--transparent-full,
+button.button--color-orange.button--disabled.button--transparent-full,
+input[type="button"].button--color-orange.button--disabled.button--transparent-full,
+input[type="submit"].button--color-orange.button--disabled.button--transparent-full,
+input[type="reset"].button--color-orange.button--disabled.button--transparent-full,
+.button.button--color-orange.button--disabled.button--transparent-full {
+  color: #faccad;
+  background-color: transparent;
+}
+button.button--color-orange:disabled.button--transparent-full:hover,
+input[type="button"].button--color-orange:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-orange:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-orange:disabled.button--transparent-full:hover,
+.button.button--color-orange:disabled.button--transparent-full:hover,
+button.button--color-orange.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-orange.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-orange.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-orange.button--disabled.button--transparent-full:hover,
+.button.button--color-orange.button--disabled.button--transparent-full:hover,
+button.button--color-orange:disabled.button--transparent-full:active,
+input[type="button"].button--color-orange:disabled.button--transparent-full:active,
+input[type="submit"].button--color-orange:disabled.button--transparent-full:active,
+input[type="reset"].button--color-orange:disabled.button--transparent-full:active,
+.button.button--color-orange:disabled.button--transparent-full:active,
+button.button--color-orange.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-orange.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-orange.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-orange.button--disabled.button--transparent-full:active,
+.button.button--color-orange.button--disabled.button--transparent-full:active {
+  color: #faccad;
 }
 button.button--color-orange:active,
 input[type="button"].button--color-orange:active,
@@ -1857,8 +1992,53 @@ button.button--color-yellow.button--disabled.active,
 input[type="button"].button--color-yellow.button--disabled.active,
 input[type="submit"].button--color-yellow.button--disabled.active,
 input[type="reset"].button--color-yellow.button--disabled.active,
-.button.button--color-yellow.button--disabled.active {
+.button.button--color-yellow.button--disabled.active,
+button.button--color-yellow:disabled.button--transparent,
+input[type="button"].button--color-yellow:disabled.button--transparent,
+input[type="submit"].button--color-yellow:disabled.button--transparent,
+input[type="reset"].button--color-yellow:disabled.button--transparent,
+.button.button--color-yellow:disabled.button--transparent,
+button.button--color-yellow.button--disabled.button--transparent,
+input[type="button"].button--color-yellow.button--disabled.button--transparent,
+input[type="submit"].button--color-yellow.button--disabled.button--transparent,
+input[type="reset"].button--color-yellow.button--disabled.button--transparent,
+.button.button--color-yellow.button--disabled.button--transparent {
   background-color: #fdd86c;
+}
+button.button--color-yellow:disabled.button--transparent-full,
+input[type="button"].button--color-yellow:disabled.button--transparent-full,
+input[type="submit"].button--color-yellow:disabled.button--transparent-full,
+input[type="reset"].button--color-yellow:disabled.button--transparent-full,
+.button.button--color-yellow:disabled.button--transparent-full,
+button.button--color-yellow.button--disabled.button--transparent-full,
+input[type="button"].button--color-yellow.button--disabled.button--transparent-full,
+input[type="submit"].button--color-yellow.button--disabled.button--transparent-full,
+input[type="reset"].button--color-yellow.button--disabled.button--transparent-full,
+.button.button--color-yellow.button--disabled.button--transparent-full {
+  color: #fde59f;
+  background-color: transparent;
+}
+button.button--color-yellow:disabled.button--transparent-full:hover,
+input[type="button"].button--color-yellow:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-yellow:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-yellow:disabled.button--transparent-full:hover,
+.button.button--color-yellow:disabled.button--transparent-full:hover,
+button.button--color-yellow.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-yellow.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-yellow.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-yellow.button--disabled.button--transparent-full:hover,
+.button.button--color-yellow.button--disabled.button--transparent-full:hover,
+button.button--color-yellow:disabled.button--transparent-full:active,
+input[type="button"].button--color-yellow:disabled.button--transparent-full:active,
+input[type="submit"].button--color-yellow:disabled.button--transparent-full:active,
+input[type="reset"].button--color-yellow:disabled.button--transparent-full:active,
+.button.button--color-yellow:disabled.button--transparent-full:active,
+button.button--color-yellow.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-yellow.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-yellow.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-yellow.button--disabled.button--transparent-full:active,
+.button.button--color-yellow.button--disabled.button--transparent-full:active {
+  color: #fde59f;
 }
 button.button--color-yellow:active,
 input[type="button"].button--color-yellow:active,
@@ -1966,8 +2146,53 @@ button.button--color-olive.button--disabled.active,
 input[type="button"].button--color-olive.button--disabled.active,
 input[type="submit"].button--color-olive.button--disabled.active,
 input[type="reset"].button--color-olive.button--disabled.active,
-.button.button--color-olive.button--disabled.active {
+.button.button--color-olive.button--disabled.active,
+button.button--color-olive:disabled.button--transparent,
+input[type="button"].button--color-olive:disabled.button--transparent,
+input[type="submit"].button--color-olive:disabled.button--transparent,
+input[type="reset"].button--color-olive:disabled.button--transparent,
+.button.button--color-olive:disabled.button--transparent,
+button.button--color-olive.button--disabled.button--transparent,
+input[type="button"].button--color-olive.button--disabled.button--transparent,
+input[type="submit"].button--color-olive.button--disabled.button--transparent,
+input[type="reset"].button--color-olive.button--disabled.button--transparent,
+.button.button--color-olive.button--disabled.button--transparent {
   background-color: #daec5e;
+}
+button.button--color-olive:disabled.button--transparent-full,
+input[type="button"].button--color-olive:disabled.button--transparent-full,
+input[type="submit"].button--color-olive:disabled.button--transparent-full,
+input[type="reset"].button--color-olive:disabled.button--transparent-full,
+.button.button--color-olive:disabled.button--transparent-full,
+button.button--color-olive.button--disabled.button--transparent-full,
+input[type="button"].button--color-olive.button--disabled.button--transparent-full,
+input[type="submit"].button--color-olive.button--disabled.button--transparent-full,
+input[type="reset"].button--color-olive.button--disabled.button--transparent-full,
+.button.button--color-olive.button--disabled.button--transparent-full {
+  color: #e4f18c;
+  background-color: transparent;
+}
+button.button--color-olive:disabled.button--transparent-full:hover,
+input[type="button"].button--color-olive:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-olive:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-olive:disabled.button--transparent-full:hover,
+.button.button--color-olive:disabled.button--transparent-full:hover,
+button.button--color-olive.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-olive.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-olive.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-olive.button--disabled.button--transparent-full:hover,
+.button.button--color-olive.button--disabled.button--transparent-full:hover,
+button.button--color-olive:disabled.button--transparent-full:active,
+input[type="button"].button--color-olive:disabled.button--transparent-full:active,
+input[type="submit"].button--color-olive:disabled.button--transparent-full:active,
+input[type="reset"].button--color-olive:disabled.button--transparent-full:active,
+.button.button--color-olive:disabled.button--transparent-full:active,
+button.button--color-olive.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-olive.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-olive.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-olive.button--disabled.button--transparent-full:active,
+.button.button--color-olive.button--disabled.button--transparent-full:active {
+  color: #e4f18c;
 }
 button.button--color-olive:active,
 input[type="button"].button--color-olive:active,
@@ -2075,8 +2300,53 @@ button.button--color-green.button--disabled.active,
 input[type="button"].button--color-green.button--disabled.active,
 input[type="submit"].button--color-green.button--disabled.active,
 input[type="reset"].button--color-green.button--disabled.active,
-.button.button--color-green.button--disabled.active {
+.button.button--color-green.button--disabled.active,
+button.button--color-green:disabled.button--transparent,
+input[type="button"].button--color-green:disabled.button--transparent,
+input[type="submit"].button--color-green:disabled.button--transparent,
+input[type="reset"].button--color-green:disabled.button--transparent,
+.button.button--color-green:disabled.button--transparent,
+button.button--color-green.button--disabled.button--transparent,
+input[type="button"].button--color-green.button--disabled.button--transparent,
+input[type="submit"].button--color-green.button--disabled.button--transparent,
+input[type="reset"].button--color-green.button--disabled.button--transparent,
+.button.button--color-green.button--disabled.button--transparent {
   background-color: #5ee37e;
+}
+button.button--color-green:disabled.button--transparent-full,
+input[type="button"].button--color-green:disabled.button--transparent-full,
+input[type="submit"].button--color-green:disabled.button--transparent-full,
+input[type="reset"].button--color-green:disabled.button--transparent-full,
+.button.button--color-green:disabled.button--transparent-full,
+button.button--color-green.button--disabled.button--transparent-full,
+input[type="button"].button--color-green.button--disabled.button--transparent-full,
+input[type="submit"].button--color-green.button--disabled.button--transparent-full,
+input[type="reset"].button--color-green.button--disabled.button--transparent-full,
+.button.button--color-green.button--disabled.button--transparent-full {
+  color: #8aeaa0;
+  background-color: transparent;
+}
+button.button--color-green:disabled.button--transparent-full:hover,
+input[type="button"].button--color-green:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-green:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-green:disabled.button--transparent-full:hover,
+.button.button--color-green:disabled.button--transparent-full:hover,
+button.button--color-green.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-green.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-green.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-green.button--disabled.button--transparent-full:hover,
+.button.button--color-green.button--disabled.button--transparent-full:hover,
+button.button--color-green:disabled.button--transparent-full:active,
+input[type="button"].button--color-green:disabled.button--transparent-full:active,
+input[type="submit"].button--color-green:disabled.button--transparent-full:active,
+input[type="reset"].button--color-green:disabled.button--transparent-full:active,
+.button.button--color-green:disabled.button--transparent-full:active,
+button.button--color-green.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-green.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-green.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-green.button--disabled.button--transparent-full:active,
+.button.button--color-green.button--disabled.button--transparent-full:active {
+  color: #8aeaa0;
 }
 button.button--color-green:active,
 input[type="button"].button--color-green:active,
@@ -2184,8 +2454,53 @@ button.button--color-teal.button--disabled.active,
 input[type="button"].button--color-teal.button--disabled.active,
 input[type="submit"].button--color-teal.button--disabled.active,
 input[type="reset"].button--color-teal.button--disabled.active,
-.button.button--color-teal.button--disabled.active {
+.button.button--color-teal.button--disabled.active,
+button.button--color-teal:disabled.button--transparent,
+input[type="button"].button--color-teal:disabled.button--transparent,
+input[type="submit"].button--color-teal:disabled.button--transparent,
+input[type="reset"].button--color-teal:disabled.button--transparent,
+.button.button--color-teal:disabled.button--transparent,
+button.button--color-teal.button--disabled.button--transparent,
+input[type="button"].button--color-teal.button--disabled.button--transparent,
+input[type="submit"].button--color-teal.button--disabled.button--transparent,
+input[type="reset"].button--color-teal.button--disabled.button--transparent,
+.button.button--color-teal.button--disabled.button--transparent {
   background-color: #1cfff5;
+}
+button.button--color-teal:disabled.button--transparent-full,
+input[type="button"].button--color-teal:disabled.button--transparent-full,
+input[type="submit"].button--color-teal:disabled.button--transparent-full,
+input[type="reset"].button--color-teal:disabled.button--transparent-full,
+.button.button--color-teal:disabled.button--transparent-full,
+button.button--color-teal.button--disabled.button--transparent-full,
+input[type="button"].button--color-teal.button--disabled.button--transparent-full,
+input[type="submit"].button--color-teal.button--disabled.button--transparent-full,
+input[type="reset"].button--color-teal.button--disabled.button--transparent-full,
+.button.button--color-teal.button--disabled.button--transparent-full {
+  color: #4ffff7;
+  background-color: transparent;
+}
+button.button--color-teal:disabled.button--transparent-full:hover,
+input[type="button"].button--color-teal:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-teal:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-teal:disabled.button--transparent-full:hover,
+.button.button--color-teal:disabled.button--transparent-full:hover,
+button.button--color-teal.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-teal.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-teal.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-teal.button--disabled.button--transparent-full:hover,
+.button.button--color-teal.button--disabled.button--transparent-full:hover,
+button.button--color-teal:disabled.button--transparent-full:active,
+input[type="button"].button--color-teal:disabled.button--transparent-full:active,
+input[type="submit"].button--color-teal:disabled.button--transparent-full:active,
+input[type="reset"].button--color-teal:disabled.button--transparent-full:active,
+.button.button--color-teal:disabled.button--transparent-full:active,
+button.button--color-teal.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-teal.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-teal.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-teal.button--disabled.button--transparent-full:active,
+.button.button--color-teal.button--disabled.button--transparent-full:active {
+  color: #4ffff7;
 }
 button.button--color-teal:active,
 input[type="button"].button--color-teal:active,
@@ -2293,8 +2608,53 @@ button.button--color-blue.button--disabled.active,
 input[type="button"].button--color-blue.button--disabled.active,
 input[type="submit"].button--color-blue.button--disabled.active,
 input[type="reset"].button--color-blue.button--disabled.active,
-.button.button--color-blue.button--disabled.active {
+.button.button--color-blue.button--disabled.active,
+button.button--color-blue:disabled.button--transparent,
+input[type="button"].button--color-blue:disabled.button--transparent,
+input[type="submit"].button--color-blue:disabled.button--transparent,
+input[type="reset"].button--color-blue:disabled.button--transparent,
+.button.button--color-blue:disabled.button--transparent,
+button.button--color-blue.button--disabled.button--transparent,
+input[type="button"].button--color-blue.button--disabled.button--transparent,
+input[type="submit"].button--color-blue.button--disabled.button--transparent,
+input[type="reset"].button--color-blue.button--disabled.button--transparent,
+.button.button--color-blue.button--disabled.button--transparent {
   background-color: #6fb4e8;
+}
+button.button--color-blue:disabled.button--transparent-full,
+input[type="button"].button--color-blue:disabled.button--transparent-full,
+input[type="submit"].button--color-blue:disabled.button--transparent-full,
+input[type="reset"].button--color-blue:disabled.button--transparent-full,
+.button.button--color-blue:disabled.button--transparent-full,
+button.button--color-blue.button--disabled.button--transparent-full,
+input[type="button"].button--color-blue.button--disabled.button--transparent-full,
+input[type="submit"].button--color-blue.button--disabled.button--transparent-full,
+input[type="reset"].button--color-blue.button--disabled.button--transparent-full,
+.button.button--color-blue.button--disabled.button--transparent-full {
+  color: #9bcbef;
+  background-color: transparent;
+}
+button.button--color-blue:disabled.button--transparent-full:hover,
+input[type="button"].button--color-blue:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-blue:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-blue:disabled.button--transparent-full:hover,
+.button.button--color-blue:disabled.button--transparent-full:hover,
+button.button--color-blue.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-blue.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-blue.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-blue.button--disabled.button--transparent-full:hover,
+.button.button--color-blue.button--disabled.button--transparent-full:hover,
+button.button--color-blue:disabled.button--transparent-full:active,
+input[type="button"].button--color-blue:disabled.button--transparent-full:active,
+input[type="submit"].button--color-blue:disabled.button--transparent-full:active,
+input[type="reset"].button--color-blue:disabled.button--transparent-full:active,
+.button.button--color-blue:disabled.button--transparent-full:active,
+button.button--color-blue.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-blue.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-blue.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-blue.button--disabled.button--transparent-full:active,
+.button.button--color-blue.button--disabled.button--transparent-full:active {
+  color: #9bcbef;
 }
 button.button--color-blue:active,
 input[type="button"].button--color-blue:active,
@@ -2402,8 +2762,53 @@ button.button--color-violet.button--disabled.active,
 input[type="button"].button--color-violet.button--disabled.active,
 input[type="submit"].button--color-violet.button--disabled.active,
 input[type="reset"].button--color-violet.button--disabled.active,
-.button.button--color-violet.button--disabled.active {
+.button.button--color-violet.button--disabled.active,
+button.button--color-violet:disabled.button--transparent,
+input[type="button"].button--color-violet:disabled.button--transparent,
+input[type="submit"].button--color-violet:disabled.button--transparent,
+input[type="reset"].button--color-violet:disabled.button--transparent,
+.button.button--color-violet:disabled.button--transparent,
+button.button--color-violet.button--disabled.button--transparent,
+input[type="button"].button--color-violet.button--disabled.button--transparent,
+input[type="submit"].button--color-violet.button--disabled.button--transparent,
+input[type="reset"].button--color-violet.button--disabled.button--transparent,
+.button.button--color-violet.button--disabled.button--transparent {
   background-color: #a285df;
+}
+button.button--color-violet:disabled.button--transparent-full,
+input[type="button"].button--color-violet:disabled.button--transparent-full,
+input[type="submit"].button--color-violet:disabled.button--transparent-full,
+input[type="reset"].button--color-violet:disabled.button--transparent-full,
+.button.button--color-violet:disabled.button--transparent-full,
+button.button--color-violet.button--disabled.button--transparent-full,
+input[type="button"].button--color-violet.button--disabled.button--transparent-full,
+input[type="submit"].button--color-violet.button--disabled.button--transparent-full,
+input[type="reset"].button--color-violet.button--disabled.button--transparent-full,
+.button.button--color-violet.button--disabled.button--transparent-full {
+  color: #c1adea;
+  background-color: transparent;
+}
+button.button--color-violet:disabled.button--transparent-full:hover,
+input[type="button"].button--color-violet:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-violet:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-violet:disabled.button--transparent-full:hover,
+.button.button--color-violet:disabled.button--transparent-full:hover,
+button.button--color-violet.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-violet.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-violet.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-violet.button--disabled.button--transparent-full:hover,
+.button.button--color-violet.button--disabled.button--transparent-full:hover,
+button.button--color-violet:disabled.button--transparent-full:active,
+input[type="button"].button--color-violet:disabled.button--transparent-full:active,
+input[type="submit"].button--color-violet:disabled.button--transparent-full:active,
+input[type="reset"].button--color-violet:disabled.button--transparent-full:active,
+.button.button--color-violet:disabled.button--transparent-full:active,
+button.button--color-violet.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-violet.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-violet.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-violet.button--disabled.button--transparent-full:active,
+.button.button--color-violet.button--disabled.button--transparent-full:active {
+  color: #c1adea;
 }
 button.button--color-violet:active,
 input[type="button"].button--color-violet:active,
@@ -2511,8 +2916,53 @@ button.button--color-purple.button--disabled.active,
 input[type="button"].button--color-purple.button--disabled.active,
 input[type="submit"].button--color-purple.button--disabled.active,
 input[type="reset"].button--color-purple.button--disabled.active,
-.button.button--color-purple.button--disabled.active {
+.button.button--color-purple.button--disabled.active,
+button.button--color-purple:disabled.button--transparent,
+input[type="button"].button--color-purple:disabled.button--transparent,
+input[type="submit"].button--color-purple:disabled.button--transparent,
+input[type="reset"].button--color-purple:disabled.button--transparent,
+.button.button--color-purple:disabled.button--transparent,
+button.button--color-purple.button--disabled.button--transparent,
+input[type="button"].button--color-purple.button--disabled.button--transparent,
+input[type="submit"].button--color-purple.button--disabled.button--transparent,
+input[type="reset"].button--color-purple.button--disabled.button--transparent,
+.button.button--color-purple.button--disabled.button--transparent {
   background-color: #c882df;
+}
+button.button--color-purple:disabled.button--transparent-full,
+input[type="button"].button--color-purple:disabled.button--transparent-full,
+input[type="submit"].button--color-purple:disabled.button--transparent-full,
+input[type="reset"].button--color-purple:disabled.button--transparent-full,
+.button.button--color-purple:disabled.button--transparent-full,
+button.button--color-purple.button--disabled.button--transparent-full,
+input[type="button"].button--color-purple.button--disabled.button--transparent-full,
+input[type="submit"].button--color-purple.button--disabled.button--transparent-full,
+input[type="reset"].button--color-purple.button--disabled.button--transparent-full,
+.button.button--color-purple.button--disabled.button--transparent-full {
+  color: #daabe9;
+  background-color: transparent;
+}
+button.button--color-purple:disabled.button--transparent-full:hover,
+input[type="button"].button--color-purple:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-purple:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-purple:disabled.button--transparent-full:hover,
+.button.button--color-purple:disabled.button--transparent-full:hover,
+button.button--color-purple.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-purple.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-purple.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-purple.button--disabled.button--transparent-full:hover,
+.button.button--color-purple.button--disabled.button--transparent-full:hover,
+button.button--color-purple:disabled.button--transparent-full:active,
+input[type="button"].button--color-purple:disabled.button--transparent-full:active,
+input[type="submit"].button--color-purple:disabled.button--transparent-full:active,
+input[type="reset"].button--color-purple:disabled.button--transparent-full:active,
+.button.button--color-purple:disabled.button--transparent-full:active,
+button.button--color-purple.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-purple.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-purple.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-purple.button--disabled.button--transparent-full:active,
+.button.button--color-purple.button--disabled.button--transparent-full:active {
+  color: #daabe9;
 }
 button.button--color-purple:active,
 input[type="button"].button--color-purple:active,
@@ -2620,8 +3070,53 @@ button.button--color-pink.button--disabled.active,
 input[type="button"].button--color-pink.button--disabled.active,
 input[type="submit"].button--color-pink.button--disabled.active,
 input[type="reset"].button--color-pink.button--disabled.active,
-.button.button--color-pink.button--disabled.active {
+.button.button--color-pink.button--disabled.active,
+button.button--color-pink:disabled.button--transparent,
+input[type="button"].button--color-pink:disabled.button--transparent,
+input[type="submit"].button--color-pink:disabled.button--transparent,
+input[type="reset"].button--color-pink:disabled.button--transparent,
+.button.button--color-pink:disabled.button--transparent,
+button.button--color-pink.button--disabled.button--transparent,
+input[type="button"].button--color-pink.button--disabled.button--transparent,
+input[type="submit"].button--color-pink.button--disabled.button--transparent,
+input[type="reset"].button--color-pink.button--disabled.button--transparent,
+.button.button--color-pink.button--disabled.button--transparent {
   background-color: #ee91c5;
+}
+button.button--color-pink:disabled.button--transparent-full,
+input[type="button"].button--color-pink:disabled.button--transparent-full,
+input[type="submit"].button--color-pink:disabled.button--transparent-full,
+input[type="reset"].button--color-pink:disabled.button--transparent-full,
+.button.button--color-pink:disabled.button--transparent-full,
+button.button--color-pink.button--disabled.button--transparent-full,
+input[type="button"].button--color-pink.button--disabled.button--transparent-full,
+input[type="submit"].button--color-pink.button--disabled.button--transparent-full,
+input[type="reset"].button--color-pink.button--disabled.button--transparent-full,
+.button.button--color-pink.button--disabled.button--transparent-full {
+  color: #f5bddc;
+  background-color: transparent;
+}
+button.button--color-pink:disabled.button--transparent-full:hover,
+input[type="button"].button--color-pink:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-pink:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-pink:disabled.button--transparent-full:hover,
+.button.button--color-pink:disabled.button--transparent-full:hover,
+button.button--color-pink.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-pink.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-pink.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-pink.button--disabled.button--transparent-full:hover,
+.button.button--color-pink.button--disabled.button--transparent-full:hover,
+button.button--color-pink:disabled.button--transparent-full:active,
+input[type="button"].button--color-pink:disabled.button--transparent-full:active,
+input[type="submit"].button--color-pink:disabled.button--transparent-full:active,
+input[type="reset"].button--color-pink:disabled.button--transparent-full:active,
+.button.button--color-pink:disabled.button--transparent-full:active,
+button.button--color-pink.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-pink.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-pink.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-pink.button--disabled.button--transparent-full:active,
+.button.button--color-pink.button--disabled.button--transparent-full:active {
+  color: #f5bddc;
 }
 button.button--color-pink:active,
 input[type="button"].button--color-pink:active,
@@ -2729,8 +3224,53 @@ button.button--color-brown.button--disabled.active,
 input[type="button"].button--color-brown.button--disabled.active,
 input[type="submit"].button--color-brown.button--disabled.active,
 input[type="reset"].button--color-brown.button--disabled.active,
-.button.button--color-brown.button--disabled.active {
+.button.button--color-brown.button--disabled.active,
+button.button--color-brown:disabled.button--transparent,
+input[type="button"].button--color-brown:disabled.button--transparent,
+input[type="submit"].button--color-brown:disabled.button--transparent,
+input[type="reset"].button--color-brown:disabled.button--transparent,
+.button.button--color-brown:disabled.button--transparent,
+button.button--color-brown.button--disabled.button--transparent,
+input[type="button"].button--color-brown.button--disabled.button--transparent,
+input[type="submit"].button--color-brown.button--disabled.button--transparent,
+input[type="reset"].button--color-brown.button--disabled.button--transparent,
+.button.button--color-brown.button--disabled.button--transparent {
   background-color: #cd9c7d;
+}
+button.button--color-brown:disabled.button--transparent-full,
+input[type="button"].button--color-brown:disabled.button--transparent-full,
+input[type="submit"].button--color-brown:disabled.button--transparent-full,
+input[type="reset"].button--color-brown:disabled.button--transparent-full,
+.button.button--color-brown:disabled.button--transparent-full,
+button.button--color-brown.button--disabled.button--transparent-full,
+input[type="button"].button--color-brown.button--disabled.button--transparent-full,
+input[type="submit"].button--color-brown.button--disabled.button--transparent-full,
+input[type="reset"].button--color-brown.button--disabled.button--transparent-full,
+.button.button--color-brown.button--disabled.button--transparent-full {
+  color: #dbb8a2;
+  background-color: transparent;
+}
+button.button--color-brown:disabled.button--transparent-full:hover,
+input[type="button"].button--color-brown:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-brown:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-brown:disabled.button--transparent-full:hover,
+.button.button--color-brown:disabled.button--transparent-full:hover,
+button.button--color-brown.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-brown.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-brown.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-brown.button--disabled.button--transparent-full:hover,
+.button.button--color-brown.button--disabled.button--transparent-full:hover,
+button.button--color-brown:disabled.button--transparent-full:active,
+input[type="button"].button--color-brown:disabled.button--transparent-full:active,
+input[type="submit"].button--color-brown:disabled.button--transparent-full:active,
+input[type="reset"].button--color-brown:disabled.button--transparent-full:active,
+.button.button--color-brown:disabled.button--transparent-full:active,
+button.button--color-brown.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-brown.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-brown.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-brown.button--disabled.button--transparent-full:active,
+.button.button--color-brown.button--disabled.button--transparent-full:active {
+  color: #dbb8a2;
 }
 button.button--color-brown:active,
 input[type="button"].button--color-brown:active,
@@ -2838,8 +3378,53 @@ button.button--color-black.button--disabled.active,
 input[type="button"].button--color-black.button--disabled.active,
 input[type="submit"].button--color-black.button--disabled.active,
 input[type="reset"].button--color-black.button--disabled.active,
-.button.button--color-black.button--disabled.active {
+.button.button--color-black.button--disabled.active,
+button.button--color-black:disabled.button--transparent,
+input[type="button"].button--color-black:disabled.button--transparent,
+input[type="submit"].button--color-black:disabled.button--transparent,
+input[type="reset"].button--color-black:disabled.button--transparent,
+.button.button--color-black:disabled.button--transparent,
+button.button--color-black.button--disabled.button--transparent,
+input[type="button"].button--color-black.button--disabled.button--transparent,
+input[type="submit"].button--color-black.button--disabled.button--transparent,
+input[type="reset"].button--color-black.button--disabled.button--transparent,
+.button.button--color-black.button--disabled.button--transparent {
   background-color: #666666;
+}
+button.button--color-black:disabled.button--transparent-full,
+input[type="button"].button--color-black:disabled.button--transparent-full,
+input[type="submit"].button--color-black:disabled.button--transparent-full,
+input[type="reset"].button--color-black:disabled.button--transparent-full,
+.button.button--color-black:disabled.button--transparent-full,
+button.button--color-black.button--disabled.button--transparent-full,
+input[type="button"].button--color-black.button--disabled.button--transparent-full,
+input[type="submit"].button--color-black.button--disabled.button--transparent-full,
+input[type="reset"].button--color-black.button--disabled.button--transparent-full,
+.button.button--color-black.button--disabled.button--transparent-full {
+  color: #808080;
+  background-color: transparent;
+}
+button.button--color-black:disabled.button--transparent-full:hover,
+input[type="button"].button--color-black:disabled.button--transparent-full:hover,
+input[type="submit"].button--color-black:disabled.button--transparent-full:hover,
+input[type="reset"].button--color-black:disabled.button--transparent-full:hover,
+.button.button--color-black:disabled.button--transparent-full:hover,
+button.button--color-black.button--disabled.button--transparent-full:hover,
+input[type="button"].button--color-black.button--disabled.button--transparent-full:hover,
+input[type="submit"].button--color-black.button--disabled.button--transparent-full:hover,
+input[type="reset"].button--color-black.button--disabled.button--transparent-full:hover,
+.button.button--color-black.button--disabled.button--transparent-full:hover,
+button.button--color-black:disabled.button--transparent-full:active,
+input[type="button"].button--color-black:disabled.button--transparent-full:active,
+input[type="submit"].button--color-black:disabled.button--transparent-full:active,
+input[type="reset"].button--color-black:disabled.button--transparent-full:active,
+.button.button--color-black:disabled.button--transparent-full:active,
+button.button--color-black.button--disabled.button--transparent-full:active,
+input[type="button"].button--color-black.button--disabled.button--transparent-full:active,
+input[type="submit"].button--color-black.button--disabled.button--transparent-full:active,
+input[type="reset"].button--color-black.button--disabled.button--transparent-full:active,
+.button.button--color-black.button--disabled.button--transparent-full:active {
+  color: #808080;
 }
 button.button--color-black:active,
 input[type="button"].button--color-black:active,
@@ -4065,6 +4650,11 @@ input[type="reset"].button--fit,
 .list-navigation .list-navigation__item:active,
 .list-navigation .list-navigation__item.active {
   background-color: #2185d0;
+}
+.list-navigation .list-navigation__item:active .list-navigation__right-icon,
+.list-navigation .list-navigation__item.active .list-navigation__right-icon {
+  opacity: 1;
+  color: #ffffff;
 }
 .list-navigation .list-navigation__item .list-navigation__icon {
   vertical-align: middle;
