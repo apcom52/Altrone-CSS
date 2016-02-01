@@ -1,0 +1,214 @@
+.dropdown {
+	display: none;
+	position: absolute;
+	border: 1px solid darken(@u-gray, 5%);
+	box-sizing: border-box;
+
+	.dropdown__item {
+		color: @d-gray;
+		background-color: @u-gray;
+		padding: 0.5em 3em;
+		cursor: pointer;
+		.pt();
+		.anim(0.3s);
+
+		&:hover {
+			background-color: darken(@u-gray, 10%);
+			.anim(0.3s);
+		}
+
+		&:active {
+			background-color: darken(@u-gray, 15%);
+			.anim(0.3s);
+		}
+
+		&.dropdown__item--icon {
+			padding-left: 1em;
+			i, .icon {
+				padding-right: 1em;
+			}
+		}
+	}
+
+	&.dropdown--invert {
+		border: 1px solid lighten(@d-gray, 5%);
+		.dropdown__item {
+			background-color: @d-gray;
+			color: @u-gray;
+
+			&:hover {
+				background-color: lighten(@d-gray, 10%);
+			}
+
+			&:active {
+				background-color: lighten(@d-gray, 15%);
+			}
+		}
+	}
+}
+
+.set-select-color(@color) {
+	.select__menu {
+		border-color: @color;
+	}
+
+	.select__options {
+		.select__options__item {
+			&:hover {
+				background-color: lighten(@color, 15%);
+				color: @white;
+			}
+
+			&:active {
+				background-color: lighten(@color, 5%);
+				color: @white;
+			}
+
+			&.select__options__item--active {
+				background-color: @color;
+				color: @white;
+			}
+		}
+	}
+
+	&.select--invert {
+		.select__options {
+			.select__options__item {
+				&:hover {
+					background-color: darken(@color, 15%);
+					color: @white;
+				}
+
+				&:active {
+					background-color: darken(@color, 5%);
+					color: @white;
+				}
+
+				&.select__options__item--active {
+					background-color: @color;
+					color: @white;
+				}
+			}
+		}
+	}
+}
+
+.select {
+	.select__menu {
+		display: inline-block;
+		margin: 0em 1em;
+		background-color: @white;
+		color: @d-gray;
+		.pt();
+		padding: 0.5em 2.5em 0.5em 1em;
+		box-sizing: border-box;
+		cursor: pointer;
+		border: 2px solid darken(@u-gray, 10%);
+		background-image: url(@d-arrow-down);
+		background-position: right 0.5em center;
+		background-repeat: no-repeat;
+		background-size: auto 25%;
+
+		&:hover {
+			background-color: darken(@u-gray, 5%);
+		}
+
+		&:focus {
+			border-color:  darken(@u-gray, 15%);
+			background-color: darken(@u-gray, 5%);
+		}
+
+		&.select__menu--open {
+			background-image: url(@d-arrow-up);
+		}
+	}
+
+	.select__options {
+		display: none;
+		position: absolute;
+		z-index: 5;
+		background-color: @u-gray;
+		border: 2px solid darken(@u-gray, 10%);
+		padding: 0.25em 0em;
+		box-sizing: border-box;
+
+		.select__options__item {
+			padding: 0.5em 1em;
+			cursor: pointer;
+			background-color: @u-gray;
+			color: @d-gray;
+			.anim(0.3s);
+			box-sizing: border-box;
+
+			&:hover {
+				background-color: darken(@u-gray, 10%);
+				.anim(0.3s);
+			}
+
+			&:active {
+				background-color: darken(@u-gray, 15%);
+			}
+
+			&.select__options__item--active {
+				background-color: darken(@u-gray, 20%);
+			}
+		}
+	}
+
+	&.select--invert {
+		.select__menu {
+			background-color: @d-gray;
+			color: @u-gray;
+			border-color:lighten(@d-gray, 10%);
+			background-image: url(@l-arrow-down);
+
+			&:hover {
+				background-color: lighten(@d-gray, 5%);
+			}
+
+			&:focus {
+				border-color:  lighten(@d-gray, 15%);
+				background-color: lighten(@d-gray, 5%);
+			}
+
+			&.select__menu--open {
+				background-image: url(@l-arrow-up);
+			}
+		}
+		.select__options {
+			background-color: @d-gray;
+			border: 2px solid lighten(@d-gray, 5%);
+			padding: 0.25em 0em;
+
+			.select__options__item {
+				background-color: @d-gray;
+				color: @u-gray;
+
+				&:hover {
+					background-color: lighten(@d-gray, 10%);
+				}
+
+				&:active {
+					background-color: lighten(@d-gray, 15%);
+				}
+
+				&.select__options__item--active {
+					background-color: lighten(@d-gray, 20%);
+				}
+			}
+		}
+	}
+
+	&.select--color-red { .set-select-color(@red); }
+	&.select--color-orange { .set-select-color(@orange); }
+	&.select--color-yellow { .set-select-color(@yellow); }
+	&.select--color-olive { .set-select-color(@olive); }
+	&.select--color-green { .set-select-color(@green); }
+	&.select--color-teal { .set-select-color(@teal); }
+	&.select--color-blue { .set-select-color(@blue); }
+	&.select--color-violet { .set-select-color(@violet); }
+	&.select--color-purple { .set-select-color(@purple); }
+	&.select--color-pink { .set-select-color(@pink); }
+	&.select--color-brown { .set-select-color(@brown); }
+	&.select--color-black { .set-select-color(@d-gray); }
+}

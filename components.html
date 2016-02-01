@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="HandheldFriendly" content="true">
 		<title>Altrone CSS</title>
-		<link rel="stylesheet" type="text/css" href="altrone.css">
+		<link rel="stylesheet" type="text/css" href="altrone.css?rnd=4">
+		<link rel="stylesheet" type="text/css" href="altrone_extra.css?rnd=4">
 		<link rel="stylesheet" type="text/css" href="font-awesome.css">
 		<script src="jquery-2.1.4.min.js"></script>
 		<script src="altrone.js"></script>
@@ -16,7 +15,7 @@
 				color: #333333;
 				border: 1px solid #666666;
 				box-sizing: border-box;
-			}
+			}			
 		</style>
 	</head>
 	<body> 
@@ -559,10 +558,46 @@
 	</div>
 
 	<div class="grid">
+		<h2>Select-меню</h2>
+		<div class="select">
+			<div class="select__menu" data-select-value="dark">Выберите тему оформления</div>
+			<div class="select__options">
+				<div class="select__options__item" data-option-id="light">Светлая</div>
+				<div class="select__options__item" data-option-id="blue">Синяя</div>
+				<div class="select__options__item" data-option-id="dark">Темная</div>
+			</div>
+		</div>
+		<div class="select select--color-blue">
+			<div class="select__menu" data-select-value="yellow">Модификатор с цветом</div>
+			<div class="select__options">
+				<div class="select__options__item" data-option-id="red">Красный</div>
+				<div class="select__options__item" data-option-id="yellow">Желтый</div>
+				<div class="select__options__item" data-option-id="green">Зеленый</div>
+			</div>
+		</div>
+		<div class="select select--invert">
+			<div class="select__menu" data-select-value="light">Инвертный select</div>
+			<div class="select__options">
+				<div class="select__options__item" data-option-id="light">Светлая</div>
+				<div class="select__options__item" data-option-id="blue">Синяя</div>
+				<div class="select__options__item" data-option-id="dark">Темная</div>
+			</div>
+		</div>
+		<div class="select select--color-red select--invert">
+			<div class="select__menu" data-select-value="light">Инвертный красный select</div>
+			<div class="select__options">
+				<div class="select__options__item" data-option-id="light">Светлая</div>
+				<div class="select__options__item" data-option-id="blue">Синяя</div>
+				<div class="select__options__item" data-option-id="dark">Темная</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid">
 		<div class="col-4">
 			<h2>Вкладки</h2>
-			<div class="tabs">
-				<div class="tabs__item">Home</div>
+			<div class="lora">
+				<div class="tabs__item">Hohme</div>
 				<div class="tabs__item tabs__item--active">Friends &nbsp <i class="fa fa-bell"></i></div>
 				<div class="tabs__item">Stats</div>
 				<div class="tabs__item tabs__item--disabled">Settings</div>
