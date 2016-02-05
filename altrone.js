@@ -55,6 +55,8 @@ $(function() {
 		options.css('left', $(this).offset().left);
 		options.slideToggle(300);
 
+		/* !!! ToDo: сделать позиционирование по вертикали и горизонтали */
+
 		$('body').on('click', '.select__options__item', function(e) {
 			var current = $(this);
 			var parentSelect = $(this).parent().parent().find('.select__menu');
@@ -66,5 +68,49 @@ $(function() {
 			parentSelect.removeClass('select__menu--open');
 			options.slideUp(300);
 		});
+	});
+
+	/* Всплывающие подсказки */
+	var lastTooltipPosition = {x: null, y: null};
+	var tooltipDiv = $('body').append('<div class="tooltip"></div>');
+	$('[data-tooltip]').on({
+		mouseenter: function(event) {
+			if (lastTooltipPosition.x == null && lastTooltipPosition.y == null) {
+				$('.tooltip').html($(this).data('tooltip'));
+				var window_width = $(window).width();
+				var window_height = $(window).height();
+				var tooltip_width = $('.tooltip').outerWidth();
+				var tooltip_height = $('.tooltip').outerHeight();
+				var parent_width = $(this).outerWidth();
+				var parent_left = $(this).position().left;
+				lastTooltipPosition.x = parent_left + parent_width / 2 - tooltip_width / 2;
+
+				/* Позиционирование по ширине относительно окна */
+				if (lastTooltipPosition.x + tooltip_width > window_width) {
+					lastTooltipPosition.x = lastTooltipPosition.x - Math.abs(window_width - lastTooltipPosition.x - tooltip_width);
+				}
+				if (lastTooltipPosition.x < 0) {
+					lastTooltipPosition.x = 0;
+				}
+
+				/* Позиционирование по высоте относительно окна */
+				lastTooltipPosition.y = $(this).position().top - tooltip_height;
+				/* !!! ToDo: сделать позиционирование по вертикали */
+
+				if ($(this).data('tooltipInvert') == true) {
+					$('.tooltip').addClass('tooltip--invert');
+				} else {
+					$('.tooltip').removeClass('tooltip--invert');
+				}
+				$('.tooltip').css('left', lastTooltipPosition.x);
+				$('.tooltip').css('top', lastTooltipPosition.y);				
+				$('.tooltip').show();
+			}
+		}, 
+		mouseleave: function(event) {
+			lastTooltipPosition = {x: null, y: null};
+			$('.tooltip').html('');
+			$('.tooltip').hide();
+		}
 	});
 });
