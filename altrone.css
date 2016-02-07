@@ -3760,13 +3760,18 @@ form select:invalid,
   background-color: #ed9595;
 }
 /* line 636, forms.less */
+form textarea,
+.form textarea {
+  transition: resize 0s linear;
+}
+/* line 640, forms.less */
 form .form-attached,
 .form .form-attached {
   overflow: hidden;
   clear: both;
   display: block;
 }
-/* line 640, forms.less */
+/* line 644, forms.less */
 form .form-attached .input,
 .form .form-attached .input,
 form .form-attached input[type="text"],
@@ -3788,7 +3793,7 @@ form .form-attached .form__attach,
   border-radius: 0em;
   float: left;
 }
-/* line 644, forms.less */
+/* line 648, forms.less */
 form .form-attached .input:first-child,
 .form .form-attached .input:first-child,
 form .form-attached input[type="text"]:first-child,
@@ -3809,7 +3814,7 @@ form .form-attached .form__attach:first-child,
 .form .form-attached .form__attach:first-child {
   border-radius: 0.25em 0em 0em 0.25em !important;
 }
-/* line 647, forms.less */
+/* line 651, forms.less */
 form .form-attached .input:last-child,
 .form .form-attached .input:last-child,
 form .form-attached input[type="text"]:last-child,
@@ -3830,7 +3835,7 @@ form .form-attached .form__attach:last-child,
 .form .form-attached .form__attach:last-child {
   border-radius: 0em 0.25em 0.25em 0em !important;
 }
-/* line 653, forms.less */
+/* line 657, forms.less */
 form .form__attach,
 .form .form__attach {
   margin: 0.25em 0em;
@@ -3841,7 +3846,7 @@ form .form__attach,
   color: #333333;
   box-sizing: border-box;
 }
-/* line 663, forms.less */
+/* line 667, forms.less */
 form label,
 .form label {
   display: block;
@@ -3850,14 +3855,14 @@ form label,
   cursor: pointer;
   transition: all 0.3s linear;
 }
-/* line 671, forms.less */
+/* line 675, forms.less */
 form option,
 .form option {
   background: #ffffff;
   color: #333333;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-/* line 677, forms.less */
+/* line 681, forms.less */
 form optgroup,
 .form optgroup {
   background: #f5f5f5;
@@ -3865,7 +3870,7 @@ form optgroup,
   font-weight: bold;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-/* line 685, forms.less */
+/* line 689, forms.less */
 form.form--no-smooth .input,
 .form.form--no-smooth .input,
 form.form--no-smooth input[type="text"],
@@ -3884,7 +3889,7 @@ form.form--no-smooth select,
 .form.form--no-smooth select {
   border-radius: 0em;
 }
-/* line 690, forms.less */
+/* line 694, forms.less */
 form.form--smooth .input,
 .form.form--smooth .input,
 form.form--smooth input[type="text"],
@@ -3903,7 +3908,7 @@ form.form--smooth select,
 .form.form--smooth select {
   border-radius: 0.25em;
 }
-/* line 695, forms.less */
+/* line 699, forms.less */
 form.form--rounded .input,
 .form.form--rounded .input,
 form.form--rounded input[type="text"],
@@ -3922,7 +3927,7 @@ form.form--rounded select,
 .form.form--rounded select {
   border-radius: 1em;
 }
-/* line 701, forms.less */
+/* line 705, forms.less */
 form.form--fit .input,
 .form.form--fit .input,
 form.form--fit input[type="text"],
@@ -3941,7 +3946,7 @@ form.form--fit select,
 .form.form--fit select {
   width: 100%;
 }
-/* line 706, forms.less */
+/* line 710, forms.less */
 form.form--no-padding,
 .form.form--no-padding {
   padding: 0.25em 0em;
@@ -5387,7 +5392,7 @@ form.form--color-brown select:-ms-input-placeholder,
 .form.form--color-brown select:-ms-input-placeholder {
   color: #ffffff;
 }
-/* line 723, forms.less */
+/* line 727, forms.less */
 form.form--invert .input,
 .form.form--invert .input,
 form.form--invert input[type="text"],
@@ -5408,7 +5413,7 @@ form.form--invert select,
   background-color: #404040;
   color: #f5f5f5;
 }
-/* line 728, forms.less */
+/* line 732, forms.less */
 form.form--invert .input:active,
 .form.form--invert .input:active,
 form.form--invert input[type="text"]:active,
@@ -5443,7 +5448,7 @@ form.form--invert select:focus,
 .form.form--invert select:focus {
   background-color: #595959;
 }
-/* line 732, forms.less */
+/* line 736, forms.less */
 form.form--invert .input:invalid,
 .form.form--invert .input:invalid,
 form.form--invert input[type="text"]:invalid,
@@ -5462,24 +5467,24 @@ form.form--invert select:invalid,
 .form.form--invert select:invalid {
   background-color: #711313;
 }
-/* line 737, forms.less */
+/* line 741, forms.less */
 form.form--invert label,
 .form.form--invert label {
   color: #ffffff;
 }
-/* line 741, forms.less */
+/* line 745, forms.less */
 form.form--invert option,
 .form.form--invert option {
   background-color: #333333;
   color: #ffffff;
 }
-/* line 746, forms.less */
+/* line 750, forms.less */
 form.form--invert optgroup,
 .form.form--invert optgroup {
   background-color: #4d4d4d;
   color: #ffffff;
 }
-/* line 751, forms.less */
+/* line 755, forms.less */
 form.form--invert .form__attach,
 .form.form--invert .form__attach {
   background-color: #404040;
@@ -6102,7 +6107,7 @@ form.form--invert.form--color-brown select:focus,
 .form.form--invert.form--color-brown select:focus {
   background-color: #805031;
 }
-/* line 771, forms.less */
+/* line 775, forms.less */
 form.form--no-border .input,
 .form.form--no-border .input,
 form.form--no-border input[type="text"],
@@ -6121,7 +6126,7 @@ form.form--no-border select,
 .form.form--no-border select {
   border: none;
 }
-/* line 777, forms.less */
+/* line 781, forms.less */
 form.form--transparent .input,
 .form.form--transparent .input,
 form.form--transparent input[type="text"],
@@ -6140,7 +6145,7 @@ form.form--transparent select,
 .form.form--transparent select {
   opacity: 0.5;
 }
-/* line 780, forms.less */
+/* line 784, forms.less */
 form.form--transparent .input:active,
 .form.form--transparent .input:active,
 form.form--transparent input[type="text"]:active,
@@ -6175,7 +6180,7 @@ form.form--transparent select:focus,
 .form.form--transparent select:focus {
   opacity: 1;
 }
-/* line 786, forms.less */
+/* line 790, forms.less */
 form.form--center,
 .form.form--center {
   display: table;
