@@ -651,8 +651,8 @@
 			</div>
 			<div class="tabs tabs--ios-style tabs--color-blue">
 				<div class="tabs__item tabs__item--active">Home</div>
-				<div class="tabs__item">Friends</div>
-				<div class="tabs__item">Stats</div>
+				<div class="tabs__item" data-modal-target="YesNoDialog">Friends</div>
+				<div class="tabs__item" data-modal-target="YesNoDialog" data-modal-overflow-invert="true">Stats</div>
 				<div class="tabs__item">Settings</div>
 			</div>
 			<div class="tabs tabs--orientation-vertical">
@@ -705,17 +705,17 @@
 			<img src="http://vsu-it.ru/media/img/2015/09/01/a8b073a2d6cfff6245866c9abd_1.JPEG" class="img--circle img--border card_shadow" style="width: 100px; height: 100px;">
 		</div>			
 	</div>
-	<div class="modal">
+	<div class="modal" id="YesNoDialog">
 		<div class="modal__header">
 			<div class="modal__header__title">Модальное окно</div>
-			<div class="modal__header__icon"><i class="fa fa-remove"></i></div>
+			<div class="modal__header__icon modal--close"><i class="fa fa-remove"></i></div>
 		</div>
 		<div class="modal__content">
 			<p>Вы действительно хотите удалить эту заметку?</p>
 		</div>
 		<div class="modal__footer align-center">
 			<button class="button--color-green">Да</button>
-			<button class="button--color-red">Нет</button>
+			<button class="button--color-red modal--close">Нет</button>
 		</div>
 	</div>
 	</body>

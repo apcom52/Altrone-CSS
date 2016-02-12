@@ -113,4 +113,33 @@ $(function() {
 			$('.tooltip').hide();
 		}
 	});
+
+	/* Модальные окна */
+	var overflowDiv = $('body').append('<div class="overflow"></div>');
+	$('body').on('click', '[data-modal-target]', function(event) {
+		var target = $(this).data('modalTarget');
+		var modal = $('#' + target);
+
+		if ($(this).data('modalOverflowInvert') == true) {
+			$('.overflow').addClass('overflow--invert');
+			modal.addClass('modal--invert');
+		} else {
+			$('.overflow').removeClass('overflow--invert');
+			modal.removeClass('modal--invert');
+		}
+		
+		$('.overflow').show().animate({opacity: 0.7}, 400);
+		modal.show().animate({opacity: 1}, 500);
+
+		console.log(modal);
+		modal.find('.modal--close').click(function() {
+			$('.overflow').animate({opacity: 0}, 400, function() { $('.overflow').hide(); });
+			modal.animate({opacity: 0}, 500, function() { modal.hide(); });
+		});
+	});
+
+	$('.overflow').click(function() {
+		$('.modal').animate({opacity: 0}, 500, function() { $('.modal').hide(); });
+		$('.overflow').animate({opacity: 0}, 400, function() { $('.overflow').hide(); });
+	})
 });
