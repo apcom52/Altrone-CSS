@@ -94,7 +94,14 @@ $(function() {
 				}
 
 				/* Позиционирование по высоте относительно окна */
+				//if ($(this).position().top - tooltip_height < $
+				console.log($(this).position().top);
+				console.log($(this).offset().top);
+				console.log(window_height);
+
 				lastTooltipPosition.y = $(this).position().top - tooltip_height;
+				
+
 				/* !!! ToDo: сделать позиционирование по вертикали */
 
 				if ($(this).data('tooltipInvert') == true) {
@@ -103,8 +110,11 @@ $(function() {
 					$('.tooltip').removeClass('tooltip--invert');
 				}
 				$('.tooltip').css('left', lastTooltipPosition.x);
-				$('.tooltip').css('top', lastTooltipPosition.y);				
-				$('.tooltip').show();
+				$('.tooltip').css('top', lastTooltipPosition.y);
+
+				setTimeout(function() {
+					$('.tooltip').show();
+				}, 500);				
 			}
 		}, 
 		mouseleave: function(event) {
