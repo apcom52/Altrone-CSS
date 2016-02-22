@@ -138,6 +138,16 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	}	
 }
 
+.button-group-vertical-smooth(@a, @b) {
+	&:first-child {
+		border-radius: @a @a @b @b;
+	}
+
+	&:last-child {
+		border-radius: @b @b @a @a;
+	}	
+}
+
 .button-group {
 	margin: 0em 1em;
 	clear: both;
@@ -155,10 +165,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		&:last-child {
 			border-radius: 0em 0.2em 0.2em 0em;
 		}
-
-		&:not(:last-child) {
-			border-right: none;
-		}
 	}
 
 	&.button-group {
@@ -175,6 +181,39 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		&--no-smooth{
 			button, input[type="button"], input[type="submit"], input[type="reset"], .button {
 				.button-group-smooth(0em, 0em);
+			}
+		}
+	}
+
+	&.button-group--vertical {
+		button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+			display: block;
+			width: 100%;
+
+			&:first-child {
+				border-radius: 0.2em 0.2em 0em 0em;
+			}
+
+			&:last-child {
+				border-radius: 0em 0em 0.2em 0.2em;
+			}
+		}
+
+		&.button-group {
+			&--smooth {
+				button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+					.button-group-vertical-smooth(0.5em, 0em);
+				}
+			}
+			&--rounded {
+				button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+					.button-group-vertical-smooth(1.25em, 0em);
+				}
+			}
+			&--no-smooth{
+				button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+					.button-group-vertical-smooth(0em, 0em);
+				}
 			}
 		}
 	}
