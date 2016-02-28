@@ -9092,13 +9092,23 @@ input[type="reset"].button--fit,
 .button.button--fit {
   width: calc(100% - 10px);
 }
-/* line 156, buttons.less */
+/* line 134, buttons.less */
+button.button--checked,
+input[type="button"].button--checked,
+input[type="submit"].button--checked,
+input[type="reset"].button--checked,
+.button.button--checked {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.5) inset;
+  border: none;
+  transition: all 0.3s linear;
+}
+/* line 162, buttons.less */
 .button-group {
   margin: 0em 1em;
   clear: both;
   display: inline-block;
 }
-/* line 161, buttons.less */
+/* line 167, buttons.less */
 .button-group button,
 .button-group input[type="button"],
 .button-group input[type="submit"],
@@ -9108,7 +9118,7 @@ input[type="reset"].button--fit,
   float: left;
   border-radius: 0px;
 }
-/* line 166, buttons.less */
+/* line 172, buttons.less */
 .button-group button:first-child,
 .button-group input[type="button"]:first-child,
 .button-group input[type="submit"]:first-child,
@@ -9116,7 +9126,7 @@ input[type="reset"].button--fit,
 .button-group .button:first-child {
   border-radius: 0.2em 0em 0em 0.2em;
 }
-/* line 170, buttons.less */
+/* line 176, buttons.less */
 .button-group button:last-child,
 .button-group input[type="button"]:last-child,
 .button-group input[type="submit"]:last-child,
@@ -9124,7 +9134,7 @@ input[type="reset"].button--fit,
 .button-group .button:last-child {
   border-radius: 0em 0.2em 0.2em 0em;
 }
-/* line 137, buttons.less */
+/* line 143, buttons.less */
 .button-group.button-group--smooth button:first-child,
 .button-group.button-group--smooth input[type="button"]:first-child,
 .button-group.button-group--smooth input[type="submit"]:first-child,
@@ -9132,7 +9142,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--smooth .button:first-child {
   border-radius: 0.5em 0em 0em 0.5em;
 }
-/* line 141, buttons.less */
+/* line 147, buttons.less */
 .button-group.button-group--smooth button:last-child,
 .button-group.button-group--smooth input[type="button"]:last-child,
 .button-group.button-group--smooth input[type="submit"]:last-child,
@@ -9140,7 +9150,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--smooth .button:last-child {
   border-radius: 0em 0.5em 0.5em 0em;
 }
-/* line 137, buttons.less */
+/* line 143, buttons.less */
 .button-group.button-group--rounded button:first-child,
 .button-group.button-group--rounded input[type="button"]:first-child,
 .button-group.button-group--rounded input[type="submit"]:first-child,
@@ -9148,7 +9158,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--rounded .button:first-child {
   border-radius: 1.25em 0em 0em 1.25em;
 }
-/* line 141, buttons.less */
+/* line 147, buttons.less */
 .button-group.button-group--rounded button:last-child,
 .button-group.button-group--rounded input[type="button"]:last-child,
 .button-group.button-group--rounded input[type="submit"]:last-child,
@@ -9156,7 +9166,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--rounded .button:last-child {
   border-radius: 0em 1.25em 1.25em 0em;
 }
-/* line 137, buttons.less */
+/* line 143, buttons.less */
 .button-group.button-group--no-smooth button:first-child,
 .button-group.button-group--no-smooth input[type="button"]:first-child,
 .button-group.button-group--no-smooth input[type="submit"]:first-child,
@@ -9164,7 +9174,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--no-smooth .button:first-child {
   border-radius: 0em 0em 0em 0em;
 }
-/* line 141, buttons.less */
+/* line 147, buttons.less */
 .button-group.button-group--no-smooth button:last-child,
 .button-group.button-group--no-smooth input[type="button"]:last-child,
 .button-group.button-group--no-smooth input[type="submit"]:last-child,
@@ -9172,7 +9182,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--no-smooth .button:last-child {
   border-radius: 0em 0em 0em 0em;
 }
-/* line 194, buttons.less */
+/* line 200, buttons.less */
 .button-group.button-group--vertical button,
 .button-group.button-group--vertical input[type="button"],
 .button-group.button-group--vertical input[type="submit"],
@@ -9181,7 +9191,7 @@ input[type="reset"].button--fit,
   display: block;
   width: 100%;
 }
-/* line 198, buttons.less */
+/* line 204, buttons.less */
 .button-group.button-group--vertical button:first-child,
 .button-group.button-group--vertical input[type="button"]:first-child,
 .button-group.button-group--vertical input[type="submit"]:first-child,
@@ -9189,7 +9199,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical .button:first-child {
   border-radius: 0.2em 0.2em 0em 0em;
 }
-/* line 202, buttons.less */
+/* line 208, buttons.less */
 .button-group.button-group--vertical button:last-child,
 .button-group.button-group--vertical input[type="button"]:last-child,
 .button-group.button-group--vertical input[type="submit"]:last-child,
@@ -9197,7 +9207,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical .button:last-child {
   border-radius: 0em 0em 0.2em 0.2em;
 }
-/* line 147, buttons.less */
+/* line 153, buttons.less */
 .button-group.button-group--vertical.button-group--smooth button:first-child,
 .button-group.button-group--vertical.button-group--smooth input[type="button"]:first-child,
 .button-group.button-group--vertical.button-group--smooth input[type="submit"]:first-child,
@@ -9205,7 +9215,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical.button-group--smooth .button:first-child {
   border-radius: 0.5em 0.5em 0em 0em;
 }
-/* line 151, buttons.less */
+/* line 157, buttons.less */
 .button-group.button-group--vertical.button-group--smooth button:last-child,
 .button-group.button-group--vertical.button-group--smooth input[type="button"]:last-child,
 .button-group.button-group--vertical.button-group--smooth input[type="submit"]:last-child,
@@ -9213,7 +9223,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical.button-group--smooth .button:last-child {
   border-radius: 0em 0em 0.5em 0.5em;
 }
-/* line 147, buttons.less */
+/* line 153, buttons.less */
 .button-group.button-group--vertical.button-group--rounded button:first-child,
 .button-group.button-group--vertical.button-group--rounded input[type="button"]:first-child,
 .button-group.button-group--vertical.button-group--rounded input[type="submit"]:first-child,
@@ -9221,7 +9231,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical.button-group--rounded .button:first-child {
   border-radius: 1.25em 1.25em 0em 0em;
 }
-/* line 151, buttons.less */
+/* line 157, buttons.less */
 .button-group.button-group--vertical.button-group--rounded button:last-child,
 .button-group.button-group--vertical.button-group--rounded input[type="button"]:last-child,
 .button-group.button-group--vertical.button-group--rounded input[type="submit"]:last-child,
@@ -9229,7 +9239,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical.button-group--rounded .button:last-child {
   border-radius: 0em 0em 1.25em 1.25em;
 }
-/* line 147, buttons.less */
+/* line 153, buttons.less */
 .button-group.button-group--vertical.button-group--no-smooth button:first-child,
 .button-group.button-group--vertical.button-group--no-smooth input[type="button"]:first-child,
 .button-group.button-group--vertical.button-group--no-smooth input[type="submit"]:first-child,
@@ -9237,7 +9247,7 @@ input[type="reset"].button--fit,
 .button-group.button-group--vertical.button-group--no-smooth .button:first-child {
   border-radius: 0em 0em 0em 0em;
 }
-/* line 151, buttons.less */
+/* line 157, buttons.less */
 .button-group.button-group--vertical.button-group--no-smooth button:last-child,
 .button-group.button-group--vertical.button-group--no-smooth input[type="button"]:last-child,
 .button-group.button-group--vertical.button-group--no-smooth input[type="submit"]:last-child,
