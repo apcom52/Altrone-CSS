@@ -38,8 +38,8 @@
 	}
 
 	&.button--transparent:hover {
-		color: @d-gray;		
-		background-color: @white;
+		color: @white;		
+		background-color: @color;
 	}
 
 	&.button--transparent-full:hover {
@@ -119,6 +119,11 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 				background-color: transparent;
 				border-color: transparent;				
 			}
+		}
+
+		&:hover {
+			background-color: @white;
+			color: @d-gray;
 		}
 	}
 
