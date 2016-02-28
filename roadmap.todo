@@ -3,6 +3,7 @@
  ☐ @critical Пофиксить баги с появлением модальных окон     
  ☐ @critical Пофиксить высоту кнопок в Button Groups
  ☐ @critical Пофиксить высоту полей в .form-attached
+ ✔ @critical Пофиксить сочетание .button--color-* и .button--transparent @done (16-02-28 23:48)
  ☐ @high Вертикальное положение dropdown
  ☐ @high Вертикальное положение select
  ☐ @high Вертикальное положение tooltip
@@ -11,8 +12,9 @@
  ☐ @high Добавить модуль Feed
  ☐ @high Добавить модуль UserItem
  ☐ @high Добавить модуль Label, Badge
+ ☐ @high Добавить прогресс-бар
+ ☐ @high Добавить range-бар
  ☐ @low Добавить классы анимаций появлений .fade-in, .fade-out, .slide-in, .slide-out, .slide-left, .slide-right
- ☐ @low Сделать прогресс-бары
  ☐ @low Сделать masonry-сетку
  ☐ @low Переработать List
  ✔ @low Сделать вертикальную группировку кнопок @done (16-02-23 01:03)

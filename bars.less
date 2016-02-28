@@ -120,3 +120,70 @@
 	}
 
 }
+
+.set-progress-color(@color) {
+	background-color: lighten(@color, 20%);
+
+	.progress__active {
+		background-color: @color;
+	}
+}
+
+.set-progress-invert-color(@color) {
+	background-color: darken(@color, 20%);
+
+	.progress__active {
+		background-color: @color;
+	}
+}
+
+.progress {
+	display: block;
+	width: ~"calc(100% - 0.3em)";
+	height: 0.7em;
+	margin: 0.15em;
+	background-color: darken(@u-gray, 5%);
+	border-radius: 0.2em;
+	position: relative;
+
+	.progress__active {
+		background-color: darken(@u-gray, 25%);
+		position: absolute;
+		left: 0em;
+		height: 0.7em;
+		border-radius: 0.2em;
+		top: 0em; 		
+	}
+
+	&.progress--color-red { .set-progress-color(@red); }
+	&.progress--color-orange { .set-progress-color(@orange); }
+	&.progress--color-yellow { .set-progress-color(@yellow); }
+	&.progress--color-olive { .set-progress-color(@olive); }
+	&.progress--color-green { .set-progress-color(@green); }
+	&.progress--color-blue { .set-progress-color(@blue); }
+	&.progress--color-teal { .set-progress-color(@teal); }
+	&.progress--color-purple { .set-progress-color(@purple); }
+	&.progress--color-violet { .set-progress-color(@violet); }
+	&.progress--color-pink { .set-progress-color(@pink); }
+	&.progress--color-brown { .set-progress-color(@brown); }
+
+	&.progress--invert {
+		background-color: lighten(@d-gray, 5%);
+
+		.progress__active {
+			background-color: lighten(@d-gray, 25%);
+		}
+
+		&.progress--color-red { .set-progress-invert-color(@red); }
+		&.progress--color-orange { .set-progress-invert-color(@orange); }
+		&.progress--color-yellow { .set-progress-invert-color(@yellow); }
+		&.progress--color-olive { .set-progress-invert-color(@olive); }
+		&.progress--color-green { .set-progress-invert-color(@green); }
+		&.progress--color-blue { .set-progress-invert-color(@blue); }
+		&.progress--color-teal { .set-progress-invert-color(@teal); }
+		&.progress--color-purple { .set-progress-invert-color(@purple); }
+		&.progress--color-violet { .set-progress-invert-color(@violet); }
+		&.progress--color-pink { .set-progress-invert-color(@pink); }
+		&.progress--color-brown { .set-progress-invert-color(@brown); }
+	}
+}
