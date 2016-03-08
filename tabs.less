@@ -76,6 +76,24 @@
 		&.tabs--color-purple { .set-tabs-invert-color(@purple); }
 		&.tabs--color-pink { .set-tabs-invert-color(@pink); }
 		&.tabs--color-brown { .set-tabs-invert-color(@brown); }	
+
+		&.tabs--transparent {
+			background-color: transparent;
+
+			.tabs__item {
+				color: @l-gray;
+
+				&:hover {
+					background: transparent;
+					color: @u-gray;
+				}
+
+				&:active, &.active {
+					background: transparent;
+					color: @white;
+				}
+			}
+		}
 	}
 
 	&.tabs--color-red { .set-tabs-color(@red); }
@@ -171,6 +189,43 @@
 			margin: 0em 0.1em;
 		}
 	}
+
+	&.tabs--transparent {
+		background-color: transparent;
+
+		.tabs__item {
+			background-color: transparent;
+			color: @l-gray;
+			font-weight: bold;
+			text-transform: uppercase;
+
+			&:hover {
+				background: transparent;
+				color: lighten(@d-gray, 10);
+			}
+
+			&:active, &.active {
+				background: transparent;
+				color: @d-gray;
+			}
+		}
+	}
+
+	&.tabs--centered {
+		text-align: center;
+
+		.tabs__item {
+			float: none;
+		}
+	}
+
+	&.tabs--pin-right {
+		text-align: right;
+
+		.tabs__item {
+			float: none;
+		}
+	}
 }
 
 .set-tabs-color(@color) {
@@ -196,6 +251,21 @@
 			}
 		}
 	}
+
+	&.tabs--transparent {
+		.tabs__item {
+			color: lighten(@color, 15%);
+
+			&:hover {
+				background: transparent;
+				color: lighten(@color, 5%);
+			}
+			&:active, &.active {
+				background: transparent;
+				color: @color;
+			}
+		}
+	}
 }
 
 .set-tabs-invert-color(@color) {
@@ -218,6 +288,21 @@
 			&:hover, &:active {
 				color: @m-gray;
 				background-color: darken(@color, 20%);	
+			}
+		}
+	}
+
+	&.tabs--transparent {
+		.tabs__item {
+			color: darken(@color, 15%);
+
+			&:hover {
+				background: transparent;
+				color: darken(@color, 5%);
+			}
+			&:active, &.active {
+				background: transparent;
+				color: @color;
 			}
 		}
 	}

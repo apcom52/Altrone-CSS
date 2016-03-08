@@ -208,3 +208,19 @@
 		}		
 	}
 }
+
+.horizontal-layout {
+	display: flex;
+
+	.column {
+		flex: 1;
+
+		&.column--centered {
+			text-align: center;
+		}
+	}
+
+	&.horizontal-layout--centered {
+		align-items: center;
+	}
+}
