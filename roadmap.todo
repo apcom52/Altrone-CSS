@@ -3,6 +3,9 @@
  ☐ @critical Пофиксить баги с появлением модальных окон     
  ☐ @critical Пофиксить высоту кнопок в Button Groups
  ☐ @critical Пофиксить высоту полей в .form-attached
+ ☐ @critical Пофиксить .list--horizontal и .list--animation-slide
+ ☐ @critical Пофиксить .list--animation-mark
+ ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
  ✔ @critical Пофиксить .button--transparent и .button--color-* @done (16-02-28 23:52)
  ☐ @high Вертикальное положение dropdown
  ☐ @high Вертикальное положение select

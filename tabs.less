@@ -88,7 +88,7 @@
 					color: @u-gray;
 				}
 
-				&:active, &.active {
+				&:active, &.tabs__item--active {
 					background: transparent;
 					color: @white;
 				}
@@ -204,7 +204,7 @@
 				color: lighten(@d-gray, 10);
 			}
 
-			&:active, &.active {
+			&:active, &.tabs__item--active {
 				background: transparent;
 				color: @d-gray;
 			}
@@ -254,13 +254,14 @@
 
 	&.tabs--transparent {
 		.tabs__item {
-			color: lighten(@color, 15%);
+			color: @l-gray;
+			background-color: transparent;
 
 			&:hover {
 				background: transparent;
-				color: lighten(@color, 5%);
+				color: @m-gray;
 			}
-			&:active, &.active {
+			&:active, &.tabs__item--active {
 				background: transparent;
 				color: @color;
 			}
@@ -294,13 +295,14 @@
 
 	&.tabs--transparent {
 		.tabs__item {
-			color: darken(@color, 15%);
+			color: @l-gray;
+			background: transparent;
 
 			&:hover {
 				background: transparent;
-				color: darken(@color, 5%);
+				color: @m-gray;
 			}
-			&:active, &.active {
+			&:active, &.tabs__item--active {
 				background: transparent;
 				color: @color;
 			}
