@@ -3813,22 +3813,22 @@ form textarea:invalid,
 .form textarea:invalid,
 form select:invalid,
 .form select:invalid,
-form .input .invalid,
-.form .input .invalid,
-form input[type="text"] .invalid,
-.form input[type="text"] .invalid,
-form input[type="url"] .invalid,
-.form input[type="url"] .invalid,
-form input[type="email"] .invalid,
-.form input[type="email"] .invalid,
-form input[type="number"] .invalid,
-.form input[type="number"] .invalid,
-form input[type="password"] .invalid,
-.form input[type="password"] .invalid,
-form textarea .invalid,
-.form textarea .invalid,
-form select .invalid,
-.form select .invalid {
+form .input.invalid,
+.form .input.invalid,
+form input[type="text"].invalid,
+.form input[type="text"].invalid,
+form input[type="url"].invalid,
+.form input[type="url"].invalid,
+form input[type="email"].invalid,
+.form input[type="email"].invalid,
+form input[type="number"].invalid,
+.form input[type="number"].invalid,
+form input[type="password"].invalid,
+.form input[type="password"].invalid,
+form textarea.invalid,
+.form textarea.invalid,
+form select.invalid,
+.form select.invalid {
   background-color: #ed9595 !important;
 }
 /* line 639, forms.less */
@@ -3856,74 +3856,74 @@ form textarea,
   transition: resize 0s linear;
 }
 /* line 648, forms.less */
-form .form-attached,
-.form .form-attached {
+form .form--attached,
+.form .form--attached {
   overflow: hidden;
   clear: both;
   display: block;
 }
 /* line 652, forms.less */
-form .form-attached .input,
-.form .form-attached .input,
-form .form-attached input[type="text"],
-.form .form-attached input[type="text"],
-form .form-attached input[type="url"],
-.form .form-attached input[type="url"],
-form .form-attached input[type="email"],
-.form .form-attached input[type="email"],
-form .form-attached input[type="number"],
-.form .form-attached input[type="number"],
-form .form-attached input[type="password"],
-.form .form-attached input[type="password"],
-form .form-attached textarea,
-.form .form-attached textarea,
-form .form-attached select,
-.form .form-attached select,
-form .form-attached .form__attach,
-.form .form-attached .form__attach {
+form .form--attached .input,
+.form .form--attached .input,
+form .form--attached input[type="text"],
+.form .form--attached input[type="text"],
+form .form--attached input[type="url"],
+.form .form--attached input[type="url"],
+form .form--attached input[type="email"],
+.form .form--attached input[type="email"],
+form .form--attached input[type="number"],
+.form .form--attached input[type="number"],
+form .form--attached input[type="password"],
+.form .form--attached input[type="password"],
+form .form--attached textarea,
+.form .form--attached textarea,
+form .form--attached select,
+.form .form--attached select,
+form .form--attached .form__attach,
+.form .form--attached .form__attach {
   border-radius: 0em;
   float: left;
 }
 /* line 656, forms.less */
-form .form-attached .input:first-child,
-.form .form-attached .input:first-child,
-form .form-attached input[type="text"]:first-child,
-.form .form-attached input[type="text"]:first-child,
-form .form-attached input[type="url"]:first-child,
-.form .form-attached input[type="url"]:first-child,
-form .form-attached input[type="email"]:first-child,
-.form .form-attached input[type="email"]:first-child,
-form .form-attached input[type="number"]:first-child,
-.form .form-attached input[type="number"]:first-child,
-form .form-attached input[type="password"]:first-child,
-.form .form-attached input[type="password"]:first-child,
-form .form-attached textarea:first-child,
-.form .form-attached textarea:first-child,
-form .form-attached select:first-child,
-.form .form-attached select:first-child,
-form .form-attached .form__attach:first-child,
-.form .form-attached .form__attach:first-child {
+form .form--attached .input:first-child,
+.form .form--attached .input:first-child,
+form .form--attached input[type="text"]:first-child,
+.form .form--attached input[type="text"]:first-child,
+form .form--attached input[type="url"]:first-child,
+.form .form--attached input[type="url"]:first-child,
+form .form--attached input[type="email"]:first-child,
+.form .form--attached input[type="email"]:first-child,
+form .form--attached input[type="number"]:first-child,
+.form .form--attached input[type="number"]:first-child,
+form .form--attached input[type="password"]:first-child,
+.form .form--attached input[type="password"]:first-child,
+form .form--attached textarea:first-child,
+.form .form--attached textarea:first-child,
+form .form--attached select:first-child,
+.form .form--attached select:first-child,
+form .form--attached .form__attach:first-child,
+.form .form--attached .form__attach:first-child {
   border-radius: 0.25em 0em 0em 0.25em !important;
 }
 /* line 659, forms.less */
-form .form-attached .input:last-child,
-.form .form-attached .input:last-child,
-form .form-attached input[type="text"]:last-child,
-.form .form-attached input[type="text"]:last-child,
-form .form-attached input[type="url"]:last-child,
-.form .form-attached input[type="url"]:last-child,
-form .form-attached input[type="email"]:last-child,
-.form .form-attached input[type="email"]:last-child,
-form .form-attached input[type="number"]:last-child,
-.form .form-attached input[type="number"]:last-child,
-form .form-attached input[type="password"]:last-child,
-.form .form-attached input[type="password"]:last-child,
-form .form-attached textarea:last-child,
-.form .form-attached textarea:last-child,
-form .form-attached select:last-child,
-.form .form-attached select:last-child,
-form .form-attached .form__attach:last-child,
-.form .form-attached .form__attach:last-child {
+form .form--attached .input:last-child,
+.form .form--attached .input:last-child,
+form .form--attached input[type="text"]:last-child,
+.form .form--attached input[type="text"]:last-child,
+form .form--attached input[type="url"]:last-child,
+.form .form--attached input[type="url"]:last-child,
+form .form--attached input[type="email"]:last-child,
+.form .form--attached input[type="email"]:last-child,
+form .form--attached input[type="number"]:last-child,
+.form .form--attached input[type="number"]:last-child,
+form .form--attached input[type="password"]:last-child,
+.form .form--attached input[type="password"]:last-child,
+form .form--attached textarea:last-child,
+.form .form--attached textarea:last-child,
+form .form--attached select:last-child,
+.form .form--attached select:last-child,
+form .form--attached .form__attach:last-child,
+.form .form--attached .form__attach:last-child {
   border-radius: 0em 0.25em 0.25em 0em !important;
 }
 /* line 665, forms.less */
@@ -5940,7 +5940,23 @@ form.form--invert input[type="password"]:invalid,
 form.form--invert textarea:invalid,
 .form.form--invert textarea:invalid,
 form.form--invert select:invalid,
-.form.form--invert select:invalid {
+.form.form--invert select:invalid,
+form.form--invert .input.invalid,
+.form.form--invert .input.invalid,
+form.form--invert input[type="text"].invalid,
+.form.form--invert input[type="text"].invalid,
+form.form--invert input[type="url"].invalid,
+.form.form--invert input[type="url"].invalid,
+form.form--invert input[type="email"].invalid,
+.form.form--invert input[type="email"].invalid,
+form.form--invert input[type="number"].invalid,
+.form.form--invert input[type="number"].invalid,
+form.form--invert input[type="password"].invalid,
+.form.form--invert input[type="password"].invalid,
+form.form--invert textarea.invalid,
+.form.form--invert textarea.invalid,
+form.form--invert select.invalid,
+.form.form--invert select.invalid {
   background-color: #711313;
 }
 /* line 749, forms.less */
@@ -6657,8 +6673,8 @@ form.form--transparent select:focus,
   opacity: 1;
 }
 /* line 798, forms.less */
-form.form--center,
-.form.form--center {
+form.form--centered,
+.form.form--centered {
   display: table;
   margin-left: auto;
   margin-right: auto;

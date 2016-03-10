@@ -632,7 +632,7 @@ form, .form {
 			.anim(0.3s);
 		}
 
-		&:invalid, .invalid {
+		&:invalid, &.invalid {
 			background-color: lighten(@red, 25%) !important;
 		}
 
@@ -645,7 +645,7 @@ form, .form {
 		transition: resize 0s linear;
 	}
 
-	.form-attached {
+	.form--attached {
 		overflow: hidden;
 		clear: both;
 		display: block;
@@ -741,7 +741,7 @@ form, .form {
 				background-color: lighten(@d-gray, 15%);
 			}
 
-			&:invalid {
+			&:invalid, &.invalid {
 				background-color: darken(@red, 25%);
 			}
 		}
@@ -795,7 +795,7 @@ form, .form {
 		}
 	}
 
-	&.form--center {
+	&.form--centered {
 		display: table;
 		margin-left: auto;
 		margin-right: auto;
