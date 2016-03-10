@@ -588,6 +588,10 @@
 		&::-moz-placeholder          {color: @white;}
 		&:-moz-placeholder           {color: @white;}
 		&:-ms-input-placeholder      {color: @white;}
+
+		&:invalid, &.invalid {
+			background-color: darken(@red, 20%) !important;
+		}
 	}
 }
 
@@ -629,7 +633,7 @@ form, .form {
 		}
 
 		&:invalid, .invalid {
-			background-color: lighten(@red, 25%);
+			background-color: lighten(@red, 25%) !important;
 		}
 
 		&:disabled {

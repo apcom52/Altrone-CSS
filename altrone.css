@@ -3722,7 +3722,7 @@ code {
 .radio.radio--invert label .radio__title {
   color: #f5f5f5;
 }
-/* line 606, forms.less */
+/* line 610, forms.less */
 form,
 .form {
   padding: 0.25em 1em;
@@ -3730,7 +3730,7 @@ form,
   clear: both;
   overflow: hidden;
 }
-/* line 612, forms.less */
+/* line 616, forms.less */
 form .input,
 .form .input,
 form input[type="text"],
@@ -3760,7 +3760,7 @@ form select,
   outline: none;
   resize: vertical;
 }
-/* line 626, forms.less */
+/* line 630, forms.less */
 form .input:active,
 .form .input:active,
 form input[type="text"]:active,
@@ -3796,7 +3796,7 @@ form select:focus,
   background-color: #ffffff;
   transition: all 0.3s linear;
 }
-/* line 631, forms.less */
+/* line 635, forms.less */
 form .input:invalid,
 .form .input:invalid,
 form input[type="text"]:invalid,
@@ -3829,9 +3829,9 @@ form textarea .invalid,
 .form textarea .invalid,
 form select .invalid,
 .form select .invalid {
-  background-color: #ed9595;
+  background-color: #ed9595 !important;
 }
-/* line 635, forms.less */
+/* line 639, forms.less */
 form .input:disabled,
 .form .input:disabled,
 form input[type="text"]:disabled,
@@ -3850,19 +3850,19 @@ form select:disabled,
 .form select:disabled {
   cursor: not-allowed;
 }
-/* line 640, forms.less */
+/* line 644, forms.less */
 form textarea,
 .form textarea {
   transition: resize 0s linear;
 }
-/* line 644, forms.less */
+/* line 648, forms.less */
 form .form-attached,
 .form .form-attached {
   overflow: hidden;
   clear: both;
   display: block;
 }
-/* line 648, forms.less */
+/* line 652, forms.less */
 form .form-attached .input,
 .form .form-attached .input,
 form .form-attached input[type="text"],
@@ -3884,7 +3884,7 @@ form .form-attached .form__attach,
   border-radius: 0em;
   float: left;
 }
-/* line 652, forms.less */
+/* line 656, forms.less */
 form .form-attached .input:first-child,
 .form .form-attached .input:first-child,
 form .form-attached input[type="text"]:first-child,
@@ -3905,7 +3905,7 @@ form .form-attached .form__attach:first-child,
 .form .form-attached .form__attach:first-child {
   border-radius: 0.25em 0em 0em 0.25em !important;
 }
-/* line 655, forms.less */
+/* line 659, forms.less */
 form .form-attached .input:last-child,
 .form .form-attached .input:last-child,
 form .form-attached input[type="text"]:last-child,
@@ -3926,7 +3926,7 @@ form .form-attached .form__attach:last-child,
 .form .form-attached .form__attach:last-child {
   border-radius: 0em 0.25em 0.25em 0em !important;
 }
-/* line 661, forms.less */
+/* line 665, forms.less */
 form .form__attach,
 .form .form__attach {
   margin: 0.25em 0em;
@@ -3937,7 +3937,7 @@ form .form__attach,
   color: #333333;
   box-sizing: border-box;
 }
-/* line 671, forms.less */
+/* line 675, forms.less */
 form label,
 .form label {
   display: block;
@@ -3946,14 +3946,14 @@ form label,
   cursor: pointer;
   transition: all 0.3s linear;
 }
-/* line 679, forms.less */
+/* line 683, forms.less */
 form option,
 .form option {
   background: #ffffff;
   color: #333333;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-/* line 685, forms.less */
+/* line 689, forms.less */
 form optgroup,
 .form optgroup {
   background: #f5f5f5;
@@ -3961,7 +3961,7 @@ form optgroup,
   font-weight: bold;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-/* line 693, forms.less */
+/* line 697, forms.less */
 form.form--no-smooth .input,
 .form.form--no-smooth .input,
 form.form--no-smooth input[type="text"],
@@ -3980,7 +3980,7 @@ form.form--no-smooth select,
 .form.form--no-smooth select {
   border-radius: 0em;
 }
-/* line 698, forms.less */
+/* line 702, forms.less */
 form.form--smooth .input,
 .form.form--smooth .input,
 form.form--smooth input[type="text"],
@@ -3999,7 +3999,7 @@ form.form--smooth select,
 .form.form--smooth select {
   border-radius: 0.25em;
 }
-/* line 703, forms.less */
+/* line 707, forms.less */
 form.form--rounded .input,
 .form.form--rounded .input,
 form.form--rounded input[type="text"],
@@ -4018,7 +4018,7 @@ form.form--rounded select,
 .form.form--rounded select {
   border-radius: 1em;
 }
-/* line 709, forms.less */
+/* line 713, forms.less */
 form.form--fit .input,
 .form.form--fit .input,
 form.form--fit input[type="text"],
@@ -4037,7 +4037,7 @@ form.form--fit select,
 .form.form--fit select {
   width: 100%;
 }
-/* line 714, forms.less */
+/* line 718, forms.less */
 form.form--no-padding,
 .form.form--no-padding {
   padding: 0.25em 0em;
@@ -4173,6 +4173,41 @@ form.form--color-red select:-ms-input-placeholder,
 .form.form--color-red select:-ms-input-placeholder {
   color: #ffffff;
 }
+/* line 592, forms.less */
+form.form--color-red .input:invalid,
+.form.form--color-red .input:invalid,
+form.form--color-red input[type="text"]:invalid,
+.form.form--color-red input[type="text"]:invalid,
+form.form--color-red input[type="url"]:invalid,
+.form.form--color-red input[type="url"]:invalid,
+form.form--color-red input[type="email"]:invalid,
+.form.form--color-red input[type="email"]:invalid,
+form.form--color-red input[type="number"]:invalid,
+.form.form--color-red input[type="number"]:invalid,
+form.form--color-red input[type="password"]:invalid,
+.form.form--color-red input[type="password"]:invalid,
+form.form--color-red textarea:invalid,
+.form.form--color-red textarea:invalid,
+form.form--color-red select:invalid,
+.form.form--color-red select:invalid,
+form.form--color-red .input.invalid,
+.form.form--color-red .input.invalid,
+form.form--color-red input[type="text"].invalid,
+.form.form--color-red input[type="text"].invalid,
+form.form--color-red input[type="url"].invalid,
+.form.form--color-red input[type="url"].invalid,
+form.form--color-red input[type="email"].invalid,
+.form.form--color-red input[type="email"].invalid,
+form.form--color-red input[type="number"].invalid,
+.form.form--color-red input[type="number"].invalid,
+form.form--color-red input[type="password"].invalid,
+.form.form--color-red input[type="password"].invalid,
+form.form--color-red textarea.invalid,
+.form.form--color-red textarea.invalid,
+form.form--color-red select.invalid,
+.form.form--color-red select.invalid {
+  background-color: #861717 !important;
+}
 /* line 579, forms.less */
 form.form--color-orange .input,
 .form.form--color-orange .input,
@@ -4303,6 +4338,41 @@ form.form--color-orange textarea:-ms-input-placeholder,
 form.form--color-orange select:-ms-input-placeholder,
 .form.form--color-orange select:-ms-input-placeholder {
   color: #ffffff;
+}
+/* line 592, forms.less */
+form.form--color-orange .input:invalid,
+.form.form--color-orange .input:invalid,
+form.form--color-orange input[type="text"]:invalid,
+.form.form--color-orange input[type="text"]:invalid,
+form.form--color-orange input[type="url"]:invalid,
+.form.form--color-orange input[type="url"]:invalid,
+form.form--color-orange input[type="email"]:invalid,
+.form.form--color-orange input[type="email"]:invalid,
+form.form--color-orange input[type="number"]:invalid,
+.form.form--color-orange input[type="number"]:invalid,
+form.form--color-orange input[type="password"]:invalid,
+.form.form--color-orange input[type="password"]:invalid,
+form.form--color-orange textarea:invalid,
+.form.form--color-orange textarea:invalid,
+form.form--color-orange select:invalid,
+.form.form--color-orange select:invalid,
+form.form--color-orange .input.invalid,
+.form.form--color-orange .input.invalid,
+form.form--color-orange input[type="text"].invalid,
+.form.form--color-orange input[type="text"].invalid,
+form.form--color-orange input[type="url"].invalid,
+.form.form--color-orange input[type="url"].invalid,
+form.form--color-orange input[type="email"].invalid,
+.form.form--color-orange input[type="email"].invalid,
+form.form--color-orange input[type="number"].invalid,
+.form.form--color-orange input[type="number"].invalid,
+form.form--color-orange input[type="password"].invalid,
+.form.form--color-orange input[type="password"].invalid,
+form.form--color-orange textarea.invalid,
+.form.form--color-orange textarea.invalid,
+form.form--color-orange select.invalid,
+.form.form--color-orange select.invalid {
+  background-color: #861717 !important;
 }
 /* line 579, forms.less */
 form.form--color-yellow .input,
@@ -4435,6 +4505,41 @@ form.form--color-yellow select:-ms-input-placeholder,
 .form.form--color-yellow select:-ms-input-placeholder {
   color: #ffffff;
 }
+/* line 592, forms.less */
+form.form--color-yellow .input:invalid,
+.form.form--color-yellow .input:invalid,
+form.form--color-yellow input[type="text"]:invalid,
+.form.form--color-yellow input[type="text"]:invalid,
+form.form--color-yellow input[type="url"]:invalid,
+.form.form--color-yellow input[type="url"]:invalid,
+form.form--color-yellow input[type="email"]:invalid,
+.form.form--color-yellow input[type="email"]:invalid,
+form.form--color-yellow input[type="number"]:invalid,
+.form.form--color-yellow input[type="number"]:invalid,
+form.form--color-yellow input[type="password"]:invalid,
+.form.form--color-yellow input[type="password"]:invalid,
+form.form--color-yellow textarea:invalid,
+.form.form--color-yellow textarea:invalid,
+form.form--color-yellow select:invalid,
+.form.form--color-yellow select:invalid,
+form.form--color-yellow .input.invalid,
+.form.form--color-yellow .input.invalid,
+form.form--color-yellow input[type="text"].invalid,
+.form.form--color-yellow input[type="text"].invalid,
+form.form--color-yellow input[type="url"].invalid,
+.form.form--color-yellow input[type="url"].invalid,
+form.form--color-yellow input[type="email"].invalid,
+.form.form--color-yellow input[type="email"].invalid,
+form.form--color-yellow input[type="number"].invalid,
+.form.form--color-yellow input[type="number"].invalid,
+form.form--color-yellow input[type="password"].invalid,
+.form.form--color-yellow input[type="password"].invalid,
+form.form--color-yellow textarea.invalid,
+.form.form--color-yellow textarea.invalid,
+form.form--color-yellow select.invalid,
+.form.form--color-yellow select.invalid {
+  background-color: #861717 !important;
+}
 /* line 579, forms.less */
 form.form--color-olive .input,
 .form.form--color-olive .input,
@@ -4565,6 +4670,41 @@ form.form--color-olive textarea:-ms-input-placeholder,
 form.form--color-olive select:-ms-input-placeholder,
 .form.form--color-olive select:-ms-input-placeholder {
   color: #ffffff;
+}
+/* line 592, forms.less */
+form.form--color-olive .input:invalid,
+.form.form--color-olive .input:invalid,
+form.form--color-olive input[type="text"]:invalid,
+.form.form--color-olive input[type="text"]:invalid,
+form.form--color-olive input[type="url"]:invalid,
+.form.form--color-olive input[type="url"]:invalid,
+form.form--color-olive input[type="email"]:invalid,
+.form.form--color-olive input[type="email"]:invalid,
+form.form--color-olive input[type="number"]:invalid,
+.form.form--color-olive input[type="number"]:invalid,
+form.form--color-olive input[type="password"]:invalid,
+.form.form--color-olive input[type="password"]:invalid,
+form.form--color-olive textarea:invalid,
+.form.form--color-olive textarea:invalid,
+form.form--color-olive select:invalid,
+.form.form--color-olive select:invalid,
+form.form--color-olive .input.invalid,
+.form.form--color-olive .input.invalid,
+form.form--color-olive input[type="text"].invalid,
+.form.form--color-olive input[type="text"].invalid,
+form.form--color-olive input[type="url"].invalid,
+.form.form--color-olive input[type="url"].invalid,
+form.form--color-olive input[type="email"].invalid,
+.form.form--color-olive input[type="email"].invalid,
+form.form--color-olive input[type="number"].invalid,
+.form.form--color-olive input[type="number"].invalid,
+form.form--color-olive input[type="password"].invalid,
+.form.form--color-olive input[type="password"].invalid,
+form.form--color-olive textarea.invalid,
+.form.form--color-olive textarea.invalid,
+form.form--color-olive select.invalid,
+.form.form--color-olive select.invalid {
+  background-color: #861717 !important;
 }
 /* line 579, forms.less */
 form.form--color-green .input,
@@ -4697,6 +4837,41 @@ form.form--color-green select:-ms-input-placeholder,
 .form.form--color-green select:-ms-input-placeholder {
   color: #ffffff;
 }
+/* line 592, forms.less */
+form.form--color-green .input:invalid,
+.form.form--color-green .input:invalid,
+form.form--color-green input[type="text"]:invalid,
+.form.form--color-green input[type="text"]:invalid,
+form.form--color-green input[type="url"]:invalid,
+.form.form--color-green input[type="url"]:invalid,
+form.form--color-green input[type="email"]:invalid,
+.form.form--color-green input[type="email"]:invalid,
+form.form--color-green input[type="number"]:invalid,
+.form.form--color-green input[type="number"]:invalid,
+form.form--color-green input[type="password"]:invalid,
+.form.form--color-green input[type="password"]:invalid,
+form.form--color-green textarea:invalid,
+.form.form--color-green textarea:invalid,
+form.form--color-green select:invalid,
+.form.form--color-green select:invalid,
+form.form--color-green .input.invalid,
+.form.form--color-green .input.invalid,
+form.form--color-green input[type="text"].invalid,
+.form.form--color-green input[type="text"].invalid,
+form.form--color-green input[type="url"].invalid,
+.form.form--color-green input[type="url"].invalid,
+form.form--color-green input[type="email"].invalid,
+.form.form--color-green input[type="email"].invalid,
+form.form--color-green input[type="number"].invalid,
+.form.form--color-green input[type="number"].invalid,
+form.form--color-green input[type="password"].invalid,
+.form.form--color-green input[type="password"].invalid,
+form.form--color-green textarea.invalid,
+.form.form--color-green textarea.invalid,
+form.form--color-green select.invalid,
+.form.form--color-green select.invalid {
+  background-color: #861717 !important;
+}
 /* line 579, forms.less */
 form.form--color-teal .input,
 .form.form--color-teal .input,
@@ -4827,6 +5002,41 @@ form.form--color-teal textarea:-ms-input-placeholder,
 form.form--color-teal select:-ms-input-placeholder,
 .form.form--color-teal select:-ms-input-placeholder {
   color: #ffffff;
+}
+/* line 592, forms.less */
+form.form--color-teal .input:invalid,
+.form.form--color-teal .input:invalid,
+form.form--color-teal input[type="text"]:invalid,
+.form.form--color-teal input[type="text"]:invalid,
+form.form--color-teal input[type="url"]:invalid,
+.form.form--color-teal input[type="url"]:invalid,
+form.form--color-teal input[type="email"]:invalid,
+.form.form--color-teal input[type="email"]:invalid,
+form.form--color-teal input[type="number"]:invalid,
+.form.form--color-teal input[type="number"]:invalid,
+form.form--color-teal input[type="password"]:invalid,
+.form.form--color-teal input[type="password"]:invalid,
+form.form--color-teal textarea:invalid,
+.form.form--color-teal textarea:invalid,
+form.form--color-teal select:invalid,
+.form.form--color-teal select:invalid,
+form.form--color-teal .input.invalid,
+.form.form--color-teal .input.invalid,
+form.form--color-teal input[type="text"].invalid,
+.form.form--color-teal input[type="text"].invalid,
+form.form--color-teal input[type="url"].invalid,
+.form.form--color-teal input[type="url"].invalid,
+form.form--color-teal input[type="email"].invalid,
+.form.form--color-teal input[type="email"].invalid,
+form.form--color-teal input[type="number"].invalid,
+.form.form--color-teal input[type="number"].invalid,
+form.form--color-teal input[type="password"].invalid,
+.form.form--color-teal input[type="password"].invalid,
+form.form--color-teal textarea.invalid,
+.form.form--color-teal textarea.invalid,
+form.form--color-teal select.invalid,
+.form.form--color-teal select.invalid {
+  background-color: #861717 !important;
 }
 /* line 579, forms.less */
 form.form--color-blue .input,
@@ -4959,6 +5169,41 @@ form.form--color-blue select:-ms-input-placeholder,
 .form.form--color-blue select:-ms-input-placeholder {
   color: #ffffff;
 }
+/* line 592, forms.less */
+form.form--color-blue .input:invalid,
+.form.form--color-blue .input:invalid,
+form.form--color-blue input[type="text"]:invalid,
+.form.form--color-blue input[type="text"]:invalid,
+form.form--color-blue input[type="url"]:invalid,
+.form.form--color-blue input[type="url"]:invalid,
+form.form--color-blue input[type="email"]:invalid,
+.form.form--color-blue input[type="email"]:invalid,
+form.form--color-blue input[type="number"]:invalid,
+.form.form--color-blue input[type="number"]:invalid,
+form.form--color-blue input[type="password"]:invalid,
+.form.form--color-blue input[type="password"]:invalid,
+form.form--color-blue textarea:invalid,
+.form.form--color-blue textarea:invalid,
+form.form--color-blue select:invalid,
+.form.form--color-blue select:invalid,
+form.form--color-blue .input.invalid,
+.form.form--color-blue .input.invalid,
+form.form--color-blue input[type="text"].invalid,
+.form.form--color-blue input[type="text"].invalid,
+form.form--color-blue input[type="url"].invalid,
+.form.form--color-blue input[type="url"].invalid,
+form.form--color-blue input[type="email"].invalid,
+.form.form--color-blue input[type="email"].invalid,
+form.form--color-blue input[type="number"].invalid,
+.form.form--color-blue input[type="number"].invalid,
+form.form--color-blue input[type="password"].invalid,
+.form.form--color-blue input[type="password"].invalid,
+form.form--color-blue textarea.invalid,
+.form.form--color-blue textarea.invalid,
+form.form--color-blue select.invalid,
+.form.form--color-blue select.invalid {
+  background-color: #861717 !important;
+}
 /* line 579, forms.less */
 form.form--color-violet .input,
 .form.form--color-violet .input,
@@ -5089,6 +5334,41 @@ form.form--color-violet textarea:-ms-input-placeholder,
 form.form--color-violet select:-ms-input-placeholder,
 .form.form--color-violet select:-ms-input-placeholder {
   color: #ffffff;
+}
+/* line 592, forms.less */
+form.form--color-violet .input:invalid,
+.form.form--color-violet .input:invalid,
+form.form--color-violet input[type="text"]:invalid,
+.form.form--color-violet input[type="text"]:invalid,
+form.form--color-violet input[type="url"]:invalid,
+.form.form--color-violet input[type="url"]:invalid,
+form.form--color-violet input[type="email"]:invalid,
+.form.form--color-violet input[type="email"]:invalid,
+form.form--color-violet input[type="number"]:invalid,
+.form.form--color-violet input[type="number"]:invalid,
+form.form--color-violet input[type="password"]:invalid,
+.form.form--color-violet input[type="password"]:invalid,
+form.form--color-violet textarea:invalid,
+.form.form--color-violet textarea:invalid,
+form.form--color-violet select:invalid,
+.form.form--color-violet select:invalid,
+form.form--color-violet .input.invalid,
+.form.form--color-violet .input.invalid,
+form.form--color-violet input[type="text"].invalid,
+.form.form--color-violet input[type="text"].invalid,
+form.form--color-violet input[type="url"].invalid,
+.form.form--color-violet input[type="url"].invalid,
+form.form--color-violet input[type="email"].invalid,
+.form.form--color-violet input[type="email"].invalid,
+form.form--color-violet input[type="number"].invalid,
+.form.form--color-violet input[type="number"].invalid,
+form.form--color-violet input[type="password"].invalid,
+.form.form--color-violet input[type="password"].invalid,
+form.form--color-violet textarea.invalid,
+.form.form--color-violet textarea.invalid,
+form.form--color-violet select.invalid,
+.form.form--color-violet select.invalid {
+  background-color: #861717 !important;
 }
 /* line 579, forms.less */
 form.form--color-purple .input,
@@ -5221,6 +5501,41 @@ form.form--color-purple select:-ms-input-placeholder,
 .form.form--color-purple select:-ms-input-placeholder {
   color: #ffffff;
 }
+/* line 592, forms.less */
+form.form--color-purple .input:invalid,
+.form.form--color-purple .input:invalid,
+form.form--color-purple input[type="text"]:invalid,
+.form.form--color-purple input[type="text"]:invalid,
+form.form--color-purple input[type="url"]:invalid,
+.form.form--color-purple input[type="url"]:invalid,
+form.form--color-purple input[type="email"]:invalid,
+.form.form--color-purple input[type="email"]:invalid,
+form.form--color-purple input[type="number"]:invalid,
+.form.form--color-purple input[type="number"]:invalid,
+form.form--color-purple input[type="password"]:invalid,
+.form.form--color-purple input[type="password"]:invalid,
+form.form--color-purple textarea:invalid,
+.form.form--color-purple textarea:invalid,
+form.form--color-purple select:invalid,
+.form.form--color-purple select:invalid,
+form.form--color-purple .input.invalid,
+.form.form--color-purple .input.invalid,
+form.form--color-purple input[type="text"].invalid,
+.form.form--color-purple input[type="text"].invalid,
+form.form--color-purple input[type="url"].invalid,
+.form.form--color-purple input[type="url"].invalid,
+form.form--color-purple input[type="email"].invalid,
+.form.form--color-purple input[type="email"].invalid,
+form.form--color-purple input[type="number"].invalid,
+.form.form--color-purple input[type="number"].invalid,
+form.form--color-purple input[type="password"].invalid,
+.form.form--color-purple input[type="password"].invalid,
+form.form--color-purple textarea.invalid,
+.form.form--color-purple textarea.invalid,
+form.form--color-purple select.invalid,
+.form.form--color-purple select.invalid {
+  background-color: #861717 !important;
+}
 /* line 579, forms.less */
 form.form--color-pink .input,
 .form.form--color-pink .input,
@@ -5351,6 +5666,41 @@ form.form--color-pink textarea:-ms-input-placeholder,
 form.form--color-pink select:-ms-input-placeholder,
 .form.form--color-pink select:-ms-input-placeholder {
   color: #ffffff;
+}
+/* line 592, forms.less */
+form.form--color-pink .input:invalid,
+.form.form--color-pink .input:invalid,
+form.form--color-pink input[type="text"]:invalid,
+.form.form--color-pink input[type="text"]:invalid,
+form.form--color-pink input[type="url"]:invalid,
+.form.form--color-pink input[type="url"]:invalid,
+form.form--color-pink input[type="email"]:invalid,
+.form.form--color-pink input[type="email"]:invalid,
+form.form--color-pink input[type="number"]:invalid,
+.form.form--color-pink input[type="number"]:invalid,
+form.form--color-pink input[type="password"]:invalid,
+.form.form--color-pink input[type="password"]:invalid,
+form.form--color-pink textarea:invalid,
+.form.form--color-pink textarea:invalid,
+form.form--color-pink select:invalid,
+.form.form--color-pink select:invalid,
+form.form--color-pink .input.invalid,
+.form.form--color-pink .input.invalid,
+form.form--color-pink input[type="text"].invalid,
+.form.form--color-pink input[type="text"].invalid,
+form.form--color-pink input[type="url"].invalid,
+.form.form--color-pink input[type="url"].invalid,
+form.form--color-pink input[type="email"].invalid,
+.form.form--color-pink input[type="email"].invalid,
+form.form--color-pink input[type="number"].invalid,
+.form.form--color-pink input[type="number"].invalid,
+form.form--color-pink input[type="password"].invalid,
+.form.form--color-pink input[type="password"].invalid,
+form.form--color-pink textarea.invalid,
+.form.form--color-pink textarea.invalid,
+form.form--color-pink select.invalid,
+.form.form--color-pink select.invalid {
+  background-color: #861717 !important;
 }
 /* line 579, forms.less */
 form.form--color-brown .input,
@@ -5483,7 +5833,42 @@ form.form--color-brown select:-ms-input-placeholder,
 .form.form--color-brown select:-ms-input-placeholder {
   color: #ffffff;
 }
-/* line 731, forms.less */
+/* line 592, forms.less */
+form.form--color-brown .input:invalid,
+.form.form--color-brown .input:invalid,
+form.form--color-brown input[type="text"]:invalid,
+.form.form--color-brown input[type="text"]:invalid,
+form.form--color-brown input[type="url"]:invalid,
+.form.form--color-brown input[type="url"]:invalid,
+form.form--color-brown input[type="email"]:invalid,
+.form.form--color-brown input[type="email"]:invalid,
+form.form--color-brown input[type="number"]:invalid,
+.form.form--color-brown input[type="number"]:invalid,
+form.form--color-brown input[type="password"]:invalid,
+.form.form--color-brown input[type="password"]:invalid,
+form.form--color-brown textarea:invalid,
+.form.form--color-brown textarea:invalid,
+form.form--color-brown select:invalid,
+.form.form--color-brown select:invalid,
+form.form--color-brown .input.invalid,
+.form.form--color-brown .input.invalid,
+form.form--color-brown input[type="text"].invalid,
+.form.form--color-brown input[type="text"].invalid,
+form.form--color-brown input[type="url"].invalid,
+.form.form--color-brown input[type="url"].invalid,
+form.form--color-brown input[type="email"].invalid,
+.form.form--color-brown input[type="email"].invalid,
+form.form--color-brown input[type="number"].invalid,
+.form.form--color-brown input[type="number"].invalid,
+form.form--color-brown input[type="password"].invalid,
+.form.form--color-brown input[type="password"].invalid,
+form.form--color-brown textarea.invalid,
+.form.form--color-brown textarea.invalid,
+form.form--color-brown select.invalid,
+.form.form--color-brown select.invalid {
+  background-color: #861717 !important;
+}
+/* line 735, forms.less */
 form.form--invert .input,
 .form.form--invert .input,
 form.form--invert input[type="text"],
@@ -5504,7 +5889,7 @@ form.form--invert select,
   background-color: #404040;
   color: #f5f5f5;
 }
-/* line 736, forms.less */
+/* line 740, forms.less */
 form.form--invert .input:active,
 .form.form--invert .input:active,
 form.form--invert input[type="text"]:active,
@@ -5539,7 +5924,7 @@ form.form--invert select:focus,
 .form.form--invert select:focus {
   background-color: #595959;
 }
-/* line 740, forms.less */
+/* line 744, forms.less */
 form.form--invert .input:invalid,
 .form.form--invert .input:invalid,
 form.form--invert input[type="text"]:invalid,
@@ -5558,31 +5943,31 @@ form.form--invert select:invalid,
 .form.form--invert select:invalid {
   background-color: #711313;
 }
-/* line 745, forms.less */
+/* line 749, forms.less */
 form.form--invert label,
 .form.form--invert label {
   color: #ffffff;
 }
-/* line 749, forms.less */
+/* line 753, forms.less */
 form.form--invert option,
 .form.form--invert option {
   background-color: #333333;
   color: #ffffff;
 }
-/* line 754, forms.less */
+/* line 758, forms.less */
 form.form--invert optgroup,
 .form.form--invert optgroup {
   background-color: #4d4d4d;
   color: #ffffff;
 }
-/* line 759, forms.less */
+/* line 763, forms.less */
 form.form--invert .form__attach,
 .form.form--invert .form__attach {
   background-color: #404040;
   border: 1px solid #333333;
   color: #f5f5f5;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-red .input,
 .form.form--invert.form--color-red .input,
 form.form--invert.form--color-red input[type="text"],
@@ -5603,7 +5988,7 @@ form.form--invert.form--color-red select,
   background: #9c1a1a;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-red .input:active,
 .form.form--invert.form--color-red .input:active,
 form.form--invert.form--color-red input[type="text"]:active,
@@ -5638,7 +6023,7 @@ form.form--invert.form--color-red select:focus,
 .form.form--invert.form--color-red select:focus {
   background-color: #b21e1e;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-orange .input,
 .form.form--invert.form--color-orange .input,
 form.form--invert.form--color-orange input[type="text"],
@@ -5659,7 +6044,7 @@ form.form--invert.form--color-orange select,
   background: #b74f0a;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-orange .input:active,
 .form.form--invert.form--color-orange .input:active,
 form.form--invert.form--color-orange input[type="text"]:active,
@@ -5694,7 +6079,7 @@ form.form--invert.form--color-orange select:focus,
 .form.form--invert.form--color-orange select:focus {
   background-color: #cf590c;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-yellow .input,
 .form.form--invert.form--color-yellow .input,
 form.form--invert.form--color-yellow input[type="text"],
@@ -5715,7 +6100,7 @@ form.form--invert.form--color-yellow select,
   background: #b48703;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-yellow .input:active,
 .form.form--invert.form--color-yellow .input:active,
 form.form--invert.form--color-yellow input[type="text"]:active,
@@ -5750,7 +6135,7 @@ form.form--invert.form--color-yellow select:focus,
 .form.form--invert.form--color-yellow select:focus {
   background-color: #cd9903;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-olive .input,
 .form.form--invert.form--color-olive .input,
 form.form--invert.form--color-olive input[type="text"],
@@ -5771,7 +6156,7 @@ form.form--invert.form--color-olive select,
   background: #788810;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-olive .input:active,
 .form.form--invert.form--color-olive .input:active,
 form.form--invert.form--color-olive input[type="text"]:active,
@@ -5806,7 +6191,7 @@ form.form--invert.form--color-olive select:focus,
 .form.form--invert.form--color-olive select:focus {
   background-color: #8d9e13;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-green .input,
 .form.form--invert.form--color-green .input,
 form.form--invert.form--color-green input[type="text"],
@@ -5827,7 +6212,7 @@ form.form--invert.form--color-green select,
   background: #15792d;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-green .input:active,
 .form.form--invert.form--color-green .input:active,
 form.form--invert.form--color-green input[type="text"]:active,
@@ -5862,7 +6247,7 @@ form.form--invert.form--color-green select:focus,
 .form.form--invert.form--color-green select:focus {
   background-color: #198f35;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-teal .input,
 .form.form--invert.form--color-teal .input,
 form.form--invert.form--color-teal input[type="text"],
@@ -5883,7 +6268,7 @@ form.form--invert.form--color-teal select,
   background: #006964;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-teal .input:active,
 .form.form--invert.form--color-teal .input:active,
 form.form--invert.form--color-teal input[type="text"]:active,
@@ -5918,7 +6303,7 @@ form.form--invert.form--color-teal select:focus,
 .form.form--invert.form--color-teal select:focus {
   background-color: #00827c;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-blue .input,
 .form.form--invert.form--color-blue .input,
 form.form--invert.form--color-blue input[type="text"],
@@ -5939,7 +6324,7 @@ form.form--invert.form--color-blue select,
   background: #175b8e;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-blue .input:active,
 .form.form--invert.form--color-blue .input:active,
 form.form--invert.form--color-blue input[type="text"]:active,
@@ -5974,7 +6359,7 @@ form.form--invert.form--color-blue select:focus,
 .form.form--invert.form--color-blue select:focus {
   background-color: #1a69a4;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-violet .input,
 .form.form--invert.form--color-violet .input,
 form.form--invert.form--color-violet input[type="text"],
@@ -5995,7 +6380,7 @@ form.form--invert.form--color-violet select,
   background: #46258c;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-violet .input:active,
 .form.form--invert.form--color-violet .input:active,
 form.form--invert.form--color-violet input[type="text"]:active,
@@ -6030,7 +6415,7 @@ form.form--invert.form--color-violet select:focus,
 .form.form--invert.form--color-violet select:focus {
   background-color: #502aa1;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-purple .input,
 .form.form--invert.form--color-purple .input,
 form.form--invert.form--color-purple input[type="text"],
@@ -6051,7 +6436,7 @@ form.form--invert.form--color-purple select,
   background: #71238b;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-purple .input:active,
 .form.form--invert.form--color-purple .input:active,
 form.form--invert.form--color-purple input[type="text"]:active,
@@ -6086,7 +6471,7 @@ form.form--invert.form--color-purple select:focus,
 .form.form--invert.form--color-purple select:focus {
   background-color: #82299f;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-pink .input,
 .form.form--invert.form--color-pink .input,
 form.form--invert.form--color-pink input[type="text"],
@@ -6107,7 +6492,7 @@ form.form--invert.form--color-pink select,
   background: #b11c70;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-pink .input:active,
 .form.form--invert.form--color-pink .input:active,
 form.form--invert.form--color-pink input[type="text"]:active,
@@ -6142,7 +6527,7 @@ form.form--invert.form--color-pink select:focus,
 .form.form--invert.form--color-pink select:focus {
   background-color: #c71f7e;
 }
-/* line 595, forms.less */
+/* line 599, forms.less */
 form.form--invert.form--color-brown .input,
 .form.form--invert.form--color-brown .input,
 form.form--invert.form--color-brown input[type="text"],
@@ -6163,7 +6548,7 @@ form.form--invert.form--color-brown select,
   background: #6e442a;
   color: #ffffff;
 }
-/* line 600, forms.less */
+/* line 604, forms.less */
 form.form--invert.form--color-brown .input:active,
 .form.form--invert.form--color-brown .input:active,
 form.form--invert.form--color-brown input[type="text"]:active,
@@ -6198,7 +6583,7 @@ form.form--invert.form--color-brown select:focus,
 .form.form--invert.form--color-brown select:focus {
   background-color: #805031;
 }
-/* line 779, forms.less */
+/* line 783, forms.less */
 form.form--no-border .input,
 .form.form--no-border .input,
 form.form--no-border input[type="text"],
@@ -6217,7 +6602,7 @@ form.form--no-border select,
 .form.form--no-border select {
   border: none;
 }
-/* line 785, forms.less */
+/* line 789, forms.less */
 form.form--transparent .input,
 .form.form--transparent .input,
 form.form--transparent input[type="text"],
@@ -6236,7 +6621,7 @@ form.form--transparent select,
 .form.form--transparent select {
   opacity: 0.5;
 }
-/* line 788, forms.less */
+/* line 792, forms.less */
 form.form--transparent .input:active,
 .form.form--transparent .input:active,
 form.form--transparent input[type="text"]:active,
@@ -6271,7 +6656,7 @@ form.form--transparent select:focus,
 .form.form--transparent select:focus {
   opacity: 1;
 }
-/* line 794, forms.less */
+/* line 798, forms.less */
 form.form--center,
 .form.form--center {
   display: table;
