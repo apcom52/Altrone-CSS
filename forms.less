@@ -628,8 +628,12 @@ form, .form {
 			.anim(0.3s);
 		}
 
-		&:invalid {
+		&:invalid, .invalid {
 			background-color: lighten(@red, 25%);
+		}
+
+		&:disabled {
+			cursor: not-allowed;
 		}
 	}
 

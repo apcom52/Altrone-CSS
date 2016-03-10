@@ -8,25 +8,6 @@
 		.anim(0.3s);
 	}
 
-	&:disabled, &.button--disabled {
-		cursor: no-drop;
-		background-color: lighten(@color, 20%);
-		border-style: dotted;
-
-		&:hover, &:active, &.active, &.button--transparent {
-			background-color: lighten(@color, 20%);
-		}
-
-		&.button--transparent-full {
-			color: lighten(@color, 30%);
-			background-color: transparent;
-
-			&:hover, &:active {
-				color: lighten(@color, 30%);
-			}
-		}
-	}
-
 	&:active, .active {
 		background-color: darken(@color, 8%);
 		border-color: darken(@color, 10%);
@@ -78,6 +59,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		&--rounded { border-radius: 1.25em;	}
 		&--circle { border-radius: 50%; padding: 0.5em 0.75em; }
 		&--no-smooth { border-radius: 0em;	}
+	}
+
+	&:disabled {
+		opacity: .5;
 	}
 
 	&.button--icon {
