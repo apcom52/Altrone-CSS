@@ -639,13 +639,17 @@ form, .form {
 		&:disabled {
 			cursor: not-allowed;
 		}
+
+		&::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder {
+			color: @m-gray;
+		}
 	}
 
 	textarea {
 		transition: resize 0s linear;
 	}
 
-	.form--attached {
+	.form-attached {
 		overflow: hidden;
 		clear: both;
 		display: block;
