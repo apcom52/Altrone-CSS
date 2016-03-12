@@ -1,12 +1,11 @@
 .set-card-color(@color) {
-	&.card--colored {
-		background-color: @color;
-		color: @white;	
+	background-color: @color;
+	color: @white;	
 
-		.card__footer {
-			border-top-color: lighten(@color, 5%);
-		}	
-	}
+	.card__footer {
+		color: @u-gray;
+		border-top-color: lighten(@color, 5%);
+	}	
 }
 
 .card {
@@ -103,11 +102,13 @@
 	}
 
 	.card__footer {
-		width: 100%;
+		width: ~'calc(100% - 2em)';
 		display: table;
 		color: @m-gray;
+		padding: 0.5em 1em;
 		border-top: 1px solid @u-gray;
 		border-radius: 0em 0em 0.5em 0.5em;
+		font-size: 0.9em;
 
 		.card__footer__meta {
 			display: table-cell;
@@ -184,14 +185,4 @@
 	&.card--no-shadow {
 		box-shadow: none;
 	}
-
-	&.card--colored {
-		background-color: @u-gray;
-
-		.card__footer {
-			border-top-color: darken(@u-gray, 5%);
-		}
-	}
-
-
 }

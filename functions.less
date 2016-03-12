@@ -272,3 +272,20 @@ code {
 .d-gray-ring { .set-ring-color(@d-gray); }
 .black-ring { .set-ring-color(@black); }
 .white-ring { .set-ring-color(@white); }
+
+::-webkit-scrollbar {
+	width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: @m-gray;
+    border: 1px solid @m-gray;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   	background-color: lighten(@d-gray, 5%);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background-color: lighten(@d-gray, 5%);
+}

@@ -112,6 +112,10 @@
 			}
 		}
 	}
+
+	&.taskbar--fixed {
+		position: fixed;
+	}
 }
 
 .set-taskbar-item-hover-color(@color) {
@@ -185,5 +189,191 @@
 		&.progress--color-violet { .set-progress-invert-color(@violet); }
 		&.progress--color-pink { .set-progress-invert-color(@pink); }
 		&.progress--color-brown { .set-progress-invert-color(@brown); }
+	}
+}
+
+.set-sidebar-color(@color) {
+	.sidebar__cover {
+		background-color: @color;
+		color: @white;
+	}
+
+	.sidebar__menu {
+		.sidebar__menu__item {			
+			&:hover {
+				background-color: lighten(@color, 10%);
+				color: @white;
+			}
+			&:active, &.sidebar__menu__item--active {
+				background-color: @color;
+				color: @white;
+			}
+		}
+	}
+
+	&.sidebar--invert {
+		.sidebar__menu {
+			.sidebar__menu__item {
+				&:hover {
+					background-color: darken(@color, 10%);
+				}		
+				&:active, &.sidebar__menu__item--active {
+					background-color: @color;
+					color: @white;
+				}		
+			}
+		}
+	}
+}
+
+.sidebar {
+	display: block;
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	top: 0;
+	left: -300px;
+	background-color: @u-gray;
+	.shadow-1();
+	z-index: 5;
+	overflow-y: auto;
+	overflow-x: hidden;
+	.pt();
+	.anim(0.3s);
+
+	.sidebar__cover {
+		background-color: darken(@u-gray, 5%);
+		cursor: pointer;
+		width: 100%;
+		box-sizing: border-box;
+		height: auto;
+		color: @d-gray;
+		padding: 3em 1em 1em 1em;
+		text-align: center;
+
+		.sidebar__cover__title {			
+			font-weight: bold;			
+		}
+
+		img ~ .sidebar__cover__title {
+			margin-top: 1em;
+		}
+	}
+
+	.sidebar__menu {
+		width: 100%;
+		height: auto;
+		position: relative;		
+
+		.sidebar__menu__header {
+			margin: 1em;
+			text-transform: uppercase;
+			color: @m-gray;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.sidebar__menu__item {
+			width: 100%;
+			background-color: @u-gray;
+			color: @d-gray;
+			padding: 1em 2em;
+			cursor: pointer;
+			.anim(0.3s);
+
+			&:hover {
+				background-color: darken(@u-gray, 10%);
+				.anim(0.3s);
+			}
+			
+			i {
+				margin-right: 1em;
+			}
+
+			&:active, &.sidebar__menu__item--active {
+				background-color: darken(@u-gray, 15%);
+				.anim(0.3s);
+			}
+		}
+
+		.sidebar__menu__separator {
+			margin: 0.5em 1em;
+			height: 1px;
+			border-top: 1px solid darken(@u-gray, 10%);
+		}
+	}
+
+	&.sidebar--color-red { .set-sidebar-color(@red); }
+	&.sidebar--color-orange { .set-sidebar-color(@orange); }
+	&.sidebar--color-yellow { .set-sidebar-color(@yellow); }
+	&.sidebar--color-olive { .set-sidebar-color(@olive); }
+	&.sidebar--color-green { .set-sidebar-color(@green); }
+	&.sidebar--color-blue { .set-sidebar-color(@blue); }
+	&.sidebar--color-teal { .set-sidebar-color(@teal); }
+	&.sidebar--color-purple { .set-sidebar-color(@purple); }
+	&.sidebar--color-violet { .set-sidebar-color(@violet); }
+	&.sidebar--color-pink { .set-sidebar-color(@pink); }
+	&.sidebar--color-brown { .set-sidebar-color(@brown); }
+
+	&.sidebar--invert {
+		background-color: @d-gray; 
+
+		.sidebar__cover {
+			color: @white;
+			background-color: lighten(@d-gray, 5%);
+		}
+
+		.sidebar__menu {
+			.sidebar__menu__header {
+				color: @l-gray;
+			}
+
+			.sidebar__menu__item {
+				background-color: @d-gray;
+				color: @white;
+
+				&:hover {
+					background-color: lighten(@d-gray, 10%);
+				}
+
+				&:active, &.sidebar__menu__item--active {
+					background-color: lighten(@d-gray, 15%);
+				}
+			}
+
+			.sidebar__menu__separator {
+				border-top-color: lighten(@d-gray, 10%);
+			}
+		}
+	}
+
+	&.sidebar--show {
+		left: 0px;
+
+		.overflow {
+			display: block;
+		}
+	}
+
+	&.sidebar--under-taskbar {
+		top: 44px;
+
+		height: ~"calc(100% - 44px;)";
+	}
+}
+
+.overflow {
+	background-color: @black;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 4;
+	display: none;
+
+	&.overflow--show {
+		display: block;
 	}
 }

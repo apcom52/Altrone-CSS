@@ -11,8 +11,6 @@ $(function() {
 
 		var result_width = dropdown_width + sender_x;
 
-		console.log(sender_height)
-
 		if (result_width <= window_width) {
 			dropdown.css({
 				'top': sender_y + sender_height,
@@ -44,8 +42,6 @@ $(function() {
 		var select = $(this);
 		var options = parent.find('.select__options');
 		var selected_id = $(this).data('selectValue');
-		console.log(selected_id);
-		console.log(parent);
 		options.find('.select__options__item').removeClass('select__options__item--active');
 		var active_option = options.find('.select__options__item[data-option-id="' + selected_id + '"]');
 		active_option.addClass('select__options__item--active');
@@ -93,14 +89,7 @@ $(function() {
 					lastTooltipPosition.x = 0;
 				}
 
-				/* Позиционирование по высоте относительно окна */
-				//if ($(this).position().top - tooltip_height < $
-				console.log($(this).position().top);
-				console.log($(this).offset().top);
-				console.log(window_height);
-
-				lastTooltipPosition.y = $(this).position().top - tooltip_height;
-				
+				lastTooltipPosition.y = $(this).position().top - tooltip_height;				
 
 				/* !!! ToDo: сделать позиционирование по вертикали */
 
@@ -141,7 +130,6 @@ $(function() {
 		$('.overflow').show().animate({opacity: 0.7}, 400);
 		modal.show().animate({opacity: 1}, 500);
 
-		console.log(modal);
 		modal.find('.modal--close').click(function() {
 			$('.overflow').animate({opacity: 0}, 400, function() { $('.overflow').hide(); });
 			modal.animate({opacity: 0}, 500, function() { modal.hide(); });
@@ -157,9 +145,7 @@ $(function() {
 	/* Toggle Button */
 	$('[data-button-toggle="true"]').addClass('button--checked');
 	$('[data-button-toggle]').click(function() {
-		console.log($(this));
 		current = $(this);
-		console.log($(this).data('buttonToggle'));
 		//current.removeClass('button--checked');
 		if ($(this).data('buttonToggle') == true) {
 			current.removeClass('button--checked');
