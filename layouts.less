@@ -186,6 +186,203 @@
 	}
 }
 
+.masonry-grid {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;	
+	-webkit-column-gap: 1em;
+	-moz-column-gap: 1em;
+	column-gap: 1em;
+
+	&.masonry-grid--columns-1 { 
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+	&.masonry-grid--columns-3 { 
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+	&.masonry-grid--columns-4 { 
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+	}
+	&.masonry-grid--columns-5 { 
+		-webkit-column-count: 5;
+		-moz-column-count: 5;
+		column-count: 5;
+	}
+	&.masonry-grid--columns-6 { 
+		-webkit-column-count: 6;
+		-moz-column-count: 6;
+		column-count: 6;
+	}
+
+	&.masonry-grid--no-margin {
+		-webkit-column-gap: 0em;
+		-moz-column-gap: 0em;
+		column-gap: 0em;
+	}
+	&.masonry-grid--margin-small {
+		-webkit-column-gap: 0.25em;
+		-moz-column-gap: 0.25em;
+		column-gap: 0.25em;
+	}
+	&.masonry-grid--margin-medium {
+		-webkit-column-gap: 0.5em;
+		-moz-column-gap: 0.5em;
+		column-gap: 0.5em;
+	}
+
+	.masonry-item {
+		display: inline-block;
+		width: 100%;
+		margin: 1em 0px;
+	}
+}
+
+@media (max-width: @l-tablet) {
+	.masonry-grid {
+		&.masonry-grid--lt-columns-1 { 
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1; 
+		}
+		&.masonry-grid--lt-columns-2 { 
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2; 
+		}
+		&.masonry-grid--lt-columns-3 { 
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3; 
+		}
+		&.masonry-grid--lt-columns-4 { 
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4; 
+		}
+		&.masonry-grid--lt-columns-5 { 
+			-webkit-column-count: 5;
+			-moz-column-count: 5;
+			column-count: 5; 
+		}
+		&.masonry-grid--lt-columns-6 { 
+			-webkit-column-count: 6;
+			-moz-column-count: 6;
+			column-count: 6; 
+		}
+	}
+}
+
+@media (max-width: @tablet) {
+	.masonry-grid {
+		&.masonry-grid--t-columns-1 { 
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+		&.masonry-grid--t-columns-2 { 
+			-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		}
+		&.masonry-grid--t-columns-3 { 
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
+		&.masonry-grid--t-columns-4 { 
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+		}
+		&.masonry-grid--t-columns-5 { 
+			-webkit-column-count: 5;
+			-moz-column-count: 5;
+			column-count: 5;
+		}
+		&.masonry-grid--t-columns-6 { 
+			-webkit-column-count: 6;
+			-moz-column-count: 6;
+			column-count: 6;
+		}
+	}
+}
+
+@media (max-width: @l-mobile) {
+	.masonry-grid {
+		&.masonry-grid--lm-columns-1 { 
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+		&.masonry-grid--lm-columns-2 { 
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
+		&.masonry-grid--lm-columns-3 { 
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
+		&.masonry-grid--lm-columns-4 { 
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+		}
+		&.masonry-grid--lm-columns-5 { 
+			-webkit-column-count: 5;
+			-moz-column-count: 5;
+			column-count: 5;
+		}
+		&.masonry-grid--lm-columns-6 { 
+			-webkit-column-count: 6;
+			-moz-column-count: 6;
+			column-count: 6;
+		}
+	}
+}
+
+@media (max-width: @mobile) {
+	.masonry-grid {
+		&.masonry-grid--m-columns-1 { 
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+		&.masonry-grid--m-columns-2 { 
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
+		&.masonry-grid--m-columns-3 { 
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
+		&.masonry-grid--m-columns-4 { 
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+		}
+		&.masonry-grid--m-columns-5 { 
+			-webkit-column-count: 5;
+			-moz-column-count: 5;
+			column-count: 5;
+		}
+		&.masonry-grid--m-columns-6 { 
+			-webkit-column-count: 6;
+			-moz-column-count: 6;
+			column-count: 6;
+		}
+	}
+}
+
 .table-grid {
 	display: table;
 	width: 100%;
