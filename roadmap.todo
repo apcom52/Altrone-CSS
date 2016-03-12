@@ -13,13 +13,13 @@
  ☐ @high Вертикальное положение select
  ☐ @high Вертикальное положение tooltip
  ✔ @high Добавить Toggle Button @done (16-02-29 00:19)
- ☐ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt
+ ✔ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt @done (16-03-13 01:04)
  ☐ @high Добавить модуль Feed
  ☐ @high Добавить модуль UserItem
  ☐ @high Добавить модуль Label, Badge
- ☐ @low Добавить классы анимаций появлений .fade-in, .fade-out, .slide-in, .slide-out, .slide-left, .slide-right
- ☐ @low Сделать прогресс-бары
+ ✔ @low Добавить классы анимаций появлений .fade-in, .fade-out, .slide-in, .slide-out, .slide-left, .slide-right @done (16-03-13 01:10)
+ ✔ @low Сделать прогресс-бары @done (16-03-13 00:07)
  ☐ @low Сделать masonry-сетку
- ☐ @low Переработать List
+ ✔ @low Переработать List @done (16-03-13 00:07)
  ✔ @low Сделать вертикальную группировку кнопок @done (16-02-23 01:03)
  ☐ Написать документацию

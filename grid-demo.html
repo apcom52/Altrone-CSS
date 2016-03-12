@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Демонстрация возможностей сетки</title>
+	<link rel="stylesheet" type="text/css" href="altrone.css?rnd=4">
+	<link rel="stylesheet" type="text/css" href="font-awesome.css">
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="altrone.js"></script>
+	<script src="altrone-dev.js"></script>
+
+	<style>
+		.grid > [class^="col-"] {
+			background-color: #D2DFE9;
+			color: #333333;
+			font-family: HelveticaNeueLight;
+			padding: 0.25em;
+			box-sizing: border-box;	
+			border: 1px dotted #A3BCD2;
+		}
+	</style>
+</head>
+<body class="margin-1">
+	<h1>Одиночные колонки</h1>
+	<div class="grid">
+		<div class="col-1">Column 1</div>
+		<div class="col-1">Column 2</div>
+		<div class="col-1">Column 3</div>
+		<div class="col-1">Column 4</div>
+		<div class="col-1">Column 5</div>
+		<div class="col-1">Column 6</div>
+		<div class="col-1">Column 7</div>
+		<div class="col-1">Column 8</div>
+		<div class="col-1">Column 9</div>
+		<div class="col-1">Column 10</div>
+		<div class="col-1">Column 11</div>
+		<div class="col-1">Column 12</div>
+	</div>
+
+	<h1>Комбинации колонок</h1>
+	<div class="grid">
+		<div class="col-1">Column 1</div>
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-3">Column 3</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-1">Column 1</div>
+	</div>
+
+	<h1>Пустые колонки</h1>
+	<div class="grid">
+		<div class="col-2">Column 2</div>
+		<div class="col-4 offset-2">Column 4 + Offset 2</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-1 offset-1">Column 1</div>
+	</div>
+
+	<h1>Адаптивная верстка (ПК + планшет)</h1>
+	<div class="grid">
+		<div class="col-2 col-t-4">Adaptive Column</div>
+		<div class="col-2 col-t-4">Adaptive Column</div>
+		<div class="col-2 col-t-4 offset-2 offset-t-4">Adaptive Column</div>
+		<div class="col-2 col-t-4">Adaptive Column</div>
+		<div class="col-2 col-t-4">Adaptive Column</div>
+	</div>
+
+	<h1>Адаптивная верстка (ПК + планшет + смартфон)</h1>
+	<div class="grid">
+		<div class="col-2 col-t-4 col-m-4">Adaptive Column</div>
+		<div class="col-2 col-t-4 col-m-4">Adaptive Column</div>
+		<div class="col-2 col-t-4 col-m-2 offset-2 offset-t-4 offset-m-2">Adaptive Column</div>
+		<div class="col-2 col-t-4 col-m-2">Adaptive Column</div>
+		<div class="col-2 col-t-4 col-m-2">Adaptive Column</div>
+	</div>
+
+	<h1>Адаптивная верстка (для всех вариантов)</h1>
+	<div class="grid">
+		<div class="col-1 col-lt-7 col-t-2 col-lm-3 col-m-2">Column 1</div>
+		<div class="col-1 col-lt-3 col-t-2 col-lm-2 col-m-2">Column 2</div>
+		<div class="col-1 col-lt-6 offset-lt-4 col-t-2 offset-t-0 col-lm-1 col-m-2 col-m-1">Column 3</div>
+		<div class="col-1 col-lt-10 col-t-2 col-lm-3 offset-lm-1 col-m-2 offset-col-1">Column 4</div>
+		<div class="col-1 col-lt-1 col-t-4 offset-t-4 col-lm-2 offset-lm-0 col-m-2">Column 5</div>
+		<div class="col-1 col-lt-3 col-t-2 col-lm-1 col-m-2">Column 6</div>
+		<div class="col-1 col-lt-6 col-t-2 col-lm-2 col-m-2">Column 7</div>
+		<div class="col-1 col-lt-5 col-t-2 col-lm-1 col-m-2">Column 8</div>
+		<div class="col-1 col-lt-2 col-t-2 col-lm-2 col-m-2">Column 9</div>
+		<div class="col-1 col-lt-7 col-t-3 col-lm-1 col-m-2">Column 10</div>
+		<div class="col-1 col-lt-1 col-t-3 col-lm-3 col-m-2">Column 11</div>
+		<div class="col-1 col-lt-10 col-t-2 col-lm-3 col-m-2">Column 12</div>
+	</div>
+</body>
+</html>

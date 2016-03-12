@@ -1,4 +1,4 @@
-@media (max-width: @tablet) {
+/*@media (max-width: @tablet) {
 	.col {
 		margin: 0px !important;
 
@@ -19,9 +19,9 @@
 			margin-left: 0em;
 		}
 	}*/
-}
+//}
 
-@media (max-width: @mobile) {
+/*@media (max-width: @mobile) {
 	.col {
 		margin: 0px !important;
 
@@ -37,9 +37,9 @@
 			display: none;
 		}
 	}*/
-}
+//}
 
-.set-offset(@size) {
+/*.set-offset(@size) {
 	margin-left: @size;
 }
 
@@ -57,102 +57,132 @@
 	&.col--padding {
 		padding: 5px;
 	}
-}
+}*/
 
 .grid {
 	clear: both;
-	padding: 0px;
+	padding: 0em;
 	margin: 0px;
 	zoom: 1;
 	width: 100%;
-
-	&:before, &:after {
-		content: "";
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-	}
-
-	&.grid--gutters {
-		box-sizing: border-box;
-
-		[class^='col-'], [class^='col-t-'], [class^='col-m-']{
-			padding-right: 2em;
-
-			&:last-of-type {
-				padding-right: 0em;
-			}
-		} 
-	}
-
-	.col-1 { .set-size(8.333%); }
-	.col-2 { .set-size(16.66%); }
-	.col-3 { .set-size(25%); }
-	.col-4 { .set-size(33.33%); }
-	.col-5 { .set-size(41.66%); }
-	.col-6 { .set-size(50%); }
-	.col-7 { .set-size(58.33%); }
-	.col-8 { .set-size(66.66%); }
-	.col-9 { .set-size(75%); }
-	.col-10 { .set-size(83.33%); }
-	.col-11 { .set-size(91.66%); }
-	.col-12 { .set-size(100%); }	
+	overflow: hidden;
 
 	[class^='col-'] {
-		&.col--offset-1 { .set-offset(8.333%); }
-		&.col--offset-2 { .set-offset(16.66%); }
-		&.col--offset-3 { .set-offset(25%); }
-		&.col--offset-4 { .set-offset(33.33%); }
-		&.col--offset-5 { .set-offset(41.66%); }
-		&.col--offset-6 { .set-offset(50%); }
+		display: inline-block;
+		float: left;
+	}
+
+	.col-1 { width: 8.33%; }
+	.col-2 { width: 16.66%; }
+	.col-3 { width: 25%; }
+	.col-4 { width: 33.33%; }
+	.col-5 { width: 41.66%; }
+	.col-6 { width: 50%; }
+	.col-7 { width: 58.33%; }
+	.col-8 { width: 66.66%; }
+	.col-9 { width: 75%; }
+	.col-10 { width: 83.33%; }
+	.col-11 { width: 91.66%; }
+	.col-12 { width: 100%; }
+
+	.offset-1 { margin-left: 8.33%; }
+	.offset-2 { margin-left: 16.66%; }
+	.offset-3 { margin-left: 25%; }
+	.offset-4 { margin-left: 33.33%; }
+	.offset-5 { margin-left: 41.66%; }
+	.offset-6 { margin-left: 50%; }
+	.offset-7 { margin-left: 58.33%; }
+	.offset-8 { margin-left: 66.66%; }
+	.offset-9 { margin-left: 75%; }
+	.offset-10 { margin-left: 83.33%; }
+	.offset-11 { margin-left: 91.66%; }
+}
+
+@media (max-width: @l-tablet) {
+	.grid {
+		[class^='col-'] {
+			&.col-lt-1 {	width: 10%;	}
+			&.col-lt-2 {	width: 20%;	}
+			&.col-lt-3 {	width: 30%;	}
+			&.col-lt-4 {	width: 40%;	}
+			&.col-lt-5 {	width: 50%;	}
+			&.col-lt-6 {	width: 60%;	}
+			&.col-lt-7 {	width: 70%;	}
+			&.col-lt-8 {	width: 80%;	}
+			&.col-lt-9 {	width: 90%;	}
+			&.col-lt-10 {	width: 100%;	}
+
+			&.offset-lt-0 { margin-left: 0%; }
+			&.offset-lt-1 {	margin-left: 10%;	}
+			&.offset-lt-2 {	margin-left: 20%;	}
+			&.offset-lt-3 {	margin-left: 30%;	}
+			&.offset-lt-4 {	margin-left: 40%;	}
+			&.offset-lt-5 {	margin-left: 50%;	}
+			&.offset-lt-6 {	margin-left: 60%;	}
+			&.offset-lt-7 {	margin-left: 70%;	}
+			&.offset-lt-8 {	margin-left: 80%;	}
+			&.offset-lt-9 {	margin-left: 90%;	}
+		}
 	}
 }
 
-.flex {
-	display: flex;
+@media (max-width: @tablet) {
+	.grid {
+		[class^='col-'] {
+			&.col-t-1 {	width: 12.5%;	}
+			&.col-t-2 {	width: 25%;	}
+			&.col-t-3 {	width: 37.5%;	}
+			&.col-t-4 {	width: 50%;	}
+			&.col-t-5 {	width: 62.5%;	}
+			&.col-t-6 {	width: 75%;	}
+			&.col-t-7 {	width: 87.5%;	}
+			&.col-t-8 {	width: 100%;	}
 
-	&.direction-row {
-		flex-direction: row;
+			&.offset-t-0 { margin-left: 0%; }
+			&.offset-t-1 { margin-left: 12.5%; }
+			&.offset-t-2 { margin-left: 25%; }
+			&.offset-t-3 { margin-left: 37.5%; }
+			&.offset-t-4 { margin-left: 50%; }
+			&.offset-t-5 { margin-left: 62.5%; }
+			&.offset-t-6 { margin-left: 75%; }
+			&.offset-t-7 { margin-left: 87.5%; }
+		}
 	}
-	&.direction-column {
-		flex-direction: column;
+}
+
+@media (max-width: @l-mobile) {
+	.grid {
+		[class^='col-'] {
+			&.col-lm-1 {	width: 16.66%;	}
+			&.col-lm-2 {	width: 33.33%;	}
+			&.col-lm-3 {	width: 50%;	}
+			&.col-lm-4 {	width: 66.66%;	}
+			&.col-lm-5 {	width: 83.33%;	}
+			&.col-lm-6 {	width: 100%;	}
+
+			&.offset-lm-0 { margin-left: 0%; }
+			&.offset-lm-1 {	margin-left: 16.66%;	}
+			&.offset-lm-2 {	margin-left: 33.33%;	}
+			&.offset-lm-3 {	margin-left: 50%;	}
+			&.offset-lm-4 {	margin-left: 66.66%;	}
+			&.offset-lm-5 {	margin-left: 83.33%;	}
+		}
 	}
+}
 
-	&.main-align {
-		&-left {	justify-content: flex-start;	}
-		&-right {	justify-content: flex-end;	}
-		&-center {	justify-content: center;	}
-		&-between {	justify-content: space-between;	}
-		&-around {	justify-content: space-around;	}
-	}
+@media (max-width: @mobile) {
+	.grid {
+		[class^='col-'] {
+			&.col-m-1 {	width: 25%;	}
+			&.col-m-2 {	width: 50%;	}
+			&.col-m-3 {	width: 75%;	}
+			&.col-m-4 {	width: 100%;	}
 
-	&.sub-align {
-		&-top {	align-items: flex-start;	}
-		&-bottom {	align-items: flex-end;	}
-		&-center {	align-items: center;	}
-		&-fit {	align-items: stretch;	}
-		&-baseline {	align-items: baseline;	}
-	}
-
-	&.no-wrap { flex-wrap: nowrap; }
-	&.wrap { flex-wrap: wrap; }
-	&.reverse { flex-wrap: wrap-reverse; }
-
-	.col {
-		&.col-1 { flex-grow: 1; }	
-		&.col-2 { flex-grow: 2; }
-		&.col-3 { flex-grow: 3; }
-		&.col-4 { flex-grow: 4; }
-		&.col-5 { flex-grow: 5; }
-		&.col-6 { flex-grow: 6; }
-		&.col-7 { flex-grow: 7; }
-		&.col-8 { flex-grow: 8; }
-		&.col-9 { flex-grow: 9; }
-		&.col-10 { flex-grow: 10; }
-		&.col-11 { flex-grow: 11; }
-		&.col-12 { flex-grow: 12; }
+			&.offset-m-0 { margin-left: 0%; }
+			&.offset-m-1 { margin-left: 25%; }
+			&.offset-m-2 { margin-left: 50%; }
+			&.offset-m-3 { margin-left: 75%; }
+		}
 	}
 }
 
@@ -222,5 +252,37 @@
 
 	&.horizontal-layout--centered {
 		align-items: center;
+	}
+}
+
+.list-view {
+	display: flex;
+	flex-direction: column;
+	background-color: @u-gray;
+	color: @d-gray;
+
+	.row {
+		flex: 1;
+	}
+
+	&.list-view--reverse {
+		flex-direction: column-reverse;
+	}
+
+	&.list-view--stripped {
+		.row:nth-child(even) {
+			background-color: darken(@u-gray, 5%);
+		}
+	}
+
+	&.list-view--invert {
+		background-color: @d-gray;
+		color: @white;
+
+		&.list-view--stripped {
+			.row:nth-child(even) {
+				background-color: lighten(@d-gray, 5%);
+			}
+		}
 	}
 }
