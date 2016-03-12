@@ -10079,14 +10079,15 @@ input[type="reset"].button--checked,
 /* line 289, bars.less */
 .sidebar .sidebar__menu .sidebar__menu__item i {
   margin-right: 1em;
+  font-size: 0.9em;
 }
-/* line 293, bars.less */
+/* line 294, bars.less */
 .sidebar .sidebar__menu .sidebar__menu__item:active,
 .sidebar .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
   background-color: #cfcfcf;
   transition: all 0.3s linear;
 }
-/* line 299, bars.less */
+/* line 300, bars.less */
 .sidebar .sidebar__menu .sidebar__menu__separator {
   margin: 0.5em 1em;
   height: 1px;
@@ -10378,51 +10379,51 @@ input[type="reset"].button--checked,
   background-color: #a5673f;
   color: #ffffff;
 }
-/* line 318, bars.less */
+/* line 319, bars.less */
 .sidebar.sidebar--invert {
   background-color: #333333;
 }
-/* line 321, bars.less */
+/* line 322, bars.less */
 .sidebar.sidebar--invert .sidebar__cover {
   color: #ffffff;
   background-color: #404040;
 }
-/* line 327, bars.less */
+/* line 328, bars.less */
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__header {
   color: #999999;
 }
-/* line 331, bars.less */
+/* line 332, bars.less */
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item {
   background-color: #333333;
   color: #ffffff;
 }
-/* line 335, bars.less */
+/* line 336, bars.less */
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
   background-color: #4d4d4d;
 }
-/* line 339, bars.less */
+/* line 340, bars.less */
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
   background-color: #595959;
 }
-/* line 344, bars.less */
+/* line 345, bars.less */
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__separator {
   border-top-color: #4d4d4d;
 }
-/* line 350, bars.less */
+/* line 351, bars.less */
 .sidebar.sidebar--show {
   left: 0px;
 }
-/* line 353, bars.less */
+/* line 354, bars.less */
 .sidebar.sidebar--show .overflow {
   display: block;
 }
-/* line 358, bars.less */
+/* line 359, bars.less */
 .sidebar.sidebar--under-taskbar {
   top: 44px;
-  height: calc(100% - 44px;);
+  height: calc(100% - 44px);
 }
-/* line 365, bars.less */
+/* line 366, bars.less */
 .overflow {
   background-color: #000000;
   opacity: 0.8;
@@ -10434,7 +10435,7 @@ input[type="reset"].button--checked,
   z-index: 4;
   display: none;
 }
-/* line 376, bars.less */
+/* line 377, bars.less */
 .overflow.overflow--show {
   display: block;
 }
