@@ -134,3 +134,59 @@
 	&.jumbotron--color-pink { .set-jumbotron-color(@pink); }
 	&.jumbotron--color-brown { .set-jumbotron-color(@brown); }
 }
+
+@media (max-width: @l-tablet) {
+	.jumbotron {
+		padding: 2em;
+
+		.jumbotron__header {
+			font-size: 5em;
+		}
+
+		.jumbotron__content {
+			font-size: 1.3em;
+		}
+	}
+}
+
+@media (max-width: @tablet) {
+	.jumbotron {
+		padding: 2em;
+
+		.jumbotron__header {
+			font-size: 4em;
+		}
+
+		.jumbotron__content {
+			font-size: 1.15em;
+		}
+	}
+}
+
+@media (max-width: @l-mobile) {
+	.jumbotron {
+		padding: 1.5em;
+
+		.jumbotron__header {
+			font-size: 3em;
+		}
+
+		.jumbotron__content {
+			font-size: 1em;
+		}
+	}
+}
+
+@media (max-width: @mobile) {
+	.jumbotron {
+		padding: 1.25em;
+
+		.jumbotron__header {
+			font-size: 2em;
+		}
+
+		.jumbotron__content {
+			font-size: 1em;
+		}
+	}
+}
