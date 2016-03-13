@@ -131,6 +131,12 @@
 	.progress__active {
 		background-color: @color;
 	}
+
+	&.progress--with-text {
+		.progress__active {			
+			color: @white;
+		}
+	}
 }
 
 .set-progress-invert-color(@color) {
@@ -139,12 +145,18 @@
 	.progress__active {
 		background-color: @color;
 	}
+
+	&.progress--with-text {
+		.progress__active {			
+			color: @white;
+		}
+	}
 }
 
 .progress {
 	display: block;
 	width: ~"calc(100% - 0.3em)";
-	height: 0.7em;
+	height: 1em;
 	margin: 0.15em;
 	background-color: darken(@u-gray, 5%);
 	border-radius: 0.2em;
@@ -154,7 +166,7 @@
 		background-color: darken(@u-gray, 25%);
 		position: absolute;
 		left: 0em;
-		height: 0.7em;
+		height: 1em;
 		border-radius: 0.2em;
 		top: 0em; 		
 	}
@@ -189,6 +201,46 @@
 		&.progress--color-violet { .set-progress-invert-color(@violet); }
 		&.progress--color-pink { .set-progress-invert-color(@pink); }
 		&.progress--color-brown { .set-progress-invert-color(@brown); }
+	}
+
+	&.progress--size-thin {
+		height: 0.5em;
+		margin-top: 0.25em;
+
+		.progress__active {
+			height: 0.5em;	
+		}
+	}
+
+	&.progress--no-smooth {
+		border-radius: 0px;
+
+		.progress__active {
+			border-radius: 0px;
+		}
+	}
+
+	&.progress--rounded {
+		border-radius: 1em;
+
+		.progress__active {
+			border-radius: 1em;
+		}
+	}
+
+	&.progress--with-text {
+		.progress__active {
+			vertical-align: center;
+			min-width: 2em;
+			color: @d-gray;
+			.pt();
+
+			.progress__active__text {
+				width: 100%;
+				text-align: center;
+				font-size: 0.8em;
+			}
+		}
 	}
 }
 

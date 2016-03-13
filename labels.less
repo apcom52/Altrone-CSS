@@ -1,0 +1,136 @@
+.set-alert-color(@color) {
+	background-color: lighten(@color, 35%);
+	color: @color;
+	border-color: lighten(@color, 30%);
+
+	.alert__header__close-btn {
+		color: @color;
+		&:hover {
+			color: darken(@color, 10%);
+		}
+	}
+}
+
+.alert {
+	display: block;
+	width: ~"calc(100% - 1em)";
+	.pt();
+	background-color: @u-gray;
+	border: 1px solid darken(@u-gray, 10%);
+	color: @d-gray;
+	padding: 0.2em 1em;
+	margin:0.5em;
+	box-sizing: border-box;
+
+	&.alert--color-red { .set-alert-color(@red); }
+	&.alert--color-orange { .set-alert-color(@orange); }
+	&.alert--color-yellow { .set-alert-color(@yellow); }
+	&.alert--color-olive { .set-alert-color(@olive); }
+	&.alert--color-green { .set-alert-color(@green); }
+	&.alert--color-teal { .set-alert-color(@teal); }
+	&.alert--color-blue { .set-alert-color(@blue); }
+	&.alert--color-violet { .set-alert-color(@violet); }
+	&.alert--color-purple { .set-alert-color(@purple); }
+	&.alert--color-pink { .set-alert-color(@pink); }
+	&.alert--color-brown { .set-alert-color(@brown); }
+	&.alert--color-black { .set-alert-color(@d-gray); color: @u-gray; }
+
+	&.alert--smooth {
+		border-radius: 0.5em;
+	}
+
+	.alert__header {
+		font-size: 1.2em;
+		font-weight: bold;
+
+		.alert__header__close-btn {
+			float: right;
+			cursor: pointer;	
+
+			&:hover {
+				color: @d-gray;
+			}	
+		}
+	}
+
+	.alert__content {
+		clear: both;
+		display: block;
+		width: 100%;
+		font-size: 0.9em;
+	}	
+}
+
+.set-label-color(@color) {
+	background-color: @color;
+	color: @white;
+}
+
+.label {
+	display: inline-block;
+	margin: 0em 0.25em;
+	padding: 0.1em 0.5em;
+	background-color: darken(@u-gray, 5%);
+	border-radius: 0.25em;
+	.pt();
+	color: @d-gray;
+
+	&.label--color-red { .set-label-color(@red); }
+	&.label--color-orange { .set-label-color(@orange); }
+	&.label--color-yellow { .set-label-color(@yellow); }
+	&.label--color-olive { .set-label-color(@olive); }
+	&.label--color-green { .set-label-color(@green); }
+	&.label--color-blue { .set-label-color(@blue); }
+	&.label--color-teal { .set-label-color(@teal); }
+	&.label--color-purple { .set-label-color(@purple); }
+	&.label--color-violet { .set-label-color(@violet); }
+	&.label--color-pink { .set-label-color(@pink); }
+	&.label--color-brown { .set-label-color(@brown); }
+	&.label--color-black { .set-label-color(@d-gray); }
+
+	&.label--no-smooth {
+		border-radius: 0em;
+	}
+	&.label--rounded {
+		border-radius: 1em;
+	}
+}
+
+.set-jumbotron-color(@color) {
+	.jumbotron__header {
+		color: @color;
+	}
+}
+
+.jumbotron {
+	background-color: @u-gray;
+	width: 100%;
+	padding: 3em;
+	box-sizing: border-box;
+	.pt();
+
+	.jumbotron__header {
+		font-size: 6em;
+	}
+
+	.jumbotron__content {
+		font-size: 1.5em;
+	}
+
+	&.jumbotron--invert {
+		background-color: lighten(@d-gray, 5%);
+		color: @white;
+	}
+
+	&.jumbotron--color-red { .set-jumbotron-color(@red); }
+	&.jumbotron--color-orange { .set-jumbotron-color(@orange); }
+	&.jumbotron--color-yellow { .set-jumbotron-color(@yellow); }
+	&.jumbotron--color-olive { .set-jumbotron-color(@olive); }
+	&.jumbotron--color-green { .set-jumbotron-color(@green); }
+	&.jumbotron--color-blue { .set-jumbotron-color(@blue); }
+	&.jumbotron--color-teal { .set-jumbotron-color(@teal); }
+	&.jumbotron--color-purple { .set-jumbotron-color(@purple); }
+	&.jumbotron--color-violet { .set-jumbotron-color(@violet); }
+	&.jumbotron--color-pink { .set-jumbotron-color(@pink); }
+	&.jumbotron--color-brown { .set-jumbotron-color(@brown); }
+}

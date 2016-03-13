@@ -16,7 +16,7 @@
  ✔ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt @done (16-03-13 01:04)
  ☐ @high Добавить модуль Feed
  ☐ @high Добавить модуль UserItem
- ☐ @high Добавить модуль Label, Badge
+ ✔ @high Добавить модуль Label @done (16-03-13 12:11)
  ✔ @low Добавить классы анимаций появлений .fade-in, .fade-out, .slide-in, .slide-out, .slide-left, .slide-right @done (16-03-13 01:10)
  ✔ @low Сделать прогресс-бары @done (16-03-13 00:07)
  ✔ @low Сделать masonry-сетку @done (16-03-13 02:02)
