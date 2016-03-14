@@ -17,6 +17,20 @@
 				box-sizing: border-box;
 			}			
 		</style>
+
+		<script>
+			$(function() {
+				$('#showSidebar').click(function() {
+					$('#ss').sidebar('show');
+				});
+				$('#hideSidebar').click(function() {
+					$('#ss').sidebar('hide');
+				});
+				$('#toggleSidebar').click(function() {
+					$('#ss').sidebar('toggle');
+				});
+			});
+		</script>
 	</head>
 	<body> 
 		<h1>Сетка</h1>
@@ -46,6 +60,142 @@
 					<div class="row">Row 3</div>
 					<div class="row">Row 4</div>
 					<div class="row">Row 5</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid">
+			<div class="col-6">
+				<div class="feed">
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"><div class="feed__item__image__online"></div></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+							<div class="list list--horizontal list--icon">
+								<div class="list__item"><i class="fa fa-star"></i>В избранное</div>
+								<div class="list__item"><i class="fa fa-reply"></i>Поделиться</div>
+							</div>
+						</div>
+					</div>
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+						</div>
+					</div>
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="feed feed--color-purple feed--invert">
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"><div class="feed__item__image__online"></div></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+							<div class="list list--horizontal list--icon">
+								<div class="list__item"><i class="fa fa-star"></i>В избранное</div>
+								<div class="list__item"><i class="fa fa-reply"></i>Поделиться</div>
+							</div>
+						</div>
+					</div>
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+						</div>
+					</div>
+					<div class="feed__item">
+						<div class="feed__item__image"><img src="https://im1-tub-ru.yandex.net/i?id=7844a41cf580ddf9f4877d886fa9c53a&n=33&h=215&w=215" class="img--circle"></div>
+						<div class="feed__item__content">
+							<div class="feed__item__content__title">Bruce Wayne</div>
+							<div class="feed__item__content__text"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at suscipit sequi, nostrum reiciendis odio. Quo adipisci deserunt, iste ipsam sapiente, voluptate, sit ipsa quasi quod facere quaerat temporibus nihil.</div>
+							<div>Sequi dolorem praesentium iure laudantium fuga aspernatur sunt similique eaque eum sint expedita commodi suscipit voluptatum delectus, at ipsum aliquam libero adipisci nostrum, exercitationem est officia iusto. Aspernatur, quas, facilis.</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid">
+			<div class="col-4">
+				<div class="user-list">
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="https://lh6.googleusercontent.com/-cJ2AcaJa3C0/AAAAAAAAAAI/AAAAAAAAACo/ZTPSzuWezmo/photo.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Бэтмен</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="http://sunchasers.sunglasscurator.com/wp-content/uploads/2012/08/catwoman-200x200.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Женщина-кошка</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar"><img src="https://im0-tub-ru.yandex.net/i?id=f69c15cafdd38e7f45f4e3b5c4217af1&n=33&h=215&w=215" class="img--circle" alt=""></div>
+						<div class="user-list__item__username">Джокер</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="user-list user-list--invert">
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="https://lh6.googleusercontent.com/-cJ2AcaJa3C0/AAAAAAAAAAI/AAAAAAAAACo/ZTPSzuWezmo/photo.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Бэтмен</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="http://sunchasers.sunglasscurator.com/wp-content/uploads/2012/08/catwoman-200x200.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Женщина-кошка</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar"><img src="https://im0-tub-ru.yandex.net/i?id=f69c15cafdd38e7f45f4e3b5c4217af1&n=33&h=215&w=215" class="img--circle" alt=""></div>
+						<div class="user-list__item__username">Джокер</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="user-list user-list--invert user-list--color-yellow">
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="https://lh6.googleusercontent.com/-cJ2AcaJa3C0/AAAAAAAAAAI/AAAAAAAAACo/ZTPSzuWezmo/photo.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Бэтмен</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar">
+							<img src="http://sunchasers.sunglasscurator.com/wp-content/uploads/2012/08/catwoman-200x200.jpg" class="img--circle" alt="">
+							<div class="user-list__item__avatar__online"></div>
+						</div>
+						<div class="user-list__item__username">Женщина-кошка</div>
+					</div>
+					<div class="user-list__item">
+						<div class="user-list__item__avatar"><img src="https://im0-tub-ru.yandex.net/i?id=f69c15cafdd38e7f45f4e3b5c4217af1&n=33&h=215&w=215" class="img--circle" alt=""></div>
+						<div class="user-list__item__username">Джокер</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -84,17 +234,17 @@
 
 		<h1>Buttons</h1>
 		<div class="d-gray-bg">
-			<button data-tooltip="Alexander Perevezentsev">OK</button>
+			<button data-tooltip="Alexander Perevezentsev" id="showSidebar">Show Sidebar</button>
 			<button data-tooltip="Hello, it's me" class="button--red-bg">Cancel</button>
 			<button class="button--orange-bg button--circle button--icon-only"><i class="fa fa-check"></i></button>
 			<button class="button--color-yellow button--transparent-full" disabled>Cancel</button>
 			<button class="button--color-olive button--transparent">Cancel</button>
 			<button class="button--color-yellow button--transparent-full">Cancel</button>
 			<button data-tooltip="How are u?" data-tooltip-invert="true" class="button--teal-bg button--smooth">Cancel</button>
-			<button class="button--checked button--rounded">Cancel</button>
+			<button class="button--checked button--rounded" id="hideSidebar">Hide Sidebar</button>
 			<button class="button--color-red button--with-corners" data-button-toggle="true">Cancel</button>
 			<button class="button--color-olive button--icon" data-button-toggle="false"><i class="fa fa-times"></i> Cancel</button>
-			<button class="button--pink-bg button--size-small">Cancel</button>		
+			<button class="button--pink-bg button--size-small" id="toggleSidebar">Toggle</button>		
 			<button class="button--brown-bg button--size-big">Cancel</button>
 			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big">Cancel</button>		
 		</div>
