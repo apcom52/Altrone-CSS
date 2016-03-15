@@ -7,6 +7,8 @@
  ☐ @critical Пофиксить .list--animation-mark
  ☐ @critical Пофиксить tooltip (не пропадает квадратик)
  ☐ @critical Пофиксить цвет placeholder у форм
+ ✔ @critical Пофиксить названия .list-navigation @done (16-03-15 18:19)
+ ✔ @critical Пофиксить название .list-view @done (16-03-15 18:19)
  ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
  ✔ @critical Пофиксить .button--transparent и .button--color-* @done (16-02-28 23:52)
  ☐ @high Вертикальное положение dropdown

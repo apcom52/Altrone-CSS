@@ -389,9 +389,15 @@
 	&.horizontal-layout--centered {
 		align-items: center;
 	}
+
+	&.horizontal-layout--stripped {
+		.column:nth-child(even) {
+			background-color: darken(@u-gray, 5%);
+		}
+	}
 }
 
-.list-view {
+.vertical-layout {
 	display: flex;
 	flex-direction: column;
 	background-color: @u-gray;
@@ -401,17 +407,17 @@
 		flex: 1;
 	}
 
-	&.list-view--reverse {
+	&.vertical-layout--reverse {
 		flex-direction: column-reverse;
 	}
 
-	&.list-view--stripped {
+	&.vertical-layout--stripped {
 		.row:nth-child(even) {
 			background-color: darken(@u-gray, 5%);
 		}
 	}
 
-	&.list-view--invert {
+	&.vertical-layout--invert {
 		background-color: @d-gray;
 		color: @white;
 

@@ -295,24 +295,24 @@
 		&:hover {
 			background-color: darken(@blue, 10%);			
 
-			.list-navigation__icon {
+			.list-navigation__item__icon {
 				color: @white;
 				.anim(0.3s);
 			}
 
-			.list-navigation__content {
-				.list-navigation__content__title {
+			.list-navigation__item__content {
+				.list-navigation__item__content__title {
 					color: @u-gray;
 					.anim(0.3s);
 				}
 
-				.list-navigation__content__meta {
+				.list-navigation__item__content__meta {
 					color: darken(@u-gray, 10%);
 					.anim(0.3s);
 				}
 			}
 
-			.list-navigation__right-icon {
+			.list-navigation__item__right-icon {
 				opacity: 1;
 				color: @white;
 				.anim(0.3s);
@@ -322,13 +322,13 @@
 		&:active, &.active {
 			background-color: @blue;
 
-			.list-navigation__right-icon {
+			.list-navigation__item__right-icon {
 				opacity: 1;
 				color: @white;
 			}
 		}
 
-		.list-navigation__icon {
+		.list-navigation__item__icon {
 			vertical-align:  middle;
 			text-align: center;
 			display: table-cell;
@@ -338,24 +338,24 @@
 			.anim(0.3s);
 		}
 
-		.list-navigation__content {
+		.list-navigation__item__content {
 			width: 100%;
 			vertical-align: top;
 			display: table-cell;
 			padding: 1em;
 
-			.list-navigation__content__title {
+			.list-navigation__item__content__title {
 				font-weight: bold;
 				color: @d-gray;
 			}
 
-			.list-navigation__content__meta {
+			.list-navigation__item__content__meta {
 				font-size: 0.8em;
 				color: @m-gray;
 			}
 		}
 
-		.list-navigation__right-icon {
+		.list-navigation__item__right-icon {
 			display: table-cell;
 			vertical-align: middle;
 			color: @d-gray;
@@ -389,23 +389,23 @@
 		
 
 		.list-navigation__item {
-			.list-navigation__icon {
+			.list-navigation__item__icon {
 				color: @white;
 			}
-		}
+		
+			.list-navigation__item__content {
+				.list-navigation__item__content__title {
+					color: @u-gray;
+				}
 
-		.list-navigation__content {
-			.list-navigation__content__title {
+				.list-navigation__item__content__meta {
+					color: darken(@u-gray, 10%);
+				}
+			}
+
+			.list-navigation__item__right-icon {
 				color: @u-gray;
 			}
-
-			.list-navigation__content__meta {
-				color: darken(@u-gray, 10%);
-			}
-		}
-
-		.list-navigation__right-icon {
-			color: @u-gray;
 		}
 	}
 }
@@ -447,8 +447,8 @@
 
 			.feed__item__image__online {
 				display: block;
-				width: 9px;
-				height: 9px;
+				width: 0.5em;
+				height: 0.5em;
 				background-color: @blue;
 				border: 3px solid @white;
 				border-radius: 50%;
