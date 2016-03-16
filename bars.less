@@ -417,16 +417,20 @@
 
 .overflow {
 	background-color: @black;
-	opacity: 0.8;
+	opacity: 0.95;
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	left: 0px;
 	top: 0px;
 	z-index: 4;
-	display: none;
+	cursor: pointer;
+}
 
-	&.overflow--show {
-		display: block;
+
+@media (max-width: @l-mobile) {
+	.sidebar {
+		width: 90%;
+		left: -90%;
 	}
 }

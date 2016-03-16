@@ -114,7 +114,7 @@ $(function() {
 	});
 
 	/* Модальные окна */
-	var overflowDiv = $('body').append('<div class="overflow"></div>');
+	//var overflowDiv = $('body').append('<div class="overflow"></div>');
 	$('body').on('click', '[data-modal-target]', function(event) {
 		var target = $(this).data('modalTarget');
 		var modal = $('#' + target);

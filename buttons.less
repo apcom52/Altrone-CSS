@@ -147,12 +147,14 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 .button-group {
 	margin: 0em 1em;
 	clear: both;
-	display: inline-block;
+	vertical-align: center;
+	display: flex;
 
 	button, input[type="button"], input[type="submit"], input[type="reset"], .button {
 		margin: 0px;
-		float: left;
 		border-radius: 0px;
+		display: inline-block;
+		flex: none;
 
 		&:first-child {
 			border-radius: 0.2em 0em 0em 0.2em;

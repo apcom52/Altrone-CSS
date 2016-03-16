@@ -59,14 +59,24 @@ function removeClass(element, _class) {
 /* Sidebar Plugin */
 (function( $ ) {
 	var methods = {
-		show: function() {
-			$(this).addClass('sidebar--show');
+		el: $(this),
+		show: function(element = $(this)) {
+			element.addClass('sidebar--show');
+			$('body').append('<div class="overflow"></div>');
+			$('body').on('click', '.overflow', function() {
+				methods.hide(element);
+			});
 		},
-		hide: function() {
-			$(this).removeClass('sidebar--show');
+		hide: function(element = $(this)) {
+			element.removeClass('sidebar--show');
+			$('.overflow').remove();
 		},
 		toggle: function() {
-			$(this).toggleClass('sidebar--show');
+			if ($(this).hasClass('sidebar--show')) {
+				methods.hide($(this));
+			} else {
+				methods.show($(this));
+			}
 		}
 	}
   	$.fn.sidebar = function(method) {  		

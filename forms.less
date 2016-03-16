@@ -649,10 +649,10 @@ form, .form {
 	.form-attached {
 		overflow: hidden;
 		clear: both;
-		display: block;
+		display: flex;
 		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select, .form__attach {
 			border-radius: 0em;
-			float: left;
+			flex: none;
 
 			&:first-child {
 				border-radius: 0.25em 0em 0em 0.25em !important;
@@ -668,7 +668,6 @@ form, .form {
 		padding: 0.5em 1em;
 		background-color: @u-gray;
 		border: 1px solid darken(@u-gray, 5%);
-		float: left;
 		color: @d-gray;
 		box-sizing: border-box;
 	}
