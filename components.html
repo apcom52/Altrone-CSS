@@ -29,6 +29,14 @@
 				$('#toggleSidebar').click(function() {
 					$('#ss').sidebar('toggle');
 				});
+
+				$('#ss').on('sidebar-show', function() {
+					console.log("show sidebar");
+				});
+
+				$('#ss').on('sidebar-hide', function() {
+					console.log("hide sidebar");
+				});
 			});
 		</script>
 	</head>
@@ -278,6 +286,12 @@
 			<button class="button--color-red button--icon-only"><i class="fa fa-heart"></i></button>
 			<button class="button--color-yellow button--icon-only"><i class="fa fa-star"></i></button>
 			<button class="button--color-blue button--icon-only"><i class="fa fa-thumbs-up"></i></button>
+		</div>
+
+		<div class="button-group button-group--vertical">
+			<button class="button--color-blue">VK</button>
+			<button class="button--color-orange">Одноклассники</button>
+			<button class="button--color-red">Google+</button>
 		</div>
 
 		

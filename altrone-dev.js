@@ -63,13 +63,19 @@ function removeClass(element, _class) {
 		show: function(element = $(this)) {
 			element.addClass('sidebar--show');
 			$('body').append('<div class="overflow"></div>');
+			if (element.hasClass('sidebar--under-taskbar')) {
+				$('.overflow').addClass('overflow--under-taskbar');
+				console.log('under taskbar');
+			}
 			$('body').on('click', '.overflow', function() {
 				methods.hide(element);
 			});
+			element.trigger("sidebar-show");
 		},
 		hide: function(element = $(this)) {
 			element.removeClass('sidebar--show');
 			$('.overflow').remove();
+			element.trigger("sidebar-hide");
 		},
 		toggle: function() {
 			if ($(this).hasClass('sidebar--show')) {

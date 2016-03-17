@@ -4,10 +4,13 @@
  ✔ @critical Пофиксить высоту полей в .form-attached @done (16-03-16 23:37)
  ☐ @critical Пофиксить .list--horizontal и .list--animation-slide
  ☐ @critical Пофиксить .list--animation-mark
- ☐ @critical Пофиксить tooltip (не пропадает квадратик)
  ☐ @critical Пофиксить цвет placeholder у форм
  ✔ @critical Добавить подложку у sidebar @done (16-03-16 23:08)
- ☐ @critical Обновить модальные окна
+ ☐ @critical Добавить modal плагин
+ ☐ @critical Добавить dropdown плагин
+ ☐ @critical Добавить select плагин
+ ☐ @critical Добавить tooltip плагин
+ ☐ @critical Добавить tabs плагин
  ✔ @critical Пофиксить названия .list-navigation @done (16-03-15 18:19)
  ✔ @critical Пофиксить название .list-view @done (16-03-15 18:19)
  ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
