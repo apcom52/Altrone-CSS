@@ -67,19 +67,23 @@ $(function() {
 	});
 
 	/* Всплывающие подсказки */
-	var lastTooltipPosition = {x: null, y: null};
-	var tooltipDiv = $('body').append('<div class="tooltip"></div>');
+	var lastTooltipPosition = {x: null, y: null};	
 	$('[data-tooltip]').on({
 		mouseenter: function(event) {
-			if (lastTooltipPosition.x == null && lastTooltipPosition.y == null) {
+			$('body').append('<div class="tooltip"></div>');
+			if (lastTooltipPosition.x == null && lastTooltipPosition.y == null) {				
 				$('.tooltip').html($(this).data('tooltip'));
 				var window_width = $(window).width();
 				var window_height = $(window).height();
 				var tooltip_width = $('.tooltip').outerWidth();
 				var tooltip_height = $('.tooltip').outerHeight();
 				var parent_width = $(this).outerWidth();
+				var parent_height = $(this).outerHeight();
 				var parent_left = $(this).position().left;
+				var parent_top = $(this).position().top;
 				lastTooltipPosition.x = parent_left + parent_width / 2 - tooltip_width / 2;
+
+				var tooltip_position = $(this).data('tooltipPosition');
 
 				/* Позиционирование по ширине относительно окна */
 				if (lastTooltipPosition.x + tooltip_width > window_width) {
@@ -89,9 +93,17 @@ $(function() {
 					lastTooltipPosition.x = 0;
 				}
 
-				lastTooltipPosition.y = $(this).position().top - tooltip_height;				
-
-				/* !!! ToDo: сделать позиционирование по вертикали */
+				if (tooltip_position == null || tooltip_position == 'top') {
+					lastTooltipPosition.y = $(this).position().top - tooltip_height;	
+				} else if (tooltip_position == 'down') {
+					lastTooltipPosition.y = $(this).position().top + parent_height + tooltip_height;
+				} else if (tooltip_position == 'left') {
+					lastTooltipPosition.x = parent_left - tooltip_width;
+					lastTooltipPosition.y = parent_top + 8;
+				} else if (tooltip_position == 'right') {
+					lastTooltipPosition.x = parent_left + tooltip_width;
+					lastTooltipPosition.y = parent_top + 8;
+				}
 
 				if ($(this).data('tooltipInvert') == true) {
 					$('.tooltip').addClass('tooltip--invert');
@@ -109,7 +121,7 @@ $(function() {
 		mouseleave: function(event) {
 			lastTooltipPosition = {x: null, y: null};
 			$('.tooltip').html('');
-			$('.tooltip').hide();
+			$('.tooltip').remove();
 		}
 	});
 

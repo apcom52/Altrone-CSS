@@ -37,6 +37,17 @@
 				$('#ss').on('sidebar-hide', function() {
 					console.log("hide sidebar");
 				});
+
+				$('#showToast').click(function() {
+					showToast("Вы получили новое достижение<br><b>Конькобежец</b>");
+				});
+
+				$('#rating').rating('init');
+
+				/*$('#rating').on('date', function(event, index) {
+					console.log("rating!");
+					console.log(index);
+				});*/
 			});
 		</script>
 	</head>
@@ -243,18 +254,18 @@
 		<h1>Buttons</h1>
 		<div class="d-gray-bg">
 			<button data-tooltip="Alexander Perevezentsev" id="showSidebar">Show Sidebar</button>
-			<button data-tooltip="Hello, it's me" class="button--red-bg">Cancel</button>
+			<button data-tooltip="Hello, it's me" data-tooltip-position="right" class="button--red-bg" id="showToast">Cancel</button>
 			<button class="button--orange-bg button--circle button--icon-only"><i class="fa fa-check"></i></button>
 			<button class="button--color-yellow button--transparent-full" disabled>Cancel</button>
 			<button class="button--color-olive button--transparent">Cancel</button>
 			<button class="button--color-yellow button--transparent-full">Cancel</button>
-			<button data-tooltip="How are u?" data-tooltip-invert="true" class="button--teal-bg button--smooth">Cancel</button>
+			<button data-tooltip="How are u?" data-tooltip-position="down" data-tooltip-invert="true" class="button--teal-bg button--smooth">Cancel</button>
 			<button class="button--checked button--rounded" id="hideSidebar">Hide Sidebar</button>
 			<button class="button--color-red button--with-corners" data-button-toggle="true">Cancel</button>
 			<button class="button--color-olive button--icon" data-button-toggle="false"><i class="fa fa-times"></i> Cancel</button>
 			<button class="button--pink-bg button--size-small" id="toggleSidebar">Toggle</button>		
 			<button class="button--brown-bg button--size-big">Cancel</button>
-			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big">Cancel</button>		
+			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big" data-tooltip-position="left">Cancel</button>		
 		</div>
 
 		<br>
@@ -845,6 +856,21 @@
 				<div class="tabs__item tabs__item--active">Friends</div>
 				<div class="tabs__item">Stats</div>
 				<div class="tabs__item tabs__item--disabled">Settings</div>
+			</div>
+
+			<div class="tabs tabs--transparent tabs--vertical">
+				<div class="tabs__item">Home</div>
+				<div class="tabs__item tabs__item--active">Friends</div>
+				<div class="tabs__item">Stats</div>
+				<div class="tabs__item tabs__item--disabled">Settings</div>
+			</div>
+
+			<div class="rating" id="rating">
+				<div class="rating__item"><i class="fa fa-star"></i></div>
+				<div class="rating__item"><i class="fa fa-star"></i></div>
+				<div class="rating__item"><i class="fa fa-star"></i></div>
+				<div class="rating__item"><i class="fa fa-star"></i></div>
+				<div class="rating__item"><i class="fa fa-star"></i></div>
 			</div>
 		</div>
 		<div class="col-4">

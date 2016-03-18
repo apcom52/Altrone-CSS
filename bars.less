@@ -413,9 +413,15 @@
 	&.sidebar--under-taskbar {
 		top: 44px;
 
-		height: ~"calc(100% - 44px)";
+		height: ~"calc(100% - 44px)";		
+	}
 
-		
+	&.sidebar--pin-right {
+		left: 100%;
+
+		&.sidebar--show {
+			left: ~"calc(100% - 300px)";
+		}
 	}
 }
 
@@ -441,5 +447,13 @@
 	.sidebar {
 		width: 90%;
 		left: -90%;
+
+		&.sidebar--pin-right {
+			left: 100%;
+
+			&.sidebar--show {
+				left: 10%;
+			}
+		}
 	}
 }

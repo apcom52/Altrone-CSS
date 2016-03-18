@@ -801,3 +801,53 @@ form, .form {
 		margin-right: auto;
 	}
 }
+
+.set-rating-color(@color) {
+	.rating__item {
+		&:hover, &:active, &.rating__item__active {
+			color: @color;
+		}
+	}
+}
+
+.rating {
+	display: flex;
+	margin: 1em;
+
+	.rating__item {
+		flex: 1;
+		.anim(0.3s);
+		cursor: pointer;
+		text-align: center;
+		color: @l-gray;
+
+		&:hover, &:active {
+			color: @d-gray;
+			.anim(0.3s);
+		}
+
+		&.rating__item__active {
+			color: @d-gray;
+		}
+	}
+
+	&.rating--color-red { .set-rating-color(@red); }
+	&.rating--color-orange { .set-rating-color(@orange); }
+	&.rating--color-yellow { .set-rating-color(@yellow); }
+	&.rating--color-olive { .set-rating-color(@olive); }
+	&.rating--color-green { .set-rating-color(@green); }
+	&.rating--color-teal { .set-rating-color(@teal); }
+	&.rating--color-blue { .set-rating-color(@blue); }
+	&.rating--color-violet { .set-rating-color(@violet); }
+	&.rating--color-purple { .set-rating-color(@purple); }
+	&.rating--color-pink { .set-rating-color(@pink); }
+	&.rating--color-brown { .set-rating-color(@brown); }	
+
+	&.rating--invert {
+		.rating__item {
+			&:hover, &:active, &.rating__item__active {
+				color: @white;
+			}
+		}
+	}
+}
