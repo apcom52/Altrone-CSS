@@ -1,7 +1,7 @@
 .button-color(@color, @f-color: @white) {
 	background-color: lighten(@color, 5%);
 	color: @f-color;
-	border: 1px solid darken(@color, 5%);
+	// border: 1px solid darken(@color, 5%);
 
 	&:hover {
 		background-color: darken(@color, 5%);
@@ -38,8 +38,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	box-sizing: border-box;
 	user-select: none;
 	cursor: pointer;
+	text-transform: uppercase;
+	border: none;
 	.pt();
-	.button-color(@u-gray, @d-gray);
+	.button-color(darken(@u-gray, 5%), @d-gray);
 
 	&.button--color-red { .button-color(@red); }
 	&.button--color-orange { .button-color(@orange); }

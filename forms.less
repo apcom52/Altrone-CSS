@@ -169,7 +169,7 @@
 .set-checkbox-color(@color) {
 	input[type="checkbox"] {
 		&:not(checked) + label:before {
-			background-color: lighten(@color, 25%);
+			border-color: @color;
 		}
 
 		&:checked + label:before {
@@ -180,7 +180,7 @@
 	&.checkbox--invert {
 		input[type="checkbox"] {
 			&:not(checked) + label:before {
-				background-color: darken(@color, 25%);
+				border-color: @color;
 			}
 			&:checked + label:before {
 				background-color: @color;
@@ -212,12 +212,13 @@
 				//left: 0.5em;
 				width: 1em;
 				height: 1em;
-				border-radius: 0.25em;
-				background-color: @l-gray;
+				border: 0.15em solid @l-gray;
+				background-color: transparent;
 				.anim(0.3s);
 				background-position: center;
 				background-size: 80% 80%;
 				background-repeat: no-repeat;
+				box-sizing: border-box;
 			}
 
 			&:checked + label:before {
@@ -226,6 +227,7 @@
 				background-size: 80% 80%;
 				background-repeat: no-repeat;
 				background-color: @m-gray;
+				border: none;
 				.anim(0.3s);
 			}
 		}	
@@ -285,12 +287,13 @@
 			left: 1em;
 			width: 1em;
 			height: 1em;
-			border-radius: 0.25em;
-			background-color: @l-gray;
+			border: 0.15em solid @l-gray;
+			background-color: @white;
 			.anim(0.3s);
 			background-position: center;
 			background-size: 80% 80%;
 			background-repeat: no-repeat;
+			box-sizing: border-box;
 		}
 
 		&:checked + label:before {
@@ -299,6 +302,8 @@
 			background-size: 80% 80%;
 			background-repeat: no-repeat;
 			background-color: @m-gray;
+			border-color: transparent;
+			border: none;
 			.anim(0.3s);
 		}
 	}	
@@ -344,6 +349,15 @@
 	}
 
 	&.checkbox--invert {
+		input[type="checkbox"] {
+			&:not(checked) + label:before {
+				border-color: @u-gray;
+				background-color: @d-gray;
+			}
+			&:checked + label:before {
+				background-color: @l-gray;
+			}
+		}
 		label {
 			.checkbox__title {
 				color: @u-gray;
@@ -452,7 +466,7 @@
 .set-radio-color(@color) {
 	input[type="radio"] {
 		&:not(checked) + label:before {
-			background-color: lighten(@color, 25%);
+			border-color: @d-gray;
 		}
 
 		&:checked + label:before {
@@ -463,7 +477,7 @@
 	&.radio--invert {
 		input[type="radio"] {
 			&:not(checked) + label:before {
-				background-color: darken(@color, 25%);
+				border-color: @u-gray;
 			}
 			&:checked + label:before {
 				background-color: @color;
@@ -509,16 +523,19 @@
 			width: 1em;
 			height: 1em;
 			border-radius: 0.5em;
-			background-color: @l-gray;
+			border: 1px solid @d-gray;
+			background-color: @white;
 			.anim(0.3s);
 			background-position: center;
 			background-size: 40% 40%;
 			background-repeat: no-repeat;
+			box-sizing: border-box;
 		}
 
 		&:checked + label:before {
 			background-image: @radiobutton-background;
 			background-color: @m-gray;
+			border: none;
 			.anim(0.3s);
 		}
 	}	
@@ -567,6 +584,16 @@
 		label {
 			.radio__title {
 				color: @u-gray;
+			}
+		}
+
+		input[type="radio"] {
+			&:not(checked) + label:before {
+				border-color: @u-gray;
+				background-color: @d-gray;
+			}
+			&:checked + label:before {
+				background-color: @l-gray;
 			}
 		}
 	}
