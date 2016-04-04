@@ -90,17 +90,23 @@ function Sidebar(element) {
 
 Sidebar.prototype.show = function() {
 	var element = this.el;
+	var target = this;
 	this.hide();
 	element.addClass('sidebar--show');
-	if (('.overflow').length == 0) {
+	
+	if (!$('.overflow').length) {
 		$('body').append('<div class="overflow"></div>');
 	}
+
+	$('body').on('click', '.overflow', function() {
+		target.hide();
+	});
+
 	if (element.hasClass('sidebar--under-taskbar')) {
 		$('.overflow').addClass('overflow--under-taskbar');
 	}
-	$('body').on('click', '.overflow', function() {
-		Sidebar.hide($('.sidebar'));
-	});
+
+	
 	element.trigger("sidebar-show");
 
 	Sidebar.prototype.visible = true;
@@ -145,6 +151,8 @@ ToggleButton.prototype.toggle = function() {
 }
 
 
+/* Toast уведомления */
+
 function showToast(message = '', duration = 2) {
 	if ($('.toast-collection').length < 1) {
 		$('body').append('<div class="toast-collection"></div>');
@@ -156,4 +164,49 @@ function showToast(message = '', duration = 2) {
 	setTimeout(function() {
 		current.remove();
 	}, duration * 1000 + 300);
+}
+
+
+/* Модальные окна */
+Modal = function(element) {
+	Modal.prototype.el = element;
+	Modal.prototype.visible = false;
+}
+
+Modal.prototype.show = function() {
+	var element = this.el;
+	var target = this;
+	this.visible = true;
+
+	console.log($('.overflow').length);
+
+	if (!$('.overflow').length) {
+		$('body').append('<div class="overflow"></div>');
+	}
+
+	$('body').on('click', '.overflow', function() {
+		target.hide();
+	});
+
+	element.find('.modal__discard').click(function() {
+		target.hide();
+	});
+
+	element.show();
+	element.trigger('modal-show');
+
+	console.log(element);
+}
+
+Modal.prototype.hide = function() {
+	this.visible = false;
+	var element = this.el;
+	$('.overflow').remove();
+	element.hide();
+	element.trigger('modal-hide');
+}
+
+Modal.prototype.toggle = function() {
+	if (this.visible) this.hide();
+	else this.show();
 }

@@ -49,6 +49,11 @@
 					toggleButton.toggle();
 				});
 
+				var modal = new Modal($('#YesNoDialog'));
+				$('#openModal').click(function() {
+					modal.show();
+				});
+
 				//$('#rating').rating('init');
 
 				/*$('#rating').on('date', function(event, index) {
@@ -288,7 +293,7 @@
 			<button class="button--color-olive button--icon"><i class="fa fa-times"></i> Cancel</button>
 			<button class="button--pink-bg button--size-small" id="toggleSidebar">Toggle</button>		
 			<button class="button--brown-bg button--size-big">Cancel</button>
-			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big" data-tooltip-position="left">Cancel</button>		
+			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big" data-tooltip-position="left" id="openModal">Open Modal</button>		
 		</div>
 
 		<br>
@@ -990,7 +995,7 @@
 		</div>
 		<div class="modal__footer align-center">
 			<button class="button--color-green">Да</button>
-			<button class="button--color-red modal--close">Нет</button>
+			<button class="button--color-red modal__discard">Нет</button>
 		</div>
 	</div>
 
