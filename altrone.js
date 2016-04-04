@@ -152,19 +152,4 @@ $(function() {
 		$('.modal').animate({opacity: 0}, 500, function() { $('.modal').hide(); });
 		$('.overflow').animate({opacity: 0}, 400, function() { $('.overflow').hide(); });
 	});
-
-
-	/* Toggle Button */
-	$('[data-button-toggle="true"]').addClass('button--checked');
-	$('[data-button-toggle]').click(function() {
-		current = $(this);
-		//current.removeClass('button--checked');
-		if ($(this).data('buttonToggle') == true) {
-			current.removeClass('button--checked');
-			current.data('buttonToggle', false);
-		} else {
-			current.addClass('button--checked');
-			current.data('buttonToggle', true);
-		}
-	})
 });

@@ -1,14 +1,15 @@
 /* Sidebar Plugin */
-(function( $ ) {
+/*(function( $ ) {
 
 	$.extend($.fn, {
 		sidebar: function() {
 			var methods = {
 				el: $(this),
 				show: function(element = $(this)) {
+					console.log('show');
 					$('.sidebar').sidebar('hide');
 					element.addClass('sidebar--show');
-					if (('.overflow').length) {
+					if (('.overflow').length == 0) {
 						$('body').append('<div class="overflow"></div>');
 					}
 					if (element.hasClass('sidebar--under-taskbar')) {
@@ -77,7 +78,72 @@
 	    child.appendTo(target);                                                   
 	    return child;                                                             
 	};  
-})(jQuery);
+})(jQuery);*/
+
+
+
+/* Sidebar Module */
+
+function Sidebar(element) {
+	Sidebar.prototype.el = element;	
+}
+
+Sidebar.prototype.show = function() {
+	var element = this.el;
+	this.hide();
+	element.addClass('sidebar--show');
+	if (('.overflow').length == 0) {
+		$('body').append('<div class="overflow"></div>');
+	}
+	if (element.hasClass('sidebar--under-taskbar')) {
+		$('.overflow').addClass('overflow--under-taskbar');
+	}
+	$('body').on('click', '.overflow', function() {
+		Sidebar.hide($('.sidebar'));
+	});
+	element.trigger("sidebar-show");
+
+	Sidebar.prototype.visible = true;
+}
+
+Sidebar.prototype.hide = function() {
+	var element = this.el;
+	element.removeClass('sidebar--show');
+	$('.overflow').remove();
+	element.trigger("sidebar-hide");
+
+	Sidebar.prototype.visible = false;
+}
+
+Sidebar.prototype.toggle = function() {
+	if (this.visible) this.hide();
+	else this.show();	
+}
+
+/* Toggle Button Module */
+ToggleButton = function(element) {
+	ToggleButton.prototype.el = element;
+}
+
+ToggleButton.prototype.activate = function() {
+	ToggleButton.prototype.activated = true;
+	var element = this.el;
+	element.addClass('button--checked');
+	element.trigger('toggle-button-activate');
+}
+
+ToggleButton.prototype.deactivate = function() {
+	ToggleButton.prototype.activated = false;
+	var element = this.el;
+	element.removeClass('button--checked');
+	element.trigger('toggle-button-deactivate');
+}
+
+ToggleButton.prototype.toggle = function() {
+	if (this.activated) this.deactivate();
+	else this.activate();
+}
+
 
 function showToast(message = '', duration = 2) {
 	if ($('.toast-collection').length < 1) {

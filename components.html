@@ -20,14 +20,16 @@
 
 		<script>
 			$(function() {
+				var sidebar = new Sidebar($('#ss'));
 				$('#showSidebar').click(function() {
-					$('#ss').sidebar('show');
+					sidebar.show();
 				});
 				$('#hideSidebar').click(function() {
-					$('#ss').sidebar('hide');
+					sidebar.hide();
 				});
+				
 				$('#toggleSidebar').click(function() {
-					$('#ss').sidebar('toggle');
+					sidebar.toggle();
 				});
 
 				$('#ss').on('sidebar-show', function() {
@@ -42,7 +44,12 @@
 					showToast("Вы получили новое достижение<br><b>Конькобежец</b>");
 				});
 
-				$('#rating').rating('init');
+				var toggleButton = new ToggleButton($('#toggleButton'));
+				$('#toggleButton').click(function() {
+					toggleButton.toggle();
+				});
+
+				//$('#rating').rating('init');
 
 				/*$('#rating').on('date', function(event, index) {
 					console.log("rating!");
@@ -277,8 +284,8 @@
 			<button class="button--color-yellow button--transparent-full">Cancel</button>
 			<button data-tooltip="How are u?" data-tooltip-position="down" data-tooltip-invert="true" class="button--teal-bg button--smooth">Cancel</button>
 			<button class="button--checked button--rounded" id="hideSidebar">Hide Sidebar</button>
-			<button class="button--color-red button--with-corners" data-button-toggle="true">Cancel</button>
-			<button class="button--color-olive button--icon" data-button-toggle="false"><i class="fa fa-times"></i> Cancel</button>
+			<button class="button--color-red button--with-corners" id="toggleButton">Toggle Button</button>
+			<button class="button--color-olive button--icon"><i class="fa fa-times"></i> Cancel</button>
 			<button class="button--pink-bg button--size-small" id="toggleSidebar">Toggle</button>		
 			<button class="button--brown-bg button--size-big">Cancel</button>
 			<button data-tooltip="La Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet Lorem Ipsum Dolor amet" class="button--black-bg button--size-xl-big" data-tooltip-position="left">Cancel</button>		
