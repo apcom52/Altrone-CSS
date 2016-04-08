@@ -21,6 +21,7 @@
 		<script>
 			$(function() {
 				var sidebar = new Sidebar($('#ss'));
+
 				$('#showSidebar').click(function() {
 					sidebar.show();
 				});
@@ -52,6 +53,17 @@
 				var modal = new Modal($('#YesNoDialog'));
 				$('#openModal').click(function() {
 					modal.show();
+				});
+
+				var tabs = new Tabs($('#tabsExample'));
+
+				$('#openStatsTab').click(function() {
+					tabs.openTab(2);
+					console.log(tabs);					
+				});
+
+				$('#openTabStats').click(function() {
+					console.log(tabs);
 				});
 
 				//$('#rating').rating('init');
@@ -286,7 +298,7 @@
 			<button class="button--orange-bg button--circle button--icon-only"><i class="fa fa-check"></i></button>
 			<button class="button--color-yellow button--transparent-full" disabled>Cancel</button>
 			<button class="button--color-olive button--transparent">Cancel</button>
-			<button class="button--color-yellow button--transparent-full">Cancel</button>
+			<button class="button--color-yellow button--only-borders">Cancel</button>
 			<button data-tooltip="How are u?" data-tooltip-position="down" data-tooltip-invert="true" class="button--teal-bg button--smooth">Cancel</button>
 			<button class="button--checked button--rounded" id="hideSidebar">Hide Sidebar</button>
 			<button class="button--color-red button--with-corners" id="toggleButton">Toggle Button</button>
@@ -923,12 +935,15 @@
 			</div>
 		</div>
 		<div class="col-4">
-			<div class="tabs tabs--ios-style">
-				<div class="tabs__item">Home</div>
-				<div class="tabs__item">Friends</div>
-				<div class="tabs__item">Stats</div>
+			<div class="tabs tabs--ios-style" id="tabsExample">
+				<div class="tabs__item" data-tab-target="tab1">Home</div>
+				<div class="tabs__item tabs__item--active" data-tab-target="tab2">Friends</div>
+				<div class="tabs__item" data-tab-target="tab3">Stats</div>
 				<div class="tabs__item tabs__item--disabled">Settings</div>
 			</div>
+			<p id="tab1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quis. Ullam fugit, itaque impedit blanditiis dicta voluptatum assumenda, molestiae maiores similique repellendus laborum. Neque dolorem necessitatibus doloribus ipsa quis autem!</p>
+			<p id="tab2">Hello nigga, bitch!</p>
+			<p id="tab3">Hello world!</p>
 			<div class="tabs tabs--ios-style tabs--color-blue">
 				<div class="tabs__item tabs__item--active">Home</div>
 				<div class="tabs__item" data-modal-target="YesNoDialog">Friends</div>
@@ -944,8 +959,8 @@
 		</div>
 		<div class="col-4">
 			<div class="pagination">
-				<div class="pagination__button"><i class="fa fa-chevron-left"></i></div>
-				<div class="pagination__page">1</div>
+				<div class="pagination__button" id="openStatsTab"><i class="fa fa-chevron-left"></i></div>
+				<div class="pagination__page" id="openTabStats">1</div>
 				<div class="pagination__page">2</div>
 				<div class="pagination__page">3</div>
 				<div class="pagination__separator">...</div>
@@ -1005,24 +1020,16 @@
 			<div class="sidebar__cover__title">@TotallyMoo</div>
 		</div>
 		<div class="sidebar__menu">
-			<div class="sidebar__menu__header">Заголовок</div>
-			<div class="sidebar__menu__item">Пункт меню #1</div>
-			<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-bolt"></i>Пункт меню #2</div>
-			<div class="sidebar__menu__item">Пункт меню #3</div>
+			<div class="sidebar__menu__header">Music Player</div>
+			<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-play"></i>Avicii - Dangerous <div class="sidebar__menu__item__icon"><i class="fa fa-forward"></i></div> </div>
+			<div class="sidebar__menu__item">Открыть плейлист...</div>
 
 			<div class="sidebar__menu__separator"></div>
 
-			<div class="sidebar__menu__header">Заголовок</div>
-			<div class="sidebar__menu__item">Пункт меню #1</div>
-			<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-bolt"></i>Пункт меню #2</div>
-			<div class="sidebar__menu__item">Пункт меню #3</div>
-
-			<div class="sidebar__menu__separator"></div>
-
-			<div class="sidebar__menu__header">Заголовок</div>
-			<div class="sidebar__menu__item">Пункт меню #1</div>
-			<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-bolt"></i>Пункт меню #2</div>
-			<div class="sidebar__menu__item">Пункт меню #3</div>
+			<div class="sidebar__menu__header">О сервисе</div>
+			<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
+			<div class="sidebar__menu__item">Помощь и поддержка</div>
+			<div class="sidebar__menu__item">О сервисе</div>
 		</div>
 	</div>
 	</body>

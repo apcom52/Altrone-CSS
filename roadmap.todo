@@ -3,10 +3,10 @@
  ☐ @critical Пофиксить .list--horizontal и .list--animation-slide
  ☐ @critical Пофиксить .list--animation-mark
  ☐ @critical Пофиксить цвет placeholder у форм
- ☐ @critical Добавить modal плагин
- ☐ @critical Добавить tabs плагин
+ ✔ @critical Добавить modal плагин @done (16-04-04 15:11)
+ ✔ @critical Добавить tabs плагин @done (16-04-08 15:06)
  ☐ @critical Пофиксить положение подложки, если sidebar используется с модификатором .sidebar--under-taskbar и не имеет position: fixed;
- ☐ @critical Пофиксить проблему, при которой sidebar появляется только после второго клика
+ ✔ @critical Пофиксить проблему, при которой sidebar появляется только после второго клика @done (16-04-04 15:11)
  ☐ @critical Пофиксить положения tooltip для fixed-элементов
  ✔ @critical Пофиксить высоту кнопок в Button Groups @done (16-03-16 23:21)
  ✔ @critical Добавить подложку у sidebar @done (16-03-16 23:08)
