@@ -126,188 +126,194 @@ $(function() {
 	});
 
 
-	/* Боковое меню */
-	function Sidebar(element) {
-		Sidebar.prototype.el = element;	
-	}
 
-	Sidebar.prototype.show = function() {
-		var element = this.el;
-		var target = this;
-		target.hide();
-		element.addClass('sidebar--show');
-		
-		if (!$('.overflow').length) {
-			$('body').append('<div class="overflow"></div>');
-		}
-
-		$('body').on('click', '.overflow', function() {
-			target.hide();
-		});
-
-		if (element.hasClass('sidebar--under-taskbar')) {
-			$('.overflow').addClass('overflow--under-taskbar');
-		}
-
-		
-		Sidebar.prototype.visible = true;
-		element.trigger("sidebar-show");
-	}
-
-	Sidebar.prototype.hide = function() {
-		var element = this.el;
-		element.removeClass('sidebar--show');
-		$('.overflow').remove();
-
-		Sidebar.prototype.visible = false;
-		element.trigger("sidebar-hide");
-	}
-
-	Sidebar.prototype.toggle = function() {
-		if (this.visible) this.hide();
-		else this.show();	
-	}
-
-	/* Toggle Button Module */
-	ToggleButton = function(element) {
-		ToggleButton.prototype.el = element;
-	}
-
-	ToggleButton.prototype.activate = function() {
-		ToggleButton.prototype.activated = true;
-		var element = this.el;
-		element.addClass('button--checked');
-		element.trigger('toggle-button-activate');
-	}
-
-	ToggleButton.prototype.deactivate = function() {
-		ToggleButton.prototype.activated = false;
-		var element = this.el;
-		element.removeClass('button--checked');
-		element.trigger('toggle-button-deactivate');
-	}
-
-	ToggleButton.prototype.toggle = function() {
-		if (this.activated) this.deactivate();
-		else this.activate();
-	}
-
-
-	/* Toast уведомления */
-
-	function showToast(message = '', duration = 2) {
-		if ($('.toast-collection').length < 1) {
-			$('body').append('<div class="toast-collection"></div>');
-		}
-
-		var current = $('.toast-collection').addChild('<div class="toast-collection__item">' + message + '</div>');
-		current.delay(duration * 1000 - 250);
-		current.fadeOut(500);
-		setTimeout(function() {
-			current.remove();
-		}, duration * 1000 + 300);
-	}
-
-
-	/* Модальные окна */
-	Modal = function(element) {
-		Modal.prototype.el = element;
-		Modal.prototype.visible = false;
-	}
-
-	Modal.prototype.show = function() {
-		var element = this.el;
-		var target = this;
-		this.visible = true;
-
-		console.log($('.overflow').length);
-
-		if (!$('.overflow').length) {
-			$('body').append('<div class="overflow"></div>');
-		}
-
-		$('body').on('click', '.overflow', function() {
-			target.hide();
-		});
-
-		element.find('.modal__discard').click(function() {
-			target.hide();
-		});
-
-		element.show();
-		element.trigger('modal-show');
-
-		console.log(element);
-	}
-
-	Modal.prototype.hide = function() {
-		this.visible = false;
-		var element = this.el;
-		$('.overflow').remove();
-		element.hide();
-		element.trigger('modal-hide');
-	}
-
-	Modal.prototype.toggle = function() {
-		if (this.visible) this.hide();
-		else this.show();
-	}
-
-	/* Tabs */
-	Tabs = function(element) {
-		Tabs.prototype.el = element;
-		Tabs.prototype.currentIndex = -1;
-		Tabs.prototype.tabs = [];
-
-		var target = this;
-		this.el.find('.tabs__item').each(function (index) {
-			target.tabs[index] = $(this);
-		});
-
-		var tabs = target.tabs;
-
-		tabs.forEach(function (current, index, tabs) {
-			var targetTabContent = '#' + current.data('tabTarget');			
-			if (!current.hasClass('tabs__item--active'))
-				$(targetTabContent).hide();
-			else 
-				target.currentIndex = index;
-		});
-
-		tabs.forEach(function (current, index, tabs) {
-			current.click(function() {
-				if (!current.hasClass('tabs__item--disabled')) {
-					tabs.forEach(function (current, index, tabs) {
-						var targetTabContent = '#' + current.data('tabTarget');
-						$(targetTabContent).hide();
-					});
-				
-					target.el.find('.tabs__item').removeClass('tabs__item--active');
-					target.el.trigger('select tab');
-					var targetTabContent = '#' + current.data('tabTarget');
-					$(this).addClass('tabs__item--active');
-					$(targetTabContent).show();
-					target.currentIndex = index;
-				} 
-			});			
-		});
-	}
-
-	Tabs.prototype.openTab = function(i) {
-		var target = this;
-		var tabs = target.tabs;
-
-		tabs.forEach(function (current, index, tabs) {
-			current.removeClass('tabs__item--active');
-			var targetTabContent = '#' + current.data('tabTarget');		
-
-			if (index != i) {
-				$(targetTabContent).hide();
-			} else {
-				$(targetTabContent).show();
-				current.addClass('tabs__item--active');
-				target.currentIndex = index;
-			}
-		});
-	}
 });
+
+/* Боковое меню */
+function Sidebar(element) {
+	// Sidebar.prototype.el = undefined;
+	this.el = element;	
+}
+
+Sidebar.prototype.show = function() {
+	var element = this.el;
+	var target = this;
+	target.hide();
+	element.addClass('sidebar--show');
+	
+	if (!$('.overflow').length) {
+		$('body').append('<div class="overflow"></div>');
+	}
+
+	$('body').on('click', '.overflow', function() {
+		target.hide();
+	});
+
+	if (element.hasClass('sidebar--under-taskbar')) {
+		$('.overflow').addClass('overflow--under-taskbar');
+	}
+
+	
+	// Sidebar.prototype.visible = true;
+	this.visible = true;
+	element.trigger("sidebar-show");
+}
+
+Sidebar.prototype.hide = function() {
+	var element = this.el;
+	element.removeClass('sidebar--show');
+	$('.overflow').remove();
+
+	// Sidebar.prototype.visible = false;
+	this.visible = false;
+	element.trigger("sidebar-hide");
+}
+
+Sidebar.prototype.toggle = function() {
+	if (this.visible) this.hide();
+	else this.show();	
+}
+
+/* Toggle Button Module */
+ToggleButton = function(element) {
+	this.el = element;
+}
+
+ToggleButton.prototype.activate = function() {
+	this.activated = true;
+	var element = this.el;
+	element.addClass('button--checked');
+	element.trigger('toggle-button-activate');
+}
+
+ToggleButton.prototype.deactivate = function() {
+	this.activated = false;
+	var element = this.el;
+	element.removeClass('button--checked');
+	element.trigger('toggle-button-deactivate');
+}
+
+ToggleButton.prototype.toggle = function() {
+	if (this.activated) this.deactivate();
+	else this.activate();
+}
+
+
+/* Toast уведомления */
+
+function showToast(message = '', duration = 2) {
+	if ($('.toast-collection').length < 1) {
+		$('body').append('<div class="toast-collection"></div>');
+	}
+
+	var current = $('.toast-collection').addChild('<div class="toast-collection__item">' + message + '</div>');
+	current.delay(duration * 1000 - 250);
+	current.fadeOut(500);
+	setTimeout(function() {
+		current.remove();
+	}, duration * 1000 + 300);
+}
+
+
+/* Модальные окна */
+Modal = function(element) {
+	this.el = element;
+	this.visible = false;
+}
+
+Modal.prototype.show = function() {
+	var element = this.el;
+	var target = this;
+	this.visible = true;
+
+	console.log($('.overflow').length);
+
+	if (!$('.overflow').length) {
+		$('body').append('<div class="overflow"></div>');
+	}
+
+	$('body').on('click', '.overflow', function() {
+		target.hide();
+	});
+
+	element.find('.modal__discard').click(function() {
+		target.hide();
+	});
+
+	element.show();
+	element.trigger('modal-show');
+
+	console.log(element);
+}
+
+Modal.prototype.hide = function() {
+	this.visible = false;
+	var element = this.el;
+	$('.overflow').remove();
+	element.hide();
+	element.trigger('modal-hide');
+}
+
+Modal.prototype.toggle = function() {
+	if (this.visible) this.hide();
+	else this.show();
+}
+
+/* Tabs */
+Tabs = function(element) {
+	this.el = element;
+	this.currentIndex = -1;
+	this.tabs = [];
+
+	var target = this;
+	this.el.find('.tabs__item').each(function (index) {
+		target.tabs[index] = $(this);
+	});
+
+	var tabs = target.tabs;
+
+	tabs.forEach(function (current, index, tabs) {
+		var targetTabContent = '#' + current.data('tabTarget');			
+		if (!current.hasClass('tabs__item--active'))
+			$(targetTabContent).hide();
+		else 
+			target.currentIndex = index;
+	});
+
+	tabs.forEach(function (current, index, tabs) {
+		current.click(function() {
+			if (!current.hasClass('tabs__item--disabled')) {
+				tabs.forEach(function (current, index, tabs) {
+					var targetTabContent = '#' + current.data('tabTarget');
+					$(targetTabContent).hide();
+				});
+			
+				target.el.find('.tabs__item').removeClass('tabs__item--active');
+				var targetTabContent = '#' + current.data('tabTarget');
+				$(this).addClass('tabs__item--active');
+				$(targetTabContent).show();
+				target.currentIndex = index;
+				target.el.trigger('select tab', [index]);
+			} 
+		});			
+	});
+}
+
+Tabs.prototype.openTab = function(i) {
+	var target = this;
+	var tabs = target.tabs;
+
+	tabs.forEach(function (current, index, tabs) {
+		current.removeClass('tabs__item--active');
+		var targetTabContent = '#' + current.data('tabTarget');		
+
+		if (index != i) {
+			$(targetTabContent).hide();
+		} else {
+			$(targetTabContent).show();
+			current.addClass('tabs__item--active');
+			target.currentIndex = index;
+			target.el.trigger('select tab', [index]);
+		}
+	});
+}

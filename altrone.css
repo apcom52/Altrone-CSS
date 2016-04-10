@@ -981,7 +981,11 @@ code {
 .padding-5 {
   padding: 5em !important;
 }
-/* line 230, functions.less */
+/* line 222, functions.less */
+.size-fix {
+  box-sizing: border-box;
+}
+/* line 234, functions.less */
 .red-circle {
   width: 1em;
   height: 1em;
@@ -989,7 +993,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 231, functions.less */
+/* line 235, functions.less */
 .orange-circle {
   width: 1em;
   height: 1em;
@@ -997,7 +1001,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 232, functions.less */
+/* line 236, functions.less */
 .yellow-circle {
   width: 1em;
   height: 1em;
@@ -1005,7 +1009,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 233, functions.less */
+/* line 237, functions.less */
 .olive-circle {
   width: 1em;
   height: 1em;
@@ -1013,7 +1017,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 234, functions.less */
+/* line 238, functions.less */
 .green-circle {
   width: 1em;
   height: 1em;
@@ -1021,7 +1025,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 235, functions.less */
+/* line 239, functions.less */
 .teal-circle {
   width: 1em;
   height: 1em;
@@ -1029,7 +1033,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 236, functions.less */
+/* line 240, functions.less */
 .blue-circle {
   width: 1em;
   height: 1em;
@@ -1037,7 +1041,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 237, functions.less */
+/* line 241, functions.less */
 .violet-circle {
   width: 1em;
   height: 1em;
@@ -1045,7 +1049,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 238, functions.less */
+/* line 242, functions.less */
 .purple-circle {
   width: 1em;
   height: 1em;
@@ -1053,7 +1057,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 239, functions.less */
+/* line 243, functions.less */
 .pink-circle {
   width: 1em;
   height: 1em;
@@ -1061,7 +1065,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 240, functions.less */
+/* line 244, functions.less */
 .brown-circle {
   width: 1em;
   height: 1em;
@@ -1069,7 +1073,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 241, functions.less */
+/* line 245, functions.less */
 .u-gray-circle {
   width: 1em;
   height: 1em;
@@ -1077,7 +1081,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 242, functions.less */
+/* line 246, functions.less */
 .l-gray-circle {
   width: 1em;
   height: 1em;
@@ -1085,7 +1089,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 243, functions.less */
+/* line 247, functions.less */
 .m-gray-circle {
   width: 1em;
   height: 1em;
@@ -1093,7 +1097,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 244, functions.less */
+/* line 248, functions.less */
 .d-gray-circle {
   width: 1em;
   height: 1em;
@@ -1101,7 +1105,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 245, functions.less */
+/* line 249, functions.less */
 .black-circle {
   width: 1em;
   height: 1em;
@@ -1109,7 +1113,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 246, functions.less */
+/* line 250, functions.less */
 .white-circle {
   width: 1em;
   height: 1em;
@@ -1117,7 +1121,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 258, functions.less */
+/* line 262, functions.less */
 .reg-ring {
   width: 1em;
   height: 1em;
@@ -1127,7 +1131,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 259, functions.less */
+/* line 263, functions.less */
 .orange-ring {
   width: 1em;
   height: 1em;
@@ -1137,7 +1141,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 260, functions.less */
+/* line 264, functions.less */
 .yellow-ring {
   width: 1em;
   height: 1em;
@@ -1147,7 +1151,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 261, functions.less */
+/* line 265, functions.less */
 .olive-ring {
   width: 1em;
   height: 1em;
@@ -1157,7 +1161,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 262, functions.less */
+/* line 266, functions.less */
 .green-ring {
   width: 1em;
   height: 1em;
@@ -1167,7 +1171,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 263, functions.less */
+/* line 267, functions.less */
 .teal-ring {
   width: 1em;
   height: 1em;
@@ -1177,7 +1181,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 264, functions.less */
+/* line 268, functions.less */
 .blue-ring {
   width: 1em;
   height: 1em;
@@ -1187,7 +1191,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 265, functions.less */
+/* line 269, functions.less */
 .violet-ring {
   width: 1em;
   height: 1em;
@@ -1197,7 +1201,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 266, functions.less */
+/* line 270, functions.less */
 .purple-ring {
   width: 1em;
   height: 1em;
@@ -1207,7 +1211,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 267, functions.less */
+/* line 271, functions.less */
 .pink-ring {
   width: 1em;
   height: 1em;
@@ -1217,7 +1221,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 268, functions.less */
+/* line 272, functions.less */
 .brown-ring {
   width: 1em;
   height: 1em;
@@ -1227,7 +1231,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 269, functions.less */
+/* line 273, functions.less */
 .u-gray-ring {
   width: 1em;
   height: 1em;
@@ -1237,7 +1241,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 270, functions.less */
+/* line 274, functions.less */
 .l-gray-ring {
   width: 1em;
   height: 1em;
@@ -1247,7 +1251,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 271, functions.less */
+/* line 275, functions.less */
 .m-gray-ring {
   width: 1em;
   height: 1em;
@@ -1257,7 +1261,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 272, functions.less */
+/* line 276, functions.less */
 .d-gray-ring {
   width: 1em;
   height: 1em;
@@ -1267,7 +1271,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 273, functions.less */
+/* line 277, functions.less */
 .black-ring {
   width: 1em;
   height: 1em;
@@ -1277,7 +1281,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 274, functions.less */
+/* line 278, functions.less */
 .white-ring {
   width: 1em;
   height: 1em;
@@ -1287,25 +1291,25 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 276, functions.less */
+/* line 280, functions.less */
 ::-webkit-scrollbar {
   width: 0.5em;
 }
-/* line 280, functions.less */
+/* line 284, functions.less */
 ::-webkit-scrollbar-track {
   background-color: #666666;
   border: 1px solid #666666;
 }
-/* line 285, functions.less */
+/* line 289, functions.less */
 ::-webkit-scrollbar-thumb {
   background-color: #404040;
 }
-/* line 288, functions.less */
+/* line 292, functions.less */
 ::-webkit-scrollbar-thumb:window-inactive {
   background-color: #404040;
 }
 /* Анимации */
-/* line 294, functions.less */
+/* line 298, functions.less */
 .fade-in {
   opacity: 0;
   -webkit-animation: fadeIn ease-in 1;
@@ -1318,7 +1322,7 @@ code {
   -moz-animation-duration: 1s;
   animation-duration: 1s;
 }
-/* line 309, functions.less */
+/* line 313, functions.less */
 .fade-out {
   opacity: 1;
   -webkit-animation: fadeOut ease-in 1;
@@ -1332,61 +1336,61 @@ code {
   animation-duration: 1s;
 }
 @-webkit-keyframes fadeIn {
-  /* line 325, functions.less */
+  /* line 329, functions.less */
   from {
     opacity: 0;
   }
-  /* line 326, functions.less */
+  /* line 330, functions.less */
   to {
     opacity: 1;
   }
 }
 @-moz-keyframes fadeIn {
-  /* line 330, functions.less */
+  /* line 334, functions.less */
   from {
     opacity: 0;
   }
-  /* line 331, functions.less */
+  /* line 335, functions.less */
   to {
     opacity: 1;
   }
 }
 @keyframes fadeIn {
-  /* line 335, functions.less */
+  /* line 339, functions.less */
   from {
     opacity: 0;
   }
-  /* line 336, functions.less */
+  /* line 340, functions.less */
   to {
     opacity: 1;
   }
 }
 @-webkit-keyframes fadeOut {
-  /* line 340, functions.less */
+  /* line 344, functions.less */
   from {
     opacity: 1;
   }
-  /* line 341, functions.less */
+  /* line 345, functions.less */
   to {
     opacity: 0;
   }
 }
 @-moz-keyframes fadeOut {
-  /* line 345, functions.less */
+  /* line 349, functions.less */
   from {
     opacity: 1;
   }
-  /* line 346, functions.less */
+  /* line 350, functions.less */
   to {
     opacity: 0;
   }
 }
 @keyframes fadeOut {
-  /* line 350, functions.less */
+  /* line 354, functions.less */
   from {
     opacity: 1;
   }
-  /* line 351, functions.less */
+  /* line 355, functions.less */
   to {
     opacity: 0;
   }
@@ -10922,7 +10926,6 @@ input[type="reset"].button--checked,
   display: inline-block;
   color: #999999;
   right: 0em;
-  top: calc(75% - 1em);
   transition: all 0.3s linear;
 }
 /* line 369, bars.less */

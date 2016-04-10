@@ -56,10 +56,15 @@
 				});
 
 				var tabs = new Tabs($('#tabsExample'));
+				var redtabs = new Tabs($('#redTabs'));
 
 				$('#openStatsTab').click(function() {
 					tabs.openTab(2);
 					console.log(tabs);					
+				});
+
+				$('#tabsExample').on('select tab', function(event, index) {
+					console.log(index);
 				});
 
 				$('#openTabStats').click(function() {
@@ -891,8 +896,8 @@
 	<div class="grid">
 		<div class="col-4">
 			<h2>Вкладки</h2>
-			<div class="lora">
-				<div class="tabs__item">Hohme</div>
+			<div class="tabs">
+				<div class="tabs__item">Home</div>
 				<div class="tabs__item tabs__item--active">Friends &nbsp <i class="fa fa-bell"></i></div>
 				<div class="tabs__item">Stats</div>
 				<div class="tabs__item tabs__item--disabled">Settings</div>
@@ -912,12 +917,17 @@
 				<div class="tabs__item tabs__item--disabled">Settings</div>
 			</div>
 
-			<div class="tabs tabs--invert tabs--color-red margin-top-1">
-				<div class="tabs__item">Home &nbsp <i class='fa fa-times'></i></div>
-				<div class="tabs__item tabs__item--active">Friends</div>
-				<div class="tabs__item">Stats</div>
-				<div class="tabs__item tabs__item--disabled">Settings</div>
+			<div class="tabs tabs--invert tabs--color-red margin-top-1" id="redTabs">
+				<div class="tabs__item" data-tab-target="red1">Home &nbsp <i class='fa fa-times'></i></div>
+				<div class="tabs__item tabs__item--active" data-tab-target="red2">Friends</div>
+				<div class="tabs__item" data-tab-target="red3">Stats</div>
+				<div class="tabs__item tabs__item--disabled" data-tab-target="red4">Settings</div>
 			</div>
+
+			<p id="red1">Red 1</p>
+			<p id="red2">Red 2</p>
+			<p id="red3">Red 3</p>
+			<p id="red4">Red 4</p>
 
 			<div class="tabs tabs--transparent tabs--vertical">
 				<div class="tabs__item">Home</div>

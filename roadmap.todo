@@ -1,13 +1,32 @@
- ✔ Задержка появления tooltip @done (16-02-21 00:29)
+ ВЕРСИЯ 2.1 - ПРЕДВАРИТЕЛЬНЫЙ ПЛАН ОБНОВЛЕНИЯ
+ ☐ Добавить модуль Carousel
+ ☐ Добавить модуль Accordion
+ ☐ Добавить модуль Popup
+ ☐ Добавить теги
+ ☐ Переделать состыкованные поля у форм
+ ☐ Добавить хлебные крошки
+ ☐ Добавить заголовки и подзаголовки страниц
+ ☐ Сделать ProgressBar как модуль
+ ☐ Добавить StackedList
+
+
+
  ☐ @critical Значение по умолчанию для select
  ☐ @critical Пофиксить .list--horizontal и .list--animation-slide
  ☐ @critical Пофиксить .list--animation-mark
  ☐ @critical Пофиксить цвет placeholder у форм
+ ☐ @critical Пофиксить положение подложки, если sidebar используется с модификатором .sidebar--under-taskbar и не имеет position: fixed;
+ ☐ @critical Пофиксить положения tooltip для fixed-элементов
+ ☐ @critical Пофиксить скроллинг модальных окон (если контент большой, то футер должен оставаться на виду)
+ ☐ @critical Пофиксить несколько Sidebar, чтобы они не заменяли друг друга
+ ☐ @high Переписать модуль Dropdown
+ ☐ @high Переписать модуль Select
+ ☐ @high Добавить модуль Rating
+ ☐ @high Написать документацию
+ ✔ @critical Задержка появления tooltip @done (16-02-21 00:29)
  ✔ @critical Добавить modal плагин @done (16-04-04 15:11)
  ✔ @critical Добавить tabs плагин @done (16-04-08 15:06)
- ☐ @critical Пофиксить положение подложки, если sidebar используется с модификатором .sidebar--under-taskbar и не имеет position: fixed;
  ✔ @critical Пофиксить проблему, при которой sidebar появляется только после второго клика @done (16-04-04 15:11)
- ☐ @critical Пофиксить положения tooltip для fixed-элементов
  ✔ @critical Пофиксить высоту кнопок в Button Groups @done (16-03-16 23:21)
  ✔ @critical Добавить подложку у sidebar @done (16-03-16 23:08)
  ✔ @critical Пофиксить высоту полей в .form-attached @done (16-03-16 23:37)
@@ -19,9 +38,6 @@
  ✔ @critical Пофиксить название .list-view @done (16-03-15 18:19)
  ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
  ✔ @critical Пофиксить .button--transparent и .button--color-* @done (16-02-28 23:52)
- ☐ @high Вертикальное положение dropdown
- ☐ @high Вертикальное положение select
- ☐ @high Добавить модуль Rating
  ✔ @high Вертикальное положение tooltip @done (16-03-17 23:26)
  ✔ @high Добавить Toggle Button @done (16-02-29 00:19)
  ✔ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt @done (16-03-13 01:04)
@@ -33,4 +49,5 @@
  ✔ @low Сделать masonry-сетку @done (16-03-13 02:02)
  ✔ @low Переработать List @done (16-03-13 00:07)
  ✔ @low Сделать вертикальную группировку кнопок @done (16-02-23 01:03)
- ☐ Написать документацию
+
+
