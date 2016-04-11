@@ -1,7 +1,7 @@
 $(function() {
 
 	/* Dropdown Выпадающее меню */
-	$('[data-dropdown-target]').on('click', function() {
+	$('body').on('click', '[data-dropdown-target]', function(event) {
 		var dropdown = $('#' + $(this).data('dropdownTarget'));
 		var window_width = $(window).width();
 		var dropdown_width = $(dropdown).outerWidth();
