@@ -123,10 +123,7 @@ $(function() {
 			$('.tooltip').html('');
 			$('.tooltip').remove();
 		}
-	});
-
-
-
+	});	
 });
 
 /* Боковое меню */
@@ -201,12 +198,18 @@ ToggleButton.prototype.toggle = function() {
 
 /* Toast уведомления */
 
-function showToast(message = '', duration = 2) {
+function showToast(message, duration) {
+	if (duration == undefined || duration < 1) {
+		duration = 2;
+	} else if (duration > 30) {
+		duration = 30;
+	}
 	if ($('.toast-collection').length < 1) {
 		$('body').append('<div class="toast-collection"></div>');
 	}
 
-	var current = $('.toast-collection').addChild('<div class="toast-collection__item">' + message + '</div>');
+	$('.toast-collection').append('<div class="toast-collection__item">' + message + '</div>');
+	var current = $('.toast-collection__item').last();
 	current.delay(duration * 1000 - 250);
 	current.fadeOut(500);
 	setTimeout(function() {

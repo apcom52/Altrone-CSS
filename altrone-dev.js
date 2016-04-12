@@ -153,18 +153,7 @@ ToggleButton.prototype.toggle = function() {
 
 /* Toast уведомления */
 
-function showToast(message = '', duration = 2) {
-	if ($('.toast-collection').length < 1) {
-		$('body').append('<div class="toast-collection"></div>');
-	}
 
-	var current = $('.toast-collection').addChild('<div class="toast-collection__item">' + message + '</div>');
-	current.delay(duration * 1000 - 250);
-	current.fadeOut(500);
-	setTimeout(function() {
-		current.remove();
-	}, duration * 1000 + 300);
-}
 
 
 /* Модальные окна */
