@@ -10,7 +10,7 @@
  ☐ Добавить StackedList
 
 
- ☐ @critical Значение по умолчанию для select
+ ✔ @critical Значение по умолчанию для select @done (16-04-14 22:56)
  ☐ @critical Пофиксить .list--horizontal и .list--animation-slide
  ☐ @critical Пофиксить .list--animation-mark
  ✔ @critical Пофиксить цвет placeholder у форм @done (16-04-10 21:28)
@@ -19,8 +19,9 @@
  ☐ @critical Пофиксить скроллинг модальных окон (если контент большой, то футер должен оставаться на виду)
  ☐ @critical Пофиксить несколько Sidebar, чтобы они не заменяли друг друга
  ☐ @critical Исправить ширину .modal__header__title
- ☐ @high Переписать модуль Dropdown
- ☐ @high Переписать модуль Select
+ ☐ @critical Исправить ширину модального окна для мобильных устройств
+ ✔ @high Переписать модуль Dropdown @done (16-04-14 22:56)
+ ✔ @high Переписать модуль Select @done (16-04-14 22:56)
  ☐ @high Добавить модуль Rating
  ☐ @high Написать документацию
  ✔ @critical Задержка появления tooltip @done (16-02-21 00:29)

@@ -22,7 +22,7 @@
 			$(function() {
 				var sidebar = new Sidebar($('#ss'));
 
-				$('#showSidebar').click(function() {
+				$('#showSidebar, #openMenu').click(function() {
 					sidebar.show();
 				});
 				$('#hideSidebar').click(function() {
@@ -71,16 +71,18 @@
 					console.log(tabs);
 				});
 
-				//$('#rating').rating('init');
-
-				/*$('#rating').on('date', function(event, index) {
-					console.log("rating!");
-					console.log(index);
+				var select = new Select($('#selectExample'), ["Red", "Orange", "Yellow"], 1);
+				/*$('#selectExample > .select__menu').click(function() {
+					select.set(2);
+					select.open();
 				});*/
 			});
 		</script>
 	</head>
 	<body> 
+		<div class="taskbar">
+			<div class="taskbar__item taskbar__item--hover-color-blue" id="openMenu"><i class="fa fa-bars"></i></div>
+		</div>
 		<h1>Сетка</h1>
 		<div class="grid grid--gutters">
 			<div class="col-1 col-t-2 col-m-2">col-1</div>
@@ -110,6 +112,9 @@
 					<div class="row">Row 5</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="select select--invert select--color-brown" data-position="gtop" id="selectExample">
 		</div>
 
 		<div class="grid">
@@ -1024,7 +1029,7 @@
 		</div>
 	</div>
 
-	<div class="sidebar sidebar--invert sidebar--color-red" id="ss">
+	<div class="sidebar sidebar--invert sidebar--color-red sidebar--under-taskbar" id="ss">
 		<div class="sidebar__cover">
 			<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
 			<div class="sidebar__cover__title">@TotallyMoo</div>

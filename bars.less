@@ -5,7 +5,8 @@
 	max-height: 44px;
 	background-color: darken(@u-gray, 5%);	
 	overflow: hidden;
-	z-index: 4;
+	overflow-y: auto;
+	z-index: 4;	
 	.pt();
 
 	.taskbar__item {
@@ -16,10 +17,10 @@
 		cursor: pointer;
 		padding: 0.75em 1em;
 		overflow: hidden;
+		height: 44px;
+		max-height: 44px;
 		text-overflow: ellipsis; 
-		.anim(0.3s);
-
-		
+		.anim(0.3s);		
 
 		&:hover {
 			background-color: darken(@u-gray, 10%);

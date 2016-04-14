@@ -27,43 +27,10 @@ $(function() {
 	});
 
 	$(document).click(function(e) {
-		if ($(e.target).closest('.dropdown, [data-dropdown-target], .select__menu, .select__options__item').length)
+		if ($(e.target).closest('.dropdown, [data-dropdown-target]').length)
 			return;
-		$('.dropdown').slideUp(300);
-		$('.select__options').slideUp(300);
-		$('.select__menu').removeClass('select__menu--open');
+		$('.dropdown').slideUp(300);		
 		e.stopPropagation();
-	});
-
-
-	/* Select Меню */
-	$('body').on('click', '.select__menu', function(event) {
-		var parent = $(this).parent();
-		var select = $(this);
-		var options = parent.find('.select__options');
-		var selected_id = $(this).data('selectValue');
-		options.find('.select__options__item').removeClass('select__options__item--active');
-		var active_option = options.find('.select__options__item[data-option-id="' + selected_id + '"]');
-		active_option.addClass('select__options__item--active');
-		select.toggleClass('select__menu--open');
-		options.css('width', select.outerWidth());
-		options.css('top', $(this).offset().top + select.outerHeight());
-		options.css('left', $(this).offset().left);
-		options.slideToggle(300);
-
-		/* !!! ToDo: сделать позиционирование по вертикали и горизонтали */
-
-		$('body').on('click', '.select__options__item', function(e) {
-			var current = $(this);
-			var parentSelect = $(this).parent().parent().find('.select__menu');
-			var currentValue = current.data('optionId');
-			options.find('.select__options__item').removeClass('select__options__item--active');
-			$(this).addClass('select__options__item--active');
-			parentSelect.html(current.html());
-			parentSelect.data('selectValue', currentValue);
-			parentSelect.removeClass('select__menu--open');
-			options.slideUp(300);
-		});
 	});
 
 	/* Всплывающие подсказки */
@@ -149,7 +116,6 @@ Sidebar.prototype.show = function() {
 	if (element.hasClass('sidebar--under-taskbar')) {
 		$('.overflow').addClass('overflow--under-taskbar');
 	}
-
 	
 	// Sidebar.prototype.visible = true;
 	this.visible = true;
@@ -319,4 +285,115 @@ Tabs.prototype.openTab = function(i) {
 			target.el.trigger('select tab', [index]);
 		}
 	});
+}
+
+/* Модуль Select */
+Select = function(element, options, index) {
+	this.el = element;
+	this.options = options;
+	this.el.append("<div class='select__menu'></div>");
+	this.menu = element.find('.select__menu');
+	this.visible = false;
+	this.position = 'bottom';
+
+
+	if (index < 0 || index >= this.options.length)
+		index = 0;
+
+	var target = this;
+	target.menu.html(this.options[index]);
+
+	this.menu.removeClass('select__menu--open');
+	if (index == undefined) {
+		this.selectedIndex = 0;
+	} else {
+		this.selectedIndex = index;
+	}
+
+	if (this.el.data('position') == 'top') 
+		this.position = 'top';
+
+	this.menu.click(function() {
+		target.open();
+	});
+}
+
+Select.prototype.open = function() {	
+	var target = this;
+	var options_menu = this.el.find('.select__options');
+
+	if (this.visible) {
+		target.hide();
+	} else {
+		this.el.find('.select__options').remove();
+		this.menu.addClass('select__menu--open');
+		var html_string = "<div class='select__options'>";
+
+		var options = this.options;
+		options.forEach(function(current, index, options) {
+			if (target.selectedIndex == index) {
+				html_string += "<div class='select__options__item select__options__item--active' data-id='" + index + "'>";
+			} else {
+				html_string += "<div class='select__options__item' data-id='" + index + "'>";
+			}
+			html_string += current + "</div>"
+		});
+
+		this.el.append(html_string);
+		options_menu = this.el.find('.select__options');
+
+		if (options_menu.outerWidth() <= this.menu.outerWidth()) {
+			options_menu.css('width', this.menu.outerWidth());
+		}
+
+		if (target.position == 'top') {
+			options_menu.css('top', this.menu.offset().top - options_menu.outerHeight());
+		}
+
+		options_menu.css('left', this.menu.offset().left);
+
+		if (target.position == 'bottom') 
+			options_menu.slideDown(300);
+		else 
+			options_menu.show();
+
+		target.el.find('.select__options > .select__options__item').click(function() {
+			target.selectedIndex = parseInt($(this).data('id'));
+			target.hide();
+		});
+
+		$(document).click(function(e) {
+			if ($(e.target).closest('.select__menu, .select__options__item').length)
+				return;
+			target.hide();
+			e.stopPropagation();
+		});
+
+		target.visible = true;
+	}	
+}
+
+Select.prototype.hide = function() {
+	this.menu.removeClass('select__menu--open');
+
+	var target = this;
+	var options_menu = this.el.find('.select__options');
+
+	if (this.visible) {
+		if (target.position == 'bottom') 
+			options_menu.slideUp(300);
+		else 
+			options_menu.hide();
+		setTimeout(function() {
+			target.el.find('.select__options').remove();
+		}, 300);		
+		this.menu.removeClass('select__menu--open');
+
+		target.visible = false;
+	}
+}
+
+Select.prototype.set = function(index) {
+	if (index >= 0 && index < this.options.length)
+		this.selectedIndex = index;
 }
