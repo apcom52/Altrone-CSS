@@ -292,23 +292,22 @@ Select = function(element, options, index) {
 	this.el = element;
 	this.options = options;
 	this.el.append("<div class='select__menu'></div>");
-	this.menu = element.find('.select__menu');
+	this.menu = this.el.find('.select__menu');
+	console.log(this.menu);
+	this.menu.html("Hello");
 	this.visible = false;
 	this.position = 'bottom';
 
 
-	if (index < 0 || index >= this.options.length)
-		index = 0;
+	if (index == undefined || index < 0 || index >= this.options.length)
+		this.selectedIndex = 0;
+	else
+		this.selectedIndex = index;
 
 	var target = this;
-	target.menu.html(this.options[index]);
+	this.menu.html(options[this.selectedIndex]);
 
 	this.menu.removeClass('select__menu--open');
-	if (index == undefined) {
-		this.selectedIndex = 0;
-	} else {
-		this.selectedIndex = index;
-	}
 
 	if (this.el.data('position') == 'top') 
 		this.position = 'top';
@@ -359,6 +358,7 @@ Select.prototype.open = function() {
 
 		target.el.find('.select__options > .select__options__item').click(function() {
 			target.selectedIndex = parseInt($(this).data('id'));
+			target.menu.html(target.options[target.selectedIndex]);
 			target.hide();
 		});
 
@@ -396,4 +396,5 @@ Select.prototype.hide = function() {
 Select.prototype.set = function(index) {
 	if (index >= 0 && index < this.options.length)
 		this.selectedIndex = index;
+		target.menu.html(target.options[target.selectedIndex]);
 }
