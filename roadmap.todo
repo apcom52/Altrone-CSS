@@ -9,7 +9,14 @@
  ☐ Сделать ProgressBar как модуль
  ☐ Добавить StackedList
 
+ PATCH ALTRONE 2.0.1:
+   ☐ @critical Исправить оформление .list__separator
+   ☐ @critical Сделать цвет по умолчанию для списка не синий
+   ☐ @critical Добавить позиционирование для dropdown
+   ☐ @critical Пофиксить отступы для tooltip
 
+
+ALTRONE 2.0: 
  ✔ @critical Значение по умолчанию для select @done (16-04-14 22:56)
  ✔ @critical Пофиксить .list--horizontal и .list--animation-slide @done (16-04-15 13:59)
  ✔ @critical Пофиксить цвет placeholder у форм @done (16-04-10 21:28)
