@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="font-awesome.css">
 		<script src="jquery-2.1.4.min.js"></script>
 		<script src="altrone.js"></script>
-		<script src="altrone-dev.js"></script>
 		<style>
 			.col-color {
 				background-color: #999999;
@@ -20,26 +19,31 @@
 
 		<script>
 			$(function() {
-				var sidebar = new Sidebar($('#ss'));
+				var second = new Sidebar($('#ss2'));
+				var sidebar = new Sidebar($('#ss'), true);
 
-				$('#showSidebar, #openMenu').click(function() {
+				$('#openMenu2').click(function() {
+					second.toggle();
+				});
+
+				$('#showSidebar').click(function() {
 					sidebar.show();
 				});
 				$('#hideSidebar').click(function() {
 					sidebar.hide();
 				});
 				
-				$('#toggleSidebar').click(function() {
+				$('#toggleSidebar, #openMenu').click(function() {
 					sidebar.toggle();
 				});
 
-				$('#ss').on('sidebar-show', function() {
+				/*$('#ss').on('sidebar-show', function() {
 					console.log("show sidebar");
 				});
 
 				$('#ss').on('sidebar-hide', function() {
 					console.log("hide sidebar");
-				});
+				});*/
 
 				$('#showToast').click(function() {
 					showToast("Вы получили новое достижение<br><b>Конькобежец</b>");
@@ -82,6 +86,7 @@
 	<body> 
 		<div class="taskbar">
 			<div class="taskbar__item taskbar__item--hover-color-blue" id="openMenu"><i class="fa fa-bars"></i></div>
+			<div class="taskbar__item taskbar__item--pin-right taskbar__item--hover-color-red" id="openMenu2"><i class="fa fa-arrow-right"></i></div>
 		</div>
 		<h1>Сетка</h1>
 		<div class="grid grid--gutters">
@@ -114,8 +119,16 @@
 			</div>
 		</div>
 
+		<div class="button button--cirlce button--icon-only" style="position: fixed; bottom: 5em; right: 2em;" data-tooltip="Вверх"><i class="fa fa-arrow-up"></i></div>
+
 		<div class="select select--invert select--color-brown" data-position="gtop" id="selectExample">
 		</div>
+
+		<ul class="list list--animation-slide list--horizontal">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
 
 		<div class="grid">
 			<div class="col-6">
@@ -1018,10 +1031,19 @@
 	<div class="modal" id="YesNoDialog">
 		<div class="modal__header">
 			<div class="modal__header__title">Модальное окно</div>
-			<div class="modal__header__icon modal--close"><i class="fa fa-remove"></i></div>
+			<!-- <div class="modal__header__icon modal--close"><i class="fa fa-remove"></i></div> -->
 		</div>
 		<div class="modal__content">
-			<p>Вы действительно хотите удалить эту заметку?</p>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe architecto illo voluptas reprehenderit non fugiat, in, fugit asperiores. Tenetur vitae accusamus reprehenderit expedita corporis laudantium, quis sequi deserunt molestiae! Eaque!</div>
+			<div>Minima rem itaque officiis quos quidem perspiciatis nobis explicabo quisquam sequi eligendi aspernatur doloremque iusto magnam commodi voluptates facilis assumenda tenetur, provident enim saepe natus. Dolore aspernatur ipsum beatae ad!</div>
+			<div>Amet mollitia, facere excepturi quis. Rem dolor, ex iure et quos corporis nulla, voluptatibus nesciunt eaque saepe cupiditate! Aperiam neque rem harum a doloribus unde odit ut esse iusto, cumque.</div>
+			<div>Est vel voluptatibus quas quos voluptatem, ullam perferendis, id laborum incidunt excepturi perspiciatis eius, porro doloremque cupiditate natus quidem vero numquam suscipit cumque veritatis! At eaque modi corporis, numquam iusto?</div>
+			<div>Optio asperiores facere error, hic dignissimos non eos at facilis ea aliquam, explicabo nihil expedita cumque accusamus alias ex distinctio similique quis odit inventore omnis, modi minima possimus ducimus? Quod?</div>
+			<div>Dolorem, dicta explicabo sequi, vero magnam, libero quaerat quos minima est veritatis totam! Quisquam ad veniam deleniti est eius adipisci dolorem maiores doloribus aperiam quam nam facilis molestias, provident quibusdam!</div>
+			<div>Alias laborum sit ex pariatur consectetur dolor incidunt magni itaque assumenda voluptates earum aperiam, facilis commodi maiores optio dolore voluptatem, voluptate vel inventore, velit! Incidunt impedit eius laborum aut consequatur?</div>
+			<div>Ea magnam, temporibus. Rerum hic libero, laboriosam aut mollitia, id esse minus laborum quas saepe alias commodi quibusdam. Veritatis nemo eligendi consectetur, at? Perspiciatis mollitia ipsum sequi, impedit harum! Fuga.</div>
+			<div>Cumque aut mollitia, molestias perspiciatis minus asperiores quam. Quae fuga numquam praesentium sapiente eligendi, rem iusto deserunt voluptates animi harum, distinctio consectetur porro? Recusandae tenetur, hic! Cupiditate deleniti consequatur nemo.</div>
+			<div>Facilis quia, laboriosam non eligendi deserunt nulla odit aspernatur, temporibus a dignissimos in quasi iure provident. Recusandae sequi natus fugiat consectetur. Tenetur ipsa quasi, deserunt excepturi, maiores deleniti expedita labore.</div>
 		</div>
 		<div class="modal__footer align-center">
 			<button class="button--color-green">Да</button>
@@ -1030,6 +1052,25 @@
 	</div>
 
 	<div class="sidebar sidebar--invert sidebar--color-red sidebar--under-taskbar" id="ss">
+		<div class="sidebar__cover">
+			<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
+			<div class="sidebar__cover__title">@TotallyMoo</div>
+		</div>
+		<div class="sidebar__menu">
+			<div class="sidebar__menu__header">Music Player</div>
+			<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-play"></i>Avicii - Dangerous <div class="sidebar__menu__item__icon"><i class="fa fa-forward"></i></div> </div>
+			<div class="sidebar__menu__item">Открыть плейлист...</div>
+
+			<div class="sidebar__menu__separator"></div>
+
+			<div class="sidebar__menu__header">О сервисе</div>
+			<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
+			<div class="sidebar__menu__item">Помощь и поддержка</div>
+			<div class="sidebar__menu__item">О сервисе</div>
+		</div>
+	</div>
+
+	<div class="sidebar sidebar--invert sidebar--pin-right sidebar--color-pink" id="ss2">
 		<div class="sidebar__cover">
 			<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
 			<div class="sidebar__cover__title">@TotallyMoo</div>

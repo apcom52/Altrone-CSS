@@ -212,30 +212,6 @@
 				}
 			}
 		}
-
-		&-mark {
-			&-circle {
-				.list__item, li {
-					&:hover, &:active {
-						list-style-type: circle;
-					}
-				}
-			}
-			&-disc {
-				.list__item, li {
-					&:hover, &:active {
-						list-style-type: disc;
-					}
-				}
-			}
-			&-square {
-				.list__item, li {
-					&:hover, &:active {
-						list-style-type: square;
-					}
-				}
-			}
-		}
 	}
 
 	&.list--horizontal {
@@ -268,6 +244,23 @@
 					.anim(0.1s);
 				}
 			}			
+		}
+
+		&.list--animation-slide {
+			.list__item, li {
+				&:hover {
+					position: relative;
+					top: -0.25em;
+					padding-left: 1em;
+					.anim(0.3s);
+				}
+				&:not(:hover) {
+					position: static;
+					top: 0em;
+					padding-left: 1em;
+					.anim(0.3s);
+				}
+			}
 		}
 	}
 }

@@ -5,7 +5,6 @@
 	max-height: 44px;
 	background-color: darken(@u-gray, 5%);	
 	overflow: hidden;
-	overflow-y: auto;
 	z-index: 4;	
 	.pt();
 
@@ -296,7 +295,7 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	.pt();
-	.anim(0.3s);
+	transition: left 0.3s linear;
 
 	.sidebar__cover {
 		background-color: darken(@u-gray, 5%);

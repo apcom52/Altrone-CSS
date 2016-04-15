@@ -48,6 +48,11 @@ $(function() {
 				var parent_height = $(this).outerHeight();
 				var parent_left = $(this).position().left;
 				var parent_top = $(this).position().top;
+
+				if ($(this).css('position') == 'absolute' || $(this).css('position') == 'fixed') {
+					var parent_left = $(this).offset().left;
+					var parent_top = $(this).offset().top;
+				}
 				lastTooltipPosition.x = parent_left + parent_width / 2 - tooltip_width / 2;
 
 				var tooltip_position = $(this).data('tooltipPosition');
@@ -61,9 +66,9 @@ $(function() {
 				}
 
 				if (tooltip_position == null || tooltip_position == 'top') {
-					lastTooltipPosition.y = $(this).position().top - tooltip_height;	
+					lastTooltipPosition.y = parent_top - tooltip_height;	
 				} else if (tooltip_position == 'down') {
-					lastTooltipPosition.y = $(this).position().top + parent_height + tooltip_height;
+					lastTooltipPosition.y = parent_top + parent_height + tooltip_height;
 				} else if (tooltip_position == 'left') {
 					lastTooltipPosition.x = parent_left - tooltip_width;
 					lastTooltipPosition.y = parent_top + 8;
@@ -91,17 +96,52 @@ $(function() {
 			$('.tooltip').remove();
 		}
 	});	
+
+	$(window).scroll(function() {
+		/* Если .sidebar--under-taskbar, то taskbar должен расширяться под доступное окно */
+		var sidebars = Sidebar.prototype.collection;
+		var current_sidebar = null;
+		sidebars.forEach(function (current, index, sidebars) {
+			if (current.visible && current.enable_scroll && current.el.hasClass('sidebar--under-taskbar')) {
+				current_sidebar = current;
+				return;
+			}
+		});
+
+		if (current_sidebar != null) {
+			var top_pos = $(window).scrollTop();
+			if (top_pos >= 44) {
+				current_sidebar.el.css('top', 0).css('height', '100%');
+				$('.overflow').css('top', 0).css('height', '100%');
+			} else {
+				current_sidebar.el.css('top', 44 - top_pos).css('height', 'calc(100% - ' + (44 - top_pos).toString());
+				$('.overflow').css('top', 44 - top_pos).css('height', 'calc(100% - ' + (44 - top_pos).toString());
+			}
+		}
+	});
 });
 
 /* Боковое меню */
-function Sidebar(element) {
+function Sidebar(element, enable_scroll) {
 	// Sidebar.prototype.el = undefined;
+	if (Sidebar.prototype.collection == undefined)
+		Sidebar.prototype.collection = []
+	this.enable_scroll = false;
+	if (enable_scroll != undefined)
+		this.enable_scroll = enable_scroll;
 	this.el = element;	
+	Sidebar.prototype.collection.push(this);
 }
 
 Sidebar.prototype.show = function() {
-	var element = this.el;
+	// Пробегаемся по всем созданным сайдбарам и закрываем их, если они открыты
+	var otherSidebars = Sidebar.prototype.collection;
 	var target = this;
+	otherSidebars.forEach(function (current, index, otherSidebars) {
+		if (current != target && current.visible)
+			current.hide();
+	});
+	var element = this.el;
 	target.hide();
 	element.addClass('sidebar--show');
 	
@@ -191,11 +231,13 @@ Modal = function(element) {
 }
 
 Modal.prototype.show = function() {
+	var height = this.el.innerHeight();
+	//height -= this.el.find('.modal__header').outerHeight() + this.el.find('.modal__footer').outerHeight();
+	this.el.find('.modal__content').css('height', height - 46 - 39);
+
 	var element = this.el;
 	var target = this;
 	this.visible = true;
-
-	console.log($('.overflow').length);
 
 	if (!$('.overflow').length) {
 		$('body').append('<div class="overflow"></div>');
@@ -211,8 +253,6 @@ Modal.prototype.show = function() {
 
 	element.show();
 	element.trigger('modal-show');
-
-	console.log(element);
 }
 
 Modal.prototype.hide = function() {
@@ -293,7 +333,6 @@ Select = function(element, options, index) {
 	this.options = options;
 	this.el.append("<div class='select__menu'></div>");
 	this.menu = this.el.find('.select__menu');
-	console.log(this.menu);
 	this.menu.html("Hello");
 	this.visible = false;
 	this.position = 'bottom';

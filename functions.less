@@ -223,6 +223,18 @@ code {
 	box-sizing: border-box;
 }
 
+.fixed {
+	position: fixed !important;
+}
+
+.absolute {
+	position: absolute !important;
+}
+
+.relative {
+	position: relative !important;
+}
+
 .set-circle-color(@color) {
 	width: 1em;
 	height: 1em;
@@ -279,6 +291,7 @@ code {
 
 ::-webkit-scrollbar {
 	width: 0.5em;
+	height: 0.5em;
 }
 
 ::-webkit-scrollbar-track {
@@ -293,64 +306,3 @@ code {
 	background-color: lighten(@d-gray, 5%);
 }
 
-
-/* Анимации */
-.fade-in {
-	opacity: 0;
-	-webkit-animation: fadeIn ease-in 1;
-	-moz-animation: fadeIn ease-in 1;
-	animation: fadeIn ease-in 1;
-
-	-webkit-animation-fill-mode:forwards;
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
-
-	-webkit-animation-duration:1s;
-    -moz-animation-duration:1s;
-    animation-duration:1s;
-}
-
-.fade-out {
-	opacity: 1;
-	-webkit-animation: fadeOut ease-in 1;
-	-moz-animation: fadeOut ease-in 1;
-	animation: fadeOut ease-in 1;
-
-	-webkit-animation-fill-mode:forwards;
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
-
-	-webkit-animation-duration:1s;
-    -moz-animation-duration:1s;
-    animation-duration:1s;
-}
-
-@-webkit-keyframes fadeIn {
-	from {	opacity: 0;	}
-	to { opacity: 1;}
-}
-
-@-moz-keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
-@-webkit-keyframes fadeOut {
-	from {	opacity: 1;	}
-	to { opacity: 0;}
-}
-
-@-moz-keyframes fadeOut {
-	from { opacity: 1; }
-	to { opacity: 0; }
-}
-
-@keyframes fadeOut {
-	from { opacity: 1; }
-	to { opacity: 0; }
-}

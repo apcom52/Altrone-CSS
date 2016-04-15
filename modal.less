@@ -5,7 +5,7 @@
 	margin: auto 25%;
 	width: 50%;
 	max-height: 80%;
-	overflow-y: auto;	
+	// overflow-y: auto;	
 	top: 10%;
 	z-index: 4;
 	color: @d-gray;
@@ -15,7 +15,7 @@
 	.modal__header {
 		width: 100%;
 		background-color: @u-gray;
-		display: table-row;
+		display: table;
 
 		.modal__header__title {
 			width: 100%;
@@ -49,6 +49,7 @@
 	.modal__content {
 		padding: 1em;
 		box-sizing: border-box;
+		overflow-x: auto;
 
 		&.modal__content--no-padding {
 			padding: 0em;
@@ -97,6 +98,13 @@
 			background-color: @d-gray;
 			color: @u-gray;
 		}
+	}
+}
+
+@media (max-width: @l-mobile) {
+	.modal {
+		width: 90%;
+		margin: auto 5%;
 	}
 }
 
