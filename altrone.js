@@ -226,11 +226,19 @@ function showToast(message, duration) {
 
 /* Модальные окна */
 Modal = function(element) {
+	if (Modal.prototype.collection == undefined)
+		Modal.prototype.collection = []
 	this.el = element;
 	this.visible = false;
+	Modal.prototype.collection.push(this);
 }
 
 Modal.prototype.show = function() {
+	var othersModals = Modal.prototype.collection;
+	othersModals.forEach(function (current, index, othersModals) {
+		if (current.visible)
+			current.hide();		
+	});
 	var height = this.el.innerHeight();
 	//height -= this.el.find('.modal__header').outerHeight() + this.el.find('.modal__footer').outerHeight();
 	this.el.find('.modal__content').css('height', height - 46 - 39);
@@ -329,6 +337,9 @@ Tabs.prototype.openTab = function(i) {
 
 /* Модуль Select */
 Select = function(element, options, index) {
+	if (Select.prototype.collection == undefined)
+		Select.prototype.collection = []
+	Select.prototype.collection.push(this);
 	this.el = element;
 	this.options = options;
 	this.el.append("<div class='select__menu'></div>");
@@ -357,6 +368,12 @@ Select = function(element, options, index) {
 }
 
 Select.prototype.open = function() {	
+	var othersSelects = Select.prototype.collection;
+	othersSelects.forEach(function (current, index, othersSelects) {
+		if (current.visible)
+			current.hide();		
+	});
+
 	var target = this;
 	var options_menu = this.el.find('.select__options');
 
