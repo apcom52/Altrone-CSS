@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:700,400);
+/* 
+* ALTRONE-CSS
+* Version 2.0 (Angry Ancromantula)
+* Build 236
+*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -532,214 +537,478 @@ th {
   background-color: #db2828 !important;
 }
 /* line 81, functions.less */
+.u-red-bg {
+  background-color: #f2acac !important;
+}
+/* line 82, functions.less */
+.l-red-bg {
+  background-color: #eb7f7f !important;
+}
+/* line 83, functions.less */
+.d-red-bg {
+  background-color: #871616 !important;
+}
+/* line 85, functions.less */
 .orange-bg {
   background-color: #f2711c !important;
 }
-/* line 82, functions.less */
+/* line 86, functions.less */
+.u-orange-bg {
+  background-color: #facbac !important;
+}
+/* line 87, functions.less */
+.l-orange-bg {
+  background-color: #f7af7e !important;
+}
+/* line 88, functions.less */
+.d-orange-bg {
+  background-color: #9e4509 !important;
+}
+/* line 90, functions.less */
 .yellow-bg {
   background-color: #fbbd08 !important;
 }
-/* line 83, functions.less */
+/* line 91, functions.less */
+.u-yellow-bg {
+  background-color: #fce49a !important;
+}
+/* line 92, functions.less */
+.l-yellow-bg {
+  background-color: #fadd73 !important;
+}
+/* line 93, functions.less */
+.d-yellow-bg {
+  background-color: #a98307 !important;
+}
+/* line 95, functions.less */
 .olive-bg {
   background-color: #b5cc18 !important;
 }
-/* line 84, functions.less */
+/* line 96, functions.less */
+.u-olive-bg {
+  background-color: #e5f28d !important;
+}
+/* line 97, functions.less */
+.l-olive-bg {
+  background-color: #daed5f !important;
+}
+/* line 98, functions.less */
+.d-olive-bg {
+  background-color: #65730e !important;
+}
+/* line 100, functions.less */
 .green-bg {
   background-color: #21ba45 !important;
 }
-/* line 85, functions.less */
+/* line 101, functions.less */
+.u-green-bg {
+  background-color: #8aeba1 !important;
+}
+/* line 102, functions.less */
+.l-green-bg {
+  background-color: #5fe37e !important;
+}
+/* line 103, functions.less */
+.d-green-bg {
+  background-color: #126325 !important;
+}
+/* line 105, functions.less */
 .teal-bg {
   background-color: #00b5ad !important;
 }
-/* line 86, functions.less */
+/* line 106, functions.less */
+.u-teal-bg {
+  background-color: #52fff6 !important;
+}
+/* line 107, functions.less */
+.l-teal-bg {
+  background-color: #1ffff4 !important;
+}
+/* line 108, functions.less */
+.d-teal-bg {
+  background-color: #00524e !important;
+}
+/* line 110, functions.less */
 .blue-bg {
   background-color: #2185d0 !important;
 }
-/* line 87, functions.less */
+/* line 111, functions.less */
+.u-blue-bg {
+  background-color: #9eccf0 !important;
+}
+/* line 112, functions.less */
+.l-blue-bg {
+  background-color: #72b5e8 !important;
+}
+/* line 113, functions.less */
+.d-blue-bg {
+  background-color: #144e7a !important;
+}
+/* line 115, functions.less */
 .violet-bg {
   background-color: #6435c9 !important;
 }
-/* line 88, functions.less */
+/* line 116, functions.less */
+.u-violet-bg {
+  background-color: #c1aeeb !important;
+}
+/* line 117, functions.less */
+.l-violet-bg {
+  background-color: #a284e0 !important;
+}
+/* line 118, functions.less */
+.d-violet-bg {
+  background-color: #3d1f7a !important;
+}
+/* line 120, functions.less */
 .purple-bg {
   background-color: #a333c8 !important;
 }
-/* line 89, functions.less */
+/* line 121, functions.less */
+.u-purple-bg {
+  background-color: #daa9eb !important;
+}
+/* line 122, functions.less */
+.l-purple-bg {
+  background-color: #c87ee0 !important;
+}
+/* line 123, functions.less */
+.d-purple-bg {
+  background-color: #611c78 !important;
+}
+/* line 125, functions.less */
 .pink-bg {
   background-color: #e03997 !important;
 }
-/* line 90, functions.less */
+/* line 126, functions.less */
+.u-pink-bg {
+  background-color: #f5bcdc !important;
+}
+/* line 127, functions.less */
+.l-pink-bg {
+  background-color: #ed91c5 !important;
+}
+/* line 128, functions.less */
+.d-pink-bg {
+  background-color: #991861 !important;
+}
+/* line 130, functions.less */
 .brown-bg {
   background-color: #a5673f !important;
 }
-/* line 91, functions.less */
+/* line 131, functions.less */
+.u-brown-bg {
+  background-color: #dbb9a2 !important;
+}
+/* line 132, functions.less */
+.l-brown-bg {
+  background-color: #cc9d7e !important;
+}
+/* line 133, functions.less */
+.d-brown-bg {
+  background-color: #5c3b25 !important;
+}
+/* line 135, functions.less */
 .u-gray-bg {
   background-color: #f5f5f5 !important;
 }
-/* line 92, functions.less */
+/* line 136, functions.less */
 .l-gray-bg {
   background-color: #999999 !important;
 }
-/* line 93, functions.less */
+/* line 137, functions.less */
 .m-gray-bg {
   background-color: #666666 !important;
 }
-/* line 94, functions.less */
+/* line 138, functions.less */
 .d-gray-bg {
   background-color: #333333 !important;
 }
-/* line 95, functions.less */
+/* line 139, functions.less */
 .black-bg {
   background-color: #000000 !important;
 }
-/* line 96, functions.less */
+/* line 140, functions.less */
 .white-bg {
   background-color: #ffffff !important;
 }
-/* line 98, functions.less */
+/* line 142, functions.less */
 .red-fg {
   color: #db2828 !important;
 }
-/* line 99, functions.less */
+/* line 143, functions.less */
+.u-red-fg {
+  color: #f2acac !important;
+}
+/* line 144, functions.less */
+.l-red-fg {
+  color: #eb7f7f !important;
+}
+/* line 145, functions.less */
+.d-red-fg {
+  color: #871616 !important;
+}
+/* line 147, functions.less */
 .orange-fg {
   color: #f2711c !important;
 }
-/* line 100, functions.less */
+/* line 148, functions.less */
+.u-orange-fg {
+  color: #facbac !important;
+}
+/* line 149, functions.less */
+.l-orange-fg {
+  color: #f7af7e !important;
+}
+/* line 150, functions.less */
+.d-orange-fg {
+  color: #9e4509 !important;
+}
+/* line 152, functions.less */
 .yellow-fg {
   color: #fbbd08 !important;
 }
-/* line 101, functions.less */
+/* line 153, functions.less */
+.u-yellow-fg {
+  color: #fce49a !important;
+}
+/* line 154, functions.less */
+.l-yellow-fg {
+  color: #fadd73 !important;
+}
+/* line 155, functions.less */
+.d-yellow-fg {
+  color: #a98307 !important;
+}
+/* line 157, functions.less */
 .olive-fg {
   color: #b5cc18 !important;
 }
-/* line 102, functions.less */
+/* line 158, functions.less */
+.u-olive-fg {
+  color: #e5f28d !important;
+}
+/* line 159, functions.less */
+.l-olive-fg {
+  color: #daed5f !important;
+}
+/* line 160, functions.less */
+.d-olive-fg {
+  color: #65730e !important;
+}
+/* line 162, functions.less */
 .green-fg {
   color: #21ba45 !important;
 }
-/* line 103, functions.less */
+/* line 163, functions.less */
+.u-green-fg {
+  color: #8aeba1 !important;
+}
+/* line 164, functions.less */
+.l-green-fg {
+  color: #5fe37e !important;
+}
+/* line 165, functions.less */
+.d-green-fg {
+  color: #126325 !important;
+}
+/* line 167, functions.less */
 .teal-fg {
   color: #00b5ad !important;
 }
-/* line 104, functions.less */
+/* line 168, functions.less */
+.u-teal-fg {
+  color: #52fff6 !important;
+}
+/* line 169, functions.less */
+.l-teal-fg {
+  color: #1ffff4 !important;
+}
+/* line 170, functions.less */
+.d-teal-fg {
+  color: #00524e !important;
+}
+/* line 172, functions.less */
 .blue-fg {
   color: #2185d0 !important;
 }
-/* line 105, functions.less */
+/* line 173, functions.less */
+.u-blue-fg {
+  color: #9eccf0 !important;
+}
+/* line 174, functions.less */
+.l-blue-fg {
+  color: #72b5e8 !important;
+}
+/* line 175, functions.less */
+.d-blue-fg {
+  color: #144e7a !important;
+}
+/* line 177, functions.less */
 .violet-fg {
   color: #6435c9 !important;
 }
-/* line 106, functions.less */
+/* line 178, functions.less */
+.u-violet-fg {
+  color: #c1aeeb !important;
+}
+/* line 179, functions.less */
+.l-violet-fg {
+  color: #a284e0 !important;
+}
+/* line 180, functions.less */
+.d-violet-fg {
+  color: #3d1f7a !important;
+}
+/* line 182, functions.less */
 .purple-fg {
   color: #a333c8 !important;
 }
-/* line 107, functions.less */
+/* line 183, functions.less */
+.u-purple-fg {
+  color: #daa9eb !important;
+}
+/* line 184, functions.less */
+.l-purple-fg {
+  color: #c87ee0 !important;
+}
+/* line 185, functions.less */
+.d-purple-fg {
+  color: #611c78 !important;
+}
+/* line 187, functions.less */
 .pink-fg {
   color: #e03997 !important;
 }
-/* line 108, functions.less */
+/* line 188, functions.less */
+.u-pink-fg {
+  color: #f5bcdc !important;
+}
+/* line 189, functions.less */
+.l-pink-fg {
+  color: #ed91c5 !important;
+}
+/* line 190, functions.less */
+.d-pink-fg {
+  color: #991861 !important;
+}
+/* line 192, functions.less */
 .brown-fg {
   color: #a5673f !important;
 }
-/* line 109, functions.less */
+/* line 193, functions.less */
+.u-brown-fg {
+  color: #dbb9a2 !important;
+}
+/* line 194, functions.less */
+.l-brown-fg {
+  color: #cc9d7e !important;
+}
+/* line 195, functions.less */
+.d-brown-fg {
+  color: #5c3b25 !important;
+}
+/* line 197, functions.less */
 .u-gray-fg {
   color: #f5f5f5 !important;
 }
-/* line 110, functions.less */
+/* line 198, functions.less */
 .l-gray-fg {
   color: #999999 !important;
 }
-/* line 111, functions.less */
+/* line 199, functions.less */
 .m-gray-fg {
   color: #666666 !important;
 }
-/* line 112, functions.less */
+/* line 200, functions.less */
 .d-gray-fg {
   color: #333333 !important;
 }
-/* line 113, functions.less */
+/* line 201, functions.less */
 .black-fg {
   color: #000000 !important;
 }
-/* line 114, functions.less */
+/* line 202, functions.less */
 .white-fg {
   color: #ffffff !important;
 }
-/* line 116, functions.less */
+/* line 204, functions.less */
 .no-padding {
   padding: 0px !important;
 }
-/* line 117, functions.less */
+/* line 205, functions.less */
 .no-margin {
   margin: 0px !important;
 }
-/* line 119, functions.less */
+/* line 207, functions.less */
 .card_shadow {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-/* line 120, functions.less */
+/* line 208, functions.less */
 .shadow-1 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
-/* line 121, functions.less */
+/* line 209, functions.less */
 .shadow-2 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
-/* line 122, functions.less */
+/* line 210, functions.less */
 .shadow-3 {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) !important;
 }
-/* line 123, functions.less */
+/* line 211, functions.less */
 .shadow-4 {
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21) !important;
 }
-/* line 124, functions.less */
+/* line 212, functions.less */
 .shadow-5 {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22) !important;
 }
-/* line 126, functions.less */
+/* line 214, functions.less */
 .align-center {
   text-align: center;
 }
-/* line 127, functions.less */
+/* line 215, functions.less */
 .align-left {
   text-align: left;
 }
-/* line 128, functions.less */
+/* line 216, functions.less */
 .align-right {
   text-align: right;
 }
-/* line 129, functions.less */
+/* line 217, functions.less */
 .align-justify {
   text-align: justify;
 }
-/* line 131, functions.less */
+/* line 219, functions.less */
 .hidden {
   display: none;
 }
-/* line 133, functions.less */
+/* line 221, functions.less */
 .pin-left {
   float: left !important;
 }
-/* line 134, functions.less */
+/* line 222, functions.less */
 .pin-right {
   float: right !important;
 }
-/* line 136, functions.less */
+/* line 224, functions.less */
 .bold {
   font-weight: bold;
 }
-/* line 137, functions.less */
+/* line 225, functions.less */
 .italic {
   font-style: italic;
 }
-/* line 138, functions.less */
+/* line 226, functions.less */
 .underline {
   text-decoration: underline;
 }
-/* line 140, functions.less */
+/* line 228, functions.less */
 a {
   text-decoration: none;
 }
-/* line 144, functions.less */
+/* line 232, functions.less */
 code {
   color: #db2828;
   padding: 0.05em 0.1em;
@@ -747,263 +1016,263 @@ code {
   background-color: #f5f5f5;
   border-radius: 0.05em;
 }
-/* line 152, functions.less */
+/* line 240, functions.less */
 .margin-left-0 {
   margin-left: 0em !important;
 }
-/* line 153, functions.less */
+/* line 241, functions.less */
 .margin-left-1 {
   margin-left: 1em !important;
 }
-/* line 154, functions.less */
+/* line 242, functions.less */
 .margin-left-3 {
   margin-left: 3em !important;
 }
-/* line 155, functions.less */
+/* line 243, functions.less */
 .margin-left-5 {
   margin-left: 5em !important;
 }
-/* line 157, functions.less */
+/* line 245, functions.less */
 .margin-right-0 {
   margin-right: 0em !important;
 }
-/* line 158, functions.less */
+/* line 246, functions.less */
 .margin-right-1 {
   margin-right: 1em !important;
 }
-/* line 159, functions.less */
+/* line 247, functions.less */
 .margin-right-3 {
   margin-right: 3em !important;
 }
-/* line 160, functions.less */
+/* line 248, functions.less */
 .margin-right-5 {
   margin-right: 5em !important;
 }
-/* line 162, functions.less */
+/* line 250, functions.less */
 .margin-top-0 {
   margin-top: 0em !important;
 }
-/* line 163, functions.less */
+/* line 251, functions.less */
 .margin-top-1 {
   margin-top: 1em !important;
 }
-/* line 164, functions.less */
+/* line 252, functions.less */
 .margin-top-3 {
   margin-top: 3em !important;
 }
-/* line 165, functions.less */
+/* line 253, functions.less */
 .margin-top-5 {
   margin-top: 5em !important;
 }
-/* line 167, functions.less */
+/* line 255, functions.less */
 .margin-bottom-0 {
   margin-bottom: 0em !important;
 }
-/* line 168, functions.less */
+/* line 256, functions.less */
 .margin-bottom-1 {
   margin-bottom: 1em !important;
 }
-/* line 169, functions.less */
+/* line 257, functions.less */
 .margin-bottom-3 {
   margin-bottom: 3em !important;
 }
-/* line 170, functions.less */
+/* line 258, functions.less */
 .margin-bottom-5 {
   margin-bottom: 5em !important;
 }
-/* line 172, functions.less */
+/* line 260, functions.less */
 .margin-horizontal-0 {
   margin-left: 0em !important;
   margin-right: 0em !important;
 }
-/* line 173, functions.less */
+/* line 261, functions.less */
 .margin-horizontal-1 {
   margin-left: 1em !important;
   margin-right: 1em !important;
 }
-/* line 174, functions.less */
+/* line 262, functions.less */
 .margin-horizontal-3 {
   margin-left: 3em !important;
   margin-right: 3em !important;
 }
-/* line 175, functions.less */
+/* line 263, functions.less */
 .margin-horizontal-5 {
   margin-left: 5em !important;
   margin-right: 5em !important;
 }
-/* line 177, functions.less */
+/* line 265, functions.less */
 .margin-vertical-0 {
   margin-top: 0em !important;
   margin-bottom: 0em !important;
 }
-/* line 178, functions.less */
+/* line 266, functions.less */
 .margin-vertical-1 {
   margin-top: 1em !important;
   margin-bottom: 1em !important;
 }
-/* line 179, functions.less */
+/* line 267, functions.less */
 .margin-vertical-3 {
   margin-top: 3em !important;
   margin-bottom: 3em !important;
 }
-/* line 180, functions.less */
+/* line 268, functions.less */
 .margin-vertical-5 {
   margin-top: 5em !important;
   margin-bottom: 5em !important;
 }
-/* line 182, functions.less */
+/* line 270, functions.less */
 .margin-0 {
   margin: 0em !important;
 }
-/* line 183, functions.less */
+/* line 271, functions.less */
 .margin-1 {
   margin: 1em !important;
 }
-/* line 184, functions.less */
+/* line 272, functions.less */
 .margin-3 {
   margin: 3em !important;
 }
-/* line 185, functions.less */
+/* line 273, functions.less */
 .margin-5 {
   margin: 5em !important;
 }
-/* line 187, functions.less */
+/* line 275, functions.less */
 .padding-left-0 {
   padding-left: 0em !important;
 }
-/* line 188, functions.less */
+/* line 276, functions.less */
 .padding-left-1 {
   padding-left: 1em !important;
 }
-/* line 189, functions.less */
+/* line 277, functions.less */
 .padding-left-3 {
   padding-left: 3em !important;
 }
-/* line 190, functions.less */
+/* line 278, functions.less */
 .padding-left-5 {
   padding-left: 5em !important;
 }
-/* line 192, functions.less */
+/* line 280, functions.less */
 .padding-right-0 {
   padding-right: 0em !important;
 }
-/* line 193, functions.less */
+/* line 281, functions.less */
 .padding-right-1 {
   padding-right: 1em !important;
 }
-/* line 194, functions.less */
+/* line 282, functions.less */
 .padding-right-3 {
   padding-right: 3em !important;
 }
-/* line 195, functions.less */
+/* line 283, functions.less */
 .padding-right-5 {
   padding-right: 5em !important;
 }
-/* line 197, functions.less */
+/* line 285, functions.less */
 .padding-top-0 {
   padding-top: 0em !important;
 }
-/* line 198, functions.less */
+/* line 286, functions.less */
 .padding-top-1 {
   padding-top: 1em !important;
 }
-/* line 199, functions.less */
+/* line 287, functions.less */
 .padding-top-3 {
   padding-top: 3em !important;
 }
-/* line 200, functions.less */
+/* line 288, functions.less */
 .padding-top-5 {
   padding-top: 5em !important;
 }
-/* line 202, functions.less */
+/* line 290, functions.less */
 .padding-bottom-0 {
   padding-bottom: 0em !important;
 }
-/* line 203, functions.less */
+/* line 291, functions.less */
 .padding-bottom-1 {
   padding-bottom: 1em !important;
 }
-/* line 204, functions.less */
+/* line 292, functions.less */
 .padding-bottom-3 {
   padding-bottom: 3em !important;
 }
-/* line 205, functions.less */
+/* line 293, functions.less */
 .padding-bottom-5 {
   padding-bottom: 5em !important;
 }
-/* line 207, functions.less */
+/* line 295, functions.less */
 .padding-horizontal-0 {
   padding-left: 0em !important;
   padding-right: 0em !important;
 }
-/* line 208, functions.less */
+/* line 296, functions.less */
 .padding-horizontal-1 {
   padding-left: 1em !important;
   padding-right: 1em !important;
 }
-/* line 209, functions.less */
+/* line 297, functions.less */
 .padding-horizontal-3 {
   padding-left: 3em !important;
   padding-right: 3em !important;
 }
-/* line 210, functions.less */
+/* line 298, functions.less */
 .padding-horizontal-5 {
   padding-left: 5em !important;
   padding-right: 5em !important;
 }
-/* line 212, functions.less */
+/* line 300, functions.less */
 .padding-vertical-0 {
   padding-top: 0em !important;
   padding-bottom: 0em !important;
 }
-/* line 213, functions.less */
+/* line 301, functions.less */
 .padding-vertical-1 {
   padding-top: 1em !important;
   padding-bottom: 1em !important;
 }
-/* line 214, functions.less */
+/* line 302, functions.less */
 .padding-vertical-3 {
   padding-top: 3em !important;
   padding-bottom: 3em !important;
 }
-/* line 215, functions.less */
+/* line 303, functions.less */
 .padding-vertical-5 {
   padding-top: 5em !important;
   padding-bottom: 5em !important;
 }
-/* line 217, functions.less */
+/* line 305, functions.less */
 .padding-0 {
   padding: 0em !important;
 }
-/* line 218, functions.less */
+/* line 306, functions.less */
 .padding-1 {
   padding: 1em !important;
 }
-/* line 219, functions.less */
+/* line 307, functions.less */
 .padding-3 {
   padding: 3em !important;
 }
-/* line 220, functions.less */
+/* line 308, functions.less */
 .padding-5 {
   padding: 5em !important;
 }
-/* line 222, functions.less */
+/* line 310, functions.less */
 .size-fix {
   box-sizing: border-box;
 }
-/* line 226, functions.less */
+/* line 314, functions.less */
 .fixed {
   position: fixed !important;
 }
-/* line 230, functions.less */
+/* line 318, functions.less */
 .absolute {
   position: absolute !important;
 }
-/* line 234, functions.less */
+/* line 322, functions.less */
 .relative {
   position: relative !important;
 }
-/* line 246, functions.less */
+/* line 334, functions.less */
 .red-circle {
   width: 1em;
   height: 1em;
@@ -1011,7 +1280,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 247, functions.less */
+/* line 335, functions.less */
 .orange-circle {
   width: 1em;
   height: 1em;
@@ -1019,7 +1288,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 248, functions.less */
+/* line 336, functions.less */
 .yellow-circle {
   width: 1em;
   height: 1em;
@@ -1027,7 +1296,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 249, functions.less */
+/* line 337, functions.less */
 .olive-circle {
   width: 1em;
   height: 1em;
@@ -1035,7 +1304,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 250, functions.less */
+/* line 338, functions.less */
 .green-circle {
   width: 1em;
   height: 1em;
@@ -1043,7 +1312,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 251, functions.less */
+/* line 339, functions.less */
 .teal-circle {
   width: 1em;
   height: 1em;
@@ -1051,7 +1320,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 252, functions.less */
+/* line 340, functions.less */
 .blue-circle {
   width: 1em;
   height: 1em;
@@ -1059,7 +1328,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 253, functions.less */
+/* line 341, functions.less */
 .violet-circle {
   width: 1em;
   height: 1em;
@@ -1067,7 +1336,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 254, functions.less */
+/* line 342, functions.less */
 .purple-circle {
   width: 1em;
   height: 1em;
@@ -1075,7 +1344,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 255, functions.less */
+/* line 343, functions.less */
 .pink-circle {
   width: 1em;
   height: 1em;
@@ -1083,7 +1352,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 256, functions.less */
+/* line 344, functions.less */
 .brown-circle {
   width: 1em;
   height: 1em;
@@ -1091,7 +1360,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 257, functions.less */
+/* line 345, functions.less */
 .u-gray-circle {
   width: 1em;
   height: 1em;
@@ -1099,7 +1368,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 258, functions.less */
+/* line 346, functions.less */
 .l-gray-circle {
   width: 1em;
   height: 1em;
@@ -1107,7 +1376,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 259, functions.less */
+/* line 347, functions.less */
 .m-gray-circle {
   width: 1em;
   height: 1em;
@@ -1115,7 +1384,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 260, functions.less */
+/* line 348, functions.less */
 .d-gray-circle {
   width: 1em;
   height: 1em;
@@ -1123,7 +1392,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 261, functions.less */
+/* line 349, functions.less */
 .black-circle {
   width: 1em;
   height: 1em;
@@ -1131,7 +1400,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 262, functions.less */
+/* line 350, functions.less */
 .white-circle {
   width: 1em;
   height: 1em;
@@ -1139,7 +1408,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 274, functions.less */
+/* line 362, functions.less */
 .reg-ring {
   width: 1em;
   height: 1em;
@@ -1149,7 +1418,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 275, functions.less */
+/* line 363, functions.less */
 .orange-ring {
   width: 1em;
   height: 1em;
@@ -1159,7 +1428,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 276, functions.less */
+/* line 364, functions.less */
 .yellow-ring {
   width: 1em;
   height: 1em;
@@ -1169,7 +1438,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 277, functions.less */
+/* line 365, functions.less */
 .olive-ring {
   width: 1em;
   height: 1em;
@@ -1179,7 +1448,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 278, functions.less */
+/* line 366, functions.less */
 .green-ring {
   width: 1em;
   height: 1em;
@@ -1189,7 +1458,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 279, functions.less */
+/* line 367, functions.less */
 .teal-ring {
   width: 1em;
   height: 1em;
@@ -1199,7 +1468,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 280, functions.less */
+/* line 368, functions.less */
 .blue-ring {
   width: 1em;
   height: 1em;
@@ -1209,7 +1478,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 281, functions.less */
+/* line 369, functions.less */
 .violet-ring {
   width: 1em;
   height: 1em;
@@ -1219,7 +1488,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 282, functions.less */
+/* line 370, functions.less */
 .purple-ring {
   width: 1em;
   height: 1em;
@@ -1229,7 +1498,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 283, functions.less */
+/* line 371, functions.less */
 .pink-ring {
   width: 1em;
   height: 1em;
@@ -1239,7 +1508,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 284, functions.less */
+/* line 372, functions.less */
 .brown-ring {
   width: 1em;
   height: 1em;
@@ -1249,7 +1518,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 285, functions.less */
+/* line 373, functions.less */
 .u-gray-ring {
   width: 1em;
   height: 1em;
@@ -1259,7 +1528,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 286, functions.less */
+/* line 374, functions.less */
 .l-gray-ring {
   width: 1em;
   height: 1em;
@@ -1269,7 +1538,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 287, functions.less */
+/* line 375, functions.less */
 .m-gray-ring {
   width: 1em;
   height: 1em;
@@ -1279,7 +1548,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 288, functions.less */
+/* line 376, functions.less */
 .d-gray-ring {
   width: 1em;
   height: 1em;
@@ -1289,7 +1558,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 289, functions.less */
+/* line 377, functions.less */
 .black-ring {
   width: 1em;
   height: 1em;
@@ -1299,7 +1568,7 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 290, functions.less */
+/* line 378, functions.less */
 .white-ring {
   width: 1em;
   height: 1em;
@@ -1309,21 +1578,21 @@ code {
   border-radius: 1em;
   display: inline-block;
 }
-/* line 292, functions.less */
+/* line 380, functions.less */
 ::-webkit-scrollbar {
   width: 0.5em;
   height: 0.5em;
 }
-/* line 297, functions.less */
+/* line 385, functions.less */
 ::-webkit-scrollbar-track {
   background-color: #666666;
   border: 1px solid #666666;
 }
-/* line 302, functions.less */
+/* line 390, functions.less */
 ::-webkit-scrollbar-thumb {
   background-color: #404040;
 }
-/* line 305, functions.less */
+/* line 393, functions.less */
 ::-webkit-scrollbar-thumb:window-inactive {
   background-color: #404040;
 }

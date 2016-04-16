@@ -9,26 +9,30 @@
  ☐ Сделать ProgressBar как модуль
  ☐ Добавить StackedList
 
- PATCH ALTRONE 2.0.1:
+ UPDATE ALTRONE 2.0.1:
    ☐ @critical Исправить оформление .list__separator
    ☐ @critical Сделать цвет по умолчанию для списка не синий
-   ☐ @critical Добавить позиционирование для dropdown
    ☐ @critical Пофиксить отступы для tooltip
+   ☐ @critical Добавить позиционирование для dropdown
+   ☐ @critical Добавить PT Sans в дистрибутив
+   ☐ @critical При открытии одного модального окна, автоматически закрывать остальные
+   ☐ @critical Пофиксить положения для left, right, bottom для подсказок
+   ☐ @critical Пофиксить положения для выпадающих меню
+   ☐ @critical При открытии нового select, автоматически закрывать остальные
+   ✔ @high Добавить новые варианты цветов фона и шрифта - u-*, l-* и d-* @done (16-04-16 23:08)
+   ☐ @high Добавить новые варианты отступов
+   ☐ @low Реализовать адаптивность выпадающих меню для -lm + -m
 
 
-ALTRONE 2.0: 
+ALTRONE 2.0 (build 236):
  ✔ @critical Значение по умолчанию для select @done (16-04-14 22:56)
  ✔ @critical Пофиксить .list--horizontal и .list--animation-slide @done (16-04-15 13:59)
- ✔ @critical Пофиксить цвет placeholder у форм @done (16-04-10 21:28)
  ✔ @critical Пофиксить положение подложки, если sidebar используется с модификатором .sidebar--under-taskbar и не имеет position: fixed; @done (16-04-15 15:07)
  ✔ @critical Пофиксить положения tooltip для fixed-элементов @done (16-04-15 13:48)
  ✔ @critical Пофиксить скроллинг модальных окон (если контент большой, то футер должен оставаться на виду) @done (16-04-15 15:35)
  ✔ @critical Пофиксить несколько Sidebar, чтобы они заменяли друг друга @done (16-04-15 13:41)
  ✔ @critical Исправить ширину .modal__header__title @done (16-04-15 13:08)
  ✔ @critical Исправить ширину модального окна для мобильных устройств @done (16-04-15 13:08)
- ✔ @high Переписать модуль Dropdown @done (16-04-14 22:56)
- ✔ @high Переписать модуль Select @done (16-04-14 22:56)
- ☐ @high Написать документацию
  ✔ @critical Задержка появления tooltip @done (16-02-21 00:29)
  ✔ @critical Добавить modal плагин @done (16-04-04 15:11)
  ✔ @critical Добавить tabs плагин @done (16-04-08 15:06)
@@ -44,6 +48,8 @@ ALTRONE 2.0:
  ✔ @critical Пофиксить название .list-view @done (16-03-15 18:19)
  ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
  ✔ @critical Пофиксить .button--transparent и .button--color-* @done (16-02-28 23:52)
+ ✔ @high Переписать модуль Select @done (16-04-14 22:56)
+ ☐ @high Написать документацию
  ✔ @high Вертикальное положение tooltip @done (16-03-17 23:26)
  ✔ @high Добавить Toggle Button @done (16-02-29 00:19)
  ✔ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt @done (16-03-13 01:04)
@@ -55,5 +61,7 @@ ALTRONE 2.0:
  ✔ @low Сделать masonry-сетку @done (16-03-13 02:02)
  ✔ @low Переработать List @done (16-03-13 00:07)
  ✔ @low Сделать вертикальную группировку кнопок @done (16-02-23 01:03)
+ ✘ @critical Пофиксить цвет placeholder у форм @cancelled (16-04-16 16:45)
+ ✘ @high Переписать модуль Dropdown @cancelled (16-04-16 16:45)
 
 
