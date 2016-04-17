@@ -76,6 +76,9 @@
 				});
 
 				var select = new Select($('#selectExample'), ["Red", "Orange", "Yellow"], 1);
+				var select = new Select($('#selectExample4'), ["Red", "Orange", "Yellow"], 1);
+				var select = new Select($('#selectExample2'), ["Apple", "Microsoft", "Google", "Yahoo", "Xiaomi", "IBM"], 2);
+				var select = new Select($('#selectExample3'), ["Apple", "Microsoft", "Google", "Yahoo", "Xiaomi", "IBM"], 2);
 				/*$('#selectExample > .select__menu').click(function() {
 					select.set(2);
 					select.open();
@@ -118,11 +121,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="grid">
+			<div class="col-6">
+				<div class="select select--invert select--color-blue" data-position="gtop" id="selectExample2"></div>				
+			</div>
+			<div class="col-6">
+				<div class="select select--invert select--color-blue" data-position="top" id="selectExample3"></div>				
+			</div>
+		</div>
 
 		<div class="button button--cirlce button--icon-only" style="position: fixed; bottom: 5em; right: 2em;" data-tooltip="Вверх"><i class="fa fa-arrow-up"></i></div>
 
-		<div class="select select--invert select--color-brown" data-position="gtop" id="selectExample">
-		</div>
+		
 
 		<ul class="list list--animation-slide list--horizontal">
 			<li>Item 1</li>
@@ -1036,14 +1046,8 @@
 		<div class="modal__content">
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe architecto illo voluptas reprehenderit non fugiat, in, fugit asperiores. Tenetur vitae accusamus reprehenderit expedita corporis laudantium, quis sequi deserunt molestiae! Eaque!</div>
 			<div>Minima rem itaque officiis quos quidem perspiciatis nobis explicabo quisquam sequi eligendi aspernatur doloremque iusto magnam commodi voluptates facilis assumenda tenetur, provident enim saepe natus. Dolore aspernatur ipsum beatae ad!</div>
-			<div>Amet mollitia, facere excepturi quis. Rem dolor, ex iure et quos corporis nulla, voluptatibus nesciunt eaque saepe cupiditate! Aperiam neque rem harum a doloribus unde odit ut esse iusto, cumque.</div>
-			<div>Est vel voluptatibus quas quos voluptatem, ullam perferendis, id laborum incidunt excepturi perspiciatis eius, porro doloremque cupiditate natus quidem vero numquam suscipit cumque veritatis! At eaque modi corporis, numquam iusto?</div>
-			<div>Optio asperiores facere error, hic dignissimos non eos at facilis ea aliquam, explicabo nihil expedita cumque accusamus alias ex distinctio similique quis odit inventore omnis, modi minima possimus ducimus? Quod?</div>
-			<div>Dolorem, dicta explicabo sequi, vero magnam, libero quaerat quos minima est veritatis totam! Quisquam ad veniam deleniti est eius adipisci dolorem maiores doloribus aperiam quam nam facilis molestias, provident quibusdam!</div>
-			<div>Alias laborum sit ex pariatur consectetur dolor incidunt magni itaque assumenda voluptates earum aperiam, facilis commodi maiores optio dolore voluptatem, voluptate vel inventore, velit! Incidunt impedit eius laborum aut consequatur?</div>
-			<div>Ea magnam, temporibus. Rerum hic libero, laboriosam aut mollitia, id esse minus laborum quas saepe alias commodi quibusdam. Veritatis nemo eligendi consectetur, at? Perspiciatis mollitia ipsum sequi, impedit harum! Fuga.</div>
-			<div>Cumque aut mollitia, molestias perspiciatis minus asperiores quam. Quae fuga numquam praesentium sapiente eligendi, rem iusto deserunt voluptates animi harum, distinctio consectetur porro? Recusandae tenetur, hic! Cupiditate deleniti consequatur nemo.</div>
-			<div>Facilis quia, laboriosam non eligendi deserunt nulla odit aspernatur, temporibus a dignissimos in quasi iure provident. Recusandae sequi natus fugiat consectetur. Tenetur ipsa quasi, deserunt excepturi, maiores deleniti expedita labore.</div>
+			<div class="select select--invert select--color-brown" data-position="gtop" id="selectExample"></div>
+			<div class="select select--invert select--color-brown" data-position="top" id="selectExample4"></div>
 		</div>
 		<div class="modal__footer align-center">
 			<button class="button--color-green">Да</button>

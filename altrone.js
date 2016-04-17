@@ -369,12 +369,12 @@ Select = function(element, options, index) {
 
 Select.prototype.open = function() {	
 	var othersSelects = Select.prototype.collection;
+	var target = this;
 	othersSelects.forEach(function (current, index, othersSelects) {
-		if (current.visible)
+		if (current != target && current.visible)
 			current.hide();		
 	});
 
-	var target = this;
 	var options_menu = this.el.find('.select__options');
 
 	if (this.visible) {
@@ -397,15 +397,21 @@ Select.prototype.open = function() {
 		this.el.append(html_string);
 		options_menu = this.el.find('.select__options');
 
+		var parent_left_padding = this.menu.css('margin-left');
+		var parent_top = this.menu.position().top;
+		var parent_left = this.menu.position().left + 16;
+		var parent_height = this.menu.outerHeight();
+
 		if (options_menu.outerWidth() <= this.menu.outerWidth()) {
 			options_menu.css('width', this.menu.outerWidth());
 		}
 
 		if (target.position == 'top') {
-			options_menu.css('top', this.menu.offset().top - options_menu.outerHeight());
+			options_menu.css('top', parent_top - options_menu.outerHeight());
 		}
 
-		options_menu.css('left', this.menu.offset().left);
+		options_menu.css('left', parent_left);
+		console.log(parent_top, parent_left);
 
 		if (target.position == 'bottom') 
 			options_menu.slideDown(300);
