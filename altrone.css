@@ -1769,7 +1769,7 @@ code {
   padding: 0.4em 1em;
   cursor: pointer;
   box-sizing: border-box;
-  color: #2185d0;
+  color: #999999;
   border-color: transparent;
   list-style-type: none;
 }
@@ -1778,20 +1778,20 @@ code {
 .list li:hover,
 .list .list__item:active,
 .list li:active {
-  color: #1a69a4;
+  color: #808080;
   transition: all 0.3s linear;
 }
 /* line 75, list.less */
 .list .list__item.list__item--active,
 .list li.list__item--active {
-  color: #175b8e;
+  color: #737373;
 }
 /* line 80, list.less */
 .list .list__separator {
   display: block;
   width: calc(100% - 4em);
   height: 1px;
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid #999999;
   margin: 0.5em 2em;
 }
 /* line 2, list.less */
@@ -2509,36 +2509,38 @@ code {
 /* line 106, list.less */
 .list.list--invert .list__item,
 .list.list--invert li {
-  color: #ffffff;
+  color: #666666;
 }
 /* line 109, list.less */
 .list.list--invert .list__item:hover,
 .list.list--invert li:hover,
 .list.list--invert .list__item:active,
 .list.list--invert li:active {
-  color: #ffffff;
-  background-color: #1a69a4;
+  color: #808080;
 }
-/* line 114, list.less */
+/* line 113, list.less */
 .list.list--invert .list__item.list__item--active,
 .list.list--invert li.list__item--active {
-  color: #ffffff;
-  background-color: #2185d0;
+  color: #8c8c8c;
 }
-/* line 123, list.less */
+/* line 118, list.less */
+.list.list--invert .list__separator {
+  border-color: #666666;
+}
+/* line 125, list.less */
 .list.list--icon .list__item i,
 .list.list--icon li i,
 .list.list--icon .list__item .icon,
 .list.list--icon li .icon {
   padding-right: 1em;
 }
-/* line 130, list.less */
+/* line 132, list.less */
 .list.list--image .list__item,
 .list.list--image li {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 133, list.less */
+/* line 135, list.less */
 .list.list--image .list__item img,
 .list.list--image li img,
 .list.list--image .list__item .image,
@@ -2550,73 +2552,73 @@ code {
   border-radius: 0.5em;
   vertical-align: middle;
 }
-/* line 147, list.less */
+/* line 149, list.less */
 .list.list--animation-slide .list__item:hover,
 .list.list--animation-slide li:hover {
   padding-left: 2em;
   transition: all 0.3s linear;
 }
-/* line 151, list.less */
+/* line 153, list.less */
 .list.list--animation-slide .list__item:not(:hover),
 .list.list--animation-slide li:not(:hover) {
   padding-left: 1em;
   transition: all 0.3s linear;
 }
-/* line 159, list.less */
+/* line 161, list.less */
 .list.list--animation-underline .list__item:hover,
 .list.list--animation-underline li:hover,
 .list.list--animation-underline .list__item:active,
 .list.list--animation-underline li:active {
   text-decoration: underline;
 }
-/* line 166, list.less */
+/* line 168, list.less */
 .list.list--animation-invert .list__item,
 .list.list--animation-invert li {
   color: #2185d0;
 }
-/* line 169, list.less */
+/* line 171, list.less */
 .list.list--animation-invert .list__item:hover,
 .list.list--animation-invert li:hover {
   color: #f5f5f5;
   background-color: #1a69a4;
   transition: all 0.3s linear;
 }
-/* line 175, list.less */
+/* line 177, list.less */
 .list.list--animation-invert .list__item.list__item--active,
 .list.list--animation-invert li.list__item--active {
   background-color: #2185d0;
   color: #f5f5f5;
 }
-/* line 184, list.less */
+/* line 186, list.less */
 .list.list--animation-zoom .list__item:hover,
 .list.list--animation-zoom li:hover {
   font-size: 1.5em;
   transition: all 0.3s linear;
 }
-/* line 188, list.less */
+/* line 190, list.less */
 .list.list--animation-zoom .list__item:not(:hover),
 .list.list--animation-zoom li:not(:hover) {
   font-size: 1em;
   transition: all 0.3s linear;
 }
-/* line 196, list.less */
+/* line 198, list.less */
 .list.list--animation-zoom.list--image:hover img,
 .list.list--animation-zoom.list--image:hover .image {
   margin-left: 0em;
 }
-/* line 205, list.less */
+/* line 207, list.less */
 .list.list--animation-border .list__item:hover,
 .list.list--animation-border li:hover {
   border-left: 3px solid #2185d0;
   transition: all 0.3s linear;
 }
-/* line 209, list.less */
+/* line 211, list.less */
 .list.list--animation-border .list__item:not(:hover),
 .list.list--animation-border li:not(:hover) {
   border-left: none;
   transition: all 0.3s linear;
 }
-/* line 218, list.less */
+/* line 220, list.less */
 .list.list--horizontal .list__item,
 .list.list--horizontal li {
   display: inline-block;
@@ -2625,7 +2627,7 @@ code {
   box-sizing: border-box;
   border-bottom: 3px solid transparent;
 }
-/* line 226, list.less */
+/* line 228, list.less */
 .list.list--horizontal .list__separator {
   width: 1px;
   height: 1em;
@@ -2634,20 +2636,20 @@ code {
   margin: 0.5em 0.75em;
   float: left;
 }
-/* line 237, list.less */
+/* line 239, list.less */
 .list.list--horizontal.list--animation-border .list__item:hover,
 .list.list--horizontal.list--animation-border li:hover {
   border-left: none;
   border-bottom: 3px solid #2185d0;
   transition: all 0.1s linear;
 }
-/* line 242, list.less */
+/* line 244, list.less */
 .list.list--horizontal.list--animation-border .list__item:not(:hover),
 .list.list--horizontal.list--animation-border li:not(:hover) {
   border-left: none;
   transition: all 0.1s linear;
 }
-/* line 251, list.less */
+/* line 253, list.less */
 .list.list--horizontal.list--animation-slide .list__item:hover,
 .list.list--horizontal.list--animation-slide li:hover {
   position: relative;
@@ -2655,7 +2657,7 @@ code {
   padding-left: 1em;
   transition: all 0.3s linear;
 }
-/* line 257, list.less */
+/* line 259, list.less */
 .list.list--horizontal.list--animation-slide .list__item:not(:hover),
 .list.list--horizontal.list--animation-slide li:not(:hover) {
   position: static;
@@ -2663,54 +2665,54 @@ code {
   padding-left: 1em;
   transition: all 0.3s linear;
 }
-/* line 279, list.less */
+/* line 281, list.less */
 .list-navigation {
   display: table;
 }
-/* line 282, list.less */
+/* line 284, list.less */
 .list-navigation .list-navigation__item {
   display: table-row;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s linear;
 }
-/* line 288, list.less */
+/* line 290, list.less */
 .list-navigation .list-navigation__item:hover {
   background-color: #1a69a4;
 }
-/* line 291, list.less */
+/* line 293, list.less */
 .list-navigation .list-navigation__item:hover .list-navigation__item__icon {
   color: #ffffff;
   transition: all 0.3s linear;
 }
-/* line 297, list.less */
+/* line 299, list.less */
 .list-navigation .list-navigation__item:hover .list-navigation__item__content .list-navigation__item__content__title {
   color: #f5f5f5;
   transition: all 0.3s linear;
 }
-/* line 302, list.less */
+/* line 304, list.less */
 .list-navigation .list-navigation__item:hover .list-navigation__item__content .list-navigation__item__content__meta {
   color: #dcdcdc;
   transition: all 0.3s linear;
 }
-/* line 308, list.less */
+/* line 310, list.less */
 .list-navigation .list-navigation__item:hover .list-navigation__item__right-icon {
   opacity: 1;
   color: #ffffff;
   transition: all 0.3s linear;
 }
-/* line 315, list.less */
+/* line 317, list.less */
 .list-navigation .list-navigation__item:active,
 .list-navigation .list-navigation__item.active {
   background-color: #2185d0;
 }
-/* line 318, list.less */
+/* line 320, list.less */
 .list-navigation .list-navigation__item:active .list-navigation__item__right-icon,
 .list-navigation .list-navigation__item.active .list-navigation__item__right-icon {
   opacity: 1;
   color: #ffffff;
 }
-/* line 324, list.less */
+/* line 326, list.less */
 .list-navigation .list-navigation__item .list-navigation__item__icon {
   vertical-align: middle;
   text-align: center;
@@ -2720,24 +2722,24 @@ code {
   color: #333333;
   transition: all 0.3s linear;
 }
-/* line 334, list.less */
+/* line 336, list.less */
 .list-navigation .list-navigation__item .list-navigation__item__content {
   width: 100%;
   vertical-align: top;
   display: table-cell;
   padding: 1em;
 }
-/* line 340, list.less */
+/* line 342, list.less */
 .list-navigation .list-navigation__item .list-navigation__item__content .list-navigation__item__content__title {
   font-weight: bold;
   color: #333333;
 }
-/* line 345, list.less */
+/* line 347, list.less */
 .list-navigation .list-navigation__item .list-navigation__item__content .list-navigation__item__content__meta {
   font-size: 0.8em;
   color: #666666;
 }
-/* line 351, list.less */
+/* line 353, list.less */
 .list-navigation .list-navigation__item .list-navigation__item__right-icon {
   display: table-cell;
   vertical-align: middle;
@@ -2749,139 +2751,139 @@ code {
   color: #333333;
   transition: all 0.3s linear;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-red .list-navigation__item:hover {
   background-color: #b21e1e;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-red .list-navigation__item:active,
 .list-navigation.list-navigation--color-red .list-navigation__item.active {
   background-color: #db2828;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-orange .list-navigation__item:hover {
   background-color: #cf590c;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-orange .list-navigation__item:active,
 .list-navigation.list-navigation--color-orange .list-navigation__item.active {
   background-color: #f2711c;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-yellow .list-navigation__item:hover {
   background-color: #cd9903;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-yellow .list-navigation__item:active,
 .list-navigation.list-navigation--color-yellow .list-navigation__item.active {
   background-color: #fbbd08;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-olive .list-navigation__item:hover {
   background-color: #8d9e13;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-olive .list-navigation__item:active,
 .list-navigation.list-navigation--color-olive .list-navigation__item.active {
   background-color: #b5cc18;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-green .list-navigation__item:hover {
   background-color: #198f35;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-green .list-navigation__item:active,
 .list-navigation.list-navigation--color-green .list-navigation__item.active {
   background-color: #21ba45;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-teal .list-navigation__item:hover {
   background-color: #00827c;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-teal .list-navigation__item:active,
 .list-navigation.list-navigation--color-teal .list-navigation__item.active {
   background-color: #00b5ad;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-blue .list-navigation__item:hover {
   background-color: #1a69a4;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-blue .list-navigation__item:active,
 .list-navigation.list-navigation--color-blue .list-navigation__item.active {
   background-color: #2185d0;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-violet .list-navigation__item:hover {
   background-color: #502aa1;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-violet .list-navigation__item:active,
 .list-navigation.list-navigation--color-violet .list-navigation__item.active {
   background-color: #6435c9;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-purple .list-navigation__item:hover {
   background-color: #82299f;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-purple .list-navigation__item:active,
 .list-navigation.list-navigation--color-purple .list-navigation__item.active {
   background-color: #a333c8;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-pink .list-navigation__item:hover {
   background-color: #c71f7e;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-pink .list-navigation__item:active,
 .list-navigation.list-navigation--color-pink .list-navigation__item.active {
   background-color: #e03997;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-brown .list-navigation__item:hover {
   background-color: #805031;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-brown .list-navigation__item:active,
 .list-navigation.list-navigation--color-brown .list-navigation__item.active {
   background-color: #a5673f;
 }
-/* line 270, list.less */
+/* line 272, list.less */
 .list-navigation.list-navigation--color-black .list-navigation__item:hover {
   background-color: #805031;
 }
-/* line 273, list.less */
+/* line 275, list.less */
 .list-navigation.list-navigation--color-black .list-navigation__item:active,
 .list-navigation.list-navigation--color-black .list-navigation__item.active {
   background-color: #a5673f;
 }
-/* line 380, list.less */
+/* line 382, list.less */
 .list-navigation.list-navigation--invert {
   background-color: #333333;
 }
-/* line 385, list.less */
+/* line 387, list.less */
 .list-navigation.list-navigation--invert .list-navigation__item .list-navigation__item__icon {
   color: #ffffff;
 }
-/* line 390, list.less */
+/* line 392, list.less */
 .list-navigation.list-navigation--invert .list-navigation__item .list-navigation__item__content .list-navigation__item__content__title {
   color: #f5f5f5;
 }
-/* line 394, list.less */
+/* line 396, list.less */
 .list-navigation.list-navigation--invert .list-navigation__item .list-navigation__item__content .list-navigation__item__content__meta {
   color: #dcdcdc;
 }
-/* line 399, list.less */
+/* line 401, list.less */
 .list-navigation.list-navigation--invert .list-navigation__item .list-navigation__item__right-icon {
   color: #f5f5f5;
 }
-/* line 425, list.less */
+/* line 427, list.less */
 .feed {
   width: 100%;
 }
-/* line 428, list.less */
+/* line 430, list.less */
 .feed .feed__item {
   width: 100%;
   display: flex;
@@ -2889,14 +2891,14 @@ code {
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
   color: #333333;
 }
-/* line 435, list.less */
+/* line 437, list.less */
 .feed .feed__item .feed__item__image {
   flex: 1;
   min-width: 32px;
   padding: 0.5em 1em;
   text-align: center;
 }
-/* line 441, list.less */
+/* line 443, list.less */
 .feed .feed__item .feed__item__image .feed__item__image__online {
   display: block;
   width: 0.5em;
@@ -2909,132 +2911,132 @@ code {
   left: 60%;
   cursor: pointer;
 }
-/* line 454, list.less */
+/* line 456, list.less */
 .feed .feed__item .feed__item__image img {
   width: 60%;
   height: auto;
   cursor: pointer;
 }
-/* line 461, list.less */
+/* line 463, list.less */
 .feed .feed__item .feed__item__content {
   flex: 9;
 }
-/* line 464, list.less */
+/* line 466, list.less */
 .feed .feed__item .feed__item__content .feed__item__content__title {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s linear;
 }
-/* line 469, list.less */
+/* line 471, list.less */
 .feed .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #2185d0;
   transition: all 0.3s linear;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-red .feed__item .feed__item__image .feed__item__image__online {
   background-color: #db2828;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-red .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #db2828;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-orange .feed__item .feed__item__image .feed__item__image__online {
   background-color: #f2711c;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-orange .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #f2711c;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-yellow .feed__item .feed__item__image .feed__item__image__online {
   background-color: #fbbd08;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-yellow .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #fbbd08;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-olive .feed__item .feed__item__image .feed__item__image__online {
   background-color: #b5cc18;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-olive .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #b5cc18;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-green .feed__item .feed__item__image .feed__item__image__online {
   background-color: #21ba45;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-green .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #21ba45;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-blue .feed__item .feed__item__image .feed__item__image__online {
   background-color: #2185d0;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-blue .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #2185d0;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-teal .feed__item .feed__item__image .feed__item__image__online {
   background-color: #00b5ad;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-teal .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #00b5ad;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-purple .feed__item .feed__item__image .feed__item__image__online {
   background-color: #a333c8;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-purple .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #a333c8;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-violet .feed__item .feed__item__image .feed__item__image__online {
   background-color: #6435c9;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-violet .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #6435c9;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-pink .feed__item .feed__item__image .feed__item__image__online {
   background-color: #e03997;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-pink .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #e03997;
 }
-/* line 409, list.less */
+/* line 411, list.less */
 .feed.feed--color-brown .feed__item .feed__item__image .feed__item__image__online {
   background-color: #a5673f;
 }
-/* line 417, list.less */
+/* line 419, list.less */
 .feed.feed--color-brown .feed__item .feed__item__content .feed__item__content__title:hover {
   color: #a5673f;
 }
-/* line 489, list.less */
+/* line 491, list.less */
 .feed.feed--invert {
   background-color: #333333;
 }
-/* line 492, list.less */
+/* line 494, list.less */
 .feed.feed--invert .feed__item {
   color: #ffffff;
 }
-/* line 496, list.less */
+/* line 498, list.less */
 .feed.feed--invert .feed__item .feed__item__image .feed__item__image__online {
   border-color: #333333;
 }
-/* line 514, list.less */
+/* line 516, list.less */
 .user-list {
   width: 100%;
 }
-/* line 517, list.less */
+/* line 519, list.less */
 .user-list .user-list__item {
   width: 100%;
   display: flex;
@@ -3045,14 +3047,14 @@ code {
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
   transition: all 0.3s linear;
 }
-/* line 527, list.less */
+/* line 529, list.less */
 .user-list .user-list__item .user-list__item__avatar {
   flex: 1;
   min-width: 32px;
   height: 32px;
   padding: 0.5em 0.5em;
 }
-/* line 533, list.less */
+/* line 535, list.less */
 .user-list .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   display: block;
   width: 9px;
@@ -3065,86 +3067,86 @@ code {
   left: 23px;
   transition: all 0.3s linear;
 }
-/* line 546, list.less */
+/* line 548, list.less */
 .user-list .user-list__item .user-list__item__avatar img {
   width: 32px;
   height: auto;
 }
-/* line 552, list.less */
+/* line 554, list.less */
 .user-list .user-list__item .user-list__item__username {
   flex: 10;
 }
-/* line 556, list.less */
+/* line 558, list.less */
 .user-list .user-list__item:hover,
 .user-list .user-list__item:active {
   background-color: #e8e8e8;
   transition: all 0.3s linear;
 }
-/* line 561, list.less */
+/* line 563, list.less */
 .user-list .user-list__item:hover .user-list__item__avatar .user-list__item__avatar__online,
 .user-list .user-list__item:active .user-list__item__avatar .user-list__item__avatar__online {
   border-color: #e8e8e8;
 }
-/* line 569, list.less */
+/* line 571, list.less */
 .user-list.user-list--invert .user-list__item {
   background-color: #333333;
   color: #ffffff;
 }
-/* line 574, list.less */
+/* line 576, list.less */
 .user-list.user-list--invert .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   border-color: #333333;
 }
-/* line 579, list.less */
+/* line 581, list.less */
 .user-list.user-list--invert .user-list__item:hover,
 .user-list.user-list--invert .user-list__item:active {
   background-color: #404040;
 }
-/* line 583, list.less */
+/* line 585, list.less */
 .user-list.user-list--invert .user-list__item:hover .user-list__item__avatar .user-list__item__avatar__online,
 .user-list.user-list--invert .user-list__item:active .user-list__item__avatar .user-list__item__avatar__online {
   border-color: #404040;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-red .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #db2828;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-orange .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #f2711c;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-yellow .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #fbbd08;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-olive .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #b5cc18;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-green .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #21ba45;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-blue .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #2185d0;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-teal .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #00b5ad;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-purple .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #a333c8;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-violet .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #6435c9;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-pink .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #e03997;
 }
-/* line 507, list.less */
+/* line 509, list.less */
 .user-list.user-list--color-brown .user-list__item .user-list__item__avatar .user-list__item__avatar__online {
   background-color: #a5673f;
 }

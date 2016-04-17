@@ -63,17 +63,17 @@
 		padding: 0.4em 1em;
 		cursor: pointer;
 		box-sizing: border-box;
-		color: @blue;
+		color: @l-gray;
 		border-color: transparent;
 		list-style-type: none;
 
 		&:hover, &:active {
-			color: darken(@blue, 10%);
+			color: darken(@l-gray, 10%);
 			.anim(0.3s);
 		}
 
 		&.list__item--active {
-			color: darken(@blue, 15%);
+			color: darken(@l-gray, 15%);
 		}
 	}
 
@@ -81,7 +81,7 @@
 		display: block;
 		width: ~"calc(100% - 4em)";
 		height: 1px;
-		border-bottom: 1px solid @m-gray;
+		border-bottom: 1px solid @l-gray;
 		margin: 0.5em 2em;		
 	}
 
@@ -104,17 +104,19 @@
 		background-color: @d-gray;
 
 		.list__item, li {
-			color: @white;
+			color: @m-gray;
 
 			&:hover, &:active {
-				color: @white;
-				background-color: darken(@blue, 10%);
+				color: lighten(@m-gray, 10%);
 			}
 
 			&.list__item--active {
-				color: @white;
-				background-color: @blue;
+				color: lighten(@m-gray, 15%);
 			}
+		}
+
+		.list__separator {
+			border-color: @m-gray;
 		}
 	}
 
