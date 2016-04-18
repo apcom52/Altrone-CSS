@@ -277,7 +277,7 @@ Modal.prototype.toggle = function() {
 }
 
 /* Tabs */
-Tabs = function(element) {
+Tabs = function(element, callback) {
 	this.el = element;
 	this.currentIndex = -1;
 	this.tabs = [];
@@ -286,6 +286,12 @@ Tabs = function(element) {
 	this.el.find('.tabs__item').each(function (index) {
 		target.tabs[index] = $(this);
 	});
+
+	/* Присваиваем callback-функции */
+	if (callback != undefined) {
+		if (callback.onTabSelected != undefined) 
+			this.onTabSelected = callback.onTabSelected;
+	}
 
 	var tabs = target.tabs;
 
@@ -311,6 +317,9 @@ Tabs = function(element) {
 				$(targetTabContent).show();
 				target.currentIndex = index;
 				target.el.trigger('select tab', [index]);
+
+				if (target.onTabSelected != undefined)
+					target.onTabSelected(target.currentIndex);
 			} 
 		});			
 	});
@@ -331,6 +340,8 @@ Tabs.prototype.openTab = function(i) {
 			current.addClass('tabs__item--active');
 			target.currentIndex = index;
 			target.el.trigger('select tab', [index]);
+			if (target.onTabSelected != undefined)
+					target.onTabSelected(target.currentIndex);
 		}
 	});
 }
@@ -459,4 +470,35 @@ Select.prototype.set = function(index) {
 	if (index >= 0 && index < this.options.length)
 		this.selectedIndex = index;
 		target.menu.html(target.options[target.selectedIndex]);
+}
+
+
+/* Progressbar */
+Progress = function(element, max, current) {
+	this.el = element;
+	this.max = max;
+	this.current = current;
+	this.percent = (this.current / this.max) * 100;
+	this.active_el = this.el.find('.progress__active');
+	this.text_label = this.el.find('.progress__active .progress__active__text');
+	this.render();
+}
+
+Progress.prototype.set = function(value) {
+	var target = this;
+	if (value <= this.max) {
+		this.current = value;
+		this.render();
+	}
+}
+
+Progress.prototype.render = function() {
+	this.percent = (this.current / this.max) * 100;
+	this.text_label.html(this.percent + '%');
+	this.active_el.css('width', this.percent + '%');
+}
+
+Progress.prototype.setMaximum = function(max) {
+	this.max = max;
+	this.render();
 }
