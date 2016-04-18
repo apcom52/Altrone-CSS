@@ -59,7 +59,11 @@
 					modal.show();
 				});
 
-				var tabs = new Tabs($('#tabsExample'));
+				var tabs = new Tabs($('#tabsExample'), {
+					onTabSelected: function(index) {
+						// alert(index);
+					}
+				});
 				var redtabs = new Tabs($('#redTabs'));
 
 				$('#openStatsTab').click(function() {
@@ -83,6 +87,26 @@
 					select.set(2);
 					select.open();
 				});*/
+
+				var progress = new Progress($('#progressExample'), 10, 1);
+				var max_val = 10;
+				$('#progressPlus').click(function() {
+					max_val += 1;
+					progress.setMaximum(max_val);
+				});
+				$('#progressMinus').click(function() {
+					max_val -= 1;
+					progress.setMaximum(max_val);
+				});
+				$('#progress2').click(function() {
+					progress.set(2);
+				});
+				$('#progress4').click(function() {
+					progress.set(4);
+				});
+				$('#progress6').click(function() {
+					progress.set(6);
+				});
 			});
 		</script>
 	</head>
@@ -320,9 +344,10 @@
 
 		<div class="grid">
 			<div class="col-4">
-				<div class="progress progress--color-blue progress--no-smooth">
-					<div class="progress__active" style="width: 45%;"></div>
+				<div class="progress progress--color-blue progress--no-smooth" id="progressExample">
+					<div class="progress__active" style="width: 45%;"><div class="progress__active__text">75%</div></div>
 				</div>
+				<div class="button" id="progressPlus">+</div><div class="button" id="progressMinus">-</div><div class="button" id="progress2">2</div><div class="button" id="progress4">4</div><div class="button" id="progress6">6</div>
 				<div class="progress progress--color-violet progress--with-text progress--rounded">
 					<div class="progress__active" style="width: 75%;"><div class="progress__active__text">75%</div></div>
 				</div>
