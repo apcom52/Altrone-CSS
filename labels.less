@@ -1,14 +1,7 @@
-.set-alert-color(@color) {
-	background-color: lighten(@color, 35%);
-	color: darken(@color, 10%);
-	border-color: lighten(@color, 30%);
-
-	.alert__header__close-btn {
-		color: @color;
-		&:hover {
-			color: darken(@color, 10%);
-		}
-	}
+.set-alert-color(@color, @bg-color, @border-color) {
+	background-color: @bg-color;
+	color: @color;
+	border-color: @border-color;
 }
 
 .alert {
@@ -22,18 +15,18 @@
 	margin:0.5em;
 	box-sizing: border-box;
 
-	&.alert--color-red { .set-alert-color(@red); }
-	&.alert--color-orange { .set-alert-color(@orange); }
-	&.alert--color-yellow { .set-alert-color(@yellow); }
-	&.alert--color-olive { .set-alert-color(@olive); }
-	&.alert--color-green { .set-alert-color(@green); }
-	&.alert--color-teal { .set-alert-color(@teal); }
-	&.alert--color-blue { .set-alert-color(@blue); }
-	&.alert--color-violet { .set-alert-color(@violet); }
-	&.alert--color-purple { .set-alert-color(@purple); }
-	&.alert--color-pink { .set-alert-color(@pink); }
-	&.alert--color-brown { .set-alert-color(@brown); }
-	&.alert--color-black { .set-alert-color(@d-gray); color: @u-gray; }
+	&.alert--color-red { .set-alert-color(@d-red, @u-red, @l-red); }
+	&.alert--color-orange { .set-alert-color(@d-orange, @u-orange, @l-orange); }
+	&.alert--color-yellow { .set-alert-color(@d-yellow, @u-yellow, @l-yellow); }
+	&.alert--color-olive { .set-alert-color(@d-olive, @u-olive, @l-olive); }
+	&.alert--color-green { .set-alert-color(@d-green, @u-green, @l-green); }
+	&.alert--color-teal { .set-alert-color(@d-teal, @u-teal, @l-teal); }
+	&.alert--color-blue { .set-alert-color(@d-blue, @u-blue, @l-blue); }
+	&.alert--color-violet { .set-alert-color(@d-violet, @u-violet, @l-violet); }
+	&.alert--color-purple { .set-alert-color(@d-purple, @u-purple, @l-purple); }
+	&.alert--color-pink { .set-alert-color(@d-pink, @u-pink, @l-pink); }
+	&.alert--color-brown { .set-alert-color(@d-brown, @u-brown, @l-brown); }
+	&.alert--color-black { .set-alert-color(@u-gray, @d-gray, @m-gray); }
 
 	&.alert--smooth {
 		border-radius: 0.5em;
