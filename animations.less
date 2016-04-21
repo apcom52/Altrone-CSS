@@ -9,6 +9,44 @@
 	&.animation--jump {
 		animation: jump 0.5s;
 	}
+
+	&.animation--flip {
+		animation: flip 0.5s;
+	}
+
+	&.animation--flipVertical {
+		animation: flipVertical 0.5s;
+	}
+
+	&.animation--fadeIn {
+		animation: fadeIn 0.5s;
+	}
+
+	&.animation--fadeOut {
+		animation: fadeOut 0.5s;
+		opacity: 0;
+	}
+
+	&.animation--time {
+		&-0-3s { animation-duration: 0.3s !important;}
+		&-0-5s { animation-duration: 0.5s !important;}
+		&-0-7s { animation-duration: 0.7s !important;}
+		&-1s { animation-duration: 1s !important;}
+		&-1-5s { animation-duration: 1.5s !important;}
+		&-2s { animation-duration: 2s !important;}
+		&-2-5s { animation-duration: 2.5s !important;}
+		&-3s { animation-duration: 3s !important;}
+	}
+
+	&.animation--function {
+		&-linear { animation-timing-funtion: linear; }
+		&-ease { animation-timing-funtion: ease; }
+		&-ease-in { animation-timing-funtion: ease-in; }
+		&-ease-out { animation-timing-funtion: ease-out; }
+		&-ease-in-out { animation-timing-funtion: ease-in-out; }
+		&-step-start { animation-timing-funtion: step-start; }
+		&-step-end { animation-timing-funtion: step-end; }
+	}
 }
 
 @keyframes boom {
@@ -38,5 +76,41 @@
 	}
 	100% {
 		margin-top: 0em;
+	}
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+@keyframes flipVertical {
+	0% {
+		transform: rotateX(0deg);
+	}
+	100% {
+		transform: rotateX(360deg);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }

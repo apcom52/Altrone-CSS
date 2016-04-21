@@ -2,9 +2,10 @@
    ✘ Добавить иконки @cancelled (16-09-25 21:56)
    ✔ Обновить модальные окна @done (16-09-25 21:56)
    ☐ Добавить Accordion
-   ☐ Добавить Breadcrumbs
+   ✔ Добавить Breadcrumbs @done (16-09-26 12:45)
    ☐ Реализовать ProgressBar в качестве класса JS
-   ☐ Добавить анимации (boom, jump, flip, flipVertical, fadeIn, fadeOut, boomOut)
+   ✔ Добавить анимации (boom, jump, flip, flipVertical, fadeIn, fadeOut) @done (16-09-26 12:56)
+   ✔ Для анимаций добавить модификаторы timing-функций и времени @done (16-09-26 13:02)
    ✔ Улучшение читабельности текста на кнопках @done (16-09-26 12:09)
    ✔ Добавить parallax-эффект @done (16-09-26 12:09)
    ✔ Добавить реализаця callback-функций в компоненты JS @done (16-09-25 21:54)
