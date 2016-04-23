@@ -649,7 +649,7 @@ textarea {
 }
 /* line 129, functions.less */
 .u-teal-bg {
-  background-color: #52fff6 !important;
+  background-color: #b8fffb !important;
 }
 /* line 130, functions.less */
 .l-teal-bg {
@@ -849,7 +849,7 @@ textarea {
 }
 /* line 191, functions.less */
 .u-teal-fg {
-  color: #52fff6 !important;
+  color: #b8fffb !important;
 }
 /* line 192, functions.less */
 .l-teal-fg {
@@ -11196,7 +11196,7 @@ input[type="reset"].button--checked,
 }
 /* line 23, labels.less */
 .alert.alert--color-teal {
-  background-color: #52fff6;
+  background-color: #b8fffb;
   color: #00524e;
   border-color: #1ffff4;
 }
