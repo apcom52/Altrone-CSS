@@ -1160,63 +1160,63 @@ code {
   padding: 0em !important;
 }
 /* line 326, functions.less */
-.margin-left-0.5 {
+.margin-left-05 {
   margin-left: 0.5em !important;
 }
 /* line 327, functions.less */
-.margin-right-0.5 {
+.margin-right-05 {
   margin-right: 0.5em !important;
 }
 /* line 328, functions.less */
-.margin-top-0.5 {
+.margin-top-05 {
   margin-top: 0.5em !important;
 }
 /* line 329, functions.less */
-.margin-bottom-0.5 {
+.margin-bottom-05 {
   margin-bottom: 0.5em !important;
 }
 /* line 330, functions.less */
-.margin-horizontal-0.5 {
+.margin-horizontal-05 {
   margin-left: 0.5em !important;
   margin-right: 0.5em !important;
 }
 /* line 331, functions.less */
-.margin-vertical-0.5 {
+.margin-vertical-05 {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
 /* line 332, functions.less */
-.margin-0.5 {
+.margin-05 {
   margin: 0.5em !important;
 }
 /* line 333, functions.less */
-.padding-left-0.5 {
+.padding-left-05 {
   padding-left: 0.5em !important;
 }
 /* line 334, functions.less */
-.padding-right-0.5 {
+.padding-right-05 {
   padding-right: 0.5em !important;
 }
 /* line 335, functions.less */
-.padding-top-0.5 {
+.padding-top-05 {
   padding-top: 0.5em !important;
 }
 /* line 336, functions.less */
-.padding-bottom-0.5 {
+.padding-bottom-05 {
   padding-bottom: 0.5em !important;
 }
 /* line 337, functions.less */
-.padding-horizontal-0.5 {
+.padding-horizontal-05 {
   padding-left: 0.5em !important;
   padding-right: 0.5em !important;
 }
 /* line 338, functions.less */
-.padding-vertical-0.5 {
+.padding-vertical-05 {
   padding-top: 0.5em !important;
   padding-bottom: 0.5em !important;
 }
 /* line 339, functions.less */
-.padding-0.5 {
+.padding-05 {
   padding: 0.5em !important;
 }
 /* line 341, functions.less */
@@ -15548,8 +15548,15 @@ input[type="reset"].button--checked,
     width: 90%;
     margin: auto 5%;
   }
+  /* line 109, modal.less */
+  .modal.modal--size-small,
+  .modal.modal--size-large,
+  .modal.modal--size-xl {
+    width: 90%;
+    margin: auto 5%;
+  }
 }
-/* line 111, modal.less */
+/* line 116, modal.less */
 .tooltip {
   display: none;
   position: absolute;
@@ -15560,7 +15567,7 @@ input[type="reset"].button--checked,
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
   padding: 0.25em 0.5em;
 }
-/* line 121, modal.less */
+/* line 126, modal.less */
 .tooltip.tooltip--invert {
   background-color: #333333;
   color: #f5f5f5;
