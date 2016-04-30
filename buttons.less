@@ -43,8 +43,21 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	user-select: none;
 	cursor: pointer;
 	border: none;
+	background-color: lighten(@u-gray, 5%);
+ 	color: @d-gray;
+ 	.anim(0.3s);
 	.pt();
-	.button-color(darken(@u-gray, 5%), @d-gray);
+
+	&:hover {
+		background-color: darken(@u-gray, 5%);
+		.anim(0.3s);
+	}
+
+	&:active, .active {
+		background-color: darken(@u-gray, 8%);
+		border-color: darken(@u-gray, 10%);
+		.anim(0.3s);
+	}
 
 	&.button--color-red { .button-color(@red); }
 	&.button--color-orange { .button-color(@orange); }
@@ -113,7 +126,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		}
 
 		&:hover {
-			background-color: @white;
+			background-color: darken(@u-gray, 5%);
 			color: @d-gray;
 		}
 	}

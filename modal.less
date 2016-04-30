@@ -111,7 +111,12 @@
 @media (max-width: @l-mobile) {
 	.modal {
 		width: 90%;
-		margin: auto 5%;
+  		margin: auto 5%;
+ 
+ 		&.modal--size-small, &.modal--size-large, &.modal--size-xl {
+ 			width: 90%;
+ 			margin: auto 5%;
+ 		}	
 	}
 }
 
