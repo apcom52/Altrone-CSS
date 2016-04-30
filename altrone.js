@@ -225,12 +225,14 @@ function showToast(message, duration) {
 
 
 /* Модальные окна */
-Modal = function(element) {
+Modal = function(element, params = {}) {
 	if (Modal.prototype.collection == undefined)
 		Modal.prototype.collection = []
 	this.el = element;
 	this.visible = false;
 	Modal.prototype.collection.push(this);
+
+	this.only_discarding = params.only_discarding || false;
 }
 
 Modal.prototype.show = function() {
@@ -252,8 +254,16 @@ Modal.prototype.show = function() {
 	}
 
 	$('body').on('click', '.overflow', function() {
-		target.hide();
+		if (target.only_discarding == false) {
+			target.hide();	
+		} else {
+			target.el.addClass('modal--animation-attention');
+			setTimeout(function() {
+				target.el.removeClass('modal--animation-attention');
+			}, 150);
+		}
 	});
+	
 
 	element.find('.modal__discard').click(function() {
 		target.hide();

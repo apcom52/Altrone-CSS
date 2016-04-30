@@ -54,9 +54,10 @@
 					toggleButton.toggle();
 				});
 
-				var modal = new Modal($('#YesNoDialog'));
+				var modal = new Modal($('#YesNoDialog'), {only_discarding: true});
 				$('#openModal').click(function() {
 					modal.show();
+					console.log(modal);
 				});
 
 				var tabs = new Tabs($('#tabsExample'), {
@@ -123,6 +124,47 @@
 			<div class="col-4 col-t-2 col-m-4">col-4</div>
 			<div class="col-3 col-t-4 col-m-2">col-3</div>
 			<div class="col-1 col-t-4 col-m-2">col-1</div>			
+		</div>
+
+		<div class="grid">
+			<div class="col-4">
+				<div class="alert">
+					<div class="alert__header">Название сообщения</div>
+					<div class="alert__content">Содержимое сообщения</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="alert alert--color-blue">
+					<div class="alert__header">Название сообщения</div>
+					<div class="alert__content">Содержимое сообщения</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="alert alert--color-black">
+					<div class="alert__header">Название сообщения</div>
+					<div class="alert__content">Содержимое сообщения</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid col-12">
+			<div class="toolbar">
+				<div class="toolbar__item"><i class="fa fa-arrow-left"></i></div>
+				<div class="toolbar__item"><i class="fa fa-arrow-right"></i></div>
+				<div class="toolbar__separator"></div>
+				<div class="toolbar__item"><i class="fa fa-refresh"></i></div>
+				<div class="toolbar__item toolbar__item--icon-label"><i class="fa fa-heart"></i>Добавить в избранное</div>
+			</div>
+			<div class="toolbar toolbar--invert">
+				<div class="toolbar__item"><i class="fa fa-angle-left"></i></div>
+				<div class="toolbar__item"><i class="fa fa-angle-right"></i></div>
+				<div class="toolbar__separator"></div>
+				<div class="toolbar__item"><i class="fa fa-refresh"></i></div>
+				<div class="toolbar__item toolbar__item--icon-label"><i class="fa fa-heart"></i>Добавить в избранное</div>
+				<div class="toolbar__item toolbar__item--icon-label"><i class="fa fa-heart"></i>Добавить в избранное 2</div>
+				<div class="toolbar__item toolbar__item--icon-label"><i class="fa fa-heart"></i>Добавить в избранное 3</div>
+				<div class="toolbar__item toolbar__item--icon-label"><i class="fa fa-heart"></i>Добавить в избранное 4</div>
+			</div>
 		</div>
 
 		<div class="horizontal-layout">

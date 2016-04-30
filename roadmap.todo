@@ -3,7 +3,13 @@
    ☐ Добавить Accordion
    ☐ Добавить возможности callback для модулей JS
    ☐ Добавить Breadcrumbs
-   ☐ Добавить модуль Progress
+   ✔ Добавить модуль Progress @done (16-04-23 00:00)
+   ☐ Добавить Toolbar
+
+UPDATE ALTRONE 2.0.2:
+   ☐ Переработать модуль .button-group
+   ☐ Добавить адаптивные варианты для .margin-* и .padding-*
+   ☐ Добавить адаптивные варианты для .align-*
 
  UPDATE ALTRONE 2.0.1 (build 250):
    ✔ @critical Исправить оформление .list__separator @done (16-04-17 13:50)
