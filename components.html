@@ -54,7 +54,7 @@
 					toggleButton.toggle();
 				});
 
-				var modal = new Modal($('#YesNoDialog'), {only_discarding: true});
+				var modal = new Modal($('#YesNoDialog'), {only_discarding: true}, {onShow: function() { console.log('Модальное окно показалось');}});
 				$('#openModal').click(function() {
 					modal.show();
 					console.log(modal);

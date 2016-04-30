@@ -225,7 +225,7 @@ function showToast(message, duration) {
 
 
 /* Модальные окна */
-Modal = function(element, params = {}) {
+Modal = function(element, params = {}, callback = {}) {
 	if (Modal.prototype.collection == undefined)
 		Modal.prototype.collection = []
 	this.el = element;
@@ -233,6 +233,8 @@ Modal = function(element, params = {}) {
 	Modal.prototype.collection.push(this);
 
 	this.only_discarding = params.only_discarding || false;
+	this.onShow = callback.onShow || undefined;
+	this.onDiscard = callback.onDiscard || undefined;
 }
 
 Modal.prototype.show = function() {
@@ -249,23 +251,26 @@ Modal.prototype.show = function() {
 	var target = this;
 	this.visible = true;
 
+	if (target.onShow) target.onShow();
+
 	if (!$('.overflow').length) {
 		$('body').append('<div class="overflow"></div>');
 	}
 
 	$('body').on('click', '.overflow', function() {
 		if (target.only_discarding == false) {
-			target.hide();	
+			if (target.onDiscard) target.onDiscard();
+			target.hide();				
 		} else {
 			target.el.addClass('modal--animation-attention');
 			setTimeout(function() {
 				target.el.removeClass('modal--animation-attention');
 			}, 150);
 		}
-	});
-	
+	});	
 
 	element.find('.modal__discard').click(function() {
+		if (target.onDiscard) target.onDiscard();
 		target.hide();
 	});
 
