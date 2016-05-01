@@ -244,7 +244,6 @@ Modal.prototype.show = function() {
 			current.hide();		
 	});
 	var height = this.el.innerHeight();
-	//height -= this.el.find('.modal__header').outerHeight() + this.el.find('.modal__footer').outerHeight();
 	this.el.find('.modal__content').css('height', height - 46 - 39);
 
 	var element = this.el;
@@ -275,7 +274,6 @@ Modal.prototype.show = function() {
 	});
 
 	element.show();
-	element.trigger('modal-show');
 }
 
 Modal.prototype.hide = function() {
@@ -283,7 +281,6 @@ Modal.prototype.hide = function() {
 	var element = this.el;
 	$('.overflow').remove();
 	element.hide();
-	element.trigger('modal-hide');
 }
 
 Modal.prototype.toggle = function() {
