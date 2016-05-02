@@ -122,7 +122,7 @@ $(function() {
 });
 
 /* Боковое меню */
-function Sidebar(element, enable_scroll) {
+function Sidebar(element, enable_scroll, callback = {}) {
 	// Sidebar.prototype.el = undefined;
 	if (Sidebar.prototype.collection == undefined)
 		Sidebar.prototype.collection = []
@@ -131,18 +131,21 @@ function Sidebar(element, enable_scroll) {
 		this.enable_scroll = enable_scroll;
 	this.el = element;	
 	Sidebar.prototype.collection.push(this);
+	this.onShow = callback.onShow || false;
+	this.onHide = callback.onHide || false;
 }
 
 Sidebar.prototype.show = function() {
 	// Пробегаемся по всем созданным сайдбарам и закрываем их, если они открыты
 	var otherSidebars = Sidebar.prototype.collection;
 	var target = this;
+	if (target.onShow) target.onShow();
 	otherSidebars.forEach(function (current, index, otherSidebars) {
 		if (current != target && current.visible)
 			current.hide();
 	});
 	var element = this.el;
-	target.hide();
+	//target.hide();
 	element.addClass('sidebar--show');
 	
 	if (!$('.overflow').length) {
@@ -164,6 +167,7 @@ Sidebar.prototype.show = function() {
 
 Sidebar.prototype.hide = function() {
 	var element = this.el;
+	if (this.onHide) this.onHide();
 	element.removeClass('sidebar--show');
 	$('.overflow').remove();
 
