@@ -441,5 +441,13 @@
 	&.loading-layout--invert {
 		background-color: lighten(@d-gray, 5%);
 		background-image: @loading-invert;
+
+		&.loading-layout--transparent {
+			background-color: transparent;
+		}
+	}
+
+	&.loading-layout--transparent {
+		background-color: transparent;
 	}
 }

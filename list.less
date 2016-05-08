@@ -602,3 +602,43 @@
 	&.user-list--color-pink { .set-user-list-color(@pink); }
 	&.user-list--color-brown { .set-user-list-color(@brown); }
 }
+
+.stacked-list {
+	width: 100%;
+	border: 1px solid @u-gray;
+	border-radius: 0.5em;
+	padding: 0.25em 0em;
+
+	.stacked-list__item {
+		width: 100%;
+		padding: 0.25em 1em 0.5em 1em;
+		box-sizing: border-box;
+		color: @d-gray;
+
+		&:after {
+			content: "";
+			display: block;
+			margin: 0.5em 0em 0em 0em;
+			height: 1px;
+			border-bottom: 1px solid @u-gray;
+		}
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	&.stacked-list--invert {
+		border-color: lighten(@d-gray, 5%);
+
+		.stacked-list__item {
+			color: @u-gray;
+
+			&:after {
+				border-color: lighten(@d-gray, 5%);
+			}
+		}
+	}
+}
