@@ -7772,6 +7772,101 @@ img.img--circle {
 img.img--border {
   border: 0.25em solid #f5f5f5;
 }
+.carousel {
+  width: 100%;
+  background-color: #999999;
+  min-height: 16em;
+  max-height: 16em;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.carousel .carousel__item {
+  display: none;
+}
+.carousel .carousel__panel {
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.7);
+  color: #333333;
+  display: flex;
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+  align-items: center;
+}
+.carousel .carousel__panel .carousel__panel__text {
+  flex: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+.carousel .carousel__panel .carousel__panel__counter {
+  flex: 1;
+  text-align: center;
+}
+.carousel .carousel__panel .carousel__panel__navigation {
+  flex: 1;
+  text-align: right;
+  font-size: 0;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button {
+  cursor: pointer;
+  flex: 1;
+  padding: 1em;
+  content: "";
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 2em;
+  text-align: center;
+  display: inline-block;
+  margin: 0em;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button:hover {
+  background-color: #f5f5f5;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button#prev {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF9JREFUeNpi/P//PwM6YGRkNABSE4D4AgsOyQNAzA8WAJkAw0AAkvwAEobSBnglweL4JGHuwykJU3AAlyQIMzEQAfBbQdCRRHmTqIDCoegAhi+Aii4AKQcg/gjiAwQYAEpzifDIWwwaAAAAAElFTkSuQmCC');
+  background-size: 0.5em 1em;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button#next {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFhJREFUeNpiYGBgmADEB4DY4P///wzomAEqCWJ9wKYIBAygklgVwVThVIRsFFZF6PZhKMLmamRFB5gYCAGircDrSLzeJBhQhIIa5ouPQOwAFLiA7gmAAAMAwYKjnSwgzxgAAAAASUVORK5CYII=');
+  background-size: 0.5em 1em;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button.disabled {
+  color: #999999;
+  cursor: normal;
+  opacity: .25;
+}
+.carousel .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button.disabled:hover {
+  background-color: transparent;
+}
+.carousel.carousel--invert {
+  background-color: #666666;
+}
+.carousel.carousel--invert .carousel__panel {
+  background-color: rgba(51, 51, 51, 0.85);
+  color: #f5f5f5;
+}
+.carousel.carousel--invert .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button:hover {
+  background-color: #333333;
+}
+.carousel.carousel--invert .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button#prev {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFpJREFUeNpi/P//PwMWYADEE4D4AgsOyQNAzA/mgUxAwgZA/OE/BIBoA7ySYOvxScIU4JSEKTiASxKEmRgIAWKsIOhIorxJVEBhU3QAmy8uALEDEH8EcQACDAAcURZs5oh5oQAAAABJRU5ErkJggg==');
+}
+.carousel.carousel--invert .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button#next {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi+P///wQgPgDEBkDMgI4ZoJIg8AGbIgao4AdcimAMnIqQjcOqCN1RGIoYsLgcWdEBJgZCgBQr8DoSrzcJBhTeoIb54iMQOwDxBXRPAAQYADO9RQoeeBt5AAAAAElFTkSuQmCC');
+}
+.carousel.carousel--invert .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button.disabled {
+  opacity: .25;
+}
 .grid {
   clear: both;
   padding: 0em;

@@ -37,6 +37,9 @@
 					sidebar.toggle();
 				});
 
+				var carousel = new Carousel($('#carouselDemo'));
+				console.log(carousel);
+
 				/*$('#ss').on('sidebar-show', function() {
 					console.log("show sidebar");
 				});
@@ -148,7 +151,7 @@
 		</div>
 
 		<div class="grid">
-			<div class="col-6 padding-1"><h2>Stacked List</h2>
+			<div class="col-4 padding-1 size-fix"><h2>Stacked List</h2>
 				<div class="stacked-list">
 					<div class="stacked-list__item">Math</div>
 					<div class="stacked-list__item">Ecology</div>
@@ -156,7 +159,26 @@
 					<div class="stacked-list__item">Spanish</div>
 				</div>
 			</div>
-			<div class="col-6"></div>
+			<div class="col-8 col-lm-6">
+				<div class="carousel carousel--invert" id="carouselDemo">
+					<div class="carousel__item">
+						<div class="carousel__item__text">Barcelona (Spane)</div>
+						<img src="http://www.milesmorgantravel.co.uk/assets/images/content/blogs/barcelona-city-break.jpg" alt="">
+					</div>
+					<div class="carousel__item">
+						<div class="carousel__item__text">Copenhagen (Denmark)</div>
+						<img src="http://static.standard.co.uk/s3fs-public/thumbnails/image/2013/12/11/09/79copenhagen1113.jpg" alt="">
+					</div>
+					<div class="carousel__item">
+						<div class="carousel__item__text">Zurich (Switzerland)</div>
+						<img src="https://cdn.zuerich.com/sites/default/files/styles/viewport_xxl/public/keyvisual/web_zurich_seebecken_megateaser1600x900.jpg?itok=MzH91gj-" alt="">
+					</div>
+					<div class="carousel__item">
+						<div class="carousel__item__text">Oslo (Norway)</div>
+						<img src="http://www.visitoslo.com/Images/Bilder%20Oslo/Byliv%20and%20Omr%C3%A5der/byen-og-fjorden_FWFoto.jpg?t=ScaleToFill%7C1450x720&ts=vSfnxHgXA7cLsnf8iM8TVpElbOc%3D" alt="">
+					</div>					
+				</div>
+			</div>
 		</div>
 
 		<div class="grid col-12">

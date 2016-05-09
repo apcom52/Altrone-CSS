@@ -518,3 +518,70 @@ Progress.prototype.setMaximum = function(max) {
 	this.max = max;
 	this.render();
 }
+
+
+/* Carousel */
+Carousel = function(element, params = {}) {
+	this.el = element;
+	this.slides = element.find('.carousel__item').toArray();
+	this.size = this.slides.length;
+	this.currentIndex = 0;
+	this.onChanged = params.onChanged || undefined;
+
+	var target = this;
+
+	target.el.append('<div class="carousel__panel"><div class="carousel__panel__counter"></div><div class="carousel__panel__text"></div><div class="carousel__panel__navigation"><div class="carousel__panel__navigation__button" id="prev"></div><div class="carousel__panel__navigation__button" id="next"></div></div></div>');
+	
+	if (this.size) this.open(1);
+
+	target.el.on('click', '.carousel__panel > .carousel__panel__navigation > #prev', function() {
+		target.prev();
+	});
+
+	target.el.on('click', '.carousel__panel > .carousel__panel__navigation > #next', function() {
+		target.next();
+	});
+}
+
+Carousel.prototype.open = function(index) {
+	var target = this;
+	target.el.find('#next, #prev').removeClass('disabled');
+	var slides = target.slides;
+	if (index > 0 && index <= this.size) {
+		target.currentIndex = index;
+		var current = $(target.slides[index - 1]);
+		var image = current.find('img');
+		var title = current.find('.carousel__item__text');
+		var counter = target.el.find('.carousel__panel__counter');
+
+		target.el.find('.carousel__panel__text').html(title.html());
+		target.el.css('background-image', 'url(' + image.attr('src') + ')');
+
+		counter.html(target.currentIndex.toString() + '/' + target.size.toString());
+
+		if (index == target.size) {
+			target.el.find('#next').addClass('disabled');
+		}
+		if (index == 1) {
+			target.el.find('#prev').addClass('disabled');
+		}
+
+		if (target.onChanged) target.onChanged(target.currentIndex);
+	} else {
+		console.log('invalid index ' + index.toString());
+	}
+}
+
+Carousel.prototype.next = function() {
+	if (!this.el.find('#next').hasClass('disabled')) {
+		var index = this.currentIndex + 1;
+		this.open(index);
+	}	
+}
+
+Carousel.prototype.prev = function() {
+	if (!this.el.find('#prev').hasClass('disabled')) {
+		var index = this.currentIndex - 1;
+		this.open(index);
+	}	
+}

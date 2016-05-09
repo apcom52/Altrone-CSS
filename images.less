@@ -20,3 +20,120 @@ img {
 		border: 0.25em solid @u-gray;
 	}
 }
+
+.carousel {
+	width: 100%;
+	background-color: @l-gray;
+	min-height: 16em;
+	max-height: 16em;
+	position: relative;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.carousel__item {
+		display: none;
+	}
+
+	.carousel__panel {
+		width: 100%;
+		background-color: rgba(245, 245, 245, .7);		
+		color: @d-gray;
+		display: flex;
+		position: absolute;
+		bottom: 0em;
+		left: 0em;
+		align-items: center;
+
+		.carousel__panel__text {
+			flex: 6;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-weight: bold;
+			padding: 0.5em 1em;
+			box-sizing: border-box;
+		}
+
+		.carousel__panel__counter {
+			flex: 1;
+			text-align: center;
+		}
+
+		.carousel__panel__navigation {
+			flex: 1;
+			text-align: right;
+			font-size: 0;
+
+			.carousel__panel__navigation__button {
+				cursor: pointer;
+				flex: 1;
+				padding: 1em;
+				content: "";
+				font-size: 1rem;
+				box-sizing: border-box;
+				width: 2em;
+				text-align: center;
+				display: inline-block;
+				margin: 0em;
+
+				&:hover {
+					background-color: @u-gray;
+				}
+
+				&#prev {
+					background-image: @angle-left;
+					background-size: 0.5em 1em;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				&#next {
+					background-image: @angle-right;
+					background-size: 0.5em 1em;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				&.disabled {
+					color: @l-gray;
+					cursor: normal;
+					opacity: .25;
+
+					&:hover {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	&.carousel--invert {
+		background-color: @m-gray;
+
+		.carousel__panel {
+			background-color: rgba(51, 51, 51, .85);		
+			color: @u-gray;
+
+			.carousel__panel__navigation {
+				.carousel__panel__navigation__button {
+					&:hover {
+						background-color: @d-gray;
+					}
+
+					&#prev {
+						background-image: @angle-left-invert;
+					}
+
+					&#next {
+						background-image: @angle-right-invert;
+					}
+
+					&.disabled {
+						opacity: .25;
+					}
+				}
+			}
+		}
+	}
+}
