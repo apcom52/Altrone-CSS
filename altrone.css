@@ -7866,6 +7866,14 @@ img.img--border {
 .carousel.carousel--invert .carousel__panel .carousel__panel__navigation .carousel__panel__navigation__button.disabled {
   opacity: .25;
 }
+@media (max-width: 767px) {
+  .carousel .carousel__panel .carousel__panel__text {
+    flex: 4;
+  }
+  .carousel .carousel__panel .carousel__panel__navigation {
+    flex: 2;
+  }
+}
 .grid {
   clear: both;
   padding: 0em;

@@ -568,7 +568,7 @@ Carousel.prototype.open = function(index) {
 
 		if (target.onChanged) target.onChanged(target.currentIndex);
 	} else {
-		console.log('invalid index ' + index.toString());
+		throw new Error("Invalid carousel index");
 	}
 }
 
@@ -576,12 +576,16 @@ Carousel.prototype.next = function() {
 	if (!this.el.find('#next').hasClass('disabled')) {
 		var index = this.currentIndex + 1;
 		this.open(index);
-	}	
+	} else {
+		throw new Error("Cannot open next carousel item");
+	}
 }
 
 Carousel.prototype.prev = function() {
 	if (!this.el.find('#prev').hasClass('disabled')) {
 		var index = this.currentIndex - 1;
 		this.open(index);
+	} else {
+		throw new Error("Cannot open previous carousel item");
 	}	
 }
