@@ -10496,6 +10496,66 @@ input[type="reset"].button--checked,
 .taskbar.taskbar--fixed {
   position: fixed;
 }
+.taskbar.taskbar--transparent {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item:hover,
+.taskbar.taskbar--transparent .taskbar__item:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--no-select:hover,
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--no-select:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--form:hover,
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--form:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--button:hover,
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--button:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent.taskbar--invert .taskbar__item:hover,
+.taskbar.taskbar--transparent.taskbar--invert .taskbar__item:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent.taskbar--invert .taskbar__item.taskbar__item--no-select:hover,
+.taskbar.taskbar--transparent.taskbar--invert .taskbar__item.taskbar__item--no-select:active {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-red {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-orange {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-yellow {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-olive {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-green {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-teal {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-blue {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-violet {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-purple {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-pink {
+  background-color: transparent;
+}
+.taskbar.taskbar--transparent .taskbar__item.taskbar__item--hover-color-brown {
+  background-color: transparent;
+}
 .progress {
   display: block;
   width: calc(100% - 0.3em);

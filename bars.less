@@ -118,13 +118,64 @@
 	&.taskbar--fixed {
 		position: fixed;
 	}
+
+	&.taskbar--transparent {
+		background-color: transparent;
+
+		.taskbar__item {
+			&:hover, &:active {
+				background-color: transparent;
+			}
+			&.taskbar__item--no-select {
+				&:hover, &:active {
+					background-color: transparent;
+				}
+			}
+			&.taskbar__item--form {
+				&:hover, &:active {
+					background-color: transparent;
+				}
+			}
+			&.taskbar__item--button {
+				&:hover, &:active {
+					background-color: transparent;
+				}
+			}
+		}
+
+		&.taskbar--invert {
+			.taskbar__item {
+				&:hover, &:active {
+					background-color: transparent;
+				}
+				&.taskbar__item--no-select {
+					&:hover, &:active {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+
+		.taskbar__item {
+			&.taskbar__item--hover-color-red{ background-color: transparent; }
+			&.taskbar__item--hover-color-orange { background-color: transparent; }
+			&.taskbar__item--hover-color-yellow { background-color: transparent; }
+			&.taskbar__item--hover-color-olive { background-color: transparent; }
+			&.taskbar__item--hover-color-green { background-color: transparent; }
+			&.taskbar__item--hover-color-teal { background-color: transparent; }
+			&.taskbar__item--hover-color-blue { background-color: transparent; }
+			&.taskbar__item--hover-color-violet { background-color: transparent; }
+			&.taskbar__item--hover-color-purple { background-color: transparent; }
+			&.taskbar__item--hover-color-pink { background-color: transparent; }
+			&.taskbar__item--hover-color-brown { background-color: transparent; }
+		}
+	}
 }
 
 .set-taskbar-item-hover-color(@color) {
 	&:hover, &:active {
 		color: @color;
 	}
-
 }
 
 .set-progress-color(@color) {
