@@ -116,6 +116,11 @@
 					var dialog = new Dialog('Hello', 'world');
 					dialog.show();
 				});
+
+				$('#openDialog2').click(function() {
+					var dialog = new Dialog('Hello', 'world', function() {alert('ok'); });
+					dialog.show();
+				});
 			});
 		</script>
 	</head>
@@ -388,7 +393,7 @@
 		<h1>Buttons</h1>
 		<button class="">Button</button>
 		<button class="button--color-red" id="openDialog">Open Dialog Window</button>
-		<button class="button--color-orange">Button</button>
+		<button class="button--color-orange" id="openDialog2">Button</button>
 		<button class="button--color-yellow">Button</button>
 		<button class="button--color-olive">Button</button>
 		<button class="button--color-green">Button</button>
