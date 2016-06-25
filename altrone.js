@@ -589,3 +589,46 @@ Carousel.prototype.prev = function() {
 		throw new Error("Cannot open previous carousel item");
 	}	
 }
+
+/* Диалоговое окно */
+Dialog = function(title = 'Диалоговое окно', message = 'Выберите вариант', onOK = undefined, onCancel = undefined, params = {}) {
+	this.id = new Date().getTime();
+	this.title = title;
+	this.message = message;
+	this.onOK = onOK;
+	this.onCancel = onCancel;
+
+	return this;
+}
+
+Dialog.prototype.show = function() {
+	$('body').append('<div class="modal" id="' + this.id + '"></div>');
+	this.el = $('body').find('#' + this.id.toString());
+	var target = this;
+	var el = target.el;
+	el.append('<div class="modal__header"><div class="modal__header__title">' + this.title + '</div></div>');
+	el.append('<div class="modal__content">' + this.message + '</div>');
+	if (target.onOK) {
+		el.append('<div class="modal__footer align-center"><button class="button--color-green" id="ok">OK</button><button id="cancel">Отмена</button></div>');		
+	} else {
+		el.append('<div class="modal__footer align-center"><button class="button--color-green" id="cancel">OK</button></div>');				
+	}
+
+	this.modal = new Modal(el);
+	this.modal.show();
+	this.okButton = el.find('.modal__footer #ok');
+	this.cancelButton = el.find('.modal__footer #cancel');
+
+	this.cancelButton.click(function() {
+		target.modal.hide();
+		el.remove();
+	});
+
+	this.okButton.click(function() {
+		this.onOK();
+		target.modal.hide();
+		el.remove();
+	});
+
+	console.log(this.el);
+}

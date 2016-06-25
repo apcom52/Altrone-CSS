@@ -111,6 +111,11 @@
 				$('#progress6').click(function() {
 					progress.set(6);
 				});
+
+				$('#openDialog').click(function() {
+					var dialog = new Dialog('Hello', 'world');
+					dialog.show();
+				});
 			});
 		</script>
 	</head>
@@ -382,7 +387,7 @@
 
 		<h1>Buttons</h1>
 		<button class="">Button</button>
-		<button class="button--color-red">Button</button>
+		<button class="button--color-red" id="openDialog">Open Dialog Window</button>
 		<button class="button--color-orange">Button</button>
 		<button class="button--color-yellow">Button</button>
 		<button class="button--color-olive">Button</button>
