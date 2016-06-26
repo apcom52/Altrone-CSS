@@ -620,7 +620,8 @@ Dialog.prototype.show = function() {
 	this.cancelButton = el.find('.modal__footer #cancel');
 
 	this.cancelButton.click(function() {
-		target.onCancel();
+		if (target.onCancel) 
+			target.onCancel();
 		target.modal.hide();
 		el.remove();
 	});
