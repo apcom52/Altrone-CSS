@@ -13323,6 +13323,25 @@ input[type="reset"].button--checked,
   color: #f5f5f5;
   border-color: #404040;
 }
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax .parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.parallax .parallax__layer.parallax__layer--backstage {
+  transform: translateZ(-2px) scale(3);
+}
+.parallax .parallax__layer.parallax__layer--front {
+  transform: translateZ(0);
+}
 .card {
   display: block;
   height: auto;
