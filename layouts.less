@@ -4,7 +4,10 @@
 	margin: 0px;
 	zoom: 1;
 	width: 100%;
-	overflow: hidden;
+
+	&:not(.parallax__layer) {
+		overflow: hidden;		
+	}
 
 	[class^='col-'] {
 		display: inline-block;

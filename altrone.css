@@ -7879,6 +7879,8 @@ img.img--border {
   margin: 0px;
   zoom: 1;
   width: 100%;
+}
+.grid:not(.parallax__layer) {
   overflow: hidden;
 }
 .grid [class^='col-'] {
