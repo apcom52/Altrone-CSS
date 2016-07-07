@@ -10573,6 +10573,7 @@ input[type="reset"].button--checked,
   height: 1em;
   border-radius: 0.2em;
   top: 0em;
+  transition: all 0.3s linear;
 }
 .progress.progress--color-red {
   background-color: #ea7f7f;
