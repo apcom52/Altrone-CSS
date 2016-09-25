@@ -236,7 +236,11 @@ Modal = function(element, params = {}, callback = {}) {
 	this.visible = false;
 	Modal.prototype.collection.push(this);
 
+
 	this.only_discarding = params.only_discarding || false;
+	if (!this.only_discarding) {
+		this.el.find('.modal__header').append('<div class="modal__header__close"></div>');
+	}
 	this.onShow = callback.onShow || undefined;
 	this.onDiscard = callback.onDiscard || undefined;
 }
@@ -272,7 +276,7 @@ Modal.prototype.show = function() {
 		}
 	});	
 
-	element.find('.modal__discard').click(function() {
+	element.find('.modal__discard, .modal__header__close').click(function() {
 		if (target.onDiscard) target.onDiscard();
 		target.hide();
 	});

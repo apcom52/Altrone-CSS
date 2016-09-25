@@ -1,16 +1,17 @@
-.button-color(@color, @f-color: @white) {
-	background-color: lighten(@color, 5%);
+.button-color(@l-color, @color, @f-color: @white) {
+	background-color: @l-color;
+	border: 1px solid darken(@l-color, 5%);
 	color: @f-color;
 	// border: 1px solid darken(@color, 5%);
 
 	&:hover {
-		background-color: darken(@color, 5%);
+		background-color: darken(@l-color, 5%);
 		.anim(0.3s);
 	}
 
 	&:active, .active {
-		background-color: darken(@color, 8%);
-		border-color: darken(@color, 10%);
+		background-color: darken(@l-color, 8%);
+		border-color: darken(@l-color, 10%);
 		.anim(0.3s);
 	}
 
@@ -24,7 +25,7 @@
 
 	&.button--transparent:hover {
 		color: @white;		
-		background-color: @color;
+		background-color: @l-color;
 	}
 
 	&.button--transparent-full:hover {
@@ -43,7 +44,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	user-select: none;
 	cursor: pointer;
 	border: none;
-	background-color: lighten(@u-gray, 5%);
+	background-color: @u-gray;
+	border: 1px solid darken(@u-gray, 5%);
  	color: @d-gray;
  	.anim(0.3s);
 	.pt();
@@ -59,18 +61,18 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		.anim(0.3s);
 	}
 
-	&.button--color-red { .button-color(@red); }
-	&.button--color-orange { .button-color(@orange); }
-	&.button--color-yellow { .button-color(@yellow); }
-	&.button--color-olive { .button-color(@olive); }
-	&.button--color-green { .button-color(@green); }
-	&.button--color-teal { .button-color(@teal); }
-	&.button--color-blue { .button-color(@blue); }
-	&.button--color-violet { .button-color(@violet); }
-	&.button--color-purple { .button-color(@purple); }
-	&.button--color-pink { .button-color(@pink); }
-	&.button--color-brown { .button-color(@brown); }
-	&.button--color-black { .button-color(@d-gray, @u-gray); }
+	&.button--color-red { .button-color(@l-red, @red); }
+	&.button--color-orange { .button-color(@l-orange, @orange); }
+	&.button--color-yellow { .button-color(@l-yellow, @yellow); }
+	&.button--color-olive { .button-color(@l-olive, @olive); }
+	&.button--color-green { .button-color(@l-green, @green); }
+	&.button--color-teal { .button-color(@l-teal, @teal); }
+	&.button--color-blue { .button-color(@l-blue, @blue); }
+	&.button--color-violet { .button-color(@l-violet, @violet); }
+	&.button--color-purple { .button-color(@l-purple, @purple); }
+	&.button--color-pink { .button-color(@l-pink, @pink); }
+	&.button--color-brown { .button-color(@l-brown, @brown); }
+	&.button--color-black { .button-color(@m-gray, @d-gray, @u-gray); }
 
 	&.button {
 		&--smooth { border-radius: 0.5em;	}
