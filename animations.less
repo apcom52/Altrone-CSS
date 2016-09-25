@@ -1,0 +1,42 @@
+.animation {
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+
+	&.animation--boom {
+		animation: boom 0.5s;
+	}
+
+	&.animation--jump {
+		animation: jump 0.5s;
+	}
+}
+
+@keyframes boom {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.25);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes jump {
+	0% {
+		margin-top: 0em;
+	}
+	25% {
+		margin-top: -1em;
+	}
+	50% {
+		margin-top: 0em;
+	}
+	75% {
+		margin-top: -0.5em;
+	}
+	100% {
+		margin-top: 0em;
+	}
+}
