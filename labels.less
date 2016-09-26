@@ -207,6 +207,38 @@
 	}
 }
 
+// [data-tooltip] {
+// 	cursor: pointer;
+// 	position: relative;
+
+// 	&:after {
+// 		background-color: rgba(red(@d-gray), green(@d-gray), blue(@d-gray), 0.8);
+// 		border-radius: 0.25em;
+// 		color: @u-gray;
+// 		.pt();
+// 		font-size: 0.9em;
+// 		text-align: center;
+// 		content: attr(data-tooltip);
+// 		margin-top: -1em;
+// 		max-width: 20em;
+// 		opacity: 0;
+// 		padding: 0.2em 0.5em;
+// 		position: absolute;
+// 		visibility: hidden;
+// 		z-index: 25;
+// 		position: absolute;
+// 		.anim(0.3s);
+// 	}
+
+// 	&:hover {
+// 		&:after {
+// 			opacity: 1;
+// 			visibility: visible;
+// 			.anim(0.3s);
+// 		}
+// 	}
+// }
+
 @media (max-width: @tablet) {
 	.toast-collection {
 		width: 50%;
