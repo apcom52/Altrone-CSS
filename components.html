@@ -40,6 +40,9 @@
 				var carousel = new Carousel($('#carouselDemo'));
 				console.log(carousel);
 
+				var accordeon = new Accordion($('#accordion'), 
+					{multi: true});
+
 				/*$('#ss').on('sidebar-show', function() {
 					console.log("show sidebar");
 				});
@@ -140,6 +143,25 @@
 		</div>
 
 		<div class="grid">
+			<div class="col-6 col-lm-6 padding-1 size-fix">
+				<div class="accordion accordion--invert" id="accordion">
+					<div class="accordion__item">
+						<div class="accordion__item__title">Adele</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+					<div class="accordion__item accordion__item--active">
+						<div class="accordion__item__title ">The Voice</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+					<div class="accordion__item">
+						<div class="accordion__item__title">Moscow Calling</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid">
 			<div class="col-4 col-lm-6">
 				<div class="alert animation animation--boom">
 					<div class="alert__header">Название сообщения</div>
@@ -179,7 +201,8 @@
 		</div>
 
 		<div class="grid">
-			<div class="d-gray-bg col-4 col-lm-6 padding-1 size-fix"><h2>Stacked List</h2>
+			<div class="d-gray-bg col-4 col-lm-6 padding-1 size-fix">
+				<h2>Stacked List</h2>
 				<div class="stacked-list stacked-list--invert">
 					<div class="stacked-list__item">Math</div>
 					<div class="stacked-list__item">Ecology</div>
@@ -187,6 +210,7 @@
 					<div class="stacked-list__item">Spanish</div>
 				</div>
 			</div>
+
 			<div class="col-8 col-lm-6">
 				<div class="carousel carousel--invert" id="carouselDemo">
 					<div class="carousel__item">

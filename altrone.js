@@ -638,3 +638,33 @@ Dialog.prototype.show = function() {
 
 	console.log(this.el);
 }
+
+Accordion = function(element, options) {
+	var target = this;
+	target.el = element;
+	if (options != undefined) {
+		target.multi = options.multi || false;		
+	} else {
+		target.multi = false;
+	}
+
+	target.el.find('.accordeon__item__title').click(function() {
+		target.open($(this));
+	});
+}
+
+Accordion.prototype.open = function(element) {
+	var target = this;
+	var parent = element.parent();
+	if (!target.multi)
+		target.closeOthers();
+
+	var title = element.text();
+	parent.toggleClass('accordeon__item--active');
+	console.log(title);
+};
+
+Accordion.prototype.closeOthers = function() {
+	var target = this;
+	target.el.find('.accordeon__item').removeClass('accordeon__item--active');
+};
