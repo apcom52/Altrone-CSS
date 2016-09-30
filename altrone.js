@@ -648,7 +648,7 @@ Accordion = function(element, options) {
 		target.multi = false;
 	}
 
-	target.el.find('.accordeon__item__title').click(function() {
+	target.el.find('.accordion__item__title').click(function() {
 		target.open($(this));
 	});
 }
@@ -660,11 +660,11 @@ Accordion.prototype.open = function(element) {
 		target.closeOthers();
 
 	var title = element.text();
-	parent.toggleClass('accordeon__item--active');
+	parent.toggleClass('accordion__item--active');
 	console.log(title);
 };
 
 Accordion.prototype.closeOthers = function() {
 	var target = this;
-	target.el.find('.accordeon__item').removeClass('accordeon__item--active');
+	target.el.find('.accordion__item').removeClass('accordion__item--active');
 };

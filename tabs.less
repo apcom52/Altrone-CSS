@@ -349,7 +349,7 @@
 
 		.accordion__item__title {
 			background-color: @u-gray;
-			padding: 0.5em 1em;
+			padding: 0.5em 2em;
 			font-weight: bold;
 			font-size: 0.95em;
 			background-repeat: no-repeat;
@@ -412,6 +412,14 @@
 					background-color: lighten(@d-gray, 10%);
 					background-image: @minus-invert;
 				}
+			}
+		}
+	}
+
+	&.accordion--left-icon {
+		.accordion__item {
+			.accordion__item__title {
+				background-position: left 0.5em center;
 			}
 		}
 	}
