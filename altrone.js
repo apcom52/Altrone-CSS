@@ -122,8 +122,9 @@ $(function() {
 });
 
 /* Боковое меню */
-function Sidebar(element, enable_scroll, callback = {}) {
+function Sidebar(element, enable_scroll, options) {
 	// Sidebar.prototype.el = undefined;
+	if (!options) options = {};
 	if (Sidebar.prototype.collection == undefined)
 		Sidebar.prototype.collection = []
 	this.enable_scroll = false;
@@ -131,8 +132,8 @@ function Sidebar(element, enable_scroll, callback = {}) {
 		this.enable_scroll = enable_scroll;
 	this.el = element;	
 	Sidebar.prototype.collection.push(this);
-	this.onShow = callback.onShow || false;
-	this.onHide = callback.onHide || false;
+	this.onShow = options.onShow || null;
+	this.onHide = options.onHide || null;
 }
 
 Sidebar.prototype.show = function() {
@@ -229,7 +230,8 @@ function showToast(message, duration) {
 
 
 /* Модальные окна */
-Modal = function(element, params = {}, callback = {}) {
+Modal = function(element, options) {
+	if (!options) options = {};
 	if (Modal.prototype.collection == undefined)
 		Modal.prototype.collection = []
 	this.el = element;
@@ -237,12 +239,12 @@ Modal = function(element, params = {}, callback = {}) {
 	Modal.prototype.collection.push(this);
 
 
-	this.only_discarding = params.only_discarding || false;
+	this.only_discarding = options.only_discarding || false;
 	if (!this.only_discarding) {
 		this.el.find('.modal__header').append('<div class="modal__header__close"></div>');
 	}
-	this.onShow = callback.onShow || undefined;
-	this.onDiscard = callback.onDiscard || undefined;
+	this.onShow = options.onShow || undefined;
+	this.onDiscard = options.onDiscard || undefined;
 }
 
 Modal.prototype.show = function() {
@@ -487,17 +489,20 @@ Select.prototype.hide = function() {
 }
 
 Select.prototype.set = function(index) {
-	if (index >= 0 && index < this.options.length)
+	if (index >= 0 && index < this.options.length) {
 		this.selectedIndex = index;
 		target.menu.html(target.options[target.selectedIndex]);
+	} else {
+		throw new Error("Invalid index");
+	}
 }
 
 
 /* Progressbar */
-Progress = function(element, max, current) {
+Progress = function(element, options) {
 	this.el = element;
-	this.max = max;
-	this.current = current;
+	this.max = options.max || 0;
+	this.current = options.current || 0;
 	this.active_el = this.el.find('.progress__active');
 	this.text_label = this.el.find('.progress__active .progress__active__text');
 	this.set(this.current);
@@ -505,13 +510,17 @@ Progress = function(element, max, current) {
 }
 
 Progress.prototype.set = function(value) {
-	var target = this;
-	if (value <= this.max) {
-		this.current = value;
+	if (value) {
+		var target = this;
+		if (value <= this.max) {
+			this.current = value;
+			this.render();
+			this.percent = ((this.current / this.max) * 100).toFixed(2);
+		}
 		this.render();
-		this.percent = ((this.current / this.max) * 100).toFixed(2);
-	}
-	this.render();
+	} else {
+		throw new Error("Invalid value");
+	}	
 }
 
 Progress.prototype.render = function() {	
@@ -521,19 +530,24 @@ Progress.prototype.render = function() {
 }
 
 Progress.prototype.setMaximum = function(max) {
-	this.max = max;
-	this.set(this.current);
-	this.render();
+	if (max) {
+		this.max = max;
+		this.set(this.current);
+		this.render();
+	} else {
+		throw new Error("Invalid maximum value");
+	}	
 }
 
 
 /* Carousel */
-Carousel = function(element, params = {}) {
+Carousel = function(element, options) {
 	this.el = element;
+	if (!options) options = {};
 	this.slides = element.find('.carousel__item').toArray();
 	this.size = this.slides.length;
 	this.currentIndex = 0;
-	this.onChanged = params.onChanged || undefined;
+	this.onChanged = options.onChanged || undefined;
 
 	var target = this;
 
@@ -598,12 +612,12 @@ Carousel.prototype.prev = function() {
 }
 
 /* Диалоговое окно */
-Dialog = function(title = 'Диалоговое окно', message = 'Выберите вариант', onOK = undefined, onCancel = undefined, params = {}) {
+Dialog = function(options) {
 	this.id = new Date().getTime();
-	this.title = title;
-	this.message = message;
-	this.onOK = onOK;
-	this.onCancel = onCancel;
+	this.title = options.title || 'Не указано';
+	this.message = options.message || 'Не указано';
+	this.onOK = options.onOK || null;
+	this.onCancel = options.onCancel || null;
 
 	return this;
 }
@@ -645,11 +659,12 @@ Dialog.prototype.show = function() {
 Accordion = function(element, options) {
 	var target = this;
 	target.el = element;
-	if (options != undefined) {
-		target.multi = options.multi || false;		
-	} else {
-		target.multi = false;
-	}
+	target.multi = options.multi || false;
+	// if (options != undefined) {
+	// 	target.multi = options.multi || false;		
+	// } else {
+	// 	target.multi = false;
+	// }
 
 	target.el.find('.accordion__item__title').click(function() {
 		target.open($(this));
@@ -658,7 +673,13 @@ Accordion = function(element, options) {
 
 Accordion.prototype.open = function(element) {
 	var target = this;
-	var parent = element.parent();
+
+	if (element.hasClass('.accordion__item__title')) {
+		var parent = element.parent();		
+	} else {
+		var parent = element;
+	}
+
 	if (!target.multi)
 		target.closeOthers();
 

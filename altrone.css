@@ -1,7 +1,7 @@
 /* 
 * ALTRONE-CSS
-* Version 2.0.1.1 (Angry Ancromantula)
-* Build 255
+* Version 2.1 (Blinked Basilisk)
+* Build 539
 */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -13597,6 +13597,10 @@ input[type="reset"].button--checked,
   border: 1px solid #eb8080;
   border-radius: 50%;
   cursor: pointer;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADYElEQVR4Xu3dbW7iMBAGYHKTHmX3Jq0EEkdCBKn0JnuT3ZOEVXYVFaWQesbz8Y49/KkqHHv8PtgBgpRhlw+oBAaoarKYXYKAvQgSJEHAEgArJ1dIgoAlAFZOrpAEAUsArJxcIQkClgBYOblCWgI5Ho8vp9PpD9icXMvZ7/c/LpfLL24R7BVyOBxeh2F4v91ub+M4XrkFtHTcXSbXcRzfOHNjgSwDLwMmym73IBMWChlk3qamafq91u8ZZY2xZDNN00/q9kUGmQd7VkCPKNJZsEAS5f8akMaY+2SDaBXEORF6HKOBUQ3SK4oWhghIbyiaGGIgvaBoY4iCtI5igSEO0iqKFYYKSGsolhhqIK2gWGOogkRH8cBQB4mK4oVhAhINxRPDDCQKijeGKQg6CgKGOQgqCgqGCwgaChKGGwgKChqGK4g3CiKGO4gXCioGBIg1CjIGDIgVCjoGFIg2SgQMOBAtlCgYkCDSKJEwYEGkUKJhQIPUokTEgAfhokTFCAFCRYmMEQakFCU6RiiQ71D+TWYY3ue/949ov8iv+rH1evIW/z9bBY/GjoYRboUsoZegRMQIC7K1fc3PRcVIEIs9ljhGuHPId6tjmX/UVRIOpOT8ERklFMjW54x820vcG2ubl3zoK2lTW4f28SFWCCVoSlvtcDn9w4NwAuYcwwlP4xhokJpga47VCLq0T1gQiUAl+igNUqodJIhkkJJ9SYW+1Q8ciEaAGn1q4UCBaAan2bckDgyIRWAWY9TiQIBYBmU5FgfHHcQjII8xS3FcQTyD8Rwb8l0WQiAINaxxXFYIUhBItbhcMUQLYOuCl8dFLtMVgoixbBkotZmBoEx464SKUKMJCMJES992eteqDuI9wVKI+3aeNauCeE6MA4GAogYSGcPzRK8C0gKGF4o4SEsYHiiiIC1iWKOIgbSMYYkiAtIDhhVKNUhPGBYoVSA9YmijsEF6xtBEYYEkxudneuksyCB5U7CvX8o8Q3G7KZjHhZza76qkj3+A8nE+n1+p45BXyHr/TIyH2xcLo/oSbt569evr3+3Wq9SlmO3LEmBvWWXdZytqAglCTUy5fYIoB0ztPkGoiSm3TxDlgKndJwg1MeX2CaIcMLX7BKEmptw+QZQDpnafINTElNsniHLA1O7/AttCeKG4tTCxAAAAAElFTkSuQmCC');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .modal .modal__content {
   margin: 0.25em;

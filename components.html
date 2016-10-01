@@ -95,7 +95,7 @@
 					select.open();
 				});*/
 
-				var progress = new Progress($('#progressExample'), 10, 1);
+				var progress = new Progress($('#progressExample'), {current: 1, max: 5});
 				var max_val = 10;
 				$('#progressPlus').click(function() {
 					max_val += 1;
