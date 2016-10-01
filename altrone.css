@@ -810,7 +810,7 @@ textarea {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .text-shadow {
-  text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.8);
+  text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.5);
 }
 .shadow-1 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
@@ -8490,13 +8490,15 @@ input[type="reset"],
   border-radius: 0.2em;
   display: inline-block;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   cursor: pointer;
   border: none;
   background-color: #f5f5f5;
   border: 1px solid #e8e8e8;
   color: #333333;
-  text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.8);
+  text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.5);
   transition: all 0.3s linear;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
@@ -8527,8 +8529,8 @@ input[type="button"].button--color-red,
 input[type="submit"].button--color-red,
 input[type="reset"].button--color-red,
 .button.button--color-red {
-  background-color: #eb7f7f;
-  border: 1px solid #e86969;
+  background-color: #e45353;
+  border: 1px solid #e13d3d;
   color: #ffffff;
 }
 button.button--color-red:hover,
@@ -8536,7 +8538,7 @@ input[type="button"].button--color-red:hover,
 input[type="submit"].button--color-red:hover,
 input[type="reset"].button--color-red:hover,
 .button.button--color-red:hover {
-  background-color: #e86969;
+  background-color: #e13d3d;
   transition: all 0.3s linear;
 }
 button.button--color-red:active,
@@ -8549,8 +8551,8 @@ input[type="button"].button--color-red .active,
 input[type="submit"].button--color-red .active,
 input[type="reset"].button--color-red .active,
 .button.button--color-red .active {
-  background-color: #e55c5c;
-  border-color: #e45353;
+  background-color: #df3434;
+  border-color: #d82222;
   transition: all 0.3s linear;
 }
 button.button--color-red.button--only-borders,
@@ -8597,8 +8599,8 @@ input[type="button"].button--color-orange,
 input[type="submit"].button--color-orange,
 input[type="reset"].button--color-orange,
 .button.button--color-orange {
-  background-color: #f7af7e;
-  border: 1px solid #f6a066;
+  background-color: #f4914e;
+  border: 1px solid #f38236;
   color: #ffffff;
 }
 button.button--color-orange:hover,
@@ -8606,7 +8608,7 @@ input[type="button"].button--color-orange:hover,
 input[type="submit"].button--color-orange:hover,
 input[type="reset"].button--color-orange:hover,
 .button.button--color-orange:hover {
-  background-color: #f6a066;
+  background-color: #f38236;
   transition: all 0.3s linear;
 }
 button.button--color-orange:active,
@@ -8619,8 +8621,8 @@ input[type="button"].button--color-orange .active,
 input[type="submit"].button--color-orange .active,
 input[type="reset"].button--color-orange .active,
 .button.button--color-orange .active {
-  background-color: #f59758;
-  border-color: #f4914e;
+  background-color: #f27c2c;
+  border-color: #f06d14;
   transition: all 0.3s linear;
 }
 button.button--color-orange.button--only-borders,
@@ -8667,8 +8669,8 @@ input[type="button"].button--color-yellow,
 input[type="submit"].button--color-yellow,
 input[type="reset"].button--color-yellow,
 .button.button--color-yellow {
-  background-color: #fadd73;
-  border: 1px solid #f9d75a;
+  background-color: #f8d142;
+  border: 1px solid #f7cb29;
   color: #ffffff;
 }
 button.button--color-yellow:hover,
@@ -8676,7 +8678,7 @@ input[type="button"].button--color-yellow:hover,
 input[type="submit"].button--color-yellow:hover,
 input[type="reset"].button--color-yellow:hover,
 .button.button--color-yellow:hover {
-  background-color: #f9d75a;
+  background-color: #f7cb29;
   transition: all 0.3s linear;
 }
 button.button--color-yellow:active,
@@ -8689,8 +8691,8 @@ input[type="button"].button--color-yellow .active,
 input[type="submit"].button--color-yellow .active,
 input[type="reset"].button--color-yellow .active,
 .button.button--color-yellow .active {
-  background-color: #f9d34c;
-  border-color: #f8d142;
+  background-color: #f7c91f;
+  border-color: #f4c209;
   transition: all 0.3s linear;
 }
 button.button--color-yellow.button--only-borders,
@@ -8737,8 +8739,8 @@ input[type="button"].button--color-olive,
 input[type="submit"].button--color-olive,
 input[type="reset"].button--color-olive,
 .button.button--color-olive {
-  background-color: #daed5f;
-  border: 1px solid #d5ea48;
+  background-color: #cfe831;
+  border: 1px solid #cae51a;
   color: #ffffff;
 }
 button.button--color-olive:hover,
@@ -8746,7 +8748,7 @@ input[type="button"].button--color-olive:hover,
 input[type="submit"].button--color-olive:hover,
 input[type="reset"].button--color-olive:hover,
 .button.button--color-olive:hover {
-  background-color: #d5ea48;
+  background-color: #cae51a;
   transition: all 0.3s linear;
 }
 button.button--color-olive:active,
@@ -8759,8 +8761,8 @@ input[type="button"].button--color-olive .active,
 input[type="submit"].button--color-olive .active,
 input[type="reset"].button--color-olive .active,
 .button.button--color-olive .active {
-  background-color: #d2e93a;
-  border-color: #cfe831;
+  background-color: #c2dc19;
+  border-color: #aec616;
   transition: all 0.3s linear;
 }
 button.button--color-olive.button--only-borders,
@@ -8807,8 +8809,8 @@ input[type="button"].button--color-green,
 input[type="submit"].button--color-green,
 input[type="reset"].button--color-green,
 .button.button--color-green {
-  background-color: #5fe37e;
-  border: 1px solid #49df6d;
+  background-color: #34db5b;
+  border: 1px solid #25d14d;
   color: #ffffff;
 }
 button.button--color-green:hover,
@@ -8816,7 +8818,7 @@ input[type="button"].button--color-green:hover,
 input[type="submit"].button--color-green:hover,
 input[type="reset"].button--color-green:hover,
 .button.button--color-green:hover {
-  background-color: #49df6d;
+  background-color: #25d14d;
   transition: all 0.3s linear;
 }
 button.button--color-green:active,
@@ -8829,8 +8831,8 @@ input[type="button"].button--color-green .active,
 input[type="submit"].button--color-green .active,
 input[type="reset"].button--color-green .active,
 .button.button--color-green .active {
-  background-color: #3cdd62;
-  border-color: #34db5b;
+  background-color: #23c84a;
+  border-color: #1fb342;
   transition: all 0.3s linear;
 }
 button.button--color-green.button--only-borders,
@@ -8877,8 +8879,8 @@ input[type="button"].button--color-teal,
 input[type="submit"].button--color-teal,
 input[type="reset"].button--color-teal,
 .button.button--color-teal {
-  background-color: #1ffff4;
-  border: 1px solid #05fff3;
+  background-color: #00ebdf;
+  border: 1px solid #00d2c7;
   color: #ffffff;
 }
 button.button--color-teal:hover,
@@ -8886,7 +8888,7 @@ input[type="button"].button--color-teal:hover,
 input[type="submit"].button--color-teal:hover,
 input[type="reset"].button--color-teal:hover,
 .button.button--color-teal:hover {
-  background-color: #05fff3;
+  background-color: #00d2c7;
   transition: all 0.3s linear;
 }
 button.button--color-teal:active,
@@ -8899,8 +8901,8 @@ input[type="button"].button--color-teal .active,
 input[type="submit"].button--color-teal .active,
 input[type="reset"].button--color-teal .active,
 .button.button--color-teal .active {
-  background-color: #00f5e9;
-  border-color: #00ebdf;
+  background-color: #00c7be;
+  border-color: #00aea5;
   transition: all 0.3s linear;
 }
 button.button--color-teal.button--only-borders,
@@ -8947,8 +8949,8 @@ input[type="button"].button--color-blue,
 input[type="submit"].button--color-blue,
 input[type="reset"].button--color-blue,
 .button.button--color-blue {
-  background-color: #72b5e8;
-  border: 1px solid #5ca9e4;
+  background-color: #469ee1;
+  border: 1px solid #3092dd;
   color: #ffffff;
 }
 button.button--color-blue:hover,
@@ -8956,7 +8958,7 @@ input[type="button"].button--color-blue:hover,
 input[type="submit"].button--color-blue:hover,
 input[type="reset"].button--color-blue:hover,
 .button.button--color-blue:hover {
-  background-color: #5ca9e4;
+  background-color: #3092dd;
   transition: all 0.3s linear;
 }
 button.button--color-blue:active,
@@ -8969,8 +8971,8 @@ input[type="button"].button--color-blue .active,
 input[type="submit"].button--color-blue .active,
 input[type="reset"].button--color-blue .active,
 .button.button--color-blue .active {
-  background-color: #4fa3e2;
-  border-color: #469ee1;
+  background-color: #278edc;
+  border-color: #2180c9;
   transition: all 0.3s linear;
 }
 button.button--color-blue.button--only-borders,
@@ -9017,8 +9019,8 @@ input[type="button"].button--color-violet,
 input[type="submit"].button--color-violet,
 input[type="reset"].button--color-violet,
 .button.button--color-violet {
-  background-color: #a284e0;
-  border: 1px solid #9370db;
+  background-color: #835bd6;
+  border: 1px solid #7447d1;
   color: #ffffff;
 }
 button.button--color-violet:hover,
@@ -9026,7 +9028,7 @@ input[type="button"].button--color-violet:hover,
 input[type="submit"].button--color-violet:hover,
 input[type="reset"].button--color-violet:hover,
 .button.button--color-violet:hover {
-  background-color: #9370db;
+  background-color: #7447d1;
   transition: all 0.3s linear;
 }
 button.button--color-violet:active,
@@ -9039,8 +9041,8 @@ input[type="button"].button--color-violet .active,
 input[type="submit"].button--color-violet .active,
 input[type="reset"].button--color-violet .active,
 .button.button--color-violet .active {
-  background-color: #8963d8;
-  border-color: #835bd6;
+  background-color: #6e3fcf;
+  border-color: #6131c3;
   transition: all 0.3s linear;
 }
 button.button--color-violet.button--only-borders,
@@ -9087,8 +9089,8 @@ input[type="button"].button--color-purple,
 input[type="submit"].button--color-purple,
 input[type="reset"].button--color-purple,
 .button.button--color-purple {
-  background-color: #c87ee0;
-  border: 1px solid #bf69db;
+  background-color: #b655d6;
+  border: 1px solid #ae40d1;
   color: #ffffff;
 }
 button.button--color-purple:hover,
@@ -9096,7 +9098,7 @@ input[type="button"].button--color-purple:hover,
 input[type="submit"].button--color-purple:hover,
 input[type="reset"].button--color-purple:hover,
 .button.button--color-purple:hover {
-  background-color: #bf69db;
+  background-color: #ae40d1;
   transition: all 0.3s linear;
 }
 button.button--color-purple:active,
@@ -9109,8 +9111,8 @@ input[type="button"].button--color-purple .active,
 input[type="submit"].button--color-purple .active,
 input[type="reset"].button--color-purple .active,
 .button.button--color-purple .active {
-  background-color: #ba5dd8;
-  border-color: #b655d6;
+  background-color: #aa38cf;
+  border-color: #9c2ec0;
   transition: all 0.3s linear;
 }
 button.button--color-purple.button--only-borders,
@@ -9157,8 +9159,8 @@ input[type="button"].button--color-pink,
 input[type="submit"].button--color-pink,
 input[type="reset"].button--color-pink,
 .button.button--color-pink {
-  background-color: #ed91c5;
-  border: 1px solid #e97bb9;
+  background-color: #e665ae;
+  border: 1px solid #e24fa2;
   color: #ffffff;
 }
 button.button--color-pink:hover,
@@ -9166,7 +9168,7 @@ input[type="button"].button--color-pink:hover,
 input[type="submit"].button--color-pink:hover,
 input[type="reset"].button--color-pink:hover,
 .button.button--color-pink:hover {
-  background-color: #e97bb9;
+  background-color: #e24fa2;
   transition: all 0.3s linear;
 }
 button.button--color-pink:active,
@@ -9179,8 +9181,8 @@ input[type="button"].button--color-pink .active,
 input[type="submit"].button--color-pink .active,
 input[type="reset"].button--color-pink .active,
 .button.button--color-pink .active {
-  background-color: #e76eb3;
-  border-color: #e665ae;
+  background-color: #e1469e;
+  border-color: #dd3192;
   transition: all 0.3s linear;
 }
 button.button--color-pink.button--only-borders,
@@ -9227,8 +9229,8 @@ input[type="button"].button--color-brown,
 input[type="submit"].button--color-brown,
 input[type="reset"].button--color-brown,
 .button.button--color-brown {
-  background-color: #cc9d7e;
-  border: 1px solid #c58f6c;
+  background-color: #be8159;
+  border: 1px solid #b67348;
   color: #ffffff;
 }
 button.button--color-brown:hover,
@@ -9236,7 +9238,7 @@ input[type="button"].button--color-brown:hover,
 input[type="submit"].button--color-brown:hover,
 input[type="reset"].button--color-brown:hover,
 .button.button--color-brown:hover {
-  background-color: #c58f6c;
+  background-color: #b67348;
   transition: all 0.3s linear;
 }
 button.button--color-brown:active,
@@ -9249,8 +9251,8 @@ input[type="button"].button--color-brown .active,
 input[type="submit"].button--color-brown .active,
 input[type="reset"].button--color-brown .active,
 .button.button--color-brown .active {
-  background-color: #c08761;
-  border-color: #be8159;
+  background-color: #ae6f45;
+  border-color: #9c633e;
   transition: all 0.3s linear;
 }
 button.button--color-brown.button--only-borders,
@@ -9297,8 +9299,8 @@ input[type="button"].button--color-black,
 input[type="submit"].button--color-black,
 input[type="reset"].button--color-black,
 .button.button--color-black {
-  background-color: #666666;
-  border: 1px solid #595959;
+  background-color: #4d4d4d;
+  border: 1px solid #404040;
   color: #f5f5f5;
 }
 button.button--color-black:hover,
@@ -9306,7 +9308,7 @@ input[type="button"].button--color-black:hover,
 input[type="submit"].button--color-black:hover,
 input[type="reset"].button--color-black:hover,
 .button.button--color-black:hover {
-  background-color: #595959;
+  background-color: #404040;
   transition: all 0.3s linear;
 }
 button.button--color-black:active,
@@ -9319,8 +9321,8 @@ input[type="button"].button--color-black .active,
 input[type="submit"].button--color-black .active,
 input[type="reset"].button--color-black .active,
 .button.button--color-black .active {
-  background-color: #525252;
-  border-color: #4d4d4d;
+  background-color: #3b3b3b;
+  border-color: #2e2e2e;
   transition: all 0.3s linear;
 }
 button.button--color-black.button--only-borders,
@@ -9409,7 +9411,7 @@ input[type="submit"].button--icon .icon,
 input[type="reset"].button--icon .icon,
 .button.button--icon .icon {
   padding: 0em;
-  padding-right: 1em;
+  padding-right: 0.5em;
 }
 button.button--icon-only i,
 input[type="button"].button--icon-only i,

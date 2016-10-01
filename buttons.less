@@ -1,17 +1,17 @@
 .button-color(@l-color, @color, @f-color: @white) {
-	background-color: @l-color;
-	border: 1px solid darken(@l-color, 5%);
+	background-color: darken(@l-color, 10%);
+	border: 1px solid darken(@l-color, 15%);
 	color: @f-color;
 	// border: 1px solid darken(@color, 5%);
 
 	&:hover {
-		background-color: darken(@l-color, 5%);
+		background-color: darken(@l-color, 15%);
 		.anim(0.3s);
 	}
 
 	&:active, .active {
-		background-color: darken(@l-color, 8%);
-		border-color: darken(@l-color, 10%);
+		background-color: darken(@l-color, 17%);
+		border-color: darken(@l-color, 22%);
 		.anim(0.3s);
 	}
 
@@ -41,6 +41,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	border-radius: 0.2em;
 	display: inline-block;
 	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 	user-select: none;
 	cursor: pointer;
 	border: none;
@@ -89,7 +91,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	&.button--icon {
 		i, .icon {
 			padding: 0em;
-			padding-right: 1em;
+			padding-right: 0.5em;
 		}
 
 		&-only {

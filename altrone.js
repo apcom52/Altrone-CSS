@@ -498,9 +498,9 @@ Progress = function(element, max, current) {
 	this.el = element;
 	this.max = max;
 	this.current = current;
-	this.percent = (this.current / this.max) * 100;
 	this.active_el = this.el.find('.progress__active');
 	this.text_label = this.el.find('.progress__active .progress__active__text');
+	this.set(this.current);
 	this.render();
 }
 
@@ -509,17 +509,20 @@ Progress.prototype.set = function(value) {
 	if (value <= this.max) {
 		this.current = value;
 		this.render();
+		this.percent = ((this.current / this.max) * 100).toFixed(2);
 	}
+	this.render();
 }
 
-Progress.prototype.render = function() {
-	this.percent = (this.current / this.max) * 100;
+Progress.prototype.render = function() {	
+	console.log(this.text_label);
 	this.text_label.html(this.percent + '%');
 	this.active_el.css('width', this.percent + '%');
 }
 
 Progress.prototype.setMaximum = function(max) {
 	this.max = max;
+	this.set(this.current);
 	this.render();
 }
 
