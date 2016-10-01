@@ -640,16 +640,17 @@ form, .form {
 	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
 		display: block;
 		margin: 0.25em 0em;
-		border: 1px solid darken(@u-gray, 5%);
+		border: 1px solid darken(@u-gray, 15%);
 		border-radius: 0.25em;
 		padding: 0.5em 1em;
 		background-color: @u-gray;
 		color: @d-gray;
 		box-sizing: border-box;
-		.pt();		
-		.anim(0.3s);
 		outline: none;
 		resize: vertical;
+		box-shadow: inset 1px 1px 1px 0px rgba(84,84,84,0.25);
+		.pt();		
+		.anim(0.3s);
 
 		&:active, &:focus {
 			background-color: @white;
