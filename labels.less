@@ -221,6 +221,23 @@
 	}
 }
 
+.tooltip {
+	display: none;
+	position: absolute;
+	z-index: 5;	
+	background-color: @u-gray;
+	border: 1px solid darken(@u-gray, 10%);
+	color: @d-gray;
+	.pt();
+	padding: 0.25em 0.5em;
+
+	&.tooltip--invert {
+		background-color: @d-gray;
+		color: @u-gray;
+		border-color: lighten(@d-gray, 5%);
+	} 
+}
+
 // [data-tooltip] {
 // 	cursor: pointer;
 // 	position: relative;

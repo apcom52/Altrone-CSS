@@ -1,5 +1,4 @@
 $(function() {
-
 	/* Dropdown Выпадающее меню */
 	$('body').on('click', '[data-dropdown-target]', function(event) {
 		var dropdown = $('#' + $(this).data('dropdownTarget'));
@@ -146,15 +145,10 @@ Sidebar.prototype.show = function() {
 			current.hide();
 	});
 	var element = this.el;
-	//target.hide();
 	element.addClass('sidebar--show');
-	
-	if (!$('.overflow').length) {
-		$('body').append('<div class="overflow"></div>');
-	}
 
-	$('body').on('click', '.overflow', function() {
-		target.hide();
+	target.overflow = new Overflow({
+		onDestroy: function() { target.hide(); }
 	});
 
 	if (element.hasClass('sidebar--under-taskbar')) {
@@ -167,14 +161,11 @@ Sidebar.prototype.show = function() {
 }
 
 Sidebar.prototype.hide = function() {
+	var target = this;
 	var element = this.el;
-	if (this.onHide) this.onHide();
 	element.removeClass('sidebar--show');
-	$('.overflow').remove();
-
-	// Sidebar.prototype.visible = false;
 	this.visible = false;
-	element.trigger("sidebar-hide");
+	if (this.onHide) this.onHide();
 }
 
 Sidebar.prototype.toggle = function() {
@@ -262,34 +253,27 @@ Modal.prototype.show = function() {
 
 	if (target.onShow) target.onShow();
 
-	if (!$('.overflow').length) {
-		$('body').append('<div class="overflow"></div>');
-	}
-
-	$('body').on('click', '.overflow', function() {
-		if (target.only_discarding == false) {
-			if (target.onDiscard) target.onDiscard();
-			target.hide();				
-		} else {
-			target.el.addClass('modal--animation-attention');
-			setTimeout(function() {
-				target.el.removeClass('modal--animation-attention');
-			}, 150);
-		}
-	});	
+	disableClick = false;
+	if (target.only_discarding) disableClick = true;
+	target.overflow = new Overflow({
+		onDestroy: function() { target.hide(); },
+		disableClick: disableClick,
+	})
 
 	element.find('.modal__discard, .modal__header__close').click(function() {
-		if (target.onDiscard) target.onDiscard();
-		target.hide();
+		target.overflow.destroy();
 	});
 
 	element.show();
 }
 
-Modal.prototype.hide = function() {
+Modal.prototype.hide = function(from_overflow) {
 	this.visible = false;
 	var element = this.el;
-	$('.overflow').remove();
+
+	if (!from_overflow) {
+		this.overflow.destroy();
+	}
 	element.hide();
 }
 
@@ -444,7 +428,6 @@ Select.prototype.open = function() {
 		}
 
 		options_menu.css('left', parent_left);
-		console.log(parent_top, parent_left);
 
 		if (target.position == 'bottom') 
 			options_menu.slideDown(300);
@@ -524,7 +507,6 @@ Progress.prototype.set = function(value) {
 }
 
 Progress.prototype.render = function() {	
-	console.log(this.text_label);
 	this.text_label.html(this.percent + '%');
 	this.active_el.css('width', this.percent + '%');
 }
@@ -652,20 +634,13 @@ Dialog.prototype.show = function() {
 		target.modal.hide();
 		el.remove();
 	});
-
-	console.log(this.el);
 }
 
 Accordion = function(element, options) {
 	var target = this;
 	target.el = element;
 	target.multi = options.multi || false;
-	// if (options != undefined) {
-	// 	target.multi = options.multi || false;		
-	// } else {
-	// 	target.multi = false;
-	// }
-
+	
 	target.el.find('.accordion__item__title').click(function() {
 		target.open($(this));
 	});
@@ -674,7 +649,7 @@ Accordion = function(element, options) {
 Accordion.prototype.open = function(element) {
 	var target = this;
 
-	if (element.hasClass('.accordion__item__title')) {
+	if (element.hasClass('accordion__item__title')) {
 		var parent = element.parent();		
 	} else {
 		var parent = element;
@@ -685,10 +660,35 @@ Accordion.prototype.open = function(element) {
 
 	var title = element.text();
 	parent.toggleClass('accordion__item--active');
-	console.log(title);
 };
 
 Accordion.prototype.closeOthers = function() {
 	var target = this;
 	target.el.find('.accordion__item').removeClass('accordion__item--active');
+};
+
+
+Overflow = function(options) {
+	if (options == undefined) options = {};
+	var target = this;
+	$('body').append('<div class="overflow"></div>');
+	target.el = $('body .overflow');
+	target.onDestroy = options.onDestroy || null;
+	target.disableClick = options.disableClick || false;
+
+	$('body').on('click.overflow', '.overflow', function() {
+		if (target.disableClick == false)
+			target.destroy();
+	});
+}
+
+Overflow.prototype.destroy = function() {
+	var target = this;
+	$('body').off('.overflow');	
+	target.el.remove();
+
+	if (!target.onDestroyCalled && target.onDestroy) {
+		target.onDestroyCalled = true;
+		target.onDestroy(true);
+	}
 };

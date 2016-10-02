@@ -1,7 +1,7 @@
 /* 
 * ALTRONE-CSS
 * Version 2.1 (Blinked Basilisk)
-* Build 539
+* Build 545
 */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -9955,6 +9955,21 @@ input[type="reset"].button--checked,
     left: 10%;
   }
 }
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  background-color: #f5f5f5;
+  border: 1px solid #dcdcdc;
+  color: #333333;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+  padding: 0.25em 0.5em;
+}
+.tooltip.tooltip--invert {
+  background-color: #333333;
+  color: #f5f5f5;
+  border-color: #404040;
+}
 .dropdown {
   display: none;
   position: absolute;
@@ -13321,21 +13336,6 @@ input[type="reset"].button--checked,
 }
 .pagination.pagination--invert.pagination--color-brown .pagination__separator {
   color: #805031;
-}
-.tooltip {
-  display: none;
-  position: absolute;
-  z-index: 5;
-  background-color: #f5f5f5;
-  border: 1px solid #dcdcdc;
-  color: #333333;
-  font-family: 'PT Sans', 'Segoe UI', sans-serif;
-  padding: 0.25em 0.5em;
-}
-.tooltip.tooltip--invert {
-  background-color: #333333;
-  color: #f5f5f5;
-  border-color: #404040;
 }
 .parallax {
   perspective: 1px;
