@@ -20,7 +20,9 @@
 		<script>
 			$(function() {
 				var second = new Sidebar($('#ss2'));
-				var sidebar = new Sidebar($('#ss'), true);
+				var sidebar = new Sidebar($('#ss'), {
+					enable_scroll: true,
+				});
 
 				$('#openMenu2').click(function() {
 					second.toggle();
@@ -159,6 +161,17 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-6 col-lm-6">
+				<blockquote>
+					Think different
+					<div class="blockquote__author">Apple</div>
+				</blockquote>
+
+				<blockquote class="d-gray-bg blockquote--invert">
+					Think different
+					<div class="blockquote__author">Apple</div>
+				</blockquote>
+			</div>
 		</div>
 
 		<div class="grid">
@@ -169,7 +182,7 @@
 				</div>
 			</div>
 			<div class="col-4 col-lm-6">
-				<div class="alert alert--color-blue animation animation--jump">
+				<div class="alert alert--color-blue animation animation--jump animation--time-3s">
 					<div class="alert__header">Название сообщения</div>
 					<div class="alert__content">Содержимое сообщения</div>
 				</div>
@@ -1171,12 +1184,16 @@
 	</div>
 	<div class="modal" id="YesNoDialog">
 		<div class="modal__header">
-			<div class="modal__header__title">Модальное окно</div>
-			<!-- <div class="modal__header__icon modal--close"><i class="fa fa-remove"></i></div> -->
+			Модальное окно
 		</div>
-		<div class="modal__content modal__content--no-borders">
-			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe architecto illo voluptas reprehenderit non fugiat, in, fugit asperiores. Tenetur vitae accusamus reprehenderit expedita corporis laudantium, quis sequi deserunt molestiae! Eaque!</div>
-			<div>Minima rem itaque officiis quos quidem perspiciatis nobis explicabo quisquam sequi eligendi aspernatur doloremque iusto magnam commodi voluptates facilis assumenda tenetur, provident enim saepe natus. Dolore aspernatur ipsum beatae ad!</div>
+		<div class="modal__content">
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ut tempore, illo rem reiciendis ducimus ipsum asperiores possimus optio doloremque nihil nostrum sint recusandae assumenda id veritatis, ab modi adipisci?</div>
+			<div>Ullam, facilis ipsum! Iusto quae quidem, doloribus est esse quibusdam aut. Culpa aperiam officia totam beatae, illo dolores accusamus amet tenetur temporibus inventore sapiente nihil. Odio, ad repudiandae vero. Quos!</div>
+			<div>Tempore quidem, doloribus pariatur sit voluptates laboriosam inventore dolor accusamus. Incidunt provident, rerum error dignissimos iste ullam aliquam in, magnam aliquid, minima velit repudiandae delectus quo, beatae obcaecati qui iure.</div>
+			<div>Magnam officiis eum, a temporibus repellendus, voluptates voluptate animi mollitia? Eius recusandae porro ipsam provident, tempora vero quos asperiores quia cumque modi corrupti excepturi beatae repudiandae nulla adipisci? Sunt, recusandae.</div>
+			<div>Facilis voluptas voluptate recusandae, delectus iusto, quia aliquam molestias eveniet ducimus amet totam quisquam optio ea dignissimos nulla ut placeat consequatur possimus? Delectus veritatis atque iste inventore pariatur quis perferendis!</div>
+			<div>Voluptatem tenetur ratione molestiae, earum repellat vel. Enim et sunt, laborum, quibusdam libero eaque adipisci non sequi dicta, vero explicabo asperiores reprehenderit ut. Blanditiis numquam quod, quibusdam ab quos, neque.</div>
+			<div>Sunt sequi officiis alias quam eaque. Enim eaque omnis autem qui reprehenderit praesentium distinctio. Magni tempore fuga saepe ratione suscipit doloremque accusantium hic architecto perspiciatis praesentium, deleniti, ad, eum reprehenderit.</div>
 			<div class="button button--color-purple" data-tooltip="Tooltip" data-tooltip-position="top">Tooltip Example</div>
 			<div class="button button--color-purple" data-tooltip="Tooltip" data-tooltip-position="left">Tooltip Example</div>
 			<div class="button button--color-purple" data-tooltip="Tooltip" data-tooltip-position="right">Tooltip Example</div>

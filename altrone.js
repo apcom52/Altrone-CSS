@@ -121,17 +121,15 @@ $(function() {
 });
 
 /* Боковое меню */
-function Sidebar(element, enable_scroll, options) {
+function Sidebar(element, options) {
 	// Sidebar.prototype.el = undefined;
 	if (!options) options = {};
 	if (Sidebar.prototype.collection == undefined)
 		Sidebar.prototype.collection = []
-	this.enable_scroll = false;
-	if (enable_scroll != undefined)
-		this.enable_scroll = enable_scroll;
 	this.el = element;	
 	Sidebar.prototype.collection.push(this);
 	this.onShow = options.onShow || null;
+	this.enable_scroll = options.enable_scroll || null;
 	this.onHide = options.onHide || null;
 }
 
@@ -147,6 +145,13 @@ Sidebar.prototype.show = function() {
 	var element = this.el;
 	element.addClass('sidebar--show');
 
+	var topScrollPosition = $(window).scrollTop();
+	if (topScrollPosition >= 44) {
+		element.css('top', '0px');
+	} else {
+		element.css('top', (44 - topScrollPosition) + 'px');
+	}
+
 	target.overflow = new Overflow({
 		onDestroy: function() { target.hide(); }
 	});
@@ -160,11 +165,16 @@ Sidebar.prototype.show = function() {
 	element.trigger("sidebar-show");
 }
 
-Sidebar.prototype.hide = function() {
+Sidebar.prototype.hide = function(from_overflow) {
 	var target = this;
 	var element = this.el;
 	element.removeClass('sidebar--show');
 	this.visible = false;
+
+	if (!from_overflow) {
+		target.overflow.destroy();
+	}
+
 	if (this.onHide) this.onHide();
 }
 
@@ -670,7 +680,16 @@ Accordion.prototype.closeOthers = function() {
 
 Overflow = function(options) {
 	if (options == undefined) options = {};
+	if (!Overflow.prototype.collection) {
+		Overflow.prototype.collection = [];
+	} else {
+		for (var i = 0; i < Overflow.prototype.collection.length; i++) {
+			(Overflow.prototype.collection[i]).destroy();
+		}
+	}
+
 	var target = this;
+	Overflow.prototype.collection.push(target);
 	$('body').append('<div class="overflow"></div>');
 	target.el = $('body .overflow');
 	target.onDestroy = options.onDestroy || null;

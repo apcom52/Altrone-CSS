@@ -238,6 +238,38 @@
 	} 
 }
 
+blockquote {
+	margin: 1em;
+	width: ~'calc(100% - 2em)';
+	border-left: 5px solid darken(@u-gray, 10%);
+	padding: 0.5em;
+	box-sizing: border-box;
+	font-size: 1.2em;
+	.pt();
+
+	.blockquote__author {
+		margin: 0.75em 0.25em 0.1em 0.25em;
+		color: @m-gray;
+		.pt();
+		font-size: 0.85em;
+
+		&:before {
+			content: "-";
+			display: inline-block;
+			padding-right: 0.5em;
+		}
+	}
+
+	&.blockquote--invert {
+		border-color: lighten(@d-gray, 10%);
+		color: @u-gray;
+
+		.blockquote__author {
+			color: @l-gray;
+		}
+	}
+}
+
 // [data-tooltip] {
 // 	cursor: pointer;
 // 	position: relative;
