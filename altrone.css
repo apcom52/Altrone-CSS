@@ -9999,6 +9999,13 @@ blockquote.blockquote--invert {
 blockquote.blockquote--invert .blockquote__author {
   color: #999999;
 }
+mark {
+  background-color: #fce49a;
+  color: #a98307;
+  padding: 0.2em 0.4em;
+  margin: 0em 0.25em;
+  border-radius: 0.2em;
+}
 .dropdown {
   display: none;
   position: absolute;
