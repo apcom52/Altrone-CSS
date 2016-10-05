@@ -148,8 +148,10 @@ Sidebar.prototype.show = function() {
 	var topScrollPosition = $(window).scrollTop();
 	if (topScrollPosition >= 44) {
 		element.css('top', '0px');
+		$('.overflow').css('top', 0).css('height', '100%');
 	} else {
 		element.css('top', (44 - topScrollPosition) + 'px');
+		$('.overflow').css('top', 44 - top_pos).css('height', 'calc(100% - ' + (44 - top_pos).toString());
 	}
 
 	target.overflow = new Overflow({
@@ -647,6 +649,7 @@ Dialog.prototype.show = function() {
 }
 
 Accordion = function(element, options) {
+	if (!options) options = {};
 	var target = this;
 	target.el = element;
 	target.multi = options.multi || false;
