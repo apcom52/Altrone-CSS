@@ -3,12 +3,26 @@
 	position: absolute;
 	border: 1px solid darken(@u-gray, 5%);
 	box-sizing: border-box;
+	background-color: @white;
+	padding: 0.25em 0em;
+	border-radius: 0.25em;
+	margin: 0.2em;
+	min-width: 200px;
+	// width: ~'calc(100% - 0.4em)';
 	.card_shadow();
+
+	.dropdown__header {
+		color: @m-gray;
+		font-weight: bold;
+		font-size: 0.85em;
+		margin: 0.25em 1em;
+		.pt();
+	}
 
 	.dropdown__item {
 		color: @d-gray;
-		background-color: @u-gray;
-		padding: 0.5em 3em;
+		background-color: @white;
+		padding: 0.4em 1em;
 		cursor: pointer;
 		.pt();
 		.anim(0.3s);
@@ -21,17 +35,26 @@
 		&:active {
 			background-color: darken(@u-gray, 15%);
 			.anim(0.3s);
+		}		
+
+		.dropdown__item__icon {
+			width: 3em;
+			padding: 0em 1em;
 		}
 
-		&.dropdown__item--icon {
-			padding-left: 1em;
-			i, .icon {
-				padding-right: 1em;
-			}
+		.dropdown__item__text {
+			width: ~'calc(100% - 3em)';
 		}
 	}
 
+	.dropdown__separator {
+		width: 80%;
+		margin: 0.5em 10%;
+		border-bottom: 1px solid darken(@u-gray, 15%);
+	}
+
 	&.dropdown--invert {
+		background-color: @d-gray;
 		border: 1px solid lighten(@d-gray, 5%);
 		.dropdown__item {
 			background-color: @d-gray;

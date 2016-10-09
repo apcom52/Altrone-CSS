@@ -145,17 +145,6 @@ Sidebar.prototype.show = function() {
 	var element = this.el;
 	element.addClass('sidebar--show');
 
-	var topScrollPosition = $(window).scrollTop();
-	if (target.enable_scroll) {
-		if (topScrollPosition >= 44) {
-			element.css('top', '0px');
-			$('.overflow').css('top', 0).css('height', '100%');
-		} else {
-			element.css('top', (44 - topScrollPosition) + 'px');
-			$('.overflow').css('top', 44 - topScrollPosition).css('height', 'calc(100% - ' + (44 - topScrollPosition).toString());
-		}
-	}
-
 	target.overflow = new Overflow({
 		onDestroy: function() { target.hide(); }
 	});
@@ -163,6 +152,17 @@ Sidebar.prototype.show = function() {
 	if (element.hasClass('sidebar--under-taskbar')) {
 		$('.overflow').addClass('overflow--under-taskbar');
 	}
+
+	var topScrollPosition = $(window).scrollTop();
+	if (target.enable_scroll) {
+		if (topScrollPosition >= 44) {
+			element.css('top', '0px').css('height', '100%');
+			$('.overflow').css('top', 0).css('height', '100%');
+		} else {
+			element.css('top', (44 - topScrollPosition) + 'px');
+			$('.overflow').css('top', 44 - topScrollPosition).css('height', 'calc(100% - ' + (44 - topScrollPosition).toString());
+		}
+	}	
 	
 	// Sidebar.prototype.visible = true;
 	this.visible = true;
@@ -715,4 +715,36 @@ Overflow.prototype.destroy = function() {
 		target.onDestroyCalled = true;
 		target.onDestroy(true);
 	}
+};
+
+DM = function(selector) {
+	var target = this;
+	target.el = null;
+	if (selector)
+		target.all(selector);
+}
+
+DM.prototype.all = function(selector) {
+	this.el = document.querySelectorAll(selector);
+	return this;
+};
+
+DM.prototype.get = function(selector) {
+	this.el = document.querySelector(selector);
+	return this;
+};
+
+DM.prototype.append = function(content) {
+	this.el.innerHTML += content;
+	return this;
+};
+
+DM.prototype.clear = function() {
+	this.el.innerHTML = null;
+	return this;
+};
+
+DM.prototype.remove = function() {
+	this.el.parentNode.removeChild(this.el);
+	return this;
 };

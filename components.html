@@ -174,6 +174,7 @@
 				</blockquote>
 
 				<mark>А теперь стилизуется еще и маркированный текст!</mark>
+				<kbd>Enter+Ctrl</kbd>
 			</div>
 		</div>
 
@@ -831,32 +832,6 @@
 		<div class="col col-color">row 2</div>
 		<div class="col col-color">row 3</div>
 	</div>
-	<div class="flex main-align-around">
-		<div class="col-1">
-			<h3>Выравнивание по верху</h3>
-			<div class="flex">
-				<div style="width: 100px; height: 20px; background-color: red;"></div>
-				<div style="width: 80px; height: 80px; background-color: green;"></div>
-				<div style="width: 50px; height: 120px; background-color: blue;"></div>
-			</div>
-		</div>
-		<div class="col-1">
-			<h3>Выравнивание по центру</h3>
-			<div class="flex sub-align-center">
-				<div style="width: 100px; height: 20px; background-color: red;"></div>
-				<div style="width: 80px; height: 80px; background-color: green;"></div>
-				<div style="width: 50px; height: 120px; background-color: blue;"></div>
-			</div>
-		</div>
-		<div class="col-1">
-			<h3>Выравнивание по низу</h3>
-			<div class="flex sub-align-bottom">
-				<div style="width: 100px; height: 20px; background-color: red;"></div>
-				<div style="width: 80px; height: 80px; background-color: green;"></div>
-				<div style="width: 50px; height: 120px; background-color: blue;"></div>
-			</div>
-		</div>
-	</div>	
 
 	<h1>Table Grid Demo</h1>
 	<h3>Стандартная table-сетка</h3>
@@ -1011,10 +986,13 @@
 	<div class="grid">
 		<div class="col-4">
 			<div class="dropdown" id="dropdownClassic">
+				<div class="dropdown__header">Разделы сайта</div>
 				<div class="dropdown__item">В профиль</div>
 				<div class="dropdown__item">Посещаемость</div>
 				<div class="dropdown__item">Долги</div>
-				<div class="dropdown__item dropdown__item--icon"><i class="fa fa-cogs"></i>Настройки</div>
+				<div class="dropdown__header">Управление</div>
+				<div class="dropdown__item">Настройки</div>
+				<div class="dropdown__separator"></div>
 				<div class="dropdown__item">Выход</div>
 			</div>
 		</div>

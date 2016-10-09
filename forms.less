@@ -216,7 +216,7 @@
 				background-color: transparent;
 				.anim(0.3s);
 				background-position: center;
-				background-size: 80% 80%;
+				background-size: 100%;
 				background-repeat: no-repeat;
 				box-sizing: border-box;
 			}
@@ -224,7 +224,7 @@
 			&:checked + label:before {
 				background-image: @checkbox-background;
 				background-position: center;
-				background-size: 80% 80%;
+				background-size: 100%;
 				background-repeat: no-repeat;
 				background-color: @m-gray;
 				border: none;
@@ -289,9 +289,9 @@
 			height: 1em;
 			border: 0.15em solid @l-gray;
 			background-color: @white;
-			.anim(0.3s);
+			border-radius: 0.25em;
 			background-position: center;
-			background-size: 80% 80%;
+			background-size: 100%;
 			background-repeat: no-repeat;
 			box-sizing: border-box;
 		}
@@ -299,12 +299,10 @@
 		&:checked + label:before {
 			background-image: @checkbox-background;
 			background-position: center;
-			background-size: 80% 80%;
+			background-size: 100%;
 			background-repeat: no-repeat;
 			background-color: @m-gray;
-			border-color: transparent;
 			border: none;
-			.anim(0.3s);
 		}
 	}	
 
@@ -523,11 +521,10 @@
 			width: 1em;
 			height: 1em;
 			border-radius: 0.5em;
-			border: 1px solid @d-gray;
+			border: 2px solid @d-gray;
 			background-color: @white;
-			.anim(0.3s);
 			background-position: center;
-			background-size: 40% 40%;
+			background-size: 80%;
 			background-repeat: no-repeat;
 			box-sizing: border-box;
 		}
@@ -536,7 +533,6 @@
 			background-image: @radiobutton-background;
 			background-color: @m-gray;
 			border: none;
-			.anim(0.3s);
 		}
 	}	
 
