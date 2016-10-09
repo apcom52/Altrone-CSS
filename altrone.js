@@ -145,15 +145,6 @@ Sidebar.prototype.show = function() {
 	var element = this.el;
 	element.addClass('sidebar--show');
 
-	var topScrollPosition = $(window).scrollTop();
-	if (topScrollPosition >= 44) {
-		element.css('top', '0px');
-		$('.overflow').css('top', 0).css('height', '100%');
-	} else {
-		element.css('top', (44 - topScrollPosition) + 'px');
-		$('.overflow').css('top', 44 - top_pos).css('height', 'calc(100% - ' + (44 - top_pos).toString());
-	}
-
 	target.overflow = new Overflow({
 		onDestroy: function() { target.hide(); }
 	});
@@ -161,6 +152,21 @@ Sidebar.prototype.show = function() {
 	if (element.hasClass('sidebar--under-taskbar')) {
 		$('.overflow').addClass('overflow--under-taskbar');
 	}
+
+	var topScrollPosition = $(window).scrollTop();
+	console.log(topScrollPosition);
+	console.log(target.enable_scroll);
+	if (target.enable_scroll) {
+		if (topScrollPosition >= 44) {
+			console.log('more than 44');
+			element.css('top', '0').css('height', '100%');
+			$('.overflow').css('top', 0).css('height', '100%');
+		} else {
+			console.log('else');
+			element.css('top', (44 - topScrollPosition) + 'px');
+			$('.overflow').css('top', 44 - topScrollPosition).css('height', 'calc(100% - ' + (44 - topScrollPosition).toString());
+		}
+	}		
 	
 	// Sidebar.prototype.visible = true;
 	this.visible = true;
