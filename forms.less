@@ -658,7 +658,11 @@ form, .form {
 		}
 
 		&:invalid, &.invalid {
-			background-color: lighten(@red, 25%) !important;
+			background-image: @alert;
+			background-repeat: no-repeat;
+			background-position: right 0.5em center;
+			background-size: 1em; 
+			padding-right: 2em;
 		}
 
 		&:disabled {

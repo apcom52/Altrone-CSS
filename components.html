@@ -130,6 +130,7 @@
 		</script>
 	</head>
 	<body> 
+		<!-- <div class="fixed glass" style="top: 25%; left: 25%; width: 50%; height: 50%;"></div> -->
 		<div class="taskbar">
 			<div class="taskbar__item taskbar__item--hover-color-blue" id="openMenu"><i class="fa fa-bars"></i></div>
 			<div class="taskbar__item taskbar__item--pin-right taskbar__item--hover-color-red" id="openMenu2"><i class="fa fa-arrow-right"></i></div>
@@ -162,7 +163,7 @@
 				</div>
 			</div>
 			<div class="col-6 col-lm-6">
-				<blockquote>
+				<blockquote class="glass">
 					Think different
 					<div class="blockquote__author">Apple</div>
 				</blockquote>
@@ -876,7 +877,7 @@
 			<h2>Формы</h2>
 			<div class="form form--fit">
 				<label for="formLogin">Логин</label>
-				<input type="text" placeholder="Логин" id="formLogin">
+				<input type="text" placeholder="Логин" class="invalid" id="formLogin">
 				<label for="formPassword">Пароль</label>
 				<input type="password" placeholder="Пароль" id="formPassword">
 				<textarea placeholder="Ваш комментарий"></textarea>

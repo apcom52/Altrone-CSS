@@ -146,12 +146,14 @@ Sidebar.prototype.show = function() {
 	element.addClass('sidebar--show');
 
 	var topScrollPosition = $(window).scrollTop();
-	if (topScrollPosition >= 44) {
-		element.css('top', '0px');
-		$('.overflow').css('top', 0).css('height', '100%');
-	} else {
-		element.css('top', (44 - topScrollPosition) + 'px');
-		$('.overflow').css('top', 44 - top_pos).css('height', 'calc(100% - ' + (44 - top_pos).toString());
+	if (target.enable_scroll) {
+		if (topScrollPosition >= 44) {
+			element.css('top', '0px');
+			$('.overflow').css('top', 0).css('height', '100%');
+		} else {
+			element.css('top', (44 - topScrollPosition) + 'px');
+			$('.overflow').css('top', 44 - topScrollPosition).css('height', 'calc(100% - ' + (44 - topScrollPosition).toString());
+		}
 	}
 
 	target.overflow = new Overflow({
