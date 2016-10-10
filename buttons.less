@@ -111,6 +111,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	&.button--only-borders {
 		background-color: transparent;
 		border: 1px solid @u-gray;
+		text-shadow: none;
 
 		&:hover, &:active, &.active {
 			background-color: transparent;
@@ -120,10 +121,13 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	&.button--transparent {
 		background-color: transparent ;
 		border-color: transparent;
+		text-shadow: none;
 
 		&-full {
 			background-color: transparent;
 			border-color: transparent;
+			text-shadow: none;
+			
 			&:hover, &:active, &.active {
 				background-color: transparent;
 				border-color: transparent;				
@@ -133,6 +137,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		&:hover {
 			background-color: darken(@u-gray, 5%);
 			color: @d-gray;
+			.text-shadow();
 		}
 	}
 
