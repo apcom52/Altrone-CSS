@@ -5,10 +5,13 @@ var less = require('gulp-less');
 var zip = require('gulp-zip');
 var prompt = require('gulp-prompt');
 var minify = require('gulp-minify');
+var coffee = require('gulp-coffee');
+var concat = require('gulp-concat');
 
 
 gulp.task('default', function() {
-	gulp.watch('./*+(less|js)', {interval: 500}, ['less']);
+	gulp.watch('./*.less', {interval: 500}, ['less']);
+	gulp.watch('./js/*.coffee', {interval: 500}, ['js']);
 	console.log('hello, gulp!');	
 });
 
@@ -22,9 +25,10 @@ gulp.task('less', function() {
 
 gulp.task('js', function() {
 	console.log('js');
-	return gulp.src('./altrone.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('./'));
+	return gulp.src('./js/*.coffee')
+		.pipe(concat('altrone-coffee.js'))
+		.pipe(coffee())
+		.pipe(gulp.dest('./js/'));
 });
 
 gulp.task('dist', function() {

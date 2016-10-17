@@ -43,6 +43,9 @@
 				console.log(carousel);
 
 				var accordeon = new Accordion($('#accordion'), 
+					{multi: false});
+
+				var accordeon2 = new Accordion($('#accordion2'),
 					{multi: true});
 
 				/*$('#ss').on('sidebar-show', function() {
@@ -136,18 +139,32 @@
 			<div class="taskbar__item taskbar__item--pin-right taskbar__item--hover-color-red" id="openMenu2"><i class="fa fa-arrow-right"></i></div>
 		</div>
 		<h1>Сетка</h1>
-		<div class="grid grid--gutters">
-			<div class="col-1 col-t-2 col-m-2">col-1</div>
-			<div class="col-2 col-t-2 col-m-2 col--offset-2">col-2</div>
-			<div class="col-2 col-t-2 col-m-4">col-2</div>
-			<div class="col-4 col-t-2 col-m-4">col-4</div>
-			<div class="col-3 col-t-4 col-m-2">col-3</div>
-			<div class="col-1 col-t-4 col-m-2">col-1</div>			
+		<div class="col-12">
+			<div class="col-2 only-d padding-1 size-fix olive-bg white-fg text-shadow">Только на десктопе</div>
+			<div class="col-2 only-lt padding-1 size-fix yellow-bg white-fg text-shadow">Только на ланд-планшете</div>
+			<div class="col-2 only-t padding-1 size-fix red-bg white-fg text-shadow">Только на планшете</div>
+			<div class="col-2 only-lm padding-1 size-fix violet-bg white-fg text-shadow">Только на ланд-смартфоне</div>
+			<div class="col-2 only-m padding-1 size-fix brown-bg white-fg text-shadow">Только на смартфоне</div>
 		</div>
 
 		<div class="grid">
 			<div class="col-6 col-lm-6 padding-1 size-fix">
 				<div class="accordion accordion--invert accordion--left-icon" id="accordion">
+					<div class="accordion__item">
+						<div class="accordion__item__title">Adele</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+					<div class="accordion__item accordion__item--active">
+						<div class="accordion__item__title ">The Voice</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+					<div class="accordion__item">
+						<div class="accordion__item__title">Moscow Calling</div>
+						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
+					</div>
+				</div>
+
+				<div class="accordion accordion--left-icon" id="accordion2">
 					<div class="accordion__item">
 						<div class="accordion__item__title">Adele</div>
 						<div class="accordion__item__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste! Neque optio eaque facere modi nostrum soluta pariatur debitis rerum ex, accusamus sit voluptates dignissimos quaerat dolorum natus ratione quod?</div>
