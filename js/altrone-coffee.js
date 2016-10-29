@@ -1,12 +1,40 @@
 (function() {
-  var Sidebar, altQuery, example;
+  var Sidebar, altQuery;
+
+  window.$ = function(selector1) {
+    this.selector = selector1;
+    this.el = document.querySelectorAll(this.selector);
+    this.classes = this.getClassNames;
+    this.clear = function() {
+      this.el.innerHTML = null;
+      return this;
+    };
+    this.getClassNames = function() {
+      var classString;
+      classString = this.el[0].className;
+      this.classes = classString.split(' ');
+      return this.classes;
+    };
+    this.addClass = function(newClass) {
+      var cl, classString, i, len, ref;
+      this.classes.append(newClass);
+      classString = '';
+      ref = this.classes;
+      for (i = 0, len = ref.length; i < len; i++) {
+        cl = ref[i];
+        classString += cl + ' ';
+      }
+      console.log(classString);
+      return this;
+    };
+    return this;
+  };
 
   altQuery = (function() {
     function altQuery(selector1) {
       this.selector = selector1 != null ? selector1 : "";
       this.el = this.all(this.selector);
       this.classNames = this.el.className;
-      console.log(this.el);
       return this;
     }
 
@@ -16,7 +44,6 @@
         selector = "";
       }
       current = document.querySelectorAll(selector);
-      console.log(current);
       return current;
     };
 
@@ -48,10 +75,6 @@
     return altQuery;
 
   })();
-
-  example = new altQuery("#example");
-
-  console.log(example);
 
   Sidebar = (function() {
     function Sidebar(element, options) {

@@ -7838,6 +7838,53 @@ img.img--border {
     flex: 2;
   }
 }
+.gallery .gallery__collection {
+  padding: 1em;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.gallery .gallery__collection img {
+  border: 2px solid #ffffff;
+  width: 7em;
+  height: auto;
+  border-radius: 0.5em;
+  opacity: 0.8;
+  transition: all 0.3s linear;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.gallery .gallery__collection img:nth-child(1) {
+  position: absolute;
+  z-index: -1;
+  transform: rotate(-10deg);
+  opacity: 0.75;
+}
+.gallery .gallery__collection img:nth-child(3) {
+  margin-left: calc(-7em - 5px);
+  z-index: 1;
+  position: absolute;
+  transform: rotate(10deg);
+  opacity: 1;
+}
+.gallery .gallery__collection .gallery__collection__title {
+  font-weight: bold;
+  color: #333333;
+  margin-top: 2em;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+.gallery .gallery__collection.gallery__collection--grayscale img:nth-child(1),
+.gallery .gallery__collection.gallery__collection--grayscale img:nth-child(2) {
+  filter: grayscale(100%);
+}
+.gallery .gallery__collection:hover {
+  cursor: pointer;
+}
+.gallery .gallery__collection:hover img:nth-child(1) {
+  transform: rotate(10deg);
+}
+.gallery .gallery__collection:hover img:nth-child(3) {
+  transform: rotate(-15deg) scale(1.1);
+}
 .grid {
   clear: both;
   padding: 0em;
@@ -8410,6 +8457,74 @@ img.img--border {
 }
 .loading-layout.loading-layout--transparent {
   background-color: transparent;
+}
+table {
+  width: calc(100% - 1em);
+  border-collapse: collapse;
+  margin: 0.5em;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+table td,
+table th {
+  border: 1px solid #cfcfcf;
+  padding: 0.25em;
+  box-sizing: border-box;
+}
+table.table--centered td,
+table.table--centered th {
+  text-align: center;
+}
+table.table--no-borders td,
+table.table--no-borders th {
+  border-color: transparent;
+}
+table.table--horizontal-borders td,
+table.table--horizontal-borders th {
+  border-color: transparent;
+  border: none;
+}
+table.table--horizontal-borders tr {
+  border-bottom: 1px solid #cfcfcf !important;
+}
+table.table--horizontal-borders tr:last-child {
+  border-bottom: none;
+}
+table.table--stripped tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
+table.table--stripped-odd tr:nth-child(odd) {
+  background-color: #e8e8e8;
+}
+table.table--row-hover tr {
+  transition: all 0.3s linear;
+}
+table.table--row-hover tr:hover {
+  background-color: #dcdcdc;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+table.table--invert {
+  color: #ffffff;
+}
+table.table--invert td,
+table.table--invert th {
+  border-color: #595959;
+}
+table.table--invert.table--no-borders td,
+table.table--invert.table--no-borders th {
+  border-color: transparent;
+}
+table.table--invert.table--stripped tr:nth-child(even) {
+  background-color: #404040;
+}
+table.table--invert.table--stripped-odd tr:nth-child(odd) {
+  background-color: #404040;
+}
+table.table--invert.table--row-hover tr:hover {
+  background-color: #4d4d4d;
+}
+table.table--invert.table--horizontal-borders tr {
+  border-bottom: 1px solid #595959 !important;
 }
 button,
 input[type="button"],

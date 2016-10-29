@@ -1,15 +1,36 @@
 # ЛжеQuery
+window.$ = (@selector) ->
+	@el = document.querySelectorAll(@selector)
+	@classes = @getClassNames
+
+	@clear = () ->
+		@el.innerHTML = null;
+		@
+
+	@getClassNames = () ->
+		classString = @el[0].className
+		@classes = classString.split(' ')
+		@classes
+
+	@addClass = (newClass) ->
+		@classes.append(newClass)
+		classString = ''
+		for cl in @classes
+			classString += cl + ' '
+		console.log classString
+		@
+	
+	@
+
 
 class altQuery
 	constructor: (@selector = "") ->
 		@el = @all(@selector)
 		@classNames = @el.className
-		console.log @el
 		return @
 
 	all: (selector = "") ->
 		current = document.querySelectorAll(selector)
-		console.log current
 		current
 
 	get: (selector = "") ->
@@ -26,6 +47,3 @@ class altQuery
 	remove: ->
 		@el.parentNode.removeChild(@el)
 		return @
-
-example = new altQuery "#example"
-console.log example

@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script src="jquery-2.1.4.min.js"></script>
-	<script src="js/altrone-coffee.js"></script>
+	<!-- <script src="jquery-2.1.4.min.js"></script> -->
+	<script src="js/lie.js"></script>
 </head>
 <body>
 	<div class="hello howAreYou" id="example">lorem ipsum</div>
 	
 	<script>
-		var sidebar = Sidebar($('#sidebar'), {});
-		console.log(sidebar);
+		var hello = $('.hello');
+		console.log(hello.getClassNames());
+		hello.addClass('hoho');
+		hello.addClass('nana');
+		hello.addClass('wohoo');
+		console.log(hello.getClassNames());
 	</script>
 </body>
 </html>
