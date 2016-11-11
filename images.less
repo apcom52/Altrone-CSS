@@ -213,4 +213,32 @@ img {
 			}
 		}
 	}
+
+	.gallery__image {				
+		cursor: pointer;		
+		box-sizing: border-box;
+
+		img {
+			margin: 1em;
+			width: ~'calc(100% - 1em)';
+			height: auto;
+			.anim(0.3s);
+		}		
+
+		.gallery__image__title {
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			color: @d-gray;
+			margin-top: 1em;
+			.pt();
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+				.anim(0.15s);
+			}			
+		}
+	}
 }

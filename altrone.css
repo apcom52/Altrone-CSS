@@ -4773,7 +4773,6 @@ form select,
   box-sizing: border-box;
   outline: none;
   resize: vertical;
-  box-shadow: inset 1px 1px 1px 0px rgba(84, 84, 84, 0.25);
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
   transition: all 0.3s linear;
 }
@@ -7884,6 +7883,28 @@ img.img--border {
 }
 .gallery .gallery__collection:hover img:nth-child(3) {
   transform: rotate(-15deg) scale(1.1);
+}
+.gallery .gallery__image {
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.gallery .gallery__image img {
+  margin: 1em;
+  width: calc(100% - 1em);
+  height: auto;
+  transition: all 0.3s linear;
+}
+.gallery .gallery__image .gallery__image__title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 1em;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+.gallery .gallery__image:hover img {
+  transform: scale(1.1);
+  transition: all 0.15s linear;
 }
 .grid {
   clear: both;
@@ -11454,7 +11475,6 @@ kbd {
 }
 .tabs .tabs__item:hover,
 .tabs li:hover {
-  background-color: #dcdcdc;
   transition: all 0.3s linear;
 }
 .tabs .tabs__item:active,
@@ -12425,10 +12445,6 @@ kbd {
 .tabs.tabs--ios-style li:last-child {
   border-radius: 0em 1em 1em 0em;
 }
-.tabs.tabs--ios-style .tabs__item:hover,
-.tabs.tabs--ios-style li:hover {
-  background-color: #f5f5f5;
-}
 .tabs.tabs--ios-style .tabs__item:active,
 .tabs.tabs--ios-style li:active,
 .tabs.tabs--ios-style .tabs__item.tabs__item--active,
@@ -12446,6 +12462,22 @@ kbd {
 .tabs.tabs--ios-style li.tabs__item--disabled:active {
   color: #999999;
   background-color: transparent;
+}
+.tabs.tabs--ios-style.tabs--invert .tabs__item,
+.tabs.tabs--ios-style.tabs--invert li {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.tabs.tabs--ios-style.tabs--invert .tabs__item:active,
+.tabs.tabs--ios-style.tabs--invert li:active,
+.tabs.tabs--ios-style.tabs--invert .tabs__item.tabs__item--active,
+.tabs.tabs--ios-style.tabs--invert li.tabs__item--active {
+  background-color: #ffffff;
+  color: #333333 !important;
+}
+.tabs.tabs--ios-style.tabs--invert .tabs__item.tabs__item--disabled,
+.tabs.tabs--ios-style.tabs--invert li.tabs__item--disabled {
+  color: #999999 !important;
 }
 .tabs.tabs--ios-style.tabs--color-red .tabs__item,
 .tabs.tabs--ios-style.tabs--color-red li {

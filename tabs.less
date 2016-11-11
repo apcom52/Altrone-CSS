@@ -21,7 +21,7 @@
 		.pt();
 
 		&:hover {
-			background-color: darken(@u-gray, 10%);
+			// background-color: darken(@u-gray, 10%);
 			.anim(0.3s);
 		}
 
@@ -133,7 +133,7 @@
 			}
 
 			&:hover {
-				background-color: @u-gray;
+				// background-color: @u-gray;
 			}
 
 			&:active, &.tabs__item--active {
@@ -147,6 +147,22 @@
 				&:hover, &:active {
 					color: @l-gray;
 					background-color: transparent;
+				}
+			}
+		}
+
+		&.tabs--invert {
+			.tabs__item, li {
+				color: @white;
+				border-color: @white;
+
+				&:active, &.tabs__item--active {
+					background-color: @white;
+					color: @d-gray !important;
+				}
+
+				&.tabs__item--disabled {
+					color: @l-gray !important;
 				}
 			}
 		}
