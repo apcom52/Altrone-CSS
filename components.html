@@ -91,7 +91,7 @@
 					console.log(tabs);
 				});
 
-				var select = new Select($('#selectExample'), ["Red", "Orange", "Yellow"], 1);
+				var select = new Select($('#selectExample'), ["Red", "Orange", "Yellow"], 0);
 				var select = new Select($('#selectExample4'), ["Red", "Orange", "Yellow"], 1);
 				var select = new Select($('#selectExample2'), ["Apple", "Microsoft", "Google", "Yahoo", "Xiaomi", "IBM"], 2);
 				var select = new Select($('#selectExample3'), ["Apple", "Microsoft", "Google", "Yahoo", "Xiaomi", "IBM"], 2);
@@ -1092,36 +1092,12 @@
 	<div class="grid">
 		<h2>Select-меню</h2>
 		<div class="select" id="selectExample">
-			<div class="select__menu" data-select-value="dark">Выберите тему оформления</div>
-			<div class="select__options">
-				<div class="select__options__item" data-option-id="light">Светлая</div>
-				<div class="select__options__item" data-option-id="blue">Синяя</div>
-				<div class="select__options__item" data-option-id="dark">Темная</div>
-			</div>
 		</div>
-		<div class="select select--color-blue" id="selectExample2">
-			<div class="select__menu" data-select-value="yellow">Модификатор с цветом</div>
-			<div class="select__options">
-				<div class="select__options__item" data-option-id="red">Красный</div>
-				<div class="select__options__item" data-option-id="yellow">Желтый</div>
-				<div class="select__options__item" data-option-id="green">Зеленый</div>
-			</div>
+		<div class="select select--color-blue" id="selectExample2">		
 		</div>
 		<div class="select select--invert" id="selectExample3">
-			<div class="select__menu" data-select-value="light">Инвертный select</div>
-			<div class="select__options">
-				<div class="select__options__item" data-option-id="light">Светлая</div>
-				<div class="select__options__item" data-option-id="blue">Синяя</div>
-				<div class="select__options__item" data-option-id="dark">Темная</div>
-			</div>
 		</div>
 		<div class="select select--color-red select--invert" id="selectExample4">
-			<div class="select__menu" data-select-value="light">Инвертный красный select</div>
-			<div class="select__options">
-				<div class="select__options__item" data-option-id="light">Светлая</div>
-				<div class="select__options__item" data-option-id="blue">Синяя</div>
-				<div class="select__options__item" data-option-id="dark">Темная</div>
-			</div>
 		</div>
 	</div>
 
@@ -1135,14 +1111,14 @@
 				<div class="tabs__item tabs__item--disabled">Settings</div>
 			</div>
 
-			<div class="tabs tabs--invert tabs--smooth margin-top-1">
+			<div class="tabs tabs--color-yellow margin-top-1">
 				<div class="tabs__item">Home &nbsp <i class='fa fa-times'></i></div>
 				<div class="tabs__item tabs__item--active">Friends</div>
 				<div class="tabs__item">Stats</div>
 				<div class="tabs__item tabs__item--disabled">Settings</div>
 			</div>
 
-			<div class="tabs tabs--invert tabs--rounded margin-top-1">
+			<div class="tabs tabs--invert tabs--no-smooth tabs--no-margin tabs--color-yellow margin-top-1">
 				<div class="tabs__item">Home &nbsp <i class='fa fa-times'></i></div>
 				<div class="tabs__item tabs__item--active">Friends</div>
 				<div class="tabs__item">Stats</div>

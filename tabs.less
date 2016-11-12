@@ -4,29 +4,36 @@
 	background-color: @u-gray;
 	padding: 0em;
 	overflow: hidden;
+	padding: 0.5em 0.5em 0em 0.5em;
 
 	.tabs__item, li {
 		padding: 0.5em 1em;
-		margin: 0em;
 		cursor: pointer;
 		display: inline-block;
 		box-sizing: border-box;
-		background-color: darken(@u-gray, 5%);
+		background-color: transparent;
 		float: left;
-		color: @d-gray;
+		color: lighten(@d-gray, 10%);
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		-moz-user-select: none;
+		border-radius: 0.5em 0.5em 0 0;
+		margin-left: 0.25em;
+		border: 1px solid @u-gray;
 		.anim(0.3s);
 		.pt();
 
 		&:hover {
-			// background-color: darken(@u-gray, 10%);
+			background-color: darken(@u-gray, 5%);
+			border: 1px solid darken(@u-gray, 5%);
 			.anim(0.3s);
 		}
 
-		&:active, &.tabs__item--active {
-			background-color: darken(@u-gray, 20%);
+		&:active, &.tabs__item--active {			
+			background-color: @white;
+			border: 1px solid darken(@u-gray, 10%);
+			font-weight: bold;
+			border-bottom-color: transparent;
 			.anim(0.3s);
 		}
 
@@ -123,6 +130,8 @@
 			border-right: 1px solid @d-gray;
 			display: table-cell;
 			padding: 0.25em 1em;
+			margin: 0em;
+			border-radius: 0em;
 			
 			&:first-child {
 				border-radius: 1em 0em 0em 1em;
@@ -130,10 +139,6 @@
 			}
 			&:last-child {
 				border-radius: 0em 1em 1em 0em;					
-			}
-
-			&:hover {
-				// background-color: @u-gray;
 			}
 
 			&:active, &.tabs__item--active {
@@ -214,6 +219,7 @@
 			color: @l-gray;
 			font-weight: bold;
 			text-transform: uppercase;
+			border: none;
 
 			&:hover {
 				background: transparent;
@@ -242,12 +248,31 @@
 			float: none;
 		}
 	}
+
+	&.tabs--no-margin {
+		.tabs__item {
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0.5em 1.13em;
+
+			&:first-child {
+				margin-left: 0.25em;
+			}
+		}
+	}
+
+	&.tabs--no-smooth {
+		.tabs__item {
+			border-radius: 0em;
+		}
+	}
 }
 
 .set-tabs-color(@color) {
 	.tabs__item, li {
-		background-color: lighten(@color, 20%);		
+		background-color: transparent;	
 		color: @d-gray;
+		border-color: transparent;
 
 		&:hover {
 			background-color: lighten(@color, 15%);
@@ -287,11 +312,13 @@
 
 .set-tabs-invert-color(@color) {
 	.tabs__item, li {
-		background-color: darken(@color, 20%);		
-		color: @u-gray;
+		background-color: transparent;	
+		border-color: transparent;	
+		color: @color;
 
 		&:hover {
-			background-color: darken(@color, 15%);
+			background-color: darken(@color, 10%);
+			color: @white;
 		}
 
 		&:active, &.tabs__item--active {
@@ -336,7 +363,7 @@
 		}
 
 		&:hover {
-			background-color: lighten(@color, 30%);
+			background-color: transparent;
 		}
 
 		&:active, &.tabs__item--active {
