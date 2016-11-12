@@ -1,6 +1,7 @@
 .set-card-color(@color) {
 	background-color: @color;
 	color: @white;	
+	border-color: darken(@color, 5%);
 
 	.card__footer {
 		color: @u-gray;
@@ -16,7 +17,8 @@
 	color: @d-gray;
 	border-radius: 0.5em;
 	box-sizing: border-box;
-	.card_shadow();
+	border: 1px solid darken(@u-gray, 10%);
+	// .card_shadow();
 	.anim(0.3s);
 
 	.card__header {
@@ -172,8 +174,4 @@
 	&.card--color-pink { .set-card-color(@pink); }
 	&.card--color-brown { .set-card-color(@brown); }
 	&.card--color-black { .set-card-color(@d-gray); }
-
-	&.card--no-shadow {
-		box-shadow: none;
-	}
 }

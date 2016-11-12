@@ -13565,7 +13565,7 @@ kbd {
   color: #333333;
   border-radius: 0.5em;
   box-sizing: border-box;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid #dcdcdc;
   transition: all 0.3s linear;
 }
 .card .card__header {
@@ -13669,6 +13669,7 @@ kbd {
 .card.card--color-red {
   background-color: #db2828;
   color: #ffffff;
+  border-color: #c82121;
 }
 .card.card--color-red .card__footer {
   color: #f5f5f5;
@@ -13677,6 +13678,7 @@ kbd {
 .card.card--color-orange {
   background-color: #f2711c;
   color: #ffffff;
+  border-color: #e7640d;
 }
 .card.card--color-orange .card__footer {
   color: #f5f5f5;
@@ -13685,6 +13687,7 @@ kbd {
 .card.card--color-yellow {
   background-color: #fbbd08;
   color: #ffffff;
+  border-color: #e6ac04;
 }
 .card.card--color-yellow .card__footer {
   color: #f5f5f5;
@@ -13693,6 +13696,7 @@ kbd {
 .card.card--color-olive {
   background-color: #b5cc18;
   color: #ffffff;
+  border-color: #a1b515;
 }
 .card.card--color-olive .card__footer {
   color: #f5f5f5;
@@ -13701,6 +13705,7 @@ kbd {
 .card.card--color-green {
   background-color: #21ba45;
   color: #ffffff;
+  border-color: #1da43d;
 }
 .card.card--color-green .card__footer {
   color: #f5f5f5;
@@ -13709,6 +13714,7 @@ kbd {
 .card.card--color-teal {
   background-color: #00b5ad;
   color: #ffffff;
+  border-color: #009c95;
 }
 .card.card--color-teal .card__footer {
   color: #f5f5f5;
@@ -13717,6 +13723,7 @@ kbd {
 .card.card--color-blue {
   background-color: #2185d0;
   color: #ffffff;
+  border-color: #1e77ba;
 }
 .card.card--color-blue .card__footer {
   color: #f5f5f5;
@@ -13725,6 +13732,7 @@ kbd {
 .card.card--color-violet {
   background-color: #6435c9;
   color: #ffffff;
+  border-color: #5a30b5;
 }
 .card.card--color-violet .card__footer {
   color: #f5f5f5;
@@ -13733,6 +13741,7 @@ kbd {
 .card.card--color-purple {
   background-color: #a333c8;
   color: #ffffff;
+  border-color: #922eb4;
 }
 .card.card--color-purple .card__footer {
   color: #f5f5f5;
@@ -13741,6 +13750,7 @@ kbd {
 .card.card--color-pink {
   background-color: #e03997;
   color: #ffffff;
+  border-color: #dd238b;
 }
 .card.card--color-pink .card__footer {
   color: #f5f5f5;
@@ -13749,6 +13759,7 @@ kbd {
 .card.card--color-brown {
   background-color: #a5673f;
   color: #ffffff;
+  border-color: #935b38;
 }
 .card.card--color-brown .card__footer {
   color: #f5f5f5;
@@ -13757,13 +13768,11 @@ kbd {
 .card.card--color-black {
   background-color: #333333;
   color: #ffffff;
+  border-color: #262626;
 }
 .card.card--color-black .card__footer {
   color: #f5f5f5;
   border-top-color: #404040;
-}
-.card.card--no-shadow {
-  box-shadow: none;
 }
 .modal {
   display: none;
