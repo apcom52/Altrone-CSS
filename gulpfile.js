@@ -8,6 +8,10 @@ var minify = require('gulp-minify');
 var coffee = require('gulp-coffee');
 var concat = require('gulp-concat');
 
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+
 
 gulp.task('default', function() {
 	gulp.watch('./*.less', {interval: 500}, ['less']);
@@ -46,3 +50,16 @@ gulp.task('dist', function() {
 		.pipe(zip(version + '.zip'))
 		.pipe(gulp.dest('dist'));
 });
+
+gulp.task('build', function() {
+	return browserify({ entries: 'altrone-react.jsx',
+		extensions: ['.jsx'], debug: true})
+		.transform('babelify', { presets: ["es2015", "react"]})
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('jsx-watch', function() {
+	gulp.watch('altrone-react.jsx', ['build']);
+})

@@ -16,13 +16,18 @@
   },
   "homepage": "https://github.com/apcom52/Altrone2-CSS#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-coffee": "^2.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
     "gulp-less": "^3.1.0",
     "gulp-zip": "^3.2.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react": "^15.4.0",
+    "react-dom": "^15.3.2",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
