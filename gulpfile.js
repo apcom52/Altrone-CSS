@@ -7,6 +7,7 @@ var prompt = require('gulp-prompt');
 var minify = require('gulp-minify');
 var coffee = require('gulp-coffee');
 var concat = require('gulp-concat');
+var plumber = require('gulp-plumber');
 
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -52,14 +53,18 @@ gulp.task('dist', function() {
 });
 
 gulp.task('build', function() {
-	return browserify({ entries: 'altrone-react.jsx',
-		extensions: ['.jsx'], debug: true})
-		.transform('babelify', { presets: ["es2015", "react"]})
-		.bundle()
+	var b = browserify({ entries: 'altrone-react.jsx', extensions: ['.jsx'], debug: true });
+	b.transform('babelify', { presets: ["es2015", "react"]})
+
+	return b.bundle()
+		.on('error', function(e) {
+			console.log(e.toString());
+			this.emit('end');
+		})
 		.pipe(source('bundle.js'))
 		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('jsx-watch', function() {
 	gulp.watch('altrone-react.jsx', ['build']);
-})
+});

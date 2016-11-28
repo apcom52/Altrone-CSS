@@ -4773,8 +4773,8 @@ form select,
   box-sizing: border-box;
   outline: none;
   resize: vertical;
+  transition: background-color 0.3s linear;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
-  transition: all 0.3s linear;
 }
 form .input:active,
 .form .input:active,
@@ -4809,7 +4809,7 @@ form textarea:focus,
 form select:focus,
 .form select:focus {
   background-color: #ffffff;
-  transition: all 0.3s linear;
+  transition: background-color 0.3s linear;
 }
 form .input:invalid,
 .form .input:invalid,
@@ -4827,23 +4827,45 @@ form textarea:invalid,
 .form textarea:invalid,
 form select:invalid,
 .form select:invalid,
-form .input.invalid,
-.form .input.invalid,
-form input[type="text"].invalid,
-.form input[type="text"].invalid,
-form input[type="url"].invalid,
-.form input[type="url"].invalid,
-form input[type="email"].invalid,
-.form input[type="email"].invalid,
-form input[type="number"].invalid,
-.form input[type="number"].invalid,
-form input[type="password"].invalid,
-.form input[type="password"].invalid,
-form textarea.invalid,
-.form textarea.invalid,
-form select.invalid,
-.form select.invalid {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAFPUlEQVR4Xu3dTW7TQBQA4PcSgwhFAjagdEM5AWUHpBLJDtEilRNAb8AReoRwAsoJKCJF7JqKBti1PUFZNYINLCgFmnrQuHWVH8fxz8y896zMLk1qz8yXN7bHzxMEoaW7tFAHpZ4BQB0Q53QzlFK7ANBGxLfV1nZbYtNQWqV/LM9f+9O78iaAiCkKYL3i/Vq5vr77U1IbRYF8f/xgvlcqbSLAtSSdrCOmcuGwIQlFDEhajBBMGooIkBiMrRKeNC+Wj4Ljxb+TSt33S01AvNUfQZJQ2IOMxVDqdXWj8zxq6Oou1tYAUR/wz4sUFNYgWTBCAakobEHyYEhGYQliAkMqCjsQkxgSUViB2MCQhsIGxCaGJBQWIC4wpKCQg7jEkIBCCkKBwR2FDIQSgzMKCQgHDK4ozkE4YXBEcQrCEYMbijMQzhicUJyASMDggmIdRBIGBxSrIBIxqFGsgUjGoESxAlIEDCoU4yBFwqBAMQpSRAzXKMZAiozhEsUICAVG99G9OeV5O8NZjDrdZ3ajczdJZmOWz9jOZskNQoGhOzJItgbYjOrUams7d7visGyi5Kq4Tnw+6l3ZH8m1jUliy/KtjPofSpDgC2EpGS8zSIBxPLOJiPMDHeYAgzpCbB5TMoFQY3ABsREpqUE4YHACMY2SCoQLBjcQkyiJQThhcAQxhZIIhBsGVxATKBNBOGJwBsmLEgvCFYM7SB6UsSCcMSSAZEWJBOGOIQUkC8oIiAQMSSBpUQZApGBIA0mDcg4iCUMiSFKUAEQahlSQJCgByMHSwhsEWKaYtR3YZ4oX1NPvKao68tGoqXs4myXHyIY5mkLP1SjCG1R56h3+byQKQAOH31Cg9mZbncF7HCZqYHgbkiMk7IqDpdouAt4JXyvwX+LBYm2n/yZTCU+e3nz3ed1w/xnfXBFAvj25v+yrsl5qKixbeshS/b1l+360KZkigJyt/fWjv09GQC55v65LWF+qsCDD49h0yDIVw5O3Ez1kjWZPtKut7cbkzdF+QnqEBMPV8cxOuF6k7s3goD7mtHetutFZoe3y+L1LB4m89uv1bgcXht2lBb0i28OhC0PWKJJBuou1V4A4sPiajo7Z1qcXpyCP7s1B2dsFhKtSUKSCRGOovYp3WNcnU+eTizol9ARLbSkoEkEmYehgGJh+l4QiDSQJxgiI/oMolNMzxGBV676izxJXOZ2QJMWIBJGGwqnjo+qSBmMsyBTFDHNajFiQKUo+lCwYE0GmKNlQsmIkApmipEPJg5EYZIqSDCUvRioQbihnj9O9inic7ivFPJwJjNQgnFDiLgwBoOHyF3ZMYWQC4YLCBcQkRmYQDigcQExj5AKhRqEGsYGRG4QShRLEFoYRECqU4B6O5+1HnZCWff/ujfef9E/oGS82MYyBEKMMzPaWff+nVAyjIFQoxkNgzAZtR0a424kPfaZtsKT7KUnb5grDeISEDSwSiksMayBFGb5cY1gFkY5CgWEdRCoKFYYTEGkolBjOQKSgUGM4BeGOwgHDOQhXFC4YJCDcUDhhkIFwQeGGQQpCjcIRgxyECoUrBgsQ1yicMdiAuELhjsEKxDaKBAx2ILZQpGCwBDGNIgmDLYgpFGkYrEHyokjEYA+SFUUqhgiQWBSANiCuVt993NLZ8H//XX6oEJvDD4LqNcDC58D19jgX41kntho7NnFiwg4lYYiJkLDP06JIwxAHoit8lkK6NrI2y1Ck6LVDKt7vVQlrf/VXXcyQNTwyBcnWSukFXOqAeEu/ryMCQLWx5zerH758tTV82tzufzzIKTZtaWSqAAAAAElFTkSuQmCC');
+form .input.form__input--invalid,
+.form .input.form__input--invalid,
+form input[type="text"].form__input--invalid,
+.form input[type="text"].form__input--invalid,
+form input[type="url"].form__input--invalid,
+.form input[type="url"].form__input--invalid,
+form input[type="email"].form__input--invalid,
+.form input[type="email"].form__input--invalid,
+form input[type="number"].form__input--invalid,
+.form input[type="number"].form__input--invalid,
+form input[type="password"].form__input--invalid,
+.form input[type="password"].form__input--invalid,
+form textarea.form__input--invalid,
+.form textarea.form__input--invalid,
+form select.form__input--invalid,
+.form select.form__input--invalid {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAGA0lEQVR4Xu2dz24cRRDGqzeLFEQkkgtofMF+A/sG3pUgN5RdJOcJCE+A8wTAExCegPAEscRuxI0g7Trc7Dewc9kRXOxIQSCxmUYz6wTvemb7X3VVtTV7ne6enu83PfO5qqatoP2JUkCJmk07GWiBCLsJWiAtEGEKCJtOu0JaIMIUEDad5FdIfm/3ge50vi91VUXxMHt6+FiYxk7TSRpI/vnHm9Dtnixd8Xy+lf3y+6mTCoIaJw1kNuw/UQB7l/XUAAcbo8l9QRo7TSVZIPmw/xkA/NpwtXez0eSZkxJCGicLZDboHSmltut01Fofb4ynO0I0dppGkkBmg96+Uqp6kTf+iuKrFF/wyQE529u+/ff81okCuL2OhwY4f7f7auvOwfG50y3K3Dg5ILPh7iMFna9tdNNQ/LAxOty3aSulTVJAam2uScnEbHBaQIb90lWV7srl9ywbTe66dOBsmwyQP774ZK/QN554ipWMDU4GSD7onYBSm15AtD7NxtMtr77EnZIAkg/73wLAN4HafJeNJuU4on/igdjaXJPKqdhg8UDyQe8xKPWlSXCr41r/lI2nD6zaMjUSDeTPe7vbrzudI0xtbhTFzgdPD48xx8QcSzSQ3M/mmvQRbYPFAikTT9Dp/GhS1+d4R72+/+HPzw98+sbuIxJI+SL/59/3jrxtrkk1rU9vvvPXjsQ4l0ggSDbXhEWkDRYHpIxX6W73yBTNNaltOl7aYDWf70hL98oDgmlzjVTk2WBRQAxpWZO8vsdFxblEAVmXlvVV26KfKBssBkhMm2uEIijdKwIIVrzKKHxDA0lxLhFAiGyuiZcIG8wOxCsta5LW97iAdC87kLrqQ189Q/tJqHpkBcJkc03cWG0wL5CQtGwpq9YvQKnlwmqtN0Gpj0yqNx5nTveyAbGqPjSoerP76s5qgLAKTM5vnXkDqTjrhxvj6aOQMXz7sgDBsrnZaFI7/3zY176CVAuPseqRBYhL9eE6YWMBWUDhqXokB4KZlo0JpLoRGGwwORDMtGx0IADkcS5SIIHVh1eeXgRAgDrdSwokqPqw5mVCAQSIbTAZkBjxKhIgixuBLM5FAgTL5q4uEioglDaYBAhq9eElKlRAqlMSVT1GBxIzXkUKBAAoqh4pgPh8ZGP1hzY1ECCwwVGBxE7LMgABiJzujQYkevUhALAAiVz1GA1IDJvL5bJqnp/RbHAUIFTVhywr5CIaHKvqMQoQqrQsF5CYNhgdSEybK+iR9WYq6OledCCU1YesK2SRWUTf5AYVSGybK3CFoNtgNCCx4lVcGUOrv0wjpHvRgFDYXJErBDkajAKEq/qQ+x2ydIMgpXtxgMT5Wtb41BAFBCnOFQyE0uYKfmSh2eBwIKHVh8Z10NxA2AopfXDwJjdBQDCqDwN48AQXDRMOrXr0BsJhcxN4ZAVXPXoDiZWWdVkx4h5ZF5MPqXr0AoJZfegCYLVtrGLrkDm96eub7vUCgll9GHTxWp82fI7gt/Nc0GSudPaqenQGgl19iKuBrNF8qh6dgWBXH8qSEHk2HjbYCQhHvApZIo7hnNK91kCo0rIcisU8p2vVoz0Qyk1hYirEMbZD1aMVEM54VaN+Wr/IxtNaN5UPeqX78v/wMw40q3SvLZBo1YcB1/5bNprUbjueD/vlP3P5NGDsGF2tbLARCHVa1kGJ1IBYpXvXAqGoPnQAsNo0PSAWVY9rgQi3uekBWdxSa21wIxCutKzDikkSiGmvx0YgVNWHDgDqmjZtri960/11m9zUAhFpcwPJCexea4NrgVBWHwoUimRKTVWPV4AItrkkQpGepObjnyUgEtKypIIwn6wuzrUEBGtTGObrTOr0q+net0ASsLlJCe002UtVj/8DYao+dJr49W38Ns5VAWltrgjSlQ1eAGGsPhQhhYRJXKR7lfB4lQSpyOZQVj2q2bB/Fvt/dZBdUeInquJc+aB/DgreT/xarsf0NbxUVRWiUgcCU57XQ2Tbq9DwEnSxb8wY2o7XtsNRoAWCoyPaKC0QNClxBmqB4OiINkoLBE1KnIFaIDg6oo3yHx8MC/QPBxLHAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: right 0.5em center;
+  background-size: 1em;
+  padding-right: 2em;
+}
+form .input.form__input--success,
+.form .input.form__input--success,
+form input[type="text"].form__input--success,
+.form input[type="text"].form__input--success,
+form input[type="url"].form__input--success,
+.form input[type="url"].form__input--success,
+form input[type="email"].form__input--success,
+.form input[type="email"].form__input--success,
+form input[type="number"].form__input--success,
+.form input[type="number"].form__input--success,
+form input[type="password"].form__input--success,
+.form input[type="password"].form__input--success,
+form textarea.form__input--success,
+.form textarea.form__input--success,
+form select.form__input--success,
+.form select.form__input--success {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAC1ElEQVR4Xu2c4U0CQRCFd8UCbMSIiQVoJ1iB2AkdSCdagEaMjViAcGbRS5AAN3e3u2925/FLyMAc3zdvNwFc73iDEvDQ7mzuKAA8BBRAAWAC4PZMAAWACYDbMwEUACYAbs8EUACYALg9E0ABYALg9kwABYAJgNszARQAJgBuzwRQAJhA5PbT9/nF6nrxJX1ZJkBKSlAX4G++3XPj3erzZnEveAq/EZNAktS08J3301DfuGYpkcAESOh21OzDb8slEihgpIBj8KUSKGCEgC74v0uR+5hMmttjGzMFDBQQA35oTQEDBMSCTwFg+BTQU0DMyW9bcwkSSkgBnwkAw6cAgYBUk88lSAF8JuCEhNSTzwQogM8EHJCQa/KZAAXwmYAdCbknnwlQAJ8JcM6hJp8JUADfdALQk286AVrgm0yAJvjmBGiDb0qARvhmBGiFb0KAZvjVC9AOv2oBJcDvJeDybT7zG/dwdu7u+vz8WvDFU/SSUuCLBWzhN/5pS6ppVpollARfJOAf/HZWlUooDX6ngIPwlUooEX63gNfHlXfu6ugirSQJpcLvFBDe2HrtXzRLKBl+p4BQoFlC6fBFArRKqAG+WIA2CbXA7yVAi4Sa4PcWgJZQG/xBAlASaoQ/WEBuCbXCHyUgl4Sa4Y8WkFpC7fCjCEglwQL8aAJiS7ACP6qAWBIswY8uYKwEa/CTCBgqwSL8ZAL6Sgj14aSp9rCjcH//1nXqyKHnlPBY0v+Ul36UvQX1d9KUJfhJE9CCFEk4Maq1Tn77lpMmYKyE2uFnScBQCRbgZxUg3pgFx3yVsLlKrzHLErR7MV17gpXJz7oH7E/DMQnW4Gdfgk4lwSJ8qICdPWEZ/p5Mmpn2H/1K1/U+ddn3gD4XZ6GWAsCWKYACwATA7ZkACgATALdnAigATADcngmgADABcHsmgALABMDtmQAKABMAt2cCKABMANyeCQAL+AHsaB2OUB1eAAAAAABJRU5ErkJggg==');
   background-repeat: no-repeat;
   background-position: right 0.5em center;
   background-size: 1em;
@@ -5110,25 +5132,6 @@ form.form--no-padding,
 .form.form--no-padding {
   padding: 0.25em 0em;
 }
-form.form--color-red .input,
-.form.form--color-red .input,
-form.form--color-red input[type="text"],
-.form.form--color-red input[type="text"],
-form.form--color-red input[type="url"],
-.form.form--color-red input[type="url"],
-form.form--color-red input[type="email"],
-.form.form--color-red input[type="email"],
-form.form--color-red input[type="number"],
-.form.form--color-red input[type="number"],
-form.form--color-red input[type="password"],
-.form.form--color-red input[type="password"],
-form.form--color-red textarea,
-.form.form--color-red textarea,
-form.form--color-red select,
-.form.form--color-red select {
-  border: 1px solid #ed9595;
-  background: #f1abab;
-}
 form.form--color-red .input:active,
 .form.form--color-red .input:active,
 form.form--color-red input[type="text"]:active,
@@ -5161,132 +5164,7 @@ form.form--color-red textarea:focus,
 .form.form--color-red textarea:focus,
 form.form--color-red select:focus,
 .form.form--color-red select:focus {
-  background-color: #f8d7d7;
-}
-form.form--color-red .input::-webkit-input-placeholder,
-.form.form--color-red .input::-webkit-input-placeholder,
-form.form--color-red input[type="text"]::-webkit-input-placeholder,
-.form.form--color-red input[type="text"]::-webkit-input-placeholder,
-form.form--color-red input[type="url"]::-webkit-input-placeholder,
-.form.form--color-red input[type="url"]::-webkit-input-placeholder,
-form.form--color-red input[type="email"]::-webkit-input-placeholder,
-.form.form--color-red input[type="email"]::-webkit-input-placeholder,
-form.form--color-red input[type="number"]::-webkit-input-placeholder,
-.form.form--color-red input[type="number"]::-webkit-input-placeholder,
-form.form--color-red input[type="password"]::-webkit-input-placeholder,
-.form.form--color-red input[type="password"]::-webkit-input-placeholder,
-form.form--color-red textarea::-webkit-input-placeholder,
-.form.form--color-red textarea::-webkit-input-placeholder,
-form.form--color-red select::-webkit-input-placeholder,
-.form.form--color-red select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-red .input::-moz-placeholder,
-.form.form--color-red .input::-moz-placeholder,
-form.form--color-red input[type="text"]::-moz-placeholder,
-.form.form--color-red input[type="text"]::-moz-placeholder,
-form.form--color-red input[type="url"]::-moz-placeholder,
-.form.form--color-red input[type="url"]::-moz-placeholder,
-form.form--color-red input[type="email"]::-moz-placeholder,
-.form.form--color-red input[type="email"]::-moz-placeholder,
-form.form--color-red input[type="number"]::-moz-placeholder,
-.form.form--color-red input[type="number"]::-moz-placeholder,
-form.form--color-red input[type="password"]::-moz-placeholder,
-.form.form--color-red input[type="password"]::-moz-placeholder,
-form.form--color-red textarea::-moz-placeholder,
-.form.form--color-red textarea::-moz-placeholder,
-form.form--color-red select::-moz-placeholder,
-.form.form--color-red select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-red .input:-moz-placeholder,
-.form.form--color-red .input:-moz-placeholder,
-form.form--color-red input[type="text"]:-moz-placeholder,
-.form.form--color-red input[type="text"]:-moz-placeholder,
-form.form--color-red input[type="url"]:-moz-placeholder,
-.form.form--color-red input[type="url"]:-moz-placeholder,
-form.form--color-red input[type="email"]:-moz-placeholder,
-.form.form--color-red input[type="email"]:-moz-placeholder,
-form.form--color-red input[type="number"]:-moz-placeholder,
-.form.form--color-red input[type="number"]:-moz-placeholder,
-form.form--color-red input[type="password"]:-moz-placeholder,
-.form.form--color-red input[type="password"]:-moz-placeholder,
-form.form--color-red textarea:-moz-placeholder,
-.form.form--color-red textarea:-moz-placeholder,
-form.form--color-red select:-moz-placeholder,
-.form.form--color-red select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-red .input:-ms-input-placeholder,
-.form.form--color-red .input:-ms-input-placeholder,
-form.form--color-red input[type="text"]:-ms-input-placeholder,
-.form.form--color-red input[type="text"]:-ms-input-placeholder,
-form.form--color-red input[type="url"]:-ms-input-placeholder,
-.form.form--color-red input[type="url"]:-ms-input-placeholder,
-form.form--color-red input[type="email"]:-ms-input-placeholder,
-.form.form--color-red input[type="email"]:-ms-input-placeholder,
-form.form--color-red input[type="number"]:-ms-input-placeholder,
-.form.form--color-red input[type="number"]:-ms-input-placeholder,
-form.form--color-red input[type="password"]:-ms-input-placeholder,
-.form.form--color-red input[type="password"]:-ms-input-placeholder,
-form.form--color-red textarea:-ms-input-placeholder,
-.form.form--color-red textarea:-ms-input-placeholder,
-form.form--color-red select:-ms-input-placeholder,
-.form.form--color-red select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-red .input:invalid,
-.form.form--color-red .input:invalid,
-form.form--color-red input[type="text"]:invalid,
-.form.form--color-red input[type="text"]:invalid,
-form.form--color-red input[type="url"]:invalid,
-.form.form--color-red input[type="url"]:invalid,
-form.form--color-red input[type="email"]:invalid,
-.form.form--color-red input[type="email"]:invalid,
-form.form--color-red input[type="number"]:invalid,
-.form.form--color-red input[type="number"]:invalid,
-form.form--color-red input[type="password"]:invalid,
-.form.form--color-red input[type="password"]:invalid,
-form.form--color-red textarea:invalid,
-.form.form--color-red textarea:invalid,
-form.form--color-red select:invalid,
-.form.form--color-red select:invalid,
-form.form--color-red .input.invalid,
-.form.form--color-red .input.invalid,
-form.form--color-red input[type="text"].invalid,
-.form.form--color-red input[type="text"].invalid,
-form.form--color-red input[type="url"].invalid,
-.form.form--color-red input[type="url"].invalid,
-form.form--color-red input[type="email"].invalid,
-.form.form--color-red input[type="email"].invalid,
-form.form--color-red input[type="number"].invalid,
-.form.form--color-red input[type="number"].invalid,
-form.form--color-red input[type="password"].invalid,
-.form.form--color-red input[type="password"].invalid,
-form.form--color-red textarea.invalid,
-.form.form--color-red textarea.invalid,
-form.form--color-red select.invalid,
-.form.form--color-red select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-orange .input,
-.form.form--color-orange .input,
-form.form--color-orange input[type="text"],
-.form.form--color-orange input[type="text"],
-form.form--color-orange input[type="url"],
-.form.form--color-orange input[type="url"],
-form.form--color-orange input[type="email"],
-.form.form--color-orange input[type="email"],
-form.form--color-orange input[type="number"],
-.form.form--color-orange input[type="number"],
-form.form--color-orange input[type="password"],
-.form.form--color-orange input[type="password"],
-form.form--color-orange textarea,
-.form.form--color-orange textarea,
-form.form--color-orange select,
-.form.form--color-orange select {
-  border: 1px solid #f9bc95;
-  background: #faccad;
+  border-color: #e25454;
 }
 form.form--color-orange .input:active,
 .form.form--color-orange .input:active,
@@ -5320,132 +5198,7 @@ form.form--color-orange textarea:focus,
 .form.form--color-orange textarea:focus,
 form.form--color-orange select:focus,
 .form.form--color-orange select:focus {
-  background-color: #fdeadd;
-}
-form.form--color-orange .input::-webkit-input-placeholder,
-.form.form--color-orange .input::-webkit-input-placeholder,
-form.form--color-orange input[type="text"]::-webkit-input-placeholder,
-.form.form--color-orange input[type="text"]::-webkit-input-placeholder,
-form.form--color-orange input[type="url"]::-webkit-input-placeholder,
-.form.form--color-orange input[type="url"]::-webkit-input-placeholder,
-form.form--color-orange input[type="email"]::-webkit-input-placeholder,
-.form.form--color-orange input[type="email"]::-webkit-input-placeholder,
-form.form--color-orange input[type="number"]::-webkit-input-placeholder,
-.form.form--color-orange input[type="number"]::-webkit-input-placeholder,
-form.form--color-orange input[type="password"]::-webkit-input-placeholder,
-.form.form--color-orange input[type="password"]::-webkit-input-placeholder,
-form.form--color-orange textarea::-webkit-input-placeholder,
-.form.form--color-orange textarea::-webkit-input-placeholder,
-form.form--color-orange select::-webkit-input-placeholder,
-.form.form--color-orange select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-orange .input::-moz-placeholder,
-.form.form--color-orange .input::-moz-placeholder,
-form.form--color-orange input[type="text"]::-moz-placeholder,
-.form.form--color-orange input[type="text"]::-moz-placeholder,
-form.form--color-orange input[type="url"]::-moz-placeholder,
-.form.form--color-orange input[type="url"]::-moz-placeholder,
-form.form--color-orange input[type="email"]::-moz-placeholder,
-.form.form--color-orange input[type="email"]::-moz-placeholder,
-form.form--color-orange input[type="number"]::-moz-placeholder,
-.form.form--color-orange input[type="number"]::-moz-placeholder,
-form.form--color-orange input[type="password"]::-moz-placeholder,
-.form.form--color-orange input[type="password"]::-moz-placeholder,
-form.form--color-orange textarea::-moz-placeholder,
-.form.form--color-orange textarea::-moz-placeholder,
-form.form--color-orange select::-moz-placeholder,
-.form.form--color-orange select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-orange .input:-moz-placeholder,
-.form.form--color-orange .input:-moz-placeholder,
-form.form--color-orange input[type="text"]:-moz-placeholder,
-.form.form--color-orange input[type="text"]:-moz-placeholder,
-form.form--color-orange input[type="url"]:-moz-placeholder,
-.form.form--color-orange input[type="url"]:-moz-placeholder,
-form.form--color-orange input[type="email"]:-moz-placeholder,
-.form.form--color-orange input[type="email"]:-moz-placeholder,
-form.form--color-orange input[type="number"]:-moz-placeholder,
-.form.form--color-orange input[type="number"]:-moz-placeholder,
-form.form--color-orange input[type="password"]:-moz-placeholder,
-.form.form--color-orange input[type="password"]:-moz-placeholder,
-form.form--color-orange textarea:-moz-placeholder,
-.form.form--color-orange textarea:-moz-placeholder,
-form.form--color-orange select:-moz-placeholder,
-.form.form--color-orange select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-orange .input:-ms-input-placeholder,
-.form.form--color-orange .input:-ms-input-placeholder,
-form.form--color-orange input[type="text"]:-ms-input-placeholder,
-.form.form--color-orange input[type="text"]:-ms-input-placeholder,
-form.form--color-orange input[type="url"]:-ms-input-placeholder,
-.form.form--color-orange input[type="url"]:-ms-input-placeholder,
-form.form--color-orange input[type="email"]:-ms-input-placeholder,
-.form.form--color-orange input[type="email"]:-ms-input-placeholder,
-form.form--color-orange input[type="number"]:-ms-input-placeholder,
-.form.form--color-orange input[type="number"]:-ms-input-placeholder,
-form.form--color-orange input[type="password"]:-ms-input-placeholder,
-.form.form--color-orange input[type="password"]:-ms-input-placeholder,
-form.form--color-orange textarea:-ms-input-placeholder,
-.form.form--color-orange textarea:-ms-input-placeholder,
-form.form--color-orange select:-ms-input-placeholder,
-.form.form--color-orange select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-orange .input:invalid,
-.form.form--color-orange .input:invalid,
-form.form--color-orange input[type="text"]:invalid,
-.form.form--color-orange input[type="text"]:invalid,
-form.form--color-orange input[type="url"]:invalid,
-.form.form--color-orange input[type="url"]:invalid,
-form.form--color-orange input[type="email"]:invalid,
-.form.form--color-orange input[type="email"]:invalid,
-form.form--color-orange input[type="number"]:invalid,
-.form.form--color-orange input[type="number"]:invalid,
-form.form--color-orange input[type="password"]:invalid,
-.form.form--color-orange input[type="password"]:invalid,
-form.form--color-orange textarea:invalid,
-.form.form--color-orange textarea:invalid,
-form.form--color-orange select:invalid,
-.form.form--color-orange select:invalid,
-form.form--color-orange .input.invalid,
-.form.form--color-orange .input.invalid,
-form.form--color-orange input[type="text"].invalid,
-.form.form--color-orange input[type="text"].invalid,
-form.form--color-orange input[type="url"].invalid,
-.form.form--color-orange input[type="url"].invalid,
-form.form--color-orange input[type="email"].invalid,
-.form.form--color-orange input[type="email"].invalid,
-form.form--color-orange input[type="number"].invalid,
-.form.form--color-orange input[type="number"].invalid,
-form.form--color-orange input[type="password"].invalid,
-.form.form--color-orange input[type="password"].invalid,
-form.form--color-orange textarea.invalid,
-.form.form--color-orange textarea.invalid,
-form.form--color-orange select.invalid,
-.form.form--color-orange select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-yellow .input,
-.form.form--color-yellow .input,
-form.form--color-yellow input[type="text"],
-.form.form--color-yellow input[type="text"],
-form.form--color-yellow input[type="url"],
-.form.form--color-yellow input[type="url"],
-form.form--color-yellow input[type="email"],
-.form.form--color-yellow input[type="email"],
-form.form--color-yellow input[type="number"],
-.form.form--color-yellow input[type="number"],
-form.form--color-yellow input[type="password"],
-.form.form--color-yellow input[type="password"],
-form.form--color-yellow textarea,
-.form.form--color-yellow textarea,
-form.form--color-yellow select,
-.form.form--color-yellow select {
-  border: 1px solid #fddf85;
-  background: #fde59f;
+  border-color: #f58f4c;
 }
 form.form--color-yellow .input:active,
 .form.form--color-yellow .input:active,
@@ -5479,132 +5232,7 @@ form.form--color-yellow textarea:focus,
 .form.form--color-yellow textarea:focus,
 form.form--color-yellow select:focus,
 .form.form--color-yellow select:focus {
-  background-color: #fef3d1;
-}
-form.form--color-yellow .input::-webkit-input-placeholder,
-.form.form--color-yellow .input::-webkit-input-placeholder,
-form.form--color-yellow input[type="text"]::-webkit-input-placeholder,
-.form.form--color-yellow input[type="text"]::-webkit-input-placeholder,
-form.form--color-yellow input[type="url"]::-webkit-input-placeholder,
-.form.form--color-yellow input[type="url"]::-webkit-input-placeholder,
-form.form--color-yellow input[type="email"]::-webkit-input-placeholder,
-.form.form--color-yellow input[type="email"]::-webkit-input-placeholder,
-form.form--color-yellow input[type="number"]::-webkit-input-placeholder,
-.form.form--color-yellow input[type="number"]::-webkit-input-placeholder,
-form.form--color-yellow input[type="password"]::-webkit-input-placeholder,
-.form.form--color-yellow input[type="password"]::-webkit-input-placeholder,
-form.form--color-yellow textarea::-webkit-input-placeholder,
-.form.form--color-yellow textarea::-webkit-input-placeholder,
-form.form--color-yellow select::-webkit-input-placeholder,
-.form.form--color-yellow select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-yellow .input::-moz-placeholder,
-.form.form--color-yellow .input::-moz-placeholder,
-form.form--color-yellow input[type="text"]::-moz-placeholder,
-.form.form--color-yellow input[type="text"]::-moz-placeholder,
-form.form--color-yellow input[type="url"]::-moz-placeholder,
-.form.form--color-yellow input[type="url"]::-moz-placeholder,
-form.form--color-yellow input[type="email"]::-moz-placeholder,
-.form.form--color-yellow input[type="email"]::-moz-placeholder,
-form.form--color-yellow input[type="number"]::-moz-placeholder,
-.form.form--color-yellow input[type="number"]::-moz-placeholder,
-form.form--color-yellow input[type="password"]::-moz-placeholder,
-.form.form--color-yellow input[type="password"]::-moz-placeholder,
-form.form--color-yellow textarea::-moz-placeholder,
-.form.form--color-yellow textarea::-moz-placeholder,
-form.form--color-yellow select::-moz-placeholder,
-.form.form--color-yellow select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-yellow .input:-moz-placeholder,
-.form.form--color-yellow .input:-moz-placeholder,
-form.form--color-yellow input[type="text"]:-moz-placeholder,
-.form.form--color-yellow input[type="text"]:-moz-placeholder,
-form.form--color-yellow input[type="url"]:-moz-placeholder,
-.form.form--color-yellow input[type="url"]:-moz-placeholder,
-form.form--color-yellow input[type="email"]:-moz-placeholder,
-.form.form--color-yellow input[type="email"]:-moz-placeholder,
-form.form--color-yellow input[type="number"]:-moz-placeholder,
-.form.form--color-yellow input[type="number"]:-moz-placeholder,
-form.form--color-yellow input[type="password"]:-moz-placeholder,
-.form.form--color-yellow input[type="password"]:-moz-placeholder,
-form.form--color-yellow textarea:-moz-placeholder,
-.form.form--color-yellow textarea:-moz-placeholder,
-form.form--color-yellow select:-moz-placeholder,
-.form.form--color-yellow select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-yellow .input:-ms-input-placeholder,
-.form.form--color-yellow .input:-ms-input-placeholder,
-form.form--color-yellow input[type="text"]:-ms-input-placeholder,
-.form.form--color-yellow input[type="text"]:-ms-input-placeholder,
-form.form--color-yellow input[type="url"]:-ms-input-placeholder,
-.form.form--color-yellow input[type="url"]:-ms-input-placeholder,
-form.form--color-yellow input[type="email"]:-ms-input-placeholder,
-.form.form--color-yellow input[type="email"]:-ms-input-placeholder,
-form.form--color-yellow input[type="number"]:-ms-input-placeholder,
-.form.form--color-yellow input[type="number"]:-ms-input-placeholder,
-form.form--color-yellow input[type="password"]:-ms-input-placeholder,
-.form.form--color-yellow input[type="password"]:-ms-input-placeholder,
-form.form--color-yellow textarea:-ms-input-placeholder,
-.form.form--color-yellow textarea:-ms-input-placeholder,
-form.form--color-yellow select:-ms-input-placeholder,
-.form.form--color-yellow select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-yellow .input:invalid,
-.form.form--color-yellow .input:invalid,
-form.form--color-yellow input[type="text"]:invalid,
-.form.form--color-yellow input[type="text"]:invalid,
-form.form--color-yellow input[type="url"]:invalid,
-.form.form--color-yellow input[type="url"]:invalid,
-form.form--color-yellow input[type="email"]:invalid,
-.form.form--color-yellow input[type="email"]:invalid,
-form.form--color-yellow input[type="number"]:invalid,
-.form.form--color-yellow input[type="number"]:invalid,
-form.form--color-yellow input[type="password"]:invalid,
-.form.form--color-yellow input[type="password"]:invalid,
-form.form--color-yellow textarea:invalid,
-.form.form--color-yellow textarea:invalid,
-form.form--color-yellow select:invalid,
-.form.form--color-yellow select:invalid,
-form.form--color-yellow .input.invalid,
-.form.form--color-yellow .input.invalid,
-form.form--color-yellow input[type="text"].invalid,
-.form.form--color-yellow input[type="text"].invalid,
-form.form--color-yellow input[type="url"].invalid,
-.form.form--color-yellow input[type="url"].invalid,
-form.form--color-yellow input[type="email"].invalid,
-.form.form--color-yellow input[type="email"].invalid,
-form.form--color-yellow input[type="number"].invalid,
-.form.form--color-yellow input[type="number"].invalid,
-form.form--color-yellow input[type="password"].invalid,
-.form.form--color-yellow input[type="password"].invalid,
-form.form--color-yellow textarea.invalid,
-.form.form--color-yellow textarea.invalid,
-form.form--color-yellow select.invalid,
-.form.form--color-yellow select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-olive .input,
-.form.form--color-olive .input,
-form.form--color-olive input[type="text"],
-.form.form--color-olive input[type="text"],
-form.form--color-olive input[type="url"],
-.form.form--color-olive input[type="url"],
-form.form--color-olive input[type="email"],
-.form.form--color-olive input[type="email"],
-form.form--color-olive input[type="number"],
-.form.form--color-olive input[type="number"],
-form.form--color-olive input[type="password"],
-.form.form--color-olive input[type="password"],
-form.form--color-olive textarea,
-.form.form--color-olive textarea,
-form.form--color-olive select,
-.form.form--color-olive select {
-  border: 1px solid #dfef75;
-  background: #e4f18c;
+  border-color: #fcca3a;
 }
 form.form--color-olive .input:active,
 .form.form--color-olive .input:active,
@@ -5638,132 +5266,7 @@ form.form--color-olive textarea:focus,
 .form.form--color-olive textarea:focus,
 form.form--color-olive select:focus,
 .form.form--color-olive select:focus {
-  background-color: #eff7b9;
-}
-form.form--color-olive .input::-webkit-input-placeholder,
-.form.form--color-olive .input::-webkit-input-placeholder,
-form.form--color-olive input[type="text"]::-webkit-input-placeholder,
-.form.form--color-olive input[type="text"]::-webkit-input-placeholder,
-form.form--color-olive input[type="url"]::-webkit-input-placeholder,
-.form.form--color-olive input[type="url"]::-webkit-input-placeholder,
-form.form--color-olive input[type="email"]::-webkit-input-placeholder,
-.form.form--color-olive input[type="email"]::-webkit-input-placeholder,
-form.form--color-olive input[type="number"]::-webkit-input-placeholder,
-.form.form--color-olive input[type="number"]::-webkit-input-placeholder,
-form.form--color-olive input[type="password"]::-webkit-input-placeholder,
-.form.form--color-olive input[type="password"]::-webkit-input-placeholder,
-form.form--color-olive textarea::-webkit-input-placeholder,
-.form.form--color-olive textarea::-webkit-input-placeholder,
-form.form--color-olive select::-webkit-input-placeholder,
-.form.form--color-olive select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-olive .input::-moz-placeholder,
-.form.form--color-olive .input::-moz-placeholder,
-form.form--color-olive input[type="text"]::-moz-placeholder,
-.form.form--color-olive input[type="text"]::-moz-placeholder,
-form.form--color-olive input[type="url"]::-moz-placeholder,
-.form.form--color-olive input[type="url"]::-moz-placeholder,
-form.form--color-olive input[type="email"]::-moz-placeholder,
-.form.form--color-olive input[type="email"]::-moz-placeholder,
-form.form--color-olive input[type="number"]::-moz-placeholder,
-.form.form--color-olive input[type="number"]::-moz-placeholder,
-form.form--color-olive input[type="password"]::-moz-placeholder,
-.form.form--color-olive input[type="password"]::-moz-placeholder,
-form.form--color-olive textarea::-moz-placeholder,
-.form.form--color-olive textarea::-moz-placeholder,
-form.form--color-olive select::-moz-placeholder,
-.form.form--color-olive select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-olive .input:-moz-placeholder,
-.form.form--color-olive .input:-moz-placeholder,
-form.form--color-olive input[type="text"]:-moz-placeholder,
-.form.form--color-olive input[type="text"]:-moz-placeholder,
-form.form--color-olive input[type="url"]:-moz-placeholder,
-.form.form--color-olive input[type="url"]:-moz-placeholder,
-form.form--color-olive input[type="email"]:-moz-placeholder,
-.form.form--color-olive input[type="email"]:-moz-placeholder,
-form.form--color-olive input[type="number"]:-moz-placeholder,
-.form.form--color-olive input[type="number"]:-moz-placeholder,
-form.form--color-olive input[type="password"]:-moz-placeholder,
-.form.form--color-olive input[type="password"]:-moz-placeholder,
-form.form--color-olive textarea:-moz-placeholder,
-.form.form--color-olive textarea:-moz-placeholder,
-form.form--color-olive select:-moz-placeholder,
-.form.form--color-olive select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-olive .input:-ms-input-placeholder,
-.form.form--color-olive .input:-ms-input-placeholder,
-form.form--color-olive input[type="text"]:-ms-input-placeholder,
-.form.form--color-olive input[type="text"]:-ms-input-placeholder,
-form.form--color-olive input[type="url"]:-ms-input-placeholder,
-.form.form--color-olive input[type="url"]:-ms-input-placeholder,
-form.form--color-olive input[type="email"]:-ms-input-placeholder,
-.form.form--color-olive input[type="email"]:-ms-input-placeholder,
-form.form--color-olive input[type="number"]:-ms-input-placeholder,
-.form.form--color-olive input[type="number"]:-ms-input-placeholder,
-form.form--color-olive input[type="password"]:-ms-input-placeholder,
-.form.form--color-olive input[type="password"]:-ms-input-placeholder,
-form.form--color-olive textarea:-ms-input-placeholder,
-.form.form--color-olive textarea:-ms-input-placeholder,
-form.form--color-olive select:-ms-input-placeholder,
-.form.form--color-olive select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-olive .input:invalid,
-.form.form--color-olive .input:invalid,
-form.form--color-olive input[type="text"]:invalid,
-.form.form--color-olive input[type="text"]:invalid,
-form.form--color-olive input[type="url"]:invalid,
-.form.form--color-olive input[type="url"]:invalid,
-form.form--color-olive input[type="email"]:invalid,
-.form.form--color-olive input[type="email"]:invalid,
-form.form--color-olive input[type="number"]:invalid,
-.form.form--color-olive input[type="number"]:invalid,
-form.form--color-olive input[type="password"]:invalid,
-.form.form--color-olive input[type="password"]:invalid,
-form.form--color-olive textarea:invalid,
-.form.form--color-olive textarea:invalid,
-form.form--color-olive select:invalid,
-.form.form--color-olive select:invalid,
-form.form--color-olive .input.invalid,
-.form.form--color-olive .input.invalid,
-form.form--color-olive input[type="text"].invalid,
-.form.form--color-olive input[type="text"].invalid,
-form.form--color-olive input[type="url"].invalid,
-.form.form--color-olive input[type="url"].invalid,
-form.form--color-olive input[type="email"].invalid,
-.form.form--color-olive input[type="email"].invalid,
-form.form--color-olive input[type="number"].invalid,
-.form.form--color-olive input[type="number"].invalid,
-form.form--color-olive input[type="password"].invalid,
-.form.form--color-olive input[type="password"].invalid,
-form.form--color-olive textarea.invalid,
-.form.form--color-olive textarea.invalid,
-form.form--color-olive select.invalid,
-.form.form--color-olive select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-green .input,
-.form.form--color-green .input,
-form.form--color-green input[type="text"],
-.form.form--color-green input[type="text"],
-form.form--color-green input[type="url"],
-.form.form--color-green input[type="url"],
-form.form--color-green input[type="email"],
-.form.form--color-green input[type="email"],
-form.form--color-green input[type="number"],
-.form.form--color-green input[type="number"],
-form.form--color-green input[type="password"],
-.form.form--color-green input[type="password"],
-form.form--color-green textarea,
-.form.form--color-green textarea,
-form.form--color-green select,
-.form.form--color-green select {
-  border: 1px solid #74e68f;
-  background: #8aeaa0;
+  border-color: #cfe730;
 }
 form.form--color-green .input:active,
 .form.form--color-green .input:active,
@@ -5797,132 +5300,7 @@ form.form--color-green textarea:focus,
 .form.form--color-green textarea:focus,
 form.form--color-green select:focus,
 .form.form--color-green select:focus {
-  background-color: #b5f2c3;
-}
-form.form--color-green .input::-webkit-input-placeholder,
-.form.form--color-green .input::-webkit-input-placeholder,
-form.form--color-green input[type="text"]::-webkit-input-placeholder,
-.form.form--color-green input[type="text"]::-webkit-input-placeholder,
-form.form--color-green input[type="url"]::-webkit-input-placeholder,
-.form.form--color-green input[type="url"]::-webkit-input-placeholder,
-form.form--color-green input[type="email"]::-webkit-input-placeholder,
-.form.form--color-green input[type="email"]::-webkit-input-placeholder,
-form.form--color-green input[type="number"]::-webkit-input-placeholder,
-.form.form--color-green input[type="number"]::-webkit-input-placeholder,
-form.form--color-green input[type="password"]::-webkit-input-placeholder,
-.form.form--color-green input[type="password"]::-webkit-input-placeholder,
-form.form--color-green textarea::-webkit-input-placeholder,
-.form.form--color-green textarea::-webkit-input-placeholder,
-form.form--color-green select::-webkit-input-placeholder,
-.form.form--color-green select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-green .input::-moz-placeholder,
-.form.form--color-green .input::-moz-placeholder,
-form.form--color-green input[type="text"]::-moz-placeholder,
-.form.form--color-green input[type="text"]::-moz-placeholder,
-form.form--color-green input[type="url"]::-moz-placeholder,
-.form.form--color-green input[type="url"]::-moz-placeholder,
-form.form--color-green input[type="email"]::-moz-placeholder,
-.form.form--color-green input[type="email"]::-moz-placeholder,
-form.form--color-green input[type="number"]::-moz-placeholder,
-.form.form--color-green input[type="number"]::-moz-placeholder,
-form.form--color-green input[type="password"]::-moz-placeholder,
-.form.form--color-green input[type="password"]::-moz-placeholder,
-form.form--color-green textarea::-moz-placeholder,
-.form.form--color-green textarea::-moz-placeholder,
-form.form--color-green select::-moz-placeholder,
-.form.form--color-green select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-green .input:-moz-placeholder,
-.form.form--color-green .input:-moz-placeholder,
-form.form--color-green input[type="text"]:-moz-placeholder,
-.form.form--color-green input[type="text"]:-moz-placeholder,
-form.form--color-green input[type="url"]:-moz-placeholder,
-.form.form--color-green input[type="url"]:-moz-placeholder,
-form.form--color-green input[type="email"]:-moz-placeholder,
-.form.form--color-green input[type="email"]:-moz-placeholder,
-form.form--color-green input[type="number"]:-moz-placeholder,
-.form.form--color-green input[type="number"]:-moz-placeholder,
-form.form--color-green input[type="password"]:-moz-placeholder,
-.form.form--color-green input[type="password"]:-moz-placeholder,
-form.form--color-green textarea:-moz-placeholder,
-.form.form--color-green textarea:-moz-placeholder,
-form.form--color-green select:-moz-placeholder,
-.form.form--color-green select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-green .input:-ms-input-placeholder,
-.form.form--color-green .input:-ms-input-placeholder,
-form.form--color-green input[type="text"]:-ms-input-placeholder,
-.form.form--color-green input[type="text"]:-ms-input-placeholder,
-form.form--color-green input[type="url"]:-ms-input-placeholder,
-.form.form--color-green input[type="url"]:-ms-input-placeholder,
-form.form--color-green input[type="email"]:-ms-input-placeholder,
-.form.form--color-green input[type="email"]:-ms-input-placeholder,
-form.form--color-green input[type="number"]:-ms-input-placeholder,
-.form.form--color-green input[type="number"]:-ms-input-placeholder,
-form.form--color-green input[type="password"]:-ms-input-placeholder,
-.form.form--color-green input[type="password"]:-ms-input-placeholder,
-form.form--color-green textarea:-ms-input-placeholder,
-.form.form--color-green textarea:-ms-input-placeholder,
-form.form--color-green select:-ms-input-placeholder,
-.form.form--color-green select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-green .input:invalid,
-.form.form--color-green .input:invalid,
-form.form--color-green input[type="text"]:invalid,
-.form.form--color-green input[type="text"]:invalid,
-form.form--color-green input[type="url"]:invalid,
-.form.form--color-green input[type="url"]:invalid,
-form.form--color-green input[type="email"]:invalid,
-.form.form--color-green input[type="email"]:invalid,
-form.form--color-green input[type="number"]:invalid,
-.form.form--color-green input[type="number"]:invalid,
-form.form--color-green input[type="password"]:invalid,
-.form.form--color-green input[type="password"]:invalid,
-form.form--color-green textarea:invalid,
-.form.form--color-green textarea:invalid,
-form.form--color-green select:invalid,
-.form.form--color-green select:invalid,
-form.form--color-green .input.invalid,
-.form.form--color-green .input.invalid,
-form.form--color-green input[type="text"].invalid,
-.form.form--color-green input[type="text"].invalid,
-form.form--color-green input[type="url"].invalid,
-.form.form--color-green input[type="url"].invalid,
-form.form--color-green input[type="email"].invalid,
-.form.form--color-green input[type="email"].invalid,
-form.form--color-green input[type="number"].invalid,
-.form.form--color-green input[type="number"].invalid,
-form.form--color-green input[type="password"].invalid,
-.form.form--color-green input[type="password"].invalid,
-form.form--color-green textarea.invalid,
-.form.form--color-green textarea.invalid,
-form.form--color-green select.invalid,
-.form.form--color-green select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-teal .input,
-.form.form--color-teal .input,
-form.form--color-teal input[type="text"],
-.form.form--color-teal input[type="text"],
-form.form--color-teal input[type="url"],
-.form.form--color-teal input[type="url"],
-form.form--color-teal input[type="email"],
-.form.form--color-teal input[type="email"],
-form.form--color-teal input[type="number"],
-.form.form--color-teal input[type="number"],
-form.form--color-teal input[type="password"],
-.form.form--color-teal input[type="password"],
-form.form--color-teal textarea,
-.form.form--color-teal textarea,
-form.form--color-teal select,
-.form.form--color-teal select {
-  border: 1px solid #36fff6;
-  background: #4ffff7;
+  border-color: #33db5b;
 }
 form.form--color-teal .input:active,
 .form.form--color-teal .input:active,
@@ -5956,132 +5334,7 @@ form.form--color-teal textarea:focus,
 .form.form--color-teal textarea:focus,
 form.form--color-teal select:focus,
 .form.form--color-teal select:focus {
-  background-color: #82fff9;
-}
-form.form--color-teal .input::-webkit-input-placeholder,
-.form.form--color-teal .input::-webkit-input-placeholder,
-form.form--color-teal input[type="text"]::-webkit-input-placeholder,
-.form.form--color-teal input[type="text"]::-webkit-input-placeholder,
-form.form--color-teal input[type="url"]::-webkit-input-placeholder,
-.form.form--color-teal input[type="url"]::-webkit-input-placeholder,
-form.form--color-teal input[type="email"]::-webkit-input-placeholder,
-.form.form--color-teal input[type="email"]::-webkit-input-placeholder,
-form.form--color-teal input[type="number"]::-webkit-input-placeholder,
-.form.form--color-teal input[type="number"]::-webkit-input-placeholder,
-form.form--color-teal input[type="password"]::-webkit-input-placeholder,
-.form.form--color-teal input[type="password"]::-webkit-input-placeholder,
-form.form--color-teal textarea::-webkit-input-placeholder,
-.form.form--color-teal textarea::-webkit-input-placeholder,
-form.form--color-teal select::-webkit-input-placeholder,
-.form.form--color-teal select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-teal .input::-moz-placeholder,
-.form.form--color-teal .input::-moz-placeholder,
-form.form--color-teal input[type="text"]::-moz-placeholder,
-.form.form--color-teal input[type="text"]::-moz-placeholder,
-form.form--color-teal input[type="url"]::-moz-placeholder,
-.form.form--color-teal input[type="url"]::-moz-placeholder,
-form.form--color-teal input[type="email"]::-moz-placeholder,
-.form.form--color-teal input[type="email"]::-moz-placeholder,
-form.form--color-teal input[type="number"]::-moz-placeholder,
-.form.form--color-teal input[type="number"]::-moz-placeholder,
-form.form--color-teal input[type="password"]::-moz-placeholder,
-.form.form--color-teal input[type="password"]::-moz-placeholder,
-form.form--color-teal textarea::-moz-placeholder,
-.form.form--color-teal textarea::-moz-placeholder,
-form.form--color-teal select::-moz-placeholder,
-.form.form--color-teal select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-teal .input:-moz-placeholder,
-.form.form--color-teal .input:-moz-placeholder,
-form.form--color-teal input[type="text"]:-moz-placeholder,
-.form.form--color-teal input[type="text"]:-moz-placeholder,
-form.form--color-teal input[type="url"]:-moz-placeholder,
-.form.form--color-teal input[type="url"]:-moz-placeholder,
-form.form--color-teal input[type="email"]:-moz-placeholder,
-.form.form--color-teal input[type="email"]:-moz-placeholder,
-form.form--color-teal input[type="number"]:-moz-placeholder,
-.form.form--color-teal input[type="number"]:-moz-placeholder,
-form.form--color-teal input[type="password"]:-moz-placeholder,
-.form.form--color-teal input[type="password"]:-moz-placeholder,
-form.form--color-teal textarea:-moz-placeholder,
-.form.form--color-teal textarea:-moz-placeholder,
-form.form--color-teal select:-moz-placeholder,
-.form.form--color-teal select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-teal .input:-ms-input-placeholder,
-.form.form--color-teal .input:-ms-input-placeholder,
-form.form--color-teal input[type="text"]:-ms-input-placeholder,
-.form.form--color-teal input[type="text"]:-ms-input-placeholder,
-form.form--color-teal input[type="url"]:-ms-input-placeholder,
-.form.form--color-teal input[type="url"]:-ms-input-placeholder,
-form.form--color-teal input[type="email"]:-ms-input-placeholder,
-.form.form--color-teal input[type="email"]:-ms-input-placeholder,
-form.form--color-teal input[type="number"]:-ms-input-placeholder,
-.form.form--color-teal input[type="number"]:-ms-input-placeholder,
-form.form--color-teal input[type="password"]:-ms-input-placeholder,
-.form.form--color-teal input[type="password"]:-ms-input-placeholder,
-form.form--color-teal textarea:-ms-input-placeholder,
-.form.form--color-teal textarea:-ms-input-placeholder,
-form.form--color-teal select:-ms-input-placeholder,
-.form.form--color-teal select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-teal .input:invalid,
-.form.form--color-teal .input:invalid,
-form.form--color-teal input[type="text"]:invalid,
-.form.form--color-teal input[type="text"]:invalid,
-form.form--color-teal input[type="url"]:invalid,
-.form.form--color-teal input[type="url"]:invalid,
-form.form--color-teal input[type="email"]:invalid,
-.form.form--color-teal input[type="email"]:invalid,
-form.form--color-teal input[type="number"]:invalid,
-.form.form--color-teal input[type="number"]:invalid,
-form.form--color-teal input[type="password"]:invalid,
-.form.form--color-teal input[type="password"]:invalid,
-form.form--color-teal textarea:invalid,
-.form.form--color-teal textarea:invalid,
-form.form--color-teal select:invalid,
-.form.form--color-teal select:invalid,
-form.form--color-teal .input.invalid,
-.form.form--color-teal .input.invalid,
-form.form--color-teal input[type="text"].invalid,
-.form.form--color-teal input[type="text"].invalid,
-form.form--color-teal input[type="url"].invalid,
-.form.form--color-teal input[type="url"].invalid,
-form.form--color-teal input[type="email"].invalid,
-.form.form--color-teal input[type="email"].invalid,
-form.form--color-teal input[type="number"].invalid,
-.form.form--color-teal input[type="number"].invalid,
-form.form--color-teal input[type="password"].invalid,
-.form.form--color-teal input[type="password"].invalid,
-form.form--color-teal textarea.invalid,
-.form.form--color-teal textarea.invalid,
-form.form--color-teal select.invalid,
-.form.form--color-teal select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-blue .input,
-.form.form--color-blue .input,
-form.form--color-blue input[type="text"],
-.form.form--color-blue input[type="text"],
-form.form--color-blue input[type="url"],
-.form.form--color-blue input[type="url"],
-form.form--color-blue input[type="email"],
-.form.form--color-blue input[type="email"],
-form.form--color-blue input[type="number"],
-.form.form--color-blue input[type="number"],
-form.form--color-blue input[type="password"],
-.form.form--color-blue input[type="password"],
-form.form--color-blue textarea,
-.form.form--color-blue textarea,
-form.form--color-blue select,
-.form.form--color-blue select {
-  border: 1px solid #85c0ec;
-  background: #9bcbef;
+  border-color: #00e8de;
 }
 form.form--color-blue .input:active,
 .form.form--color-blue .input:active,
@@ -6115,132 +5368,7 @@ form.form--color-blue textarea:focus,
 .form.form--color-blue textarea:focus,
 form.form--color-blue select:focus,
 .form.form--color-blue select:focus {
-  background-color: #c7e2f6;
-}
-form.form--color-blue .input::-webkit-input-placeholder,
-.form.form--color-blue .input::-webkit-input-placeholder,
-form.form--color-blue input[type="text"]::-webkit-input-placeholder,
-.form.form--color-blue input[type="text"]::-webkit-input-placeholder,
-form.form--color-blue input[type="url"]::-webkit-input-placeholder,
-.form.form--color-blue input[type="url"]::-webkit-input-placeholder,
-form.form--color-blue input[type="email"]::-webkit-input-placeholder,
-.form.form--color-blue input[type="email"]::-webkit-input-placeholder,
-form.form--color-blue input[type="number"]::-webkit-input-placeholder,
-.form.form--color-blue input[type="number"]::-webkit-input-placeholder,
-form.form--color-blue input[type="password"]::-webkit-input-placeholder,
-.form.form--color-blue input[type="password"]::-webkit-input-placeholder,
-form.form--color-blue textarea::-webkit-input-placeholder,
-.form.form--color-blue textarea::-webkit-input-placeholder,
-form.form--color-blue select::-webkit-input-placeholder,
-.form.form--color-blue select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-blue .input::-moz-placeholder,
-.form.form--color-blue .input::-moz-placeholder,
-form.form--color-blue input[type="text"]::-moz-placeholder,
-.form.form--color-blue input[type="text"]::-moz-placeholder,
-form.form--color-blue input[type="url"]::-moz-placeholder,
-.form.form--color-blue input[type="url"]::-moz-placeholder,
-form.form--color-blue input[type="email"]::-moz-placeholder,
-.form.form--color-blue input[type="email"]::-moz-placeholder,
-form.form--color-blue input[type="number"]::-moz-placeholder,
-.form.form--color-blue input[type="number"]::-moz-placeholder,
-form.form--color-blue input[type="password"]::-moz-placeholder,
-.form.form--color-blue input[type="password"]::-moz-placeholder,
-form.form--color-blue textarea::-moz-placeholder,
-.form.form--color-blue textarea::-moz-placeholder,
-form.form--color-blue select::-moz-placeholder,
-.form.form--color-blue select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-blue .input:-moz-placeholder,
-.form.form--color-blue .input:-moz-placeholder,
-form.form--color-blue input[type="text"]:-moz-placeholder,
-.form.form--color-blue input[type="text"]:-moz-placeholder,
-form.form--color-blue input[type="url"]:-moz-placeholder,
-.form.form--color-blue input[type="url"]:-moz-placeholder,
-form.form--color-blue input[type="email"]:-moz-placeholder,
-.form.form--color-blue input[type="email"]:-moz-placeholder,
-form.form--color-blue input[type="number"]:-moz-placeholder,
-.form.form--color-blue input[type="number"]:-moz-placeholder,
-form.form--color-blue input[type="password"]:-moz-placeholder,
-.form.form--color-blue input[type="password"]:-moz-placeholder,
-form.form--color-blue textarea:-moz-placeholder,
-.form.form--color-blue textarea:-moz-placeholder,
-form.form--color-blue select:-moz-placeholder,
-.form.form--color-blue select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-blue .input:-ms-input-placeholder,
-.form.form--color-blue .input:-ms-input-placeholder,
-form.form--color-blue input[type="text"]:-ms-input-placeholder,
-.form.form--color-blue input[type="text"]:-ms-input-placeholder,
-form.form--color-blue input[type="url"]:-ms-input-placeholder,
-.form.form--color-blue input[type="url"]:-ms-input-placeholder,
-form.form--color-blue input[type="email"]:-ms-input-placeholder,
-.form.form--color-blue input[type="email"]:-ms-input-placeholder,
-form.form--color-blue input[type="number"]:-ms-input-placeholder,
-.form.form--color-blue input[type="number"]:-ms-input-placeholder,
-form.form--color-blue input[type="password"]:-ms-input-placeholder,
-.form.form--color-blue input[type="password"]:-ms-input-placeholder,
-form.form--color-blue textarea:-ms-input-placeholder,
-.form.form--color-blue textarea:-ms-input-placeholder,
-form.form--color-blue select:-ms-input-placeholder,
-.form.form--color-blue select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-blue .input:invalid,
-.form.form--color-blue .input:invalid,
-form.form--color-blue input[type="text"]:invalid,
-.form.form--color-blue input[type="text"]:invalid,
-form.form--color-blue input[type="url"]:invalid,
-.form.form--color-blue input[type="url"]:invalid,
-form.form--color-blue input[type="email"]:invalid,
-.form.form--color-blue input[type="email"]:invalid,
-form.form--color-blue input[type="number"]:invalid,
-.form.form--color-blue input[type="number"]:invalid,
-form.form--color-blue input[type="password"]:invalid,
-.form.form--color-blue input[type="password"]:invalid,
-form.form--color-blue textarea:invalid,
-.form.form--color-blue textarea:invalid,
-form.form--color-blue select:invalid,
-.form.form--color-blue select:invalid,
-form.form--color-blue .input.invalid,
-.form.form--color-blue .input.invalid,
-form.form--color-blue input[type="text"].invalid,
-.form.form--color-blue input[type="text"].invalid,
-form.form--color-blue input[type="url"].invalid,
-.form.form--color-blue input[type="url"].invalid,
-form.form--color-blue input[type="email"].invalid,
-.form.form--color-blue input[type="email"].invalid,
-form.form--color-blue input[type="number"].invalid,
-.form.form--color-blue input[type="number"].invalid,
-form.form--color-blue input[type="password"].invalid,
-.form.form--color-blue input[type="password"].invalid,
-form.form--color-blue textarea.invalid,
-.form.form--color-blue textarea.invalid,
-form.form--color-blue select.invalid,
-.form.form--color-blue select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-violet .input,
-.form.form--color-violet .input,
-form.form--color-violet input[type="text"],
-.form.form--color-violet input[type="text"],
-form.form--color-violet input[type="url"],
-.form.form--color-violet input[type="url"],
-form.form--color-violet input[type="email"],
-.form.form--color-violet input[type="email"],
-form.form--color-violet input[type="number"],
-.form.form--color-violet input[type="number"],
-form.form--color-violet input[type="password"],
-.form.form--color-violet input[type="password"],
-form.form--color-violet textarea,
-.form.form--color-violet textarea,
-form.form--color-violet select,
-.form.form--color-violet select {
-  border: 1px solid #b199e4;
-  background: #c1adea;
+  border-color: #439de1;
 }
 form.form--color-violet .input:active,
 .form.form--color-violet .input:active,
@@ -6274,132 +5402,7 @@ form.form--color-violet textarea:focus,
 .form.form--color-violet textarea:focus,
 form.form--color-violet select:focus,
 .form.form--color-violet select:focus {
-  background-color: #dfd6f4;
-}
-form.form--color-violet .input::-webkit-input-placeholder,
-.form.form--color-violet .input::-webkit-input-placeholder,
-form.form--color-violet input[type="text"]::-webkit-input-placeholder,
-.form.form--color-violet input[type="text"]::-webkit-input-placeholder,
-form.form--color-violet input[type="url"]::-webkit-input-placeholder,
-.form.form--color-violet input[type="url"]::-webkit-input-placeholder,
-form.form--color-violet input[type="email"]::-webkit-input-placeholder,
-.form.form--color-violet input[type="email"]::-webkit-input-placeholder,
-form.form--color-violet input[type="number"]::-webkit-input-placeholder,
-.form.form--color-violet input[type="number"]::-webkit-input-placeholder,
-form.form--color-violet input[type="password"]::-webkit-input-placeholder,
-.form.form--color-violet input[type="password"]::-webkit-input-placeholder,
-form.form--color-violet textarea::-webkit-input-placeholder,
-.form.form--color-violet textarea::-webkit-input-placeholder,
-form.form--color-violet select::-webkit-input-placeholder,
-.form.form--color-violet select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-violet .input::-moz-placeholder,
-.form.form--color-violet .input::-moz-placeholder,
-form.form--color-violet input[type="text"]::-moz-placeholder,
-.form.form--color-violet input[type="text"]::-moz-placeholder,
-form.form--color-violet input[type="url"]::-moz-placeholder,
-.form.form--color-violet input[type="url"]::-moz-placeholder,
-form.form--color-violet input[type="email"]::-moz-placeholder,
-.form.form--color-violet input[type="email"]::-moz-placeholder,
-form.form--color-violet input[type="number"]::-moz-placeholder,
-.form.form--color-violet input[type="number"]::-moz-placeholder,
-form.form--color-violet input[type="password"]::-moz-placeholder,
-.form.form--color-violet input[type="password"]::-moz-placeholder,
-form.form--color-violet textarea::-moz-placeholder,
-.form.form--color-violet textarea::-moz-placeholder,
-form.form--color-violet select::-moz-placeholder,
-.form.form--color-violet select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-violet .input:-moz-placeholder,
-.form.form--color-violet .input:-moz-placeholder,
-form.form--color-violet input[type="text"]:-moz-placeholder,
-.form.form--color-violet input[type="text"]:-moz-placeholder,
-form.form--color-violet input[type="url"]:-moz-placeholder,
-.form.form--color-violet input[type="url"]:-moz-placeholder,
-form.form--color-violet input[type="email"]:-moz-placeholder,
-.form.form--color-violet input[type="email"]:-moz-placeholder,
-form.form--color-violet input[type="number"]:-moz-placeholder,
-.form.form--color-violet input[type="number"]:-moz-placeholder,
-form.form--color-violet input[type="password"]:-moz-placeholder,
-.form.form--color-violet input[type="password"]:-moz-placeholder,
-form.form--color-violet textarea:-moz-placeholder,
-.form.form--color-violet textarea:-moz-placeholder,
-form.form--color-violet select:-moz-placeholder,
-.form.form--color-violet select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-violet .input:-ms-input-placeholder,
-.form.form--color-violet .input:-ms-input-placeholder,
-form.form--color-violet input[type="text"]:-ms-input-placeholder,
-.form.form--color-violet input[type="text"]:-ms-input-placeholder,
-form.form--color-violet input[type="url"]:-ms-input-placeholder,
-.form.form--color-violet input[type="url"]:-ms-input-placeholder,
-form.form--color-violet input[type="email"]:-ms-input-placeholder,
-.form.form--color-violet input[type="email"]:-ms-input-placeholder,
-form.form--color-violet input[type="number"]:-ms-input-placeholder,
-.form.form--color-violet input[type="number"]:-ms-input-placeholder,
-form.form--color-violet input[type="password"]:-ms-input-placeholder,
-.form.form--color-violet input[type="password"]:-ms-input-placeholder,
-form.form--color-violet textarea:-ms-input-placeholder,
-.form.form--color-violet textarea:-ms-input-placeholder,
-form.form--color-violet select:-ms-input-placeholder,
-.form.form--color-violet select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-violet .input:invalid,
-.form.form--color-violet .input:invalid,
-form.form--color-violet input[type="text"]:invalid,
-.form.form--color-violet input[type="text"]:invalid,
-form.form--color-violet input[type="url"]:invalid,
-.form.form--color-violet input[type="url"]:invalid,
-form.form--color-violet input[type="email"]:invalid,
-.form.form--color-violet input[type="email"]:invalid,
-form.form--color-violet input[type="number"]:invalid,
-.form.form--color-violet input[type="number"]:invalid,
-form.form--color-violet input[type="password"]:invalid,
-.form.form--color-violet input[type="password"]:invalid,
-form.form--color-violet textarea:invalid,
-.form.form--color-violet textarea:invalid,
-form.form--color-violet select:invalid,
-.form.form--color-violet select:invalid,
-form.form--color-violet .input.invalid,
-.form.form--color-violet .input.invalid,
-form.form--color-violet input[type="text"].invalid,
-.form.form--color-violet input[type="text"].invalid,
-form.form--color-violet input[type="url"].invalid,
-.form.form--color-violet input[type="url"].invalid,
-form.form--color-violet input[type="email"].invalid,
-.form.form--color-violet input[type="email"].invalid,
-form.form--color-violet input[type="number"].invalid,
-.form.form--color-violet input[type="number"].invalid,
-form.form--color-violet input[type="password"].invalid,
-.form.form--color-violet input[type="password"].invalid,
-form.form--color-violet textarea.invalid,
-.form.form--color-violet textarea.invalid,
-form.form--color-violet select.invalid,
-.form.form--color-violet select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-purple .input,
-.form.form--color-purple .input,
-form.form--color-purple input[type="text"],
-.form.form--color-purple input[type="text"],
-form.form--color-purple input[type="url"],
-.form.form--color-purple input[type="url"],
-form.form--color-purple input[type="email"],
-.form.form--color-purple input[type="email"],
-form.form--color-purple input[type="number"],
-.form.form--color-purple input[type="number"],
-form.form--color-purple input[type="password"],
-.form.form--color-purple input[type="password"],
-form.form--color-purple textarea,
-.form.form--color-purple textarea,
-form.form--color-purple select,
-.form.form--color-purple select {
-  border: 1px solid #d196e4;
-  background: #daabe9;
+  border-color: #835dd4;
 }
 form.form--color-purple .input:active,
 .form.form--color-purple .input:active,
@@ -6433,132 +5436,7 @@ form.form--color-purple textarea:focus,
 .form.form--color-purple textarea:focus,
 form.form--color-purple select:focus,
 .form.form--color-purple select:focus {
-  background-color: #ecd3f4;
-}
-form.form--color-purple .input::-webkit-input-placeholder,
-.form.form--color-purple .input::-webkit-input-placeholder,
-form.form--color-purple input[type="text"]::-webkit-input-placeholder,
-.form.form--color-purple input[type="text"]::-webkit-input-placeholder,
-form.form--color-purple input[type="url"]::-webkit-input-placeholder,
-.form.form--color-purple input[type="url"]::-webkit-input-placeholder,
-form.form--color-purple input[type="email"]::-webkit-input-placeholder,
-.form.form--color-purple input[type="email"]::-webkit-input-placeholder,
-form.form--color-purple input[type="number"]::-webkit-input-placeholder,
-.form.form--color-purple input[type="number"]::-webkit-input-placeholder,
-form.form--color-purple input[type="password"]::-webkit-input-placeholder,
-.form.form--color-purple input[type="password"]::-webkit-input-placeholder,
-form.form--color-purple textarea::-webkit-input-placeholder,
-.form.form--color-purple textarea::-webkit-input-placeholder,
-form.form--color-purple select::-webkit-input-placeholder,
-.form.form--color-purple select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-purple .input::-moz-placeholder,
-.form.form--color-purple .input::-moz-placeholder,
-form.form--color-purple input[type="text"]::-moz-placeholder,
-.form.form--color-purple input[type="text"]::-moz-placeholder,
-form.form--color-purple input[type="url"]::-moz-placeholder,
-.form.form--color-purple input[type="url"]::-moz-placeholder,
-form.form--color-purple input[type="email"]::-moz-placeholder,
-.form.form--color-purple input[type="email"]::-moz-placeholder,
-form.form--color-purple input[type="number"]::-moz-placeholder,
-.form.form--color-purple input[type="number"]::-moz-placeholder,
-form.form--color-purple input[type="password"]::-moz-placeholder,
-.form.form--color-purple input[type="password"]::-moz-placeholder,
-form.form--color-purple textarea::-moz-placeholder,
-.form.form--color-purple textarea::-moz-placeholder,
-form.form--color-purple select::-moz-placeholder,
-.form.form--color-purple select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-purple .input:-moz-placeholder,
-.form.form--color-purple .input:-moz-placeholder,
-form.form--color-purple input[type="text"]:-moz-placeholder,
-.form.form--color-purple input[type="text"]:-moz-placeholder,
-form.form--color-purple input[type="url"]:-moz-placeholder,
-.form.form--color-purple input[type="url"]:-moz-placeholder,
-form.form--color-purple input[type="email"]:-moz-placeholder,
-.form.form--color-purple input[type="email"]:-moz-placeholder,
-form.form--color-purple input[type="number"]:-moz-placeholder,
-.form.form--color-purple input[type="number"]:-moz-placeholder,
-form.form--color-purple input[type="password"]:-moz-placeholder,
-.form.form--color-purple input[type="password"]:-moz-placeholder,
-form.form--color-purple textarea:-moz-placeholder,
-.form.form--color-purple textarea:-moz-placeholder,
-form.form--color-purple select:-moz-placeholder,
-.form.form--color-purple select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-purple .input:-ms-input-placeholder,
-.form.form--color-purple .input:-ms-input-placeholder,
-form.form--color-purple input[type="text"]:-ms-input-placeholder,
-.form.form--color-purple input[type="text"]:-ms-input-placeholder,
-form.form--color-purple input[type="url"]:-ms-input-placeholder,
-.form.form--color-purple input[type="url"]:-ms-input-placeholder,
-form.form--color-purple input[type="email"]:-ms-input-placeholder,
-.form.form--color-purple input[type="email"]:-ms-input-placeholder,
-form.form--color-purple input[type="number"]:-ms-input-placeholder,
-.form.form--color-purple input[type="number"]:-ms-input-placeholder,
-form.form--color-purple input[type="password"]:-ms-input-placeholder,
-.form.form--color-purple input[type="password"]:-ms-input-placeholder,
-form.form--color-purple textarea:-ms-input-placeholder,
-.form.form--color-purple textarea:-ms-input-placeholder,
-form.form--color-purple select:-ms-input-placeholder,
-.form.form--color-purple select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-purple .input:invalid,
-.form.form--color-purple .input:invalid,
-form.form--color-purple input[type="text"]:invalid,
-.form.form--color-purple input[type="text"]:invalid,
-form.form--color-purple input[type="url"]:invalid,
-.form.form--color-purple input[type="url"]:invalid,
-form.form--color-purple input[type="email"]:invalid,
-.form.form--color-purple input[type="email"]:invalid,
-form.form--color-purple input[type="number"]:invalid,
-.form.form--color-purple input[type="number"]:invalid,
-form.form--color-purple input[type="password"]:invalid,
-.form.form--color-purple input[type="password"]:invalid,
-form.form--color-purple textarea:invalid,
-.form.form--color-purple textarea:invalid,
-form.form--color-purple select:invalid,
-.form.form--color-purple select:invalid,
-form.form--color-purple .input.invalid,
-.form.form--color-purple .input.invalid,
-form.form--color-purple input[type="text"].invalid,
-.form.form--color-purple input[type="text"].invalid,
-form.form--color-purple input[type="url"].invalid,
-.form.form--color-purple input[type="url"].invalid,
-form.form--color-purple input[type="email"].invalid,
-.form.form--color-purple input[type="email"].invalid,
-form.form--color-purple input[type="number"].invalid,
-.form.form--color-purple input[type="number"].invalid,
-form.form--color-purple input[type="password"].invalid,
-.form.form--color-purple input[type="password"].invalid,
-form.form--color-purple textarea.invalid,
-.form.form--color-purple textarea.invalid,
-form.form--color-purple select.invalid,
-.form.form--color-purple select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-pink .input,
-.form.form--color-pink .input,
-form.form--color-pink input[type="text"],
-.form.form--color-pink input[type="text"],
-form.form--color-pink input[type="url"],
-.form.form--color-pink input[type="url"],
-form.form--color-pink input[type="email"],
-.form.form--color-pink input[type="email"],
-form.form--color-pink input[type="number"],
-.form.form--color-pink input[type="number"],
-form.form--color-pink input[type="password"],
-.form.form--color-pink input[type="password"],
-form.form--color-pink textarea,
-.form.form--color-pink textarea,
-form.form--color-pink select,
-.form.form--color-pink select {
-  border: 1px solid #f1a7d1;
-  background: #f5bddc;
+  border-color: #b659d5;
 }
 form.form--color-pink .input:active,
 .form.form--color-pink .input:active,
@@ -6592,132 +5470,7 @@ form.form--color-pink textarea:focus,
 .form.form--color-pink textarea:focus,
 form.form--color-pink select:focus,
 .form.form--color-pink select:focus {
-  background-color: #fce9f4;
-}
-form.form--color-pink .input::-webkit-input-placeholder,
-.form.form--color-pink .input::-webkit-input-placeholder,
-form.form--color-pink input[type="text"]::-webkit-input-placeholder,
-.form.form--color-pink input[type="text"]::-webkit-input-placeholder,
-form.form--color-pink input[type="url"]::-webkit-input-placeholder,
-.form.form--color-pink input[type="url"]::-webkit-input-placeholder,
-form.form--color-pink input[type="email"]::-webkit-input-placeholder,
-.form.form--color-pink input[type="email"]::-webkit-input-placeholder,
-form.form--color-pink input[type="number"]::-webkit-input-placeholder,
-.form.form--color-pink input[type="number"]::-webkit-input-placeholder,
-form.form--color-pink input[type="password"]::-webkit-input-placeholder,
-.form.form--color-pink input[type="password"]::-webkit-input-placeholder,
-form.form--color-pink textarea::-webkit-input-placeholder,
-.form.form--color-pink textarea::-webkit-input-placeholder,
-form.form--color-pink select::-webkit-input-placeholder,
-.form.form--color-pink select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-pink .input::-moz-placeholder,
-.form.form--color-pink .input::-moz-placeholder,
-form.form--color-pink input[type="text"]::-moz-placeholder,
-.form.form--color-pink input[type="text"]::-moz-placeholder,
-form.form--color-pink input[type="url"]::-moz-placeholder,
-.form.form--color-pink input[type="url"]::-moz-placeholder,
-form.form--color-pink input[type="email"]::-moz-placeholder,
-.form.form--color-pink input[type="email"]::-moz-placeholder,
-form.form--color-pink input[type="number"]::-moz-placeholder,
-.form.form--color-pink input[type="number"]::-moz-placeholder,
-form.form--color-pink input[type="password"]::-moz-placeholder,
-.form.form--color-pink input[type="password"]::-moz-placeholder,
-form.form--color-pink textarea::-moz-placeholder,
-.form.form--color-pink textarea::-moz-placeholder,
-form.form--color-pink select::-moz-placeholder,
-.form.form--color-pink select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-pink .input:-moz-placeholder,
-.form.form--color-pink .input:-moz-placeholder,
-form.form--color-pink input[type="text"]:-moz-placeholder,
-.form.form--color-pink input[type="text"]:-moz-placeholder,
-form.form--color-pink input[type="url"]:-moz-placeholder,
-.form.form--color-pink input[type="url"]:-moz-placeholder,
-form.form--color-pink input[type="email"]:-moz-placeholder,
-.form.form--color-pink input[type="email"]:-moz-placeholder,
-form.form--color-pink input[type="number"]:-moz-placeholder,
-.form.form--color-pink input[type="number"]:-moz-placeholder,
-form.form--color-pink input[type="password"]:-moz-placeholder,
-.form.form--color-pink input[type="password"]:-moz-placeholder,
-form.form--color-pink textarea:-moz-placeholder,
-.form.form--color-pink textarea:-moz-placeholder,
-form.form--color-pink select:-moz-placeholder,
-.form.form--color-pink select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-pink .input:-ms-input-placeholder,
-.form.form--color-pink .input:-ms-input-placeholder,
-form.form--color-pink input[type="text"]:-ms-input-placeholder,
-.form.form--color-pink input[type="text"]:-ms-input-placeholder,
-form.form--color-pink input[type="url"]:-ms-input-placeholder,
-.form.form--color-pink input[type="url"]:-ms-input-placeholder,
-form.form--color-pink input[type="email"]:-ms-input-placeholder,
-.form.form--color-pink input[type="email"]:-ms-input-placeholder,
-form.form--color-pink input[type="number"]:-ms-input-placeholder,
-.form.form--color-pink input[type="number"]:-ms-input-placeholder,
-form.form--color-pink input[type="password"]:-ms-input-placeholder,
-.form.form--color-pink input[type="password"]:-ms-input-placeholder,
-form.form--color-pink textarea:-ms-input-placeholder,
-.form.form--color-pink textarea:-ms-input-placeholder,
-form.form--color-pink select:-ms-input-placeholder,
-.form.form--color-pink select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-pink .input:invalid,
-.form.form--color-pink .input:invalid,
-form.form--color-pink input[type="text"]:invalid,
-.form.form--color-pink input[type="text"]:invalid,
-form.form--color-pink input[type="url"]:invalid,
-.form.form--color-pink input[type="url"]:invalid,
-form.form--color-pink input[type="email"]:invalid,
-.form.form--color-pink input[type="email"]:invalid,
-form.form--color-pink input[type="number"]:invalid,
-.form.form--color-pink input[type="number"]:invalid,
-form.form--color-pink input[type="password"]:invalid,
-.form.form--color-pink input[type="password"]:invalid,
-form.form--color-pink textarea:invalid,
-.form.form--color-pink textarea:invalid,
-form.form--color-pink select:invalid,
-.form.form--color-pink select:invalid,
-form.form--color-pink .input.invalid,
-.form.form--color-pink .input.invalid,
-form.form--color-pink input[type="text"].invalid,
-.form.form--color-pink input[type="text"].invalid,
-form.form--color-pink input[type="url"].invalid,
-.form.form--color-pink input[type="url"].invalid,
-form.form--color-pink input[type="email"].invalid,
-.form.form--color-pink input[type="email"].invalid,
-form.form--color-pink input[type="number"].invalid,
-.form.form--color-pink input[type="number"].invalid,
-form.form--color-pink input[type="password"].invalid,
-.form.form--color-pink input[type="password"].invalid,
-form.form--color-pink textarea.invalid,
-.form.form--color-pink textarea.invalid,
-form.form--color-pink select.invalid,
-.form.form--color-pink select.invalid {
-  background-color: #861717 !important;
-}
-form.form--color-brown .input,
-.form.form--color-brown .input,
-form.form--color-brown input[type="text"],
-.form.form--color-brown input[type="text"],
-form.form--color-brown input[type="url"],
-.form.form--color-brown input[type="url"],
-form.form--color-brown input[type="email"],
-.form.form--color-brown input[type="email"],
-form.form--color-brown input[type="number"],
-.form.form--color-brown input[type="number"],
-form.form--color-brown input[type="password"],
-.form.form--color-brown input[type="password"],
-form.form--color-brown textarea,
-.form.form--color-brown textarea,
-form.form--color-brown select,
-.form.form--color-brown select {
-  border: 1px solid #d4aa8f;
-  background: #dbb8a2;
+  border-color: #e765ae;
 }
 form.form--color-brown .input:active,
 .form.form--color-brown .input:active,
@@ -6751,113 +5504,7 @@ form.form--color-brown textarea:focus,
 .form.form--color-brown textarea:focus,
 form.form--color-brown select:focus,
 .form.form--color-brown select:focus {
-  background-color: #e9d4c7;
-}
-form.form--color-brown .input::-webkit-input-placeholder,
-.form.form--color-brown .input::-webkit-input-placeholder,
-form.form--color-brown input[type="text"]::-webkit-input-placeholder,
-.form.form--color-brown input[type="text"]::-webkit-input-placeholder,
-form.form--color-brown input[type="url"]::-webkit-input-placeholder,
-.form.form--color-brown input[type="url"]::-webkit-input-placeholder,
-form.form--color-brown input[type="email"]::-webkit-input-placeholder,
-.form.form--color-brown input[type="email"]::-webkit-input-placeholder,
-form.form--color-brown input[type="number"]::-webkit-input-placeholder,
-.form.form--color-brown input[type="number"]::-webkit-input-placeholder,
-form.form--color-brown input[type="password"]::-webkit-input-placeholder,
-.form.form--color-brown input[type="password"]::-webkit-input-placeholder,
-form.form--color-brown textarea::-webkit-input-placeholder,
-.form.form--color-brown textarea::-webkit-input-placeholder,
-form.form--color-brown select::-webkit-input-placeholder,
-.form.form--color-brown select::-webkit-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-brown .input::-moz-placeholder,
-.form.form--color-brown .input::-moz-placeholder,
-form.form--color-brown input[type="text"]::-moz-placeholder,
-.form.form--color-brown input[type="text"]::-moz-placeholder,
-form.form--color-brown input[type="url"]::-moz-placeholder,
-.form.form--color-brown input[type="url"]::-moz-placeholder,
-form.form--color-brown input[type="email"]::-moz-placeholder,
-.form.form--color-brown input[type="email"]::-moz-placeholder,
-form.form--color-brown input[type="number"]::-moz-placeholder,
-.form.form--color-brown input[type="number"]::-moz-placeholder,
-form.form--color-brown input[type="password"]::-moz-placeholder,
-.form.form--color-brown input[type="password"]::-moz-placeholder,
-form.form--color-brown textarea::-moz-placeholder,
-.form.form--color-brown textarea::-moz-placeholder,
-form.form--color-brown select::-moz-placeholder,
-.form.form--color-brown select::-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-brown .input:-moz-placeholder,
-.form.form--color-brown .input:-moz-placeholder,
-form.form--color-brown input[type="text"]:-moz-placeholder,
-.form.form--color-brown input[type="text"]:-moz-placeholder,
-form.form--color-brown input[type="url"]:-moz-placeholder,
-.form.form--color-brown input[type="url"]:-moz-placeholder,
-form.form--color-brown input[type="email"]:-moz-placeholder,
-.form.form--color-brown input[type="email"]:-moz-placeholder,
-form.form--color-brown input[type="number"]:-moz-placeholder,
-.form.form--color-brown input[type="number"]:-moz-placeholder,
-form.form--color-brown input[type="password"]:-moz-placeholder,
-.form.form--color-brown input[type="password"]:-moz-placeholder,
-form.form--color-brown textarea:-moz-placeholder,
-.form.form--color-brown textarea:-moz-placeholder,
-form.form--color-brown select:-moz-placeholder,
-.form.form--color-brown select:-moz-placeholder {
-  color: #ffffff;
-}
-form.form--color-brown .input:-ms-input-placeholder,
-.form.form--color-brown .input:-ms-input-placeholder,
-form.form--color-brown input[type="text"]:-ms-input-placeholder,
-.form.form--color-brown input[type="text"]:-ms-input-placeholder,
-form.form--color-brown input[type="url"]:-ms-input-placeholder,
-.form.form--color-brown input[type="url"]:-ms-input-placeholder,
-form.form--color-brown input[type="email"]:-ms-input-placeholder,
-.form.form--color-brown input[type="email"]:-ms-input-placeholder,
-form.form--color-brown input[type="number"]:-ms-input-placeholder,
-.form.form--color-brown input[type="number"]:-ms-input-placeholder,
-form.form--color-brown input[type="password"]:-ms-input-placeholder,
-.form.form--color-brown input[type="password"]:-ms-input-placeholder,
-form.form--color-brown textarea:-ms-input-placeholder,
-.form.form--color-brown textarea:-ms-input-placeholder,
-form.form--color-brown select:-ms-input-placeholder,
-.form.form--color-brown select:-ms-input-placeholder {
-  color: #ffffff;
-}
-form.form--color-brown .input:invalid,
-.form.form--color-brown .input:invalid,
-form.form--color-brown input[type="text"]:invalid,
-.form.form--color-brown input[type="text"]:invalid,
-form.form--color-brown input[type="url"]:invalid,
-.form.form--color-brown input[type="url"]:invalid,
-form.form--color-brown input[type="email"]:invalid,
-.form.form--color-brown input[type="email"]:invalid,
-form.form--color-brown input[type="number"]:invalid,
-.form.form--color-brown input[type="number"]:invalid,
-form.form--color-brown input[type="password"]:invalid,
-.form.form--color-brown input[type="password"]:invalid,
-form.form--color-brown textarea:invalid,
-.form.form--color-brown textarea:invalid,
-form.form--color-brown select:invalid,
-.form.form--color-brown select:invalid,
-form.form--color-brown .input.invalid,
-.form.form--color-brown .input.invalid,
-form.form--color-brown input[type="text"].invalid,
-.form.form--color-brown input[type="text"].invalid,
-form.form--color-brown input[type="url"].invalid,
-.form.form--color-brown input[type="url"].invalid,
-form.form--color-brown input[type="email"].invalid,
-.form.form--color-brown input[type="email"].invalid,
-form.form--color-brown input[type="number"].invalid,
-.form.form--color-brown input[type="number"].invalid,
-form.form--color-brown input[type="password"].invalid,
-.form.form--color-brown input[type="password"].invalid,
-form.form--color-brown textarea.invalid,
-.form.form--color-brown textarea.invalid,
-form.form--color-brown select.invalid,
-.form.form--color-brown select.invalid {
-  background-color: #861717 !important;
+  border-color: #bf8058;
 }
 form.form--invert .input,
 .form.form--invert .input,
@@ -6875,9 +5522,9 @@ form.form--invert textarea,
 .form.form--invert textarea,
 form.form--invert select,
 .form.form--invert select {
-  border-color: #333333;
   background-color: #404040;
-  color: #f5f5f5;
+  color: #ffffff;
+  border-color: #595959;
 }
 form.form--invert .input:active,
 .form.form--invert .input:active,
@@ -6911,41 +5558,8 @@ form.form--invert textarea:focus,
 .form.form--invert textarea:focus,
 form.form--invert select:focus,
 .form.form--invert select:focus {
-  background-color: #595959;
-}
-form.form--invert .input:invalid,
-.form.form--invert .input:invalid,
-form.form--invert input[type="text"]:invalid,
-.form.form--invert input[type="text"]:invalid,
-form.form--invert input[type="url"]:invalid,
-.form.form--invert input[type="url"]:invalid,
-form.form--invert input[type="email"]:invalid,
-.form.form--invert input[type="email"]:invalid,
-form.form--invert input[type="number"]:invalid,
-.form.form--invert input[type="number"]:invalid,
-form.form--invert input[type="password"]:invalid,
-.form.form--invert input[type="password"]:invalid,
-form.form--invert textarea:invalid,
-.form.form--invert textarea:invalid,
-form.form--invert select:invalid,
-.form.form--invert select:invalid,
-form.form--invert .input.invalid,
-.form.form--invert .input.invalid,
-form.form--invert input[type="text"].invalid,
-.form.form--invert input[type="text"].invalid,
-form.form--invert input[type="url"].invalid,
-.form.form--invert input[type="url"].invalid,
-form.form--invert input[type="email"].invalid,
-.form.form--invert input[type="email"].invalid,
-form.form--invert input[type="number"].invalid,
-.form.form--invert input[type="number"].invalid,
-form.form--invert input[type="password"].invalid,
-.form.form--invert input[type="password"].invalid,
-form.form--invert textarea.invalid,
-.form.form--invert textarea.invalid,
-form.form--invert select.invalid,
-.form.form--invert select.invalid {
-  background-color: #711313;
+  background-color: #4d4d4d;
+  border-color: #595959;
 }
 form.form--invert label,
 .form.form--invert label {
@@ -6953,7 +5567,7 @@ form.form--invert label,
 }
 form.form--invert option,
 .form.form--invert option {
-  background-color: #333333;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert optgroup,
@@ -6983,8 +5597,7 @@ form.form--invert.form--color-red textarea,
 .form.form--invert.form--color-red textarea,
 form.form--invert.form--color-red select,
 .form.form--invert.form--color-red select {
-  border: 1px solid #861717;
-  background: #9c1a1a;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-red .input:active,
@@ -7019,7 +5632,8 @@ form.form--invert.form--color-red textarea:focus,
 .form.form--invert.form--color-red textarea:focus,
 form.form--invert.form--color-red select:focus,
 .form.form--invert.form--color-red select:focus {
-  background-color: #b21e1e;
+  background-color: #4d4d4d;
+  border-color: #b21e1e;
 }
 form.form--invert.form--color-orange .input,
 .form.form--invert.form--color-orange .input,
@@ -7037,8 +5651,7 @@ form.form--invert.form--color-orange textarea,
 .form.form--invert.form--color-orange textarea,
 form.form--invert.form--color-orange select,
 .form.form--invert.form--color-orange select {
-  border: 1px solid #9f4509;
-  background: #b74f0a;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-orange .input:active,
@@ -7073,7 +5686,8 @@ form.form--invert.form--color-orange textarea:focus,
 .form.form--invert.form--color-orange textarea:focus,
 form.form--invert.form--color-orange select:focus,
 .form.form--invert.form--color-orange select:focus {
-  background-color: #cf590c;
+  background-color: #4d4d4d;
+  border-color: #cf590c;
 }
 form.form--invert.form--color-yellow .input,
 .form.form--invert.form--color-yellow .input,
@@ -7091,8 +5705,7 @@ form.form--invert.form--color-yellow textarea,
 .form.form--invert.form--color-yellow textarea,
 form.form--invert.form--color-yellow select,
 .form.form--invert.form--color-yellow select {
-  border: 1px solid #9a7403;
-  background: #b48703;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-yellow .input:active,
@@ -7127,7 +5740,8 @@ form.form--invert.form--color-yellow textarea:focus,
 .form.form--invert.form--color-yellow textarea:focus,
 form.form--invert.form--color-yellow select:focus,
 .form.form--invert.form--color-yellow select:focus {
-  background-color: #cd9903;
+  background-color: #4d4d4d;
+  border-color: #cd9903;
 }
 form.form--invert.form--color-olive .input,
 .form.form--invert.form--color-olive .input,
@@ -7145,8 +5759,7 @@ form.form--invert.form--color-olive textarea,
 .form.form--invert.form--color-olive textarea,
 form.form--invert.form--color-olive select,
 .form.form--invert.form--color-olive select {
-  border: 1px solid #64710d;
-  background: #788810;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-olive .input:active,
@@ -7181,7 +5794,8 @@ form.form--invert.form--color-olive textarea:focus,
 .form.form--invert.form--color-olive textarea:focus,
 form.form--invert.form--color-olive select:focus,
 .form.form--invert.form--color-olive select:focus {
-  background-color: #8d9e13;
+  background-color: #4d4d4d;
+  border-color: #8d9e13;
 }
 form.form--invert.form--color-green .input,
 .form.form--invert.form--color-green .input,
@@ -7199,8 +5813,7 @@ form.form--invert.form--color-green textarea,
 .form.form--invert.form--color-green textarea,
 form.form--invert.form--color-green select,
 .form.form--invert.form--color-green select {
-  border: 1px solid #126325;
-  background: #15792d;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-green .input:active,
@@ -7235,7 +5848,8 @@ form.form--invert.form--color-green textarea:focus,
 .form.form--invert.form--color-green textarea:focus,
 form.form--invert.form--color-green select:focus,
 .form.form--invert.form--color-green select:focus {
-  background-color: #198f35;
+  background-color: #4d4d4d;
+  border-color: #198f35;
 }
 form.form--invert.form--color-teal .input,
 .form.form--invert.form--color-teal .input,
@@ -7253,8 +5867,7 @@ form.form--invert.form--color-teal textarea,
 .form.form--invert.form--color-teal textarea,
 form.form--invert.form--color-teal select,
 .form.form--invert.form--color-teal select {
-  border: 1px solid #004f4c;
-  background: #006964;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-teal .input:active,
@@ -7289,7 +5902,8 @@ form.form--invert.form--color-teal textarea:focus,
 .form.form--invert.form--color-teal textarea:focus,
 form.form--invert.form--color-teal select:focus,
 .form.form--invert.form--color-teal select:focus {
-  background-color: #00827c;
+  background-color: #4d4d4d;
+  border-color: #00827c;
 }
 form.form--invert.form--color-blue .input,
 .form.form--invert.form--color-blue .input,
@@ -7307,8 +5921,7 @@ form.form--invert.form--color-blue textarea,
 .form.form--invert.form--color-blue textarea,
 form.form--invert.form--color-blue select,
 .form.form--invert.form--color-blue select {
-  border: 1px solid #134d78;
-  background: #175b8e;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-blue .input:active,
@@ -7343,7 +5956,8 @@ form.form--invert.form--color-blue textarea:focus,
 .form.form--invert.form--color-blue textarea:focus,
 form.form--invert.form--color-blue select:focus,
 .form.form--invert.form--color-blue select:focus {
-  background-color: #1a69a4;
+  background-color: #4d4d4d;
+  border-color: #1a69a4;
 }
 form.form--invert.form--color-violet .input,
 .form.form--invert.form--color-violet .input,
@@ -7361,8 +5975,7 @@ form.form--invert.form--color-violet textarea,
 .form.form--invert.form--color-violet textarea,
 form.form--invert.form--color-violet select,
 .form.form--invert.form--color-violet select {
-  border: 1px solid #3c2078;
-  background: #46258c;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-violet .input:active,
@@ -7397,7 +6010,8 @@ form.form--invert.form--color-violet textarea:focus,
 .form.form--invert.form--color-violet textarea:focus,
 form.form--invert.form--color-violet select:focus,
 .form.form--invert.form--color-violet select:focus {
-  background-color: #502aa1;
+  background-color: #4d4d4d;
+  border-color: #502aa1;
 }
 form.form--invert.form--color-purple .input,
 .form.form--invert.form--color-purple .input,
@@ -7415,8 +6029,7 @@ form.form--invert.form--color-purple textarea,
 .form.form--invert.form--color-purple textarea,
 form.form--invert.form--color-purple select,
 .form.form--invert.form--color-purple select {
-  border: 1px solid #611e77;
-  background: #71238b;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-purple .input:active,
@@ -7451,7 +6064,8 @@ form.form--invert.form--color-purple textarea:focus,
 .form.form--invert.form--color-purple textarea:focus,
 form.form--invert.form--color-purple select:focus,
 .form.form--invert.form--color-purple select:focus {
-  background-color: #82299f;
+  background-color: #4d4d4d;
+  border-color: #82299f;
 }
 form.form--invert.form--color-pink .input,
 .form.form--invert.form--color-pink .input,
@@ -7469,8 +6083,7 @@ form.form--invert.form--color-pink textarea,
 .form.form--invert.form--color-pink textarea,
 form.form--invert.form--color-pink select,
 .form.form--invert.form--color-pink select {
-  border: 1px solid #9b1862;
-  background: #b11c70;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-pink .input:active,
@@ -7505,7 +6118,8 @@ form.form--invert.form--color-pink textarea:focus,
 .form.form--invert.form--color-pink textarea:focus,
 form.form--invert.form--color-pink select:focus,
 .form.form--invert.form--color-pink select:focus {
-  background-color: #c71f7e;
+  background-color: #4d4d4d;
+  border-color: #c71f7e;
 }
 form.form--invert.form--color-brown .input,
 .form.form--invert.form--color-brown .input,
@@ -7523,8 +6137,7 @@ form.form--invert.form--color-brown textarea,
 .form.form--invert.form--color-brown textarea,
 form.form--invert.form--color-brown select,
 .form.form--invert.form--color-brown select {
-  border: 1px solid #5b3923;
-  background: #6e442a;
+  background-color: #404040;
   color: #ffffff;
 }
 form.form--invert.form--color-brown .input:active,
@@ -7559,7 +6172,8 @@ form.form--invert.form--color-brown textarea:focus,
 .form.form--invert.form--color-brown textarea:focus,
 form.form--invert.form--color-brown select:focus,
 .form.form--invert.form--color-brown select:focus {
-  background-color: #805031;
+  background-color: #4d4d4d;
+  border-color: #805031;
 }
 form.form--no-borders .input,
 .form.form--no-borders .input,

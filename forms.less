@@ -597,32 +597,20 @@
 
 .set-form-color(@color) {
 	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
-		border: 1px solid lighten(@color, 25%);
-		background: lighten(@color, 30%);
-
 		&:active, &:focus {
-			background-color: lighten(@color, 40%);
-		}
-
-		&::-webkit-input-placeholder {color: @white;}
-		&::-moz-placeholder          {color: @white;}
-		&:-moz-placeholder           {color: @white;}
-		&:-ms-input-placeholder      {color: @white;}
-
-		&:invalid, &.invalid {
-			background-color: darken(@red, 20%) !important;
-		}
+			border-color: lighten(@color, 10%);
+		}		
 	}
 }
 
 .set-form-invert-color(@color) {
 	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
-		border: 1px solid darken(@color, 20%);
-		background: darken(@color, 15%);
+		background-color: lighten(@d-gray, 5%);
 		color: @white;
 
 		&:active, &:focus {
-			background-color: darken(@color, 10%);
+			background-color: lighten(@d-gray, 10%);
+			border-color: darken(@color, 10%);
 		}
 	}
 }
@@ -644,16 +632,24 @@ form, .form {
 		box-sizing: border-box;
 		outline: none;
 		resize: vertical;
+		transition: background-color 0.3s linear;
 		.pt();		
-		.anim(0.3s);
 
 		&:active, &:focus {
 			background-color: @white;
-			.anim(0.3s);
+			transition: background-color 0.3s linear;
 		}
 
-		&:invalid, &.invalid {
+		&:invalid, &.form__input--invalid {
 			background-image: @alert;
+			background-repeat: no-repeat;
+			background-position: right 0.5em center;
+			background-size: 1em; 
+			padding-right: 2em;
+		}
+
+		&.form__input--success {
+			background-image: @checkmark-green;
 			background-repeat: no-repeat;
 			background-position: right 0.5em center;
 			background-size: 1em; 
@@ -760,16 +756,13 @@ form, .form {
 
 	&.form--invert {
 		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
-			border-color: @d-gray;			
 			background-color: lighten(@d-gray, 5%);
-			color: @u-gray;
+			color: @white;
+			border-color: lighten(@d-gray, 15%);
 
 			&:active, &:focus {
-				background-color: lighten(@d-gray, 15%);
-			}
-
-			&:invalid, &.invalid {
-				background-color: darken(@red, 25%);
+				background-color: lighten(@d-gray, 10%);
+				border-color: lighten(@d-gray, 15%);
 			}
 		}
 
@@ -778,7 +771,7 @@ form, .form {
 		}
 
 		option {
-			background-color: @d-gray;
+			background-color: lighten(@d-gray, 5%);
 			color: @white;
 		}
 
