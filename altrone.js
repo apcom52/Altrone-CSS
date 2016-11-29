@@ -220,12 +220,12 @@ function showToast(message, duration) {
 	} else if (duration > 30) {
 		duration = 30;
 	}
-	if ($('.toast-collection').length < 1) {
-		$('body').append('<div class="toast-collection"></div>');
+	if ($('.notification-center').length < 1) {
+		$('body').append('<div class="notification-center notification-center--position-top-left"></div>');
 	}
 
-	$('.toast-collection').append('<div class="toast-collection__item">' + message + '</div>');
-	var current = $('.toast-collection__item').last();
+	$('.notification-center').append('<div class="notification-center__notification"><div class="notification-center__notification__message">' + message + '</div></div>');
+	var current = $('.notification-center__notification').last();
 	current.delay(duration * 1000 - 250);
 	current.fadeOut(500);
 	setTimeout(function() {
