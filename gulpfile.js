@@ -68,3 +68,20 @@ gulp.task('build', function() {
 gulp.task('jsx-watch', function() {
 	gulp.watch('altrone-react.jsx', ['build']);
 });
+
+gulp.task('build-yoda', function() {
+	var b = browserify({ entries: 'yoda-react.jsx', extensions: ['.jsx'], debug: true });
+	b.transform('babelify', { presets: ["es2015", "react"]})
+
+	return b.bundle()
+		.on('error', function(e) {
+			console.log(e.toString());
+			this.emit('end');
+		})
+		.pipe(source('../../yoda/media/static/js/yoda_react.js'))
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('jsx-watchYoda', function() {
+	gulp.watch('yoda-react.jsx', ['build-yoda']);
+});

@@ -6347,6 +6347,99 @@ img.img--border {
   border: 0.25em solid #f5f5f5;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
+img.img--sepia {
+  filter: sepia(100%);
+}
+img.img--sepia-25 {
+  filter: sepia(25%);
+}
+img.img--sepia-50 {
+  filter: sepia(50%);
+}
+img.img--sepia-75 {
+  filter: sepia(75%);
+}
+img.img--sepia-100 {
+  filter: sepia(100%);
+}
+img.img--blur {
+  filter: blur(2px);
+}
+img.img--blur-2px {
+  filter: blur(2px);
+}
+img.img--blur-4px {
+  filter: blur(4px);
+}
+img.img--blur-6px {
+  filter: blur(6px);
+}
+img.img--blur-8px {
+  filter: blur(8px);
+}
+img.img--blur-10px {
+  filter: blur(10px);
+}
+img.img--brightness {
+  filter: brightness(1.1);
+}
+img.img--brightness-11 {
+  filter: brightness(1.1);
+}
+img.img--brightness-12 {
+  filter: brightness(1.2);
+}
+img.img--brightness-13 {
+  filter: brightness(1.3);
+}
+img.img--brightness-14 {
+  filter: brightness(1.4);
+}
+img.img--brightness-15 {
+  filter: brightness(1.5);
+}
+img.img--brightness-16 {
+  filter: brightness(1.6);
+}
+img.img--brightness-17 {
+  filter: brightness(1.7);
+}
+img.img--brightness-18 {
+  filter: brightness(1.8);
+}
+img.img--brightness-19 {
+  filter: brightness(1.9);
+}
+img.img--brightness-20 {
+  filter: brightness(2);
+}
+img.img--brightness-9 {
+  filter: brightness(0.9);
+}
+img.img--brightness-8 {
+  filter: brightness(0.8);
+}
+img.img--brightness-7 {
+  filter: brightness(0.7);
+}
+img.img--brightness-6 {
+  filter: brightness(0.6);
+}
+img.img--brightness-5 {
+  filter: brightness(0.5);
+}
+img.img--brightness-4 {
+  filter: brightness(0.4);
+}
+img.img--brightness-3 {
+  filter: brightness(0.3);
+}
+img.img--brightness-2 {
+  filter: brightness(0.2);
+}
+img.img--brightness-1 {
+  filter: brightness(0.1);
+}
 .carousel {
   width: 100%;
   background-color: #999999;
@@ -9668,9 +9761,9 @@ kbd {
   cursor: pointer;
 }
 .sidebar .sidebar__menu .sidebar__menu__item {
+  display: flex;
   width: 100%;
   vertical-align: middle;
-  background-color: #ffffff;
   color: #333333;
   padding: 0.5em 0.5em 0.5em 1em;
   cursor: pointer;
@@ -9682,24 +9775,19 @@ kbd {
   background-color: #e8e8e8;
   transition: all 0.3s linear;
 }
-.sidebar .sidebar__menu .sidebar__menu__item i {
-  margin-right: 1em;
-  font-size: 0.9em;
+.sidebar .sidebar__menu .sidebar__menu__item .sidebar__menu__item__icon {
+  flex-grow: 0;
+  color: #333333;
+  padding: 0em 0.5em;
+}
+.sidebar .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value {
+  flex: 1;
+  color: #333333;
+  padding: 0em 0.5em;
 }
 .sidebar .sidebar__menu .sidebar__menu__item:active,
 .sidebar .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
   background-color: #cfcfcf;
-  transition: all 0.3s linear;
-}
-.sidebar .sidebar__menu .sidebar__menu__item .sidebar__menu__item__icon {
-  position: absolute;
-  display: inline-block;
-  color: #999999;
-  right: 0em;
-  transition: all 0.3s linear;
-}
-.sidebar .sidebar__menu .sidebar__menu__item .sidebar__menu__item__icon:hover {
-  color: #666666;
   transition: all 0.3s linear;
 }
 .sidebar .sidebar__menu .sidebar__menu__separator {
@@ -9711,242 +9799,275 @@ kbd {
   background-color: #db2828;
   color: #ffffff;
 }
-.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #db2828;
-}
-.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-red .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-red.sidebar--invert .sidebar__cover {
   background-color: #db2828;
   color: #ffffff;
 }
-.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #db2828;
 }
-.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #db2828;
+}
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-red.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #db2828;
 }
 .sidebar.sidebar--color-orange .sidebar__cover {
   background-color: #f2711c;
   color: #ffffff;
 }
-.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #f2711c;
-}
-.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-orange .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-orange.sidebar--invert .sidebar__cover {
   background-color: #f2711c;
   color: #ffffff;
 }
-.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #f2711c;
 }
-.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #f2711c;
+}
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-orange.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #f2711c;
 }
 .sidebar.sidebar--color-yellow .sidebar__cover {
   background-color: #fbbd08;
   color: #ffffff;
 }
-.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #fbbd08;
-}
-.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-yellow .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-yellow.sidebar--invert .sidebar__cover {
   background-color: #fbbd08;
   color: #ffffff;
 }
-.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #fbbd08;
 }
-.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #fbbd08;
+}
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-yellow.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #fbbd08;
 }
 .sidebar.sidebar--color-olive .sidebar__cover {
   background-color: #b5cc18;
   color: #ffffff;
 }
-.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #b5cc18;
-}
-.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-olive .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-olive.sidebar--invert .sidebar__cover {
   background-color: #b5cc18;
   color: #ffffff;
 }
-.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #b5cc18;
 }
-.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #b5cc18;
+}
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-olive.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #b5cc18;
 }
 .sidebar.sidebar--color-green .sidebar__cover {
   background-color: #21ba45;
   color: #ffffff;
 }
-.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #21ba45;
-}
-.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-green .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-green.sidebar--invert .sidebar__cover {
   background-color: #21ba45;
   color: #ffffff;
 }
-.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #21ba45;
 }
-.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #21ba45;
+}
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-green.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #21ba45;
 }
 .sidebar.sidebar--color-blue .sidebar__cover {
   background-color: #2185d0;
   color: #ffffff;
 }
-.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #2185d0;
-}
-.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-blue .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-blue.sidebar--invert .sidebar__cover {
   background-color: #2185d0;
   color: #ffffff;
 }
-.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #2185d0;
 }
-.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #2185d0;
+}
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-blue.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #2185d0;
 }
 .sidebar.sidebar--color-teal .sidebar__cover {
   background-color: #00b5ad;
   color: #ffffff;
 }
-.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #00b5ad;
-}
-.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-teal .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-teal.sidebar--invert .sidebar__cover {
   background-color: #00b5ad;
   color: #ffffff;
 }
-.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #00b5ad;
 }
-.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #00b5ad;
+}
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-teal.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #00b5ad;
 }
 .sidebar.sidebar--color-purple .sidebar__cover {
   background-color: #a333c8;
   color: #ffffff;
 }
-.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #a333c8;
-}
-.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-purple .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-purple.sidebar--invert .sidebar__cover {
   background-color: #a333c8;
   color: #ffffff;
 }
-.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #a333c8;
 }
-.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #a333c8;
+}
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-purple.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #a333c8;
 }
 .sidebar.sidebar--color-violet .sidebar__cover {
   background-color: #6435c9;
   color: #ffffff;
 }
-.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #6435c9;
-}
-.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-violet .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-violet.sidebar--invert .sidebar__cover {
   background-color: #6435c9;
   color: #ffffff;
 }
-.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #6435c9;
 }
-.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #6435c9;
+}
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-violet.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #6435c9;
 }
 .sidebar.sidebar--color-pink .sidebar__cover {
   background-color: #e03997;
   color: #ffffff;
 }
-.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #e03997;
-}
-.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-pink .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-pink.sidebar--invert .sidebar__cover {
   background-color: #e03997;
   color: #ffffff;
 }
-.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #e03997;
 }
-.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #e03997;
+}
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-pink.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #e03997;
 }
 .sidebar.sidebar--color-brown .sidebar__cover {
   background-color: #a5673f;
   color: #ffffff;
 }
-.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #a5673f;
-}
-.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-brown .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
-  color: #ffffff;
 }
 .sidebar.sidebar--color-brown.sidebar--invert .sidebar__cover {
   background-color: #a5673f;
   color: #ffffff;
 }
-.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item:hover {
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item:hover .sidebar__menu__item__value,
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item:active .sidebar__menu__item__value,
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active .sidebar__menu__item__value {
   color: #a5673f;
 }
-.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item:active,
-.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item.sidebar__menu__item--active {
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:hover {
+  color: #a5673f;
+}
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value:active,
+.sidebar.sidebar--color-brown.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value.sidebar__menu__item--active {
   color: #a5673f;
 }
 .sidebar.sidebar--invert {
@@ -9975,6 +10096,9 @@ kbd {
 }
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__icon:hover {
   color: #999999;
+}
+.sidebar.sidebar--invert .sidebar__menu .sidebar__menu__item .sidebar__menu__item__value {
+  color: #f5f5f5;
 }
 .sidebar.sidebar--invert .sidebar__menu .sidebar__menu__separator {
   border-top-color: #4d4d4d;

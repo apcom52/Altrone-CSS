@@ -1,5 +1,58 @@
 import React, {Component} from 'react';
 
+class Header extends Component {
+	render() {
+		var level = parseInt(this.props.level);
+		switch(level) {
+			case 1:
+			default:
+				return (
+					<h1>{this.props.children}</h1>
+				)
+				break;
+			case 2:
+				return (
+					<h2>{this.props.children}</h2>
+				)
+				break;
+			case 3:
+				return (
+					<h3>{this.props.children}</h3>
+				)
+				break;
+			case 4:
+				return (
+					<h4>{this.props.children}</h4>
+				)
+				break;
+			case 5:
+				return (
+					<h5>{this.props.children}</h5>
+				)
+				break;
+			case 6:
+				return (
+					<h6>{this.props.children}</h6>
+				)
+				break;
+		}
+	}
+}
+
+class ListItem extends Component {
+	render() {
+		return (
+			<div className="list__item" onClick={this.props.clicked}>{this.props.children}</div>
+		)
+	}
+}
+
+class List extends Component {
+	render() {
+		return (<div className="list">{(item => <ListItem clickEvent={item.clickEvent}>{item.value})</div>)
+	}
+}
+
 class ValidationInput extends Component {
 	constructor(props) {
 		super(props);
@@ -50,12 +103,8 @@ class DemoApp extends Component {
 	render() {
 		return (
 			<div>
-				<ValidationInput id="input1" title="Поле ввода с валидацией" placeholder="Введите данные" regexp=""></ValidationInput>
-				<Select>
-					<SelectItem text="Option 1" value="1"></SelectItem>
-					<SelectItem text="Option 2" value="2"></SelectItem>
-					<SelectItem text="Option 3" value="3"></SelectItem>
-				</Select>
+				<Header level="6">Header Example</Header>
+				<ValidationInput id="input1" title="Поле ввода с валидацией" placeholder="Введите данные" regexp=""></ValidationInput>				
 			</div>			
 		);
 	}
