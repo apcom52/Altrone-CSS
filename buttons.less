@@ -113,6 +113,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		border: 1px solid @u-gray;
 		text-shadow: none;
 
+		&.button--color-white {
+			color: @white;
+		}
+
 		&:hover, &:active, &.active {
 			background-color: transparent;
 		}
@@ -245,5 +249,70 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 				}
 			}
 		}
+	}
+}
+
+.up-button {
+	position: fixed;
+	z-index: 10;
+	left: 1em;
+	bottom: 1em;
+	background-color: @u-gray;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.5em 1em;
+	border: 1px solid darken(@u-gray , 15%);
+	border-radius: 1em;
+	cursor: pointer;
+	display: flex;
+	.anim(0.3s);
+
+	&:hover {
+		background-color: darken(@u-gray, 5%);
+		.anim(0.3s);
+	}
+
+	&:active {
+		background-color: darken(@u-gray, 10%);
+		.anim(0.3s);
+	}
+
+	&.up-button--position-right {
+		right: 1em;
+		bottom: 1em;
+
+		&.up-button--fill-space {
+			top: 0em;
+			right: 0em;
+		}
+	}
+
+	&.up-button--fill-space {
+		top: 0em;
+		left: 0em;
+		height: 100%;
+		border-radius: 0em;
+		opacity: 0.5;
+		align-items: flex-end;
+		border: none;
+
+		.up-button__label {
+			vertical-align: bottom;
+			flex: 1;
+			margin-bottom: 2em;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:active {
+			opacity: 0.9;
+		}
+	}
+
+	&.up-button--invert {
+		border-color: lighten(@d-gray, 5%);
+		color: @u-gray;
 	}
 }

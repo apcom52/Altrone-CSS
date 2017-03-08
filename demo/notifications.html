@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Уведомления</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../altrone.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>
+
+	<script>
+		$(function() {
+			var nc = new NotificationCenter();
+
+			$('#not1').click(function() {
+				nc.send({
+					title: "Обычное уведомление",
+					text: "Ваш текст",
+				});
+			});
+
+			$('#not2').click(function() {
+				nc.send({
+					title: "Уведомление с изображением",
+					text: "Мы уже приехали?",
+					image: 'donkey.jpg',
+				});
+
+				nc.send({
+					title: "Уведомление с изображением",
+					text: "Мы уже приехали?",
+					image: 'bigdonkey.jpg',
+				});
+			});
+
+			$('#not3').click(function() {
+				nc.send({
+					title: "Уведомление со звуком",
+					text: "Не забудьте добавить звук на страницу",
+					sound: new Audio('horse.mp3'),
+				});
+			});
+
+			$('#not4').click(function() {
+				nc.send({
+					title: "Выберите вариант",
+					text: "Какой ваш любимый цвет?",
+					time: -1,
+					actions: [
+						{
+							value: "Красный",
+							action: function() { alert('Вы выбрали красный цвет'); }
+						},
+						{
+							value: "Синий",
+							action: function() { alert('Вы выбрали синий цвет'); }
+						},
+						{
+							value: "Зеленый",
+							action: function() { alert('Вы выбрали зеленый цвет'); }
+						},
+					]
+				});
+			});						
+
+			console.log(nc);
+		});
+	</script>
+</head>
+<body>
+<div class="grid">
+	<div class="col-6 col-lm-6 padding-vertical-1 padding-lm-05 padding-left-3 padding-right-05 size-fix">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h1 class="helvetica-thin">Уведомления</h1>
+				<p>В AltroneCSS 2.2 появился новый компонент - Уведомления. Он заменил собой устаревшие Toast-уведомления. Новый компонент позволяет создавать различные типы уведомлений:
+				<ul>
+					<li>Уведомления с различным временем отображения</li>
+					<li>Звуковые уведомления</li>
+					<li>Уведомления с выбором варианта ответа</li>
+					<li>Уведомления с изображениями</li>
+				</ul>
+			</div>			
+		</div>
+	</div>
+	<div class="col-6 col-lm-6 padding-vertical-1 padding-lm-05 padding-right-3 padding-left-05 size-fix">
+		<div class="card card--no-smooth">
+			<div class="card__content">
+				<h3>Демонстрация возможностей</h3>
+				<button class="button--fit button--color-blue" id="not1">Обычное уведомление</button>
+				<button class="button--fit button--color-blue" id="not2">Уведомление с изображением</button>
+				<button class="button--fit button--color-blue" id="not3">Уведомление со звуком</button>
+				<button class="button--fit button--color-blue" id="not4">Уведомление с вариантами выбора</button>
+			</div>		
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -100,15 +100,12 @@ $(function() {
 		/* Если .sidebar--under-taskbar, то taskbar должен расширяться под доступное окно */
 		var sidebars = Sidebar.prototype.collection;
 		var current_sidebar = null;
-
-		if (sidebars && sidebars.length > 0) {
-			sidebars.forEach(function (current, index, sidebars) {
-				if (current.visible && current.enable_scroll && current.el.hasClass('sidebar--under-taskbar')) {
-					current_sidebar = current;
-					return;
-				}
-			});
-		}		
+		sidebars.forEach(function (current, index, sidebars) {
+			if (current.visible && current.enable_scroll && current.el.hasClass('sidebar--under-taskbar')) {
+				current_sidebar = current;
+				return;
+			}
+		});
 
 		if (current_sidebar != null) {
 			var top_pos = $(window).scrollTop();
@@ -720,18 +717,6 @@ Overflow.prototype.destroy = function() {
 	}
 };
 
-// Кнопка "Вверх"
-UpButton = function(options) {
-	var target = this;
-	if (options == undefined) options = {};
-
-	target.type = options.type || 'button'; //Тип - button/block
-	target.side = options.side || 'left'; //Сторона, к которой прилипает кнопка
-	target.returnBack = options.returnBack || false; //При повторном нажатии на кнопку, она возвращается в исходное положение
-}
-
-
-
 DM = function(selector) {
 	var target = this;
 	target.el = null;
@@ -763,149 +748,3 @@ DM.prototype.remove = function() {
 	this.el.parentNode.removeChild(this.el);
 	return this;
 };
-
-// Уведомления
-NotificationCenter = function(options) {
-	var target = this;
-	if (options == undefined) options = {};
-	target.log = [];
-}
-
-NotificationCenter.prototype.notId = 0;
-
-NotificationCenter.prototype.send = function(options) {
-	var target = this;
-
-	var notification = {};
-	notification.title = options.title || null;
-	notification.text = options.text || 'empty';
-	notification.image = options.image || null;
-	notification.sound = options.sound || null;
-	notification.actions = options.actions || null;
-	notification.time = options.time || 5;
-	notification.visible = false;
-	notification.id = NotificationCenter.prototype.notId;
-
-	NotificationCenter.prototype.notId += 1;
-
-	target.log.push(notification);
-	target.show(notification);
-};
-
-NotificationCenter.prototype.show = function(notification) {
-	var target = this;
-	notification.visible = true;
-
-	var nc = document.getElementsByClassName('notification-center');
-	if (nc.length < 1) {
-		nc = target.insertNC();
-		nc = document.getElementsByClassName('notification-center');
-		nc = nc[0];
-	} else {
-		nc = nc[0];
-	}
-
-	var n = document.createElement('div');
-	n.className = 'notification-center__notification';
-	if (notification.title) {
-		var nheader = document.createElement('div');
-		nheader.className = 'notification-center__notification__header';
-
-		var nheader_title = document.createElement('div');
-		nheader_title.className = 'notification-center__notification__header__title';
-		nheader_title.innerHTML = notification.title;
-
-		var nheader_close = document.createElement('div')
-		nheader_close.className = 'notification-center__notification__header__close';
-		nheader_close.onclick = function() {
-			target.hide(notification);
-		}
-
-		nheader.appendChild(nheader_title);
-		nheader.appendChild(nheader_close);
-
-		n.appendChild(nheader);
-	}
-
-	if (notification.text) {
-		var ntext = document.createElement('div');
-		ntext.className = 'notification-center__notification__text';
-		ntext.innerHTML = notification.text;
-		n.appendChild(ntext);
-	}
-
-	if (notification.image) {
-		var nimage = document.createElement('img');
-		nimage.className = 'notification-center__notification__image';
-		nimage.src = notification.image
-		n.appendChild(nimage);
-	}
-
-	if (notification.actions) {
-		for (var i = 0; i < notification.actions.length; i++) {
-			var current = notification.actions[i];
-			var naction = document.createElement('button');
-			naction.className = 'button--color-white button--size-small button--only-borders';
-			naction.id = "nact" + notification.id + '-' + i;
-			naction.innerHTML = current.value;
-
-			if (current.action) {
-				naction.onclick = current.action;				
-			}
-
-			n.appendChild(naction);
-		}
-	}
-
-	notification.el = n;
-
-	if (notification.time > 0) {
-		setTimeout(function() {
-			target.hide(notification);	
-		}, notification.time * 1000)
-	}
-
-	if (notification.sound) {
-		console.log(notification.sound);
-		notification.sound.play();
-	}
-
-	nc.appendChild(n);
-	console.log(nc);
-}
-
-NotificationCenter.prototype.hide = function(notification) {
-	var target = this;
-	notification.el.className = "notification-center__notification notification-center__notification--hide";
-	setTimeout(function() {
-		notification.visible = false;
-		notification.el.remove();
-		target.removeNC();
-	}, 500);
-
-}
-
-NotificationCenter.prototype.insertNC = function() {
-	var target = this;
-	console.log('addNC');
-	var ncblock = document.createElement('div');
-	ncblock.className = 'notification-center';
-	document.body.appendChild(ncblock);
-	target.nc = ncblock;
-	return ncblock;
-}
-
-NotificationCenter.prototype.removeNC = function() {
-	var target = this;
-	var hasVisible = false;
-	var log = target.log;
-	log.forEach(function(item, i, log) {
-		if (item.visible) {
-			hasVisible = true;
-		}
-	});
-
-	if (hasVisible == false) {
-		target.nc.remove();		
-	}
-}
