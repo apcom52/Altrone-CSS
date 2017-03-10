@@ -129,6 +129,16 @@
 					var dialog = new Dialog('Hello', 'world', function() {alert('ok'); });
 					dialog.show();
 				});
+
+				var topbutton = new UpButtonNavigation({
+					text: 'Up',
+					animate: true,
+					// visibleAt: 800,
+					returnBack: true,
+					position: 'right',
+				});
+
+				console.log(topbutton);
 			});
 		</script>
 	</head>
@@ -1166,8 +1176,5 @@
 			<div class="sidebar__menu__item">О сервисе</div>
 		</div>
 	</div>
-
-	<div class="up-button up-button--fill-space"><span class="up-button__label">Вверх</span></div>
-
 	</body>
 </html>

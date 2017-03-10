@@ -769,6 +769,7 @@ NotificationCenter = function(options) {
 	var target = this;
 	if (options == undefined) options = {};
 	target.log = [];
+	console.log(target);
 }
 
 NotificationCenter.prototype.notId = 0;
@@ -907,5 +908,124 @@ NotificationCenter.prototype.removeNC = function() {
 
 	if (hasVisible == false) {
 		target.nc.remove();		
+	}
+}
+
+// Кнопка "Вверх"
+UpButtonNavigation = function(options) {
+	var target = this;
+	if (options == undefined) options = {};	
+
+	target.position = options.position || 'left';
+	target.fill = options.fill || false;
+	target.returnBack = options.returnBack || false;
+	target.visibleAt = options.visibleAt || 0;
+	target.text = options.text || 'Top';
+	target.animate = options.animate || false;
+	target.onClick = options.onClick || null;
+	target.scrollPosition = window.scrollY;
+	target.direction = true;
+	target.rememberedPosition = 0;
+
+	console.log(target);
+
+	if (target.returnToContent && target.visibleAt > 0) {
+		throw new Error('If visibleAt more than 0, returnToContent must be false');
+	}
+
+	if (target.position != 'left' && target.position != 'right') {
+		throw new Error('Invalid position value');
+	}		
+
+	window.onscroll = function() { target.onScrollEvent(); }
+
+	if (target.visibleAt == 0 || target.scrollPosition >= target.visibleAt) {
+		target.createButton();
+	}	
+}
+
+UpButtonNavigation.prototype.onScrollEvent = function() {
+	var target = this;
+	target.scrollPosition = window.scrollY;
+	if (target.visibleAt > 0) {
+		if (target.scrollPosition >= target.visibleAt) {
+			if (target.el == null) {
+				target.createButton();
+			}
+		} else {
+			if (target.el) {
+				target.el.remove();
+				target.el = null;
+			}
+		}
+	}
+}
+
+UpButtonNavigation.prototype.createButton = function() {
+	var target = this;
+
+	var tb = document.createElement('button');
+	tb.className = 'up-button up-button--postion-' + target.position;
+	if (target.fill) {
+		tb.className += ' up-button--fill-space';
+	}
+
+	tb_label = document.createElement('span');
+	tb_label.className = 'up-button__label';
+	tb_label.innerHTML = target.text;
+	tb.appendChild(tb_label);
+	document.body.appendChild(tb);
+
+	tb.onclick = function() { target.toTop(); };
+	if (target.onClick) {
+		tb.onclick = function() { target.onClick(); }
+	}
+
+	target.el = tb;
+	return tb;
+}
+
+UpButtonNavigation.prototype.toTop = function() {
+	var target = this;
+	target.scrollPosition = window.scrollY;	
+	if (target.scrollPosition != 0) {
+		target.rememberedPosition = window.scrollY;		
+	}
+	console.log(target);
+
+	if (target.returnBack == false) {
+		if (target.animate) {
+			target.animationScroll(0, -15);
+		} else {
+			window.scrollTo(0, 0);
+		}	
+	} else {
+		if (target.direction) {
+			if (target.animate) {
+				target.animationScroll(0, -15);
+			} else {
+				window.scrollTo(0, 0);
+			}	
+		} else {
+			if (target.animate) {
+				target.animationScroll(target.rememberedPosition, 15);
+			} else {
+				window.scrollTo(0, target.rememberedPosition);
+			}	
+		}	
+
+		target.direction = !target.direction;	
+	}	
+
+	
+}
+
+UpButtonNavigation.prototype.animationScroll = function(value, delta) {
+	var target = this;
+	if ((window.scrollY != value && value == 0) || (window.scrollY <= value && value > 0)) {
+		setTimeout(function() {
+			window.scrollTo(0, window.scrollY + delta);
+			target.animationScroll(value, delta);
+		}, 10);
 	}
 }
