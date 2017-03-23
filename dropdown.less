@@ -132,6 +132,8 @@
 		background-position: right 0.5em center;
 		background-repeat: no-repeat;
 		background-size: 1em;
+		border-radius: 6px;
+		transition: border-radius 0.3s linear;
 
 		&:hover {
 			background-color: darken(@u-gray, 5%);
@@ -144,6 +146,8 @@
 
 		&.select__menu--open {
 			background-image: url(@d-arrow-up);
+			border-radius: 6px 6px 0px 0px;
+			transition: border-radius 0.3s linear;
 		}
 	}
 
@@ -155,6 +159,7 @@
 		border: 2px solid darken(@u-gray, 10%);
 		padding: 0.25em 0em;
 		box-sizing: border-box;
+		border-radius: 0px 0px 6px 6px;
 		.card_shadow();
 
 		.select__options__item {

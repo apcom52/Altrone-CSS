@@ -1015,9 +1015,7 @@ UpButtonNavigation.prototype.toTop = function() {
 		}	
 
 		target.direction = !target.direction;	
-	}	
-
-	
+	}		
 }
 
 UpButtonNavigation.prototype.animationScroll = function(value, delta) {
