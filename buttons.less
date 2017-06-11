@@ -258,7 +258,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	left: 1em;
 	bottom: 1em;
 	background-color: @u-gray;
-	font-weight: bold;
 	text-align: center;
 	padding: 0.5em 1em;
 	border: 1px solid darken(@u-gray , 15%);
@@ -266,6 +265,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	cursor: pointer;
 	display: flex;
 	.shadow-2();
+	.bold();
 	.anim(0.3s);
 
 	&:hover {

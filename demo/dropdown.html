@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Выпадающее меню</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../altrone.js"></script>
+	<script src="../js/altrone-dev.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content">
+				<h1 class="helvetica-thin">Выпадающее меню</h1>	
+
+				<div class="fdrid">
+					<div class="col-4 offset-8"><button class="button--color-blue" id="dd_demo">Показать выпадающее меню</button></div>
+				</div>
+
+				<div class="fgrid">
+					<div class="col-12">
+						<div class="taskbar">
+							<div class="taskbar__item taskbar__item--icon" id="taskbarDropdown"><i class="fa fa-bars"></i></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="fgrid">
+					<div class="col-6">
+						<div class="form"><input type="search"></div>
+					</div>
+					<div class="col-6">
+						<div class="form form--invert"><input type="search"></div>
+					</div>
+				</div>
+				<div class="fgrid">
+					<div class="col-6">
+						<div class="form"><input type="tel"></div>
+					</div>
+					<div class="col-6">
+						<div class="form form--invert"><input type="tel"></div>
+					</div>
+				</div>
+				<div class="fgrid">
+					<div class="col-6">
+						<div class="form"><input type="url"></div>
+					</div>
+					<div class="col-6">
+						<div class="form form--invert"><input type="url"></div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+
+<script>
+	var dd = new Dropdown(document.getElementById('dd_demo'), [
+		{
+			actions: [
+				{
+					label: 'Create',
+					onClick: (obj) => console.log(obj)
+				},
+				{
+					tooltip: 'Ctrl+N',
+					onClick: (obj) => console.log(obj)
+				}
+			]
+		},
+		{
+			actions: [
+				{
+					label: 'Open',
+					onClick: (obj) => console.log(obj)
+				},
+				{
+					tooltip: 'Ctrl+O'
+				}
+			]
+		},
+		{
+			actions: [
+				{
+					label: 'Save',
+				},
+				{
+					icon: 'fa fa-save'
+				}
+			]
+		},
+		{
+			actions: [
+				{
+					tooltip: 'Save to:'
+				},
+				{
+					icon: 'fa fa-cloud',
+					label: 'Google',
+					onClick: (obj) => console.log(obj)
+				},
+				{
+					icon: 'fa fa-hdd-o'
+				}
+			]
+		}
+	], {
+		position: 'bottom'
+	});
+
+	var dd2 = new Dropdown(document.getElementById('taskbarDropdown'), [
+		{
+			actions: [
+				{
+					label: 'Home'
+				}
+			]
+		},
+		{
+			actions: [
+				{
+					label: 'Mail'
+				}
+			]
+		},
+		{
+			actions: [
+				{
+					label: 'My Account',
+					icon: 'fa fa-user'
+				}
+			]
+		},
+	], null)
+
+
+	console.log(dd);
+</script>
+</body>
+</html>

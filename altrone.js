@@ -1,6 +1,6 @@
 $(function() {
 	/* Dropdown Выпадающее меню */
-	$('body').on('click', '[data-dropdown-target]', function(event) {
+	/*$('body').on('click', '[data-dropdown-target]', function(event) {
 		var dropdown = $('#' + $(this).data('dropdownTarget'));
 		var window_width = $(window).width();
 		var dropdown_width = $(dropdown).outerWidth();
@@ -30,7 +30,7 @@ $(function() {
 			return;
 		$('.dropdown').slideUp(300);		
 		e.stopPropagation();
-	});
+	});*/
 
 	/* Всплывающие подсказки */
 	var lastTooltipPosition = {x: null, y: null};	
@@ -442,6 +442,8 @@ Select.prototype.open = function() {
 
 		if (target.position == 'top') {
 			options_menu.css('top', parent_top - options_menu.outerHeight());
+			this.menu.addClass('select__menu--top');
+			options_menu.addClass('select__options--top');
 		}
 
 		options_menu.css('left', parent_left);

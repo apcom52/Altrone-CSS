@@ -32,9 +32,9 @@
 		&:active, &.tabs__item--active {			
 			background-color: @white;
 			border: 1px solid darken(@u-gray, 10%);
-			font-weight: bold;
 			border-bottom-color: transparent;
 			.anim(0.3s);
+			.bold();
 		}
 
 		&.tabs__item--disabled {
@@ -217,9 +217,9 @@
 		.tabs__item {
 			background-color: transparent;
 			color: @l-gray;
-			font-weight: bold;
 			text-transform: uppercase;
 			border: none;
+			.bold();
 
 			&:hover {
 				background: transparent;
@@ -393,14 +393,14 @@
 		.accordion__item__title {
 			background-color: @u-gray;
 			padding: 0.5em 2em;
-			font-weight: bold;
 			font-size: 0.95em;
 			background-repeat: no-repeat;
 			background-size: 1em;
 			background-position: right 0.5em center;
 			background-image: @plus;
-			.anim(0.3s);
 			cursor: pointer;
+			.anim(0.3s);
+			.bold();
 
 			&:hover {
 				background-color: darken(@u-gray, 10%);

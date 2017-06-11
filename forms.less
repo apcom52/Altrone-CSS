@@ -110,8 +110,8 @@
 		.pt();
 
 		.toggle__title {
-			font-weight: bold;
 			color: @d-gray;
+			.bold();
 		}
 
 		.toggle__meta {
@@ -239,8 +239,8 @@
 			.pt();
 
 			.checkbox__title {
-				font-weight: bold;
 				color: @d-gray;
+				.bold();
 			}
 
 			.checkbox__meta {
@@ -313,8 +313,8 @@
 		.pt();
 
 		.checkbox__title {
-			font-weight: bold;
 			color: @d-gray;
+			.bold();
 		}
 
 		.checkbox__meta {
@@ -543,8 +543,8 @@
 		.pt();
 
 		.radio__title {
-			font-weight: bold;
 			color: @d-gray;
+			.bold();
 		}
 
 		.radio__meta {
@@ -596,7 +596,7 @@
 }
 
 .set-form-color(@color) {
-	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 		&:active, &:focus {
 			border-color: lighten(@color, 10%);
 		}		
@@ -604,7 +604,7 @@
 }
 
 .set-form-invert-color(@color) {
-	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 		background-color: lighten(@d-gray, 5%);
 		color: @white;
 
@@ -615,13 +615,21 @@
 	}
 }
 
+.set-input-icon(@icon) {
+	padding-left: 2em;
+	background-image: @icon;
+	background-size: 1em;
+	background-repeat: no-repeat;
+	background-position: 0.5em center;
+}
+
 form, .form {
 	padding: 0.25em 1em;
 	.anim(0.3s);
 	clear: both;
 	overflow: hidden;
 
-	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 		display: block;
 		margin: 0.25em 0em;
 		border: 1px solid darken(@u-gray, 15%);
@@ -665,6 +673,46 @@ form, .form {
 		}
 	}
 
+	input[type="search"] {
+		.set-input-icon(@search);
+
+		&:invalid, &.form__input--invalid {
+			background-image: @search, @alert;
+			background-repeat: no-repeat, no-repeat;
+			background-position: 0.5em center, right 0.5em center;
+			background-size: 1em; 
+			padding-right: 2em;
+			padding-left: 2em;
+			box-sizing: border-box;
+		}
+	}
+
+	input[type="tel"] {
+		.set-input-icon(@phone);
+
+		&:invalid, &.form__input--invalid {
+			background-image: @phone, @alert;
+			background-repeat: no-repeat, no-repeat;
+			background-position: 0.5em center, right 0.5em center;
+			background-size: 1em; 
+			padding-right: 2em;
+			padding-left: 2em;
+		}
+	}
+
+	input[type="url"] {
+		.set-input-icon(@globe);
+
+		&:invalid, &.form__input--invalid {
+			background-image: @globe, @alert;
+			background-repeat: no-repeat, no-repeat;
+			background-position: 0.5em center, right 0.5em center;
+			background-size: 1em; 
+			padding-right: 2em;
+			padding-left: 2em;
+		}
+	}
+
 	textarea {
 		transition: resize 0s linear;
 	}
@@ -697,10 +745,9 @@ form, .form {
 
 	label {
 		display: block;
-		.pt();
-		font-weight: bold;
 		cursor: pointer;
 		.anim(0.3s);
+		.bold();
 	}
 
 	option {
@@ -712,28 +759,27 @@ form, .form {
 	optgroup {
 		background: @u-gray;
 		color: @d-gray;
-		font-weight: bold;
-		.pt();
+		.bold();
 	}
 
 	&.form--no-smooth {	
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select { 
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select { 
 			border-radius: 0em;
 		}
 	}
 	&.form--smooth {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 			border-radius: 0.25em;
 		}
 	}
 	&.form--rounded {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 			border-radius: 1em;
 		}
 	}
 
 	&.form--fit {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select { 
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select { 
 			width: 100%;
 		}
 	}
@@ -755,7 +801,7 @@ form, .form {
 	&.form--color-brown { .set-form-color(@brown); }	
 
 	&.form--invert {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 			background-color: lighten(@d-gray, 5%);
 			color: @white;
 			border-color: lighten(@d-gray, 15%);
@@ -763,6 +809,45 @@ form, .form {
 			&:active, &:focus {
 				background-color: lighten(@d-gray, 10%);
 				border-color: lighten(@d-gray, 15%);
+			}
+		}
+
+		input[type="search"] {
+			.set-input-icon(@search-invert);
+
+			&:invalid, &.form__input--invalid {
+				background-image: @search-invert, @alert;
+				background-repeat: no-repeat, no-repeat;
+				background-position: 0.5em center, right 0.5em center;
+				background-size: 1em; 
+				padding-right: 2em;
+				padding-left: 2em;
+			}
+		}
+
+		input[type="tel"] {
+			.set-input-icon(@phone-invert);
+
+			&:invalid, &.form__input--invalid {
+				background-image: @phone-invert, @alert;
+				background-repeat: no-repeat, no-repeat;
+				background-position: 0.5em center, right 0.5em center;
+				background-size: 1em; 
+				padding-right: 2em;
+				padding-left: 2em;
+			}
+		}
+
+		input[type="url"] {
+			.set-input-icon(@globe-invert);
+
+			&:invalid, &.form__input--invalid {
+				background-image: @globe-invert, @alert;
+				background-repeat: no-repeat, no-repeat;
+				background-position: 0.5em center, right 0.5em center;
+				background-size: 1em; 
+				padding-right: 2em;
+				padding-left: 2em;
 			}
 		}
 
@@ -800,13 +885,13 @@ form, .form {
 	}
 
 	&.form--no-borders {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 			border: none;
 		}
 	}
 
 	&.form--transparent {
-		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
+		.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 			opacity: 0.5;
 
 			&:active, &:focus {

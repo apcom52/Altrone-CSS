@@ -34,7 +34,7 @@
 
 	.alert__header {
 		font-size: 1.2em;
-		font-weight: bold;
+		.bold();
 
 		.alert__header__close-btn {
 			float: right;
@@ -239,8 +239,8 @@
 
 			.notification-center__notification__header__title {
 				font-size: 1.05em;
-				font-weight: bold;	
 				flex: 1;
+				.bold();
 			}
 
 			.notification-center__notification__header__close {
@@ -353,21 +353,19 @@ blockquote {
 mark {
 	background-color: @u-yellow;
 	color: @d-yellow;
-	font-weight: bold;
 	padding: 0em 0.5em;
 	border-radius: 0.2em;
 	font-size: 0.9em;
-	.pt();
+	.bold();
 }
 
 kbd {
 	color: @u-gray;
-	font-weight: bold;
 	background-color: @d-gray;
 	padding: 0em 0.5em;
 	border-radius: 0.2em;
 	font-size: 0.9em;
-	.pt();
+	.bold();
 }
 
 @keyframes notification-show {

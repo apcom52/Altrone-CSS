@@ -339,8 +339,8 @@
 			padding: 1em;
 
 			.list-navigation__item__content__title {
-				font-weight: bold;
 				color: @d-gray;
+				.bold();
 			}
 
 			.list-navigation__item__content__meta {
@@ -463,9 +463,9 @@
 			flex: 9;
 
 			.feed__item__content__title {
-				font-weight: bold;
 				cursor: pointer;
 				.anim(0.3s);
+				.bold();
 
 				&:hover {
 					color: @blue;
@@ -650,7 +650,7 @@
 
 		&:last-child {
 			background: none;
-			font-weight: bold;
+			.bold();
 		}
 	}
 
@@ -667,7 +667,7 @@
 
 			&:last-child {
 				background: none;
-				font-weight: bold;
+				.bold();
 			}
 		}
 	}

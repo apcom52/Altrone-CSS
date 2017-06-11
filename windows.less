@@ -14,14 +14,13 @@
 	.modal__header {
 		position: relative;
 		text-align: center;
-		font-weight: bold;
 		padding: 0.5em 1em;
 		color: @d-gray;
 		max-width: 100%;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		oveflow: hidden;
-		.pt();
+		.bold();
 
 		.modal__header__close {
 			content: "";
@@ -119,52 +118,3 @@
 		}
 	}
 }
-
-// .notification-center {
-// 	width: 30%;
-// 	height: auto;
-// 	position: fixed;
-// 	bottom: 1em;
-// 	left: 35%;
-// 	max-height: 70%;
-// 	overflow-y: auto;
-// 	z-index: 20;
-
-// 	.notification-center__notification {
-// 		background-color: @white;
-// 		margin: 1em;
-// 		border-radius: 1em;
-// 		border: 1px solid @u-gray;
-// 		padding: 0.25em;
-// 		box-sizing: border-box;
-// 		width: ~'calc(100% - 2em)';
-// 		color: @d-gray;
-// 		.card_shadow();
-// 		.pt();
-		
-// 		.notification-center__notification__message {
-// 			font-size: 0.8em;
-// 			text-align: center;
-// 		}
-// 	}
-
-// 	&.notification-center--position {
-// 		&-top-left {
-// 			left: 10%;
-// 			top: 1em;
-// 		}
-
-// 		&-top-right {
-// 			right: 10%;
-// 			top: 1em;
-// 		}
-
-// 		&-bottom-left {
-// 			left: 10%;
-// 		}
-
-// 		&-bottom-left {
-// 			right: 10%;
-// 		}
-// 	}
-// }

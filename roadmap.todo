@@ -1,5 +1,8 @@
 ALTRONE 2.2 (Curious Catzilla):
-   ☐ Обновить компонент выпадающего меню (Dropdown)
+   ☐ @high Обновить компонент выпадающего меню (Dropdown)
+   ☐ @high Исправить подсветку фона при наведение на неактивный tabs_item
+   ☐ @high Исправить цвет текста на кнопке с модификаторами .button--color-white + .button--transparent/--transparent-full
+   ✔ При использовании полужирного или курсивного начертания теперь используется PT Sans Bold / Italic @done (17-06-07 19:43)
    ✔ Сделать адаптивные варианты для hidden-* @done (16-11-09 15:57)
    ✔ Добавить стилизацию тега <mark> @done (16-10-09 22:04)
    ✔ Добавить стилизацию тега <kbd> @done (16-10-09 22:04)
@@ -85,7 +88,7 @@ ALTRONE 2.0 (build 236) (Angry Acromantula):
  ✔ @critical Пофиксить .tabs--transparent .tabs--color-* @done (16-03-09 19:23)
  ✔ @critical Пофиксить .button--transparent и .button--color-* @done (16-02-28 23:52)
  ✔ @high Переписать модуль Select @done (16-04-14 22:56)
- ☐ @high Написать документацию
+ ✔ @high Написать документацию @done (17-06-07 19:43)
  ✔ @high Вертикальное положение tooltip @done (16-03-17 23:26)
  ✔ @high Добавить Toggle Button @done (16-02-29 00:19)
  ✔ @high Переделать стандартную сетку, сделать классы для pm, lm, pt, lt @done (16-03-13 01:04)
