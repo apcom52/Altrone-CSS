@@ -1,4 +1,6 @@
-ALTRONE 2.2 (Curious Catzilla):
+ALTRONE 2.3 11/17 (Dully Dragon):
+   ☐ Придумать название
+ALTRONE 2.2 7/17 (Curious Catzilla): 
    ☐ @high Обновить компонент выпадающего меню (Dropdown)
    ☐ @high Исправить подсветку фона при наведение на неактивный tabs_item
    ☐ @high Исправить цвет текста на кнопке с модификаторами .button--color-white + .button--transparent/--transparent-full
@@ -22,7 +24,7 @@ ALTRONE 2.2 (Curious Catzilla):
    ✔ Изменить стиль чекбоксов и радиокнопок @done (16-11-09 15:57)
    ✔ Стрелка на Select-ах стали читабельней @done (16-10-08 18:49)
 
- ALTRONE 2.1 (Blinked Basilisk):
+ ALTRONE 2.1 10/16 (Blinked Basilisk):
    ✘ Добавить иконки @cancelled (16-09-25 21:56)
    ✔ Обновить модальные окна @done (16-09-25 21:56)
    ✔ Добавить Accordion @done (16-09-30 23:25)
@@ -63,7 +65,7 @@ UPDATE ALTRONE 2.0.2:
    ✘ @low Реализовать адаптивность выпадающих меню для -lm + -m @cancelled (16-04-17 13:51)
 
 
-ALTRONE 2.0 (build 236) (Angry Acromantula):
+ALTRONE 2.0 4/16 (build 236) (Angry Acromantula):
  ✔ @critical Значение по умолчанию для select @done (16-04-14 22:56)
  ✔ @critical Пофиксить .list--horizontal и .list--animation-slide @done (16-04-15 13:59)
  ✔ @critical Пофиксить положение подложки, если sidebar используется с модификатором .sidebar--under-taskbar и не имеет position: fixed; @done (16-04-15 15:07)
