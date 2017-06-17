@@ -1,57 +1,57 @@
-@red: #db2828;
-@u-red: #f2acac;
-@l-red: #eb7f7f;
-@d-red: #871616;
+@red: #f44336;
+@u-red: #ffcdd2;
+@l-red: #ef9a9a;
+@d-red: #d32f2f;
 
-@orange: #f2711c;
-@u-orange: #facbac;
-@l-orange: #f7af7e;
-@d-orange: #9e4509;
+@orange: #ff9800;
+@u-orange: #ffe0b2;
+@l-orange: #ffcc80;
+@d-orange: #f57c00;
 
-@yellow: #fbbd08;
-@u-yellow: #fce49a;
-@l-yellow: #fadd73;
-@d-yellow: #a98307;
+@yellow: #ffeb3b;
+@u-yellow: #fff59d;
+@l-yellow: #fff176;
+@d-yellow: #fbc02d;
 
-@olive: #b5cc18;
-@u-olive: #e5f28d;
-@l-olive: #daed5f;
-@d-olive: #65730e;
+@olive: #8bc34a;
+@u-olive: #dcedc8;
+@l-olive: #c5e1a5;
+@d-olive: #689f38;
 
-@green: #21ba45;
-@u-green: #8aeba1;
-@l-green: #5fe37e;
-@d-green: #126325;
+@green: #4caf50;
+@u-green: #c8e6c9;
+@l-green: #a5d6a7;
+@d-green: #388e3c;
 
-@teal: #00b5ad;
-@u-teal: #b8fffb;
-@l-teal: #1ffff4;
-@d-teal: #00524e;
+@teal: #009688;
+@u-teal: #b2dfdb;
+@l-teal: #80cbc4;
+@d-teal: #00796b;
 
-@blue: #2185d0;
-@u-blue: #9eccf0;
-@l-blue: #72b5e8;
-@d-blue: #144e7a;
+@blue: #2196f3;
+@u-blue: #bbdefb;
+@l-blue: #90caf9;
+@d-blue: #1976d2;
 
-@violet: #6435c9;
-@u-violet: #c1aeeb;
-@l-violet: #a284e0;
-@d-violet: #3d1f7a;
+@violet: #673ab7;
+@u-violet: #d1c4e9;
+@l-violet: #b39ddb;
+@d-violet: #512da8;
 
-@purple: #a333c8;
-@u-purple: #daa9eb;
-@l-purple: #c87ee0;
-@d-purple: #611c78;
+@purple: #9c27b0;
+@u-purple: #e1bee7;
+@l-purple: #ce93d8;
+@d-purple: #7b1fa2;
 
-@pink: #e03997;
-@u-pink: #f5bcdc;
-@l-pink: #ed91c5;
-@d-pink: #991861;
+@pink: #e91e63;
+@u-pink: #f8bbd0;
+@l-pink: #f48fb1;
+@d-pink: #c2185b;
 
-@brown: #a5673f;
-@u-brown: #dbb9a2;
-@l-brown: #cc9d7e;
-@d-brown: #5c3b25;
+@brown: #795548;
+@u-brown: #d7ccc8;
+@l-brown: #bcaaa4;
+@d-brown: #5d4037;
 
 @u-gray: #f5f5f5;
 @l-gray: #999999;
@@ -60,18 +60,10 @@
 @black: #000000;
 @white: #ffffff;
 
-
 @mobile: 480px;
 @l-mobile: 767px;
 @tablet: 992px;
 @l-tablet: 1199px;
-
-@tab-border: darken(@u-gray, 5%);
-
-@a-cyan: #b3f7f6;
-@a-green: #7dd076;
-@a-yellow: #f1f592;
-@y-orange: #f4cb81;
 
 @d-arrow-up: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAACp0lEQVR4Xu3bwVHDMBCFYSkuAErxpAM6CR1ARUAl0ECMS4EGbEYz+OIheCVLervW48IBOxv+z2uSmeAdv6AFPHQ6hzsCgC8CAhAAXAA8nhtAAHAB8HhuAAHABcDjuQEEABcAj+cGEABcADyeG0AAcAHweG4AAcAFwOO5AQQAFwCP5wYQIL1A3/d9OHscxzH9UbBnmt2AEP90Or2HfNM0PVhFMAmwxPfe3weAeZ6/rCKYAwjxu677XN84AoJz7nkYhlfsTSVuuimA9ZX/1686z/OjJQQzAJL4C4glBBMAMfGtIagHSIlvCUE1wJ74VhDUAuSIbwFBJUDO+NoR1AEkxP92zt1JXn1rfHWkCiA2fgg6TdPYdd2HVQQ1ACnxlzdcv++OTSKoANgTf7n1WEWAA+SIbxkBCpAzvlUEGECJ+BYRIAAl41tDqA5QI74lhKoANeNbQagGgIhvAaEKADK+doTiABria0YoCqApvlaEYgAa42tEKAKgOb42hOwAFuJrQsgKYCm+FoRsABbja0DIAmA5PhphN8AR4iMRdgEcKT4KIRngiPERCEkAR45fGyEaoIX4NRGiAFqKXwtBDNBi/BoIIoCW45dGEAGcz+eL9/7F6ucvJc9bckzkh7/ertfrZetxRQDhQSQIGj/8uhUg9udCBFH8MFsMsIXQQnzh7UgcPxrgFkJL8TcQouInAawRWox/AyE6fjLAghC+W/qf3Nj7veT431eIl2EYniTHr4+J+huQMoDn/F+AAOArhAAEABcAj+cGEABcADyeG0AAcAHweG4AAcAFwOO5AQQAFwCP5wYQAFwAPJ4bQABwAfB4bgABwAXA47kBBAAXAI/nBhAAXAA8nhtAAHAB8HhuAAHABcDjuQEEABcAj+cGEABcADyeGwAG+AHdUlt/yH1PEAAAAABJRU5ErkJggg==";
 @d-arrow-down: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAACpUlEQVR4Xu3a0U3rQBBGYdspAEqJUgGdACVQ0aUTqGDlUqCAxMjoRvID4N2Nd8+M988TUqKMc75MjCX3nR5ogR6druGdAOAvgQAEABeAx2sDBAAXgMdrAwQAF4DHawMEABeAx2sDBAAXgMdrAwQAF4DHawMEABeAx2sDBAAXgMdrAwQAF4DHawMEABeAx2sDBAAXgMdrAwQAF4DHawMEABeAx2sDBAAXgMdnb8DpdHqajz2E8Ap/BnT88Xg8DsPwGEJ4yTmQLIA5ft/3/+aB0zQ9t4rwP/5b3/f30zS9hhCeUxGSAZbxr8NaRFjGX3RIRkgC+Cl+iwg/xc9FiAb4K35LCH/Fz0GIAoiJ3wJCTPxUhCiAefDhcHjvuu4u5iSzx3NCSvyUf06iAOY3bBmhVPy5azRAqwgl4ycDtIZQOn4WQCsINeJnA+wdoVb8mwD2ilAz/s0Ae0OoHX8TgL0gEPE3A/COQMXfFMArAhl/cwBvCHT8IgBeECzELwZgHcFK/KIAVhEsxS8OYA3BWvwqAFYQLMavBkAjWI1fFYBCsBy/OkBtBOvxEYBaCB7iYwClEbzERwFKIXiKjwNsjeAtvgmArRA8xjcDcCuC1/imAHIRLpfLOAzD9y3i83usPazdtZd0Y9bah9vi+Yw78D68xje3AVfAVIQYeGvf/Osxm9uAEghW45vdgC0RLMc3D5BzYl7+HFmP7wIgF8FDfDcAqQhe4rsCiEXwFN8dwBqCt/guAX5B+Dyfzw/jOI4x1wSWXmP2OmAt0uJirfMa3+0GLK8T5r89fvPNXwmvbcBennf7EySAvRSAP4c2QABwAXi8NkAAcAF4vDZAAHABeLw2QABwAXi8NkAAcAF4vDZAAHABeLw2QABwAXi8NkAAcAF4vDYABvgC+/9pfyiXxhsAAAAASUVORK5CYII=";

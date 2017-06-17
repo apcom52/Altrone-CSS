@@ -189,8 +189,12 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		display: inline-block;
 		flex: none;
 
+		&:not(:first-child) {
+			border-left: transparent;
+		}
+
 		&:first-child {
-			border-radius: 0.2em 0em 0em 0.2em;
+			border-radius: 0.2em 0em 0em 0.2em;			
 		}
 
 		&:last-child {
@@ -221,7 +225,23 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
 		button, input[type="button"], input[type="submit"], input[type="reset"], .button {
 			display: block;
-			//width: 100%;
+			border-left: 1px solid darken(@u-gray, 5%);
+
+			&.button--color-red { border-left: 1px solid darken(@l-red, 15%); }
+			&.button--color-orange { border-left: 1px solid darken(@l-orange, 15%); }
+			&.button--color-yellow { border-left: 1px solid darken(@l-yellow, 15%); }
+			&.button--color-olive { border-left: 1px solid darken(@l-olive, 15%); }
+			&.button--color-green { border-left: 1px solid darken(@l-green, 15%); }
+			&.button--color-teal { border-left: 1px solid darken(@l-teal, 15%); }
+			&.button--color-blue { border-left: 1px solid darken(@l-blue, 15%); }
+			&.button--color-purple { border-left: 1px solid darken(@l-purple, 15%); }
+			&.button--color-violet { border-left: 1px solid darken(@l-violet, 15%); }
+			&.button--color-pink { border-left: 1px solid darken(@l-pink, 15%); }
+			&.button--color-brown { border-left: 1px solid darken(@l-brown, 15%); }
+
+			&:not(:first-child) {
+				border-top: transparent;
+			}
 
 			&:first-child {
 				border-radius: 0.2em 0.2em 0em 0em;
