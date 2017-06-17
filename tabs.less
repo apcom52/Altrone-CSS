@@ -33,6 +33,7 @@
 			background-color: @white;
 			border: 1px solid darken(@u-gray, 10%);
 			border-bottom-color: transparent;
+			font-weight: bold;
 			.anim(0.3s);
 			.bold();
 		}
@@ -42,7 +43,10 @@
 
 			&:hover, &:active {
 				color: @l-gray;
-				background-color: darken(@u-gray, 5%);
+				background-color: transparent;
+				border-color: transparent;
+				font-weight: 500;
+				.pt();
 			}
 		}
 	}
@@ -51,15 +55,18 @@
 		background-color: @d-gray;
 
 		.tabs__item, li {
-			background-color: lighten(@d-gray, 5%);
+			background-color: transparent;
+			border-color: transparent;
 			color: @u-gray;
 
 			&:hover {
-				background-color: lighten(@d-gray, 10%);
+				background-color: lighten(@d-gray, 5%);
 			}
 
 			&:active, &.tabs__item--active {
-				background-color: lighten(@d-gray, 20%);
+				background-color: lighten(@d-gray, 10%);
+				border: 1px solid @m-gray;
+				border-bottom-color: transparent;
 			}
 
 			&.tabs__item--disabled {
@@ -67,7 +74,8 @@
 
 				&:hover, &:active {
 					color: @m-gray;
-					background-color: lighten(@d-gray, 5%);
+					background-color: transparent;
+					border-color: transparent;
 				}
 			}
 		}
@@ -121,6 +129,7 @@
 		display: table;		
 		text-align: center;
 		margin: 1em;
+		display: flex;
 
 		.tabs__item, li {
 			background-color: transparent;
@@ -128,7 +137,8 @@
 			border-top: 1px solid @d-gray;
 			border-bottom: 1px solid @d-gray;
 			border-right: 1px solid @d-gray;
-			display: table-cell;
+			border-left: 1px solid transparent;
+			flex: 1;
 			padding: 0.25em 1em;
 			margin: 0em;
 			border-radius: 0em;
@@ -137,6 +147,7 @@
 				border-radius: 1em 0em 0em 1em;
 				border-left: 1px solid @d-gray;				
 			}
+
 			&:last-child {
 				border-radius: 0em 1em 1em 0em;					
 			}
@@ -151,6 +162,18 @@
 
 				&:hover, &:active {
 					color: @l-gray;
+
+					&:not(:first-child) {
+						border-top-color: @d-gray;
+						border-bottom-color: @d-gray;
+						border-right-color: @d-gray;
+						border-left-color: transparent;
+					}
+
+					&:first-child {
+						border-color: @d-gray;
+					}
+
 					background-color: transparent;
 				}
 			}
@@ -159,7 +182,13 @@
 		&.tabs--invert {
 			.tabs__item, li {
 				color: @white;
-				border-color: @white;
+				border-top-color: @white;
+				border-bottom-color: @white;
+				border-right-color: @white;
+
+				&:first-child {
+					border-left-color: @white;
+				}
 
 				&:active, &.tabs__item--active {
 					background-color: @white;
@@ -168,6 +197,23 @@
 
 				&.tabs__item--disabled {
 					color: @l-gray !important;
+
+					&:hover, &:active {
+						color: @l-gray;
+
+						&:not(:first-child) {
+							border-top-color: @white;
+							border-bottom-color: @white;
+							border-right-color: @white;
+							border-left-color: transparent;
+						}
+
+						&:first-child {
+							border-color: @white;
+						}
+
+						background-color: transparent;
+					}
 				}
 			}
 		}
@@ -230,6 +276,38 @@
 				background: transparent;
 				color: @d-gray;
 			}
+
+			&.tabs__item--disabled {
+				color: lighten(@l-gray, 25%);
+
+				&:hover, &:active {
+					color: lighten(@l-gray, 25%);
+					font-weight: bold;
+					.bold();
+				}
+			}
+		}
+
+		&.tabs--invert {
+			.tabs__item {
+				border: none;
+
+				&:hover {
+					color: lighten(@l-gray, 15%);
+				}
+
+				&:active, &.tabs__item--active {
+					color: @white;
+				}
+
+				&.tabs__item--disabled {
+					color: darken(@m-gray, 10%);
+
+					&:hover, &:active {
+						color: darken(@m-gray, 10%);
+					}
+				}
+			}
 		}
 	}
 
@@ -284,11 +362,11 @@
 		}
 
 		&.tabs__item--disabled {
-			color: @m-gray;
+			color: @l-gray;
 
 			&:hover, &:active {
-				color: @m-gray;
-				background-color: lighten(@color, 20%);	
+				background-color: transparent;
+				color: @l-gray;
 			}
 		}
 	}
@@ -331,7 +409,7 @@
 
 			&:hover, &:active {
 				color: @m-gray;
-				background-color: darken(@color, 20%);	
+				background-color: transparent;	
 			}
 		}
 	}
@@ -356,7 +434,9 @@
 .set-tabs-ios-color(@color) {
 	.tabs__item, li {
 		color: @color;
-		border-color: @color;
+		border-right-color: @color;
+		border-top-color: @color;
+		border-bottom-color: @color;
 
 		&:first-child {
 			border-left-color: @color;
@@ -377,6 +457,17 @@
 			&:hover, &:active {
 				color: @l-gray;
 				background-color: transparent;
+
+				&:not(:first-child) {
+					border-top-color: @color;
+					border-bottom-color: @color;
+					border-right-color: @color;
+					border-left-color: transparent;
+				}
+
+				&:first-child {
+					border-color: @color;
+				}
 			}
 		}
 	}

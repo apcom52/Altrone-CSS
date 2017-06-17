@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Фильтры изображений</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../altrone.js"></script>
+	<script src="../js/altrone-dev.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron">
+					<div class="jumbotron__header">Altrone Фильтры</div>
+				</div>
+
+				<div class="margin-1">
+					<h2>Регулировка яркости изображений</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="filter--brightness-2 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Яркость 20%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--brightness-7 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Яркость 70%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Яркость 100%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--brightness-13 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Яркость 130%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--brightness-19 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Яркость 190%</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="margin-1">
+					<h2>Регулировка контрастности изображений</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="filter--contrast-2 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Контрастность 20%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--contrast-7 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Контрастность 70%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Контрастность 100%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--contrast-13 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Контрастность 130%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--contrast-19 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Контрастность 190%</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="margin-1">
+					<h2>Регулировка насыщенности изображений</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="filter--saturation-2 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Насыщенность 20%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--saturation-7 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Насыщенность 70%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Насыщенность 100%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--saturation-13 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Насыщенность 130%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--saturation-19 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Насыщенность 190%</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="margin-1">
+					<h2>Размытость изображений</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--blur-2px img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Blur 2px</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--blur-4px img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Blur 4px</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--blur-6px img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Blue 6px</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--blur-8px img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Blur 8px</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--blur-10px img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Blur 10px</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="margin-1">
+					<h2>Сепия</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--sepia-25 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Sepia 25%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--sepia-50 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Sepia 50%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--sepia-75 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Sepia 75%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--sepia-100 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Sepia 100%</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="margin-1">
+					<h2>Оттенки серого</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--grayscale-03 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Grayscale 0.3</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--grayscale-07 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Grayscale 0.7</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--grayscale-1 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Grayscale 1</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="margin-1">
+					<h2>Изменение оттенка</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--hue-90 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Hue 90°</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--hue-180 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Hue 180°</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--hue-270 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Hue 270°</figcaption>
+								</figure>
+							</div>							
+						</div>
+					</div>
+				</div>
+				<div class="margin-1">
+					<h2>Инвертирование цветов</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--invert img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Инвертированное изображение</figcaption>
+								</figure>
+							</div>			
+						</div>
+					</div>
+				</div>
+				<div class="margin-1">
+					<h2>Прозрачность</h2>					
+					<div class="fgrid">
+						<div class="row">
+							<div class="col-3">
+								<figure>
+									<img class="img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Обычное изображение</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--opacity-03 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Прозрачность 30%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--opacity-05 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Прозрачность 50%</figcaption>
+								</figure>
+							</div>
+							<div class="col-3">
+								<figure>
+									<img class="filter--opacity-08 img--responsive" src="../images/filter_example.png" alt="">
+									<figcaption>Прозрачность 80%</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

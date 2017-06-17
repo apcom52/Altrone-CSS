@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Tabs</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../altrone.js"></script>
+	<script src="../js/altrone-dev.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron">
+					<div class="jumbotron__header">Вкладки</div>
+				</div>
+
+				<div class="margin-1">
+					<h2>Обычные вкладки</h2>
+					<div class="tabs">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="tabs tabs--color-red">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="tabs tabs--invert">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="tabs tabs--invert tabs--color-green">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+
+					<h2>Вкладки в стиле iOS</h2>
+					<div class="tabs tabs--ios-style">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="tabs tabs--ios-style tabs--color-red">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="d-gray-bg padding-vertical-1">
+						<div class="tabs tabs--ios-style tabs--invert">
+							<div class="tabs__item tabs__item--active">Главная</div>
+							<div class="tabs__item">Вставка</div>
+							<div class="tabs__item">Дизайн</div>
+							<div class="tabs__item">Макет</div>
+							<div class="tabs__item">Ссылки</div>
+							<div class="tabs__item">Рассылки</div>
+							<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+							<div class="tabs__item">Вид</div>
+						</div>
+						<div class="tabs tabs--ios-style tabs--invert tabs--color-green">
+							<div class="tabs__item tabs__item--active">Главная</div>
+							<div class="tabs__item">Вставка</div>
+							<div class="tabs__item">Дизайн</div>
+							<div class="tabs__item">Макет</div>
+							<div class="tabs__item">Ссылки</div>
+							<div class="tabs__item">Рассылки</div>
+							<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+							<div class="tabs__item">Вид</div>
+						</div>
+					</div>
+
+					<h2>Вкладки в стиле Windows</h2>
+					<div class="tabs tabs--transparent">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="tabs tabs--transparent tabs--color-pink">
+						<div class="tabs__item tabs__item--active">Главная</div>
+						<div class="tabs__item">Вставка</div>
+						<div class="tabs__item">Дизайн</div>
+						<div class="tabs__item">Макет</div>
+						<div class="tabs__item">Ссылки</div>
+						<div class="tabs__item">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+						<div class="tabs__item">Вид</div>
+					</div>
+					<div class="d-gray-bg padding-vertical-1">
+						<div class="tabs tabs--transparent tabs--invert">
+							<div class="tabs__item tabs__item--active">Главная</div>
+							<div class="tabs__item">Вставка</div>
+							<div class="tabs__item">Дизайн</div>
+							<div class="tabs__item">Макет</div>
+							<div class="tabs__item">Ссылки</div>
+							<div class="tabs__item">Рассылки</div>
+							<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+							<div class="tabs__item">Вид</div>
+						</div>
+						<div class="tabs tabs--transparent tabs--invert tabs--color-violet">
+							<div class="tabs__item tabs__item--active">Главная</div>
+							<div class="tabs__item">Вставка</div>
+							<div class="tabs__item">Дизайн</div>
+							<div class="tabs__item">Макет</div>
+							<div class="tabs__item">Ссылки</div>
+							<div class="tabs__item">Рассылки</div>
+							<div class="tabs__item tabs__item--disabled">Рецензирование</div>
+							<div class="tabs__item">Вид</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
