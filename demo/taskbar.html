@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Taskbar</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../altrone.js"></script>
+	<script src="../js/altrone-dev.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron">
+					<div class="jumbotron__header">Taskbar</div>
+				</div>
+
+				<div class="margin-1">
+					<h3>Обычная панель инструментов</h3>					
+					<div class="taskbar">
+						<div class="taskbar__item">Cut</div>
+						<div class="taskbar__item">Copy</div>
+						<div class="taskbar__item">Paste</div>
+					</div>
+				</div>	
+
+				<div class="margin-1">
+					<h3>Панель инструментов с группировкой</h3>					
+					<div class="taskbar">
+						<div class="taskbar__group taskbar__group--align-left">
+							<div class="taskbar__item taskbar__item--icon"><i class="fa fa-undo"></i><div class="taskbar__item__label">Undo</div></div>
+							<div class="taskbar__item"><i class="fa fa-repeat"></i></div>
+						</div>
+						<div class="taskbar__group taskbar__group--align-center">
+							<div class="taskbar__item"><i class="fa fa-cut"></i></div>
+							<div class="taskbar__item"><i class="fa fa-copy"></i></div>
+							<div class="taskbar__item"><i class="fa fa-paste"></i></div>
+						</div>
+						<div class="taskbar__group taskbar__group--align-right">
+							<div class="taskbar__item"><i class="fa fa-send"></i></div>
+							<div class="taskbar__item taskbar__item--icon"><i class="fa fa-search"></i><div class="taskbar__item__label">Find more</div></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="margin-1">
+					<h3>Панель инструментов с формой и кнопками</h3>					
+					<div class="taskbar">
+						<div class="taskbar__item taskbar__item--icon"><i class="fa fa-arrow-left"></i></div>
+						<div class="taskbar__item"><i class="fa fa-arrow-right"></i></div>
+						<div class="taskbar__group taskbar__group--align-center">
+							<div class="taskbar__item taskbar__item--form">
+								<div class="form form--fit">
+									<input type="text" placeholder="Введите адрес сайта">									
+								</div>
+							</div>							
+						</div>
+						<div class="taskbar__group taskbar__group--no-stretch taskbar__group--align-right">
+							<div class="taskbar__item taskbar__item--button">
+								<button class="button--color-orange">Перейти</button>
+							</div>							
+							<div class="taskbar__item taskbar__item--image">
+								<img class="img--circle" src="http://www.picgifs.com/avatars/animals/panda/avatars-panda-632900.gif" alt="">
+							</div>
+						</div>					
+					</div>
+				</div>
+
+				<div class="margin-1 u-yellow-bg">
+					<h3>Прозрачная панель</h3>					
+					<div class="taskbar taskbar--transparent">
+						<div class="taskbar__item taskbar__item--icon"><i class="fa fa-arrow-left"></i></div>
+						<div class="taskbar__item"><i class="fa fa-arrow-right"></i></div>
+						<div class="taskbar__group taskbar__group--align-center">
+							<div class="taskbar__item taskbar__item--form">
+								<div class="form form--fit">
+									<input type="text" placeholder="Введите адрес сайта">									
+								</div>
+							</div>							
+						</div>
+						<div class="taskbar__group taskbar__group--no-stretch taskbar__group--align-right">
+							<div class="taskbar__item taskbar__item--button">
+								<button class="button--color-orange">Перейти</button>
+							</div>							
+							<div class="taskbar__item taskbar__item--image">
+								<img class="img--circle" src="http://www.picgifs.com/avatars/animals/panda/avatars-panda-632900.gif" alt="">
+							</div>
+						</div>					
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

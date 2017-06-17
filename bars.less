@@ -1,5 +1,5 @@
 .taskbar {
-	display: block;
+	display: flex;
 	width: 100%;
 	height: 44px;
 	max-height: 44px;
@@ -8,15 +8,39 @@
 	z-index: 11;	
 	.pt();
 
-	.taskbar__item {
+	.taskbar__group {
+		display: flex;
+		flex: 1;
+
+		&.taskbar__group--align-right {
+			justify-content: flex-end;
+		}
+
+		&.taskbar__group--align-center {
+			justify-content: center;
+		}
+
+		&.taskbar__group--align-left {
+			justify-content: flex-start;
+		}
+
+		&.taskbar__group--no-stretch {
+			flex: 0;
+		}
+	}
+
+	.taskbar__separator {
+		flex: 1;
+	}
+
+	.taskbar__item, .taskbar__group .taskbar__item {
 		width: auto;
-		display: inline-block;
+		flex: none;
 		color: @d-gray;
 		float: left;
 		cursor: pointer;
 		padding: 0.75em 1em;
 		overflow: hidden;
-		height: 44px;
 		max-height: 44px;
 		text-overflow: ellipsis; 
 		.anim(0.3s);		
@@ -40,30 +64,32 @@
 			}
 		}
 
-		&.taskbar__item--pin-right {
-			float: right;
+		i + .taskbar__item__label {
+			margin-left: 0.5em;
+			display: inline-block;
 		}
 
-		&.taskbar__item--form {
-			padding: 0.5em 1em;
+		&.taskbar__item--form, &.taskbar__item--button, &.taskbar__item--image {
+			display: flex;
+			align-items: center;
+		}
+
+		&.taskbar__item--form {			
+			flex: 1;
+
+			.form {
+				flex: 1;
+				padding: 0;
+			}
+
 			&:hover, &:active {
 				background-color: darken(@u-gray, 5%);
-			}
-			.form {
-				input {
-					margin: -0.6em;
-				}
 			}
 		}
 
 		&.taskbar__item--button {
-			padding: 0em 1em;
 			&:hover, &:active {
 				background-color: darken(@u-gray, 5%);
-			}
-			button, input[type="submit"], input[type="reset"], input[type="button"], .button {
-				margin-top: 0.2em;
-				padding-top: 0.4em;
 			}
 		}
 
@@ -71,7 +97,6 @@
 			img {
 				width: 2em;
 				height: 2em;
-				margin: -0.4em -0.5em -0.7em -0.5em;
 			}
 		}
 
@@ -556,55 +581,6 @@
 
 			&.sidebar--show {
 				left: 10%;
-			}
-		}
-	}
-}
-
-.toolbar {
-	width: 100%;
-	display: block;
-	overflow: hidden;
-	max-height: 48px;
-	white-space: nowrap;
-	clear: both;
-	background-color: @u-gray;
-
-	.toolbar__item {
-		display: inline-block;
-		padding: 1em;
-		box-sizing: border-box;
-		color: @d-gray;
-		float: left;
-
-		&:hover, &:active {
-			background-color: darken(@u-gray, 5%);
-			cursor: pointer;
-			.anim(0.3s);
-		}
-
-		&.toolbar__item--icon-label {
-			i, .icon {
-				margin-right: 1em;
-			}
-		}
-	}
-
-	.toolbar__separator {
-		display: inline-block;
-		padding: 0.5em 1em;
-		content: "";
-		float: left;
-	}
-
-	&.toolbar--invert {
-		background-color: @d-gray;
-
-		.toolbar__item {
-			color: @u-gray;
-
-			&:hover, &:active {
-				background-color: lighten(@d-gray, 5%);
 			}
 		}
 	}

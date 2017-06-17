@@ -9700,60 +9700,96 @@ input[type="reset"].button--checked,
   color: #871616;
   border-color: #eb7f7f;
 }
+.alert.alert--color-red a {
+  color: #c92121;
+}
 .alert.alert--color-orange {
   background-color: #facbac;
   color: #9e4509;
   border-color: #f7af7e;
+}
+.alert.alert--color-orange a {
+  color: #e6650d;
 }
 .alert.alert--color-yellow {
   background-color: #fce49a;
   color: #a98307;
   border-color: #fadd73;
 }
+.alert.alert--color-yellow a {
+  color: #f2bc0a;
+}
 .alert.alert--color-olive {
   background-color: #e5f28d;
   color: #65730e;
   border-color: #daed5f;
+}
+.alert.alert--color-olive a {
+  color: #a1b716;
 }
 .alert.alert--color-green {
   background-color: #8aeba1;
   color: #126325;
   border-color: #5fe37e;
 }
+.alert.alert--color-green a {
+  color: #1ea43d;
+}
 .alert.alert--color-teal {
   background-color: #b8fffb;
   color: #00524e;
   border-color: #1ffff4;
+}
+.alert.alert--color-teal a {
+  color: #009f97;
 }
 .alert.alert--color-blue {
   background-color: #9eccf0;
   color: #144e7a;
   border-color: #72b5e8;
 }
+.alert.alert--color-blue a {
+  color: #1f78bc;
+}
 .alert.alert--color-violet {
   background-color: #c1aeeb;
   color: #3d1f7a;
   border-color: #a284e0;
+}
+.alert.alert--color-violet a {
+  color: #5c2eb7;
 }
 .alert.alert--color-purple {
   background-color: #daa9eb;
   color: #611c78;
   border-color: #c87ee0;
 }
+.alert.alert--color-purple a {
+  color: #932ab6;
+}
 .alert.alert--color-pink {
   background-color: #f5bcdc;
   color: #991861;
   border-color: #ed91c5;
+}
+.alert.alert--color-pink a {
+  color: #db228b;
 }
 .alert.alert--color-brown {
   background-color: #dbb9a2;
   color: #5c3b25;
   border-color: #cc9d7e;
 }
+.alert.alert--color-brown a {
+  color: #935e3b;
+}
 .alert.alert--color-black {
   background-color: #333333;
   color: #f5f5f5;
   border-color: #666666;
+}
+.alert.alert--color-black a {
+  color: #ffffff;
 }
 .alert.alert--smooth {
   border-radius: 0.5em;
@@ -10613,7 +10649,7 @@ kbd {
   color: #ffffff;
 }
 .taskbar {
-  display: block;
+  display: flex;
   width: 100%;
   height: 44px;
   max-height: 44px;
@@ -10622,109 +10658,162 @@ kbd {
   z-index: 11;
   font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-.taskbar .taskbar__item {
+.taskbar .taskbar__group {
+  display: flex;
+  flex: 1;
+}
+.taskbar .taskbar__group.taskbar__group--align-right {
+  justify-content: flex-end;
+}
+.taskbar .taskbar__group.taskbar__group--align-center {
+  justify-content: center;
+}
+.taskbar .taskbar__group.taskbar__group--align-left {
+  justify-content: flex-start;
+}
+.taskbar .taskbar__group.taskbar__group--no-stretch {
+  flex: 0;
+}
+.taskbar .taskbar__separator {
+  flex: 1;
+}
+.taskbar .taskbar__item,
+.taskbar .taskbar__group .taskbar__item {
   width: auto;
-  display: inline-block;
+  flex: none;
   color: #333333;
   float: left;
   cursor: pointer;
   padding: 0.75em 1em;
   overflow: hidden;
-  height: 44px;
   max-height: 44px;
   text-overflow: ellipsis;
   transition: all 0.3s linear;
 }
-.taskbar .taskbar__item:hover {
+.taskbar .taskbar__item:hover,
+.taskbar .taskbar__group .taskbar__item:hover {
   background-color: #dcdcdc;
   transition: all 0.3s linear;
 }
-.taskbar .taskbar__item:active {
+.taskbar .taskbar__item:active,
+.taskbar .taskbar__group .taskbar__item:active {
   background-color: #cfcfcf;
 }
-.taskbar .taskbar__item.taskbar__item--logo {
+.taskbar .taskbar__item.taskbar__item--logo,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--logo {
   font-weight: bold;
   font-family: 'PT Sans Bold';
 }
 .taskbar .taskbar__item.taskbar__item--no-select:hover,
-.taskbar .taskbar__item.taskbar__item--no-select:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--no-select:hover,
+.taskbar .taskbar__item.taskbar__item--no-select:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--no-select:active {
   background-color: #e8e8e8;
 }
-.taskbar .taskbar__item.taskbar__item--pin-right {
-  float: right;
+.taskbar .taskbar__item i + .taskbar__item__label,
+.taskbar .taskbar__group .taskbar__item i + .taskbar__item__label {
+  margin-left: 0.5em;
+  display: inline-block;
 }
-.taskbar .taskbar__item.taskbar__item--form {
-  padding: 0.5em 1em;
+.taskbar .taskbar__item.taskbar__item--form,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--form,
+.taskbar .taskbar__item.taskbar__item--button,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--button,
+.taskbar .taskbar__item.taskbar__item--image,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--image {
+  display: flex;
+  align-items: center;
+}
+.taskbar .taskbar__item.taskbar__item--form,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--form {
+  flex: 1;
+}
+.taskbar .taskbar__item.taskbar__item--form .form,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--form .form {
+  flex: 1;
+  padding: 0;
 }
 .taskbar .taskbar__item.taskbar__item--form:hover,
-.taskbar .taskbar__item.taskbar__item--form:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--form:hover,
+.taskbar .taskbar__item.taskbar__item--form:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--form:active {
   background-color: #e8e8e8;
-}
-.taskbar .taskbar__item.taskbar__item--form .form input {
-  margin: -0.6em;
-}
-.taskbar .taskbar__item.taskbar__item--button {
-  padding: 0em 1em;
 }
 .taskbar .taskbar__item.taskbar__item--button:hover,
-.taskbar .taskbar__item.taskbar__item--button:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--button:hover,
+.taskbar .taskbar__item.taskbar__item--button:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--button:active {
   background-color: #e8e8e8;
 }
-.taskbar .taskbar__item.taskbar__item--button button,
-.taskbar .taskbar__item.taskbar__item--button input[type="submit"],
-.taskbar .taskbar__item.taskbar__item--button input[type="reset"],
-.taskbar .taskbar__item.taskbar__item--button input[type="button"],
-.taskbar .taskbar__item.taskbar__item--button .button {
-  margin-top: 0.2em;
-  padding-top: 0.4em;
-}
-.taskbar .taskbar__item.taskbar__item--image img {
+.taskbar .taskbar__item.taskbar__item--image img,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--image img {
   width: 2em;
   height: 2em;
-  margin: -0.4em -0.5em -0.7em -0.5em;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-red:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-red:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-red:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-red:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-red:active {
   color: #db2828;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-orange:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-orange:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-orange:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-orange:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-orange:active {
   color: #f2711c;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-yellow:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-yellow:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-yellow:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-yellow:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-yellow:active {
   color: #fbbd08;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-olive:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-olive:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-olive:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-olive:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-olive:active {
   color: #b5cc18;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-green:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-green:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-green:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-green:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-green:active {
   color: #21ba45;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-teal:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-teal:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-teal:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-teal:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-teal:active {
   color: #00b5ad;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-blue:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-blue:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-blue:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-blue:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-blue:active {
   color: #2185d0;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-violet:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-violet:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-violet:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-violet:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-violet:active {
   color: #6435c9;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-purple:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-purple:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-purple:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-purple:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-purple:active {
   color: #a333c8;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-pink:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-pink:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-pink:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-pink:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-pink:active {
   color: #e03997;
 }
 .taskbar .taskbar__item.taskbar__item--hover-color-brown:hover,
-.taskbar .taskbar__item.taskbar__item--hover-color-brown:active {
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-brown:hover,
+.taskbar .taskbar__item.taskbar__item--hover-color-brown:active,
+.taskbar .taskbar__group .taskbar__item.taskbar__item--hover-color-brown:active {
   color: #a5673f;
 }
 .taskbar.taskbar--invert {
@@ -11494,48 +11583,6 @@ kbd {
   .sidebar.sidebar--pin-right.sidebar--show {
     left: 10%;
   }
-}
-.toolbar {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  max-height: 48px;
-  white-space: nowrap;
-  clear: both;
-  background-color: #f5f5f5;
-}
-.toolbar .toolbar__item {
-  display: inline-block;
-  padding: 1em;
-  box-sizing: border-box;
-  color: #333333;
-  float: left;
-}
-.toolbar .toolbar__item:hover,
-.toolbar .toolbar__item:active {
-  background-color: #e8e8e8;
-  cursor: pointer;
-  transition: all 0.3s linear;
-}
-.toolbar .toolbar__item.toolbar__item--icon-label i,
-.toolbar .toolbar__item.toolbar__item--icon-label .icon {
-  margin-right: 1em;
-}
-.toolbar .toolbar__separator {
-  display: inline-block;
-  padding: 0.5em 1em;
-  content: "";
-  float: left;
-}
-.toolbar.toolbar--invert {
-  background-color: #333333;
-}
-.toolbar.toolbar--invert .toolbar__item {
-  color: #f5f5f5;
-}
-.toolbar.toolbar--invert .toolbar__item:hover,
-.toolbar.toolbar--invert .toolbar__item:active {
-  background-color: #404040;
 }
 .tabs {
   width: 100%;
