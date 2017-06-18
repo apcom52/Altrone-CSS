@@ -8826,6 +8826,15 @@ input[type="reset"].button--color-red.button--transparent-full:hover,
 .button.button--color-red.button--transparent-full:hover {
   color: #f44336;
 }
+button.button--color-red.button--checked,
+input[type="button"].button--color-red.button--checked,
+input[type="submit"].button--color-red.button--checked,
+input[type="reset"].button--color-red.button--checked,
+.button.button--color-red.button--checked {
+  background-color: #f44336;
+  border: 1px solid #d2190b;
+  transition: all 0.3s linear;
+}
 button.button--color-orange,
 input[type="button"].button--color-orange,
 input[type="submit"].button--color-orange,
@@ -8895,6 +8904,15 @@ input[type="submit"].button--color-orange.button--transparent-full:hover,
 input[type="reset"].button--color-orange.button--transparent-full:hover,
 .button.button--color-orange.button--transparent-full:hover {
   color: #ff9800;
+}
+button.button--color-orange.button--checked,
+input[type="button"].button--color-orange.button--checked,
+input[type="submit"].button--color-orange.button--checked,
+input[type="reset"].button--color-orange.button--checked,
+.button.button--color-orange.button--checked {
+  background-color: #ff9800;
+  border: 1px solid #b36a00;
+  transition: all 0.3s linear;
 }
 button.button--color-yellow,
 input[type="button"].button--color-yellow,
@@ -8966,6 +8984,15 @@ input[type="reset"].button--color-yellow.button--transparent-full:hover,
 .button.button--color-yellow.button--transparent-full:hover {
   color: #ffeb3b;
 }
+button.button--color-yellow.button--checked,
+input[type="button"].button--color-yellow.button--checked,
+input[type="submit"].button--color-yellow.button--checked,
+input[type="reset"].button--color-yellow.button--checked,
+.button.button--color-yellow.button--checked {
+  background-color: #ffeb3b;
+  border: 1px solid #eed500;
+  transition: all 0.3s linear;
+}
 button.button--color-olive,
 input[type="button"].button--color-olive,
 input[type="submit"].button--color-olive,
@@ -9035,6 +9062,15 @@ input[type="submit"].button--color-olive.button--transparent-full:hover,
 input[type="reset"].button--color-olive.button--transparent-full:hover,
 .button.button--color-olive.button--transparent-full:hover {
   color: #8bc34a;
+}
+button.button--color-olive.button--checked,
+input[type="button"].button--color-olive.button--checked,
+input[type="submit"].button--color-olive.button--checked,
+input[type="reset"].button--color-olive.button--checked,
+.button.button--color-olive.button--checked {
+  background-color: #8bc34a;
+  border: 1px solid #649130;
+  transition: all 0.3s linear;
 }
 button.button--color-green,
 input[type="button"].button--color-green,
@@ -9106,6 +9142,15 @@ input[type="reset"].button--color-green.button--transparent-full:hover,
 .button.button--color-green.button--transparent-full:hover {
   color: #4caf50;
 }
+button.button--color-green.button--checked,
+input[type="button"].button--color-green.button--checked,
+input[type="submit"].button--color-green.button--checked,
+input[type="reset"].button--color-green.button--checked,
+.button.button--color-green.button--checked {
+  background-color: #4caf50;
+  border: 1px solid #357a38;
+  transition: all 0.3s linear;
+}
 button.button--color-teal,
 input[type="button"].button--color-teal,
 input[type="submit"].button--color-teal,
@@ -9175,6 +9220,15 @@ input[type="submit"].button--color-teal.button--transparent-full:hover,
 input[type="reset"].button--color-teal.button--transparent-full:hover,
 .button.button--color-teal.button--transparent-full:hover {
   color: #009688;
+}
+button.button--color-teal.button--checked,
+input[type="button"].button--color-teal.button--checked,
+input[type="submit"].button--color-teal.button--checked,
+input[type="reset"].button--color-teal.button--checked,
+.button.button--color-teal.button--checked {
+  background-color: #009688;
+  border: 1px solid #004a43;
+  transition: all 0.3s linear;
 }
 button.button--color-blue,
 input[type="button"].button--color-blue,
@@ -9246,6 +9300,15 @@ input[type="reset"].button--color-blue.button--transparent-full:hover,
 .button.button--color-blue.button--transparent-full:hover {
   color: #2196f3;
 }
+button.button--color-blue.button--checked,
+input[type="button"].button--color-blue.button--checked,
+input[type="submit"].button--color-blue.button--checked,
+input[type="reset"].button--color-blue.button--checked,
+.button.button--color-blue.button--checked {
+  background-color: #2196f3;
+  border: 1px solid #0a6ebd;
+  transition: all 0.3s linear;
+}
 button.button--color-violet,
 input[type="button"].button--color-violet,
 input[type="submit"].button--color-violet,
@@ -9315,6 +9378,15 @@ input[type="submit"].button--color-violet.button--transparent-full:hover,
 input[type="reset"].button--color-violet.button--transparent-full:hover,
 .button.button--color-violet.button--transparent-full:hover {
   color: #673ab7;
+}
+button.button--color-violet.button--checked,
+input[type="button"].button--color-violet.button--checked,
+input[type="submit"].button--color-violet.button--checked,
+input[type="reset"].button--color-violet.button--checked,
+.button.button--color-violet.button--checked {
+  background-color: #673ab7;
+  border: 1px solid #46287d;
+  transition: all 0.3s linear;
 }
 button.button--color-purple,
 input[type="button"].button--color-purple,
@@ -9386,6 +9458,15 @@ input[type="reset"].button--color-purple.button--transparent-full:hover,
 .button.button--color-purple.button--transparent-full:hover {
   color: #9c27b0;
 }
+button.button--color-purple.button--checked,
+input[type="button"].button--color-purple.button--checked,
+input[type="submit"].button--color-purple.button--checked,
+input[type="reset"].button--color-purple.button--checked,
+.button.button--color-purple.button--checked {
+  background-color: #9c27b0;
+  border: 1px solid #641971;
+  transition: all 0.3s linear;
+}
 button.button--color-pink,
 input[type="button"].button--color-pink,
 input[type="submit"].button--color-pink,
@@ -9455,6 +9536,15 @@ input[type="submit"].button--color-pink.button--transparent-full:hover,
 input[type="reset"].button--color-pink.button--transparent-full:hover,
 .button.button--color-pink.button--transparent-full:hover {
   color: #e91e63;
+}
+button.button--color-pink.button--checked,
+input[type="button"].button--color-pink.button--checked,
+input[type="submit"].button--color-pink.button--checked,
+input[type="reset"].button--color-pink.button--checked,
+.button.button--color-pink.button--checked {
+  background-color: #e91e63;
+  border: 1px solid #aa1145;
+  transition: all 0.3s linear;
 }
 button.button--color-brown,
 input[type="button"].button--color-brown,
@@ -9526,6 +9616,15 @@ input[type="reset"].button--color-brown.button--transparent-full:hover,
 .button.button--color-brown.button--transparent-full:hover {
   color: #795548;
 }
+button.button--color-brown.button--checked,
+input[type="button"].button--color-brown.button--checked,
+input[type="submit"].button--color-brown.button--checked,
+input[type="reset"].button--color-brown.button--checked,
+.button.button--color-brown.button--checked {
+  background-color: #795548;
+  border: 1px solid #49332b;
+  transition: all 0.3s linear;
+}
 button.button--color-black,
 input[type="button"].button--color-black,
 input[type="submit"].button--color-black,
@@ -9595,6 +9694,15 @@ input[type="submit"].button--color-black.button--transparent-full:hover,
 input[type="reset"].button--color-black.button--transparent-full:hover,
 .button.button--color-black.button--transparent-full:hover {
   color: #333333;
+}
+button.button--color-black.button--checked,
+input[type="button"].button--color-black.button--checked,
+input[type="submit"].button--color-black.button--checked,
+input[type="reset"].button--color-black.button--checked,
+.button.button--color-black.button--checked {
+  background-color: #333333;
+  border: 1px solid #0d0d0d;
+  transition: all 0.3s linear;
 }
 button.button--smooth,
 input[type="button"].button--smooth,
@@ -9775,8 +9883,8 @@ input[type="button"].button--checked,
 input[type="submit"].button--checked,
 input[type="reset"].button--checked,
 .button.button--checked {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.5) inset;
-  border: none;
+  background-color: #cfcfcf;
+  border-color: #a9a9a9;
   transition: all 0.3s linear;
 }
 .button-group {
@@ -11536,16 +11644,25 @@ kbd {
   font-size: 0.8em;
 }
 body {
-  transition: transform 0.3s linear;
-  transform: translateX(0px);
+  left: 0px;
+  transition: left 0.3s linear;
+  position: relative;
 }
 body.body--sidebar-push-left {
   overflow-x: hidden;
-  transform: translateX(300px);
+  left: 300px;
 }
 body.body--sidebar-push-right {
   overflow-x: hidden;
-  transform: translateX(-300px);
+  left: -300px;
+}
+@media (max-width: 767px) {
+  .body--sidebar-push-left {
+    left: 90vw !important;
+  }
+  .body--sidebar-push-right {
+    left: -90vw !important;
+  }
 }
 .sidebar {
   display: block;

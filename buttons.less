@@ -31,6 +31,12 @@
 	&.button--transparent-full:hover {
 		color: @color;
 	}
+
+	&.button--checked {
+		background-color: @color;
+		border: 1px solid darken(@color, 15%);
+		.anim(0.3s);
+	}
 }
 
 
@@ -150,8 +156,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	}
 
 	&.button--checked {
-		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.5) inset;
-		border: none;
+		background-color: darken(@u-gray, 15%);
+		border-color: darken(darken(@u-gray, 15%), 15%);
 		.anim(0.3s);
 	}
 }

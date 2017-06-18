@@ -13,6 +13,7 @@ class Sidebar {
 
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
+		target.onChangeCallback = props.onChange || null;
 		target.enable_scroll = props.enable_scroll || false;
 		target.push_page = props.push_page || false;		
 		target.no_overlay = props.no_overlay || false;		
@@ -29,6 +30,18 @@ class Sidebar {
 		return this.__visible;
 	}
 
+	set onShow(func) {
+		this.onShowCallback = func || null;
+	}
+
+	set onHide(func) {
+		this.onHideCallback = func || null;
+	}
+
+	set onChange(func) {
+		this.onChangeCallback = func || null;
+	}
+
 	show() {
 		let target = this;
 		target.__hide_others();
@@ -38,9 +51,9 @@ class Sidebar {
 		}
 
 		let element = target.__element;
-		if (!target.push_page) {
-			element.classList.add('sidebar--show');			
-		} else {
+
+		element.classList.add('sidebar--show');			
+		if (target.push_page) {
 			if (element.classList.contains('sidebar--pin-right')) {
 				document.body.classList.add('body--sidebar-push-right');
 			} else {
@@ -69,21 +82,26 @@ class Sidebar {
 		if (target.onShowCallback) {
 			target.onShowCallback(target);
 		}
+
+		if (target.onChangeCallback) {
+			target.onChangeCallback(target);
+		}
 	}
 
 	hide() {
 		let target = this;
 		let element = target.__element;
 
-		if (!target.push_page) {
-			element.classList.remove('sidebar--show');			
-		} else {
+		if (target.push_page) {
 			if (element.classList.contains('sidebar--pin-right')) {
 				document.body.classList.remove('body--sidebar-push-right');
 			} else {
 				document.body.classList.remove('body--sidebar-push-left');
 			}
 		}
+		
+		element.classList.remove('sidebar--show');			
+		
 		target.__visible = false;
 
 		if (!target.no_overlay) {
@@ -92,6 +110,10 @@ class Sidebar {
 
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
+		}
+
+		if (target.onChangeCallback) {
+			target.onChangeCallback(target);
 		}
 
 		window.removeEventListener('scroll', target.__onScrollEvent, false);
@@ -114,8 +136,9 @@ class Sidebar {
 			let overlay_element = target.__overlay_element;			
 		}
 
-		let topScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+		let topScrollPosition = window.scrollTop;
 		let taskbar_height = 44;
+		console.log(topScrollPosition);
 
 		if (topScrollPosition >= taskbar_height) {
 			element.style.top = '0px';
