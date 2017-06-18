@@ -365,6 +365,23 @@
 	}
 }
 
+body {
+	transition: transform 0.3s linear;
+	transform: translateX(0px);
+
+	&.body--sidebar-push-left {
+		overflow-x: hidden;
+		transform: translateX(300px);
+	}
+
+	&.body--sidebar-push-right {
+		overflow-x: hidden;
+		transform: translateX(-300px);
+	}
+}
+
+
+
 .sidebar {
 	display: block;
 	position: fixed;
@@ -373,12 +390,12 @@
 	top: 0;
 	left: -300px;
 	background-color: @u-gray;
-	.shadow-1();
 	z-index: 5;
 	overflow-y: auto;
 	overflow-x: hidden;
-	.pt();
 	transition: left 0.3s linear;
+	.shadow-1();
+	.pt();
 
 	.sidebar__cover {
 		background-color: darken(@u-gray, 5%);
@@ -554,7 +571,7 @@
 	}
 }
 
-.overflow {
+.overlay {
 	background-color: @black;
 	opacity: 0.7;
 	width: 100%;
@@ -565,7 +582,7 @@
 	z-index: 3;
 	cursor: pointer;
 
-	&.overflow--under-taskbar {
+	&.overlay--under-taskbar {
 		top: 44px;
 		height: ~"calc(100% - 44px)";
 	}

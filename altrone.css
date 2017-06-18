@@ -11535,6 +11535,18 @@ kbd {
   text-align: center;
   font-size: 0.8em;
 }
+body {
+  transition: transform 0.3s linear;
+  transform: translateX(0px);
+}
+body.body--sidebar-push-left {
+  overflow-x: hidden;
+  transform: translateX(300px);
+}
+body.body--sidebar-push-right {
+  overflow-x: hidden;
+  transform: translateX(-300px);
+}
 .sidebar {
   display: block;
   position: fixed;
@@ -11543,12 +11555,12 @@ kbd {
   top: 0;
   left: -300px;
   background-color: #f5f5f5;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
   z-index: 5;
   overflow-y: auto;
   overflow-x: hidden;
-  font-family: 'PT Sans', 'Segoe UI', sans-serif;
   transition: left 0.3s linear;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
 .sidebar .sidebar__cover {
   background-color: #e8e8e8;
@@ -11941,7 +11953,7 @@ kbd {
 .sidebar.sidebar--pin-right.sidebar--show {
   left: calc(100% - 300px);
 }
-.overflow {
+.overlay {
   background-color: #000000;
   opacity: 0.7;
   width: 100%;
@@ -11952,7 +11964,7 @@ kbd {
   z-index: 3;
   cursor: pointer;
 }
-.overflow.overflow--under-taskbar {
+.overlay.overlay--under-taskbar {
   top: 44px;
   height: calc(100% - 44px);
 }

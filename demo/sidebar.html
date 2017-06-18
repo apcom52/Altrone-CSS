@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Timeline</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<!-- <script src="../altrone.js"></script> -->
+	<!-- <script src="../js/altrone-dev.js"></script> -->
+	<script src="../js/Overflow.js"></script>
+	<script src="../js/Sidebar.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-teal">
+					<div class="jumbotron__header">Sidebar</div>
+					<div class="jumbotron__subheader">Боковое меню</div>
+				</div>
+
+				<div class="margin-2">
+					<button class="button--color-blue" id="ss1_open">Открыть левое меню</button>
+					<button class="button--color-violet" id="ss2_open">Открыть правое меню</button>
+				</div>
+
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae officia non aliquam, dolor dolore minima quaerat eum minus, modi inventore similique, impedit quisquam et at quae ea ducimus recusandae.</div>
+				<div>Aspernatur eveniet corrupti officia explicabo illo amet harum quasi suscipit animi aliquid pariatur maxime in, ratione quae id ipsum vel recusandae deserunt molestiae obcaecati assumenda eligendi repellat. Expedita, odio, voluptate.</div>
+				<div>Temporibus expedita assumenda nemo dignissimos odio. Expedita quasi voluptate odio libero praesentium, magni nemo! Distinctio saepe, quasi nam ab, ipsam fugiat molestias! Vel delectus, maxime odio vero ex voluptatem. Ea.</div>
+				<div>Exercitationem adipisci quia, inventore ut perferendis rerum obcaecati accusamus dignissimos totam numquam vero ipsa amet omnis voluptates ad vitae recusandae ipsam maxime enim deleniti libero nemo impedit! Quas, ducimus, inventore!</div>
+				<div>A necessitatibus dolore architecto aut cum ut ex culpa hic quaerat tempore soluta odit doloribus, sint ab placeat, consectetur, ipsam, optio tenetur? Neque eaque cupiditate minima asperiores, fuga assumenda omnis?</div>
+				<div>Laboriosam porro impedit error voluptates, accusamus labore aliquam dolorum minima nisi? Maxime qui ea possimus minus fugit pariatur accusamus dolorem, debitis ducimus. Ipsa quaerat dolorum similique, sequi iure reiciendis placeat!</div>
+				<div>Qui suscipit ad, beatae optio ducimus quisquam a. Dignissimos sed voluptatibus, quidem beatae facilis tenetur excepturi voluptas vero nam nemo quisquam error voluptatum cupiditate dolorum, iure odio, ex quis velit.</div>
+				<div>Exercitationem possimus, repellendus sapiente. Dolorum iste aliquam adipisci, nam harum vero non culpa, earum cupiditate perferendis magni necessitatibus assumenda, minima natus maiores delectus sint ut quaerat voluptates dolorem neque, aliquid.</div>
+				<div>Minus assumenda accusantium cumque nam recusandae reiciendis in labore quos, quidem adipisci totam optio, est autem facilis voluptatem! Numquam rerum sequi esse eveniet, laudantium pariatur neque ipsa saepe vel quibusdam.</div>
+				<div>Incidunt voluptatem id corrupti saepe at magni eveniet deleniti fuga maiores quidem harum quae dolor perspiciatis asperiores aperiam delectus quod, sequi sint alias veniam quis expedita, dolore nisi soluta. Aut.</div>
+				<div>Dolorem quisquam, veritatis, omnis nihil sunt esse. Alias, est accusamus sed dolorem doloremque explicabo libero consequatur. Magni alias asperiores quos commodi, blanditiis earum hic maiores dignissimos, soluta. A, veritatis, delectus.</div>
+				<div>Quae consectetur perferendis quidem, quas magnam? Quaerat sint rerum, architecto vel. Modi cum ad velit, et maiores distinctio explicabo itaque similique mollitia deleniti tempore id dolorum delectus eaque nam. Vel?</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="sidebar sidebar--color-red" id="ss">
+	<div class="sidebar__cover">
+		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
+		<div class="sidebar__cover__title">@TotallyMoo</div>
+	</div>
+	<div class="sidebar__menu">
+		<div class="sidebar__menu__header">Music Player</div>
+		<div class="sidebar__menu__item">
+			<i class="sidebar__menu__item__icon fa fa-play"></i>
+			<div class="sidebar__menu__item__value">Sia - Chandelier</div>
+			<i class="sidebar__menu__item__icon fa fa-forward"></i>
+		</div>
+		<div class="sidebar__menu__item"><div class="sidebar__menu__item__value">Открыть плейлист...</div></div>
+
+		<div class="sidebar__menu__separator"></div>
+
+		<div class="sidebar__menu__header">О сервисе</div>
+		<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
+		<div class="sidebar__menu__item">Помощь и поддержка</div>
+		<div class="sidebar__menu__item">О сервисе</div>
+	</div>
+</div>
+
+<div class="sidebar sidebar--invert sidebar--pin-right sidebar--color-pink" id="ss2">
+	<div class="sidebar__cover">
+		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
+		<div class="sidebar__cover__title">@TotallyMoo</div>
+	</div>
+	<div class="sidebar__menu">
+		<div class="sidebar__menu__header">Music Player</div>
+		<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-play"></i>Avicii - Dangerous <div class="sidebar__menu__item__icon"><i class="fa fa-forward"></i></div> </div>
+		<div class="sidebar__menu__item">Открыть плейлист...</div>
+
+		<div class="sidebar__menu__separator"></div>
+
+		<div class="sidebar__menu__header">О сервисе</div>
+		<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
+		<div class="sidebar__menu__item">Помощь и поддержка</div>
+		<div class="sidebar__menu__item">О сервисе</div>
+	</div>
+</div>
+
+<script>
+'use strict';
+
+var sidebar1 = document.getElementById('ss');
+var sidebar2 = document.getElementById('ss2');
+var ss = new Sidebar(sidebar1, {
+	push_page: true
+});
+var ss2 = new Sidebar(sidebar2, {
+	no_overlay: true,
+	push_page: true	
+});
+console.log(ss);
+console.log(ss2);
+
+document.getElementById('ss1_open').onclick = () => ss.show();
+document.getElementById('ss2_open').onclick = () => ss2.toggle();
+
+</script>
+</body>
+</html>
