@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Modal</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../js/Overlay.js"></script>
+	<script src="../js/Modal.js"></script>
+	<script src="../js/Dialog.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-brown">
+					<div class="jumbotron__header">Modal</div>
+					<div class="jumbotron__subheader">Модальные окна</div>
+				</div>
+
+				<div class="margin-2">
+					<button class="button--color-blue" id="button1" onclick="button1();">Открыть модальное окно</button>
+					<button class="button--color-violet" id="button2" onclick="button2();">Открыть диалоговое окною</button>
+					<button class="button--color-violet" id="button2" onclick="button3();">Изменить callback-функцию</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modal1">
+	<div class="modal__header">Выберите свою сторону</div>
+	<div class="modal__content">
+		<div class="radio radio--color-blue"><input type="radio" id="aliance">
+			<label for="aliance"><div class="checkbox__title">Альянс</div></label>
+		</div>
+		<div class="radio radio--color-red"><input type="radio" id="orda">
+			<label for="orda"><div class="checkbox__title">Орда</div></label>
+		</div>
+	</div>
+</div>
+
+<script>
+'use strict';
+
+var modal = new Modal(document.getElementById('modal1'), {
+	only_discarding: false,
+	onShow: () => console.log('hello'),
+	onHide: () => console.log('goodbye')
+});
+
+var dialog = new Dialog({
+	title: 'Вступаешь в Альянс?',
+	message: 'Выберите вариант ответа:',
+	successLabel: 'Да',
+	failLabel: 'Нет',
+	onSuccess: () => console.log('press success'),
+	onFail: () => console.log('press fail'),
+	onShow: () => console.log('modal show'),
+	onHide: () => console.log('modal hide')
+});
+
+function button2() {
+	dialog.show();
+}
+
+function button1() {
+	modal.show();
+}
+
+function button3() {
+	dialog.onShow = () => console.log('new show!');
+}
+</script>
+</body>
+</html>

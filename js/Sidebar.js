@@ -167,7 +167,9 @@ class Sidebar {
 		let target = this;
 		for (let sidebar of __sidebars_collection) {
 			if (sidebar != target) {
-				sidebar.hide();
+				if (sidebar.visible) {
+					sidebar.hide();					
+				}
 			}
 		}
 	}

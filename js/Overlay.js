@@ -9,15 +9,17 @@ class Overlay {
 		target.__add_to_collection();
 		target.__remove_others();
 		target.onDestroyCallback = props.onDestroy || null;
-		target.disableClick = Boolean(props.disableClick) || true;
+		target.disableClick = Boolean(props.disableClick) || false;
 
 		let element = document.createElement('div');
 		element.className = 'overlay';
 		document.body.appendChild(element);
 		target.element = element;
 
+		element.classList.add('overlay--show');
+
 		element.onclick = function() {
-			if (target.disableClick) 
+			if (target.disableClick == false) 
 				target.destroy();
 		}
 	}
@@ -29,8 +31,11 @@ class Overlay {
 	destroy() {
 		let target = this;
 		
+		target.element.classList.remove('overlay--show');
+		target.element.classList.add('overlay--hide');
+
 		target.__remove_from_collection(target);
-		target.element.remove();
+		setTimeout(() => target.element.remove(), 300);
 
 		if (target.onDestroyCallback) {
 			target.onDestroyCallback(target);	
@@ -56,9 +61,11 @@ class Overlay {
 
 	__remove_from_collection(overflow) {
 		let target = this;
-		let index = __overlay_collection.indexOf(overflow);
-		if (index > -1) {
-			__overlay_collection.splice(index, 1);
-		}
+		if (__overlay_collection.length) {
+			let index = __overlay_collection.indexOf(overflow);
+			if (index > -1) {
+				__overlay_collection.splice(index, 1);
+			}
+		}		
 	}
 }
