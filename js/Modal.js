@@ -81,9 +81,11 @@ class Modal {
 			disableClick: target.__only_discarding
 		});
 
-		for(let el of target.element.querySelectorAll('.modal__discard, .modal__header__close')) {
-			el.addEventListener('click', () => target.__overlay.destroy());
-		}
+		let modal_discard_list = target.element.querySelectorAll('.modal__discard, .modal__header__close');
+		for (let i = 0; i < modal_discard_list.length; i++) {
+		    let current = modal_discard_list[i];
+            current.addEventListener('click', () => target.__overlay.destroy());
+        }
 
 		target.__visible = true;		
 		target.element.style.display = 'block';

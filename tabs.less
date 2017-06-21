@@ -33,9 +33,7 @@
 			background-color: @white;
 			border: 1px solid darken(@u-gray, 10%);
 			border-bottom-color: transparent;
-			font-weight: bold;
 			.anim(0.3s);
-			.bold();
 		}
 
 		&.tabs__item--disabled {
@@ -45,7 +43,6 @@
 				color: @l-gray;
 				background-color: transparent;
 				border-color: transparent;
-				font-weight: 500;
 				.pt();
 			}
 		}
@@ -192,7 +189,7 @@
 
 				&:active, &.tabs__item--active {
 					background-color: @white;
-					color: @d-gray !important;
+					color: @d-gray;
 				}
 
 				&.tabs__item--disabled {
@@ -421,7 +418,7 @@
 
 			&:hover {
 				background: transparent;
-				color: @m-gray;
+				color: lighten(@l-gray, 10%);
 			}
 			&:active, &.tabs__item--active {
 				background: transparent;
@@ -444,6 +441,7 @@
 
 		&:hover {
 			background-color: transparent;
+			color: @color;
 		}
 
 		&:active, &.tabs__item--active {

@@ -1,7 +1,7 @@
 'use strict';
 
 class Dialog {
-	constructor(props) {
+	constructor(props = {}) {
 		let target = this;
 
 		target.__title = props.title || 'Empty title';
@@ -95,7 +95,7 @@ class Dialog {
 		modal_content.innerHTML = target.__message;
 
 		let modal_footer = document.createElement('div');
-		modal_footer.className = 'modal__footer';
+		modal_footer.className = 'modal__footer align-center';
 
 		let modal_cancelButton = document.createElement('button');
 		if (target.__invert) {

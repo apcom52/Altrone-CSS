@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
 	<script src="../jquery-2.1.4.min.js"></script>
 	<script src="../altrone.js"></script>
-	<script src="../js/altrone-dev.js"></script>
+	<script src="../js/Tabs.js"></script>
 
 	<style>
 		html {
@@ -38,16 +38,26 @@
 						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
 						<div class="tabs__item">Вид</div>
 					</div>
-					<div class="tabs tabs--color-red">
-						<div class="tabs__item tabs__item--active">Главная</div>
-						<div class="tabs__item">Вставка</div>
-						<div class="tabs__item">Дизайн</div>
-						<div class="tabs__item">Макет</div>
-						<div class="tabs__item">Ссылки</div>
-						<div class="tabs__item">Рассылки</div>
-						<div class="tabs__item tabs__item--disabled">Рецензирование</div>
-						<div class="tabs__item">Вид</div>
+					<div class="tabs tabs--color-red" id="newTabExample">
+						<div class="tabs__item" data-tab-target="tabContent1">Главная</div>
+						<div class="tabs__item" data-tab-target="tabContent2">Вставка</div>
+						<div class="tabs__item" data-tab-target="tabContent3">Дизайн</div>
+						<div class="tabs__item" data-tab-target="tabContent4">Макет</div>
+						<div class="tabs__item tabs__item--active" data-tab-target="tabContent5">Ссылки</div>
+						<div class="tabs__item" data-tab-target="tabContent6">Рассылки</div>
+						<div class="tabs__item tabs__item--disabled" data-tab-target="tabContent7">Рецензирование</div>
+						<div class="tabs__item" data-tab-target="tabContent8">Вид</div>
 					</div>
+                    <div class="padding-2" id="tabContent1">Здесь показывается содержимое вкладки "Главная"</div>
+                    <div class="padding-2" id="tabContent2">Вкладка "Вставка"</div>
+                    <div class="padding-2" id="tabContent3">Дизайн - это важно!</div>
+                    <div class="padding-2" id="tabContent4">Делай макеты адекватными!</div>
+                    <div class="padding-2" id="tabContent5">Тут что-нибудь про ссылки</div>
+                    <div class="padding-2" id="tabContent6">И рассылки!</div>
+                    <div class="padding-2" id="tabContent7">А это ты вообще не увидишь</div>
+                    <div class="padding-2" id="tabContent8">Последняя вкладка</div>
+                    
+                    
 					<div class="tabs tabs--invert">
 						<div class="tabs__item tabs__item--active">Главная</div>
 						<div class="tabs__item">Вставка</div>
@@ -161,5 +171,12 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    'use strict';
+
+    let tabs = new Tabs(document.getElementById('newTabExample'));
+</script>
+
 </body>
 </html>
