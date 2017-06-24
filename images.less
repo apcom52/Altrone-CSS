@@ -337,8 +337,8 @@ img {
 			height: auto;
 			border-radius: 0.5em;
 			opacity: 0.8;
-			.anim(0.3s);
 			.card_shadow();
+			.animate(~'transform, opacity');
 
 			&:nth-child(1) {
 				position: absolute;
@@ -392,7 +392,7 @@ img {
 			margin: 1em;
 			width: ~'calc(100% - 1em)';
 			height: auto;
-			.anim(0.3s);
+			.animate(~'transform');
 		}		
 
 		.gallery__image__title {
@@ -406,7 +406,7 @@ img {
 		&:hover {
 			img {
 				transform: scale(1.1);
-				.anim(0.15s);
+				.animate(~'transform');
 			}			
 		}
 	}

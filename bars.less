@@ -42,12 +42,12 @@
 		padding: 0.75em 1em;
 		overflow: hidden;
 		max-height: 44px;
-		text-overflow: ellipsis; 
-		.anim(0.3s);		
+		text-overflow: ellipsis;
+		transition: background-color 0.3s linear;
 
 		&:hover {
 			background-color: darken(@u-gray, 10%);
-			.anim(0.3s);
+			transition: background-color 0.3s linear;
 		}
 
 		&:active {
@@ -246,8 +246,8 @@
 		left: 0em;
 		height: 1em;
 		border-radius: 0.2em;
-		top: 0em; 		
-		.anim(0.3s);
+		top: 0em; 	
+		transition: width 0.3s linear;	
 	}
 
 	&.progress--color-red { .set-progress-color(@red); }
@@ -446,7 +446,6 @@ body {
 
 		.sidebar__menu__item {
 			display: flex;
-			// align-items: flex-start;
 			width: 100%;
 			vertical-align: middle;
 			color: @d-gray;
@@ -454,11 +453,11 @@ body {
 			cursor: pointer;
 			box-sizing: border-box;
 			position: relative;
-			.anim(0.3s);
+			transition: background-color 0.3s linear;
 
 			&:hover {
 				background-color: darken(@u-gray, 5%);
-				.anim(0.3s);
+				transition: background-color 0.3s linear;
 			}
 
 			.sidebar__menu__item__icon {
@@ -475,7 +474,7 @@ body {
 
 			&:active, &.sidebar__menu__item--active {
 				background-color: darken(@u-gray, 15%);
-				.anim(0.3s);
+				transition: background-color 0.3s linear;
 			}
 		}
 

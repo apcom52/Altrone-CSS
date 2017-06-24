@@ -72,6 +72,12 @@
 	transition: all @sec linear;
 }
 
+.animate(@property: all, @duration: 0.3s, @function: linear) {
+	transition-property: @property;
+	transition-duration: @duration;
+	transition-timing-function: @function;
+}
+
 .only-d { display: block !important; }
 .only-m, .only-t { display: none !important;}
 
@@ -322,7 +328,7 @@
 
 .bold { 
 	font-weight: bold;
-	font-family: 'PT Sans Bold';
+	font-family: 'PT Sans Bold', sans-serif;
 }
 .italic { 
 	font-style: italic;

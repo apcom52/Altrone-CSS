@@ -9,7 +9,7 @@
 		cursor: pointer;
 		color: @m-gray;
 		margin: 0em 0.5em;
-		.anim(0.3s);
+		.animate(~'color');
 
 		&:hover, &:active {
 			color: @d-gray;
@@ -35,7 +35,7 @@
 		padding: 0.25em 0.75em;
 		border-radius: 1em;
 		color: @d-gray;
-		.anim(0.3s);
+		.animate(~'background-color');
 
 		&:hover {
 			background-color: @l-gray;
@@ -44,7 +44,7 @@
 		&:active, &.pagination__page--active {
 			background-color: @d-gray;
 			color: @white;
-			.anim(0.3s);
+			.animate(~'background-color, color');
 		}
 	}
 
