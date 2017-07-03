@@ -11425,121 +11425,82 @@ kbd {
   background-color: transparent;
 }
 .progress {
-  display: block;
+  display: flex;
   width: calc(100% - 0.3em);
-  height: 1em;
+  height: 1rem;
   margin: 0.15em;
   background-color: #e8e8e8;
-  border-radius: 0.2em;
+  border-radius: 6px;
+  overflow: hidden;
   position: relative;
 }
 .progress .progress__active {
   background-color: #b5b5b5;
-  position: absolute;
-  left: 0em;
-  height: 1em;
-  border-radius: 0.2em;
-  top: 0em;
   transition: width 0.3s linear;
+  height: 1rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: none;
+  font-size: 0.75em;
+  display: flex;
+  font-weight: bold;
+  font-family: 'PT Sans Bold', sans-serif;
 }
-.progress.progress--color-red {
-  background-color: #f99d97;
+.progress .progress__active .progress__active__label {
+  flex: 1;
 }
-.progress.progress--color-red .progress__active {
+.progress .progress__active.progress__active--color-red {
   background-color: #f44336;
+  color: #333333;
 }
-.progress.progress--color-red.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-orange {
-  background-color: #ffc166;
-}
-.progress.progress--color-orange .progress__active {
+.progress .progress__active.progress__active--color-orange {
   background-color: #ff9800;
+  color: #333333;
 }
-.progress.progress--color-orange.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-yellow {
-  background-color: #fff5a1;
-}
-.progress.progress--color-yellow .progress__active {
+.progress .progress__active.progress__active--color-yellow {
   background-color: #ffeb3b;
+  color: #333333;
 }
-.progress.progress--color-yellow.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-olive {
-  background-color: #bcdc97;
-}
-.progress.progress--color-olive .progress__active {
+.progress .progress__active.progress__active--color-olive {
   background-color: #8bc34a;
+  color: #333333;
 }
-.progress.progress--color-olive.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-green {
-  background-color: #92cf94;
-}
-.progress.progress--color-green .progress__active {
+.progress .progress__active.progress__active--color-green {
   background-color: #4caf50;
+  color: #333333;
 }
-.progress.progress--color-green.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-blue {
-  background-color: #82c4f8;
-}
-.progress.progress--color-blue .progress__active {
+.progress .progress__active.progress__active--color-blue {
   background-color: #2196f3;
+  color: #333333;
 }
-.progress.progress--color-blue.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-teal {
-  background-color: #00fce4;
-}
-.progress.progress--color-teal .progress__active {
+.progress .progress__active.progress__active--color-teal {
   background-color: #009688;
+  color: #f5f5f5;
 }
-.progress.progress--color-teal.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-purple {
-  background-color: #ca61dc;
-}
-.progress.progress--color-purple .progress__active {
+.progress .progress__active.progress__active--color-purple {
   background-color: #9c27b0;
+  color: #f5f5f5;
 }
-.progress.progress--color-purple.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-violet {
-  background-color: #9f80d7;
-}
-.progress.progress--color-violet .progress__active {
+.progress .progress__active.progress__active--color-violet {
   background-color: #673ab7;
+  color: #f5f5f5;
 }
-.progress.progress--color-violet.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-pink {
-  background-color: #f27ba3;
-}
-.progress.progress--color-pink .progress__active {
+.progress .progress__active.progress__active--color-pink {
   background-color: #e91e63;
+  color: #f5f5f5;
 }
-.progress.progress--color-pink.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--color-brown {
-  background-color: #af8778;
-}
-.progress.progress--color-brown .progress__active {
+.progress .progress__active.progress__active--color-brown {
   background-color: #795548;
+  color: #f5f5f5;
 }
-.progress.progress--color-brown.progress--with-text .progress__active {
-  color: #ffffff;
+.progress .progress__active.progress__active--color-black {
+  background-color: #333333;
+  color: #f5f5f5;
+}
+.progress .progress__active.progress__active--color-white {
+  background-color: #f5f5f5;
+  color: #333333;
 }
 .progress.progress--invert {
   background-color: #404040;
@@ -11547,111 +11508,24 @@ kbd {
 .progress.progress--invert .progress__active {
   background-color: #737373;
 }
-.progress.progress--invert.progress--color-red {
-  background-color: #ba160a;
-}
-.progress.progress--invert.progress--color-red .progress__active {
-  background-color: #f44336;
-}
-.progress.progress--invert.progress--color-red.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-orange {
-  background-color: #995b00;
-}
-.progress.progress--invert.progress--color-orange .progress__active {
-  background-color: #ff9800;
-}
-.progress.progress--invert.progress--color-orange.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-yellow {
-  background-color: #d4be00;
-}
-.progress.progress--invert.progress--color-yellow .progress__active {
-  background-color: #ffeb3b;
-}
-.progress.progress--invert.progress--color-yellow.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-olive {
-  background-color: #577d2a;
-}
-.progress.progress--invert.progress--color-olive .progress__active {
-  background-color: #8bc34a;
-}
-.progress.progress--invert.progress--color-olive.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-green {
-  background-color: #2d682f;
-}
-.progress.progress--invert.progress--color-green .progress__active {
-  background-color: #4caf50;
-}
-.progress.progress--invert.progress--color-green.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-blue {
-  background-color: #0960a5;
-}
-.progress.progress--invert.progress--color-blue .progress__active {
-  background-color: #2196f3;
-}
-.progress.progress--invert.progress--color-blue.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-teal {
-  background-color: #00302c;
-}
-.progress.progress--invert.progress--color-teal .progress__active {
-  background-color: #009688;
-}
-.progress.progress--invert.progress--color-teal.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-purple {
-  background-color: #52145d;
-}
-.progress.progress--invert.progress--color-purple .progress__active {
-  background-color: #9c27b0;
-}
-.progress.progress--invert.progress--color-purple.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-violet {
-  background-color: #3b216a;
-}
-.progress.progress--invert.progress--color-violet .progress__active {
-  background-color: #673ab7;
-}
-.progress.progress--invert.progress--color-violet.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-pink {
-  background-color: #930e3b;
-}
-.progress.progress--invert.progress--color-pink .progress__active {
-  background-color: #e91e63;
-}
-.progress.progress--invert.progress--color-pink.progress--with-text .progress__active {
-  color: #ffffff;
-}
-.progress.progress--invert.progress--color-brown {
-  background-color: #392822;
-}
-.progress.progress--invert.progress--color-brown .progress__active {
-  background-color: #795548;
-}
-.progress.progress--invert.progress--color-brown.progress--with-text .progress__active {
-  color: #ffffff;
-}
 .progress.progress--size-thin {
-  height: 0.5em;
-  margin-top: 0.25em;
+  height: 0.4rem;
 }
 .progress.progress--size-thin .progress__active {
-  height: 0.5em;
+  height: 0.4rem;
+}
+.progress.progress--size-large {
+  height: 1.5rem;
+  font-size: 1em;
+}
+.progress.progress--size-large .progress__active {
+  height: 1.5rem;
+}
+.progress.progress--size-fit {
+  height: 100%;
+}
+.progress.progress--size-fit .progress__active {
+  height: 100%;
 }
 .progress.progress--no-smooth {
   border-radius: 0px;

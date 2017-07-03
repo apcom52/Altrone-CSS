@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Select</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../js/Progress.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-olive">
+					<div class="jumbotron__header">Progress</div>
+				</div>
+
+				<div class="margin-2">
+                    <h2>Обычный прогресс-бар</h2>
+                    <div class="progress progress--size-large">
+                        <div class="progress__active progress__active--color-olive" style="width: 66%;"><div class="progress__active__label">66%</div></div>
+                        <div class="progress__active progress__active--color-green" style="width: 12%;"><div class="progress__active__label">12%</div></div>
+                        <div class="progress__active progress__active--color-yellow" style="width: 8.5%;"><div class="progress__active__label">8.5%</div></div>
+                        <div class="progress__active progress__active--color-orange" style="width: 13.5%;"><div class="progress__active__label">13.5%</div></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__active progress__active--color-red" style="width: 10%;">Red</div>
+                        <div class="progress__active progress__active--color-blue" style="width: 10%;">Blue</div>
+                        <div class="progress__active progress__active--color-teal" style="width: 10%;">Teal</div>
+                        <div class="progress__active progress__active--color-black" style="width: 10%;">Black</div>
+                        <div class="progress__active progress__active--color-violet" style="width: 10%;">Violet</div>
+                        <div class="progress__active progress__active--color-white" style="width: 10%;">White</div>
+                        <div class="progress__active progress__active--color-purple" style="width: 20%;">Purple</div>
+                        <div class="progress__active progress__active--color-pink" style="width: 10%;">Pink</div>
+                        <div class="progress__active progress__active--color-brown" style="width: 10%;">Brown</div>
+                    </div>
+                    <div class="progress progress--size-thin"><div class="progress__active progress__active--color-red" style="width: 22%;"></div></div>
+                </div>
+
+                <div class="margin-2">
+                    <h2>Управляемый прогресс-бар</h2>
+                    <div class="progress" id="progress1"></div>
+	                <button onclick="test1();">Уменьшить серый</button>
+	                <button onclick="test2();">Изменить цвет второго</button>
+	                <button onclick="test3();">Увеличить желтый</button>
+	                <button onclick="test4();">Добавить надпись второму</button>
+	                <button onclick="test5();">Увеличить максимум</button>
+	                <button onclick="test6();">Уменьшить максимум</button>
+                    <button onclick="test7();">Добавить бар</button>
+	                <button onclick="test8();">Удалить третий</button>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    'use strict';
+
+    let progress1 = new Progress(document.getElementById('progress1'), {
+        max: 100,
+        bars: [
+            {
+                value: 25,
+	            label: "Dark Side"
+            },
+            {
+                value: 45,
+                color: 'red'
+            },
+	        {
+	        	value: 15,
+		        color: 'yellow',
+		        label: 'Magic'
+	        }
+        ]
+    });
+
+    function test1() {
+    	console.log("Уменьшаем серый бар на 5 ед");
+
+    	let current = progress1.get(0);
+    	current.value -= 5;
+    	progress1.update(0, current);
+    }
+
+    function test2() {
+	    console.log("Изменяем цвет красного на зеленый");
+
+	    let current = progress1.get(1);
+	    current.color = "green";
+	    progress1.update(1, current);
+    }
+
+    function test3() {
+	    console.log("Увеличить желтый");
+
+	    let current = progress1.get(2);
+	    current.value += 1;
+	    progress1.update(2, current);
+    }
+
+    let secondLabelMod = 0;
+    function test4() {
+	    console.log("Изменяем надпись красному/зеленому");
+
+	    let current = progress1.get(1);
+
+	    if (secondLabelMod % 2 == 0) {
+	    	current.label = "Надпись есть!";
+	    } else {
+	    	current.label = "";
+	    }
+
+	    secondLabelMod++;
+	    progress1.update(1, current);
+    }
+
+    function test5() {
+    	console.log("Увеличиваем максимум");
+
+    	progress1.max = progress1.max + 10;
+    }
+
+    function test6() {
+	    console.log("Уменьшаем максимум");
+
+	    progress1.max = progress1.max - 10;
+    }
+
+    function test7() {
+    	console.log("Добавляем новый бар к прогресс-бару");
+    	progress1.add({
+		    value: 10,
+		    color: 'violet'
+	    });
+    }
+
+    function test8() {
+	    console.log("Удаляем третий прогресс-бар");
+	    progress1.remove(2);
+    }
+</script>
+</body>
+</html>
