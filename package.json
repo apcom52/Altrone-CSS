@@ -43,5 +43,8 @@
     "js",
     "html",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "less": "^2.7.2"
+  }
 }

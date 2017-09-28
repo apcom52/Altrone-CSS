@@ -262,7 +262,6 @@
 		vertical-align: top;
 		width: 0;
 		height: auto;
-		margin: 1em;
 		box-sizing: border-box;
 
 		& + label {
@@ -275,14 +274,14 @@
 
 			& + label {
 				position: relative;
-				padding: 0 0 0 5em;
+				padding: 0 0 0 3em;
 			}
 		}
 
 		&:not(checked) + label:before {
 			content: '';
 			position: absolute;
-			top: 0.2em;
+			top: 0.15em;
 			left: 1em;
 			width: 1em;
 			height: 1em;
@@ -343,6 +342,14 @@
 				background-color: @u-gray;
 			}
 		}	
+	}
+
+	&.checkbox--circle {
+		input[type="checkbox"] + label {
+			&:before {
+				border-radius: 50%;
+			}
+		}
 	}
 
 	&.checkbox--invert {
@@ -624,7 +631,6 @@
 
 form, .form {
 	padding: 0.25em 1em;
-	.anim(0.3s);
 	clear: both;
 	overflow: hidden;
 

@@ -11,6 +11,7 @@
 	<script src="../js/Overlay.js"></script>
 	<script src="../js/Modal.js"></script>
 	<script src="../js/Dialog.js"></script>
+	<script src="../js/InputModal.js"></script>
 
 	<style>
 		html {
@@ -32,6 +33,7 @@
 					<button class="button--color-blue" id="button1" onclick="button1();">Открыть модальное окно</button>
 					<button class="button--color-violet" id="button2" onclick="button2();">Открыть диалоговое окною</button>
 					<button class="button--color-violet" id="button2" onclick="button3();">Изменить callback-функцию</button>
+					<button class="button--color-pink" id="button2" onclick="button4();">Открыть окно ввода</button>
 				</div>
 			</div>
 		</div>
@@ -70,6 +72,13 @@ var dialog = new Dialog({
 	onHide: () => console.log('modal hide')
 });
 
+var input = new InputModal({
+	title: 'Введите ваш возраст',
+	contentType: InputModal.contentTypeInteger,
+	label: 'Введите ваш возраст',
+	placeholder: 'Ваш возраст',
+});
+
 function button2() {
 	dialog.show();
 }
@@ -80,6 +89,10 @@ function button1() {
 
 function button3() {
 	dialog.onShow = () => console.log('new show!');
+}
+
+function button4() {
+    input.show();
 }
 </script>
 </body>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Forms</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../js/Slider.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-red">
+					<div class="jumbotron__header">Компоненты формы</div>
+				</div>
+
+				<h1 class="margin-1">Флажок (Checkbox)</h1>
+				<div class="fgrid margin-1">
+					<div class="col-3">
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox1">
+							<label for="checkbox1">
+								<div class="checkbox__title">Заголовок флажка</div>
+								<div class="checkbox__meta">Здесь можно описать, что произойдет, если флажок будет активным</div>
+							</label>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="checkbox checkbox--color-red">
+							<input type="checkbox" id="checkbox2">
+							<label for="checkbox2">
+								<div class="checkbox__title">Заголовок флажка</div>
+								<div class="checkbox__meta">Здесь можно описать, что произойдет, если флажок будет активным</div>
+							</label>
+						</div>
+					</div>
+					<div class="col-3 d-gray-bg">
+						<div class="checkbox checkbox--color-green checkbox--invert checkbox--circle">
+							<input type="checkbox" id="checkbox3">
+							<label for="checkbox3">
+								<div class="checkbox__title">Новый модификатор - круглый checkbox!</div>
+								<div class="checkbox__meta">Здесь можно описать, что произойдет, если флажок будет активным</div>
+							</label>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox4">
+							<label for="checkbox4">
+								<div class="checkbox__title">Заголовок флажка без описания</div>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    'use strict';
+	let slider1 = new Slider(document.getElementById('whiteSlider'), {
+	    min: 0,
+		max: 10,
+		value: 7
+	});
+</script>
+</body>
+</html>

@@ -57,7 +57,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
 	&:hover {
 		background-color: darken(@u-gray, 5%);
-		.anim(0.3s);
+		.animate(~"background-color");
 	}
 
 	&:active, .active {
@@ -155,6 +155,15 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		background-color: darken(@u-gray, 15%);
 		border-color: darken(darken(@u-gray, 15%), 15%);
 		.animate(~'background-color, border-color');
+	}
+
+	&.button--loading {
+		color: transparent;
+		text-shadow: none !important;
+		background-image: @loading;
+		background-repeat: no-repeat;
+		background-size: 1em 1em;
+		background-position: center center;
 	}
 }
 

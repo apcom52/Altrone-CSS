@@ -123,7 +123,7 @@ class Dialog {
 
 		target.modal_body.appendChild(modal_header);
 		target.modal_body.appendChild(modal_content);
-		target.modal_body.appendChild(modal_footer)
+		target.modal_body.appendChild(modal_footer);
 
 		document.body.appendChild(target.modal_body);		
 
