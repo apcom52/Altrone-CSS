@@ -291,6 +291,28 @@
 	}
 }
 
+@keyframes notification-show {
+	0% {
+		transform: translateX(300px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0.5em);
+		opacity: 1;
+	}
+}
+
+@keyframes notification-hide {
+	0% {
+		transform: translateX(0.5em);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(300px);
+		opacity: 0;
+	}
+}
+
 @media (max-width: @tablet) {
 	.toast-collection {
 		width: 50%;
@@ -372,24 +394,71 @@ kbd {
 	.bold();
 }
 
-@keyframes notification-show {
-	0% {
-		transform: translateX(300px);
-		opacity: 0;
+.set-tag-color(@active-color, @invert-color) {
+	border-color: darken(@active-color, 5%);
+
+	&:hover {
+		background-color: lighten(@active-color, 10%);
 	}
-	100% {
-		transform: translateX(0.5em);
-		opacity: 1;
+
+	&.tag--active {
+		background-color: @active-color;
+	}
+
+	&.tag--invert {
+		border-color: darken(@invert-color, 5%);
+
+		&:hover {
+			background-color: darken(@invert-color, 10%);
+		}
+
+		&.tag--active {
+			background-color: @invert-color;
+		}
 	}
 }
 
-@keyframes notification-hide {
-	0% {
-		transform: translateX(0.5em);
-		opacity: 1;
+.tag {
+	display: inline-block;
+	border: 1px solid darken(@u-gray, 20%);
+	border-radius: 0.5em;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	margin: 0.5em;
+	.animate(~'background-color');
+	.pt();
+
+	&:hover {
+		background-color: @u-gray;
+		.animate(~'background-color');
 	}
-	100% {
-		transform: translateX(300px);
-		opacity: 0;
+
+	&.tag--active {
+		background-color: darken(@u-gray, 10%);
 	}
+
+	&.tag--invert {
+		border-color: lighten(@d-gray, 10%);
+		color: @u-gray;
+
+		&:hover {
+			background-color: lighten(@d-gray, 5%);
+		}
+
+		&.tag--active {
+			background-color: lighten(@d-gray, 10%);
+		}
+	}
+
+	&.tag--color-red { .set-tag-color(@l-red, @d-red); }
+	&.tag--color-orange { .set-tag-color(@l-orange, @d-orange); }
+	&.tag--color-yellow{ .set-tag-color(@l-yellow, @d-yellow); }
+	&.tag--color-olive{ .set-tag-color(@l-olive, @d-olive); }
+	&.tag--color-green { .set-tag-color(@l-green, @d-green); }
+	&.tag--color-teal { .set-tag-color(@l-teal, @d-teal); }
+	&.tag--color-blue { .set-tag-color(@l-blue, @d-blue); }
+	&.tag--color-purple { .set-tag-color(@l-purple, @d-purple); }
+	&.tag--color-violet{ .set-tag-color(@l-violet, @d-violet); }
+	&.tag--color-pink{ .set-tag-color(@l-pink, @d-pink); }
+	&.tag--color-brown{ .set-tag-color(@l-brown, @d-brown); }
 }

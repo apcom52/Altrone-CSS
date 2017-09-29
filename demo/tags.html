@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Range</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../js/Slider.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-orange">
+					<div class="jumbotron__header">Tags</div>
+				</div>
+
+				<div class="fgrid">
+					<div class="tag">Hello</div>
+					<div class="tag">Google</div>
+					<div class="tag tag--active">Amazon</div>
+					<div class="tag"><i class="fa fa-apple"></i></div>
+					<div class="tag">Chrome OS</div>
+				</div>
+
+				<div class="fgrid">
+					<div class="tag tag--color-blue">Hello</div>
+					<div class="tag tag--color-blue">Google</div>
+					<div class="tag tag--color-blue tag--active">Amazon</div>
+					<div class="tag tag--color-blue"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--color-blue">Chrome OS</div>
+				</div>
+
+				<div class="fgrid">
+					<div class="tag tag--color-red">Hello</div>
+					<div class="tag tag--color-red">Google</div>
+					<div class="tag tag--color-red tag--active">Amazon</div>
+					<div class="tag tag--color-red"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--color-red">Chrome OS</div>
+				</div>
+
+				<div class="fgrid">
+					<div class="tag tag--color-violet">Hello</div>
+					<div class="tag tag--color-violet">Google</div>
+					<div class="tag tag--color-violet tag--active">Amazon</div>
+					<div class="tag tag--color-violet"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--color-violet">Chrome OS</div>
+				</div>
+
+				<div class="fgrid d-gray-bg">
+					<div class="tag tag--invert">Hello</div>
+					<div class="tag tag--invert">Google</div>
+					<div class="tag tag--invert tag--active">Amazon</div>
+					<div class="tag tag--invert"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--invert">Chrome OS</div>
+				</div>
+
+				<div class="fgrid  d-gray-bg">
+					<div class="tag tag--invert tag--color-blue">Hello</div>
+					<div class="tag tag--invert tag--color-blue">Google</div>
+					<div class="tag tag--invert tag--color-blue tag--active">Amazon</div>
+					<div class="tag tag--invert tag--color-blue"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--invert tag--color-blue">Chrome OS</div>
+				</div>
+
+				<div class="fgrid  d-gray-bg">
+					<div class="tag tag--invert tag--color-red">Hello</div>
+					<div class="tag tag--invert tag--color-red">Google</div>
+					<div class="tag tag--invert tag--color-red tag--active">Amazon</div>
+					<div class="tag tag--invert tag--color-red"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--invert tag--color-red">Chrome OS</div>
+				</div>
+
+				<div class="fgrid  d-gray-bg">
+					<div class="tag tag--invert tag--color-violet">Hello</div>
+					<div class="tag tag--invert tag--color-violet">Google</div>
+					<div class="tag tag--invert tag--color-violet tag--active">Amazon</div>
+					<div class="tag tag--invert tag--color-violet"><i class="fa fa-apple"></i></div>
+					<div class="tag tag--invert tag--color-violet">Chrome OS</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    'use strict';
+	let slider1 = new Slider(document.getElementById('whiteSlider'), {
+	    min: 0,
+		max: 10,
+		value: 7
+	});
+</script>
+</body>
+</html>

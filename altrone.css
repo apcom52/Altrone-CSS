@@ -3,24 +3,21 @@
 * Version 2.2 (Curious CatZilla)
 * Build 552
 */
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
 html {
-  font-family: sans-serif;
-  /* 1 */
   line-height: 1.15;
-  /* 2 */
+  /* 1 */
   -ms-text-size-adjust: 100%;
-  /* 3 */
+  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 3 */
+  /* 2 */
 }
 /* Sections
    ========================================================================== */
@@ -102,15 +99,7 @@ a {
   /* 2 */
 }
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-a:active,
-a:hover {
-  outline-width: 0;
-}
-/**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
@@ -281,12 +270,10 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 /**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: 0.35em 0.75em 0.625em;
 }
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -4034,23 +4021,26 @@ code {
 }
 .toggle input[type="checkbox"]:not(checked) + label {
   position: relative;
-  padding: 0 0 0 5em;
+  padding: 0 0 0 4em;
 }
 .toggle input[type="checkbox"]:not(checked) + label:before {
   content: '';
   position: absolute;
-  top: 0.3em;
+  top: 0em;
   left: 0em;
-  width: 3em;
+  width: 2.5em;
   height: 1em;
   border-radius: 1em;
   background-color: #999999;
   padding: 0.2em;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 .toggle input[type="checkbox"]:not(checked) + label:after {
   content: '';
   position: absolute;
-  top: 0.5em;
+  top: 0.2em;
   left: 0.2em;
   width: 1em;
   height: 1em;
@@ -4063,9 +4053,12 @@ code {
 }
 .toggle input[type="checkbox"]:checked + label:before {
   background: #666666;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 .toggle input[type="checkbox"]:checked + label:after {
-  left: 2em;
+  left: 1.7em;
 }
 .toggle label {
   display: inline-block;
@@ -4633,232 +4626,6 @@ code {
 .checkbox.checkbox--invert label .checkbox__title {
   color: #f5f5f5;
 }
-.tag {
-  width: auto;
-  box-sizing: border-box;
-  margin: 0.5em 0.5em 0.5em 0em;
-  display: inline-block;
-  font-family: 'PT Sans', 'Segoe UI', sans-serif;
-}
-.tag input[type="checkbox"] {
-  display: inline-block;
-  vertical-align: top;
-  width: 0;
-  height: auto;
-  margin: 1em;
-  box-sizing: border-box;
-}
-.tag input[type="checkbox"] + label {
-  cursor: pointer;
-}
-.tag input[type="checkbox"]:not(checked) {
-  position: absolute;
-  opacity: 0;
-}
-.tag input[type="checkbox"]:not(checked) + label {
-  position: relative;
-  padding: 0.25em 0.5em 0.25em 0.5em;
-}
-.tag input[type="checkbox"]:not(checked) + label {
-  background-color: #f5f5f5;
-  border-radius: 1em;
-  background-position: 0.45em 0.55em;
-  background-size: 0.8em 0.8em;
-  background-repeat: no-repeat;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-}
-.tag input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #e8e8e8;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-}
-.tag input[type="checkbox"]:checked + label {
-  background-color: #999999;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAACsklEQVR4Xu3bXU7CQBSG4TPgpbGS4D5cgjtRluCKZCe6BBZighovITVtUgRTYabz882c+bjyouWE9+HQVIIRPqAFDHQ6hwsBwG8CAhAAXAA8nhtAAHAB8HhuAAHABcDjuQEEABcAj+cGEABcADyeG0AAcAHweG4AAcAFwOO5AQQAFwCP5wYQAFwAPJ4b4Aiw3X7f72b7x7umeXY8dfRwAjhU7OLvze5VxNyKkfWyaVYOpxPAJ9ZJ/OGJAiBwAyxURuMHQiDABYCz8QMgEOAMgFV8TwQC/APgFL97jtasloubtcUn2skhBBgplip+N5oAfwBSxicAOD4BjgBSv/N/r92uVw2Fx6PicwNEBBm/egB0/KoBcohfLUAu8asEyCl+dQC5xa8KIMf41QDkGr8KgJzjqwfIPb5qgBLiqwUoJX5QgPft11P3hFO+FQr5/72S4gcD6OOb9qUPOfGruRAIpcUPAnASf6gIQCgxvjfAaHwAQqnxvQDOxk+IUHL8yQBW8RMglB5/MkD/wmX3JsY0VhfPCNcEDfEnA3QnIhG0xPcCQCFoiu8NkBpBW/wgAKkQNMYPBhAbQWv8oACxEDTHDw4QGkF7/CgAoRBqiB8NwBehlvhRAaYizGW2OfwU1OY2O8Jdts3YUMdE/4GG8x2ztB/973BtHoXHj74BQ0N3BIv6CuInA5j0cXTOQEn8pADBEBTFTw7gjaAsPgRgMoLC+DAAZwSl8aEA1giK48MBLiIoj58FwChC237O5ephsbjeWNwRFH1I9Dth2zqHmzURqSV+NhtwfMfc/V3DO394zdlsgO2maDuOAGBRAhAAXAA8nhtAAHAB8HhuAAHABcDjuQEEABcAj+cGEABcADyeG0AAcAHweG4AAcAFwOO5AQQAFwCP5wYQAFwAPJ4bQABwAfD4H/eEHH8dRim6AAAAAElFTkSuQmCC');
-  padding: 0.25em 0.5em 0.25em 2em;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-}
-.tag input[type="checkbox"]:checked + label:hover {
-  background-color: #999999;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-}
-.tag label {
-  display: inline-block;
-  vertical-align: top;
-  font-family: 'PT Sans', 'Segoe UI', sans-serif;
-}
-.tag.tag--color-red {
-  color: #ffffff;
-}
-.tag.tag--color-red input[type="checkbox"]:not(checked) + label {
-  background-color: #fbb4af;
-}
-.tag.tag--color-red input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #f99d97;
-}
-.tag.tag--color-red input[type="checkbox"]:checked + label {
-  background-color: #f44336;
-}
-.tag.tag--color-red input[type="checkbox"]:checked + label:hover {
-  background-color: #f44336;
-}
-.tag.tag--color-orange {
-  color: #ffffff;
-}
-.tag.tag--color-orange input[type="checkbox"]:not(checked) + label {
-  background-color: #ffcc80;
-}
-.tag.tag--color-orange input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #ffc166;
-}
-.tag.tag--color-orange input[type="checkbox"]:checked + label {
-  background-color: #ff9800;
-}
-.tag.tag--color-orange input[type="checkbox"]:checked + label:hover {
-  background-color: #ff9800;
-}
-.tag.tag--color-yellow {
-  color: #ffffff;
-}
-.tag.tag--color-yellow input[type="checkbox"]:not(checked) + label {
-  background-color: #fff8bb;
-}
-.tag.tag--color-yellow input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #fff5a1;
-}
-.tag.tag--color-yellow input[type="checkbox"]:checked + label {
-  background-color: #ffeb3b;
-}
-.tag.tag--color-yellow input[type="checkbox"]:checked + label:hover {
-  background-color: #ffeb3b;
-}
-.tag.tag--color-olive {
-  color: #ffffff;
-}
-.tag.tag--color-olive input[type="checkbox"]:not(checked) + label {
-  background-color: #c8e3aa;
-}
-.tag.tag--color-olive input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #bcdc97;
-}
-.tag.tag--color-olive input[type="checkbox"]:checked + label {
-  background-color: #8bc34a;
-}
-.tag.tag--color-olive input[type="checkbox"]:checked + label:hover {
-  background-color: #8bc34a;
-}
-.tag.tags--color-green {
-  color: #ffffff;
-}
-.tag.tags--color-green input[type="checkbox"]:not(checked) + label {
-  background-color: #a3d7a5;
-}
-.tag.tags--color-green input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #92cf94;
-}
-.tag.tags--color-green input[type="checkbox"]:checked + label {
-  background-color: #4caf50;
-}
-.tag.tags--color-green input[type="checkbox"]:checked + label:hover {
-  background-color: #4caf50;
-}
-.tag.tag--color-teal {
-  color: #ffffff;
-}
-.tag.tag--color-teal input[type="checkbox"]:not(checked) + label {
-  background-color: #17ffe9;
-}
-.tag.tag--color-teal input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #00fce4;
-}
-.tag.tag--color-teal input[type="checkbox"]:checked + label {
-  background-color: #009688;
-}
-.tag.tag--color-teal input[type="checkbox"]:checked + label:hover {
-  background-color: #009688;
-}
-.tag.tag--color-blue {
-  color: #ffffff;
-}
-.tag.tag--color-blue input[type="checkbox"]:not(checked) + label {
-  background-color: #9acffa;
-}
-.tag.tag--color-blue input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #82c4f8;
-}
-.tag.tag--color-blue input[type="checkbox"]:checked + label {
-  background-color: #2196f3;
-}
-.tag.tag--color-blue input[type="checkbox"]:checked + label:hover {
-  background-color: #2196f3;
-}
-.tag.tag--color-violet {
-  color: #ffffff;
-}
-.tag.tag--color-violet input[type="checkbox"]:not(checked) + label {
-  background-color: #ae94dd;
-}
-.tag.tag--color-violet input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #9f80d7;
-}
-.tag.tag--color-violet input[type="checkbox"]:checked + label {
-  background-color: #673ab7;
-}
-.tag.tag--color-violet input[type="checkbox"]:checked + label:hover {
-  background-color: #673ab7;
-}
-.tag.tag--color-purple {
-  color: #ffffff;
-}
-.tag.tag--color-purple input[type="checkbox"]:not(checked) + label {
-  background-color: #d176e1;
-}
-.tag.tag--color-purple input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #ca61dc;
-}
-.tag.tag--color-purple input[type="checkbox"]:checked + label {
-  background-color: #9c27b0;
-}
-.tag.tag--color-purple input[type="checkbox"]:checked + label:hover {
-  background-color: #9c27b0;
-}
-.tag.tag--color-pink {
-  color: #ffffff;
-}
-.tag.tag--color-pink input[type="checkbox"]:not(checked) + label {
-  background-color: #f492b4;
-}
-.tag.tag--color-pink input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #f27ba3;
-}
-.tag.tag--color-pink input[type="checkbox"]:checked + label {
-  background-color: #e91e63;
-}
-.tag.tag--color-pink input[type="checkbox"]:checked + label:hover {
-  background-color: #e91e63;
-}
-.tag.tag--color-brown {
-  color: #ffffff;
-}
-.tag.tag--color-brown input[type="checkbox"]:not(checked) + label {
-  background-color: #b89588;
-}
-.tag.tag--color-brown input[type="checkbox"]:not(checked) + label:hover {
-  background-color: #af8778;
-}
-.tag.tag--color-brown input[type="checkbox"]:checked + label {
-  background-color: #795548;
-}
-.tag.tag--color-brown input[type="checkbox"]:checked + label:hover {
-  background-color: #795548;
-}
 .radio {
   width: 100%;
   padding: 0em 1em;
@@ -4883,12 +4650,12 @@ code {
 }
 .radio input[type="radio"]:not(checked) + label {
   position: relative;
-  padding: 0 0 0 5em;
+  padding: 0 0 0 3em;
 }
 .radio input[type="radio"]:not(checked) + label:before {
   content: '';
   position: absolute;
-  top: 0.2em;
+  top: 2px;
   left: 1em;
   width: 1em;
   height: 1em;
@@ -4896,7 +4663,7 @@ code {
   border: 2px solid #333333;
   background-color: #ffffff;
   background-position: center;
-  background-size: 0.6em;
+  background-size: 50%;
   background-repeat: no-repeat;
   box-sizing: border-box;
 }
@@ -10579,6 +10346,26 @@ input[type="reset"].button--loading,
     border-radius: 0.5em;
   }
 }
+@keyframes notification-show {
+  0% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0.5em);
+    opacity: 1;
+  }
+}
+@keyframes notification-hide {
+  0% {
+    transform: translateX(0.5em);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+}
 @media (max-width: 992px) {
   .toast-collection {
     width: 50%;
@@ -10652,25 +10439,234 @@ kbd {
   font-weight: bold;
   font-family: 'PT Sans Bold', sans-serif;
 }
-@keyframes notification-show {
-  0% {
-    transform: translateX(300px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0.5em);
-    opacity: 1;
-  }
+.tag {
+  display: inline-block;
+  border: 1px solid #c2c2c2;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 0.5em;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
 }
-@keyframes notification-hide {
-  0% {
-    transform: translateX(0.5em);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(300px);
-    opacity: 0;
-  }
+.tag:hover {
+  background-color: #f5f5f5;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+.tag.tag--active {
+  background-color: #dcdcdc;
+}
+.tag.tag--invert {
+  border-color: #4d4d4d;
+  color: #f5f5f5;
+}
+.tag.tag--invert:hover {
+  background-color: #404040;
+}
+.tag.tag--invert.tag--active {
+  background-color: #4d4d4d;
+}
+.tag.tag--color-red {
+  border-color: #ec8484;
+}
+.tag.tag--color-red:hover {
+  background-color: #f6c6c6;
+}
+.tag.tag--color-red.tag--active {
+  background-color: #ef9a9a;
+}
+.tag.tag--color-red.tag--invert {
+  border-color: #c02929;
+}
+.tag.tag--color-red.tag--invert:hover {
+  background-color: #ab2424;
+}
+.tag.tag--color-red.tag--invert.tag--active {
+  background-color: #d32f2f;
+}
+.tag.tag--color-orange {
+  border-color: #ffc266;
+}
+.tag.tag--color-orange:hover {
+  background-color: #ffe0b3;
+}
+.tag.tag--color-orange.tag--active {
+  background-color: #ffcc80;
+}
+.tag.tag--color-orange.tag--invert {
+  border-color: #dc6f00;
+}
+.tag.tag--color-orange.tag--invert:hover {
+  background-color: #c26200;
+}
+.tag.tag--color-orange.tag--invert.tag--active {
+  background-color: #f57c00;
+}
+.tag.tag--color-yellow {
+  border-color: #ffee5d;
+}
+.tag.tag--color-yellow:hover {
+  background-color: #fff6a9;
+}
+.tag.tag--color-yellow.tag--active {
+  background-color: #fff176;
+}
+.tag.tag--color-yellow.tag--invert {
+  border-color: #fbb814;
+}
+.tag.tag--color-yellow.tag--invert:hover {
+  background-color: #f0ad05;
+}
+.tag.tag--color-yellow.tag--invert.tag--active {
+  background-color: #fbc02d;
+}
+.tag.tag--color-olive {
+  border-color: #b9db92;
+}
+.tag.tag--color-olive:hover {
+  background-color: #deeecb;
+}
+.tag.tag--color-olive.tag--active {
+  background-color: #c5e1a5;
+}
+.tag.tag--color-olive.tag--invert {
+  border-color: #5c8c31;
+}
+.tag.tag--color-olive.tag--invert:hover {
+  background-color: #4f792b;
+}
+.tag.tag--color-olive.tag--invert.tag--active {
+  background-color: #689f38;
+}
+.tag.tag--color-green {
+  border-color: #93ce96;
+}
+.tag.tag--color-green:hover {
+  background-color: #c8e6c9;
+}
+.tag.tag--color-green.tag--active {
+  background-color: #a5d6a7;
+}
+.tag.tag--color-green.tag--invert {
+  border-color: #317c34;
+}
+.tag.tag--color-green.tag--invert:hover {
+  background-color: #2a692d;
+}
+.tag.tag--color-green.tag--invert.tag--active {
+  background-color: #388e3c;
+}
+.tag.tag--color-teal {
+  border-color: #6ec4bc;
+}
+.tag.tag--color-teal:hover {
+  background-color: #a4dad5;
+}
+.tag.tag--color-teal.tag--active {
+  background-color: #80cbc4;
+}
+.tag.tag--color-teal.tag--invert {
+  border-color: #006054;
+}
+.tag.tag--color-teal.tag--invert:hover {
+  background-color: #00463e;
+}
+.tag.tag--color-teal.tag--invert.tag--active {
+  background-color: #00796b;
+}
+.tag.tag--color-blue {
+  border-color: #78bef8;
+}
+.tag.tag--color-blue:hover {
+  background-color: #c0e1fc;
+}
+.tag.tag--color-blue.tag--active {
+  background-color: #90caf9;
+}
+.tag.tag--color-blue.tag--invert {
+  border-color: #1669bb;
+}
+.tag.tag--color-blue.tag--invert:hover {
+  background-color: #145ca4;
+}
+.tag.tag--color-blue.tag--invert.tag--active {
+  background-color: #1976d2;
+}
+.tag.tag--color-purple {
+  border-color: #c680d1;
+}
+.tag.tag--color-purple:hover {
+  background-color: #dfb8e6;
+}
+.tag.tag--color-purple.tag--active {
+  background-color: #ce93d8;
+}
+.tag.tag--color-purple.tag--invert {
+  border-color: #6b1b8d;
+}
+.tag.tag--color-purple.tag--invert:hover {
+  background-color: #5a1777;
+}
+.tag.tag--color-purple.tag--invert.tag--active {
+  background-color: #7b1fa2;
+}
+.tag.tag--color-violet {
+  border-color: #a58ad4;
+}
+.tag.tag--color-violet:hover {
+  background-color: #d0c2e9;
+}
+.tag.tag--color-violet.tag--active {
+  background-color: #b39ddb;
+}
+.tag.tag--color-violet.tag--invert {
+  border-color: #472894;
+}
+.tag.tag--color-violet.tag--invert:hover {
+  background-color: #3e2280;
+}
+.tag.tag--color-violet.tag--invert.tag--active {
+  background-color: #512da8;
+}
+.tag.tag--color-pink {
+  border-color: #f278a1;
+}
+.tag.tag--color-pink:hover {
+  background-color: #f9bdd1;
+}
+.tag.tag--color-pink.tag--active {
+  background-color: #f48fb1;
+}
+.tag.tag--color-pink.tag--invert {
+  border-color: #ab1550;
+}
+.tag.tag--color-pink.tag--invert:hover {
+  background-color: #951246;
+}
+.tag.tag--color-pink.tag--invert.tag--active {
+  background-color: #c2185b;
+}
+.tag.tag--color-brown {
+  border-color: #b19c95;
+}
+.tag.tag--color-brown:hover {
+  background-color: #d2c5c1;
+}
+.tag.tag--color-brown.tag--active {
+  background-color: #bcaaa4;
+}
+.tag.tag--color-brown.tag--invert {
+  border-color: #4d352e;
+}
+.tag.tag--color-brown.tag--invert:hover {
+  background-color: #3d2a24;
+}
+.tag.tag--color-brown.tag--invert.tag--active {
+  background-color: #5d4037;
 }
 .dropdown {
   border: 1px solid #cfcfcf;
