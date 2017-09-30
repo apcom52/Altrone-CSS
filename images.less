@@ -197,115 +197,95 @@ img {
 	width: 100%;
 	background-color: @l-gray;
 	min-height: 16em;
-	max-height: 16em;
 	position: relative;
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	.animate(~'background-size');
 
 	.carousel__item {
 		display: none;
 	}
 
-	.carousel__panel {
-		width: 100%;
-		background-color: rgba(245, 245, 245, .7);		
-		color: @d-gray;
-		display: flex;
+	.carousel__left, .carousel__right {
 		position: absolute;
-		bottom: 0em;
-		left: 0em;
-		align-items: center;
+		width: 3rem;
+		top: 0;
+		height: 100%;
+		content: "";
+		background-size: 1.75rem;
+		background-repeat: no-repeat;
+		opacity: 0;
+		transition: background-position 0.3s linear, opacity 0.3s linear;
+		cursor: pointer;
 
-		.carousel__panel__text {
-			flex: 6;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			padding: 0.5em 1em;
-			box-sizing: border-box;
-			.bold();
-		}
-
-		.carousel__panel__counter {
-			flex: 1;
-			text-align: center;
-			font-size: 0.8em;
-		}
-
-		.carousel__panel__navigation {
-			flex: 1;
-			text-align: right;
-			font-size: 0;
-
-			.carousel__panel__navigation__button {
-				cursor: pointer;
-				flex: 1;
-				padding: 1em;
-				content: "";
-				font-size: 1rem;
-				box-sizing: border-box;
-				width: 2em;
-				text-align: center;
-				display: inline-block;
-				margin: 0em;
-
-				&:hover {
-					background-color: @u-gray;
-				}
-
-				&#prev {
-					background-image: @angle-left;
-					background-size: 0.5em 1em;
-					background-repeat: no-repeat;
-					background-position: center;
-				}
-
-				&#next {
-					background-image: @angle-right;
-					background-size: 0.5em 1em;
-					background-repeat: no-repeat;
-					background-position: center;
-				}
-
-				&.disabled {
-					color: @l-gray;
-					cursor: normal;
-					opacity: .25;
-
-					&:hover {
-						background-color: transparent;
-					}
-				}
-			}
+		&:hover {
+			background-color: fade(@d-gray, 5%);
 		}
 	}
 
-	&.carousel--invert {
-		background-color: @m-gray;
+	.carousel__left {
+		left: 0;
+		background-position: center left;
+		background-image: @angle-left-invert;
+	}
 
-		.carousel__panel {
-			background-color: rgba(51, 51, 51, .85);		
-			color: @u-gray;
+	.carousel__right {
+		right: 0;
+		background-position: center right;
+		background-image: @angle-right-invert;
+	}
 
-			.carousel__panel__navigation {
-				.carousel__panel__navigation__button {
-					&:hover {
-						background-color: @d-gray;
-					}
+	.carousel__info {
+		position: absolute;
+		left: 3rem;
+		bottom: 0;
+		width: ~'calc(100% - 6rem)';
+		color: @u-gray;
+		padding: 1.5rem;
+		.text-shadow();
+		.animate(~'padding-bottom');
+		.pt();
 
-					&#prev {
-						background-image: @angle-left-invert;
-					}
+		.carousel__info__title {
+			font-size: 2em;
+			.bold();
+		}
 
-					&#next {
-						background-image: @angle-right-invert;
-					}
+		.carousel__info__content {
+			font-size: 1.1em;
+		}
+	}
 
-					&.disabled {
-						opacity: .25;
-					}
-				}
+	&:hover {
+		.carousel__info {
+			padding-bottom: 2rem;
+			.animate(~'padding-bottom');
+		}
+		.carousel__left {
+			opacity: 1;
+			background-position: center;
+			transition: background-position 0.3s linear, opacity 0.3s linear;
+		}
+
+		.carousel__right {
+			opacity: 1;
+			background-position: center;
+			transition: background-position 0.3s linear, opacity 0.3s linear;
+		}
+	}
+}
+
+@media (max-width: @tablet) {
+	.carousel {
+		.carousel__info {
+			padding: 1.25rem;
+			.carousel__info__title {
+				font-size: 1.75em;
+			}
+
+			.carousel__info__content {
+				font-size: 1em;
 			}
 		}
 	}
@@ -313,12 +293,29 @@ img {
 
 @media (max-width: @l-mobile) {
 	.carousel {
-		.carousel__panel {
-			.carousel__panel__text {
-				flex: 4;
+		.carousel__info {
+			padding: 1.5rem 0.5rem;
+			.carousel__info__title {
+				font-size: 1.2em;
 			}
-			.carousel__panel__navigation {
-				flex: 2;
+
+			.carousel__info__content {
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+
+@media (max-width: @mobile) {
+	.carousel {
+		.carousel__info {
+			padding: 1.5rem 0.3rem;
+			.carousel__info__title {
+				font-size: 1.1em;
+			}
+
+			.carousel__info__content {
+				font-size: 0.9em;
 			}
 		}
 	}

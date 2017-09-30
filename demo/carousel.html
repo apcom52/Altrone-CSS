@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Carousel</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../js/Select.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-pink">
+					<div class="jumbotron__header">Карусель изображений</div>
+				</div>
+
+				<div class="carousel" style="background-image: url('../images/yosemite.jpg'); height: 500px;">
+					<div class="carousel__left"></div>
+					<div class="carousel__right"></div>
+					<div class="carousel__info">
+						<div class="carousel__info__title">Mac OS X High Sierra</div>
+						<div class="carousel__info__content">Новое обновление для Mac OS X</div>
+					</div>
+				</div>
+
+				<div class="carousel" style="background-image: url('../images/catzilla.jpg'); height: 500px;">
+					<div class="carousel__left"></div>
+					<div class="carousel__right"></div>
+					<div class="carousel__info" style="font-size: 1.5em;">
+						<div class="carousel__info__title">Altrone 2.2 CatZilla</div>
+						<div class="carousel__info__content">New features, new opportunities...</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    'use strict';
+
+    let select1 = new Select(document.getElementById('example1'), {
+        options: ['Adele Adkins', 'Sia Furler', 'Lera Lynn'],
+        selectedIndex: 2,
+    });
+
+    let select2 = new Select(document.getElementById('example2'), {
+        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
+        selectedIndex: 2,
+    });
+
+    let select3 = new Select(document.getElementById('example3'), {
+        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
+        editable: true,
+        position: 'top',
+    });
+</script>
+</body>
+</html>
