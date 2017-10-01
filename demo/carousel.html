@@ -7,7 +7,7 @@
 	<title>Altrone2-CSS Carousel</title>
 	<link rel="stylesheet" href="../altrone.css">
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
-	<script src="../js/Select.js"></script>
+	<script src="../js/Carousel.js"></script>
 
 	<style>
 		html {
@@ -22,6 +22,23 @@
 			<div class="card__content padding-0">
 				<div class="jumbotron jumbotron--color-pink">
 					<div class="jumbotron__header">Карусель изображений</div>
+				</div>
+
+				<div class="carousel" id="macDemo">
+					<div class="carousel__item" data-title="Mac OS X Cheetah" data-description="Mac OS X 10.0" data-image-url="http://oswallpapers.com/wp-content/uploads/2016/07/Aqua-Blue.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Puma" data-description="Mac OS X 10.1" data-image-url="https://www.tonymacx86.com/attachments/10-1-puma-jpg.202179/"></div>
+					<div class="carousel__item" data-title="Mac OS X Jaguar" data-description="Mac OS X 10.2" data-image-url="https://www.tonymacx86.com/attachments/10-2-jaguar-jpg.202180/"></div>
+					<div class="carousel__item" data-title="Mac OS X Panther" data-description="Mac OS X 10.3" data-image-url="https://www.tonymacx86.com/data/attachments/157/157125-20c50cbb7a16c8e2ad078e871a85eb25.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Tiger" data-description="Mac OS X 10.4" data-image-url="https://www.tonymacx86.com/data/attachments/157/157126-246c52cfd9816c65fd54d805bdcd6d54.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Leopard" data-description="Mac OS X 10.5" data-image-url="https://www.tonymacx86.com/data/attachments/157/157127-74e5c26630cfbec6c3ca09d340e99874.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Snow Leopard" data-description="Mac OS X 10.6" data-image-url="https://www.tonymacx86.com/data/attachments/157/157128-1b69d73ced703ab39b84ec725931b636.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Lion" data-description="Mac OS X 10.7" data-image-url="https://www.tonymacx86.com/data/attachments/157/157129-e791e37b19187712fc95078e8fd2b367.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Mountain Lion" data-description="Mac OS X 10.8" data-image-url="https://www.tonymacx86.com/data/attachments/157/157130-fbe5342611b5057aafc7dfc1e212179c.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Mavericks" data-description="Mac OS X 10.9" data-image-url="https://www.tonymacx86.com/data/attachments/157/157131-cfb2493cf9d8d67d61e7c5a9de4d26e8.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Yosemite" data-description="Mac OS X 10.10" data-image-url="https://www.tonymacx86.com/data/attachments/157/157132-2d80518a57658bfdf799258041e09395.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X El Capitan" data-description="Mac OS X 10.11" data-image-url="https://www.tonymacx86.com/data/attachments/157/157133-1635830911b55bb6ebf12b235e62e23e.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X Sierra" data-description="Mac OS X 10.12" data-image-url="https://www.tonymacx86.com/data/attachments/157/157134-f3b57f3a2579c5f51ed6802101071808.jpg"></div>
+					<div class="carousel__item" data-title="Mac OS X High Sierra" data-description="Mac OS X 10.13" data-image-url="https://it-here.ru/wp-content/uploads/2017/08/WWDC-2017-macos-high-sierra.jpg"></div>
 				</div>
 
 				<div class="carousel" style="background-image: url('../images/yosemite.jpg'); height: 500px;">
@@ -49,21 +66,9 @@
 <script>
     'use strict';
 
-    let select1 = new Select(document.getElementById('example1'), {
-        options: ['Adele Adkins', 'Sia Furler', 'Lera Lynn'],
-        selectedIndex: 2,
-    });
-
-    let select2 = new Select(document.getElementById('example2'), {
-        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
-        selectedIndex: 2,
-    });
-
-    let select3 = new Select(document.getElementById('example3'), {
-        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
-        editable: true,
-        position: 'top',
-    });
+    let carousel = new Carousel(document.getElementById('macDemo'), {
+        onChange: () => console.log('change photo!')
+	});
 </script>
 </body>
 </html>

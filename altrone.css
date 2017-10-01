@@ -7224,6 +7224,7 @@ img.img--border {
   width: calc(100% - 6rem);
   color: #f5f5f5;
   padding: 1.5rem;
+  box-sizing: border-box;
   text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.5);
   transition-property: padding-bottom;
   transition-duration: 0.3s;
@@ -10671,13 +10672,13 @@ kbd {
   background-color: #bcaaa4;
 }
 .tag.tag--color-brown.tag--invert {
-  border-color: #4d352e;
+  border-color: #694a3e;
 }
 .tag.tag--color-brown.tag--invert:hover {
-  background-color: #3d2a24;
+  background-color: #593f35;
 }
 .tag.tag--color-brown.tag--invert.tag--active {
-  background-color: #5d4037;
+  background-color: #795548;
 }
 .dropdown {
   border: 1px solid #cfcfcf;
