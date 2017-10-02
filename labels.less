@@ -327,23 +327,6 @@
 	}
 }
 
-.tooltip {
-	display: none;
-	position: absolute;
-	z-index: 5;	
-	background-color: @u-gray;
-	border: 1px solid darken(@u-gray, 10%);
-	color: @d-gray;
-	padding: 0.25em 0.5em;
-	.pt();
-
-	&.tooltip--invert {
-		background-color: @d-gray;
-		color: @u-gray;
-		border-color: lighten(@d-gray, 5%);
-	} 
-}
-
 blockquote {
 	margin: 1em;
 	width: ~'calc(100% - 2em)';
@@ -461,4 +444,92 @@ kbd {
 	&.tag--color-violet{ .set-tag-color(@l-violet, @violet); }
 	&.tag--color-pink{ .set-tag-color(@l-pink, @d-pink); }
 	&.tag--color-brown{ .set-tag-color(@l-brown, @brown); }
+}
+
+[data-tooltip] {
+	position: relative;
+	cursor: pointer;
+
+	&:before, &:after {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s linear, visibility 0.3s linear, transform 0.3s linear;
+		left: 50%;
+	}
+
+	&:hover {
+		&:before, &:after {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&:before {
+		z-index: 101;
+		border: 6px solid transparent;
+		background: transparent;
+		content: "";
+		margin-left: -30%;
+		bottom: 100%;
+		border-top-color: fade(@d-gray, 95%);
+	}
+
+	&:after {
+		z-index: 100;
+		padding: 0.5rem;
+		min-width: 10rem;
+		box-sizing: border-box;
+		border-radius: 6px;
+		background-color: fade(@d-gray, 95%);
+		color: @u-gray;
+		content: attr(data-tooltip);
+		margin-left: -50%;
+		bottom: ~'calc(100% + 12px)';
+		.pt();
+	}
+
+	&[data-tooltip-position="down"] {
+		&:before {
+			bottom: 0;
+			margin-bottom: ~'calc(0% - 11px)';
+			border-color: transparent;
+			border-bottom-color: fade(@d-gray, 95%);
+		}
+
+		&:after {
+			bottom: 0;
+			margin-bottom: -100%;
+		}
+	}
+
+	&[data-tooltip-position="left"] {
+		&:before {
+			left: 17px;
+			top: 6px;
+			border-color: transparent;
+			border-left-color: fade(@d-gray, 95%);
+		}
+
+		&:after {
+			bottom: 0;
+			left: ~'calc(-100% - 12px)';
+		}
+	}
+
+	&[data-tooltip-position="right"] {
+		&:before {
+			margin-left: 0;
+			left: 100%;
+			top: 6px;
+			border-color: transparent;
+			border-right-color: fade(@d-gray, 95%);
+		}
+
+		&:after {
+			margin-left: 0;
+			bottom: 0;
+			left: ~'calc(100% + 12px)';
+		}
+	}
 }
