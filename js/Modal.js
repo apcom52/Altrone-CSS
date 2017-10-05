@@ -3,6 +3,11 @@
 var __modals_collection = new Array();
 
 class Modal {
+    /**
+	 * Constructor of Modal
+     * @param {domObject} element - modal-block in html-page
+     * @param {object} props - parameters of Modal
+     */
 	constructor(element, props = {}) {
 		if (element == null) {
 			throw "Modal: element is null or undefined";
@@ -35,30 +40,57 @@ class Modal {
 		}
 	}
 
+    /**
+	 * Get element in html-page
+     * @returns {domObject|*}
+     */
 	get element() {
 		return this.__element;
 	}
 
+    /**
+	 * Get state of Modal
+     * @returns {boolean}
+     */
 	get visible() {
 		return this.__visible;
 	}
 
+    /**
+	 * Get value of property 'only_discarding'
+     * @returns {boolean}
+     */
 	get only_discarding() {
 		return this.__only_discarding;
 	}
 
-	set only_discarding(value) {
+    /**
+	 * Set value of property 'only_discarding'
+     * @param {boolean} value
+     */
+	set only_discarding(value = false) {
 		this.__only_discarding = value || false;
 	}
 
+    /**
+	 * Set callback for onShow event
+     * @param {Function} func - callback function
+     */
 	set onShow(func) {
 		this.onShowCallback = func || null;
 	}
 
+    /**
+	 * Set callback for onHide event
+     * @param {Function} func - callback function
+     */
 	set onHide(func) {
 		this.onHideCallback = func || null;
 	}
 
+    /**
+	 * Show modal
+     */
 	show() {
 		let target = this;
 		target.__hide_others();
@@ -95,6 +127,9 @@ class Modal {
 		}
 	}
 
+    /**
+	 * Hide modal
+     */
 	hide() {
 		let target = this;
 		let element = target.__element;
@@ -110,6 +145,9 @@ class Modal {
 		}
 	}
 
+    /**
+	 * Toggle visible state of Modal
+     */
 	toggle() {
 		let target = this;
 		if (target.__visible) {

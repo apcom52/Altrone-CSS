@@ -885,7 +885,6 @@ NotificationCenter.prototype.hide = function(notification) {
 		notification.el.remove();
 		target.removeNC();
 	}, 500);
-
 }
 
 NotificationCenter.prototype.insertNC = function() {

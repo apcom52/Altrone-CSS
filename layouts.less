@@ -1,4 +1,4 @@
-.grid {
+.bgrid {
 	clear: both;
 	padding: 0em;
 	margin: 0px;
@@ -41,7 +41,7 @@
 }
 
 @media (max-width: @l-tablet) {
-	.grid {
+	.bgrid {
 		[class^='col-'] {
 			&.col-lt-1 {	width: 10%;	}
 			&.col-lt-2 {	width: 20%;	}
@@ -69,7 +69,7 @@
 }
 
 @media (max-width: @tablet) {
-	.grid {
+	.bgrid {
 		[class^='col-'] {
 			&.col-t-1 {	width: 12.5%;	}
 			&.col-t-2 {	width: 25%;	}
@@ -93,7 +93,7 @@
 }
 
 @media (max-width: @l-mobile) {
-	.grid {
+	.bgrid {
 		[class^='col-'] {
 			&.col-lm-1 {	width: 16.66%;	}
 			&.col-lm-2 {	width: 33.33%;	}
@@ -113,7 +113,7 @@
 }
 
 @media (max-width: @mobile) {
-	.grid {
+	.bgrid {
 		[class^='col-'] {
 			&.col-m-1 {	width: 25%;	}
 			&.col-m-2 {	width: 50%;	}
@@ -172,7 +172,8 @@
 	.generateFPOrders((@i - 1), @prefix);
 }
 
-.fgrid {
+
+.grid {
 	display: block;
 	margin: auto;
 	width: 100%;
@@ -181,18 +182,18 @@
 	flex: 0 1 auto;
 	flex-direction: row;
 
-	&.fgrid--direction-row {
+	&.grid--direction-row {
 		flex-direction: row;
 
-		&.fgrid--direction-row-reverse {
+		&.grid--direction-row-reverse {
 			flex-direction: row-reverse;
 		}
 	}
 
-	&.fgrid--direction-column {
+	&.grid--direction-column {
 		flex-direction: column;
 
-		&.fgrid--direction-column-reverse {
+		&.grid--direction-column-reverse {
 			flex-direction: column-reverse;
 		}
 	}
@@ -208,28 +209,28 @@
 }
 
 @media (max-width: @l-tablet) {
-	.fgrid {
+	.grid {
 		.generateFPCols(10, 10, lt);
 		.generateFPOrders(12, lt);
 	}
 }
 
 @media (max-width: @tablet) {
-	.fgrid {
+	.grid {
 		.generateFPCols(8, 8, t);
 		.generateFPOrders(12, t);
 	}
 }
 
 @media (max-width: @l-mobile) {
-	.fgrid {
+	.grid {
 		.generateFPCols(6, 6, lm);
 		.generateFPOrders(12, lm);
 	}
 }
 
 @media (max-width: @mobile) {
-	.fgrid {
+	.grid {
 		.generateFPCols(4, 4, m);
 		.generateFPOrders(12, m);
 	}

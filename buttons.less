@@ -68,7 +68,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
 	&.button--color-red { .button-color(@l-red, @red); }
 	&.button--color-orange { .button-color(@l-orange, @orange); }
-	&.button--color-yellow { .button-color(@l-yellow, @yellow); }
+	&.button--color-yellow { .button-color(@l-yellow, @yellow, @d-gray); }
 	&.button--color-olive { .button-color(@l-olive, @olive); }
 	&.button--color-green { .button-color(@l-green, @green); }
 	&.button--color-teal { .button-color(@l-teal, @teal); }
@@ -88,6 +88,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
 	&:disabled {
 		opacity: .5;
+		cursor: default;
 	}
 
 	&.button--icon {
@@ -164,6 +165,13 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		background-repeat: no-repeat;
 		background-size: 1em 1em;
 		background-position: center center;
+
+		&.button--color-red, &.button--color-orange, &.button--color-olive,
+		&.button--color-green, &.button--color-teal, &.button--color-blue,
+		&.button--color-purple, &.button--color-violet, &.button--color-pink,
+		&.button--color-brown, &.button--color-black {
+			background-image: @loading-invert;
+		}
 	}
 }
 

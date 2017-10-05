@@ -7,73 +7,14 @@
 	<title>Altrone2-CSS Уведомления</title>
 	<link rel="stylesheet" href="../altrone.css">
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
-	<script src="../jquery-2.1.4.min.js"></script>
-	<script src="../altrone.js"></script>
+	<script src="../js/jquery-2.1.4.min.js"></script>
+	<script src="../js/Notification.js"></script>
 
 	<style>
 		html {
 			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
 		}
 	</style>
-
-	<script>
-		$(function() {
-			var nc = new NotificationCenter();
-
-			$('#not1').click(function() {
-				nc.send({
-					title: "Обычное уведомление",
-					text: "Ваш текст",
-				});
-			});
-
-			$('#not2').click(function() {
-				nc.send({
-					title: "Уведомление с изображением",
-					text: "Мы уже приехали?",
-					image: 'donkey.jpg',
-				});
-
-				nc.send({
-					title: "Уведомление с изображением",
-					text: "Мы уже приехали?",
-					image: 'bigdonkey.jpg',
-				});
-			});
-
-			$('#not3').click(function() {
-				nc.send({
-					title: "Уведомление со звуком",
-					text: "Не забудьте добавить звук на страницу",
-					sound: new Audio('horse.mp3'),
-				});
-			});
-
-			$('#not4').click(function() {
-				nc.send({
-					title: "Выберите вариант",
-					text: "Какой ваш любимый цвет?",
-					time: -1,
-					actions: [
-						{
-							value: "Красный",
-							action: function() { alert('Вы выбрали красный цвет'); }
-						},
-						{
-							value: "Синий",
-							action: function() { alert('Вы выбрали синий цвет'); }
-						},
-						{
-							value: "Зеленый",
-							action: function() { alert('Вы выбрали зеленый цвет'); }
-						},
-					]
-				});
-			});						
-
-			console.log(nc);
-		});
-	</script>
 </head>
 <body>
 <div class="grid">
@@ -103,5 +44,101 @@
 		</div>
 	</div>
 </div>
+<script>
+	'use strict';
+
+	let nc = new Notification();
+	document.getElementById('not1').onclick = () => {
+		nc.send({
+            title: "Обычное уведомление",
+            text: "Ваш текст",
+        });
+    };
+
+    document.getElementById('not2').onclick = () => {
+        nc.send({
+            title: "Уведомление с изображением",
+            text: "Мы уже приехали?",
+            image: 'donkey.jpg',
+        });
+    };
+
+    document.getElementById('not3').onclick = () => {
+        nc.send({
+            title: "Уведомление со звуком",
+            text: "Не забудьте добавить звук на страницу",
+            sound: new Audio('horse.mp3'),
+        });
+    };
+
+    document.getElementById('not4').onclick = () => {
+        nc.send({
+            title: "Выберите вариант",
+            text: "Какой ваш любимый цвет?",
+            time: -1,
+            actions: [
+                {
+                    value: "Красный",
+                    action: function() { alert('Вы выбрали красный цвет'); }
+                },
+                {
+                    value: "Синий",
+                    action: function() { alert('Вы выбрали синий цвет'); }
+                },
+                {
+                    value: "Зеленый",
+                    action: function() { alert('Вы выбрали зеленый цвет'); }
+                },
+            ]
+        });
+    };
+
+    /*    $('#not2').click(function() {
+            nc.send({
+                title: "Уведомление с изображением",
+                text: "Мы уже приехали?",
+                image: 'donkey.jpg',
+            });
+
+            nc.send({
+                title: "Уведомление с изображением",
+                text: "Мы уже приехали?",
+                image: 'bigdonkey.jpg',
+            });
+        });
+
+        $('#not3').click(function() {
+            nc.send({
+                title: "Уведомление со звуком",
+                text: "Не забудьте добавить звук на страницу",
+                sound: new Audio('horse.mp3'),
+            });
+        });
+
+        $('#not4').click(function() {
+            nc.send({
+                title: "Выберите вариант",
+                text: "Какой ваш любимый цвет?",
+                time: -1,
+                actions: [
+                    {
+                        value: "Красный",
+                        action: function() { alert('Вы выбрали красный цвет'); }
+                    },
+                    {
+                        value: "Синий",
+                        action: function() { alert('Вы выбрали синий цвет'); }
+                    },
+                    {
+                        value: "Зеленый",
+                        action: function() { alert('Вы выбрали зеленый цвет'); }
+                    },
+                ]
+            });
+        });
+
+        console.log(nc);*/
+
+</script>
 </body>
 </html>

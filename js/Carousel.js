@@ -1,6 +1,13 @@
 'use strict';
 
+
 class Carousel {
+
+    /**
+	 * Constructor of Carousel
+     * @param {domElement} element - the parent block
+     * @param {object} props - options
+     */
 	constructor(element, props = {}) {
 		if (element == null) {
 			throw "Carousel: element is null or undefined";
@@ -50,26 +57,50 @@ class Carousel {
 		target.__render();
 	}
 
+    /**
+	 * Get the parent block
+     * @returns {domElement|*}
+     */
 	get element() {
 		return this.__element;
 	}
 
+    /**
+	 * Get the index of current slide
+     * @returns {*}
+     */
 	get index() {
 		return this.__currentIndex;
 	}
 
+    /**
+	 * Get amount of slides in Carousel
+     * @returns {*}
+     */
 	get length() {
 		return this.__length;
 	}
 
+    /**
+	 * Set current slide in Carousel (like a open())
+     * @param {int} index - index of slide
+     */
 	set index(index) {
 		this.open(index);
 	}
 
+    /**
+	 * Set callback for onChange event
+     * @param {Function} func - function
+     */
 	set onChange(func) {
 		this.onChangeCallback = func || null;
 	}
 
+    /**
+	 * Show previous slide
+     * @returns {Carousel}
+     */
 	prev() {
 		let target = this;
 		target.open(target.__currentIndex - 1);
@@ -77,6 +108,10 @@ class Carousel {
 		return target;
 	}
 
+    /**
+	 * Show next slide
+     * @returns {Carousel}
+     */
     next() {
         let target = this;
 		target.open(target.__currentIndex + 1);
@@ -84,6 +119,11 @@ class Carousel {
         return target;
     }
 
+    /**
+	 * Open selected slide
+     * @param {int} index - index of slide
+     * @returns {Carousel}
+     */
     open(index = 0) {
 		let target = this;
 		if (index >= 0 && index < target.__length) {
