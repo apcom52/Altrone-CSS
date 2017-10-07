@@ -68,7 +68,7 @@ class Modal {
 	 * Set value of property 'only_discarding'
      * @param {boolean} value
      */
-	set only_discarding(value = false) {
+	set only_discarding(value) {
 		this.__only_discarding = value || false;
 	}
 
