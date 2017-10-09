@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Accordion</title>
+	<link rel="stylesheet" href="../altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../jquery-2.1.4.min.js"></script>
+	<script src="../js/Accordion.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-olive">
+					<div class="jumbotron__header">Accordion</div>
+				</div>
+
+				<h1 class="margin-1">Simple Accordion</h1>
+				<div class="margin-1">
+					<div class="accordion" id="accordionExample">
+						<div class="accordion__item">
+							<div class="accordion__item__title">Война и мир</div>
+							<div class="accordion__item__content">
+								<p>Наверное, это одно из тех немногих произведений, которое должен прочесть каждый человек, считающий себя образованным. Так как в этой книге передается время и характер, вся наша история и жизнь наших предков.</p>
+								<p>Толстой показывает нам все события субъективно и пристрастно. Наполеона он представляет нам как жалкого ничтожного человека.</p>
+								<p>Роман - это гимн жизни, который учит нас любить её и ценить, воспевает доброту и искренность.</p>
+							</div>
+						</div>
+						<div class="accordion__item">
+							<div class="accordion__item__title">Преступление и наказание</div>
+							<div class="accordion__item__content">
+								<p>Ни одного читателя не оставляет равнодушным социальная драма, облеченная в увлекательную форму криминального романа, и философская составляющая романа.</p>
+							</div>
+						</div>
+						<div class="accordion__item">
+							<div class="accordion__item__title">Мастер и Маргарита</div>
+							<div class="accordion__item__content">
+								<p>Мастер с гениальным озарением описал последние дни жизни Иисуса в своем романе о Понтии Пилате. За этот роман он поплатился свободой и был отправлен в больницу. Маргарита - его тайная возлюбленная, ради спасения любимого и встречи с ним готова на сделку с дьяволом. В это время некто Воланд, прибывший в Москву со своими слугами, наводит страх на всех москвичей. Но в мире, где укоренилось зло, и засела нечистая сила, проделки сатаны, окрашенные искрометным юмором, оборачиваются возмездием за людские грехи и пороки.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h1 class="margin-1">Multi Accordion</h1>
+				<div class="margin-1">
+					<div class="accordion" id="accordionExample2">
+						<div class="accordion__item">
+							<div class="accordion__item__title">Война и мир</div>
+							<div class="accordion__item__content">
+								<p>Наверное, это одно из тех немногих произведений, которое должен прочесть каждый человек, считающий себя образованным. Так как в этой книге передается время и характер, вся наша история и жизнь наших предков.</p>
+								<p>Толстой показывает нам все события субъективно и пристрастно. Наполеона он представляет нам как жалкого ничтожного человека.</p>
+								<p>Роман - это гимн жизни, который учит нас любить её и ценить, воспевает доброту и искренность.</p>
+							</div>
+						</div>
+						<div class="accordion__item">
+							<div class="accordion__item__title">Преступление и наказание</div>
+							<div class="accordion__item__content">
+								<p>Ни одного читателя не оставляет равнодушным социальная драма, облеченная в увлекательную форму криминального романа, и философская составляющая романа.</p>
+							</div>
+						</div>
+						<div class="accordion__item">
+							<div class="accordion__item__title">Мастер и Маргарита</div>
+							<div class="accordion__item__content">
+								<p>Мастер с гениальным озарением описал последние дни жизни Иисуса в своем романе о Понтии Пилате. За этот роман он поплатился свободой и был отправлен в больницу. Маргарита - его тайная возлюбленная, ради спасения любимого и встречи с ним готова на сделку с дьяволом. В это время некто Воланд, прибывший в Москву со своими слугами, наводит страх на всех москвичей. Но в мире, где укоренилось зло, и засела нечистая сила, проделки сатаны, окрашенные искрометным юмором, оборачиваются возмездием за людские грехи и пороки.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    'use strict';
+
+    let acc = new Accordion(document.getElementById('accordionExample'));
+    let acc2 = new Accordion(document.getElementById('accordionExample2'), {
+        multi: true,
+	});
+</script>
+
+</body>
+</html>
