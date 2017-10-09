@@ -19,6 +19,8 @@ class Carousel {
 		target.__data = [];
 		target.__length = target.__slides.length;
 		target.__currentIndex = props.currentIndex || 0;
+		target.__time = props.time || 0;
+		target.__loop = props.loop;
 		target.onChangeCallback = props.onChange || null;
 
 		// Check every .carousel__item, get attributes and put them into target.__data
@@ -53,8 +55,14 @@ class Carousel {
         target.__carouselInfoPanel.appendChild(target.__carouselTitlePanel);
         target.__carouselInfoPanel.appendChild(target.__carouselContentPanel);
 
-		console.log(target.__data);
 		target.__render();
+
+		if (target.__time > 0) {
+			target.__loop = true;
+			setInterval(function() {
+				target.next();
+			}, target.__time);
+		}
 	}
 
     /**
@@ -132,6 +140,13 @@ class Carousel {
 
 			if (target.onChangeCallback) {
 				target.onChangeCallback(target);
+			}
+		} else {
+			if (target.__loop) {
+				if (index >= target.__length)
+					target.open(0);
+				if (index < 0)
+					target.open(target.__length - 1);
 			}
 		}
 
