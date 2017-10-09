@@ -34,13 +34,13 @@
 				<h3>Обычная сетка</h3>	
 				
 				<h4>Разметка в строчку</h4>
-				<div class="fgrid padding-1 padding-right-2">
+				<div class="grid padding-1 padding-right-2">
 					<div class="col-4 padding-1 u-blue-bg">Ячейка 1</div>
 					<div class="offset-2 col-3 padding-1 u-pink-bg">Ячейка 2</div>
 					<div class="col-3 padding-1 u-yellow-bg">Ячейка 3</div>
 				</div>
 
-				<div class="fgrid">
+				<div class="grid">
 					<div class="col-4 padding-1">
 						<h4>Разметка в столбец</h4>
 						<div class="fgrid fgrid--direction-column">
@@ -65,17 +65,70 @@
 				</div>
 
 				<h4>Сортировка столбцов (адаптивная)</h4>
-				<div class="fgrid padding-1">
+				<div class="grid padding-1">
 					<div class="col-4 padding-1 u-blue-bg col--order-2 col--t-order-3 col--m-order-1">Ячейка 1. Порядок сортировки 2 (планшет - 3, мобильный - 1)</div>
 					<div class="col-4 padding-1 u-pink-bg col--order-3 col--lt-order-1 col--m-order-2">Ячейка 2. Порядок сортировки 3 (планшет в ландшафтной ориентации - 1, мобильный - 2)</div>
 					<div class="col-4 padding-1 u-yellow-bg col--order-1 col--t-order-3 col--m-order-2">Ячейка 3. Порядок сортировки 1 (планшет - 3, мобильный - 2)</div>
 				</div>
 
 				<h4>Адаптивная верстка</h4>
-				<div class="fgrid padding-1">
+				<div class="grid padding-1">
 					<div class="col-3 col-t-4 col-m-1 padding-1 u-blue-bg">ПК 25%, планшет 50%, мобильный 25%</div>
 					<div class="col-6 col-t-2 col-m-1 padding-1 u-pink-bg">ПК 50%, планшет 25%, мобильный 25%</div>
 					<div class="col-3 col-t-2 col-m-2 padding-1 u-yellow-bg">ПК 25%, планшет 25%, мобильный 50%</div>
+				</div>
+
+				<h4>Расположение элементов</h4>
+				<div class="alert"><div class="alert__header">Left side</div></div>
+				<div class="grid padding-1 grid--align-start u-orange-bg" style="height: 150px;">
+					<div class="col-1 padding-1 red-bg">Column 1</div>
+					<div class="col-1 padding-1 green-bg">Column 2</div>
+					<div class="col-1 padding-1 blue-bg">Column 3</div>
+				</div>
+				<div class="alert"><div class="alert__header">Right side</div></div>
+				<div class="grid padding-1 grid--align-end u-orange-bg" style="height: 150px;">
+					<div class="col-1 padding-1 red-bg">Column 1</div>
+					<div class="col-1 padding-1 green-bg">Column 2</div>
+					<div class="col-1 padding-1 blue-bg">Column 3</div>
+				</div>
+				<div class="alert"><div class="alert__header">Center</div></div>
+				<div class="grid padding-1 grid--align-center u-orange-bg" style="height: 150px;">
+					<div class="col-1 padding-1 red-bg">Column 1</div>
+					<div class="col-1 padding-1 green-bg">Column 2</div>
+					<div class="col-1 padding-1 blue-bg">Column 3</div>
+				</div>
+
+				<div class="grid">
+					<div class="col-4">
+						<div class="alert">
+							<div class="alert__header">Top</div>
+						</div>
+						<div class="grid padding-1 grid--direction-column grid--align-start u-orange-bg" style="height: 500px;">
+							<div class="col-2 padding-1 red-bg">Column 1</div>
+							<div class="col-2 padding-1 green-bg">Column 2</div>
+							<div class="col-2 padding-1 blue-bg">Column 3</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="alert">
+							<div class="alert__header">Center</div>
+						</div>
+						<div class="grid padding-1 grid--direction-column grid--align-center u-orange-bg" style="height: 500px;">
+							<div class="col-2 padding-1 red-bg">Column 1</div>
+							<div class="col-2 padding-1 green-bg">Column 2</div>
+							<div class="col-2 padding-1 blue-bg">Column 3</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="alert">
+							<div class="alert__header">Bottom</div>
+						</div>
+						<div class="grid padding-1 grid--direction-column grid--align-end u-orange-bg" style="height: 500px;">
+							<div class="col-2 padding-1 red-bg">Column 1</div>
+							<div class="col-2 padding-1 green-bg">Column 2</div>
+							<div class="col-2 padding-1 blue-bg">Column 3</div>
+						</div>
+					</div>
 				</div>
 			</div>			
 		</div>
