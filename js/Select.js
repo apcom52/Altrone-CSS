@@ -1,6 +1,11 @@
 'use strict';
 
 class Select {
+    /**
+     * Constructor of Select
+     * @param {node} objectSender
+     * @param {Object} props
+     */
     constructor(objectSender, props = {}) {
         if (objectSender == null) {
             throw "Select: objectSender is null or undefined";
@@ -37,34 +42,69 @@ class Select {
 
         if (target.__editable) {
             target.__selectMenu.setAttribute('contenteditable', true);
-            target.__selectMenu.onkeyup = (e) => target.__editablePopup(e);
+            target.__selectMenu.onkeydown = (e) => {
+                if (e.which != 13) {
+                    target.__editablePopup(e);
+                } else {
+                    target.__selectMenu.innerText = target.__value;
+                    target.__editablePopup(e);
+                    return false;
+                }
+            }
         }
     }
 
+    /**
+     * Return the value of parameter 'visible'
+     * @returns {boolean}
+     */
     get visible() {
         return this.__visible;
     }
 
+    /**
+     * Return the value of parameter 'position'
+     * @returns {string}
+     */
     get position() {
         return this.__position;
     }
 
+    /**
+     * Return the value of parameter 'selectedIndex'
+     * @returns {int}
+     */
     get selectedIndex() {
         return this.__index;
     }
 
+    /**
+     * Return the list of parameter 'options'
+     * @returns {Array}
+     */
     get options() {
         return this.__options;
     }
 
+    /**
+     * Return the selected item
+     * @returns {string}
+     */
     get value() {
         return this.__value;
     }
 
+    /**
+     * Set new callback for onChangeEvent
+     * @param {Function} func
+     */
     set onChange(func) {
         this.OnChangeCallback = func || null;
     }
 
+    /**
+     * Open Selectbox
+     */
     show() {
         let target = this;
 
@@ -77,6 +117,9 @@ class Select {
         window.addEventListener('resize', target.__onResizeEvent, false);
     }
 
+    /**
+     * Hide Selectbox
+     */
     hide() {
         let target = this;
         target.__visible = false;
@@ -90,12 +133,19 @@ class Select {
         window.removeEventListener('resize', target.__onResizeEvent, false);
     }
 
+    /**
+     * Change visibility of Selectbox (show or hide)
+     */
     toggle() {
         let target = this;
         if (target.__visible) target.hide();
         else target.show();
     }
 
+    /**
+     * Select item in Selectbox
+     * @param {int} index
+     */
     select(index) {
         let target = this;
 
