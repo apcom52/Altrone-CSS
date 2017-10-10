@@ -321,99 +321,60 @@
 	}
 }
 
-.set-feed-color(@color) {
-	.feed__item {
-		.feed__item__image {
-			.feed__item__image__online {
-				background-color: @color;
-			}
-		}
-
-		.feed__item__content {
-			.feed__item__content__title {
-				
-				&:hover {
-					color: @color;
-				}
-			}
-		}
-	}
-}
-
 .feed {
 	width: 100%;
 
 	.feed__item {
-		width: 100%;
 		display: flex;
-		margin: 1em 0.5em;
-		color: @d-gray;
-		.pt();
+		padding: 1rem 2rem;
+		box-sizing: border-box;
 
 		.feed__item__image {
-			flex: 1;
-			min-width: 32px;
-			padding: 0.5em 1em;
-			text-align: center;
-
-			.feed__item__image__online {
-				display: block;
-				width: 0.5em;
-				height: 0.5em;
-				background-color: @blue;
-				border: 3px solid @white;
-				border-radius: 50%;
-				position: relative;
-				top: -12px;
-				left: 60%;
-				cursor: pointer;
-			}
-
-			img {
-				width: 60%;
-				height: auto;
-				cursor: pointer;
-			}
+			flex: 0;
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			margin: 0rem 0.5rem;
 		}
 
 		.feed__item__content {
-			flex: 9;
+			flex: 1;
+			padding: 0rem 0.5rem;
+			color: @d-gray;
 
 			.feed__item__content__title {
 				cursor: pointer;
-				.animate(~'color');				
+				font-size: 1.2em;
 				.bold();
-
-				&:hover {
-					color: @blue;
-					.animate(~'color');
-				}
 			}
+
+			.feed__item__content__message {
+				margin: 0.5rem 0rem;
+				.pt();
+			}
+
+			.feed__item__content__meta {
+				color: @l-gray;
+				font-size: 0.9em;
+				.pt();
+			}
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid darken(@u-gray, 5%);
 		}
 	}
 
-	&.feed--color-red { .set-feed-color(@red); }
-	&.feed--color-orange { .set-feed-color(@orange); }
-	&.feed--color-yellow { .set-feed-color(@yellow); }
-	&.feed--color-olive { .set-feed-color(@olive); }
-	&.feed--color-green { .set-feed-color(@green); }
-	&.feed--color-blue { .set-feed-color(@blue); }
-	&.feed--color-teal { .set-feed-color(@teal); }
-	&.feed--color-purple { .set-feed-color(@purple); }
-	&.feed--color-violet { .set-feed-color(@violet); }
-	&.feed--color-pink { .set-feed-color(@pink); }
-	&.feed--color-brown { .set-feed-color(@brown); }
-
 	&.feed--invert {
-		background-color: @d-gray;
-
 		.feed__item {
-			color: @white;
-
-			.feed__item__image {
-				.feed__item__image__online {
-					border-color: @d-gray;
+			.feed__item__content {
+				.feed__item__content__title, .feed__item__content__message {
+					color: @u-gray;
 				}
+			}
+
+			&:not(:last-child) {
+				border-bottom-color: lighten(@d-gray, 5%);
 			}
 		}
 	}

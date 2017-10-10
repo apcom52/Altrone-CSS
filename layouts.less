@@ -174,13 +174,17 @@
 
 
 .grid {
-	display: block;
 	margin: auto;
 	width: 100%;
 	box-sizing: border-box;
 	display: flex;
 	flex: 0 1 auto;
 	flex-direction: row;
+	flex-wrap: wrap;
+
+	&.grid--single-line {
+		flex-wrap: nowrap;
+	}
 
 	&.grid--direction-row {
 		flex-direction: row;
@@ -445,7 +449,7 @@
 	}
 }
 
-/* DEPRECATED */
+/** DEPRECATED */
 .horizontal-layout {
 	display: flex;
 
