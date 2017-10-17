@@ -1,6 +1,4 @@
-'use strict';
-
-class InputModal {
+export class InputModal {
     get contentTypeInteger() { return 'number' };
     get contentTypeString() { return 'text' };
     get contentTypeURL() { return 'url' };
