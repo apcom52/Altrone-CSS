@@ -1,4 +1,4 @@
-export class InputModal {
+class InputModal {
     get contentTypeInteger() { return 'number' };
     get contentTypeString() { return 'text' };
     get contentTypeURL() { return 'url' };

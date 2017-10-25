@@ -7,29 +7,6 @@ html {
 	.pt();
 }
 
-/* font-family: "PTSansRegular"; */
-@font-face {
-    font-family: "PT Sans";
-    src: url("fonts/PTSansRegular.woff") format("woff");
-    font-style: normal;
-    font-weight: normal;
-}
-/* font-family: "PTSansItalic"; */
-@font-face {
-    font-family: "PT Sans Italic";
-    src: url("fonts/PTSansItalic.woff") format("woff");
-    font-style: normal;
-    font-weight: normal;
-}
-/* font-family: "PTSansBold"; */
-@font-face {
-    font-family: "PT Sans Bold";
-    src: url("fonts/PTSansBold.woff") format("woff");
-    font-style: normal;
-    font-weight: normal;
-}
-
-
 @font-face {
     font-family: HelveticaNeueUltra; 
     src: url(fonts/HelveticaNeueCyr-UltraLight_0.otf); 
@@ -395,38 +372,20 @@ html {
 .pin-left {	float: left !important; }
 .pin-right { float: right !important; }
 
-.bold { 
-	font-weight: bold;
-	font-family: 'PT Sans Bold', sans-serif;
-}
-.italic { 
-	font-style: italic;
-	font-family: 'PT Sans Italic';
-}
-.underline { text-decoration: underline; }
-
-.uppercase { text-transform: uppercase; }
-.lowercase { text-transform: lowercase; }
-.capitalize { text-transform: capitalize; }
-.small-caps { font-variant: small-caps; }
-.font-small { font-size: 0.75em; }
-.font-large { font-size: 1.5em; }
-.font-xlarge { font-size: 2em; }
-
-h1, h2, h3, h4, h5, h6 {
-	.bold();
-}
-
 a {
 	text-decoration: none;
+	color: @blue;
+
+	&:link, &:visited {
+		color: @blue;
+	}
 }
 
-code {
-	color: @red;
-	padding: 0.05em 0.1em;
-	font-size: 0.95em;
-	background-color: @u-gray;
-	border-radius: 0.05em;
+hr {
+	background-color: @l-gray;
+	margin: 1rem 2em;
+	border: none;
+	height: 1px;
 }
 
 .margin-left-0 { margin-left: 0em !important; }
@@ -1020,8 +979,8 @@ code {
 }
 
 ::-webkit-scrollbar {
-	width: 0.5em;
-	height: 0.5em;
+	width: 0.5rem;
+	height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -1031,7 +990,7 @@ code {
  
 ::-webkit-scrollbar-thumb {
    	background-color: lighten(@d-gray, 15%);
-   	border-radius: 0.25em;
+   	border-radius: 0.25rem;
    	margin: 3px;
 }
 ::-webkit-scrollbar-thumb:window-inactive {

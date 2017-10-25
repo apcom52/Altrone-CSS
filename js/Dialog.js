@@ -1,4 +1,4 @@
-export class Dialog {
+class Dialog {
     /**
 	 * Constructor of Dialog
      * @param {Object} props

@@ -1,0 +1,46 @@
+/* font-family: "PTSansRegular"; */
+@font-face {
+  font-family: "PT Sans";
+  src: url("fonts/PTSansRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "PTSansItalic"; */
+@font-face {
+  font-family: "PT Sans Italic";
+  src: url("fonts/PTSansItalic.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "PTSansBold"; */
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url("fonts/PTSansBold.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: 'PT Sans Bold', sans-serif;
+}
+
+.italic {
+  font-style: italic;
+  font-family: 'PT Sans Italic';
+}
+
+.underline { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem;
+  .bold();
+}
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.small-caps { font-variant: small-caps; }
+.font-small { font-size: 0.75em; }
+.font-large { font-size: 1.5em; }
+.font-xlarge { font-size: 2em; }

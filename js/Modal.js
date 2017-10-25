@@ -1,4 +1,6 @@
-export class Modal {
+let __modals_collection = [];
+
+class Modal {
     /**
 	 * Constructor of Modal
      * @param {domObject} element - modal-block in html-page

@@ -1,4 +1,4 @@
-export class Notification {
+class Notification {
     /**
      * Constructor of Notification Class
      */

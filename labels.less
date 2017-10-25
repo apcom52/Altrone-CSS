@@ -360,21 +360,22 @@ blockquote {
 	}
 }
 
+mark, kbd {
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.2em;
+}
+
+code {
+	font-family: monospace !important;
+}
+
 mark {
 	background-color: @u-yellow;
 	color: @d-yellow;
-	padding: 0em 0.5em;
-	border-radius: 0.2em;
-	font-size: 0.9em;
-	.bold();
 }
 
 kbd {
-	color: @u-gray;
 	background-color: @d-gray;
-	padding: 0em 0.5em;
-	border-radius: 0.2em;
-	font-size: 0.9em;
 	.bold();
 }
 

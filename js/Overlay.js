@@ -1,6 +1,6 @@
 var __overlay_collection = new Array();
 
-export class Overlay {
+class Overlay {
 	constructor(props = {}) {
 		let target = this;
 

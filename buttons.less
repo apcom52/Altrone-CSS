@@ -12,6 +12,10 @@
 		border-color: darken(@l-color, 22%);
 	}
 
+	&:focus {
+		box-shadow: 0 0 3px 3px @l-color;
+	}
+
 	&.button--only-borders {
 		border-color: @color;
 	}
@@ -64,6 +68,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 		background-color: darken(@u-gray, 8%);
 		border-color: darken(@u-gray, 10%);
 		.animate(~"background-color, border-color");
+	}
+
+	&:focus {
+		box-shadow: 0 0 3px 3px @l-gray;
 	}
 
 	&.button--color-red { .button-color(@l-red, @red); }
