@@ -3,8 +3,9 @@
 	border: 1px solid darken(@l-color, 15%);
 	color: @f-color;
 
-	&:hover {
-		background-color: darken(@l-color, 15%);
+	&:focus {
+		box-shadow: 0 0 3px 3px @l-color;
+		.animate(~'box-shadow');
 	}
 
 	&:active, .active {
@@ -12,8 +13,8 @@
 		border-color: darken(@l-color, 22%);
 	}
 
-	&:focus {
-		box-shadow: 0 0 3px 3px @l-color;
+	&:hover {
+		background-color: darken(@l-color, 15%);
 	}
 
 	&.button--only-borders {
@@ -51,11 +52,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	-moz-user-select: none;
 	user-select: none;
 	cursor: pointer;
-	border: none;
 	background-color: @u-gray;
-	border: 1px solid darken(@u-gray, 5%);
+	border: 1px solid @l-gray;
  	color: @d-gray;
- 	.animate(~"background-color, border-color, color");
+ 	.animate(~"background-color, border-color, color, box-shadow");
  	.text-shadow();
 	.pt();
 
@@ -72,6 +72,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
 	&:focus {
 		box-shadow: 0 0 3px 3px @l-gray;
+		.animate(~'box-shadow');
 	}
 
 	&.button--color-red { .button-color(@l-red, @red); }
@@ -84,8 +85,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 	&.button--color-violet { .button-color(@l-violet, @violet); }
 	&.button--color-purple { .button-color(@l-purple, @purple); }
 	&.button--color-pink { .button-color(@l-pink, @pink); }
-	&.button--color-brown { .button-color(@l-brown, @brown); }
-	&.button--color-black { .button-color(@m-gray, @d-gray, @u-gray); }
+	&.button--color-brown { .button-color(@brown, @brown); }
+	&.button--color-black { .button-color(@d-gray, @black, @u-gray); }
 
 	&.button {
 		&--smooth { border-radius: 0.5em;	}
