@@ -1,7 +1,3 @@
-* {
-  color: @black;
-}
-
 /* font-family: "PTSansRegular"; */
 @font-face {
   font-family: "PT Sans";
@@ -75,6 +71,7 @@ blockquote {
 mark, kbd {
   padding: 0.2rem 0.5rem;
   border-radius: 0.2em;
+  display: inline-block;
 }
 
 code {
@@ -82,6 +79,7 @@ code {
   padding: 0.2rem 0.5rem;
   border-radius: 0.2em;
   background-color: @u-gray;
+  display: inline-block;
 }
 
 mark {
@@ -100,9 +98,10 @@ kbd {
 .lowercase { text-transform: lowercase; }
 .capitalize { text-transform: capitalize; }
 .small-caps { font-variant: small-caps; }
-.font-small { font-size: 0.75em; }
-.font-large { font-size: 1.5em; }
-.font-xlarge { font-size: 2em; }
+.font--size-small { font-size: 0.75em; }
+.font--size-normal { font-size: 1rem; }
+.font--size-large { font-size: 1.5em; }
+.font--size-xl { font-size: 2em; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1rem;

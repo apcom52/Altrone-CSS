@@ -7,10 +7,7 @@
 	<title>Altrone2-CSS Выпадающее меню</title>
 	<link rel="stylesheet" href="../altrone.css">
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
-	<script src="../jquery-2.1.4.min.js"></script>
-	<script src="../altrone.js"></script>
-	<script src="../js/altrone-dev.js"></script>
-
+	<script src="../js/Dropdown.js"></script>
 	<style>
 		html {
 			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
@@ -25,7 +22,7 @@
 				<h1 class="helvetica-thin">Выпадающее меню</h1>	
 
 				<div class="fdrid">
-					<div class="col-4 offset-8"><button class="button--color-blue" id="dd_demo">Показать выпадающее меню</button></div>
+					<div class="col-4 offset-8"><button class="button--color-blue" id="dd_demo" data-dropdown="secondDropdown" data-dropdown-position="left">Показать выпадающее меню</button></div>
 				</div>
 
 				<div class="fgrid">
@@ -38,7 +35,7 @@
 
 				<div class="fgrid">
 					<div class="col-6">
-						<div class="form"><input type="search"></div>
+						<div class="form"><input type="search" data-dropdown="firstDropdown"></div>
 					</div>
 					<div class="col-6">
 						<div class="form form--invert"><input type="search"></div>
@@ -63,89 +60,49 @@
 			</div>			
 		</div>
 	</div>
+
+	<div class="dropdown" style="left: 50px; top: 50px;" id="firstDropdown">
+		<div class="dropdown__header">Editing</div>
+		<div class="dropdown__item">Cut</div>
+		<div class="dropdown__item">Copy</div>
+		<div class="dropdown__item">Paste</div>
+		<div class="dropdown__header">With Document</div>
+		<div class="dropdown__item">Save</div>
+		<div class="dropdown__item">Quit</div>
+	</div>
+
+	<div class="dropdown dropdown--invert" style="left: 450px; top: 50px;" id="secondDropdown">
+		<div class="dropdown__header">Editing</div>
+		<div class="dropdown__item">Cut</div>
+		<div class="dropdown__item">Copy</div>
+		<div class="dropdown__item">Paste</div>
+		<div class="dropdown__header">With Document</div>
+		<div class="dropdown__item">Create</div>
+		<div class="dropdown__item">Open</div>
+		<div class="dropdown__item">Save</div>
+		<div class="dropdown__separator"></div>
+		<div class="dropdown__item">Quit</div>
+	</div>
+
+	<div class="dropdown dropdown--color-yellow" style="left: 700px; top: 50px;">
+		<div class="dropdown__header">Editing</div>
+		<div class="dropdown__item">Cut</div>
+		<div class="dropdown__item">Copy</div>
+		<div class="dropdown__item">Paste</div>
+		<div class="dropdown__header">With Document</div>
+		<div class="dropdown__item">Save</div>
+		<div class="dropdown__item">Quit</div>
+	</div>
+
+	<div class="dropdown dropdown--invert dropdown--color-olive" style="left: 1000px; top: 50px;">
+		<div class="dropdown__header">Editing</div>
+		<div class="dropdown__item" tabindex="0">Cut</div>
+		<div class="dropdown__item" tabindex="0">Copy</div>
+		<div class="dropdown__item" tabindex="0">Paste</div>
+		<div class="dropdown__header">With Document</div>
+		<div class="dropdown__item" tabindex="0">Save</div>
+		<div class="dropdown__item" tabindex="0">Quit</div>
+	</div>
 </div>
-
-<script>
-	var dd = new Dropdown(document.getElementById('dd_demo'), [
-		{
-			actions: [
-				{
-					label: 'Create',
-					onClick: (obj) => console.log(obj)
-				},
-				{
-					tooltip: 'Ctrl+N',
-					onClick: (obj) => console.log(obj)
-				}
-			]
-		},
-		{
-			actions: [
-				{
-					label: 'Open',
-					onClick: (obj) => console.log(obj)
-				},
-				{
-					tooltip: 'Ctrl+O'
-				}
-			]
-		},
-		{
-			actions: [
-				{
-					label: 'Save',
-				},
-				{
-					icon: 'fa fa-save'
-				}
-			]
-		},
-		{
-			actions: [
-				{
-					tooltip: 'Save to:'
-				},
-				{
-					icon: 'fa fa-cloud',
-					label: 'Google',
-					onClick: (obj) => console.log(obj)
-				},
-				{
-					icon: 'fa fa-hdd-o'
-				}
-			]
-		}
-	], {
-		position: 'bottom'
-	});
-
-	var dd2 = new Dropdown(document.getElementById('taskbarDropdown'), [
-		{
-			actions: [
-				{
-					label: 'Home'
-				}
-			]
-		},
-		{
-			actions: [
-				{
-					label: 'Mail'
-				}
-			]
-		},
-		{
-			actions: [
-				{
-					label: 'My Account',
-					icon: 'fa fa-user'
-				}
-			]
-		},
-	], null)
-
-
-	console.log(dd);
-</script>
 </body>
 </html>

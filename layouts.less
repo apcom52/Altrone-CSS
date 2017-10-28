@@ -627,7 +627,9 @@ table {
 		&.table--row-hover {
 			tr {
 				&:hover {
-					background-color: lighten(@d-gray, 10%);
+					td {
+						background-color: lighten(@d-gray, 10%);
+					}
 				}
 			}
 		}

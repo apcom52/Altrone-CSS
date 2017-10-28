@@ -1,3 +1,3 @@
-var dropdown = require('./dropdown');
+var dropdown = require('./Dropdown');
 
 var dd = new dropdown();
