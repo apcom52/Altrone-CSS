@@ -1,4 +1,4 @@
-export class ToggleButton {
+class ToggleButton {
 	constructor(objectSender, props = {}) {
 		if (objectSender == null) {
 			throw "ToggleButton: objectSender is null or undefined";

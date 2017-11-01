@@ -1,5 +1,5 @@
 var __sidebars_collection = new Array();
-export class Sidebar {
+class Sidebar {
 	constructor(objectSender, props = {}) {
 		if (objectSender == null) {
 			throw "Sidebar: objectSender is null or undefined";

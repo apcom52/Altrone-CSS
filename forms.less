@@ -133,6 +133,13 @@
 	&.toggle--color-purple { .set-toggle-color(@purple); }
 	&.toggle--color-pink { .set-toggle-color(@pink); }
 	&.toggle--color-brown { .set-toggle-color(@brown); }
+	&.toggle--color-yellow {
+		input[type="checkbox"] {
+			&:not(checked) + label:after {
+				background-color: @d-gray;
+			}
+		}
+	}
 
 	&.toggle--invert {
 		label {
@@ -168,7 +175,7 @@
 	}
 }
 
-.set-checkbox-color(@color) {
+.set-checkbox-color(@color, @focus-color, @focus-color-invert) {
 	input[type="checkbox"] {
 		&:not(checked) + label:before {
 			border-color: @color;
@@ -176,6 +183,10 @@
 
 		&:checked + label:before {
 			background-color: @color;
+		}
+
+		&:focus + label:before {
+			box-shadow: 0 0 3px 3px @focus-color;
 		}
 	}	
 
@@ -186,6 +197,10 @@
 			}
 			&:checked + label:before {
 				background-color: @color;
+			}
+
+			&:focus + label:before {
+				box-shadow: 0 0 3px 3px @focus-color-invert;
 			}
 		}
 	}
@@ -304,6 +319,11 @@
 			background-color: @m-gray;
 			border: none;
 		}
+
+		&:focus + label:before {
+			box-shadow: 0 0 3px 3px @l-gray;
+			transition: box-shadow 0.3s ease-in-out;
+		}
 	}	
 
 	label {
@@ -323,27 +343,23 @@
 		}
 	}
 
-	&.checkbox--color-red { .set-checkbox-color(@red); }
-	&.checkbox--color-orange { .set-checkbox-color(@orange); }
-	&.checkbox--color-yellow { .set-checkbox-color(@yellow); }
-	&.checkbox--color-olive { .set-checkbox-color(@olive); }
-	&.checkbox--color-green { .set-checkbox-color(@green); }
-	&.checkbox--color-teal { .set-checkbox-color(@teal); }
-	&.checkbox--color-blue { .set-checkbox-color(@blue); }
-	&.checkbox--color-violet { .set-checkbox-color(@violet); }
-	&.checkbox--color-purple { .set-checkbox-color(@purple); }
-	&.checkbox--color-pink { .set-checkbox-color(@pink); }
-	&.checkbox--color-brown { .set-checkbox-color(@brown); }
-	&.checkbox--color-white {
+	&.checkbox--color-red { .set-checkbox-color(@red, @l-red, @d-red); }
+	&.checkbox--color-orange { .set-checkbox-color(@orange, @l-orange, @d-orange); }
+	&.checkbox--color-yellow { .set-checkbox-color(@yellow, @l-yellow, @d-yellow); }
+	&.checkbox--color-olive { .set-checkbox-color(@olive, @l-olive, @d-olive); }
+	&.checkbox--color-green { .set-checkbox-color(@green, @l-green, @d-green); }
+	&.checkbox--color-teal { .set-checkbox-color(@teal, @l-teal, @d-teal); }
+	&.checkbox--color-blue { .set-checkbox-color(@blue, @l-blue, @d-blue); }
+	&.checkbox--color-violet { .set-checkbox-color(@violet, @l-violet, @d-violet); }
+	&.checkbox--color-purple { .set-checkbox-color(@purple, @l-purple, @d-violet); }
+	&.checkbox--color-pink { .set-checkbox-color(@pink, @l-pink, @d-pink); }
+	&.checkbox--color-brown { .set-checkbox-color(@brown, @l-brown, @d-brown); }
+	&.checkbox--color-yellow {
 		input[type="checkbox"] {
-			&:not(checked) + label:before {
-				background-color: @l-gray;
-			}
-
 			&:checked + label:before {
-				background-color: @u-gray;
+				background-image: @checkbox-background-invert;
 			}
-		}	
+		}
 	}
 
 	&.checkbox--circle {
@@ -372,7 +388,7 @@
 	}
 }
 
-.set-radio-color(@color) {
+.set-radio-color(@color, @focus-color, @focus-color-invert) {
 	input[type="radio"] {
 		&:not(checked) + label:before {
 			border-color: @d-gray;
@@ -380,6 +396,10 @@
 
 		&:checked + label:before {
 			background-color: @color;
+		}
+
+		&:focus + label:before {
+			box-shadow: 0 0 3px 3px @focus-color;
 		}
 	}	
 
@@ -390,6 +410,10 @@
 			}
 			&:checked + label:before {
 				background-color: @color;
+			}
+
+			&:focus + label:before {
+				box-shadow: 0 0 3px 3px @focus-color-invert;
 			}
 		}
 	}
@@ -445,6 +469,10 @@
 			background-color: @m-gray;
 			border: none;
 		}
+
+		&:focus + label:before {
+			box-shadow: 0 0 3px 3px @l-gray;
+		}
 	}	
 
 	label {
@@ -464,27 +492,23 @@
 		}
 	}
 
-	&.radio--color-red { .set-radio-color(@red); }
-	&.radio--color-orange { .set-radio-color(@orange); }
-	&.radio--color-yellow { .set-radio-color(@yellow); }
-	&.radio--color-olive { .set-radio-color(@olive); }
-	&.radio--color-green { .set-radio-color(@green); }
-	&.radio--color-teal { .set-radio-color(@teal); }
-	&.radio--color-blue { .set-radio-color(@blue); }
-	&.radio--color-violet { .set-radio-color(@violet); }
-	&.radio--color-purple { .set-radio-color(@purple); }
-	&.radio--color-pink { .set-radio-color(@pink); }
-	&.radio--color-brown { .set-radio-color(@brown); }
-	&.radio--color-white {
-		input[type="checkbox"] {
-			&:not(checked) + label:before {
-				background-color: @l-gray;
-			}
-
+	&.radio--color-red { .set-radio-color(@red, @l-red, @d-red); }
+	&.radio--color-orange { .set-radio-color(@orange, @l-orange, @d-orange); }
+	&.radio--color-yellow { .set-radio-color(@yellow, @l-yellow, @d-yellow); }
+	&.radio--color-olive { .set-radio-color(@olive, @l-olive, @d-olive); }
+	&.radio--color-green { .set-radio-color(@green, @l-green, @d-green); }
+	&.radio--color-teal { .set-radio-color(@teal, @l-teal, @d-teal); }
+	&.radio--color-blue { .set-radio-color(@blue, @l-blue, @d-blue); }
+	&.radio--color-violet { .set-radio-color(@violet, @l-violet, @d-violet); }
+	&.radio--color-purple { .set-radio-color(@purple, @l-purple, @d-violet); }
+	&.radio--color-pink { .set-radio-color(@pink, @l-pink, @d-pink); }
+	&.radio--color-brown { .set-radio-color(@brown, @l-brown, @d-brown); }
+	&.radio--color-yellow {
+		input[type="radio"] {
 			&:checked + label:before {
-				background-color: @u-gray;
+				background-image: @radiobutton-background-invert;
 			}
-		}	
+		}
 	}
 
 	&.radio--invert {
@@ -546,7 +570,7 @@ form, .form {
 	.input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
 		display: block;
 		margin: 0.25em 0em;
-		border: 1px solid darken(@u-gray, 15%);
+		border: 1px solid @l-gray;
 		border-radius: 0.25em;
 		padding: 0.5em 1em;
 		background-color: @u-gray;
@@ -574,7 +598,7 @@ form, .form {
 			padding-right: 2em;
 		}
 
-		&.form__input--success {
+		&.form__input--valid {
 			background-image: @checkmark-green;
 			background-repeat: no-repeat;
 			background-position: right 0.5em center;
@@ -635,7 +659,7 @@ form, .form {
 		transition: resize 0s linear;
 	}
 
-	.form-attached {
+	.form__attachment {
 		overflow: hidden;
 		clear: both;
 		display: flex;
@@ -649,17 +673,19 @@ form, .form {
 			&:last-child {
 				border-radius: 0em 0.25em 0.25em 0em !important;
 			}
-		}		
+		}
+
+		.form__attachment__addon {
+			margin: 0.25em 0em;
+			padding: 0.5em 1em;
+			background-color: @u-gray;
+			border: 1px solid  @l-gray;
+			color: @d-gray;
+			box-sizing: border-box;
+		}
 	}
 
-	.form__attach {
-		margin: 0.25em 0em;
-		padding: 0.5em 1em;
-		background-color: @u-gray;
-		border: 1px solid darken(@u-gray, 5%);
-		color: @d-gray;
-		box-sizing: border-box;
-	}
+
 
 	label {
 		display: block;

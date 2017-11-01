@@ -206,7 +206,7 @@ class Dialog {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
-		
-		target.modal_body.remove();
+
+		setTimeout(() => {target.modal_body.remove();}, 300);
 	}
 }

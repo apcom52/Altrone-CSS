@@ -1,4 +1,4 @@
-export class Progress {
+class Progress {
     constructor(element, props = {}) {
         if (element == null) {
             throw "Progress: element is null or undefined";

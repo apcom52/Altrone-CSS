@@ -1,4 +1,4 @@
-export class Select {
+class Select {
     /**
      * Constructor of Select
      * @param {node} objectSender
@@ -144,7 +144,7 @@ export class Select {
      * Select item in Selectbox
      * @param {int} index
      */
-    select(index) {
+    select(index = 0) {
         let target = this;
 
         if (index < 0 || index >= target.__options.length) {

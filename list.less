@@ -294,6 +294,10 @@
 		.bold();
 	}
 
+	ul {
+		padding-left: 0px;
+	}
+
 	.navigation {
 		font-size: 0.9em;
 
@@ -367,7 +371,7 @@
 			}
 
 			.feed__item__content__meta {
-				color: @l-gray;
+				color: @m-gray;
 				flex: 0;
 				font-size: 0.9em;
 				.pt();
@@ -496,14 +500,13 @@
 
 .stacked-list {
 	width: 100%;
-	border: 1px solid darken(@u-gray, 10%);
 	border-radius: 0.25em;
 
 	.stacked-list__item {
 		width: 100%;
 		color: @d-gray;
-		border-bottom: 1px solid darken(@u-gray, 10%);
-		padding: 0.25em 0.5em;
+		border-bottom: 1px solid @l-gray;
+		padding: 0.5rem 0rem;
 		box-sizing: border-box;
 
 		&:last-child {
@@ -512,8 +515,6 @@
 	}
 
 	&.stacked-list--invert {
-		border-color: lighten(@d-gray, 10%);
-
 		.stacked-list__item {
 			color: @white;
 			border-color: lighten(@d-gray, 10%);

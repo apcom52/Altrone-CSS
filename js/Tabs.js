@@ -1,4 +1,4 @@
-export class Tabs {
+class Tabs {
 	constructor(objectSender, props = {}) {
         if (objectSender == null) {
             throw "Tabs: objectSender is null or undefined";

@@ -1,4 +1,4 @@
-export class Carousel {
+class Carousel {
 
     /**
 	 * Constructor of Carousel

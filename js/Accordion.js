@@ -1,4 +1,4 @@
-export class Accordion {
+class Accordion {
     /**
      * Constructor of Accordion
      * @param {node} element

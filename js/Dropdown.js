@@ -13,15 +13,15 @@ document.addEventListener('click', function(event) {
         if (activeDropdown == dropdown) {
             activeDropdown = null;
             return;
-        }
+        } else {
+        	activeDropdown = null;
+		}
     }
 
 	if (target.hasAttribute('data-dropdown')) {
 		let position = 'bottom';
         dropdown.classList.add('dropdown--show');
         activeDropdown = dropdown;
-
-        console.log(dropdown);
 
 		let targetRect = target.getBoundingClientRect();
 
@@ -34,24 +34,24 @@ document.addEventListener('click', function(event) {
 
 		switch (position) {
 			case 'left':
-				dropdown.style.left = (targetRect.left - dropdown.offsetWidth) + 'px';
-				dropdown.style.top = targetRect.top + 'px';
+				dropdown.style.left = (target.offsetLeft - dropdown.offsetWidth) + 'px';
+				dropdown.style.top = targetRect.offsetTop + 'px';
 				dropdown.classList.add('dropdown--position-left');
 				break;
 			case 'right':
-                dropdown.style.left = (targetRect.left + targetRect.width) + 'px';
-                dropdown.style.top = targetRect.top + 'px';
+                dropdown.style.left = (target.offsetLeft + targetRect.width) + 'px';
+                dropdown.style.top = target.offsetTop + 'px';
                 dropdown.classList.add('dropdown--position-right');
                 break;
             case 'top':
-                dropdown.style.left = targetRect.left + 'px';
-                dropdown.style.top = (targetRect.top - dropdown.offsetHeight) + 'px';
+                dropdown.style.left = target.offsetLeft + 'px';
+                dropdown.style.top = (target.offsetTop - dropdown.offsetHeight) + 'px';
                 dropdown.classList.add('dropdown--position-top');
                 break;
 			case 'bottom':
 			default:
-                dropdown.style.left = targetRect.left + 'px';
-                dropdown.style.top = (targetRect.top + targetRect.height) + 'px';
+                dropdown.style.left = target.offsetLeft + 'px';
+                dropdown.style.top = (target.offsetTop + targetRect.height) + 'px';
                 dropdown.classList.add('dropdown--position-bottom');
                 break;
 		}

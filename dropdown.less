@@ -36,6 +36,7 @@
 	position: absolute;
 	overflow: hidden;
 	z-index: 10;
+    padding: 0.25rem 0rem;
 
 	&.dropdown--show {
 		display: flex;
@@ -103,7 +104,7 @@
 		width: 80%;
 		height: 1px;
 		background-color: @m-gray;
-		margin: 1rem 10%;
+		margin: 0.5rem 10%;
 	}
 
 	&.dropdown--invert {
@@ -242,7 +243,7 @@
 		padding: 0.5em 2.5em 0.5em 1em;
 		box-sizing: border-box;
 		cursor: pointer;
-		border: 1px solid darken(@u-gray, 15%);
+		border: 1px solid @l-gray;
 		background-image: url(@d-arrow-down);
 		background-position: right 0.5em center;
 		background-repeat: no-repeat;
@@ -255,6 +256,7 @@
 
 		&:hover {
 			background-color: darken(@u-gray, 5%);
+			.animate(~'background-color');
 		}
 
 		&:focus {
@@ -278,13 +280,13 @@
 		visibility: hidden;
 		position: absolute;
 		z-index: 5;
-		background-color: @u-gray;
 		border: 1px solid darken(@u-gray, 10%);
-		padding: 0.25em 0em;
+		padding: 0.25rem 0rem;
 		box-sizing: border-box;
-		border-radius: 0px 0px 0.25em 0.25em;
+		border-radius: 0px 0px 6px 6px;
         max-height: 16em;
         overflow-y: auto;
+		background-color: fade(@white, 99%);
 
 		&.select__options--top {
 			border-radius: 0.25em 0.25em 0px 0px;
@@ -293,21 +295,21 @@
 		.select__options__item {
 			padding: 0.5em 1em;
 			cursor: pointer;
-			background-color: @u-gray;
+			//background-color: @u-gray;
 			color: @d-gray;
 			box-sizing: border-box;
 			user-select: none;
 
 			&:hover {
-				background-color: darken(@u-gray, 10%);
+				background-color: darken(@u-gray, 5%);
 			}
 
 			&:active {
-				background-color: darken(@u-gray, 15%);
+				background-color: @l-gray;
 			}
 
 			&.select__options__item--active {
-				background-color: darken(@u-gray, 20%);
+				background-color: @l-gray;
 			}
 		}
 
@@ -335,7 +337,7 @@
 			background-image: url(@l-arrow-down);
 
 			&:hover {
-				background-color: lighten(@d-gray, 5%);
+				background-color: darken(@d-gray, 5%);
 			}
 
 			&:focus {
@@ -348,12 +350,11 @@
 			}
 		}
 		.select__options {
-			background-color: @d-gray;
-			border-color: lighten(@d-gray, 5%);
+			background-color: fade(@black, 99%);
+			border-color: lighten(@d-gray, 15%);
 			padding: 0.25em 0em;
 
 			.select__options__item {
-				background-color: @d-gray;
 				color: @u-gray;
 
 				&:hover {
@@ -361,11 +362,11 @@
 				}
 
 				&:active {
-					background-color: lighten(@d-gray, 15%);
+					background-color: @d-gray;
 				}
 
 				&.select__options__item--active {
-					background-color: lighten(@d-gray, 20%);
+					background-color: @d-gray;
 				}
 			}
 		}
