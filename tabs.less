@@ -2,9 +2,9 @@
 	width: 100%;
 	display: block;
 	background-color: @u-gray;
-	padding: 0em;
 	overflow: hidden;
 	padding: 0.5em 0.5em 0em 0.5em;
+	box-sizing: border-box;
 
 	.tabs__item, li {
 		padding: 0.5em 1em;
@@ -37,10 +37,10 @@
 		}
 
 		&.tabs__item--disabled {
-			color: @l-gray;
+			color: @m-gray;
 
 			&:hover, &:active {
-				color: @l-gray;
+				color: @m-gray;
 				background-color: transparent;
 				border-color: transparent;
 				.pt();
@@ -226,14 +226,6 @@
 		&.tabs--color-purple { .set-tabs-ios-color(@purple); }
 		&.tabs--color-pink { .set-tabs-ios-color(@pink); }
 		&.tabs--color-brown { .set-tabs-ios-color(@brown); }	
-	}
-
-	&.tabs--vertical {
-		.tabs__item, li {
-			display: block;
-			width: 100%;
-			float: none;
-		}
 	}
 
 	&.tabs--smooth {

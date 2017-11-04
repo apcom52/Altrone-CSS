@@ -39,10 +39,6 @@ class Tabs {
         return this.__index;
     }
 
-    set currentIndex(index) {
-	    thi
-    }
-
     set onChangeTab(func) {
 	    this.onChangeTabCallback = func || null;
     }

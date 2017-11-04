@@ -20,12 +20,12 @@
   font-weight: normal;
 }
 
-.bold {
+b, .bold {
   font-weight: bold;
   font-family: 'PT Sans Bold', sans-serif;
 }
 
-.italic {
+i, .italic {
   font-style: italic;
   font-family: 'PT Sans Italic', sans-serif;
 }
@@ -109,17 +109,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @base-fontSize: 48px, 40px, 31px, 25px, 20px, 16px;
+@lt-fontSize: 38px, 32px, 26px, 22px, 18px, 16px;
 @lm-fontSize: 24px, 20px, 19px, 18px, 17px, 16px;
 
 .header-generator(@i : 1; @sizes) when (@i =< 6) {
-  h@{i} {
+  h@{i}, .h@{i} {
     font-size: extract(@sizes, @i);
+    .bold();
   }
 
   .header-generator((@i + 1); @sizes);
 }
 
 .header-generator(1, @base-fontSize);
+
+@media (max-width: @l-tablet) {
+  .header-generator(1, @lt-fontSize);
+}
 
 @media (max-width: @l-mobile) {
   .header-generator(1, @lm-fontSize);
