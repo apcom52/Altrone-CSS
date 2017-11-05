@@ -1,0 +1,185 @@
+.button-color(@l-color, @color, @f-color: @white) {
+  background-color: darken(@l-color, 10%);
+  border: 1px solid darken(@l-color, 15%);
+  color: @f-color;
+
+  &:focus {
+    box-shadow: 0 0 3px 3px @l-color;
+    .animate(~'box-shadow');
+  }
+
+  &:active, .active {
+    background-color: darken(@l-color, 17%);
+    border-color: darken(@l-color, 22%);
+  }
+
+  &:hover {
+    background-color: darken(@l-color, 15%);
+  }
+
+  &.button--only-borders {
+    border-color: @color;
+  }
+
+  &.button--only-borders, &.button--transparent, &.button--transparent-full {
+    color: @color;
+  }
+
+  &.button--transparent:hover {
+    color: @white;
+    background-color: @l-color;
+  }
+
+  &.button--transparent-full:hover {
+    color: @color;
+  }
+
+  &.button--checked {
+    background-color: @color;
+    border: 1px solid darken(@color, 15%);
+  }
+}
+
+
+button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+  margin: 5px;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background-color: @u-gray;
+  border: 1px solid @l-gray;
+  color: @d-gray;
+  .animate(~"background-color, border-color, color, box-shadow");
+  .text-shadow();
+  .pt();
+
+  &:hover {
+    background-color: darken(@u-gray, 5%);
+    .animate(~"background-color");
+  }
+
+  &:active, .active {
+    background-color: darken(@u-gray, 8%);
+    border-color: darken(@u-gray, 10%);
+    .animate(~"background-color, border-color");
+  }
+
+  &:focus {
+    box-shadow: 0 0 3px 3px @l-gray;
+    .animate(~'box-shadow');
+  }
+
+  &.button--color-red { .button-color(@l-red, @red); }
+  &.button--color-orange { .button-color(@l-orange, @orange); }
+  &.button--color-yellow { .button-color(@l-yellow, @yellow, @d-gray); }
+  &.button--color-olive { .button-color(@l-olive, @olive); }
+  &.button--color-green { .button-color(@l-green, @green); }
+  &.button--color-teal { .button-color(@l-teal, @teal); }
+  &.button--color-blue { .button-color(@l-blue, @blue); }
+  &.button--color-violet { .button-color(@l-violet, @violet); }
+  &.button--color-purple { .button-color(@l-purple, @purple); }
+  &.button--color-pink { .button-color(@l-pink, @pink); }
+  &.button--color-brown { .button-color(@brown, @brown); }
+  &.button--color-black { .button-color(@d-gray, @black, @u-gray); }
+
+  &.button {
+    &--smooth { border-radius: 0.5em;	}
+    &--rounded { border-radius: 1.25em;	}
+    &--circle { border-radius: 50%; padding: 0.5em 0.75em; }
+    &--no-smooth { border-radius: 0em;	}
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &.button--icon {
+    i, .icon {
+      padding: 0em;
+      padding-right: 0.5em;
+    }
+
+    &-only {
+      i, .icon {
+        padding: 0em;
+      }
+    }
+  }
+
+  &.button--size {
+    &-small { font-size: 0.8em; }
+    &-normal { font-size: 1em; }
+    &-large { font-size: 1.3em; }
+    &-xl { font-size: 2em; }
+  }
+
+  &.button--only-borders {
+    background-color: transparent;
+    border: 1px solid @u-gray;
+    text-shadow: none;
+
+    &.button--color-white {
+      color: @white;
+    }
+
+    &:hover, &:active, &.active {
+      background-color: transparent;
+    }
+  }
+
+  &.button--transparent {
+    background-color: transparent ;
+    border-color: transparent;
+    text-shadow: none;
+
+    &-full {
+      background-color: transparent;
+      border-color: transparent;
+      text-shadow: none;
+
+      &:hover, &:active, &.active {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+
+    &:hover {
+      background-color: darken(@u-gray, 5%);
+      color: @d-gray;
+      .text-shadow();
+    }
+  }
+
+  &.button--fit {
+    width: ~'calc(100% - 10px)';
+  }
+
+  &.button--checked {
+    background-color: darken(@u-gray, 15%);
+    border-color: darken(darken(@u-gray, 15%), 15%);
+    .animate(~'background-color, border-color');
+  }
+
+  &.button--loading {
+    color: transparent;
+    text-shadow: none !important;
+    background-image: @loading;
+    background-repeat: no-repeat;
+    background-size: 1em 1em;
+    background-position: center center;
+
+    &.button--color-red, &.button--color-orange, &.button--color-olive,
+    &.button--color-green, &.button--color-teal, &.button--color-blue,
+    &.button--color-purple, &.button--color-violet, &.button--color-pink,
+    &.button--color-brown, &.button--color-black {
+      background-image: @loading-invert;
+    }
+  }
+}

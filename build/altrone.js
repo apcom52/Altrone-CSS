@@ -1,202 +1,3 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "build/";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_Utils__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_Utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__js_Utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_Overlay__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_Accordion__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__js_Carousel__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_Modal__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_Dialog__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_Progress__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_Select__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_Tabs__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__js_ToggleButton__ = __webpack_require__(10);
-/* Собирает все модули в единый файл */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Array.prototype.remove = function(element) {
-    for (let i = 0; i < this.length; i++) {
-        if (element == this[i]) {
-            this.splice(i, i);
-            return element;
-        }
-    }
-}
-
-Array.prototype.random = function() {
-    let items = this.slice();
-    return items[Math.floor(Math.random()*items.length)];
-};
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var __overlay_collection = new Array();
-
-class Overlay {
-	constructor(props = {}) {
-		let target = this;
-
-		target.__add_to_collection();
-		target.__remove_others();
-		target.onDestroyCallback = props.onDestroy || null;
-		target.disableClick = Boolean(props.disableClick) || false;
-
-		let element = document.createElement('div');
-		element.className = 'overlay';
-		document.body.appendChild(element);
-		target.element = element;
-
-		element.classList.add('overlay--show');
-
-		element.onclick = function() {
-			if (target.disableClick == false) 
-				target.destroy();
-		}
-	}
-
-	set onDestroy(event) {
-		this.onDestroyCallback = event || null;
-	}
-
-	destroy() {
-		let target = this;
-		
-		target.element.classList.remove('overlay--show');
-		target.element.classList.add('overlay--hide');
-
-		target.__remove_from_collection(target);
-		setTimeout(() => target.element.remove(), 300);
-
-		if (target.onDestroyCallback) {
-			target.onDestroyCallback(target);	
-		}
-	}
-
-	__add_to_collection() {
-		let target = this;
-		if (!__overlay_collection.includes(target)) {
-			__overlay_collection.push(target);
-		}
-	}
-
-	__remove_others() {
-		let target = this;
-		for (let overflow of __overlay_collection) {
-			if (overflow != target) {
-				overflow.destroy();
-				target.__remove_from_collection(overflow);
-			}
-		}
-	}
-
-	__remove_from_collection(overflow) {
-		let target = this;
-		if (__overlay_collection.length) {
-			let index = __overlay_collection.indexOf(overflow);
-			if (index > -1) {
-				__overlay_collection.splice(index, 1);
-			}
-		}		
-	}
-}
-/* unused harmony export Overlay */
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 class Accordion {
     /**
      * Constructor of Accordion
@@ -281,14 +82,6 @@ class Accordion {
         }
     }
 }
-/* unused harmony export Accordion */
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 class Carousel {
 
     /**
@@ -450,195 +243,6 @@ class Carousel {
 		target.__carouselContentPanel.innerHTML = currentData.description;
 	}
 }
-/* unused harmony export Carousel */
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Modal {
-    /**
-	 * Constructor of Modal
-     * @param {domObject} element - modal-block in html-page
-     * @param {object} props - parameters of Modal
-     */
-	constructor(element, props = {}) {
-		if (element == null) {
-			throw "Modal: element is null or undefined";
-		}
-
-		let target = this;
-		target.__add_to_collection();
-
-		target.__element = element;
-		target.__visible = false;
-		target.__only_discarding = props.only_discarding || false;
-		target.onShowCallback = props.onShow || null;
-		target.onHideCallback = props.onHide || null;
-
-		if (target.__only_discarding) {
-			let header = null;
-			if (target.__element.querySelector('.modal__header')) {
-				header = target.__element.querySelector('.modal__header');
-			} else {
-				header = document.createElement('div');
-				header.className = 'modal__header';
-				target.__element.insertBefore(header, target.__element.firstChild);
-			}
-
-			var closeButton = document.createElement('div');
-			closeButton.className = 'modal__header__close';
-			header.appendChild(closeButton);
-
-			closeButton.onclick = () => target.__overlay.destroy();
-		}
-	}
-
-    /**
-	 * Get element in html-page
-     * @returns {domObject|*}
-     */
-	get element() {
-		return this.__element;
-	}
-
-    /**
-	 * Get state of Modal
-     * @returns {boolean}
-     */
-	get visible() {
-		return this.__visible;
-	}
-
-    /**
-	 * Get value of property 'only_discarding'
-     * @returns {boolean}
-     */
-	get only_discarding() {
-		return this.__only_discarding;
-	}
-
-    /**
-	 * Set value of property 'only_discarding'
-     * @param {boolean} value
-     */
-	set only_discarding(value) {
-		this.__only_discarding = value || false;
-	}
-
-    /**
-	 * Set callback for onShow event
-     * @param {Function} func - callback function
-     */
-	set onShow(func) {
-		this.onShowCallback = func || null;
-	}
-
-    /**
-	 * Set callback for onHide event
-     * @param {Function} func - callback function
-     */
-	set onHide(func) {
-		this.onHideCallback = func || null;
-	}
-
-    /**
-	 * Show modal
-     */
-	show() {
-		let target = this;
-		target.__hide_others();
-
-		let element = target.__element;
-		let modal_height = (window.getComputedStyle(element, null)).getPropertyValue('height');
-
-		element.classList.remove('modal--hide');
-		element.classList.add('modal--show');
-
-		if (element.getElementsByClassName('modal__content').length == 0) {
-			throw "Modal: need an element .modal__content";
-		}
-
-		let modal_content = element.getElementsByClassName('modal__content')[0];
-		modal_content.style.height = (modal_height - 46 - 39).toString() + 'px';
-
-		target.__overlay = new Overlay({
-			onDestroy: () => target.hide(),
-			disableClick: target.__only_discarding
-		});
-
-		let modal_discard_list = target.element.querySelectorAll('.modal__discard, .modal__header__close');
-		for (let i = 0; i < modal_discard_list.length; i++) {
-		    let current = modal_discard_list[i];
-            current.addEventListener('click', () => target.__overlay.destroy());
-        }
-
-		target.__visible = true;		
-		target.element.style.display = 'block';
-
-		if (target.onShowCallback) {
-			target.onShowCallback(target);
-		}
-	}
-
-    /**
-	 * Hide modal
-     */
-	hide() {
-		let target = this;
-		let element = target.__element;
-		element.classList.remove('modal--show');
-		element.classList.add('modal--hide');
-
-		this.__visible = false;
-
-		setTimeout(() => element.style.display = 'none', 300);
-
-		if (target.onHideCallback) {
-			target.onHideCallback(target);
-		}
-	}
-
-    /**
-	 * Toggle visible state of Modal
-     */
-	toggle() {
-		let target = this;
-		if (target.__visible) {
-			target.hide();
-		} else {
-			target.show();
-		}
-	}
-
-	__add_to_collection() {
-		let target = this;
-		if (!__modals_collection.includes(target)) {
-			__modals_collection.push(target);
-		}
-	}
-
-	__hide_others() {
-		let target = this;
-		for (let modal of __modals_collection) {
-			if (modal != target) {
-				if (modal.visible) {
-					modal.hide();					
-				}
-			}
-		}
-	}
-}
-/* unused harmony export Modal */
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 class Dialog {
     /**
 	 * Constructor of Dialog
@@ -847,18 +451,485 @@ class Dialog {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
-		
-		target.modal_body.remove();
+
+		setTimeout(() => {target.modal_body.remove();}, 300);
 	}
 }
-/* unused harmony export Dialog */
+var activeDropdown = null;
 
+function __dropdownSetPosition() {
+    if (activeDropdown) {
+        let position = 'bottom';
+        let target = activeDropdown.objSender;
+        let dropdown = activeDropdown;
 
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+        let targetRect = target.getBoundingClientRect();
 
-"use strict";
+        if (target.hasAttribute('data-dropdown-position')) {
+            let positionValue = target.getAttribute('data-dropdown-position');
+            if (positionValue == 'left') position = 'left';
+            else if (positionValue == 'right') position = 'right';
+            else if (positionValue == 'top') position = 'top';
+        }
+
+        switch (position) {
+            case 'left':
+                dropdown.style.left = (target.offsetLeft - dropdown.offsetWidth) + 'px';
+                dropdown.style.top = targetRect.offsetTop + 'px';
+                dropdown.classList.add('dropdown--position-left');
+                break;
+            case 'right':
+                dropdown.style.left = (target.offsetLeft + targetRect.width) + 'px';
+                dropdown.style.top = target.offsetTop + 'px';
+                dropdown.classList.add('dropdown--position-right');
+                break;
+            case 'top':
+                dropdown.style.left = target.offsetLeft + 'px';
+                dropdown.style.top = (target.offsetTop - dropdown.offsetHeight) + 'px';
+                dropdown.classList.add('dropdown--position-top');
+                break;
+            case 'bottom':
+            default:
+                dropdown.style.left = target.offsetLeft + 'px';
+                dropdown.style.top = (target.offsetTop + targetRect.height) + 'px';
+                dropdown.classList.add('dropdown--position-bottom');
+                break;
+        }
+
+        console.log(position);
+
+        if ((position == 'top' || position == 'bottom') && targetRect.width >= dropdown.offsetWidth) {
+            dropdown.style.width = targetRect.width + 'px';
+        }
+    }
+}
+
+document.addEventListener('click', function(event) {
+    let target = event.target;
+    let dropdown = document.getElementById(target.getAttribute('data-dropdown'));
+
+	if (activeDropdown && !target.classList.contains('dropdown__header')) {
+        activeDropdown.classList.remove('dropdown--show');
+        activeDropdown.classList.remove('dropdown--show-left');
+        activeDropdown.classList.remove('dropdown--show-right');
+        activeDropdown.classList.remove('dropdown--show-top');
+        activeDropdown.classList.remove('dropdown--show-bottom');
+        if (activeDropdown == dropdown) {
+            activeDropdown = null;
+            return;
+        } else {
+        	activeDropdown = null;
+		}
+
+        window.removeEventListener('resize', __dropdownSetPosition, false);
+    }
+
+	if (target.hasAttribute('data-dropdown')) {
+        dropdown.classList.add('dropdown--show');
+        activeDropdown = dropdown;
+        activeDropdown.objSender = target;
+
+        __dropdownSetPosition();
+
+        window.addEventListener('resize', __dropdownSetPosition, false);
+	}
+});
+let __modals_collection = [];
+
+class Modal {
+    /**
+	 * Constructor of Modal
+     * @param {domObject} element - modal-block in html-page
+     * @param {object} props - parameters of Modal
+     */
+	constructor(element, props = {}) {
+		if (element == null) {
+			throw "Modal: element is null or undefined";
+		}
+
+		let target = this;
+		target.__add_to_collection();
+
+		target.__element = element;
+		target.__visible = false;
+		target.__only_discarding = props.only_discarding || false;
+		target.onShowCallback = props.onShow || null;
+		target.onHideCallback = props.onHide || null;
+
+		if (target.__only_discarding) {
+			let header = null;
+			if (target.__element.querySelector('.modal__header')) {
+				header = target.__element.querySelector('.modal__header');
+			} else {
+				header = document.createElement('div');
+				header.className = 'modal__header';
+				target.__element.insertBefore(header, target.__element.firstChild);
+			}
+
+			var closeButton = document.createElement('div');
+			closeButton.className = 'modal__header__close';
+			header.appendChild(closeButton);
+
+			closeButton.onclick = () => target.__overlay.destroy();
+		}
+	}
+
+    /**
+	 * Get element in html-page
+     * @returns {domObject|*}
+     */
+	get element() {
+		return this.__element;
+	}
+
+    /**
+	 * Get state of Modal
+     * @returns {boolean}
+     */
+	get visible() {
+		return this.__visible;
+	}
+
+    /**
+	 * Get value of property 'only_discarding'
+     * @returns {boolean}
+     */
+	get only_discarding() {
+		return this.__only_discarding;
+	}
+
+    /**
+	 * Set value of property 'only_discarding'
+     * @param {boolean} value
+     */
+	set only_discarding(value) {
+		this.__only_discarding = value || false;
+	}
+
+    /**
+	 * Set callback for onShow event
+     * @param {Function} func - callback function
+     */
+	set onShow(func) {
+		this.onShowCallback = func || null;
+	}
+
+    /**
+	 * Set callback for onHide event
+     * @param {Function} func - callback function
+     */
+	set onHide(func) {
+		this.onHideCallback = func || null;
+	}
+
+    /**
+	 * Show modal
+     */
+	show() {
+		let target = this;
+		target.__hide_others();
+
+		let element = target.__element;
+		let modal_height = (window.getComputedStyle(element, null)).getPropertyValue('height');
+
+		element.classList.remove('modal--hide');
+		element.classList.add('modal--show');
+
+		if (element.getElementsByClassName('modal__content').length == 0) {
+			throw "Modal: need an element .modal__content";
+		}
+
+		let modal_content = element.getElementsByClassName('modal__content')[0];
+		modal_content.style.height = (modal_height - 46 - 39).toString() + 'px';
+
+		target.__overlay = new Overlay({
+			onDestroy: () => target.hide(),
+			disableClick: target.__only_discarding
+		});
+
+		let modal_discard_list = target.element.querySelectorAll('.modal__discard, .modal__header__close');
+		for (let i = 0; i < modal_discard_list.length; i++) {
+		    let current = modal_discard_list[i];
+            current.addEventListener('click', () => target.__overlay.destroy());
+        }
+
+		target.__visible = true;		
+		target.element.style.display = 'block';
+
+		if (target.onShowCallback) {
+			target.onShowCallback(target);
+		}
+	}
+
+    /**
+	 * Hide modal
+     */
+	hide() {
+		let target = this;
+		let element = target.__element;
+		element.classList.remove('modal--show');
+		element.classList.add('modal--hide');
+
+		this.__visible = false;
+
+		setTimeout(() => element.style.display = 'none', 300);
+
+		if (target.onHideCallback) {
+			target.onHideCallback(target);
+		}
+	}
+
+    /**
+	 * Toggle visible state of Modal
+     */
+	toggle() {
+		let target = this;
+		if (target.__visible) {
+			target.hide();
+		} else {
+			target.show();
+		}
+	}
+
+	__add_to_collection() {
+		let target = this;
+		if (!__modals_collection.includes(target)) {
+			__modals_collection.push(target);
+		}
+	}
+
+	__hide_others() {
+		let target = this;
+		for (let modal of __modals_collection) {
+			if (modal != target) {
+				if (modal.visible) {
+					modal.hide();					
+				}
+			}
+		}
+	}
+}
+class Notification {
+    /**
+     * Constructor of Notification Class
+     */
+    constructor() {
+        let target = this;
+        target.log = [];
+    }
+
+    /**
+     * Send new Notification into Notification Center
+     * @param {Object} data - information about notification
+     * @returns {{title: string, text: string, image: null, sound: null, actions: null, time: number, visible: boolean, id: number}}
+     */
+    send(data = {}) {
+        let target = this;
+
+        let notification = {
+            title: data.title || "",
+            text: data.text || "",
+            image: data.image || null,
+            sound: data.sound || null,
+            actions: data.actions || null,
+            time: data.time || 5,
+            visible: false,
+            id: Notification.prototype.lastNotificationId + 1
+        };
+
+        target.log.push(notification);
+        target.__addNotification(notification);
+
+        return notification;
+    }
+
+    __addNotification(notification) {
+        let target = this;
+        notification.isVisible = true;
+
+        if (!target.ncBlock) {
+            target.__addBlock();
+        }
+
+        var n = document.createElement('div');
+        n.className = 'notification-center__notification';
+        if (notification.title) {
+            var nheader = document.createElement('div');
+            nheader.className = 'notification-center__notification__header';
+
+            var nheader_title = document.createElement('div');
+            nheader_title.className = 'notification-center__notification__header__title';
+            nheader_title.innerHTML = notification.title;
+
+            var nheader_close = document.createElement('div')
+            nheader_close.className = 'notification-center__notification__header__close';
+            nheader_close.onclick = function() {
+                target.hide(notification);
+            }
+
+            nheader.appendChild(nheader_title);
+            nheader.appendChild(nheader_close);
+
+            n.appendChild(nheader);
+        }
+
+        if (notification.text) {
+            var ntext = document.createElement('div');
+            ntext.className = 'notification-center__notification__text';
+            ntext.innerHTML = notification.text;
+            n.appendChild(ntext);
+        }
+
+        if (notification.image) {
+            var nimage = document.createElement('img');
+            nimage.className = 'notification-center__notification__image';
+            nimage.src = notification.image
+            n.appendChild(nimage);
+        }
+
+        if (notification.actions) {
+            for (var i = 0; i < notification.actions.length; i++) {
+                var current = notification.actions[i];
+                var naction = document.createElement('button');
+                naction.className = 'button--color-white button--size-small button--only-borders';
+                naction.id = "nact" + notification.id + '-' + i;
+                naction.innerHTML = current.value;
+
+                if (current.action) {
+                    naction.onclick = current.action;
+                }
+
+                n.appendChild(naction);
+            }
+        }
+
+        notification.el = n;
+
+        if (notification.time > 0) {
+            setTimeout(function() {
+                target.hide(notification);
+            }, notification.time * 1000)
+        }
+
+        if (notification.sound) {
+            console.log(notification.sound);
+            notification.sound.play();
+        }
+
+        target.ncBlock.appendChild(n);
+    }
+
+    /**
+     * Hide notification
+     * @param {Object} notification - notification, which you want to hide
+     */
+    hide(notification) {
+        var target = this;
+        notification.el.className = "notification-center__notification notification-center__notification--hide";
+        setTimeout(function() {
+            notification.el.style.visibility = 'hidden';
+            notification.isVisible = false;
+            notification.el.remove();
+            target.__removeBlock();
+        }, 500);
+    }
+
+    __addBlock() {
+        let target = this;
+        target.ncBlock = document.createElement('div');
+        target.ncBlock.className = 'notification-center';
+        document.body.appendChild(target.ncBlock);
+
+        return target.ncBlock;
+    }
+
+    __removeBlock() {
+        let target = this;
+        let hasVisibleNotifications = false;
+
+        target.log.forEach(function(item) {
+            if (item.isVisible) {
+                hasVisibleNotifications = true;
+            }
+        });
+
+        if (!hasVisibleNotifications) {
+            target.ncBlock.remove();
+            target.ncBlock = null;
+        }
+    }
+}
+
+Notification.prototype.lastNotificationId = 0;
+var __overlay_collection = new Array();
+
+class Overlay {
+	constructor(props = {}) {
+		let target = this;
+
+		target.__add_to_collection();
+		target.__remove_others();
+		target.onDestroyCallback = props.onDestroy || null;
+		target.disableClick = Boolean(props.disableClick) || false;
+
+		let element = document.createElement('div');
+		element.className = 'overlay';
+		document.body.appendChild(element);
+		target.element = element;
+
+		element.classList.add('overlay--show');
+
+		element.onclick = function() {
+			if (target.disableClick == false) 
+				target.destroy();
+		}
+	}
+
+	set onDestroy(event) {
+		this.onDestroyCallback = event || null;
+	}
+
+	destroy() {
+		let target = this;
+		
+		target.element.classList.remove('overlay--show');
+		target.element.classList.add('overlay--hide');
+
+		target.__remove_from_collection(target);
+		setTimeout(() => target.element.remove(), 300);
+
+		if (target.onDestroyCallback) {
+			target.onDestroyCallback(target);	
+		}
+	}
+
+	__add_to_collection() {
+		let target = this;
+		if (!__overlay_collection.includes(target)) {
+			__overlay_collection.push(target);
+		}
+	}
+
+	__remove_others() {
+		let target = this;
+		for (let overflow of __overlay_collection) {
+			if (overflow != target) {
+				overflow.destroy();
+				target.__remove_from_collection(overflow);
+			}
+		}
+	}
+
+	__remove_from_collection(overflow) {
+		let target = this;
+		if (__overlay_collection.length) {
+			let index = __overlay_collection.indexOf(overflow);
+			if (index > -1) {
+				__overlay_collection.splice(index, 1);
+			}
+		}		
+	}
+}
 class Progress {
     constructor(element, props = {}) {
         if (element == null) {
@@ -994,14 +1065,6 @@ class Progress {
         }
     }
 }
-/* unused harmony export Progress */
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 class Select {
     /**
      * Constructor of Select
@@ -1148,7 +1211,7 @@ class Select {
      * Select item in Selectbox
      * @param {int} index
      */
-    select(index) {
+    select(index = 0) {
         let target = this;
 
         if (index < 0 || index >= target.__options.length) {
@@ -1238,15 +1301,180 @@ class Select {
         target.__setPosition();
     }
 }
-/* unused harmony export Select */
 
+var __sidebars_collection = new Array();
+class Sidebar {
+	constructor(objectSender, props = {}) {
+		if (objectSender == null) {
+			throw "Sidebar: objectSender is null or undefined";
+		}
 
+		let target = this;
+		target.__add_to_collection();
 
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+		target.onShowCallback = props.onShow || null;
+		target.onHideCallback = props.onHide || null;
+		target.onChangeCallback = props.onChange || null;
+		target.enable_scroll = props.enable_scroll || false;
+		target.push_page = props.push_page || false;		
+		target.no_overlay = props.no_overlay || false;		
+		target.__element = objectSender;
+		target.__visible = false;
+		target.__onScrollEvent = () => target.__scroll();
+	}
 
-"use strict";
+	get element() {
+		return this.__element;
+	}
+
+	get visible() {
+		return this.__visible;
+	}
+
+	set onShow(func) {
+		this.onShowCallback = func || null;
+	}
+
+	set onHide(func) {
+		this.onHideCallback = func || null;
+	}
+
+	set onChange(func) {
+		this.onChangeCallback = func || null;
+	}
+
+	show() {
+		let target = this;
+		target.__hide_others();
+
+		if (target.onShowCallback) {
+			target.onShowCallback(target);
+		}
+
+		let element = target.__element;
+
+		element.classList.add('sidebar--show');			
+		if (target.push_page) {
+			if (element.classList.contains('sidebar--pin-right')) {
+				document.body.classList.add('body--sidebar-push-right');
+			} else {
+				document.body.classList.add('body--sidebar-push-left');
+			}
+		}
+
+		if (!target.no_overlay) {
+			target.__overlay = new Overlay({
+				onDestroy: () => target.hide()
+			});
+
+			target.__overlay_element = target.__overlay.element;
+
+			if (element.classList.contains('sidebar--under-taskbar')) {
+				target.__overlay_element.classList.add('overlay--under-taskbar');			
+			}
+		}
+
+		if (target.enable_scroll && element.classList.contains('sidebar--under-taskbar')) {
+			window.addEventListener('scroll', target.__onScrollEvent, false);
+		}
+
+		target.__visible = true;
+
+		if (target.onShowCallback) {
+			target.onShowCallback(target);
+		}
+
+		if (target.onChangeCallback) {
+			target.onChangeCallback(target);
+		}
+	}
+
+	hide() {
+		let target = this;
+		let element = target.__element;
+
+		if (target.push_page) {
+			if (element.classList.contains('sidebar--pin-right')) {
+				document.body.classList.remove('body--sidebar-push-right');
+			} else {
+				document.body.classList.remove('body--sidebar-push-left');
+			}
+		}
+		
+		element.classList.remove('sidebar--show');			
+		
+		target.__visible = false;
+
+		if (!target.no_overlay) {
+			target.__overlay_element = null;			
+		}
+
+		if (target.onHideCallback) {
+			target.onHideCallback(target);
+		}
+
+		if (target.onChangeCallback) {
+			target.onChangeCallback(target);
+		}
+
+		window.removeEventListener('scroll', target.__onScrollEvent, false);
+	}
+
+	toggle() {
+		let target = this;
+		if (target.visible) {
+			target.hide();
+		} else {
+			target.show();
+		}
+	}
+
+	__scroll() {
+		let target = this;
+		let element = target.__element;
+
+		if (!target.no_overlay) {
+			let overlay_element = target.__overlay_element;			
+		}
+
+		let topScrollPosition = window.scrollTop;
+		let taskbar_height = 44;
+		console.log(topScrollPosition);
+
+		if (topScrollPosition >= taskbar_height) {
+			element.style.top = '0px';
+			element.style.height = '100%';
+			if (!target.no_overlay) {
+				overlay_element.style.top = '0px';
+				overlay_element.style.height = '100%';
+			}
+		} else {
+			element.style.top = (taskbar_height - topScrollPosition) + 'px';
+			if (!target.no_overlay) {
+				overlay_element.style.top = (taskbar_height - topScrollPosition) + 'px';
+				overlay_element.style.height = 'calc(100% - ' + (taskbar_height - topScrollPosition).toString() + 'px)';
+			}
+		}
+	}
+
+	__add_to_collection() {
+		let target = this;
+		if (!__sidebars_collection.includes(target)) {
+			__sidebars_collection.push(target);
+		}
+	}
+
+	__hide_others() {
+		let target = this;
+		for (let sidebar of __sidebars_collection) {
+			if (sidebar != target) {
+				if (sidebar.visible) {
+					sidebar.hide();					
+				}
+			}
+		}
+	}
+}
 class Tabs {
 	constructor(objectSender, props = {}) {
         if (objectSender == null) {
@@ -1286,10 +1514,6 @@ class Tabs {
 
     get currentIndex() {
         return this.__index;
-    }
-
-    set currentIndex(index) {
-	    thi
     }
 
     set onChangeTab(func) {
@@ -1350,14 +1574,6 @@ class Tabs {
         target.__index = index;
     }
 }
-/* unused harmony export Tabs */
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 class ToggleButton {
 	constructor(objectSender, props = {}) {
 		if (objectSender == null) {
@@ -1443,8 +1659,18 @@ class ToggleButton {
 		}
 	}
 }
-/* unused harmony export ToggleButton */
+'use strict';
 
+Array.prototype.remove = function(element) {
+    for (let i = 0; i < this.length; i++) {
+        if (element == this[i]) {
+            this.splice(i, i);
+            return element;
+        }
+    }
+}
 
-/***/ })
-/******/ ]);
+Array.prototype.random = function() {
+    let items = this.slice();
+    return items[Math.floor(Math.random()*items.length)];
+};

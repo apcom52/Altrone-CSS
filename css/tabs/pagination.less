@@ -1,0 +1,153 @@
+.pagination {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0em;
+  .pt();
+
+  .pagination__button {
+    display: inline-block;
+    cursor: pointer;
+    color: @m-gray;
+    margin: 0em 0.5em;
+    .animate(~'color');
+
+    &:hover, &:active {
+      color: @d-gray;
+    }
+  }
+
+  &.pagination--color-red { .set-pagination-color(@red); }
+  &.pagination--color-orange { .set-pagination-color(@orange); }
+  &.pagination--color-yellow { .set-pagination-color(@yellow); }
+  &.pagination--color-olive { .set-pagination-color(@olive); }
+  &.pagination--color-green { .set-pagination-color(@green); }
+  &.pagination--color-teal { .set-pagination-color(@teal); }
+  &.pagination--color-blue { .set-pagination-color(@blue); }
+  &.pagination--color-violet { .set-pagination-color(@violet); }
+  &.pagination--color-purple { .set-pagination-color(@purple); }
+  &.pagination--color-pink { .set-pagination-color(@pink); }
+  &.pagination--color-brown { .set-pagination-color(@brown); }
+
+  .pagination__page {
+    display: inline-block;
+    margin: 0em 0.25em;
+    cursor: pointer;
+    padding: 0.25em 0.75em;
+    border-radius: 1em;
+    color: @d-gray;
+    .animate(~'background-color');
+
+    &:hover {
+      background-color: @l-gray;
+    }
+
+    &:active, &.pagination__page--active {
+      background-color: @d-gray;
+      color: @white;
+      .animate(~'background-color, color');
+    }
+  }
+
+  .pagination__separator {
+    display: inline-block;
+    margin: 0em 0.25em;
+    padding: 0.25em 0.75em;
+    color: @d-gray;
+  }
+
+  &.pagination--invert {
+    .pagination__button {
+      color: @l-gray;
+
+      &:hover, &:active {
+        color: @u-gray;
+      }
+    }
+
+    .pagination__page {
+      color: @l-gray;
+
+      &:hover {
+        background-color: @l-gray;
+        color: @d-gray;
+      }
+
+      &:active, &.pagination__page--active {
+        background-color: @u-gray;
+        color: @d-gray;
+      }
+    }
+
+    .pagination__separator {
+      color: @l-gray;
+    }
+
+    &.pagination--color-red { .set-pagination-invert-color(@red); }
+    &.pagination--color-orange { .set-pagination-invert-color(@orange); }
+    &.pagination--color-yellow { .set-pagination-invert-color(@yellow); }
+    &.pagination--color-olive { .set-pagination-invert-color(@olive); }
+    &.pagination--color-green { .set-pagination-invert-color(@green); }
+    &.pagination--color-teal { .set-pagination-invert-color(@teal); }
+    &.pagination--color-blue { .set-pagination-invert-color(@blue); }
+    &.pagination--color-violet { .set-pagination-invert-color(@violet); }
+    &.pagination--color-purple { .set-pagination-invert-color(@purple); }
+    &.pagination--color-pink { .set-pagination-invert-color(@pink); }
+    &.pagination--color-brown { .set-pagination-invert-color(@brown); }
+  }
+}
+
+.set-pagination-color(@color) {
+  .pagination__button {
+    color: lighten(@color, 10%);
+
+    &:hover, &:active {
+      color: @color;
+    }
+  }
+
+  .pagination__page {
+    color: @color;
+
+    &:hover {
+      background-color: lighten(@color, 10%);
+      color: @u-gray;
+    }
+
+    &:active, &.pagination__page--active {
+      background-color: @color;
+      color: @white;
+    }
+  }
+
+  .pagination__separator {
+    color: @color;
+  }
+}
+
+.set-pagination-invert-color(@color) {
+  .pagination__button {
+    color: darken(@color, 10%);
+
+    &:hover, &:active {
+      color: @color;
+    }
+  }
+
+  .pagination__page {
+    color: darken(@color, 10%);
+
+    &:hover {
+      background-color: darken(@color, 10%);
+      color: @u-gray;
+    }
+
+    &:active, &.pagination__page--active {
+      background-color: @color;
+      color: @white;
+    }
+  }
+
+  .pagination__separator {
+    color: darken(@color, 10%);
+  }
+}

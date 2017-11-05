@@ -1,0 +1,176 @@
+.set-toggle-color(@color) {
+  input[type="checkbox"] {
+    &:not(checked) + label:before {
+      background-color: lighten(@color, 25%);
+    }
+    &:checked + label:before {
+      background: @color;
+    }
+  }
+
+  &.toggle--invert {
+    input[type="checkbox"] {
+      &:not(checked) + label:before {
+        background-color: darken(@color, 25%);
+      }
+      &:checked + label:before {
+        background: @color;
+      }
+    }
+  }
+
+  &.toggle--transparent {
+    input[type="checkbox"] {
+      &:not(checked) + label:before {
+        border: 2px solid lighten(@color, 25%);
+      }
+
+      &:not(checked) + label:after {
+        background: lighten(@color, 25%);
+      }
+
+      &:checked + label:before {
+        border-color: @color;
+      }
+
+      &:checked + label:after {
+        background: @color;
+      }
+    }
+  }
+}
+
+.toggle {
+  width: 100%;
+  padding: 0em 1em;
+  box-sizing: border-box;
+  margin: 0.5em 0em;
+  display: inline-block;
+
+  input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    height: auto;
+    margin: 1em;
+    box-sizing: border-box;
+
+    & + label {
+      cursor: pointer;
+    }
+
+    &:not(checked) {
+      position: absolute;
+      opacity: 0;
+
+      & + label {
+        position: relative;
+        padding: 0 0 0 4em;
+      }
+    }
+
+    &:not(checked) + label:before {
+      content: '';
+      position: absolute;
+      top: 0em;
+      left: 0em;
+      width: 2.5em;
+      height: 1em;
+      border-radius: 1em;
+      background-color: @l-gray;
+      padding:0.2em;
+      .animate(~'background-color');
+    }
+
+    &:not(checked) + label:after {
+      content: '';
+      position: absolute;
+      top: 0.2em;
+      left: 0.2em;
+      width: 1em;
+      height: 1em;
+      border-radius: 0.5em;
+      background: @white;
+      .shadow-1();
+      .animate(~'left');
+    }
+
+    &:checked + label:before {
+      background: @m-gray;
+      .animate(~'background-color');
+    }
+
+    &:checked + label:after {
+      left: 1.7em;
+    }
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    width: ~"calc(100% - 7em)";
+    .pt();
+
+    .toggle__title {
+      color: @d-gray;
+      .bold();
+    }
+
+    .toggle__meta {
+      color: @m-gray;
+      font-size: 0.8em;
+    }
+  }
+
+  &.toggle--color-red { .set-toggle-color(@red); }
+  &.toggle--color-orange { .set-toggle-color(@orange); }
+  &.toggle--color-yellow { .set-toggle-color(@yellow); }
+  &.toggle--color-olive { .set-toggle-color(@olive); }
+  &.toggle--color-green { .set-toggle-color(@green); }
+  &.toggle--color-teal { .set-toggle-color(@teal); }
+  &.toggle--color-blue { .set-toggle-color(@blue); }
+  &.toggle--color-violet { .set-toggle-color(@violet); }
+  &.toggle--color-purple { .set-toggle-color(@purple); }
+  &.toggle--color-pink { .set-toggle-color(@pink); }
+  &.toggle--color-brown { .set-toggle-color(@brown); }
+  &.toggle--color-yellow {
+    input[type="checkbox"] {
+      &:not(checked) + label:after {
+        background-color: @d-gray;
+      }
+    }
+  }
+
+  &.toggle--invert {
+    label {
+      .toggle__title {
+        color: @u-gray;
+      }
+    }
+  }
+
+  &.toggle--transparent {
+    input[type="checkbox"] {
+      &:not(checked) + label:before {
+        border: 2px solid @l-gray;
+        background-color: transparent;
+        height: ~"calc(1em - 4px)";
+        width: ~"calc(3em - 4px)";
+      }
+
+      &:not(checked) + label:after {
+        background: @l-gray;
+        box-shadow: none !important;
+      }
+
+      &:checked + label:before {
+        background: transparent;
+        border-color: @m-gray;
+      }
+
+      &:checked + label:after {
+        background: @m-gray;
+      }
+    }
+  }
+}

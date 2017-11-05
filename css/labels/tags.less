@@ -1,0 +1,91 @@
+.set-tag-color(@active-color, @invert-color) {
+  border-color: darken(@active-color, 5%);
+
+  &:hover {
+    background-color: lighten(@active-color, 10%);
+  }
+
+  &.tag--active {
+    background-color: @active-color;
+  }
+
+  &.tag--invert {
+    border-color: darken(@invert-color, 5%);
+
+    &:hover {
+      background-color: darken(@invert-color, 10%);
+    }
+
+    &.tag--active {
+      background-color: @invert-color;
+    }
+  }
+}
+
+.tags {
+  overflow: hidden;
+
+  .tags__item {
+    display: inline-flex;
+    border: 1px solid darken(@u-gray, 20%);
+    border-radius: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    align-items: center;
+    overflow: hidden;
+    float: left;
+    padding: 0.5rem 1rem;
+    .animate(~'background-color');
+    .pt();
+
+    .tags__item__image {
+      width: auto;
+      height: 34px;
+      flex: 0;
+    }
+
+    .tags__item__name {
+      flex: 1;
+      padding: 0.5rem 1rem;
+    }
+
+    .tags__item__action {
+      flex: 0;
+      padding-left: 1rem;
+    }
+
+    &:hover {
+      background-color: @u-gray;
+      .animate(~'background-color');
+    }
+
+    &.tags__item--active {
+      background-color: darken(@u-gray, 10%);
+    }
+  }
+
+  &.tags--invert {
+    border-color: lighten(@d-gray, 10%);
+    color: @u-gray;
+
+    &:hover {
+      background-color: lighten(@d-gray, 5%);
+    }
+
+    &.tag--active {
+      background-color: lighten(@d-gray, 10%);
+    }
+  }
+
+  &.tags--color-red { .set-tag-color(@l-red, @d-red); }
+  &.tags--color-orange { .set-tag-color(@l-orange, @d-orange); }
+  &.tags--color-yellow{ .set-tag-color(@l-yellow, @d-yellow); }
+  &.tags--color-olive{ .set-tag-color(@l-olive, @d-olive); }
+  &.tags--color-green { .set-tag-color(@l-green, @d-green); }
+  &.tags--color-teal { .set-tag-color(@l-teal, @d-teal); }
+  &.tags--color-blue { .set-tag-color(@l-blue, @d-blue); }
+  &.tags--color-purple { .set-tag-color(@l-purple, @purple); }
+  &.tags--color-violet{ .set-tag-color(@l-violet, @violet); }
+  &.tags--color-pink{ .set-tag-color(@l-pink, @d-pink); }
+  &.tags--color-brown{ .set-tag-color(@l-brown, @brown); }
+}

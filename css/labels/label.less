@@ -1,0 +1,34 @@
+.set-label-color(@color) {
+  background-color: @color;
+  color: @white;
+}
+
+.label {
+  display: inline-block;
+  margin: 0em 0.25em;
+  padding: 0.1em 0.5em;
+  background-color: darken(@u-gray, 5%);
+  border-radius: 0.25em;
+  color: @d-gray;
+  .pt();
+
+  &.label--color-red { .set-label-color(@red); }
+  &.label--color-orange { .set-label-color(@orange); }
+  &.label--color-yellow { .set-label-color(@yellow); }
+  &.label--color-olive { .set-label-color(@olive); }
+  &.label--color-green { .set-label-color(@green); }
+  &.label--color-blue { .set-label-color(@blue); }
+  &.label--color-teal { .set-label-color(@teal); }
+  &.label--color-purple { .set-label-color(@purple); }
+  &.label--color-violet { .set-label-color(@violet); }
+  &.label--color-pink { .set-label-color(@pink); }
+  &.label--color-brown { .set-label-color(@brown); }
+  &.label--color-black { .set-label-color(@d-gray); }
+
+  &.label--no-smooth {
+    border-radius: 0em;
+  }
+  &.label--rounded {
+    border-radius: 1em;
+  }
+}

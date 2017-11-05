@@ -1,0 +1,319 @@
+.set-form-color(@color) {
+  .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+    &:active {
+      border-color: lighten(@color, 10%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px 3px fade(@color, 50%);
+    }
+  }
+}
+
+.set-form-invert-color(@color) {
+  .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+    background-color: lighten(@d-gray, 5%);
+    color: @white;
+
+    &:active {
+      background-color: lighten(@d-gray, 10%);
+      border-color: darken(@color, 10%);
+    }
+  }
+}
+
+.set-input-icon(@icon) {
+  padding-left: 2em;
+  background-image: @icon;
+  background-size: 1em;
+  background-repeat: no-repeat;
+  background-position: 0.5em center;
+}
+
+form, .form {
+  padding: 0.25em 1em;
+  clear: both;
+  overflow: hidden;
+
+  .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+    display: block;
+    margin: 0.25em 0em;
+    border: 1px solid @l-gray;
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    background-color: @u-gray;
+    color: @d-gray;
+    box-sizing: border-box;
+    outline: none;
+    resize: vertical;
+    transition: background-color 0.3s linear;
+    .pt();
+
+    &:active {
+      background-color: @white;
+      .animate(~'background-color');
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px 3px @l-gray;
+    }
+
+    &:invalid, &.form__input--invalid {
+      background-image: @alert;
+      background-repeat: no-repeat;
+      background-position: right 0.5em center;
+      background-size: 1em;
+      padding-right: 2em;
+    }
+
+    &.form__input--valid {
+      background-image: @checkmark-green;
+      background-repeat: no-repeat;
+      background-position: right 0.5em center;
+      background-size: 1em;
+      padding-right: 2em;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder {
+      color: @m-gray;
+    }
+  }
+
+  input[type="search"] {
+    .set-input-icon(@search);
+
+    &:invalid, &.form__input--invalid {
+      background-image: @search, @alert;
+      background-repeat: no-repeat, no-repeat;
+      background-position: 0.5em center, right 0.5em center;
+      background-size: 1em;
+      padding-right: 2em;
+      padding-left: 2em;
+      box-sizing: border-box;
+    }
+  }
+
+  input[type="tel"] {
+    .set-input-icon(@phone);
+
+    &:invalid, &.form__input--invalid {
+      background-image: @phone, @alert;
+      background-repeat: no-repeat, no-repeat;
+      background-position: 0.5em center, right 0.5em center;
+      background-size: 1em;
+      padding-right: 2em;
+      padding-left: 2em;
+    }
+  }
+
+  input[type="url"] {
+    .set-input-icon(@globe);
+
+    &:invalid, &.form__input--invalid {
+      background-image: @globe, @alert;
+      background-repeat: no-repeat, no-repeat;
+      background-position: 0.5em center, right 0.5em center;
+      background-size: 1em;
+      padding-right: 2em;
+      padding-left: 2em;
+    }
+  }
+
+  textarea {
+    transition: resize 0s linear;
+  }
+
+  .form__attachment {
+    overflow: hidden;
+    clear: both;
+    display: flex;
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], textarea, select, .form__attach {
+      border-radius: 0em;
+      flex: none;
+
+      &:first-child {
+        border-radius: 0.25em 0em 0em 0.25em !important;
+      }
+      &:last-child {
+        border-radius: 0em 0.25em 0.25em 0em !important;
+      }
+    }
+
+    .form__attachment__addon {
+      margin: 0.25em 0em;
+      padding: 0.5em 1em;
+      background-color: @u-gray;
+      border: 1px solid  @l-gray;
+      color: @d-gray;
+      box-sizing: border-box;
+    }
+  }
+
+
+
+  label {
+    display: block;
+    cursor: pointer;
+    .bold();
+  }
+
+  option {
+    background: @white;
+    color: @d-gray;
+    .pt();
+  }
+
+  optgroup {
+    background: @u-gray;
+    color: @d-gray;
+    .bold();
+  }
+
+  &.form--no-smooth {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      border-radius: 0em;
+    }
+  }
+  &.form--smooth {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      border-radius: 0.25em;
+    }
+  }
+  &.form--rounded {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      border-radius: 1em;
+    }
+  }
+
+  &.form--fit {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      width: 100%;
+    }
+  }
+
+  &.form--no-padding {
+    padding: 0.25em 0em;
+  }
+
+  &.form--color-red { .set-form-color(@red); }
+  &.form--color-orange { .set-form-color(@orange); }
+  &.form--color-yellow { .set-form-color(@yellow); }
+  &.form--color-olive { .set-form-color(@olive); }
+  &.form--color-green { .set-form-color(@green); }
+  &.form--color-teal { .set-form-color(@teal); }
+  &.form--color-blue { .set-form-color(@blue); }
+  &.form--color-violet { .set-form-color(@violet); }
+  &.form--color-purple { .set-form-color(@purple); }
+  &.form--color-pink { .set-form-color(@pink); }
+  &.form--color-brown { .set-form-color(@brown); }
+
+  &.form--invert {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      background-color: lighten(@d-gray, 5%);
+      color: @white;
+      border-color: lighten(@d-gray, 15%);
+
+      &:active, &:focus {
+        background-color: lighten(@d-gray, 10%);
+        border-color: lighten(@d-gray, 15%);
+      }
+    }
+
+    input[type="search"] {
+      .set-input-icon(@search-invert);
+
+      &:invalid, &.form__input--invalid {
+        background-image: @search-invert, @alert;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0.5em center, right 0.5em center;
+        background-size: 1em;
+        padding-right: 2em;
+        padding-left: 2em;
+      }
+    }
+
+    input[type="tel"] {
+      .set-input-icon(@phone-invert);
+
+      &:invalid, &.form__input--invalid {
+        background-image: @phone-invert, @alert;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0.5em center, right 0.5em center;
+        background-size: 1em;
+        padding-right: 2em;
+        padding-left: 2em;
+      }
+    }
+
+    input[type="url"] {
+      .set-input-icon(@globe-invert);
+
+      &:invalid, &.form__input--invalid {
+        background-image: @globe-invert, @alert;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0.5em center, right 0.5em center;
+        background-size: 1em;
+        padding-right: 2em;
+        padding-left: 2em;
+      }
+    }
+
+    label {
+      color: @white;
+    }
+
+    option {
+      background-color: lighten(@d-gray, 5%);
+      color: @white;
+    }
+
+    optgroup {
+      background-color: lighten(@d-gray, 10%);
+      color: @white;
+    }
+
+    .form__attach {
+      background-color: lighten(@d-gray, 5%);
+      border: 1px solid @d-gray;
+      color: @u-gray;
+    }
+
+    &.form--color-red { .set-form-invert-color(@red); }
+    &.form--color-orange { .set-form-invert-color(@orange); }
+    &.form--color-yellow { .set-form-invert-color(@yellow); }
+    &.form--color-olive { .set-form-invert-color(@olive); }
+    &.form--color-green { .set-form-invert-color(@green); }
+    &.form--color-teal { .set-form-invert-color(@teal); }
+    &.form--color-blue { .set-form-invert-color(@blue); }
+    &.form--color-violet { .set-form-invert-color(@violet); }
+    &.form--color-purple { .set-form-invert-color(@purple); }
+    &.form--color-pink { .set-form-invert-color(@pink); }
+    &.form--color-brown { .set-form-invert-color(@brown); }
+  }
+
+  &.form--no-borders {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      border: none;
+    }
+  }
+
+  &.form--transparent {
+    .input, input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], textarea, select {
+      opacity: 0.5;
+
+      &:active, &:focus {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.form--centered {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

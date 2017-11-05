@@ -1,0 +1,141 @@
+.set-radio-color(@color, @focus-color, @focus-color-invert) {
+  input[type="radio"] {
+    &:not(checked) + label:before {
+      border-color: @d-gray;
+    }
+
+    &:checked + label:before {
+      background-color: @color;
+    }
+
+    &:focus + label:before {
+      box-shadow: 0 0 3px 3px @focus-color;
+    }
+  }
+
+  &.radio--invert {
+    input[type="radio"] {
+      &:not(checked) + label:before {
+        border-color: @u-gray;
+      }
+      &:checked + label:before {
+        background-color: @color;
+      }
+
+      &:focus + label:before {
+        box-shadow: 0 0 3px 3px @focus-color-invert;
+      }
+    }
+  }
+}
+
+.radio {
+  width: 100%;
+  padding: 0em 1em;
+  box-sizing: border-box;
+  margin: 0.5em 0em;
+  display: inline-block;
+
+  input[type="radio"] {
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    height: auto;
+    margin: 1em;
+    box-sizing: border-box;
+
+    & + label {
+      cursor: pointer;
+    }
+
+    &:not(checked) {
+      position: absolute;
+      opacity: 0;
+
+      & + label {
+        position: relative;
+        padding: 0 0 0 3em;
+      }
+    }
+
+    &:not(checked) + label:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 1em;
+      width: 1em;
+      height: 1em;
+      border-radius: 0.5em;
+      border: 2px solid @d-gray;
+      background-color: @white;
+      background-position: center;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+    }
+
+    &:checked + label:before {
+      background-image: @radiobutton-background;
+      background-color: @m-gray;
+      border: none;
+    }
+
+    &:focus + label:before {
+      box-shadow: 0 0 3px 3px @l-gray;
+    }
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    width: ~"calc(100% - 7em)";
+    .pt();
+
+    .radio__title {
+      color: @d-gray;
+      .bold();
+    }
+
+    .radio__meta {
+      color: @m-gray;
+      font-size: 0.8em;
+    }
+  }
+
+  &.radio--color-red { .set-radio-color(@red, @l-red, @d-red); }
+  &.radio--color-orange { .set-radio-color(@orange, @l-orange, @d-orange); }
+  &.radio--color-yellow { .set-radio-color(@yellow, @l-yellow, @d-yellow); }
+  &.radio--color-olive { .set-radio-color(@olive, @l-olive, @d-olive); }
+  &.radio--color-green { .set-radio-color(@green, @l-green, @d-green); }
+  &.radio--color-teal { .set-radio-color(@teal, @l-teal, @d-teal); }
+  &.radio--color-blue { .set-radio-color(@blue, @l-blue, @d-blue); }
+  &.radio--color-violet { .set-radio-color(@violet, @l-violet, @d-violet); }
+  &.radio--color-purple { .set-radio-color(@purple, @l-purple, @d-violet); }
+  &.radio--color-pink { .set-radio-color(@pink, @l-pink, @d-pink); }
+  &.radio--color-brown { .set-radio-color(@brown, @l-brown, @d-brown); }
+  &.radio--color-yellow {
+    input[type="radio"] {
+      &:checked + label:before {
+        background-image: @radiobutton-background-invert;
+      }
+    }
+  }
+
+  &.radio--invert {
+    label {
+      .radio__title {
+        color: @u-gray;
+      }
+    }
+
+    input[type="radio"] {
+      &:not(checked) + label:before {
+        border-color: @u-gray;
+        background-color: @d-gray;
+      }
+      &:checked + label:before {
+        background-color: @l-gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.set-progress-color(@color, @fcolor: @d-gray) {
+  background-color: @color;
+  color: @fcolor;
+}
+
+.progress {
+  display: flex;
+  width: ~"calc(100% - 0.3em)";
+  height: 1rem;
+  margin: 0.15em;
+  background-color: darken(@u-gray, 5%);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+
+  .progress__active {
+    background-color: darken(@u-gray, 25%);
+    transition: width 0.3s linear;
+    height: 1rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex: none;
+    font-size: 0.75em;
+    display: flex;
+    .bold();
+
+
+    .progress__active__label {
+      flex: 1;
+    }
+
+    &.progress__active--color-red { .set-progress-color(@red, @u-gray); }
+    &.progress__active--color-orange { .set-progress-color(@orange, @u-gray); }
+    &.progress__active--color-yellow { .set-progress-color(@yellow, @u-gray); }
+    &.progress__active--color-olive { .set-progress-color(@olive, @u-gray); }
+    &.progress__active--color-green { .set-progress-color(@green, @u-gray); }
+    &.progress__active--color-blue { .set-progress-color(@blue, @u-gray); }
+    &.progress__active--color-teal { .set-progress-color(@teal, @u-gray); }
+    &.progress__active--color-purple { .set-progress-color(@purple, @u-gray); }
+    &.progress__active--color-violet { .set-progress-color(@violet, @u-gray); }
+    &.progress__active--color-pink { .set-progress-color(@pink, @u-gray); }
+    &.progress__active--color-brown { .set-progress-color(@brown, @u-gray); }
+    &.progress__active--color-black { .set-progress-color(@d-gray, @u-gray); }
+    &.progress__active--color-white { .set-progress-color(@u-gray); }
+  }
+
+
+  &.progress--invert {
+    background-color: lighten(@d-gray, 5%);
+
+    .progress__active {
+      background-color: lighten(@d-gray, 25%);
+    }
+  }
+
+  &.progress--size-thin {
+    height: 0.4rem;
+
+    .progress__active {
+      height: 0.4rem;
+    }
+  }
+
+  &.progress--size-large {
+    height: 1.5rem;
+    font-size: 1em;
+
+    .progress__active {
+      height: 1.5rem;
+    }
+  }
+
+  &.progress--size-fit {
+    height: 100%;
+
+    .progress__active {
+      height: 100%;
+    }
+  }
+
+  &.progress--no-smooth {
+    border-radius: 0px;
+
+    .progress__active {
+      border-radius: 0px;
+    }
+  }
+
+  &.progress--rounded {
+    border-radius: 1em;
+
+    .progress__active {
+      border-radius: 1em;
+    }
+  }
+
+  &.progress--with-text {
+    .progress__active {
+      vertical-align: center;
+      min-width: 2em;
+      color: @d-gray;
+      .pt();
+
+      .progress__active__text {
+        width: 100%;
+        text-align: center;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

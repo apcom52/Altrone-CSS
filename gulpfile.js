@@ -1,23 +1,24 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var clean = require('gulp-clean');
+var less = require('gulp-less');
+var zip = require('gulp-zip');
+var prompt = require('gulp-prompt');
 
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var filesize = require('gulp-filesize');
-var gutil = require('gulp-util');
-var rename = require('gulp-rename');
+gulp.task('js', function() {
+	return gulp.src('./js/*.js')
+		.pipe(concat('altrone.js'))
+		.pipe(gulp.dest('./build/'));
+});
 
-// gulp.task('build', function() {
-// 	return gulp.src('./js/*.js')
-// 		.pipe(gulp.dest('./new_js'))
-// });
+gulp.task('less', function() {
+	return gulp.src('./css/altrone.less')
+		.pipe(less())
+		.pipe(gulp.dest('./build/'));
+});
 
-gulp.task('build', function() {
-	return browserify('./js/index.js')
-		.transform('babelify', {presets: ['es2015']})
-		.bundle()
-		.pipe(source('bundle.js'))
-		.pipe(gulp.dest('./new_js/'));
+gulp.task('dist', function() {
+	var version = '3.0';
+	return gulp.src(['./build/**/*'])
+		.pipe(zip(version + '.zip'))
+		.pipe(gulp.dest('dist'))
 });

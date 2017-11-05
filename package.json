@@ -23,5 +23,12 @@
   "homepage": "https://github.com/apcom52/Altrone2-CSS#readme",
   "dependencies": {
     "webpack": "^3.7.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.2",
+    "gulp-prompt": "^0.4.1",
+    "gulp-zip": "^4.0.0"
   }
 }

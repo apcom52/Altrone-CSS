@@ -1,0 +1,212 @@
+.set-card-color(@color) {
+  background-color: @color;
+  color: @white;
+  border-color: darken(@color, 5%);
+
+  .card__footer {
+    color: @u-gray;
+    border-top-color: lighten(@color, 5%);
+  }
+}
+
+.card {
+  display: block;
+  height: auto;
+  margin: 1em;
+  background-color: @white;
+  color: @d-gray;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid darken(@u-gray, 10%);
+  overflow-y: hidden;
+
+  .card__header {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 0.5em 0.5em 0em 0em;
+    align-items: center;
+    .pt();
+
+    .card__header__title {
+      flex: 1;
+      font-size: 2rem;
+      padding: 1rem;
+      .bold();
+    }
+    .card__header__icon {
+      flex: 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      font-size: 1.5em;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .card__image {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+    }
+
+    .card__image__header {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      left: 0em;
+      bottom: 0.2rem;
+      font-size: 1.5em;
+      color: @white;
+      background: linear-gradient(0deg, fade(@black, 75%), transparent);
+      align-items: center;
+
+      .card__image__header__title {
+        flex: 1;
+        padding: 1rem;
+        font-size: 1.5rem;
+        .bold();
+        .text-shadow();
+      }
+      .card__image__header__icon {
+        flex: 0;
+        .text-shadow();
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+
+  .card__content {
+    padding: 0.5em 1em;
+    .pt();
+
+    &.card__content--no-padding {
+      padding: 0em;
+    }
+
+    &.card__content--list {
+      .list {
+        .list__item {
+          &:first-child {
+            border-radius: 0.5em 0.5em 0em 0em;
+          }
+          &:last-child {
+            border-radius: 0em 0em 0.5em 0.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .card__footer {
+    width: 100%;
+    color: @m-gray;
+    padding: 1rem;
+    border-top: 1px solid @u-gray;
+    border-radius: 0em 0em 0.5em 0.5em;
+    font-size: 0.9em;
+    box-sizing: border-box;
+  }
+
+  &.card- {
+    &-no-smooth {
+      border-radius: 0em;
+
+      .card__image {
+        img {
+          border-radius: 0em;
+        }
+      }
+
+      .card__content {
+        &.card__content--list {
+          .list {
+            .list__item {
+              border-radius: 0em;
+            }
+          }
+        }
+      }
+
+      .card__footer {
+        border-radius: 0em;
+      }
+    }
+
+    &-rounded {
+      border-radius: 1em;
+
+      .card__image {
+        img {
+          border-radius: 1em 1em 0em 0em;
+        }
+      }
+
+      .card__content {
+        &.card__content--list {
+          .list {
+            .list__item {
+              &:first-child {
+                border-radius: 1em 1em 0em 0em;
+              }
+              &:last-child {
+                border-radius: 0em 0em 1em 1em;
+              }
+            }
+          }
+        }
+      }
+
+      .card__footer {
+        border-radius: 0em 0em 1em 1em;
+      }
+    }
+  }
+
+  &.card--color-red { .set-card-color(@red); }
+  &.card--color-orange { .set-card-color(@orange); }
+  &.card--color-yellow { .set-card-color(@yellow); }
+  &.card--color-olive { .set-card-color(@olive); }
+  &.card--color-green { .set-card-color(@green); }
+  &.card--color-teal { .set-card-color(@teal); }
+  &.card--color-blue { .set-card-color(@blue); }
+  &.card--color-violet { .set-card-color(@violet); }
+  &.card--color-purple { .set-card-color(@purple); }
+  &.card--color-pink { .set-card-color(@pink); }
+  &.card--color-brown { .set-card-color(@brown); }
+  &.card--color-black { .set-card-color(@d-gray); }
+}
+
+@media (max-width: @l-mobile) {
+  .card {
+    .card__header {
+      .card__header__title {
+        font-size: 1.3rem;
+      }
+      .card__header__icon {
+        font-size: 1.25rem;
+      }
+    }
+    .card__image {
+      .card__image__header {
+        .card__image__header__title {
+          padding: 1rem;
+          font-size: 1.3rem;
+        }
+        .card__image__header__icon {
+          font-size: 1rem;
+          padding: 0em 1rem;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.stacked-list {
+  width: 100%;
+  border-radius: 0.25em;
+
+  .stacked-list__item {
+    width: 100%;
+    color: @d-gray;
+    border-bottom: 1px solid @l-gray;
+    padding: 0.5rem 0rem;
+    box-sizing: border-box;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &.stacked-list--invert {
+    .stacked-list__item {
+      color: @white;
+      border-color: lighten(@d-gray, 10%);
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.set-jumbotron-color(@color) {
+  .jumbotron__header {
+    color: @color;
+  }
+}
+
+.jumbotron {
+  background-color: @u-gray;
+  width: 100%;
+  padding: 3em;
+  box-sizing: border-box;
+  .pt();
+
+  .jumbotron__header {
+    font-size: 6em;
+    .bold();
+  }
+
+  .jumbotron__subheader {
+    font-size: 1.5em;
+  }
+
+  &.jumbotron--invert {
+    background-color: lighten(@d-gray, 5%);
+    color: @white;
+  }
+
+  &.jumbotron--color-red { .set-jumbotron-color(@red); }
+  &.jumbotron--color-orange { .set-jumbotron-color(@orange); }
+  &.jumbotron--color-yellow { .set-jumbotron-color(@yellow); }
+  &.jumbotron--color-olive { .set-jumbotron-color(@olive); }
+  &.jumbotron--color-green { .set-jumbotron-color(@green); }
+  &.jumbotron--color-blue { .set-jumbotron-color(@blue); }
+  &.jumbotron--color-teal { .set-jumbotron-color(@teal); }
+  &.jumbotron--color-purple { .set-jumbotron-color(@purple); }
+  &.jumbotron--color-violet { .set-jumbotron-color(@violet); }
+  &.jumbotron--color-pink { .set-jumbotron-color(@pink); }
+  &.jumbotron--color-brown { .set-jumbotron-color(@brown); }
+}
+
+@media (max-width: @l-tablet) {
+  .jumbotron {
+    padding: 2em;
+
+    .jumbotron__header {
+      font-size: 5em;
+    }
+
+    .jumbotron__subheader {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media (max-width: @tablet) {
+  .jumbotron {
+    padding: 2em;
+
+    .jumbotron__header {
+      font-size: 4em;
+    }
+
+    .jumbotron__content {
+      font-size: 1.15em;
+    }
+  }
+}
+
+@media (max-width: @l-mobile) {
+  .jumbotron {
+    padding: 1.5em;
+
+    .jumbotron__header {
+      font-size: 3em;
+    }
+
+    .jumbotron__content {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: @mobile) {
+  .jumbotron {
+    padding: 1.25em;
+
+    .jumbotron__header {
+      font-size: 2em;
+    }
+
+    .jumbotrсon__content {
+      font-size: 1em;
+    }
+  }
+}

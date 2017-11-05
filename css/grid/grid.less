@@ -1,0 +1,123 @@
+.generateFCols(@i) when (@i > 0) {
+  @width: (@i / 12) * 100;
+  .col-@{i} {
+    flex-basis: ~"@{width}%";
+    max-width: ~"@{width}%";
+  }
+
+  .offset-@{i} {
+    margin-left: ~'@{width}%';
+  }
+
+  .generateFCols((@i - 1));
+}
+
+.generateFPCols(@i, @max, @prefix) when (@i > 0) {
+  @width: (@i / @max) * 100;
+  .col-@{prefix}-@{i} {
+    flex-basis: ~"@{width}%";
+    max-width: ~"@{width}%";
+  }
+
+  .offset-@{prefix}-@{i} {
+    margin-left: ~'@{width}%';
+  }
+
+  .generateFPCols((@i - 1), @max, @prefix);
+}
+
+.generateFOrders(@i) when (@i >= 0) {
+  .col--order-@{i} {
+    order: @i;
+  }
+
+  .generateFOrders((@i - 1));
+}
+
+.generateFPOrders(@i, @prefix) when (@i >= 0) {
+  .col--@{prefix}-order-@{i} {
+    order: @i;
+  }
+
+  .generateFPOrders((@i - 1), @prefix);
+}
+
+
+.grid {
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.grid--single-line {
+    flex-wrap: nowrap;
+  }
+
+  &.grid--direction-row {
+    flex-direction: row;
+
+    &.grid--direction-row-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.grid--direction-column {
+    flex-direction: column;
+
+    &.grid--direction-column-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.grid--align-start {
+    justify-content: flex-start;
+  }
+
+  &.grid--align-center {
+    justify-content: center;
+  }
+
+  &.grid--align-end {
+    justify-content: flex-end;
+  }
+
+  .generateFCols(12);
+  .generateFOrders(12);
+
+  [class^="col-"] {
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: @l-tablet) {
+  .grid {
+    .generateFPCols(10, 10, lt);
+    .generateFPOrders(12, lt);
+  }
+}
+
+@media (max-width: @tablet) {
+  .grid {
+    .generateFPCols(8, 8, t);
+    .generateFPOrders(12, t);
+  }
+}
+
+@media (max-width: @l-mobile) {
+  .grid {
+    .generateFPCols(6, 6, lm);
+    .generateFPOrders(12, lm);
+  }
+}
+
+@media (max-width: @mobile) {
+  .grid {
+    .generateFPCols(4, 4, m);
+    .generateFPOrders(12, m);
+  }
+}

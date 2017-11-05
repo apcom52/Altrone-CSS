@@ -1,0 +1,57 @@
+.set-navigation-color(@color) {
+  .navigation__item {
+    color: @color;
+  }
+}
+
+.navigation {
+  display: block;
+  margin: 1em 0.5em;
+  font-size: 1.1em;
+
+  .navigation__item {
+    display: block;
+    cursor: pointer;
+    color: @d-gray;
+    padding: 0.5em;
+    .bold();
+  }
+
+  ul {
+    padding-left: 0px;
+  }
+
+  .navigation {
+    font-size: 0.9em;
+
+    .navigation__item {
+      .pt();
+      font-weight: normal;
+      color: @m-gray !important;
+    }
+  }
+
+  &.navigation--color-red { .set-navigation-color(@red); }
+  &.navigation--color-orange { .set-navigation-color(@orange); }
+  &.navigation--color-yellow { .set-navigation-color(@yellow); }
+  &.navigation--color-olive { .set-navigation-color(@olive); }
+  &.navigation--color-green { .set-navigation-color(@green); }
+  &.navigation--color-teal { .set-navigation-color(@teal); }
+  &.navigation--color-blue { .set-navigation-color(@blue); }
+  &.navigation--color-purple { .set-navigation-color(@purple); }
+  &.navigation--color-violet { .set-navigation-color(@violet); }
+  &.navigation--color-pink { .set-navigation-color(@pink); }
+  &.navigation--color-brown { .set-navigation-color(@brown); }
+
+  &.navigation--invert {
+    .navigation__item {
+      color: @u-gray;
+    }
+
+    .navigation {
+      .navigation__item {
+        color: @l-gray !important;
+      }
+    }
+  }
+}

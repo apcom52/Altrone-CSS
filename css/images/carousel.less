@@ -1,0 +1,128 @@
+.carousel {
+  width: 100%;
+  background-color: @l-gray;
+  min-height: 16em;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .animate(~'background-size');
+
+  .carousel__item {
+    display: none;
+  }
+
+  .carousel__left, .carousel__right {
+    position: absolute;
+    width: 3rem;
+    top: 0;
+    height: 100%;
+    content: "";
+    background-size: 1.75rem;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: background-position 0.3s linear, opacity 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+      background-color: fade(@d-gray, 5%);
+    }
+  }
+
+  .carousel__left {
+    left: 0;
+    background-position: center left;
+    background-image: @angle-left-invert;
+  }
+
+  .carousel__right {
+    right: 0;
+    background-position: center right;
+    background-image: @angle-right-invert;
+  }
+
+  .carousel__info {
+    position: absolute;
+    left: 3rem;
+    bottom: 0;
+    width: ~'calc(100% - 6rem)';
+    color: @u-gray;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    .text-shadow();
+    .animate(~'padding-bottom');
+    .pt();
+
+    .carousel__info__title {
+      font-size: 2em;
+      .bold();
+    }
+
+    .carousel__info__content {
+      font-size: 1.1em;
+    }
+  }
+
+  &:hover {
+    .carousel__info {
+      padding-bottom: 2rem;
+      .animate(~'padding-bottom');
+    }
+    .carousel__left {
+      opacity: 1;
+      background-position: center;
+      transition: background-position 0.3s linear, opacity 0.3s linear;
+    }
+
+    .carousel__right {
+      opacity: 1;
+      background-position: center;
+      transition: background-position 0.3s linear, opacity 0.3s linear;
+    }
+  }
+}
+
+@media (max-width: @tablet) {
+  .carousel {
+    .carousel__info {
+      padding: 1.25rem;
+      .carousel__info__title {
+        font-size: 1.75em;
+      }
+
+      .carousel__info__content {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: @l-mobile) {
+  .carousel {
+    .carousel__info {
+      padding: 1.5rem 0.5rem;
+      .carousel__info__title {
+        font-size: 1.2em;
+      }
+
+      .carousel__info__content {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+@media (max-width: @mobile) {
+  .carousel {
+    .carousel__info {
+      padding: 1.5rem 0.3rem;
+      .carousel__info__title {
+        font-size: 1.1em;
+      }
+
+      .carousel__info__content {
+        font-size: 0.9em;
+      }
+    }
+  }
+}

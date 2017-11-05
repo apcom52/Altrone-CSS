@@ -1,0 +1,22 @@
+.loading-layout {
+  background-color: @u-gray;
+  width: 100%;
+  padding: 3em 0em;
+  background-image: @loading;
+  background-repeat: no-repeat;
+  background-size: 1em 1em;
+  background-position: center center;
+
+  &.loading-layout--invert {
+    background-color: lighten(@d-gray, 5%);
+    background-image: @loading-invert;
+
+    &.loading-layout--transparent {
+      background-color: transparent;
+    }
+  }
+
+  &.loading-layout--transparent {
+    background-color: transparent;
+  }
+}

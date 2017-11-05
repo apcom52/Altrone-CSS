@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+.pt {
+  font-family: 'PT Sans', 'Segoe UI', sans-serif;
+}
+
+html {
+  font-size: 1em;
+  .pt();
+}
+
+.anim(@sec) {
+  transition: all @sec linear;
+}
+
+.animate(@property: all, @duration: 0.3s, @function: linear) {
+  transition-property: @property;
+  transition-duration: @duration;
+  transition-timing-function: @function;
+}
