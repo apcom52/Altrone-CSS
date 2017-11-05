@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="../altrone.css">
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
 	<script src="../js/Dropdown.js"></script>
+	<script src="../js/Overlay.js"></script>
+	<script src="../js/Modal.js"></script>
 	<style>
 		html {
 			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
@@ -104,5 +106,21 @@
 		<div class="dropdown__item" tabindex="0">Quit</div>
 	</div>
 </div>
+
+<div class="modal" id="dropdownExample">
+	<div class="modal__content">
+		<button data-dropdown="dropdownModal">Show Dropdown</button>
+		<div class="dropdown" id="dropdownModal">
+			<div class="dropdown__item">Item 1</div>
+			<div class="dropdown__item">Item 2</div>
+			<div class="dropdown__item">Item 3</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	let modal = new Modal(document.getElementById('dropdownExample'));
+	modal.show();
+</script>
 </body>
 </html>

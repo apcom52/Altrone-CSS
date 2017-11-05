@@ -189,29 +189,6 @@
 	}
 }
 
-.toast-collection {
-	width: 30%;
-	height: auto;
-	position: fixed;
-	bottom: 1em;
-	left: 35%;
-	max-height: 70%;
-	overflow-y: auto;
-	z-index: 10;
-
-	.toast-collection__item {
-		background-color: lighten(@d-gray, 5%);
-		color: @u-gray;
-		padding: 0.5em 1em;
-		border-radius: 0.5em;
-		text-align: center;
-		cursor: pointer;
-		margin: 0.5em 0em;
-		.card_shadow();
-		.pt();
-	}
-}
-
 .notification-center {
 	position: fixed;
 	z-index: 10;
@@ -311,20 +288,6 @@
 	100% {
 		transform: translateX(300px) scale(1.2);
 		opacity: 0;
-	}
-}
-
-@media (max-width: @tablet) {
-	.toast-collection {
-		width: 50%;
-		left: 25%;
-	}
-}
-
-@media (max-width: @l-mobile) {
-	.toast-collection {
-		width: 80%;
-		left: 10%;
 	}
 }
 
