@@ -243,6 +243,22 @@
     }
   }
 
+  &.list--stripped {
+    .list__item {
+      &:nth-child(odd) {
+        background-color: @u-gray;
+      }
+    }
+  }
+
+  &.list--stripped-even {
+    .list__item {
+      &:nth-child(even) {
+        background-color: @u-gray;
+      }
+    }
+  }
+
   &.list--invert {
     background-color: @d-gray;
 
@@ -269,6 +285,22 @@
         &:hover {
           background-color: @u-gray;
           color: @d-gray;
+        }
+      }
+    }
+
+    &.list--stripped {
+      .list__item {
+        &:nth-child(odd) {
+          background-color: lighten(@d-gray, 5%);
+        }
+      }
+    }
+
+    &.list--stripped-even {
+      .list__item {
+        &:nth-child(even) {
+          background-color: lighten(@d-gray, 5%);
         }
       }
     }

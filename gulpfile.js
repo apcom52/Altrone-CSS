@@ -2,18 +2,23 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
 var zip = require('gulp-zip');
-var prompt = require('gulp-prompt');
+var cssmin = require('gulp-cssmin');
+var minify = require('gulp-minify');
+var livereload = require('gulp-livereload');
 
 gulp.task('js', function() {
 	return gulp.src('./js/*.js')
 		.pipe(concat('altrone.js'))
+		// .pipe(minify())
 		.pipe(gulp.dest('./build/'));
 });
 
 gulp.task('less', function() {
 	return gulp.src('./css/altrone.less')
 		.pipe(less())
-		.pipe(gulp.dest('./build/'));
+		.pipe(cssmin())
+		.pipe(gulp.dest('./build/'))
+		.pipe(livereload());
 });
 
 gulp.task('dist', function() {
@@ -21,4 +26,9 @@ gulp.task('dist', function() {
 	return gulp.src(['./build/**/*'])
 		.pipe(zip(version + '.zip'))
 		.pipe(gulp.dest('dist'))
+});
+
+gulp.task('less-watch', function() {
+	livereload.listen();
+	gulp.watch('./css/**/*', ['less']);
 });
