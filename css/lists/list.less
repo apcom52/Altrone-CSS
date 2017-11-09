@@ -3,20 +3,19 @@
     color: @color;
 
     &:hover, &:active {
-      color: darken(@color, 10%);
+      color: darken(@color, 5%);
     }
     &.list__item--active {
-      color: darken(@color, 15%);
+      color: darken(@color, 5%);
     }
   }
 
   &.list--invert {
     .list__item, li {
-      color: @white;
+      color: @color;
 
       &:hover, &:active, &.list__item--active {
-        color: @white;
-        background-color: @color;
+        color: lighten(@color, 5%); 
       }
     }
   }
@@ -28,10 +27,8 @@
 
         &:hover {
           color: @u-gray;
-          background-color: darken(@color, 10%);
         }
         &.list__item--active {
-          background-color: @color;
           color: @u-gray;
         }
       }

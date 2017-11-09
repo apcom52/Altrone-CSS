@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Cards</title>
+	<link rel="stylesheet" href="../build/altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../build/altrone.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-red">
+					<div class="jumbotron__header">Видимость компонентов</div>
+				</div>
+
+				<div class="red-bg white-fg padding-1">Видно на всех устройствах</div>
+				<div class="orange-bg white-fg padding-1 hide show-lt">Видно на планшетах и меньше</div>
+				<div class="yellow-bg padding-1 hide show-lm">Видно на смартфонах и меньше</div>
+				<div class="green-bg white-fg padding-1 hide-lm">Видно на ПК и планшетах</div>
+				<div class="l-blue-bg padding-1 hide-lt show-lm">Видно на ПК и смартфонах</div>
+				<div class="blue-bg white-fg padding-1 hide-lt">Видно только на ПК</div>
+				<div class="violet-bg white-fg padding-1 hide show-lt hide-lm">Видно только на планшетах</div>
+				<div class="d-gray-bg white-fg padding-1 hide show-lm">Видно только на смартфонах</div>
+				<div class="d-gray-bg white-fg padding-1 hide show-t hide-lm">Видно только на планшетах с портретной ориентацией</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

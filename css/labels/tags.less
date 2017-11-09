@@ -1,12 +1,14 @@
 .set-tag-color(@active-color, @invert-color) {
   border-color: darken(@active-color, 5%);
 
-  &:hover {
-    background-color: lighten(@active-color, 10%);
-  }
+  .tags__item {
+    &:hover {
+      background-color: lighten(@active-color, 10%);
+    }
 
-  &.tag--active {
-    background-color: @active-color;
+    &.tags__item--active {
+      background-color: @active-color;
+    }
   }
 
   &.tag--invert {
