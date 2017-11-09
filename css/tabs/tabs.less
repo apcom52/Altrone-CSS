@@ -13,7 +13,7 @@
     box-sizing: border-box;
     background-color: transparent;
     float: left;
-    color: lighten(@d-gray, 10%);
+    color: @d-gray;
     -webkit-user-select: none;
     -ms-user-select: none;
     -moz-user-select: none;
@@ -258,19 +258,19 @@
 
       &:hover {
         background: transparent;
-        color: lighten(@d-gray, 10);
+        color: @black;
       }
 
       &:active, &.tabs__item--active {
         background: transparent;
-        color: @d-gray;
+        color: @black;
       }
 
       &.tabs__item--disabled {
-        color: lighten(@l-gray, 25%);
+        color: @l-gray;
 
         &:hover, &:active {
-          color: lighten(@l-gray, 25%);
+          color: @l-gray;
           font-weight: bold;
           .bold();
         }
@@ -362,7 +362,7 @@
 
   &.tabs--transparent {
     .tabs__item {
-      color: @l-gray;
+      color: @m-gray;
       background-color: transparent;
 
       &:hover {
