@@ -9,7 +9,6 @@ var livereload = require('gulp-livereload');
 gulp.task('js', function() {
 	return gulp.src('./js/*.js')
 		.pipe(concat('altrone.js'))
-		// .pipe(minify())
 		.pipe(gulp.dest('./build/'));
 });
 
