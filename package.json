@@ -2,7 +2,7 @@
   "name": "altrone-css",
   "version": "3.0.0",
   "description": "CSS and JS Framework",
-  "main": "src/entry.js",
+  "main": "build",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/apcom52/Altrone2-CSS#readme",
   "dependencies": {
-    "webpack": "^3.7.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
