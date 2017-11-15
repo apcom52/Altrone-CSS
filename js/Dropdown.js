@@ -15,26 +15,28 @@ function __dropdownSetPosition() {
             else if (positionValue == 'top') position = 'top';
         }
 
+        let left, top, width = 0;
+
         switch (position) {
             case 'left':
-                dropdown.style.left = (target.offsetLeft - dropdown.offsetWidth) + 'px';
-                dropdown.style.top = targetRect.offsetTop + 'px';
+                left = target.offsetLeft - dropdown.offsetWidth;
+                top = targetRect.offsetTop;
                 dropdown.classList.add('dropdown--position-left');
                 break;
             case 'right':
-                dropdown.style.left = (target.offsetLeft + targetRect.width) + 'px';
-                dropdown.style.top = target.offsetTop + 'px';
+                left = target.offsetLeft + targetRect.width;
+                top = target.offsetTop;
                 dropdown.classList.add('dropdown--position-right');
                 break;
             case 'top':
-                dropdown.style.left = target.offsetLeft + 'px';
-                dropdown.style.top = (target.offsetTop - dropdown.offsetHeight) + 'px';
+                left = target.offsetLeft;
+                top = target.offsetTop - dropdown.offsetHeight;
                 dropdown.classList.add('dropdown--position-top');
                 break;
             case 'bottom':
             default:
-                dropdown.style.left = target.offsetLeft + 'px';
-                dropdown.style.top = (target.offsetTop + targetRect.height) + 'px';
+                left = target.offsetLeft;
+                top = target.offsetTop + targetRect.height;
                 dropdown.classList.add('dropdown--position-bottom');
                 break;
         }
@@ -42,8 +44,20 @@ function __dropdownSetPosition() {
         console.log(position);
 
         if ((position == 'top' || position == 'bottom') && targetRect.width >= dropdown.offsetWidth) {
-            dropdown.style.width = targetRect.width + 'px';
+           width = targetRect.width;
+        } else {
+            width = dropdown.offsetWidth;
         }
+
+        if ((left + width) >= window.innerWidth) {
+            left -= (left + width - window.innerWidth);
+        } else if (target.offsetLeft < 0) {
+            left = 0;
+        }
+
+        dropdown.style.left = left + 'px';
+        dropdown.style.top = top + 'px';
+        dropdown.style.width = width + 'px';
     }
 }
 

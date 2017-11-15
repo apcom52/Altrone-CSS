@@ -31,3 +31,8 @@ gulp.task('less-watch', function() {
 	livereload.listen();
 	gulp.watch('./css/**/*', ['less']);
 });
+
+gulp.task('js-watch', function() {
+    livereload.listen();
+    gulp.watch('./js/**', ['js']);
+});

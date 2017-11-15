@@ -39,33 +39,42 @@
     margin-left: -50%;
     bottom: ~'calc(100% + 12px)';
     .pt();
+    font-size: 1rem;
+    font-weight: normal;
   }
 
   &[data-tooltip-position="bottom"] {
     &:before {
       bottom: 0;
       margin-bottom: ~'calc(0% - 11px)';
+      margin-top: 0;
       border-color: transparent;
       border-bottom-color: fade(@d-gray, 95%);
     }
 
     &:after {
-      bottom: 0;
-      margin-bottom: -100%;
+      bottom: ~'calc(-100% - 11px)';
+      margin-top: 0;
     }
   }
 
   &[data-tooltip-position="left"] {
     &:before {
-      left: 17px;
-      top: 6px;
+      right: 100%;
+      left: 0;
+      margin-left: -12px;
+      top: 50%;
+      margin-top: -6px;
       border-color: transparent;
       border-left-color: fade(@d-gray, 95%);
     }
 
     &:after {
       bottom: 0;
-      left: ~'calc(-100% - 12px)';
+      right: 100%;
+      left: 0;
+      margin-left: -100%;
+      margin-right: 12px;
     }
   }
 
