@@ -21,7 +21,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('dist', function() {
-	var version = '3.0';
+	var version = '3.0.1';
 	return gulp.src(['./build/**/*'])
 		.pipe(zip(version + '.zip'))
 		.pipe(gulp.dest('dist'))
