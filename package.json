@@ -21,8 +21,7 @@
     "url": "https://github.com/apcom52/Altrone2-CSS/issues"
   },
   "homepage": "https://github.com/apcom52/Altrone2-CSS#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",

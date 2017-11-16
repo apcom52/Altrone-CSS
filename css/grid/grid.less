@@ -67,6 +67,11 @@
   &.grid--direction-column {
     flex-direction: column;
 
+    [class^="col-"] {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+
     &.grid--direction-column-reverse {
       flex-direction: column-reverse;
     }
