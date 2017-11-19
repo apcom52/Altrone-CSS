@@ -11,15 +11,15 @@
     }
   }
 
-  &.tag--invert {
-    border-color: darken(@invert-color, 5%);
+  &.tags--invert {
+    .tags__item {
+      &:hover {
+        background-color: @invert-color;
+      }
 
-    &:hover {
-      background-color: darken(@invert-color, 10%);
-    }
-
-    &.tag--active {
-      background-color: @invert-color;
+      &.tags__item--active {
+        background-color: @invert-color;
+      }
     }
   }
 }
@@ -67,15 +67,18 @@
   }
 
   &.tags--invert {
-    border-color: lighten(@d-gray, 10%);
     color: @u-gray;
 
-    &:hover {
-      background-color: lighten(@d-gray, 5%);
-    }
+    .tags__item {
+      border-color: lighten(@d-gray, 10%);
 
-    &.tag--active {
-      background-color: lighten(@d-gray, 10%);
+      &:hover {
+        background-color: lighten(@d-gray, 5%);
+      }
+
+      &.tags__item--active {
+        background-color: lighten(@d-gray, 5%);
+      }
     }
   }
 
