@@ -31,14 +31,15 @@
 
 .radio {
   width: 100%;
-  padding: 0em 1em;
+  padding: 0;
   box-sizing: border-box;
-  margin: 0.5em 0em;
-  display: inline-block;
+  margin: 1rem 0;
+  display: flex;
 
   input[type="radio"] {
     display: inline-block;
     vertical-align: top;
+    flex: 0;
     width: 0;
     height: auto;
     margin: 1em;
@@ -89,15 +90,18 @@
     display: inline-block;
     vertical-align: top;
     width: ~"calc(100% - 7em)";
+    flex: 1;
     .pt();
 
     .radio__title {
       color: @d-gray;
+      display: block;
       .bold();
     }
 
     .radio__meta {
       color: @m-gray;
+      display: block;
       font-size: 0.8em;
     }
   }

@@ -47,7 +47,7 @@
 .select {
   .select__menu {
     display: inline-block;
-    margin: 0em 1em;
+    margin: 0;
     background-color: @white;
     color: @d-gray;
     padding: 0.5em 2.5em 0.5em 1em;
@@ -86,26 +86,24 @@
   }
 
   .select__options {
-    display: block;
-    visibility: hidden;
+    display: none;
     position: absolute;
     z-index: 5;
     border: 1px solid darken(@u-gray, 10%);
-    padding: 0.25rem 0rem;
+    padding: 0.25rem 0;
     box-sizing: border-box;
-    border-radius: 0px 0px 6px 6px;
+    border-radius: 0 0 6px 6px;
     max-height: 16em;
     overflow-y: auto;
     background-color: fade(@white, 99%);
 
     &.select__options--top {
-      border-radius: 0.25em 0.25em 0px 0px;
+      border-radius: 0.25em 0.25em 0 0;
     }
 
     .select__options__item {
-      padding: 0.5em 1em;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      //background-color: @u-gray;
       color: @d-gray;
       box-sizing: border-box;
       user-select: none;

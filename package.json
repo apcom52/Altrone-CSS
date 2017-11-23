@@ -29,6 +29,7 @@
     "gulp-less": "^3.3.2",
     "gulp-livereload": "^3.8.1",
     "gulp-minify": "^1.0.0",
+    "gulp-notify": "^3.0.0",
     "gulp-prompt": "^0.4.1",
     "gulp-zip": "^4.0.0"
   }

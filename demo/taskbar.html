@@ -50,6 +50,15 @@
 							<div class="taskbar__item taskbar__item--icon"><i class="fa fa-search"></i><div class="taskbar__item__label">Find more</div></div>
 						</div>
 					</div>
+
+					<div class="dropdown" id="dropdown">
+						<div class="list list--animation-invert">
+							<div class="list__item">Site #1</div>
+							<div class="list__item">Site #2</div>
+							<div class="list__item">Site #3</div>
+							<div class="list__item">Site #4</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="margin-1">
@@ -60,7 +69,7 @@
 						<div class="taskbar__group taskbar__group--align-center">
 							<div class="taskbar__item taskbar__item--form">
 								<div class="form form--fit">
-									<input type="text" placeholder="Введите адрес сайта">									
+									<input type="text" data-dropdown="dropdown" placeholder="Введите адрес сайта">
 								</div>
 							</div>							
 						</div>
@@ -96,10 +105,50 @@
 							</div>
 						</div>					
 					</div>
-				</div>				
+				</div>
+
+				<div class="padding-1 l-gray-bg grid">
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-undo"></i></button>
+						<button class="button--icon-only"><i class="fa fa-repeat"></i></button>
+					</div>
+
+					<div class="select" id="selectExample"></div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-bold"></i></button>
+						<button class="button--icon-only"><i class="fa fa-italic"></i></button>
+						<button class="button--icon-only"><i class="fa fa-underline"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-align-left"></i></button>
+						<button class="button--icon-only button--checked"><i class="fa fa-align-center"></i></button>
+						<button class="button--icon-only"><i class="fa fa-align-right"></i></button>
+						<button class="button--icon-only"><i class="fa fa-align-justify"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-link"></i></button>
+						<button class="button--icon-only"><i class="fa fa-image"></i></button>
+						<button class="button--icon-only"><i class="fa fa-list-ul"></i></button>
+						<button class="button--icon-only"><i class="fa fa-list-ol"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-code"></i></button>
+						<button class="button--icon-only"><i class="fa fa-expand"></i></button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	var select = new Select(document.getElementById('selectExample'), {
+	    options: ['Заголовок 1-го уровня', 'Заголовок 2-го уровня', 'Заголовок 3-го уровня', 'Обычный текст', 'Фрагмент кода', 'Цитата', 'Заголовок 3-го уровня', 'Обычный текст', 'Фрагмент кода', 'Цитата'],
+		editable: true
+	});
+</script>
 </body>
 </html>

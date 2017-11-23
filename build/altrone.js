@@ -1190,7 +1190,7 @@ class Select {
         target.__visible = true;
 
         target.__selectMenu.classList.add('select__menu--open');
-        target.__selectOptionsElement.style.visibility = 'visible';
+        target.__selectOptionsElement.style.display = 'block';
         target.__setPosition();
 
         window.addEventListener('resize', target.__onResizeEvent, false);
@@ -1203,7 +1203,7 @@ class Select {
         let target = this;
         target.__visible = false;
         target.__selectMenu.classList.remove('select__menu--open');
-        target.__selectOptionsElement.style.visibility = 'hidden';
+        target.__selectOptionsElement.style.display = 'none';
 
         if (target.__selectMenu.innerText.trim().length == 0) {
             target.__selectMenu.innerText = target.__options[target.__index];
@@ -1253,7 +1253,6 @@ class Select {
 
     __editablePopup(e) {
         let target = this;
-        console.log(e.which);
 
         let value = target.__selectMenu.innerText.trim();
         for (let element of target.__selectOptionsElement.childNodes) {
@@ -1269,7 +1268,6 @@ class Select {
     }
 
     __setPosition() {
-        console.log('set position');
         let target = this;
         let [options_width, menu_width] = [target.__selectOptionsElement.offsetWidth, target.__selectMenu.offsetWidth];
 

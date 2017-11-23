@@ -4,6 +4,7 @@ var less = require('gulp-less');
 var zip = require('gulp-zip');
 var cssmin = require('gulp-cssmin');
 var minify = require('gulp-minify');
+var notify = require('gulp-notify');
 var livereload = require('gulp-livereload');
 
 gulp.task('js', function() {
@@ -24,6 +25,10 @@ gulp.task('dist', function() {
 	var version = '3.0.2';
 	return gulp.src(['./build/**/*'])
 		.pipe(zip(version + '.zip'))
+		.pipe(notify({
+			title: "Altrone-CSS",
+			message: "Дистрибутив готов"
+		}))
 		.pipe(gulp.dest('dist'))
 });
 
