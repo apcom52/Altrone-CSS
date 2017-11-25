@@ -31,7 +31,42 @@
 						<div class="taskbar__item">Copy</div>
 						<div class="taskbar__item">Paste</div>
 					</div>
-				</div>	
+				</div>
+
+				<div class="padding-1 l-gray-bg grid">
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-undo"></i></button>
+						<button class="button--icon-only"><i class="fa fa-repeat"></i></button>
+					</div>
+
+					<div class="select" id="selectExample"></div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-bold"></i></button>
+						<button class="button--icon-only"><i class="fa fa-italic"></i></button>
+						<button class="button--icon-only"><i class="fa fa-underline"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-align-left"></i></button>
+						<button class="button--icon-only button--checked"><i class="fa fa-align-center"></i></button>
+						<button class="button--icon-only"><i class="fa fa-align-right"></i></button>
+						<button class="button--icon-only"><i class="fa fa-align-justify"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-link"></i></button>
+						<button class="button--icon-only"><i class="fa fa-image"></i></button>
+						<button class="button--icon-only"><i class="fa fa-list-ul"></i></button>
+						<button class="button--icon-only"><i class="fa fa-list-ol"></i></button>
+					</div>
+
+					<div class="button-group">
+						<button class="button--icon-only"><i class="fa fa-code"></i></button>
+						<button class="button--icon-only"><i class="fa fa-expand"></i></button>
+					</div>
+				</div>
+
 
 				<div class="margin-1">
 					<h3>Панель инструментов с группировкой</h3>					
@@ -107,48 +142,17 @@
 					</div>
 				</div>
 
-				<div class="padding-1 l-gray-bg grid">
-					<div class="button-group">
-						<button class="button--icon-only"><i class="fa fa-undo"></i></button>
-						<button class="button--icon-only"><i class="fa fa-repeat"></i></button>
-					</div>
 
-					<div class="select" id="selectExample"></div>
-
-					<div class="button-group">
-						<button class="button--icon-only"><i class="fa fa-bold"></i></button>
-						<button class="button--icon-only"><i class="fa fa-italic"></i></button>
-						<button class="button--icon-only"><i class="fa fa-underline"></i></button>
-					</div>
-
-					<div class="button-group">
-						<button class="button--icon-only"><i class="fa fa-align-left"></i></button>
-						<button class="button--icon-only button--checked"><i class="fa fa-align-center"></i></button>
-						<button class="button--icon-only"><i class="fa fa-align-right"></i></button>
-						<button class="button--icon-only"><i class="fa fa-align-justify"></i></button>
-					</div>
-
-					<div class="button-group">
-						<button class="button--icon-only"><i class="fa fa-link"></i></button>
-						<button class="button--icon-only"><i class="fa fa-image"></i></button>
-						<button class="button--icon-only"><i class="fa fa-list-ul"></i></button>
-						<button class="button--icon-only"><i class="fa fa-list-ol"></i></button>
-					</div>
-
-					<div class="button-group">
-						<button class="button--icon-only"><i class="fa fa-code"></i></button>
-						<button class="button--icon-only"><i class="fa fa-expand"></i></button>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
 	var select = new Select(document.getElementById('selectExample'), {
-	    options: ['Заголовок 1-го уровня', 'Заголовок 2-го уровня', 'Заголовок 3-го уровня', 'Обычный текст', 'Фрагмент кода', 'Цитата', 'Заголовок 3-го уровня', 'Обычный текст', 'Фрагмент кода', 'Цитата'],
+	    options: ['Заголовок 1-го уровня', 'Заголовок 2-го уровня', 'Заголовок 3-го уровня', 'Обычный текст', 'Фрагмент кода', 'Цитата'],
 		editable: true
 	});
+	console.log(select);
 </script>
 </body>
 </html>

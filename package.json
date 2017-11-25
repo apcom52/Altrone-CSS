@@ -1,6 +1,6 @@
 {
   "name": "altrone-css",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "CSS and JS Framework",
   "main": "build",
   "scripts": {

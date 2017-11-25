@@ -25,21 +25,16 @@
       .list__item, li {
         color: @color;
 
-        &:hover {
+        &:hover, &.list__item--active {
           color: @u-gray;
-        }
-        &.list__item--active {
-          color: @u-gray;
+          background-color: @color;
         }
       }
     }
     &-border {
       .list__item, li {
-        &:hover {
+        &.list__item--active, &:hover {
           border-color: @color !important;
-        }
-        &:not(:hover) {
-          border-color: transparent;
         }
       }
     }
@@ -50,8 +45,8 @@
   width: 100%;
   height: auto;
   display: block;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 
   .list__item, li {
@@ -62,7 +57,6 @@
     cursor: pointer;
     box-sizing: border-box;
     color: @d-gray;
-    border-color: transparent;
     list-style-type: none;
 
     &:hover, &:active {
@@ -122,19 +116,18 @@
   &.list--animation {
     &-slide {
       .list__item, li {
-        &:hover {
+        .animate(~'padding-left');
+
+        &:hover, &.list__item--active {
           padding-left: 2em;
-          .animate(~'padding-left');
-        }
-        &:not(:hover) {
-          padding-left: 1em;
           .animate(~'padding-left');
         }
       }
     }
+
     &-underline {
       .list__item, li {
-        &:hover, &:active {
+        &:hover, &:active, &.list__item--active {
           text-decoration: underline;
         }
       }
@@ -144,32 +137,25 @@
       .list__item, li {
         color: @d-gray;
 
-        &:hover {
+        &:hover, &.list__item--active {
           color: @u-gray;
           background-color: @d-gray;
-        }
-
-        &.list__item--active {
-          background-color: @d-gray;
-          color: @u-gray;
         }
       }
     }
 
     &-zoom {
       .list__item, li {
-        &:hover {
+        .animate(~'font-size');
+
+        &:hover, &.list__item--active {
           font-size: 1.5em;
-          .animate(~'font-size');
-        }
-        &:not(:hover) {
-          font-size: 1em;
           .animate(~'font-size');
         }
       }
 
       &.list--image {
-        &:hover {
+        &:hover, &.list__item--active {
           img, .image {
             margin-left: 0em;
           }
@@ -179,12 +165,11 @@
 
     &-border {
       .list__item, li {
-        &:hover {
-          border-left: 3px solid @blue;
-          .animate(~'border-left');
-        }
-        &:not(:hover) {
-          border-left: none;
+        border-left: none;
+        .animate(~'border-left');
+
+        &.list__item--active, &:hover {
+          border-left: 3px solid @d-gray;
           .animate(~'border-left');
         }
       }
