@@ -21,11 +21,11 @@
 			<div class="card__content">
 				<h1 class="helvetica-thin">Выпадающее меню</h1>	
 
-				<div class="fdrid">
+				<div class="grid">
 					<div class="col-4 offset-8"><button class="button--color-blue" id="dd_demo" data-dropdown="secondDropdown" data-dropdown-position="right">Показать выпадающее меню</button></div>
 				</div>
 
-				<div class="fgrid">
+				<div class="grid">
 					<div class="col-12">
 						<div class="taskbar">
 							<div class="taskbar__item taskbar__item--icon" id="taskbarDropdown"><i class="fa fa-bars"></i></div>
@@ -33,15 +33,16 @@
 					</div>
 				</div>
 
-				<div class="fgrid">
+				<div class="grid">
 					<div class="col-6">
 						<div class="form"><input type="search" data-dropdown="firstDropdown"></div>
+						<div class="padding-1" data-dropdown="secondDropdown" data-dropdown-position="right"><i class="fa fa-bars"></i><i class="fa fa-arrow-right"></i></div>
 					</div>
 					<div class="col-6">
 						<div class="form form--invert"><input type="search"></div>
 					</div>
 				</div>
-				<div class="fgrid">
+				<div class="grid">
 					<div class="col-6">
 						<div class="form"><input type="tel"></div>
 					</div>
@@ -49,7 +50,7 @@
 						<div class="form form--invert"><input type="tel"></div>
 					</div>
 				</div>
-				<div class="fgrid">
+				<div class="grid">
 					<div class="col-6">
 						<div class="form"><input type="url"></div>
 					</div>
@@ -117,8 +118,8 @@
 </div>
 
 <script>
-	let modal = new Modal(document.getElementById('dropdownExample'));
-	modal.show();
+//	let modal = new Modal(document.getElementById('dropdownExample'));
+//	modal.show();
 </script>
 </body>
 </html>
