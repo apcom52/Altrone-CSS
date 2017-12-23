@@ -30,13 +30,14 @@
   .tags__item {
     display: inline-flex;
     border: 1px solid darken(@u-gray, 20%);
-    border-radius: 1rem;
+    border-radius: 1em;
     cursor: pointer;
-    margin: 0.5rem;
+    margin: 0.25em;
     align-items: center;
     overflow: hidden;
     float: left;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
+    user-select: none;
     .animate(~'background-color');
     .pt();
 
@@ -48,12 +49,12 @@
 
     .tags__item__name {
       flex: 1;
-      padding: 0.5rem 1rem;
+      padding: 0.5em 1em;
     }
 
     .tags__item__action {
       flex: 0;
-      padding-left: 1rem;
+      padding-left: 1em;
     }
 
     &:hover {
@@ -79,6 +80,18 @@
       &.tags__item--active {
         background-color: lighten(@d-gray, 5%);
       }
+    }
+  }
+
+  &.tags--size-small {
+    .tags__item {
+      font-size: 0.8rem;
+    }
+  }
+
+  &.tags--size-large {
+    .tags__item {
+      font-size: 1.25rem;
     }
   }
 
