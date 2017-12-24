@@ -3,12 +3,7 @@
   border: 1px solid darken(@l-color, 15%);
   color: @f-color;
 
-  &:focus {
-    box-shadow: 0 0 3px 3px @l-color;
-    .animate(~'box-shadow');
-  }
-
-  &:active, .active {
+  &:active, .active, &:focus {
     background-color: darken(@l-color, 17%);
     border-color: darken(@l-color, 22%);
   }
@@ -41,7 +36,7 @@
 }
 
 
-button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+button, input[type="button"], input[type="submit"], input[type="reset"], .button, a.button {
   margin: 5px;
   outline: none;
   padding: 0.5em 1em;
@@ -56,7 +51,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   border: 1px solid @l-gray;
   color: @d-gray;
   .animate(~"background-color, border-color, color, box-shadow");
-  .text-shadow();
   .pt();
 
   &:hover {
@@ -64,15 +58,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
     .animate(~"background-color");
   }
 
-  &:active, .active {
+  &:active, .active, &:focus {
     background-color: darken(@u-gray, 8%);
     border-color: darken(@u-gray, 10%);
     .animate(~"background-color, border-color");
-  }
-
-  &:focus {
-    box-shadow: 0 0 3px 3px @l-gray;
-    .animate(~'box-shadow');
   }
 
   &.button--color-red { .button-color(@l-red, @red); }

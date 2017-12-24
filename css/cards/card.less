@@ -1,6 +1,6 @@
-.set-card-color(@color) {
+.set-card-color(@color, @fcolor: @white) {
   background-color: @color;
-  color: @white;
+  color: @fcolor;
   border-color: darken(@color, 5%);
 
   .card__footer {
@@ -173,7 +173,7 @@
 
   &.card--color-red { .set-card-color(@red); }
   &.card--color-orange { .set-card-color(@orange); }
-  &.card--color-yellow { .set-card-color(@yellow); }
+  &.card--color-yellow { .set-card-color(@yellow, @black); }
   &.card--color-olive { .set-card-color(@olive); }
   &.card--color-green { .set-card-color(@green); }
   &.card--color-teal { .set-card-color(@teal); }

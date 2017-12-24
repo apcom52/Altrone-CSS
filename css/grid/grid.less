@@ -12,7 +12,7 @@
   .generateFCols((@i - 1));
 }
 
-.generateFPCols(@i, @max, @prefix) when (@i > 0) {
+.generateFPCols(@i, @max, @prefix) when (@i >= 0) {
   @width: (@i / @max) * 100;
   .col-@{prefix}-@{i} {
     flex-basis: ~"@{width}%";
@@ -20,7 +20,7 @@
   }
 
   .offset-@{prefix}-@{i} {
-    margin-left: ~'@{width}%';
+    margin-left: ~'@{width}%' !important;
   }
 
   .generateFPCols((@i - 1), @max, @prefix);
