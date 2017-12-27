@@ -22,7 +22,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('dist', function() {
-	var version = '3.0.3';
+	var version = '3.0.4';
 	return gulp.src(['./build/**/*'])
 		.pipe(zip(version + '.zip'))
 		.pipe(notify({
