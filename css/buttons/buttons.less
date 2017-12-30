@@ -43,7 +43,7 @@
 button, input[type="button"], input[type="submit"], input[type="reset"], .button, a.button {
   margin: 5px;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 7px 1rem 8px;
   border-radius: 0.25rem;
   display: inline-block;
   box-sizing: border-box;
@@ -57,21 +57,17 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   .animate(~"background-color, border-color, color, box-shadow");
   .pt();
 
-  &:hover {
+  &:hover, &:focus {
     background-color: darken(@u-gray, 5%);
     .animate(~"background-color");
   }
 
-  &:active, .active, &:focus {
+  &:active {
     background-color: darken(@u-gray, 8%);
     border-color: darken(@u-gray, 10%);
     .animate(~"background-color, border-color");
-  }
-
-  &:active {
     border-bottom-width: 1px;
-    padding-top: 0.55rem;
-    padding-bottom: 0.5rem;
+    padding: 8px 1rem 8px;
   }
 
   &.button--color-red { .button-color(@l-red, @red); }
