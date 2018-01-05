@@ -59,3 +59,15 @@ class Cookies {
         });
     }
 }
+
+function createElement(tagName = 'div', className = '', id = '', attrs = []) {
+    let element = document.createElement(tagName);
+    if (className) element.className = className;
+    if (id) element.id = id;
+    if (attrs) {
+        attrs.map((current, index, array) => {
+            element.setAttribute(current.name, current.value);
+        });
+    }
+    return element;
+}
