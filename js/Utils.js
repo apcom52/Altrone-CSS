@@ -60,7 +60,7 @@ class Cookies {
     }
 }
 
-function createElement(tagName = 'div', className = '', id = '', attrs = []) {
+function createElement(tagName = 'div', className = '', id = '', attrs = [], innerText = '') {
     let element = document.createElement(tagName);
     if (className) element.className = className;
     if (id) element.id = id;
@@ -69,5 +69,6 @@ function createElement(tagName = 'div', className = '', id = '', attrs = []) {
             element.setAttribute(current.name, current.value);
         });
     }
+    if (innerText) element.innerText = innerText;
     return element;
 }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Altrone2-CSS Calendar</title>
+	<link rel="stylesheet" href="../build/altrone.css">
+	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<script src="../build/altrone.js"></script>
+
+	<style>
+		html {
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sativa.png);
+		}
+	</style>	
+</head>
+<body>
+<div class="grid">
+	<div class="col-12 col-lm-6">
+		<div class="card margin-3 margin-lm-05 card--no-smooth">
+			<div class="card__content padding-0">
+				<div class="jumbotron jumbotron--color-blue">
+					<div class="jumbotron__header">Поле ввода даты и времени (календарь)</div>
+				</div>
+
+				<div class="form margin-1">
+                    <label for="input1">Ваше имя:</label>
+                    <input type="text" id="input1">
+
+                    <label for="input2">Ваш город:</label>
+                    <input type="text" id="input2">
+
+                    <label for="input3">Дата рождения:</label>
+                    <div class="calendar calendar--invert calendar--color-blue" id="input3"></div>
+
+                    <label for="input4">Ваш возраст:</label>
+                    <input type="number" id="input4">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="calendar-window" style="top: 100px; left: 100px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<div class="calendar-window calendar-window--invert" style="top: 100px; left: 500px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<div class="calendar-window calendar-window--color-purple" style="top: 350px; left: 100px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<div class="calendar-window calendar-window--color-red calendar-window--invert" style="top: 350px; left: 500px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<div class="calendar-window calendar-window--color-yellow" style="top: 600px; left: 100px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<div class="calendar-window calendar-window--invert calendar-window--color-yellow" style="top: 600px; left: 500px;">
+    <div class="calendar-window__header">
+        <div class="calendar-window__prev"></div>
+        <div class="calendar-window__title">December, 2017</div>
+        <div class="calendar-window__next"></div>
+    </div>
+    <div class="calendar-window__content">
+        <div class="calendar-window__days">
+            <div class="calendar-window__day">ПН</div>
+            <div class="calendar-window__day">ВТ</div>
+            <div class="calendar-window__day">СР</div>
+            <div class="calendar-window__day">ЧТ</div>
+            <div class="calendar-window__day">ПТ</div>
+            <div class="calendar-window__day">СБ</div>
+            <div class="calendar-window__day">ВС</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day calendar-window__day--other-month">27</div>
+            <div class="calendar-window__day calendar-window__day--other-month">28</div>
+            <div class="calendar-window__day calendar-window__day--other-month">29</div>
+            <div class="calendar-window__day calendar-window__day--other-month">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day calendar-window__day--today">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+        <div class="calendar-window__week">
+            <div class="calendar-window__day">27</div>
+            <div class="calendar-window__day calendar-window__day--selected">28</div>
+            <div class="calendar-window__day">29</div>
+            <div class="calendar-window__day">30</div>
+            <div class="calendar-window__day">1</div>
+            <div class="calendar-window__day">2</div>
+            <div class="calendar-window__day">3</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    'use strict';
+
+    let calendar = new Calendar(document.getElementById('input3'));
+</script>
+
+</body>
+</html>

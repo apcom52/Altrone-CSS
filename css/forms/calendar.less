@@ -1,0 +1,274 @@
+.calendar {
+  display: inline-block;
+  margin: 0.25em 0;
+  border: 1px solid @l-gray;
+  border-radius: 0.25em;
+  padding: 0.5em 3em 0.5em 1em;
+  background-color: @u-gray;
+  background-image: url(@d-arrow-down);
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position: 90% center;
+  color: @d-gray;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  .animate(~'background-color');
+  .pt();
+
+  &.calendar--show {
+    background-image: url(@d-arrow-up);
+  }
+}
+
+.calendar-window {
+  position: absolute;
+  z-index: 20;
+  min-width: ~'calc(1rem * 21)';
+  margin-top: 0;
+  border-radius: 0.25rem;
+  background-color: fade(@white, 95%);
+  overflow: hidden;
+  border: 1px solid @l-gray;
+  display: none;
+  opacity: 0;
+
+  .calendar-window__header {
+    display: flex;
+    align-items: stretch;
+    background-color: fade(@l-gray, 60%);
+    .bold();
+
+    .calendar-window__prev, .calendar-window__next {
+      padding: 2rem 1.5rem;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+      cursor: pointer;
+      transition: background-position-x 0.3s linear;
+    }
+
+    .calendar-window__prev {
+      background-image: @angle-left-invert;
+
+      &:hover {
+        background-position-x: 25%;
+      }
+    }
+
+    .calendar-window__title {
+      flex: 1;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.25rem;
+    }
+
+    .calendar-window__next {
+      background-image: @angle-right-invert;
+
+      &:hover {
+        background-position-x: 75%;
+      }
+    }
+  }
+
+  .calendar-window__content {
+    padding: 1rem 0.5rem;
+    .calendar-window__days {
+      display: flex;
+
+      .calendar-window__day {
+        flex: 1;
+        color: @m-gray;
+        text-align: center;
+        padding: 0.5rem;
+        .pt();
+      }
+    }
+
+    .calendar-window__week {
+      display: flex;
+
+      .calendar-window__day {
+        flex: 1;
+        color: @black;
+        text-align: center;
+        margin: 0.1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        .animate(~'background-color');
+        .pt();
+
+        &:hover {
+          background-color: fade(@u-gray, 80%);
+        }
+
+        &.calendar-window__day--other-month {
+          color: @l-gray;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        &.calendar-window__day--today {
+          .bold();
+          color: @d-gray;
+          border: 1px solid @l-gray;
+        }
+
+        &.calendar-window__day--selected {
+          background-color: fade(@d-gray, 80%);
+          color: @u-gray;
+          .bold();
+
+          &:hover {
+            background-color: fade(@d-gray, 80%);
+          }
+        }
+      }
+    }
+  }
+
+  &.calendar-window--show {
+    display: block;
+    animation: calendar-show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  &.calendar-window--color-red { .set-calendar-color(@red); }
+  &.calendar-window--color-orange{ .set-calendar-color(@orange); }
+  &.calendar-window--color-yellow { .set-calendar-color(@yellow, @black); }
+  &.calendar-window--color-olive { .set-calendar-color(@olive); }
+  &.calendar-window--color-green { .set-calendar-color(@green); }
+  &.calendar-window--color-blue { .set-calendar-color(@blue); }
+  &.calendar-window--color-teal { .set-calendar-color(@teal); }
+  &.calendar-window--color-purple { .set-calendar-color(@purple); }
+  &.calendar-window--color-violet { .set-calendar-color(@violet); }
+  &.calendar-window--color-pink{ .set-calendar-color(@pink); }
+  &.calendar-window--color-brown { .set-calendar-color(@brown); }
+
+  &.calendar-window--invert {
+    background-color: fade(@black, 95%);
+    border-color: @black;
+
+    .calendar-window__header {
+      background-color: fade(@d-gray, 60%);
+
+      .calendar-window__title {
+        color: @u-gray;
+      }
+    }
+
+    .calendar-window__week {
+      .calendar-window__day {
+        color: @u-gray;
+
+        &:hover {
+          background-color: fade(@d-gray, 50%);
+        }
+
+        &.calendar-window__day--other-month {
+          color: @d-gray;
+        }
+
+        &.calendar-window__day--today {
+          color: @white;
+          border-color: @d-gray;
+        }
+      }
+    }
+
+    &.calendar-window--color-red { .set-invert-calendar-color(@red); }
+    &.calendar-window--color-orange{ .set-invert-calendar-color(@orange); }
+    &.calendar-window--color-yellow { .set-invert-calendar-color(@yellow, @black); }
+    &.calendar-window--color-olive { .set-invert-calendar-color(@olive); }
+    &.calendar-window--color-green { .set-invert-calendar-color(@green); }
+    &.calendar-window--color-blue { .set-invert-calendar-color(@blue); }
+    &.calendar-window--color-teal { .set-invert-calendar-color(@teal); }
+    &.calendar-window--color-purple { .set-invert-calendar-color(@purple); }
+    &.calendar-window--color-violet { .set-invert-calendar-color(@violet); }
+    &.calendar-window--color-pink{ .set-invert-calendar-color(@pink); }
+    &.calendar-window--color-brown { .set-invert-calendar-color(@brown); }
+  }
+}
+
+.set-calendar-color(@color, @f-color: @white) {
+    .calendar-window__header {
+      background-color: fade(@color, 80%);
+
+      .calendar-window__title {
+        color: @f-color;
+      }
+    }
+
+    .calendar-window__week {
+      .calendar-window__day {
+        &:hover {
+          background-color: fade(@color, 50%);
+        }
+
+        &.calendar-window__day--today {
+          border-color: @color;
+        }
+
+        &.calendar-window__day--selected {
+          background-color: fade(@color, 80%);
+          color: @f-color;
+
+          &:hover {
+            background-color: fade(@color, 80%);
+          }
+        }
+      }
+    }
+}
+
+.set-invert-calendar-color(@color, @f-color: @white) {
+  .calendar-window__header {
+    background-color: @color;
+
+    .calendar-window__title {
+      color: @f-color;
+    }
+  }
+
+  .calendar-window__week {
+    .calendar-window__day {
+      &:hover {
+        background-color: fade(@color, 50%);
+      }
+
+      &.calendar-window__day--other-month {
+        background-color: transparent;
+      }
+
+      &.calendar-window__day--today {
+        border-color: @color;
+      }
+
+      &.calendar-window__day--selected {
+        background-color: fade(@color, 80%);
+        color: @f-color;
+
+        &:hover {
+          background-color: fade(@color, 80%);
+        }
+      }
+    }
+  }
+}
+
+@keyframes calendar-show {
+  0% {
+    opacity: 0;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0.5rem;
+  }
+}
