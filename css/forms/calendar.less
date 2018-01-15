@@ -89,15 +89,19 @@
 
     .calendar-window__week {
       display: flex;
+      flex-wrap: wrap;
 
       .calendar-window__day {
         flex: 1;
         color: @black;
+        max-width: ~'calc(14.28% - 0.2rem)';
+        min-width: ~'calc(14.28% - 0.2rem)';
         text-align: center;
-        margin: 0.1rem;
         padding: 0.5rem;
+        margin: 0.1rem;
         cursor: pointer;
         border-radius: 0.25rem;
+        box-sizing: border-box;
         .animate(~'background-color');
         .pt();
 

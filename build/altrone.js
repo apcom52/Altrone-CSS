@@ -91,8 +91,10 @@ class Calendar {
         target.__element = element;
         target.__selectedDate = null;
         target.__now = new Date();
-        target.__currentMonth = target.__now.getMonth();
-        target.__currentYear = target.__now.getYear();
+        // target.__currentMonth = target.__now.getMonth();
+        // target.__currentYear = target.__now.getFullYear();
+        target.__currentMonth = 11;
+        target.__currentYear = 2016;
         target.__defaultLabel = options.defaultLabel || "Choose a date";
         target.__visible = false;
 
@@ -105,6 +107,7 @@ class Calendar {
 
     __render() {
         let target = this;
+        if (currentCalendar) currentCalendar.remove();
         currentCalendar = createElement('div', 'calendar-window');
 
         /* Set themes and accent colors to calendar-window */
@@ -117,9 +120,12 @@ class Calendar {
 
         let calendarHeader = createElement('div', 'calendar-window__header');
         let leftCalendarHeader = createElement('div', 'calendar-window__prev');
+        leftCalendarHeader.onclick = () => target.__prev();
         let rightCalendarHeader = createElement('div', 'calendar-window__next');
+        rightCalendarHeader.onclick = () => target.__next();
         let titleCalendarHeader = createElement('div', 'calendar-window__title');
-        titleCalendarHeader.innerText = "December, 2017";
+        let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        titleCalendarHeader.innerText = monthNames[target.__currentMonth] + ", " + target.__currentYear;
 
         calendarHeader.appendChild(leftCalendarHeader);
         calendarHeader.appendChild(titleCalendarHeader);
@@ -175,6 +181,7 @@ class Calendar {
         } else {
             target.__currentMonth += 1;
         }
+        target.__render();
     }
 
     __prev() {
@@ -185,32 +192,64 @@ class Calendar {
         } else {
             target.__currentMonth -= 1;
         }
+        target.__render();
+    }
+
+    __getWeekday(date) {
+        if (date.getDay() === 0) return 6;
+        return date.getDay() - 1;
     }
 
     __printCalendar() {
         let target = this;
-        let firstDay = new Date(target.__currentYear, target.__currentMonth, 1).getDay() - 5;
-        let lastDate = new Date(target.__currentYear, target.__currentMonth + 1, 0).getDate();
-        let lastDateOfPrevMonth = target.__currentMonth == 0 ? new Date(target.__currentYear, 11, 0).getDate() : new Date(target.__currentYear, target.__currentMonth, 0).getMonth();
+        let lastDateOfPrevMonth = target.__currentMonth == 0 ? new Date(target.__currentYear, 0, 0) : new Date(target.__currentYear, target.__currentMonth, 0);
+        console.log(lastDateOfPrevMonth);
         let calendarHTML = createElement('div', 'calendar-window__content');
 
         /* Print names of the days of the week */
         let weekdays = createElement('div', 'calendar-window__days');
         let weekdays_list = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+
         for (let i = 0; i < weekdays_list.length; i++)
             weekdays.appendChild(createElement('div', 'calendar-window__day', '', null, weekdays_list[i]));
+        calendarHTML.appendChild(weekdays);
 
         /* Print calendar */
-        let p = 1;
-        console.log(firstDay, lastDate, lastDateOfPrevMonth);
-        for (let lm = 0; lm < 6; lm++) {
-            for (let day = 0; day < 7; day++) {
-                // let d = 
+        let weeks = createElement('div', 'calendar-window__week');
+        let d = new Date(target.__currentYear, target.__currentMonth, 1);
+        // заполняем ячейки предыдущего месяца
+        if (target.__getWeekday(lastDateOfPrevMonth) > 0 && target.__getWeekday(lastDateOfPrevMonth) < 6) {
+            console.log(lastDateOfPrevMonth, target.__getWeekday(lastDateOfPrevMonth));
+            let daysOfLastMonth = target.__getWeekday(lastDateOfPrevMonth) + 1; // получаем количество дней, которые относятся к пред месяцу
+            console.log(daysOfLastMonth);
+            for (let i = 0; i < daysOfLastMonth; i++) {
+                weeks.appendChild(createElement('div', 'calendar-window__day calendar-window__day--other-month', '', [], (lastDateOfPrevMonth.getDate() - (daysOfLastMonth - i))));
             }
         }
 
+        while(d.getMonth() == target.__currentMonth) {
+            weeks.appendChild(createElement('div', 'calendar-window__day', '', [], d.getDate().toString()));
 
-        calendarHTML.appendChild(weekdays);
+            if (target.__getWeekday(d) % 7 == 6) {
+                calendarHTML.appendChild(weeks);
+                weeks = createElement('div', 'calendar-window__week');
+            }
+
+            d.setDate(d.getDate() + 1);
+        }
+
+        console.log(d);
+
+        //заполняем таблицу днями следующего месяца
+        if (target.__getWeekday(d) != 0) {
+            let nextWeekDay = 1;
+            console.log('start next', target.__getWeekday(d));
+            for (let i = target.__getWeekday(d); i < 7; i++) {
+                console.log('next' + i, target.__getWeekday(d));
+                weeks.appendChild(createElement('div', 'calendar-window__day calendar-window__day--other-month', '', [], (nextWeekDay++).toString()));
+            }
+        }
+        calendarHTML.appendChild(weeks);
         currentCalendar.appendChild(calendarHTML);
     }
 }
