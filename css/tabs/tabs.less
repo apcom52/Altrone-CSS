@@ -43,7 +43,6 @@
         color: @m-gray;
         background-color: transparent;
         border-color: transparent;
-        .pt();
       }
     }
   }
@@ -300,6 +299,38 @@
     }
   }
 
+  &.tabs--border {
+    background-color: transparent;
+
+    .tabs__item {
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: @black;
+      .bold();
+
+      &:hover, &:focus {
+        background-color: transparent;
+        border-bottom-color: @black;
+      }
+
+      &:active {
+        border-bottom-color: @black;
+      }
+
+      &.tabs__item--active {
+        border-bottom-color: @black;
+      }
+
+      &.tabs__item--disabled {
+        color: @m-gray;
+
+        &:hover, &:active, &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
   &.tabs--centered {
     text-align: center;
 
@@ -351,11 +382,11 @@
     }
 
     &.tabs__item--disabled {
-      color: @l-gray;
+      color: @m-gray;
 
       &:hover, &:active {
         background-color: transparent;
-        color: @l-gray;
+        color: @m-gray;
       }
     }
   }
@@ -372,6 +403,22 @@
       &:active, &.tabs__item--active {
         background: transparent;
         color: @color;
+      }
+    }
+  }
+
+  &.tabs--border {
+    .tabs__item {
+      color: @black;
+
+      &:hover, &:focus, &:active {
+        background-color: transparent;
+        border-bottom-color: @color;
+      }
+
+      &.tabs__item--active {
+        background-color: transparent;
+        border-bottom-color: @color;
       }
     }
   }
@@ -418,6 +465,30 @@
       }
     }
   }
+
+  &.tabs--border {
+    .tabs__item {
+      color: @u-gray;
+      border: none;
+      border-bottom: 2px solid transparent;
+
+      &:hover, &:active, &:focus {
+        border-bottom-color: @color;
+      }
+
+      &.tabs__item--active {
+        border-bottom-color: @color;
+      }
+
+      &.tabs__item--disabled {
+        color: @m-gray;
+
+        &:hover, &:active, &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
 }
 
 .set-tabs-ios-color(@color) {
@@ -442,7 +513,7 @@
     }
 
     &.tabs__item--disabled {
-      color: @l-gray;
+      color: @m-gray;
 
       &:hover, &:active {
         color: @l-gray;
