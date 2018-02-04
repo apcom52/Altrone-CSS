@@ -1,6 +1,6 @@
 .tabs {
   width: 100%;
-  display: block;
+  display: flex;
   background-color: @u-gray;
   overflow: hidden;
   padding: 0.5em 0em 0em 0em;
@@ -9,7 +9,6 @@
   .tabs__item, li {
     padding: 0.5em 1em;
     cursor: pointer;
-    display: inline-block;
     box-sizing: border-box;
     background-color: transparent;
     float: left;
@@ -306,6 +305,7 @@
       border: none;
       border-bottom: 2px solid transparent;
       color: @black;
+      border-radius: 0;
       .bold();
 
       &:hover, &:focus {
@@ -340,11 +340,7 @@
   }
 
   &.tabs--pin-right {
-    text-align: right;
-
-    .tabs__item {
-      float: none;
-    }
+    justify-content: flex-end;
   }
 
   &.tabs--no-margin {
@@ -362,6 +358,93 @@
   &.tabs--no-smooth {
     .tabs__item {
       border-radius: 0em;
+    }
+  }
+
+  &.tabs--vertical {
+    flex-direction: column;
+
+    .tabs__item {
+      border-radius: 0.5rem 0 0 0.5rem;
+      margin-top: 0.1rem;
+
+      &.tabs__item--active, &:active, &:focus {
+        border-bottom-color: @l-gray;
+        border-right-color: transparent;
+      }
+
+      &.tabs__item--disabled {
+        border-color: transparent;
+
+        &:active, &:focus {
+          border-color: transparent;
+        }
+      }
+    }
+
+    &.tabs--pin-right {
+      .tabs__item {
+        margin-left: 0;
+        margin-right: 0.25rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        text-align: left;
+
+        &.tabs__item--active, &:active, &:focus {
+          border-right-color: @l-gray;
+          border-left-color: transparent;
+
+        }
+      }
+    }
+
+    &.tabs--invert {
+      .tabs__item {
+        &.tabs__item--active, &:active, &:focus {
+          border-bottom-color: @m-gray;
+        }
+        &.tabs__item--disabled {
+          border-color: transparent;
+
+          &:active, &:focus {
+            border-color: transparent;
+          }
+        }
+      }
+    }
+
+    &.tabs--border {
+      .tabs__item {
+        border-bottom: none;
+        border-left: 2px solid transparent;
+        border-radius: 0;
+
+        &.tabs__item--active, &:active, &:hover, &:focus {
+          border-left-color: @black;
+        }
+
+        &.tabs__item--disabled {
+          &:hover, &:active, &:focus {
+            border-left-color: transparent;
+          }
+        }
+      }
+
+      &.tabs--pin-right {
+        .tabs__item {
+          border-left: none;
+          border-right: 2px solid transparent;
+
+          &.tabs__item--active, &:active, &:hover, &:focus {
+            border-right-color: @black;
+          }
+
+          &.tabs__item--disabled {
+            &:hover, &:active, &:focus {
+              border-right-color: transparent;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -419,6 +502,22 @@
       &.tabs__item--active {
         background-color: transparent;
         border-bottom-color: @color;
+      }
+    }
+
+    &.tabs--vertical {
+      .tabs__item {
+        &.tabs__item--active, &:hover, &:active, &:focus {
+          border-left-color: @color;
+        }
+      }
+
+      &.tabs--pin-right {
+        .tabs__item {
+          &.tabs__item--active, &:hover, &:active, &:focus {
+            border-right-color: @color;
+          }
+        }
       }
     }
   }
@@ -485,6 +584,42 @@
 
         &:hover, &:active, &:focus {
           border-bottom-color: transparent;
+        }
+      }
+    }
+
+    &.tabs--vertical {
+      .tabs__item {
+        border-bottom: none;
+        border-left: 2px solid transparent;
+        &.tabs__item--active, &:hover, &:active, &:focus {
+          border-left-color: @color;
+        }
+
+        &.tabs__item--disabled {
+          border-left-color: transparent;
+
+          &:hover, &:active, &:focus {
+            border-left-color: transparent;
+          }
+        }
+      }
+
+      &.tabs--pin-right {
+        .tabs__item {
+          border-left: none;
+          border-right: 2px solid transparent;
+          &.tabs__item--active, &:hover, &:active, &:focus {
+            border-right-color: @color;
+          }
+
+          &.tabs__item--disabled {
+            border-right-color: transparent;
+
+            &:hover, &:active, &:focus {
+              border-right-color: transparent;
+            }
+          }
         }
       }
     }
