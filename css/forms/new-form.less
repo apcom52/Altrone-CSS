@@ -1,0 +1,123 @@
+.new-form {
+  display: flex;
+  flex-direction: column;
+
+  .form__group {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+
+    label {
+      .bold();
+      cursor: pointer;
+    }
+
+    .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
+      margin: 0.25rem 0;
+      border-radius: 0.25rem;
+      border: 1px solid @l-gray;
+      outline: none;
+      background-color: @u-gray;
+      padding: 0.5rem 1rem;
+      box-sizing: border-box;
+      resize: vertical;
+      color: @black;
+      .animate(~'background-color', 0.1s);
+      .pt();
+
+      &:active, &:focus {
+        background-color: @white;
+      }
+
+      &:invalid, &.form__input--invalid {
+        background-image: @alert;
+        background-repeat: no-repeat;
+        background-position: right 0.5em center;
+        background-size: 1em;
+        padding-right: 2em;
+      }
+
+      &.form__input--valid {
+        background-image: @checkmark-green;
+        background-repeat: no-repeat;
+        background-position: right 0.5em center;
+        background-size: 1em;
+        padding-right: 2em;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+        user-select: none;
+
+        &:active, &:focus {
+          background-color: @u-gray;
+        }
+      }
+    }
+
+    textarea {
+      min-height: ~'calc(2.5em)';
+    }
+  }
+
+  &.form--color-red { .set-form-color(@red); }
+  &.form--color-orange{ .set-form-color(@orange); }
+  &.form--color-yellow{ .set-form-color(@yellow); }
+  &.form--color-olive{ .set-form-color(@olive); }
+  &.form--color-green{ .set-form-color(@green); }
+  &.form--color-blue{ .set-form-color(@blue); }
+  &.form--color-teal{ .set-form-color(@teal); }
+  &.form--color-purple{ .set-form-color(@purple); }
+  &.form--color-violet{ .set-form-color(@violet); }
+  &.form--color-pink{ .set-form-color(@pink); }
+  &.form--color-brown{ .set-form-color(@brown); }
+
+  &.form--invert {
+    .form__group {
+      label {
+        color: @white;
+      }
+
+      .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
+        background-color: @d-gray;
+        color: @white;
+        border-color: lighten(@d-gray, 5%);
+
+        &:active, &:focus {
+          background-color: darken(@d-gray, 5%);
+
+          &:disabled {
+            background-color: @d-gray;
+          }
+        }
+      }
+    }
+  }
+
+  &.form--inline {
+    flex-direction: row;
+    align-items: flex-end;
+
+    .form__group {
+      margin: 0;
+    }
+  }
+}
+
+.set-form-color(@color) {
+  .form__group {
+    .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
+      border-color: @color;
+    }
+  }
+
+  &.form--invert {
+    .form__group {
+      .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
+        border-color: @color;
+      }
+    }
+  }
+}
