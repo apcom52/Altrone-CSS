@@ -30,7 +30,12 @@
 						<div class="new-form">
 							<div class="form__group">
 								<label for="ex1login">Ваш логин:</label>
-								<input type="text" id="ex1login"></div>
+								<div class="form__input-block">
+									<input type="text" id="ex1login">
+									<div class="form__help-block">@mail.ru</div>
+								</div>
+								<div class="form__help-text">Подсказка к полям формы</div>
+							</div>
 							<div class="form__group">
 								<label for="ex1password">Ваш пароль:</label>
 								<input type="text" id="ex1password"></div>
@@ -83,7 +88,10 @@
 							</div>
 							<div class="form__group">
 								<label for="ex2bio">Информация о себе:</label>
-								<textarea id="ex2bio"></textarea>
+								<div class="form__input-block">
+									<div class="form__help-block">Кратко:</div>
+									<textarea id="ex2bio"></textarea>
+								</div>
 							</div>
 							<div class="form__group">
 								<label for="ex2mail">Адрес электронной почты:</label>
@@ -97,13 +105,25 @@
 						<div class="new-form black-bg form--invert">
 							<div class="form__group">
 								<label for="ex4login">Ваш логин:</label>
-								<input type="text" id="ex4login"></div>
+								<div class="form__input-block">
+									<div class="form__help-block">@mail.ru</div>
+									<input type="text" id="ex4login">
+								</div>
+							</div>
 							<div class="form__group">
-								<label for="ex4password">Ваш пароль:</label>
-								<input type="text" id="ex4password"></div>
+								<label for="ex4password">Ваш веб-сайт:</label>
+								<div class="form__input-block">
+									<div class="form__help-block">http://</div>
+									<input type="text" id="ex4password">
+									<div class="form__help-block">.google</div>
+									<div class="form__help-block">.ru</div>
+								</div>
+							</div>
 							<div class="form__group">
 								<label for="ex4disabled">Запрещенное поле:</label>
-								<input type="text" id="ex4disabled" disabled value="Ля-ля-ля"></div>
+								<input type="text" id="ex4disabled" disabled value="Ля-ля-ля">
+								<div class="form__help-text">Здесь ничего нельзя ввести. Даже не пытайтесь!</div>
+							</div>
 							<input type="submit" class="button--color-green" value="Войти">
 						</div>
 					</div>
@@ -112,7 +132,11 @@
 						<div class="new-form black-bg form--invert form--color-green">
 							<div class="form__group">
 								<label for="ex5login">Ваш логин:</label>
-								<input type="text" id="ex5login"></div>
+								<div class="form__input-block">
+									<div class="form__help-block">@mail.ru</div>
+									<input type="text" id="ex5login">
+								</div>
+							</div>
 							<div class="form__group">
 								<label for="ex5password">Ваш пароль:</label>
 								<input type="text" id="ex5password"></div>

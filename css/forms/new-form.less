@@ -13,6 +13,12 @@
       cursor: pointer;
     }
 
+    .form__help-text {
+      .pt();
+      font-size: 0.8rem;
+      color: @m-gray;
+    }
+
     .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
       margin: 0.25rem 0;
       border-radius: 0.25rem;
@@ -60,6 +66,47 @@
     textarea {
       min-height: ~'calc(2.5em)';
     }
+
+    .form__input-block {
+      display: flex;
+
+      .form__help-block {
+        background-color: darken(@u-gray, 5%);
+        border: 1px solid @l-gray;
+        padding: 0.5rem;
+        margin: 4px 0;
+        border-left: none;
+        align-content: center;
+
+        &:first-child {
+          border-top-left-radius: 0.25rem;
+          border-bottom-left-radius: 0.25rem;
+          border-left: 1px solid @l-gray;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+        }
+      }
+
+      .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
+        flex: 1;
+        border-radius: 0;
+        border-left: none;
+
+        &:first-child {
+          border-top-left-radius: 0.25rem;
+          border-bottom-left-radius: 0.25rem;
+          border-left: 1px solid @l-gray;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+        }
+      }
+    }
   }
 
   &.form--color-red { .set-form-color(@red); }
@@ -93,6 +140,14 @@
           }
         }
       }
+
+      .form__input-block {
+        .form__help-block {
+          background-color: lighten(@d-gray, 3%);
+          color: @u-gray;
+          border-color: lighten(@d-gray, 5%);
+        }
+      }
     }
   }
 
@@ -111,12 +166,24 @@
     .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
       border-color: @color;
     }
+
+    .form__input-block {
+      .form__help-block {
+        border-color: @color;
+      }
+    }
   }
 
   &.form--invert {
     .form__group {
       .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
         border-color: @color;
+      }
+
+      .form__input-block {
+        .form__help-block {
+          border-color: @color;
+        }
       }
     }
   }
