@@ -1,287 +1,165 @@
-.list-set-linked-color(@color) {
-  .list__item, li {
-    color: @color;
-
-    &:hover, &:active {
-      color: darken(@color, 5%);
-    }
-    &.list__item--active {
-      color: darken(@color, 5%);
-    }
-  }
-
-  &.list--invert {
-    .list__item, li {
-      color: @color;
-
-      &:hover, &:active, &.list__item--active {
-        color: lighten(@color, 5%); 
-      }
-    }
-  }
-
-  &.list--animation {
-    &-invert {
-      .list__item, li {
-        color: @color;
-
-        &:hover, &.list__item--active {
-          color: @u-gray;
-          background-color: @color;
-        }
-      }
-    }
-    &-border {
-      .list__item, li {
-        &.list__item--active, &:hover {
-          border-color: @color !important;
-        }
-      }
-    }
-  }
-}
-
 .list {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  .list__item, li {
-    display: block;
-    width: 100%;
-    font-size: 1em;
-    padding: 0.4em 1em;
+  .list__item {
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    box-sizing: border-box;
-    color: @d-gray;
-    list-style-type: none;
+    .animate(~'background-color', 0.1s);
+  }
 
-    &:hover, &:active {
-      color: @black;
+  .list__item, .list__group .list__label, .list__group .list__icon {
+    color: @black;
+
+    &:hover, &:focus {
+      background-color: @u-gray;
     }
 
-    &.list__item--active {
-      color: @black;
+    &:active {
+      background-color: darken(@u-gray, 5%);
+    }
+  }
+
+  .list__group {
+    display: flex;
+
+    .list__label, .list__icon {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-right: 1px solid transparent;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .list__label {
+      flex: 1;
+    }
+
+    &:hover {
+      .list__label, .list__icon {
+        border-right-color: darken(@u-gray, 5%);
+      }
     }
   }
 
   .list__separator {
-    display: block;
-    width: ~"calc(100% - 4em)";
-    height: 1px;
-    border-bottom: 1px solid @l-gray;
-    margin: 0.5em 2em;
+    margin: 0.5rem 2rem;
+    border-bottom: 1px solid @u-gray;
   }
 
-  &.list--color {
-    &-red { .list-set-linked-color(@red);	}
-    &-orange { .list-set-linked-color(@orange);	}
-    &-yellow { .list-set-linked-color(@yellow);	}
-    &-olive { .list-set-linked-color(@olive);	}
-    &-green { .list-set-linked-color(@green);	}
-    &-teal { .list-set-linked-color(@teal);	}
-    &-blue { .list-set-linked-color(@blue);	}
-    &-violet { .list-set-linked-color(@violet);	}
-    &-purple { .list-set-linked-color(@purple);	}
-    &-pink { .list-set-linked-color(@pink);	}
-    &-brown { .list-set-linked-color(@brown);	}
-    &-black { .list-set-linked-color(@d-gray);	}
-  }
-
-  &.list--icon {
-    .list__item, li {
-      i, .icon {
-        padding-right: 1em;
+  &.list--striped {
+    .list__item, .list__group {
+      &:nth-child(odd) {
+        &:not(:hover) {
+          background-color: fade(@m-gray, 5%);
+        }
       }
     }
   }
 
-  &.list--image {
-    .list__item, li {
-      display: inline-block;
-      vertical-align: middle;
-      img, .image {
-        margin: 0em 1em;
-        width: 2em;
-        height: 2em;
-        display: inline-block;
-        vertical-align: middle;
+  &.list--stacked {
+    .list__item, .list__group {
+      border-top: 1px solid @u-gray;
+
+      &:first-child {
+        border-top: none;
       }
+    }
+
+    .list__separator + .list__group, .list__separator + .list__item {
+      border-top: none;
     }
   }
 
-  &.list--animation {
-    &-slide {
-      .list__item, li {
-        .animate(~'padding-left');
+  &.list--invert {
+    .list__item, .list__group .list__label, .list__group .list__icon {
+      color: @white;
 
-        &:hover, &.list__item--active {
-          padding-left: 2em;
-          .animate(~'padding-left');
+      &:hover, &:focus {
+        background-color: @d-gray;
+      }
+
+      &:active {
+        background-color: lighten(@d-gray, 5%);
+      }
+    }
+
+    .list__group {
+      &:hover {
+        .list__label, .list__icon {
+          border-right-color: lighten(@d-gray, 5%);
         }
       }
     }
 
-    &-underline {
-      .list__item, li {
-        &:hover, &:active, &.list__item--active {
-          text-decoration: underline;
-        }
-      }
+    .list__separator {
+      border-bottom-color: @d-gray;
     }
 
-    &-invert {
-      .list__item, li {
-        color: @d-gray;
-
-        &:hover, &.list__item--active {
-          color: @u-gray;
-          background-color: @d-gray;
-        }
-      }
-    }
-
-    &-zoom {
-      .list__item, li {
-        .animate(~'font-size');
-
-        &:hover, &.list__item--active {
-          font-size: 1.5em;
-          .animate(~'font-size');
-        }
-      }
-
-      &.list--image {
-        &:hover, &.list__item--active {
-          img, .image {
-            margin-left: 0em;
+    &.list--striped {
+      .list__item, .list__group {
+        &:nth-child(odd) {
+          &:not(:hover) {
+            background-color: fade(@white, 5%);
           }
         }
       }
     }
 
-    &-border {
-      .list__item, li {
-        border-left: none;
-        .animate(~'border-left');
-
-        &.list__item--active, &:hover {
-          border-left: 3px solid @d-gray;
-          .animate(~'border-left');
-        }
+    &.list--stacked {
+      .list__item, .list__group {
+        border-top-color: @d-gray;
       }
     }
   }
 
-  &.list--horizontal {
-    .list__item, li {
-      display: inline-block;
-      float: left;
-      width: auto;
-      box-sizing: border-box;
-      border-bottom: 3px solid transparent;
+  &.list--color-red { .set-list-color(@red); }
+  &.list--color-orange{ .set-list-color(@orange); }
+  &.list--color-yellow{ .set-list-color(@yellow, @black); }
+  &.list--color-olive{ .set-list-color(@olive); }
+  &.list--color-green{ .set-list-color(@green); }
+  &.list--color-blue{ .set-list-color(@blue); }
+  &.list--color-teal{ .set-list-color(@teal); }
+  &.list--color-purple{ .set-list-color(@purple); }
+  &.list--color-violet{ .set-list-color(@violet); }
+  &.list--color-pink{ .set-list-color(@pink); }
+  &.list--color-brown{ .set-list-color(@brown); }
+}
+
+.set-list-color(@color, @fcolor: @white) {
+  .list__item, .list__group .list__label, .list__group .list__icon {
+    color: @black;
+
+    &:hover, &:focus {
+      background-color: @color;
+      color: @fcolor;
     }
 
-    .list__separator {
-      width: 1px;
-      height: 1em;
-      border: none;
-      border-right: 1px solid @m-gray;
-      margin: 0.5em 0.75em;
-      float: left;
-    }
-
-    &.list--animation-border {
-      .list__item, li {
-        &:hover {
-          border-left: none;
-          border-bottom: 3px solid @blue;
-          .animate(~'border-left, border-bottom');
-        }
-        &:not(:hover) {
-          border-left: none;
-          .animate(~'border-left');
-        }
-      }
-    }
-
-    &.list--animation-slide {
-      .list__item, li {
-        &:hover {
-          position: relative;
-          top: -0.25em;
-          padding-left: 1em;
-          .animate(~'top, padding-left');
-        }
-        &:not(:hover) {
-          position: static;
-          top: 0em;
-          padding-left: 1em;
-          .animate(~'top, padding-left');
-        }
-      }
-    }
-  }
-
-  &.list--stripped {
-    .list__item {
-      &:nth-child(odd) {
-        background-color: @u-gray;
-      }
-    }
-  }
-
-  &.list--stripped-even {
-    .list__item {
-      &:nth-child(even) {
-        background-color: @u-gray;
-      }
+    &:active {
+      background-color: darken(@color, 5%);
     }
   }
 
   &.list--invert {
-    .list__item, li {
-      color: @u-gray;
+    .list__item, .list__group .list__label, .list__group .list__icon {
+      color: @white;
 
-      &:hover, &:active {
-        color: @white;
+      &:hover, &:focus {
+        background-color: @color;
+        color: @fcolor;
       }
 
-      &.list__item--active {
-        color: @white;
-      }
-    }
-
-    .list__separator {
-      border-color: @m-gray;
-    }
-
-    &.list--animation-invert {
-      color: @u-gray;
-
-      .list__item {
-        &:hover {
-          background-color: @u-gray;
-          color: @d-gray;
-        }
+      &:active {
+        background-color: darken(@color, 5%);
       }
     }
 
-    &.list--stripped {
-      .list__item {
-        &:nth-child(odd) {
-          background-color: lighten(@d-gray, 5%);
-        }
-      }
-    }
-
-    &.list--stripped-even {
-      .list__item {
-        &:nth-child(even) {
-          background-color: lighten(@d-gray, 5%);
+    .list__group {
+      &:hover {
+        .list__label, .list__icon {
+          border-right-color: lighten(@d-gray, 5%);
         }
       }
     }
