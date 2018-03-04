@@ -58,7 +58,7 @@
     background-position: right 0.5em center;
     background-repeat: no-repeat;
     background-size: 1em;
-    border-radius: 0.25em;
+    border-radius: @smooth;
     transition: border-radius 0.3s linear;
     user-select: none;
     word-wrap: normal;
@@ -76,11 +76,11 @@
 
     &.select__menu--open {
       background-image: url(@d-arrow-up);
-      border-radius: 0.25em 0.25em 0px 0px;
+      border-radius: @smooth @smooth 0px 0px;
       transition: border-radius 0.3s linear;
 
       &.select__menu--top {
-        border-radius: 0px 0px 0.25em 0.25em;
+        border-radius: 0px 0px @smooth @smooth;
       }
     }
   }
@@ -92,14 +92,14 @@
     border: 1px solid darken(@u-gray, 10%);
     padding: 0.25rem 0;
     box-sizing: border-box;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 @smooth @smooth;
     max-height: 16em;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: fade(@white, 99%);
 
     &.select__options--top {
-      border-radius: 0.25em 0.25em 0 0;
+      border-radius: @smooth @smooth 0 0;
     }
 
     .select__options__item {

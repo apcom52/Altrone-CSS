@@ -16,7 +16,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     -moz-user-select: none;
-    border-radius: 0.5em 0.5em 0 0;
+    border-radius: @mid-smooth @mid-smooth 0 0;
     margin-left: 0.25em;
     border: 1px solid @u-gray;
     outline: none;
@@ -140,12 +140,12 @@
       border-radius: 0em;
 
       &:first-child {
-        border-radius: 1em 0em 0em 1em;
+        border-radius: @rounded 0em 0em @rounded;
         border-left: 1px solid @d-gray;
       }
 
       &:last-child {
-        border-radius: 0em 1em 1em 0em;
+        border-radius: 0em @rounded @rounded 0em;
       }
 
       &:active, &.tabs__item--active, &:focus {
@@ -231,7 +231,7 @@
     background-color: transparent;
 
     .tabs__item, li {
-      border-radius: 0.5em 0.5em 0em 0em;
+      border-radius: @mid-smooth @mid-smooth 0em 0em;
       margin: 0em 0.1em;
     }
   }
@@ -240,7 +240,7 @@
     background-color: transparent;
 
     .tabs__item, li {
-      border-radius: 1.5em 1.5em 0em 0em;
+      border-radius: @rounded @rounded 0em 0em;
       margin: 0em 0.1em;
     }
   }
@@ -366,7 +366,7 @@
     flex-direction: column;
 
     .tabs__item {
-      border-radius: 0.5rem 0 0 0.5rem;
+      border-radius: @mid-smooth 0 0 @mid-smooth;
       margin-top: 0.1rem;
 
       &.tabs__item--active, &:active, &:focus {
@@ -387,7 +387,7 @@
       .tabs__item {
         margin-left: 0;
         margin-right: 0.25rem;
-        border-radius: 0 0.5rem 0.5rem 0;
+        border-radius: 0 @mid-smooth @mid-smooth 0;
         text-align: left;
 
         &.tabs__item--active, &:active, &:focus {

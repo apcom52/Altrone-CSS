@@ -4,7 +4,7 @@
 
   .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
     margin: 0.25rem 0;
-    border-radius: 0.25rem;
+    border-radius: @smooth;
     border: 1px solid @l-gray;
     outline: none;
     background-color: @u-gray;
@@ -79,14 +79,14 @@
         align-content: center;
 
         &:first-child {
-          border-top-left-radius: 0.25rem;
-          border-bottom-left-radius: 0.25rem;
+          border-top-left-radius: @smooth;
+          border-bottom-left-radius: @smooth;
           border-left: 1px solid @l-gray;
         }
 
         &:last-child {
-          border-top-right-radius: 0.25rem;
-          border-bottom-right-radius: 0.25rem;
+          border-top-right-radius: @smooth;
+          border-bottom-right-radius: @smooth;
         }
       }
 
@@ -96,14 +96,14 @@
         border-left: none;
 
         &:first-child {
-          border-top-left-radius: 0.25rem;
-          border-bottom-left-radius: 0.25rem;
+          border-top-left-radius: @smooth;
+          border-bottom-left-radius: @smooth;
           border-left: 1px solid @l-gray;
         }
 
         &:last-child {
-          border-top-right-radius: 0.25rem;
-          border-bottom-right-radius: 0.25rem;
+          border-top-right-radius: @smooth;
+          border-bottom-right-radius: @smooth;
         }
       }
     }

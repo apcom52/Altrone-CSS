@@ -1874,7 +1874,7 @@ Array.prototype.random = function() {
     return items[Math.floor(Math.random()*items.length)];
 };
 
-class Cookies {
+class Cookie {
     isEnabled() {
         return navigator.cookieEnabled;
     }
@@ -1920,13 +1920,13 @@ class Cookies {
     }
 }
 
-function createElement(tagName = 'div', className = '', id = '', attrs = [], innerText = '') {
+function createElement(tagName = 'div', className = '', id = '', attrs = {}, innerText = '') {
     let element = document.createElement(tagName);
     if (className) element.className = className;
     if (id) element.id = id;
     if (attrs) {
-        attrs.map((current, index, array) => {
-            element.setAttribute(current.name, current.value);
+        Object.keys(attrs).map((current, index, keys) => {
+            element.setAttribute(current, attrs[current]);
         });
     }
     if (innerText) element.innerText = innerText;

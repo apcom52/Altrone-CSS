@@ -2,13 +2,10 @@
   .dropdown__item {
     &:hover {
       background-color: lighten(@color, 5%);
-      //color: @f-color;
-      //.animate(~'color');
     }
 
     &:active, &:focus {
       background-color: @color;
-      //color: @f-color;
     }
   }
 
@@ -29,7 +26,7 @@
 .dropdown {
   border: 1px solid @l-gray;
   background-color: fade(@white, 99%);
-  border-radius: 6px;
+  border-radius: @smooth;
   display: none;
   flex-direction: column;
   min-width: 200px;

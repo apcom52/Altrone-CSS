@@ -5,11 +5,11 @@ img {
   }
 
   &.img--smooth {
-    border-radius: 0.5em;
+    border-radius: @mid-smooth;
   }
 
   &.img--rounded {
-    border-radius: 1em;
+    border-radius: @rounded;
   }
 
   &.img--circle {
@@ -17,7 +17,7 @@ img {
   }
 
   &.img--border {
-    border: 0.25em solid @u-gray;
+    border: @smooth solid @u-gray;
     .card_shadow();
   }
 }

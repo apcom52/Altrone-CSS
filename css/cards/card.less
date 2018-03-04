@@ -15,7 +15,7 @@
   margin: 1em;
   background-color: @white;
   color: @d-gray;
-  border-radius: 0.5em;
+  border-radius: @mid-smooth;
   box-sizing: border-box;
   border: 1px solid darken(@u-gray, 10%);
   overflow-y: hidden;
@@ -24,7 +24,7 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    border-radius: 0.5em 0.5em 0em 0em;
+    border-radius: @mid-smooth @mid-smooth 0 0;
     align-items: center;
     .pt();
 
@@ -96,10 +96,10 @@
       .list {
         .list__item {
           &:first-child {
-            border-radius: 0.5em 0.5em 0em 0em;
+            border-radius: @mid-smooth @mid-smooth 0em 0em;
           }
           &:last-child {
-            border-radius: 0em 0em 0.5em 0.5em;
+            border-radius: 0em 0em @mid-smooth @mid-smooth;
           }
         }
       }
@@ -111,7 +111,7 @@
     color: @m-gray;
     padding: 1rem;
     border-top: 1px solid @u-gray;
-    border-radius: 0em 0em 0.5em 0.5em;
+    border-radius: 0em 0em @mid-smooth @mid-smooth;
     font-size: 0.9em;
     box-sizing: border-box;
   }
@@ -142,11 +142,11 @@
     }
 
     &-rounded {
-      border-radius: 1em;
+      border-radius: @rounded;
 
       .card__image {
         img {
-          border-radius: 1em 1em 0em 0em;
+          border-radius: @rounded @rounded 0em 0em;
         }
       }
 
@@ -155,10 +155,10 @@
           .list {
             .list__item {
               &:first-child {
-                border-radius: 1em 1em 0em 0em;
+                border-radius: @rounded @rounded 0em 0em;
               }
               &:last-child {
-                border-radius: 0em 0em 1em 1em;
+                border-radius: 0em 0em @rounded @rounded;
               }
             }
           }
@@ -166,7 +166,7 @@
       }
 
       .card__footer {
-        border-radius: 0em 0em 1em 1em;
+        border-radius: 0em 0em @rounded @rounded;
       }
     }
   }
@@ -206,7 +206,6 @@
           padding: 0em 1rem;
         }
       }
-
     }
   }
 }

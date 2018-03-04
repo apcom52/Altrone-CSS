@@ -3,7 +3,7 @@
   border-color: darken(@l-color, 15%);
   color: @f-color;
 
-  &:active, .active, &:focus {
+  &:active, &.button--active, &:focus {
     background-color: darken(@l-color, 17%);
     border-color: darken(@l-color, 22%);
   }
@@ -44,7 +44,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   margin: 5px;
   outline: none;
   padding: 7px 1rem 8px;
-  border-radius: 0.25rem;
+  border-radius: @smooth;
   display: inline-block;
   box-sizing: border-box;
   vertical-align: top;
@@ -52,8 +52,9 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   cursor: pointer;
   background-color: @u-gray;
   border: 1px solid @l-gray;
-  border-bottom-width: 2px;
   color: @d-gray;
+  zoom: 1;
+  overflow: hidden;
   .animate(~"background-color, border-color, color, box-shadow");
   .pt();
 
@@ -62,12 +63,12 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
     .animate(~"background-color");
   }
 
-  &:active {
+  &:active, &.button--active {
     background-color: darken(@u-gray, 8%);
     border-color: darken(@u-gray, 10%);
     .animate(~"background-color, border-color");
     border-bottom-width: 1px;
-    padding: 8px 1rem 8px;
+    padding: 8px 1rem 7px;
   }
 
   &.button--color-red { .button-color(@l-red, @red); }
@@ -84,8 +85,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   &.button--color-black { .button-color(@d-gray, @black, @u-gray); }
 
   &.button {
-    &--smooth { border-radius: 0.5rem;	}
-    &--rounded { border-radius: 1.25rem;	}
+    &--smooth { border-radius: @mid-smooth;	}
+    &--rounded { border-radius: @rounded;	}
     &--circle { border-radius: 50%; padding: 0.5rem 0.75rem; }
     &--no-smooth { border-radius: 0rem;	}
   }
@@ -122,7 +123,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
       color: @white;
     }
 
-    &:hover, &:active, &.active, &:focus {
+    &:hover, &:active, &.button--active, &:focus {
       background-color: transparent;
     }
   }
@@ -135,7 +136,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
       background-color: transparent;
       border-color: transparent;
 
-      &:hover, &:active, &.active, &:focus {
+      &:hover, &:active, &.button--active, &:focus {
         background-color: transparent;
         border-color: transparent;
       }

@@ -92,6 +92,11 @@
         });
     };
 
+    document.body.appendChild(createElement('div', 'className', 'idName', {
+        onclick: 'void(0);',
+		name: 'hello'
+	}, 'innerText'));
+
     /*    $('#not2').click(function() {
             nc.send({
                 title: "Уведомление с изображением",

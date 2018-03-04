@@ -23,10 +23,11 @@
   clear: both;
   vertical-align: center;
   display: inline-flex;
+  overflow: hidden;
 
   button, input[type="button"], input[type="submit"], input[type="reset"], .button {
-    margin: 0px;
-    border-radius: 0px;
+    margin: 0;
+    border-radius: 0;
     display: inline-block;
     flex: none;
 
@@ -35,11 +36,11 @@
     }
 
     &:first-child {
-      border-radius: 0.2em 0em 0em 0.2em;
+      border-radius: @smooth 0em 0em @smooth;
     }
 
     &:last-child {
-      border-radius: 0em 0.2em 0.2em 0em;
+      border-radius: 0em @smooth @smooth 0em;
     }
   }
 
@@ -54,12 +55,12 @@
   &.button-group {
     &--smooth {
       button, input[type="button"], input[type="submit"], input[type="reset"], .button {
-        .button-group-smooth(0.5em, 0em);
+        .button-group-smooth(@mid-smooth, 0em);
       }
     }
     &--rounded {
       button, input[type="button"], input[type="submit"], input[type="reset"], .button {
-        .button-group-smooth(1.25em, 0em);
+        .button-group-smooth(@rounded, 0em);
       }
     }
     &--no-smooth{
@@ -93,23 +94,23 @@
       }
 
       &:first-child {
-        border-radius: 0.2em 0.2em 0em 0em;
+        border-radius: @smooth @smooth 0em 0em;
       }
 
       &:last-child {
-        border-radius: 0em 0em 0.2em 0.2em;
+        border-radius: 0em 0em @smooth @smooth;
       }
     }
 
     &.button-group {
       &--smooth {
         button, input[type="button"], input[type="submit"], input[type="reset"], .button {
-          .button-group-vertical-smooth(0.5em, 0em);
+          .button-group-vertical-smooth(@mid-smooth, 0em);
         }
       }
       &--rounded {
         button, input[type="button"], input[type="submit"], input[type="reset"], .button {
-          .button-group-vertical-smooth(1.25em, 0em);
+          .button-group-vertical-smooth(@rounded, 0em);
         }
       }
       &--no-smooth{

@@ -9,7 +9,7 @@
   height: 1rem;
   margin: 0.15em;
   background-color: darken(@u-gray, 5%);
-  border-radius: 6px;
+  border-radius: @smooth;
   overflow: hidden;
   position: relative;
 
@@ -88,10 +88,10 @@
   }
 
   &.progress--rounded {
-    border-radius: 1em;
+    border-radius: @rounded;
 
     .progress__active {
-      border-radius: 1em;
+      border-radius: @rounded;
     }
   }
 

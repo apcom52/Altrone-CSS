@@ -7,7 +7,7 @@
   margin: 5vh 25%;
   left: 0;
   top: 0;
-  border-radius: 5px;
+  border-radius: @smooth;
   background-color: @u-gray;
   border: 1px solid darken(@u-gray, 5%);
 
@@ -28,8 +28,8 @@
       position: absolute;
       width: 0.7em;
       height: 0.7em;
-      top: 0.2em;
-      right: 0.2em;
+      top: @smooth;
+      right: @smooth;
       background-color: @l-red;
       border: 1px solid darken(@l-red, 10%);
       border-radius: 50%;
@@ -58,7 +58,7 @@
   .modal__content {
     margin: 0.25em;
     background-color: @white;
-    border-radius: 5px;
+    border-radius: @smooth;
     border: 1px solid darken(@u-gray, 5%);
     padding: 0.5em;
     overflow-y: auto;
