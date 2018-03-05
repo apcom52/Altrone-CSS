@@ -135,8 +135,7 @@ class Dialog {
 	show() {
 		let target = this;
 		
-		target.modal_body = document.createElement('div');
-		target.modal_body.className = 'modal';
+		target.modal_body = createElement('div', 'modal');
 
 		if (target.__invert) {
 			target.modal_body.classList.add('modal--invert');
@@ -147,38 +146,30 @@ class Dialog {
 			onHide: () => target.hide()
 		});
 
-		let modal_header = document.createElement('div');
-		modal_header.className = 'modal__header';
-		modal_header.innerHTML = target.__title;
+		let modal_header = createElement('div', 'modal__header');
+        modal_header.append(createElement('div', 'modal__title', '', {}, target.__title));
 
-		let modal_content = document.createElement('div');
-		modal_content.className = 'modal__content';
-		modal_content.innerHTML = target.__message;
+		let modal_content = createElement('div', 'modal__content', '', {}, target.__message);
 
-		let modal_footer = document.createElement('div');
-		modal_footer.className = 'modal__footer align-center';
+		let modal_footer = createElement('div', 'modal__footer align-center');
 
-		let modal_cancelButton = document.createElement('button');
+		let modal_cancelButton = createElement('button', 'button modal__discard', '', {}, target.__failLabel);
 		if (target.__invert) {
-			modal_cancelButton.className = 'button button--color-black modal__discard';			
+			modal_cancelButton.classList.add('button--color-black', 'modal__discard');
 		} else {
-			modal_cancelButton.className = 'button modal__discard';			
+			modal_cancelButton.classList.add('modal__discard');
 		}
 
 		if (target.onSuccessCallback) {
-			let modal_okButton = document.createElement('button');
-			modal_okButton.className = 'button button--color-green modal__discard';
-			modal_okButton.innerHTML = target.__successLabel;
+			let modal_okButton = createElement('button', 'button button--color-green modal__discard', '', {}, target.__successLabel);
 			modal_okButton.onclick = function() {
 				target.onSuccessCallback(target);
-			}
+			};
 
 			modal_footer.appendChild(modal_okButton);
 		} else {
-			modal_cancelButton.className = 'button button--color-green modal__discard';
+			modal_cancelButton.classList = 'button button--color-green modal__discard';
 		}
-
-		modal_cancelButton.innerHTML = target.__failLabel;
 
 		modal_footer.appendChild(modal_cancelButton);
 
@@ -192,7 +183,7 @@ class Dialog {
 			if (target.onFailCallback) {
 				target.onFailCallback(target);		
 			}
-		}
+		};
 
 		target.modal.show();
 	}

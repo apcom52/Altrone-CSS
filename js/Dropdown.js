@@ -50,7 +50,7 @@ function __dropdownSetPosition() {
         }
 
         if ((left + width) >= window.innerWidth) {
-            left -= (left + width - window.innerWidth);
+            left -= (left + width - window.innerWidth + 10);
         } else if (target.offsetLeft < 0) {
             left = 0;
         }

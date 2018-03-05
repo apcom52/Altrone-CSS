@@ -15,7 +15,7 @@
   margin: 1em;
   background-color: @white;
   color: @d-gray;
-  border-radius: @mid-smooth;
+  border-radius: @smooth;
   box-sizing: border-box;
   border: 1px solid darken(@u-gray, 10%);
   overflow-y: hidden;
@@ -24,7 +24,7 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    border-radius: @mid-smooth @mid-smooth 0 0;
+    border-radius: @smooth @smooth 0 0;
     align-items: center;
     .pt();
 
@@ -87,23 +87,6 @@
   .card__content {
     padding: 0.5em 1em;
     .pt();
-
-    &.card__content--no-padding {
-      padding: 0em;
-    }
-
-    &.card__content--list {
-      .list {
-        .list__item {
-          &:first-child {
-            border-radius: @mid-smooth @mid-smooth 0em 0em;
-          }
-          &:last-child {
-            border-radius: 0em 0em @mid-smooth @mid-smooth;
-          }
-        }
-      }
-    }
   }
 
   .card__footer {
@@ -126,16 +109,6 @@
         }
       }
 
-      .card__content {
-        &.card__content--list {
-          .list {
-            .list__item {
-              border-radius: 0em;
-            }
-          }
-        }
-      }
-
       .card__footer {
         border-radius: 0em;
       }
@@ -147,21 +120,6 @@
       .card__image {
         img {
           border-radius: @rounded @rounded 0em 0em;
-        }
-      }
-
-      .card__content {
-        &.card__content--list {
-          .list {
-            .list__item {
-              &:first-child {
-                border-radius: @rounded @rounded 0em 0em;
-              }
-              &:last-child {
-                border-radius: 0em 0em @rounded @rounded;
-              }
-            }
-          }
         }
       }
 
