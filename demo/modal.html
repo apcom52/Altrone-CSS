@@ -37,12 +37,17 @@
 </div>
 
 <div class="modal" id="modal1">
-	<div class="modal__header">Выберите свою сторону</div>
+	<div class="modal__header">
+		<div class="modal__header-button"><i class="fa fa-arrow-left"></i></div>
+		<div class="modal__header-button"><i class="fa fa-refresh"></i></div>
+		<div class="modal__title">Выберите свою сторону</div>
+		<div class="modal__close modal__discard"></div>
+	</div>
 	<div class="modal__content">
-		<div class="radio radio--color-blue"><input type="radio" id="aliance">
+		<div class="radio radio--color-blue"><input type="radio" id="aliance" name="side">
 			<label for="aliance"><div class="checkbox__title">Альянс</div></label>
 		</div>
-		<div class="radio radio--color-red"><input type="radio" id="orda">
+		<div class="radio radio--color-red"><input type="radio" id="orda" name="side">
 			<label for="orda"><div class="checkbox__title">Орда</div></label>
 		</div>
 	</div>

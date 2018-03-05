@@ -9,35 +9,54 @@
   top: 0;
   border-radius: @smooth;
   background-color: @u-gray;
-  border: 1px solid darken(@u-gray, 5%);
+  overflow: hidden;
 
   .modal__header {
-    position: relative;
-    text-align: center;
-    padding: 0.5em 1em;
     color: @d-gray;
     max-width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
     oveflow: hidden;
+    display: flex;
     .bold();
 
-    .modal__header__close {
+    .modal__header-button {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid @l-gray;
+      border-left: none;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+
+      &:first-child {
+        border-left: 1px solid @l-gray;
+      }
+
+      &:hover, &:focus {
+        background-color: darken(@u-gray, 5%);
+      }
+    }
+
+    .modal__title {
+      flex: 1;
+      text-align: center;
+      align-self: center;
+    }
+
+    .modal__close {
       content: "";
-      display: block;
-      position: absolute;
-      width: 0.7em;
-      height: 0.7em;
-      top: @smooth;
-      right: @smooth;
-      background-color: @l-red;
-      border: 1px solid darken(@l-red, 10%);
-      border-radius: 50%;
+      width: ~'calc(2.5rem)';
+      height: ~'calc(2rem + 4px)';
+      border: 1px solid @l-gray;
       cursor: pointer;
       background-image: @remove;
-      background-size: 70%;
+      background-size: 50%;
       background-position: center;
       background-repeat: no-repeat;
+      transition: background-color 0.1s ease-in-out;
+
+      &:hover, &:focus {
+        background-color: darken(@u-gray, 5%);
+      }
     }
   }
 
@@ -94,12 +113,25 @@
     background-color: @d-gray;
     border-color: lighten(@d-gray, 10%);
 
-    .modal__header {
-      color: @u-gray;
+    .modal-header {
+      .modal-header__button {
+        color: @u-gray;
+        border-color: lighten(@d-gray, 10%);
 
-      .modal__header__close {
-        background-color: @red;
-        border: 1px solid darken(@red, 10%);
+        &:hover, &:focus {
+          background-color: lighten(@d-gray, 5%);
+        }
+      }
+      .modal-header__title {
+        color: @u-gray;
+      }
+      .modal-header__close {
+        background-image: @remove-invert;
+        border-color: lighten(@d-gray, 10%);
+
+        &:hover, &:focus {
+          background-color: lighten(@d-gray, 5%);
+        }
       }
     }
 
