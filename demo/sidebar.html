@@ -7,6 +7,7 @@
 	<title>Altrone2-CSS Sidebar</title>
 	<link rel="stylesheet" href="../build/altrone.css">
 	<link rel="stylesheet" type="text/css" href="../font-awesome.css">
+	<link rel="stylesheet" href="../build/style.css">
 	<script src="../build/altrone.js"></script>
 
 	<style>
@@ -55,44 +56,39 @@
 
 <div class="sidebar sidebar--color-red" id="ss">
 	<div class="sidebar__cover">
-		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
-		<div class="sidebar__cover__title">@TotallyMoo</div>
+		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1">
+		<div class="sidebar__title">@TotallyMoo</div>
 	</div>
-	<div class="sidebar__menu">
-		<div class="sidebar__menu__header">Music Player</div>
-		<div class="sidebar__menu__item">
-			<i class="sidebar__menu__item__icon fa fa-play"></i>
-			<div class="sidebar__menu__item__value">Sia - Chandelier</div>
-			<i class="sidebar__menu__item__icon fa fa-forward"></i>
-		</div>
-		<div class="sidebar__menu__item"><div class="sidebar__menu__item__value">Открыть плейлист...</div></div>
+	<div class="sidebar__header">Music Player</div>
+	<div class="sidebar__item"><i class="fa fa-headphones"></i>Плейлисты</div>
+	<div class="sidebar__item"><i class="fa fa-book"></i>Альбомы</div>
+	<div class="sidebar__item"><i class="fa fa-microphone"></i>Исполнители</div>
+	<div class="sidebar__item"><i class="fa fa-music"></i>Треки</div>
 
-		<div class="sidebar__menu__separator"></div>
+	<div class="sidebar__separator"></div>
 
-		<div class="sidebar__menu__header">О сервисе</div>
-		<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
-		<div class="sidebar__menu__item">Помощь и поддержка</div>
-		<div class="sidebar__menu__item">О сервисе</div>
-	</div>
+	<div class="sidebar__header">Дополнительно</div>
+	<div class="sidebar__item"><i class="fa fa-cog"></i>Настройки</div>
+	<div class="sidebar__item"><i class="fa fa-question"></i>Помощь и поддержка</div>
+	<div class="sidebar__item">О сервисе</div>
 </div>
 
 <div class="sidebar sidebar--invert sidebar--pin-right sidebar--color-pink" id="ss2">
 	<div class="sidebar__cover">
-		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1" width="100" height="auto">
-		<div class="sidebar__cover__title">@TotallyMoo</div>
+		<img src="http://composeconceivecreate.files.wordpress.com/2013/05/cow_raspberry.jpg?w=627" class="img--circle img--bordered shadow-1">
+		<div class="sidebar__title">@TotallyMoo</div>
 	</div>
-	<div class="sidebar__menu">
-		<div class="sidebar__menu__header">Music Player</div>
-		<div class="sidebar__menu__item sidebar__menu__item--icon"><i class="fa fa-play"></i>Avicii - Dangerous <div class="sidebar__menu__item__icon"><i class="fa fa-forward"></i></div> </div>
-		<div class="sidebar__menu__item">Открыть плейлист...</div>
 
-		<div class="sidebar__menu__separator"></div>
+	<div class="sidebar__header">WonderBook</div>
+	<div class="sidebar__item"><i class="fa fa-book"></i>Моя библиотека</div>
+	<div class="sidebar__item"><i class="fa fa-th"></i>Коллекции</div>
+	<div class="sidebar__item"><i class="fa fa-tasks"></i>Мои задачи</div>
+	<div class="sidebar__item"><i class="fa fa-quote-right"></i>Мои цитаты</div>
 
-		<div class="sidebar__menu__header">О сервисе</div>
-		<div class="sidebar__menu__item">Настройки <div class="sidebar__menu__item__icon"><i class="fa fa-sliders"></i></div></div>
-		<div class="sidebar__menu__item">Помощь и поддержка</div>
-		<div class="sidebar__menu__item">О сервисе</div>
-	</div>
+	<div class="sidebar__separator"></div>
+
+	<div class="sidebar__item"><i class="fa fa-cog"></i>Настройки</div>
+	<div class="sidebar__item"><i class="fa fa-sign-out-alt"></i>Выйти</div>
 </div>
 
 <script>
@@ -100,9 +96,7 @@
 
 var sidebar1 = document.getElementById('ss');
 var sidebar2 = document.getElementById('ss2');
-var ss = new Sidebar(sidebar1, {
-    push_page: true,
-});
+var ss = new Sidebar(sidebar1);
 var ss2 = new Sidebar(sidebar2, {
 	no_overlay: true,
 	push_page: true	
