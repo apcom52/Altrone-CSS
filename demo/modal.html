@@ -30,6 +30,7 @@
 					<button class="button--color-violet" id="button2" onclick="button2();">Открыть диалоговое окною</button>
 					<button class="button--color-violet" id="button2" onclick="button3();">Изменить callback-функцию</button>
 					<button class="button--color-pink" id="button2" onclick="button4();">Открыть окно ввода</button>
+					<button class="button--color-orange" id="button5" onclick="button5();">Открыть родительское окно</button>
 				</div>
 			</div>
 		</div>
@@ -53,6 +54,25 @@
 	</div>
 </div>
 
+<div class="modal modal--invert" id="parentModal">
+	<div class="modal__header">
+		<div class="modal__title">Родительское модальное окно</div>
+	</div>
+	<div class="modal__content">
+		<h1>Я главное окно!</h1>
+		<button class="button--color-purple" onclick="openChildModal();">Открыть дочернее окно</button>
+	</div>
+</div>
+
+<div class="modal" id="childModal">
+	<div class="modal__header">
+		<div class="modal__title">Дочернее модальное окно</div>
+	</div>
+	<div class="modal__content">
+		<h1>Я дочернее окно</h1>
+	</div>
+</div>
+
 <script>
 'use strict';
 
@@ -73,11 +93,14 @@ var dialog = new Dialog({
 	onHide: () => console.log('modal hide')
 });
 
-var input = new InputModal({
-	title: 'Введите ваш возраст',
-	contentType: InputModal.contentTypeInteger,
-	label: 'Введите ваш возраст',
-	placeholder: 'Ваш возраст',
+var pm = new Modal(document.getElementById('parentModal'), {
+    onShow: () => { console.log('show parent'); },
+    onHide: () => { console.log('hide parent'); }
+});
+var cm = new Modal(document.getElementById('childModal'), {
+    parent: pm,
+    onShow: () => { console.log('show child'); },
+    onHide: () => { console.log('hide child'); }
 });
 
 function button2() {
@@ -94,6 +117,15 @@ function button3() {
 
 function button4() {
     input.show();
+}
+
+
+function button5() {
+    pm.show();
+}
+
+function openChildModal() {
+    cm.show();
 }
 </script>
 </body>

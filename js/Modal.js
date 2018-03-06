@@ -17,6 +17,7 @@ class Modal {
 		target.__element = element;
 		target.__visible = false;
 		target.__only_discarding = props.only_discarding || false;
+		target.__parent = props.parent || null;
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
 
@@ -136,7 +137,13 @@ class Modal {
 
 		this.__visible = false;
 
-		setTimeout(() => element.style.display = 'none', 300);
+		setTimeout(() => {
+            element.style.display = 'none';
+        }, 300);
+
+        if (target.__parent) {
+            target.__parent.show();
+        }
 
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
