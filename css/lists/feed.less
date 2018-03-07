@@ -2,6 +2,11 @@
   display: flex;
   padding: 1rem 2rem;
   box-sizing: border-box;
+  border-bottom: 1px solid @u-gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   .feed__image {
     width: 4rem;
@@ -39,19 +44,13 @@
     }
   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid darken(@u-gray, 5%);
-  }
-
   &.feed--invert {
+    border-bottom-color: lighten(@d-gray, 5%);
+
     .feed__content {
       .feed__title, .feed__message {
         color: @u-gray;
       }
-    }
-
-    &:not(:last-child) {
-      border-bottom-color: lighten(@d-gray, 5%);
     }
   }
 }

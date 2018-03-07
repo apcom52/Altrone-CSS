@@ -122,7 +122,6 @@
   &.tabs--ios-style {
     background-color: transparent;
     width: ~'calc(100% - 2em)';
-    display: table;
     text-align: center;
     margin: 1em;
     display: flex;
@@ -130,22 +129,20 @@
     .tabs__item, li {
       background-color: transparent;
       color: @d-gray;
-      border-top: 1px solid @d-gray;
-      border-bottom: 1px solid @d-gray;
-      border-right: 1px solid @d-gray;
-      border-left: 1px solid transparent;
+      border: 1px solid @d-gray;
+      border-left-color: transparent;
       flex: 1;
       padding: 0.25em 1em;
       margin: 0em;
       border-radius: 0em;
 
       &:first-child {
-        border-radius: @rounded 0em 0em @rounded;
+        border-radius: @smooth 0 0 @smooth;
         border-left: 1px solid @d-gray;
       }
 
       &:last-child {
-        border-radius: 0em @rounded @rounded 0em;
+        border-radius: 0em @smooth @smooth 0em;
       }
 
       &:active, &.tabs__item--active, &:focus {
