@@ -28,9 +28,7 @@ class Select {
         target.__selectOptionsElement = null;
         target.__value = null;
 
-        target.__selectMenu = document.createElement('div');
-        target.__selectMenu.className = 'select__menu';
-
+        target.__selectMenu = createElement('div', 'select__menu');
         target.__element.appendChild(target.__selectMenu);
 
         target.__selectMenu.onclick = () => target.toggle();
@@ -211,8 +209,7 @@ class Select {
             target.__selectOptionsElement.remove();
         }
 
-        target.__selectOptionsElement = document.createElement('div');
-        target.__selectOptionsElement.className = 'select__options';
+        target.__selectOptionsElement = createElement('div', 'select__options');
 
         if (target.__position == 'top') {
             target.__selectOptionsElement.classList.add('select__options--top');
@@ -220,9 +217,7 @@ class Select {
         }
 
         target.__options.forEach((option, index) => {
-            let selectOption = document.createElement('div');
-            selectOption.className = 'select__options__item';
-            selectOption.innerText = option;
+            let selectOption = createElement('div', 'select__options__item', '', {}, option);
             selectOption.onclick = () => target.select(index);
             target.__selectOptionsElement.appendChild(selectOption);
         });

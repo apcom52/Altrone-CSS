@@ -113,22 +113,16 @@ class Carousel {
 			});
         });
 
-		target.__carouselLeftButton = document.createElement('div');
-		target.__carouselLeftButton.className = 'carousel__left';
+		target.__carouselLeftButton = createElement('div', 'carousel__left');
 		target.__carouselLeftButton.onclick = () => target.prev();
 
-		target.__carouselRightButton = document.createElement('div');
-        target.__carouselRightButton.className = 'carousel__right';
+		target.__carouselRightButton = createElement('div', 'carousel__right');
         target.__carouselRightButton.onclick = () => target.next();
 
-        target.__carouselInfoPanel = document.createElement('div');
-        target.__carouselInfoPanel.className = 'carousel__info';
+        target.__carouselInfoPanel = createElement('div', 'carousel__info');
+        target.__carouselTitlePanel = createElement('div', 'carousel__info__title');
 
-        target.__carouselTitlePanel = document.createElement('div');
-        target.__carouselTitlePanel.className = 'carousel__info__title';
-
-        target.__carouselContentPanel = document.createElement('div');
-        target.__carouselContentPanel.className = 'carousel__info__content';
+        target.__carouselContentPanel = createElement('div', 'carousel__info__content');
 
         target.__element.appendChild(target.__carouselLeftButton);
         target.__element.appendChild(target.__carouselRightButton);
@@ -583,13 +577,11 @@ class Modal {
 			if (target.__element.querySelector('.modal__header')) {
 				header = target.__element.querySelector('.modal__header');
 			} else {
-				header = document.createElement('div');
-				header.className = 'modal__header';
+				header = createElement('div', 'modal__header');
 				target.__element.insertBefore(header, target.__element.firstChild);
 			}
 
-			var closeButton = document.createElement('div');
-			closeButton.className = 'modal__header__close';
+			let closeButton = createElement('div', 'modal__close');
 			header.appendChild(closeButton);
 
 			closeButton.onclick = () => target.__overlay.destroy();
@@ -779,49 +771,34 @@ class Notification {
             target.__addBlock();
         }
 
-        var n = document.createElement('div');
-        n.className = 'notification-center__notification';
+        let n = createElement('div', 'notification');
         if (notification.title) {
-            var nheader = document.createElement('div');
-            nheader.className = 'notification-center__notification__header';
-
-            var nheader_title = document.createElement('div');
-            nheader_title.className = 'notification-center__notification__header__title';
-            nheader_title.innerHTML = notification.title;
-
-            var nheader_close = document.createElement('div')
-            nheader_close.className = 'notification-center__notification__header__close';
+            let nheader = createElement('div', 'notification__header');
+            let nheader_title = createElement('div', 'notification__title', '', {}, notification.title);
+            let nheader_close = createElement('div', 'notification__close');
             nheader_close.onclick = function() {
                 target.hide(notification);
-            }
+            };
 
             nheader.appendChild(nheader_title);
             nheader.appendChild(nheader_close);
-
             n.appendChild(nheader);
         }
 
         if (notification.text) {
-            var ntext = document.createElement('div');
-            ntext.className = 'notification-center__notification__text';
-            ntext.innerHTML = notification.text;
+            let ntext = createElement('div', 'notification__message', '', {}, notification.text);
             n.appendChild(ntext);
         }
 
         if (notification.image) {
-            var nimage = document.createElement('img');
-            nimage.className = 'notification-center__notification__image';
-            nimage.src = notification.image
+            let nimage = document.createElement('img', 'notification__image', '', {src: notification.src});
             n.appendChild(nimage);
         }
 
         if (notification.actions) {
-            for (var i = 0; i < notification.actions.length; i++) {
-                var current = notification.actions[i];
-                var naction = document.createElement('button');
-                naction.className = 'button--color-white button--size-small button--only-borders';
-                naction.id = "nact" + notification.id + '-' + i;
-                naction.innerHTML = current.value;
+            for (let i = 0; i < notification.actions.length; i++) {
+                let current = notification.actions[i];
+                let naction = createElement('button', 'button--color-white button--size-small button--only-borders', 'nact' + notification.id + '-' + i, {}, current.value);
 
                 if (current.action) {
                     naction.onclick = current.action;
@@ -852,8 +829,8 @@ class Notification {
      * @param {Object} notification - notification, which you want to hide
      */
     hide(notification) {
-        var target = this;
-        notification.el.className = "notification-center__notification notification-center__notification--hide";
+        let target = this;
+        notification.el.className = "notification notification--hide";
         setTimeout(function() {
             notification.el.style.visibility = 'hidden';
             notification.isVisible = false;
@@ -864,8 +841,7 @@ class Notification {
 
     __addBlock() {
         let target = this;
-        target.ncBlock = document.createElement('div');
-        target.ncBlock.className = 'notification-center';
+        target.ncBlock = createElement('div', 'notification-center');
         document.body.appendChild(target.ncBlock);
 
         return target.ncBlock;
@@ -900,8 +876,7 @@ class Overlay {
 		target.onDestroyCallback = props.onDestroy || null;
 		target.disableClick = Boolean(props.disableClick) || false;
 
-		let element = document.createElement('div');
-		element.className = 'overlay';
+		let element = createElement('div', 'overlay');
 		document.body.appendChild(element);
 		target.element = element;
 
@@ -927,7 +902,7 @@ class Overlay {
 		setTimeout(() => target.element.remove(), 300);
 
 		if (target.onDestroyCallback) {
-			target.onDestroyCallback(target);	
+			target.onDestroyCallback(target);
 		}
 	}
 
@@ -1053,17 +1028,14 @@ class Progress {
 	            if (bar.label && element.childNodes.length) {
 	            	element.childNodes[0].innerText = bar.label;
 	            } else if (bar.label && !element.childNodes.length) {
-		            let labelElement = document.createElement('div');
-		            labelElement.className = 'progress__active__label';
-		            labelElement.innerText = bar.label;
+		            let labelElement = createElement('div', 'progress__active__label', '', {}, bar.label);
 		            element.appendChild(labelElement);
 	            } else {
 	            	element.innerHTML = "";
 	            }
 
             } else {
-                let element = document.createElement('div');
-                element.className = 'progress__active';
+                let element = createElement('div', 'progress__active');
 
                 if (bar.value > target.__max) {
                     throw "Progress: value must be less or equal than maximum value";
@@ -1075,9 +1047,7 @@ class Progress {
                     element.classList.add('progress__active--color-' + bar.color);
 
                 if (bar.label) {
-                    let labelElement = document.createElement('div');
-                    labelElement.className = 'progress__active__label';
-                    labelElement.innerText = bar.label;
+                    let labelElement = createElement('div', 'progress__active__label', '', {}, bar.label);
                     element.appendChild(labelElement);
                 }
 
@@ -1123,9 +1093,7 @@ class Select {
         target.__selectOptionsElement = null;
         target.__value = null;
 
-        target.__selectMenu = document.createElement('div');
-        target.__selectMenu.className = 'select__menu';
-
+        target.__selectMenu = createElement('div', 'select__menu');
         target.__element.appendChild(target.__selectMenu);
 
         target.__selectMenu.onclick = () => target.toggle();
@@ -1306,8 +1274,7 @@ class Select {
             target.__selectOptionsElement.remove();
         }
 
-        target.__selectOptionsElement = document.createElement('div');
-        target.__selectOptionsElement.className = 'select__options';
+        target.__selectOptionsElement = createElement('div', 'select__options');
 
         if (target.__position == 'top') {
             target.__selectOptionsElement.classList.add('select__options--top');
@@ -1315,9 +1282,7 @@ class Select {
         }
 
         target.__options.forEach((option, index) => {
-            let selectOption = document.createElement('div');
-            selectOption.className = 'select__options__item';
-            selectOption.innerText = option;
+            let selectOption = createElement('div', 'select__options__item', '', {}, option);
             selectOption.onclick = () => target.select(index);
             target.__selectOptionsElement.appendChild(selectOption);
         });

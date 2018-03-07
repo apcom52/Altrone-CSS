@@ -29,22 +29,16 @@ class Carousel {
 			});
         });
 
-		target.__carouselLeftButton = document.createElement('div');
-		target.__carouselLeftButton.className = 'carousel__left';
+		target.__carouselLeftButton = createElement('div', 'carousel__left');
 		target.__carouselLeftButton.onclick = () => target.prev();
 
-		target.__carouselRightButton = document.createElement('div');
-        target.__carouselRightButton.className = 'carousel__right';
+		target.__carouselRightButton = createElement('div', 'carousel__right');
         target.__carouselRightButton.onclick = () => target.next();
 
-        target.__carouselInfoPanel = document.createElement('div');
-        target.__carouselInfoPanel.className = 'carousel__info';
+        target.__carouselInfoPanel = createElement('div', 'carousel__info');
+        target.__carouselTitlePanel = createElement('div', 'carousel__info__title');
 
-        target.__carouselTitlePanel = document.createElement('div');
-        target.__carouselTitlePanel.className = 'carousel__info__title';
-
-        target.__carouselContentPanel = document.createElement('div');
-        target.__carouselContentPanel.className = 'carousel__info__content';
+        target.__carouselContentPanel = createElement('div', 'carousel__info__content');
 
         target.__element.appendChild(target.__carouselLeftButton);
         target.__element.appendChild(target.__carouselRightButton);

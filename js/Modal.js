@@ -26,13 +26,11 @@ class Modal {
 			if (target.__element.querySelector('.modal__header')) {
 				header = target.__element.querySelector('.modal__header');
 			} else {
-				header = document.createElement('div');
-				header.className = 'modal__header';
+				header = createElement('div', 'modal__header');
 				target.__element.insertBefore(header, target.__element.firstChild);
 			}
 
-			var closeButton = document.createElement('div');
-			closeButton.className = 'modal__header__close';
+			let closeButton = createElement('div', 'modal__close');
 			header.appendChild(closeButton);
 
 			closeButton.onclick = () => target.__overlay.destroy();

@@ -95,7 +95,8 @@ var dialog = new Dialog({
 
 var pm = new Modal(document.getElementById('parentModal'), {
     onShow: () => { console.log('show parent'); },
-    onHide: () => { console.log('hide parent'); }
+    onHide: () => { console.log('hide parent'); },
+	only_discarding: true
 });
 var cm = new Modal(document.getElementById('childModal'), {
     parent: pm,

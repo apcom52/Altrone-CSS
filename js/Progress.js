@@ -93,17 +93,14 @@ class Progress {
 	            if (bar.label && element.childNodes.length) {
 	            	element.childNodes[0].innerText = bar.label;
 	            } else if (bar.label && !element.childNodes.length) {
-		            let labelElement = document.createElement('div');
-		            labelElement.className = 'progress__active__label';
-		            labelElement.innerText = bar.label;
+		            let labelElement = createElement('div', 'progress__active__label', '', {}, bar.label);
 		            element.appendChild(labelElement);
 	            } else {
 	            	element.innerHTML = "";
 	            }
 
             } else {
-                let element = document.createElement('div');
-                element.className = 'progress__active';
+                let element = createElement('div', 'progress__active');
 
                 if (bar.value > target.__max) {
                     throw "Progress: value must be less or equal than maximum value";
@@ -115,9 +112,7 @@ class Progress {
                     element.classList.add('progress__active--color-' + bar.color);
 
                 if (bar.label) {
-                    let labelElement = document.createElement('div');
-                    labelElement.className = 'progress__active__label';
-                    labelElement.innerText = bar.label;
+                    let labelElement = createElement('div', 'progress__active__label', '', {}, bar.label);
                     element.appendChild(labelElement);
                 }
 

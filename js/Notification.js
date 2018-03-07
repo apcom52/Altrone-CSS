@@ -40,49 +40,34 @@ class Notification {
             target.__addBlock();
         }
 
-        var n = document.createElement('div');
-        n.className = 'notification-center__notification';
+        let n = createElement('div', 'notification');
         if (notification.title) {
-            var nheader = document.createElement('div');
-            nheader.className = 'notification-center__notification__header';
-
-            var nheader_title = document.createElement('div');
-            nheader_title.className = 'notification-center__notification__header__title';
-            nheader_title.innerHTML = notification.title;
-
-            var nheader_close = document.createElement('div')
-            nheader_close.className = 'notification-center__notification__header__close';
+            let nheader = createElement('div', 'notification__header');
+            let nheader_title = createElement('div', 'notification__title', '', {}, notification.title);
+            let nheader_close = createElement('div', 'notification__close');
             nheader_close.onclick = function() {
                 target.hide(notification);
-            }
+            };
 
             nheader.appendChild(nheader_title);
             nheader.appendChild(nheader_close);
-
             n.appendChild(nheader);
         }
 
         if (notification.text) {
-            var ntext = document.createElement('div');
-            ntext.className = 'notification-center__notification__text';
-            ntext.innerHTML = notification.text;
+            let ntext = createElement('div', 'notification__message', '', {}, notification.text);
             n.appendChild(ntext);
         }
 
         if (notification.image) {
-            var nimage = document.createElement('img');
-            nimage.className = 'notification-center__notification__image';
-            nimage.src = notification.image
+            let nimage = document.createElement('img', 'notification__image', '', {src: notification.src});
             n.appendChild(nimage);
         }
 
         if (notification.actions) {
-            for (var i = 0; i < notification.actions.length; i++) {
-                var current = notification.actions[i];
-                var naction = document.createElement('button');
-                naction.className = 'button--color-white button--size-small button--only-borders';
-                naction.id = "nact" + notification.id + '-' + i;
-                naction.innerHTML = current.value;
+            for (let i = 0; i < notification.actions.length; i++) {
+                let current = notification.actions[i];
+                let naction = createElement('button', 'button--color-white button--size-small button--only-borders', 'nact' + notification.id + '-' + i, {}, current.value);
 
                 if (current.action) {
                     naction.onclick = current.action;
@@ -113,8 +98,8 @@ class Notification {
      * @param {Object} notification - notification, which you want to hide
      */
     hide(notification) {
-        var target = this;
-        notification.el.className = "notification-center__notification notification-center__notification--hide";
+        let target = this;
+        notification.el.className = "notification notification--hide";
         setTimeout(function() {
             notification.el.style.visibility = 'hidden';
             notification.isVisible = false;
@@ -125,8 +110,7 @@ class Notification {
 
     __addBlock() {
         let target = this;
-        target.ncBlock = document.createElement('div');
-        target.ncBlock.className = 'notification-center';
+        target.ncBlock = createElement('div', 'notification-center');
         document.body.appendChild(target.ncBlock);
 
         return target.ncBlock;

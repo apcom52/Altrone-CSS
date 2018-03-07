@@ -2,65 +2,75 @@
   position: fixed;
   z-index: 10;
   width: 30%;
-  max-width: 400px;
+  min-width: 350px;
+  max-width: 450px;
   padding: 2em 0em;
   box-sizing: border-box;
   top: 0;
   right: 1rem;
 
-  .notification-center__notification {
-    background-color: fade(@d-gray, 97%);
-    border: 1px solid lighten(@d-gray, 5%);
+  .notification {
+    background-color: fade(@black, 95%);
+    border: 1px solid lighten(@black, 5%);
     color: @u-gray;
     padding: 0.25rem 0.5rem 0.5rem 1rem;
     box-sizing: border-box;
-    margin: 0.5em;
-    border-radius: @mid-smooth;
+    margin: 0.5em 0;
+    border-radius: @smooth;
     animation: notification-show 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     .pt();
 
-    .notification-center__notification__header {
+    .notification__header {
       display: flex;
+      padding: 0.25rem 0;
       justify-content: flex-end;
+      align-items: center;
 
-      .notification-center__notification__header__title {
-        font-size: 1.05em;
+      .notification__title {
+        font-size: 1rem;
         flex: 1;
         .bold();
       }
 
-      .notification-center__notification__header__close {
+      .notification__close {
         content: "";
-        width: 13px;
-        height: 13px;
+        width: 1rem;
+        height: 1rem;
         background-color: lighten(@d-gray, 50%);
         border-radius: 50%;
         cursor: pointer;
         background-image: @remove;
-        background-size: 70%;
+        background-size: 80%;
         background-position: center;
         background-repeat: no-repeat;
       }
     }
 
-    .notification-center__notification__text {
-      font-size: 0.9em;
+    .notification__message {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
       color: darken(@u-gray, 5%);
     }
 
-    &.notification-center__notification--hide {
-      animation: notification-hide 0.5s;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-in-out;
+    button, .button {
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
 
-    .notification-center__notification__image {
+    .notification__image {
       max-width: 100%;
       margin: 0.5em 0em;
       border-radius: @mid-smooth;
       height: auto;
+    }
+
+    &.notification--hide {
+      animation: notification-hide 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
   }
 }
@@ -72,7 +82,7 @@
     right: 0;
     padding: 1rem 0rem;
 
-    .notification-center__notification {
+    .notification {
       margin: 0.5em;
       margin-right: 1.5em;
       border-radius: @mid-smooth;

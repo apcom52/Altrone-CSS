@@ -9,8 +9,7 @@ class Overlay {
 		target.onDestroyCallback = props.onDestroy || null;
 		target.disableClick = Boolean(props.disableClick) || false;
 
-		let element = document.createElement('div');
-		element.className = 'overlay';
+		let element = createElement('div', 'overlay');
 		document.body.appendChild(element);
 		target.element = element;
 
@@ -36,7 +35,7 @@ class Overlay {
 		setTimeout(() => target.element.remove(), 300);
 
 		if (target.onDestroyCallback) {
-			target.onDestroyCallback(target);	
+			target.onDestroyCallback(target);
 		}
 	}
 
