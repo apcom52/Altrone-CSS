@@ -1066,11 +1066,11 @@ class Progress {
 class Select {
     /**
      * Constructor of Select
-     * @param {node} objectSender
+     * @param {Node} objectSender
      * @param {Object} props
      */
     constructor(objectSender, props = {}) {
-        if (objectSender == null) {
+        if (objectSender === null) {
             throw "Select: objectSender is null or undefined";
         }
 
@@ -1088,6 +1088,7 @@ class Select {
         target.__selectOptions = props.options || ['None'];
         target.__optionsSource = target.__selectOptions;
         target.__editable = props.editable || false;
+        target.__name = props.name || null;
         target.OnChangeCallback = props.onChange || null;
         target.__selectOptionsMaxWidth = null;
         target.__selectOptionsElement = null;
@@ -1095,8 +1096,27 @@ class Select {
 
         target.__selectMenu = createElement('div', 'select__menu');
         target.__element.appendChild(target.__selectMenu);
+        target.__input = null;
+
+        if (target.__name) {
+            target.__input = createElement('input', '', '', {name: target.__name, type: 'hidden'});
+            target.__element.appendChild(target.__input);
+        }
 
         target.__selectMenu.onclick = () => target.toggle();
+        target.__element.onkeydown = (e) => {
+            console.log(e.keyCode);
+            if (e.keyCode === 32) {
+                e.preventDefault();
+                target.toggle();
+            } else if (e.keyCode === 38) {
+                e.preventDefault();
+                target.select(target.__index - 1, true);
+            } else if (e.keyCode === 40) {
+                e.preventDefault();
+                target.select(target.__index + 1, true);
+            }
+        };
         target.__onResizeEvent = () => target.__setPosition();
         target.__buildDOM();
         target.select(target.__index);
@@ -1104,7 +1124,7 @@ class Select {
         if (target.__editable) {
             target.__selectMenu.setAttribute('contenteditable', true);
             target.__selectMenu.onkeydown = (e) => {
-                if (e.which != 13) {
+                if (e.which !== 13) {
                     target.__editablePopup(e);
                 } else {
                     target.__selectMenu.innerText = target.__value;
@@ -1187,7 +1207,7 @@ class Select {
         target.__selectMenu.classList.remove('select__menu--open');
         target.__selectOptionsElement.style.display = 'none';
 
-        if (target.__selectMenu.innerText.trim().length == 0) {
+        if (target.__selectMenu.innerText.trim().length === 0) {
             target.__selectMenu.innerText = target.__options[target.__index];
         }
 
@@ -1206,12 +1226,14 @@ class Select {
     /**
      * Select item in Selectbox
      * @param {int} index
+     * @param {Boolean} using_keyboard
      */
-    select(index = 0) {
+    select(index = 0, using_keyboard = false) {
         let target = this;
 
         if (index < 0 || index >= target.__options.length) {
-            throw 'Select: invalid index value';
+            if (!using_keyboard) throw 'Select: invalid index value';
+            return;
         }
 
         target.__index = index;
@@ -1229,11 +1251,16 @@ class Select {
             target.OnChangeCallback(target);
         }
 
+        if (target.__input) {
+            target.__input.value = target.__index;
+        }
+
         target.__setPosition();
-        target.hide();
+
+        if (!using_keyboard) target.hide();
     }
 
-    __editablePopup(e) {
+    __editablePopup() {
         let target = this;
 
         let value = target.__selectMenu.innerText.trim();
@@ -1261,7 +1288,7 @@ class Select {
         target.__selectOptionsElement.style.width = menu_width + 'px';
         target.__selectOptionsElement.style.left = (target.__selectMenu.offsetLeft) + 'px';
 
-        if (target.__position == 'top') {
+        if (target.__position === 'top') {
             let options_height = target.__selectOptionsElement.offsetHeight;
             let menu_top = target.__selectMenu.offsetTop;
             target.__selectOptionsElement.style.top = (menu_top - options_height) + 'px';
@@ -1276,7 +1303,7 @@ class Select {
 
         target.__selectOptionsElement = createElement('div', 'select__options');
 
-        if (target.__position == 'top') {
+        if (target.__position === 'top') {
             target.__selectOptionsElement.classList.add('select__options--top');
             target.__selectMenu.classList.add('select__menu--top');
         }

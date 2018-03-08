@@ -16,7 +16,7 @@
       }
 
       &.select__options__item--active {
-        background-color: @color;
+        background-color: fade(@color, 90%);
         color: @white;
       }
     }
@@ -36,7 +36,7 @@
         }
 
         &.select__options__item--active {
-          background-color: @color;
+          background-color: fade(@color, 90%);
           color: @white;
         }
       }
@@ -50,7 +50,7 @@
     display: inline-block;
     margin: 0;
     background-color: @u-gray;
-    color: @d-gray;
+    color: @black;
     padding: 0.5em 2.5em 0.5em 1em;
     box-sizing: border-box;
     cursor: pointer;
@@ -86,6 +86,7 @@
     position: absolute;
     z-index: 5;
     border: 1px solid darken(@u-gray, 10%);
+    border-top-width: 0;
     padding: 0.25rem 0;
     box-sizing: border-box;
     border-radius: 0 0 @smooth @smooth;
@@ -96,6 +97,8 @@
 
     &.select__options--top {
       border-radius: @smooth @smooth 0 0;
+      border-top-width: 1px;
+      border-bottom-width: 0;
     }
 
     .select__options__item {
@@ -164,7 +167,7 @@
     .select__options {
       background-color: fade(@black, 99%);
       border-color: lighten(@d-gray, 15%);
-      padding: 0.25em 0em;
+      padding: 0.25em 0;
 
       .select__options__item {
         color: @u-gray;

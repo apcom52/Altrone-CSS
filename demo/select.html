@@ -18,7 +18,7 @@
 <body>
 <div class="grid">
 	<div class="col-12 col-lm-6">
-		<div class="card margin-3 margin-lm-05 card--no-smooth">
+		<div class="card margin-3 margin-lm-05">
 			<div class="card__content padding-0">
 				<div class="jumbotron jumbotron--color-pink">
 					<div class="jumbotron__header">Select</div>
@@ -56,6 +56,7 @@
     let select1 = new Select(document.getElementById('example1'), {
         options: ['Adele Adkins', 'Sia Furler', 'Lera Lynn'],
         selectedIndex: 2,
+		name: 'singer',
     });
 
     let select2 = new Select(document.getElementById('example2'), {
