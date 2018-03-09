@@ -1,6 +1,6 @@
 .feed {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   box-sizing: border-box;
   border-bottom: 1px solid @u-gray;
 
@@ -12,12 +12,12 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    margin: 0rem 0.5rem;
+    margin: 0 0.25rem;
   }
 
   .feed__content {
     flex: 1;
-    padding: 0rem 0.5rem;
+    padding: 0 0.5rem;
     color: @d-gray;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,21 @@
       .feed__title, .feed__message {
         color: @u-gray;
       }
+    }
+  }
+}
+
+@media (max-width: @l-mobile) {
+  .feed {
+    padding: 1rem 0.2rem;
+
+    .feed__image {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .feed__content {
+      padding: 0 0.25rem;
     }
   }
 }

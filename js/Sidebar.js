@@ -16,8 +16,13 @@ class Sidebar {
 		target.no_overlay = props.no_overlay || false;		
 		target.__element = objectSender;
 		target.__visible = false;
+		target.__touchStartX = 0;
+		target.__touchStartY = 0;
 		target.__onScrollEvent = () => target.__scroll();
         target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
+        target.__onLeftSwipeStart = (e) => target.__onLeftSwipeHandler(target, e);
+        target.__onLeftSwipeMove = (e) => target.__onLeftSwipeMoveHandler(target, e);
+        target.__onLeftSwipeEnd = (e) => target.__onLeftSwipeEndHandler(target, e);
 	}
 
 	get element() {
@@ -86,6 +91,7 @@ class Sidebar {
 		}
 
 		window.addEventListener('keydown', target.__onKeyDown);
+		window.addEventListener('touchstart', target.__onLeftSwipeStart);
 	}
 
 	hide() {
@@ -181,5 +187,38 @@ class Sidebar {
         	else
         		target.hide();
         }
+    }
+
+    __onLeftSwipeHandler(target, e) {
+        window.addEventListener('touchmove', target.__onLeftSwipeMove);
+        let touchObject = e.changedTouches[0];
+        target.__touchStartX = touchObject.pageX;
+        target.__touchStartY = touchObject.pageY;
+        e.preventDefault();
+    }
+
+    __onLeftSwipeMoveHandler(target, e) {
+        window.addEventListener('touchend', target.__onLeftSwipeEnd);
+        e.preventDefault();
+    }
+
+    __onLeftSwipeEndHandler(target, e) {
+		window.removeEventListener('touchmove', target.__onLeftSwipeMove);
+		window.removeEventListener('touchend', target.__onLeftSwipeEnd);
+
+        let touchObject = e.changedTouches[0];
+        let touchEndX = touchObject.pageX;
+        let touchEndY = touchObject.pageY;
+        let dist = touchEndX - target.__touchStartX;
+        let swipeSide = null;
+		if (dist >= 150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'right';
+		else if (dist <= -150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'left';
+        if ((swipeSide === 'right' && target.__element.classList.contains('sidebar--pin-right')) || (swipeSide === 'left' && !target.__element.classList.contains('sidebar--pin-right'))) {
+            if (target.__overlay)
+                target.__overlay.destroy();
+            else
+                target.hide();
+		}
+        e.preventDefault();
     }
 }
