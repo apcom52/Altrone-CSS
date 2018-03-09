@@ -20,6 +20,7 @@ class Modal {
 		target.__parent = props.parent || null;
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
+		target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
 
 		if (target.__only_discarding) {
 			let header = null;
@@ -98,7 +99,7 @@ class Modal {
 		element.classList.remove('modal--hide');
 		element.classList.add('modal--show');
 
-		if (element.getElementsByClassName('modal__content').length == 0) {
+		if (element.getElementsByClassName('modal__content').length === 0) {
 			throw "Modal: need an element .modal__content";
 		}
 
@@ -118,6 +119,8 @@ class Modal {
 
 		target.__visible = true;		
 		target.element.style.display = 'block';
+
+		window.addEventListener('keydown', target.__onKeyDown);
 
 		if (target.onShowCallback) {
 			target.onShowCallback(target);
@@ -146,6 +149,8 @@ class Modal {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
+
+		window.removeEventListener('keydown', target.__onKeyDown);
 	}
 
     /**
@@ -170,11 +175,17 @@ class Modal {
 	__hide_others() {
 		let target = this;
 		for (let modal of __modals_collection) {
-			if (modal != target) {
+			if (modal !== target) {
 				if (modal.visible) {
 					modal.hide();					
 				}
 			}
+		}
+	}
+
+	__onKeyDownHandler(target, e) {
+		if (e.keyCode === 27) {
+			target.__overlay.destroy();
 		}
 	}
 }

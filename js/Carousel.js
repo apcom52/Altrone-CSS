@@ -47,6 +47,10 @@ class Carousel {
         target.__carouselInfoPanel.appendChild(target.__carouselContentPanel);
 
 		target.__render();
+		target.__element.addEventListener('keydown', (e) => {
+			if (e.keyCode === 37) target.prev();
+			else if (e.keyCode === 39) target.next();
+		});
 
 		if (target.__time > 0) {
 			target.__loop = true;

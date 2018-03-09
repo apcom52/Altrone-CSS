@@ -17,6 +17,7 @@ class Sidebar {
 		target.__element = objectSender;
 		target.__visible = false;
 		target.__onScrollEvent = () => target.__scroll();
+        target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
 	}
 
 	get element() {
@@ -83,6 +84,8 @@ class Sidebar {
 		if (target.onChangeCallback) {
 			target.onChangeCallback(target);
 		}
+
+		window.addEventListener('keydown', target.__onKeyDown);
 	}
 
 	hide() {
@@ -163,11 +166,20 @@ class Sidebar {
 	__hide_others() {
 		let target = this;
 		for (let sidebar of __sidebars_collection) {
-			if (sidebar != target) {
+			if (sidebar !== target) {
 				if (sidebar.visible) {
 					sidebar.hide();					
 				}
 			}
 		}
 	}
+
+    __onKeyDownHandler(target, e) {
+        if (e.keyCode === 27) {
+        	if (target.__overlay)
+            	target.__overlay.destroy();
+        	else
+        		target.hide();
+        }
+    }
 }

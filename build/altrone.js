@@ -131,6 +131,10 @@ class Carousel {
         target.__carouselInfoPanel.appendChild(target.__carouselContentPanel);
 
 		target.__render();
+		target.__element.addEventListener('keydown', (e) => {
+			if (e.keyCode === 37) target.prev();
+			else if (e.keyCode === 39) target.next();
+		});
 
 		if (target.__time > 0) {
 			target.__loop = true;
@@ -571,6 +575,7 @@ class Modal {
 		target.__parent = props.parent || null;
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
+		target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
 
 		if (target.__only_discarding) {
 			let header = null;
@@ -649,7 +654,7 @@ class Modal {
 		element.classList.remove('modal--hide');
 		element.classList.add('modal--show');
 
-		if (element.getElementsByClassName('modal__content').length == 0) {
+		if (element.getElementsByClassName('modal__content').length === 0) {
 			throw "Modal: need an element .modal__content";
 		}
 
@@ -669,6 +674,8 @@ class Modal {
 
 		target.__visible = true;		
 		target.element.style.display = 'block';
+
+		window.addEventListener('keydown', target.__onKeyDown);
 
 		if (target.onShowCallback) {
 			target.onShowCallback(target);
@@ -697,6 +704,8 @@ class Modal {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
+
+		window.removeEventListener('keydown', target.__onKeyDown);
 	}
 
     /**
@@ -721,11 +730,17 @@ class Modal {
 	__hide_others() {
 		let target = this;
 		for (let modal of __modals_collection) {
-			if (modal != target) {
+			if (modal !== target) {
 				if (modal.visible) {
 					modal.hide();					
 				}
 			}
+		}
+	}
+
+	__onKeyDownHandler(target, e) {
+		if (e.keyCode === 27) {
+			target.__overlay.destroy();
 		}
 	}
 }
@@ -1152,6 +1167,14 @@ class Select {
     }
 
     /**
+     * Return an input attribute 'name' value
+     * @returns {String}
+     */
+    get name() {
+        return this.__name;
+    }
+
+    /**
      * Return the value of parameter 'selectedIndex'
      * @returns {int}
      */
@@ -1339,6 +1362,7 @@ class Sidebar {
 		target.__element = objectSender;
 		target.__visible = false;
 		target.__onScrollEvent = () => target.__scroll();
+        target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
 	}
 
 	get element() {
@@ -1405,6 +1429,8 @@ class Sidebar {
 		if (target.onChangeCallback) {
 			target.onChangeCallback(target);
 		}
+
+		window.addEventListener('keydown', target.__onKeyDown);
 	}
 
 	hide() {
@@ -1485,13 +1511,22 @@ class Sidebar {
 	__hide_others() {
 		let target = this;
 		for (let sidebar of __sidebars_collection) {
-			if (sidebar != target) {
+			if (sidebar !== target) {
 				if (sidebar.visible) {
 					sidebar.hide();					
 				}
 			}
 		}
 	}
+
+    __onKeyDownHandler(target, e) {
+        if (e.keyCode === 27) {
+        	if (target.__overlay)
+            	target.__overlay.destroy();
+        	else
+        		target.hide();
+        }
+    }
 }
 class Tabs {
 	constructor(objectSender, props = {}) {
