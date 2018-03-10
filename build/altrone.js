@@ -83,10 +83,9 @@ class Accordion {
     }
 }
 class Carousel {
-
     /**
 	 * Constructor of Carousel
-     * @param {domElement} element - the parent block
+     * @param {Node} element - the parent block
      * @param {object} props - options
      */
 	constructor(element, props = {}) {
@@ -102,6 +101,9 @@ class Carousel {
 		target.__currentIndex = props.currentIndex || 0;
 		target.__time = props.time || 0;
 		target.__loop = props.loop;
+        target.__onSwipeStart = (e) => target.__onSwipeHandler(target, e);
+        target.__onSwipeMove = (e) => target.__onSwipeMoveHandler(target, e);
+        target.__onSwipeEnd = (e) => target.__onSwipeEndHandler(target, e);
 		target.onChangeCallback = props.onChange || null;
 
 		// Check every .carousel__item, get attributes and put them into target.__data
@@ -136,6 +138,8 @@ class Carousel {
 			else if (e.keyCode === 39) target.next();
 		});
 
+		target.__element.addEventListener('touchstart', target.__onSwipeStart);
+
 		if (target.__time > 0) {
 			target.__loop = true;
 			setInterval(function() {
@@ -146,7 +150,7 @@ class Carousel {
 
     /**
 	 * Get the parent block
-     * @returns {domElement|*}
+     * @returns {Node|*}
      */
 	get element() {
 		return this.__element;
@@ -240,6 +244,35 @@ class Carousel {
 		target.__carouselTitlePanel.innerHTML = currentData.title;
 		target.__carouselContentPanel.innerHTML = currentData.description;
 	}
+
+    __onSwipeHandler(target, e) {
+        target.__element.addEventListener('touchmove', target.__onSwipeMove, {passive: false});
+        let touchObject = e.changedTouches[0];
+        target.__touchStartX = touchObject.pageX;
+        target.__touchStartY = touchObject.pageY;
+        e.preventDefault();
+    }
+
+    __onSwipeMoveHandler(target, e) {
+        target.__element.addEventListener('touchend', target.__onSwipeEnd, {passive: false});
+        e.preventDefault();
+    }
+
+    __onSwipeEndHandler(target, e) {
+        target.__element.removeEventListener('touchmove', target.__onSwipeMove);
+        target.__element.removeEventListener('touchend', target.__onSwipeEnd);
+
+        let touchObject = e.changedTouches[0];
+        let touchEndX = touchObject.pageX;
+        let touchEndY = touchObject.pageY;
+        let swipeSide = swipe(target.__touchStartX, target.__touchStartY, touchEndX, touchEndY);
+        if (swipeSide === 'left') {
+            target.prev();
+        } else if (swipeSide === 'right') {
+            target.next();
+        }
+        e.preventDefault();
+    }
 }
 class Dialog {
     /**
@@ -1365,9 +1398,9 @@ class Sidebar {
 		target.__touchStartY = 0;
 		target.__onScrollEvent = () => target.__scroll();
         target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
-        target.__onLeftSwipeStart = (e) => target.__onLeftSwipeHandler(target, e);
-        target.__onLeftSwipeMove = (e) => target.__onLeftSwipeMoveHandler(target, e);
-        target.__onLeftSwipeEnd = (e) => target.__onLeftSwipeEndHandler(target, e);
+        target.__onSwipeStart = (e) => target.__onSwipeHandler(target, e);
+        target.__onSwipeMove = (e) => target.__onSwipeMoveHandler(target, e);
+        target.__onSwipeEnd = (e) => target.__onSwipeEndHandler(target, e);
 	}
 
 	get element() {
@@ -1436,7 +1469,7 @@ class Sidebar {
 		}
 
 		window.addEventListener('keydown', target.__onKeyDown);
-		window.addEventListener('touchstart', target.__onLeftSwipeStart);
+		window.addEventListener('touchstart', target.__onSwipeStart, {passive: false});
 	}
 
 	hide() {
@@ -1489,7 +1522,6 @@ class Sidebar {
 
 		let topScrollPosition = window.scrollTop;
 		let taskbar_height = 44;
-		console.log(topScrollPosition);
 
 		if (topScrollPosition >= taskbar_height) {
 			element.style.top = '0px';
@@ -1534,31 +1566,28 @@ class Sidebar {
         }
     }
 
-    __onLeftSwipeHandler(target, e) {
-        window.addEventListener('touchmove', target.__onLeftSwipeMove);
+    __onSwipeHandler(target, e) {
+        window.addEventListener('touchmove', target.__onSwipeMove, {passive: false});
         let touchObject = e.changedTouches[0];
         target.__touchStartX = touchObject.pageX;
         target.__touchStartY = touchObject.pageY;
         e.preventDefault();
     }
 
-    __onLeftSwipeMoveHandler(target, e) {
-        window.addEventListener('touchend', target.__onLeftSwipeEnd);
+    __onSwipeMoveHandler(target, e) {
+        window.addEventListener('touchend', target.__onSwipeEnd, {passive: false});
         e.preventDefault();
     }
 
-    __onLeftSwipeEndHandler(target, e) {
-		window.removeEventListener('touchmove', target.__onLeftSwipeMove);
-		window.removeEventListener('touchend', target.__onLeftSwipeEnd);
+    __onSwipeEndHandler(target, e) {
+		window.removeEventListener('touchmove', target.__onSwipeMove);
+		window.removeEventListener('touchend', target.__onSwipeEnd);
 
         let touchObject = e.changedTouches[0];
         let touchEndX = touchObject.pageX;
         let touchEndY = touchObject.pageY;
-        let dist = touchEndX - target.__touchStartX;
-        let swipeSide = null;
-		if (dist >= 150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'right';
-		else if (dist <= -150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'left';
-        if ((swipeSide === 'right' && target.__element.classList.contains('sidebar--pin-right')) || (swipeSide === 'left' && !target.__element.classList.contains('sidebar--pin-right'))) {
+        let swipeSide = swipe(target.__touchStartX, target.__touchStartY, touchEndX, touchEndY);
+        if ((swipeSide === 'left' && target.__element.classList.contains('sidebar--pin-right')) || (swipeSide === 'right' && !target.__element.classList.contains('sidebar--pin-right'))) {
             if (target.__overlay)
                 target.__overlay.destroy();
             else
@@ -1824,4 +1853,12 @@ function createElement(tagName = 'div', className = '', id = '', attrs = {}, inn
     }
     if (innerText) element.innerText = innerText;
     return element;
+}
+
+function swipe(startX, startY, endX, endY) {
+    let dist = endX - startX;
+    let ydist = Math.abs(endY - startY) <= 50;
+    if (dist >= 150 && ydist) return 'left';
+    else if (dist <= -150 && ydist) return 'right';
+    return null;
 }

@@ -72,3 +72,11 @@ function createElement(tagName = 'div', className = '', id = '', attrs = {}, inn
     if (innerText) element.innerText = innerText;
     return element;
 }
+
+function swipe(startX, startY, endX, endY) {
+    let dist = endX - startX;
+    let ydist = Math.abs(endY - startY) <= 50;
+    if (dist >= 150 && ydist) return 'left';
+    else if (dist <= -150 && ydist) return 'right';
+    return null;
+}

@@ -1,8 +1,7 @@
 class Carousel {
-
     /**
 	 * Constructor of Carousel
-     * @param {domElement} element - the parent block
+     * @param {Node} element - the parent block
      * @param {object} props - options
      */
 	constructor(element, props = {}) {
@@ -18,6 +17,9 @@ class Carousel {
 		target.__currentIndex = props.currentIndex || 0;
 		target.__time = props.time || 0;
 		target.__loop = props.loop;
+        target.__onSwipeStart = (e) => target.__onSwipeHandler(target, e);
+        target.__onSwipeMove = (e) => target.__onSwipeMoveHandler(target, e);
+        target.__onSwipeEnd = (e) => target.__onSwipeEndHandler(target, e);
 		target.onChangeCallback = props.onChange || null;
 
 		// Check every .carousel__item, get attributes and put them into target.__data
@@ -52,6 +54,8 @@ class Carousel {
 			else if (e.keyCode === 39) target.next();
 		});
 
+		target.__element.addEventListener('touchstart', target.__onSwipeStart);
+
 		if (target.__time > 0) {
 			target.__loop = true;
 			setInterval(function() {
@@ -62,7 +66,7 @@ class Carousel {
 
     /**
 	 * Get the parent block
-     * @returns {domElement|*}
+     * @returns {Node|*}
      */
 	get element() {
 		return this.__element;
@@ -156,4 +160,33 @@ class Carousel {
 		target.__carouselTitlePanel.innerHTML = currentData.title;
 		target.__carouselContentPanel.innerHTML = currentData.description;
 	}
+
+    __onSwipeHandler(target, e) {
+        target.__element.addEventListener('touchmove', target.__onSwipeMove, {passive: false});
+        let touchObject = e.changedTouches[0];
+        target.__touchStartX = touchObject.pageX;
+        target.__touchStartY = touchObject.pageY;
+        e.preventDefault();
+    }
+
+    __onSwipeMoveHandler(target, e) {
+        target.__element.addEventListener('touchend', target.__onSwipeEnd, {passive: false});
+        e.preventDefault();
+    }
+
+    __onSwipeEndHandler(target, e) {
+        target.__element.removeEventListener('touchmove', target.__onSwipeMove);
+        target.__element.removeEventListener('touchend', target.__onSwipeEnd);
+
+        let touchObject = e.changedTouches[0];
+        let touchEndX = touchObject.pageX;
+        let touchEndY = touchObject.pageY;
+        let swipeSide = swipe(target.__touchStartX, target.__touchStartY, touchEndX, touchEndY);
+        if (swipeSide === 'left') {
+            target.prev();
+        } else if (swipeSide === 'right') {
+            target.next();
+        }
+        e.preventDefault();
+    }
 }

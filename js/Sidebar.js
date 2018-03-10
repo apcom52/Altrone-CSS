@@ -20,9 +20,9 @@ class Sidebar {
 		target.__touchStartY = 0;
 		target.__onScrollEvent = () => target.__scroll();
         target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
-        target.__onLeftSwipeStart = (e) => target.__onLeftSwipeHandler(target, e);
-        target.__onLeftSwipeMove = (e) => target.__onLeftSwipeMoveHandler(target, e);
-        target.__onLeftSwipeEnd = (e) => target.__onLeftSwipeEndHandler(target, e);
+        target.__onSwipeStart = (e) => target.__onSwipeHandler(target, e);
+        target.__onSwipeMove = (e) => target.__onSwipeMoveHandler(target, e);
+        target.__onSwipeEnd = (e) => target.__onSwipeEndHandler(target, e);
 	}
 
 	get element() {
@@ -91,7 +91,7 @@ class Sidebar {
 		}
 
 		window.addEventListener('keydown', target.__onKeyDown);
-		window.addEventListener('touchstart', target.__onLeftSwipeStart);
+		window.addEventListener('touchstart', target.__onSwipeStart, {passive: false});
 	}
 
 	hide() {
@@ -144,7 +144,6 @@ class Sidebar {
 
 		let topScrollPosition = window.scrollTop;
 		let taskbar_height = 44;
-		console.log(topScrollPosition);
 
 		if (topScrollPosition >= taskbar_height) {
 			element.style.top = '0px';
@@ -189,31 +188,28 @@ class Sidebar {
         }
     }
 
-    __onLeftSwipeHandler(target, e) {
-        window.addEventListener('touchmove', target.__onLeftSwipeMove);
+    __onSwipeHandler(target, e) {
+        window.addEventListener('touchmove', target.__onSwipeMove, {passive: false});
         let touchObject = e.changedTouches[0];
         target.__touchStartX = touchObject.pageX;
         target.__touchStartY = touchObject.pageY;
         e.preventDefault();
     }
 
-    __onLeftSwipeMoveHandler(target, e) {
-        window.addEventListener('touchend', target.__onLeftSwipeEnd);
+    __onSwipeMoveHandler(target, e) {
+        window.addEventListener('touchend', target.__onSwipeEnd, {passive: false});
         e.preventDefault();
     }
 
-    __onLeftSwipeEndHandler(target, e) {
-		window.removeEventListener('touchmove', target.__onLeftSwipeMove);
-		window.removeEventListener('touchend', target.__onLeftSwipeEnd);
+    __onSwipeEndHandler(target, e) {
+		window.removeEventListener('touchmove', target.__onSwipeMove);
+		window.removeEventListener('touchend', target.__onSwipeEnd);
 
         let touchObject = e.changedTouches[0];
         let touchEndX = touchObject.pageX;
         let touchEndY = touchObject.pageY;
-        let dist = touchEndX - target.__touchStartX;
-        let swipeSide = null;
-		if (dist >= 150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'right';
-		else if (dist <= -150 && Math.abs(touchEndY - target.__touchStartY) <= 50) swipeSide = 'left';
-        if ((swipeSide === 'right' && target.__element.classList.contains('sidebar--pin-right')) || (swipeSide === 'left' && !target.__element.classList.contains('sidebar--pin-right'))) {
+        let swipeSide = swipe(target.__touchStartX, target.__touchStartY, touchEndX, touchEndY);
+        if ((swipeSide === 'left' && target.__element.classList.contains('sidebar--pin-right')) || (swipeSide === 'right' && !target.__element.classList.contains('sidebar--pin-right'))) {
             if (target.__overlay)
                 target.__overlay.destroy();
             else
