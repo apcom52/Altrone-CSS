@@ -250,7 +250,7 @@ class Carousel {
         let touchObject = e.changedTouches[0];
         target.__touchStartX = touchObject.pageX;
         target.__touchStartY = touchObject.pageY;
-        e.preventDefault();
+        // e.preventDefault();
     }
 
     __onSwipeMoveHandler(target, e) {
@@ -477,7 +477,7 @@ class Dialog {
 		setTimeout(() => {target.modal_body.remove();}, 300);
 	}
 }
-var activeDropdown = null;
+/*var activeDropdown = null;
 
 function __dropdownSetPosition() {
     if (activeDropdown) {
@@ -585,7 +585,7 @@ document.addEventListener('click', function(event) {
 
         window.addEventListener('resize', __dropdownSetPosition, false);
 	}
-});
+});*/
 let __modals_collection = [];
 
 class Modal {
@@ -980,6 +980,87 @@ class Overlay {
 			}
 		}		
 	}
+}
+class Popup {
+    constructor(element, objectSender, options = {}) {
+        if (element === null) {
+            throw "Accordion: element is null or undefined";
+        }
+
+        let target = this;
+        target.__popup = element;
+        target.__sender = objectSender;
+        target.__isVisible = false;
+
+        Array.from(target.__popup.getElementsByClassName('popup__close'), (current) => {
+            current.onclick = () => target.hide();
+        });
+    }
+
+    show() {
+        let target = this;
+        target.__popup.style.display = 'flex';
+        target.__setPosition();
+        target.__isVisible = true;
+    }
+
+    hide() {
+        let target = this;
+        target.__popup.style.display = 'none';
+        target.__isVisible = false;
+    }
+
+    toggle() {
+        let target = this;
+        if (!target.__isVisible) target.show();
+        else target.hide();
+    }
+
+    __setPosition() {
+        let target = this;
+        let windowWidth = window.innerWidth,
+            windowHeight = window.innerHeight;
+        let senderRect = target.__sender.getBoundingClientRect();
+        let senderLeft = senderRect.left,
+            senderTop = senderRect.top,
+            senderRight = senderRect.right,
+            senderBottom = senderRect.bottom;
+        let popupWidth = target.__popup.offsetWidth,
+            popupHeight = target.__popup.offsetHeight;
+
+        // расположить снизу от элемента
+        const leftSide = senderLeft - popupWidth >= 0,
+            topSide = senderTop - popupHeight >= 0,
+            rightSide = senderRight + popupWidth <= windowWidth,
+            bottomSide = senderTop + popupHeight <= windowHeight;
+
+        console.log('sender', senderLeft, senderTop, senderRight, senderBottom);
+        console.log(popupWidth, popupHeight);
+
+        let popupLeft = 0,
+            popupTop = 0;
+
+        if (bottomSide) {
+            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
+            else popupLeft = senderLeft;
+            popupTop = senderBottom;
+        } else if (topSide) {
+            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
+            else popupLeft = senderLeft;
+            popupTop = senderTop - popupHeight;
+        } else if (leftSide) {
+            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
+            else popupLeft = senderLeft;
+            popupTop = senderTop;
+        } else if (rightSide) {
+            popupLeft = senderRight;
+            popupTop = senderTop;
+        }
+
+        console.log('popup', popupLeft, popupTop);
+        target.__popup.style.left = popupLeft + 'px';
+        target.__popup.style.top = popupTop + 'px';
+    }
 }
 class Progress {
     constructor(element, props = {}) {
@@ -1861,4 +1942,57 @@ function swipe(startX, startY, endX, endY) {
     if (dist >= 150 && ydist) return 'left';
     else if (dist <= -150 && ydist) return 'right';
     return null;
+}
+let currentDropdown = null;
+
+let destroyDropdown = (e) => {
+    console.log(e.target.hasAttribute('data-dropdown'));
+    if (!e.target.hasAttribute('data-dropdown')) {
+        currentDropdown.classList.remove('dropdown--position-bottom');
+        setTimeout(() => {
+            currentDropdown.classList.remove('dropdown--show');
+            currentDropdown = null;
+        }, 500);
+    }
+};
+
+document.addEventListener('click', destroyDropdown);
+document.addEventListener('DOMContentLoaded', () => {
+    let dropdownTargets = document.querySelectorAll('[data-dropdown]');
+    dropdownTargets.forEach((current) => {
+        current.addEventListener('click', function(e) {
+            let dropdown = document.getElementById(current.getAttribute('data-dropdown'));
+            console.log(current, dropdown);
+
+            __setDropdownPosition(e.target, dropdown);
+        });
+    });
+});
+
+
+
+function __setDropdownPosition(sender, dropdown) {
+    dropdown.classList.add('dropdown--show');
+    let windowWidth = window.innerWidth,
+        windowHeight = window.innerHeight;
+    let senderRect = sender.getBoundingClientRect();
+    let senderLeft = senderRect.left,
+        senderTop = senderRect.top,
+        senderRight = senderRect.right,
+        senderBottom = senderRect.bottom;
+    let popupWidth = dropdown.offsetWidth,
+        popupHeight = dropdown.offsetHeight;
+
+    let dropdownLeft = 0,
+        dropdownTop = 0;
+
+    if (senderLeft + popupWidth >= windowWidth) dropdownLeft = windowWidth - popupWidth;
+    else dropdownLeft = senderLeft;
+
+    dropdownTop = senderBottom;
+    dropdown.style.left = dropdownLeft + 'px';
+    dropdown.style.top = dropdownTop + 'px';
+
+    dropdown.classList.add('dropdown--position-bottom');
+    currentDropdown = dropdown;
 }

@@ -166,7 +166,7 @@ class Carousel {
         let touchObject = e.changedTouches[0];
         target.__touchStartX = touchObject.pageX;
         target.__touchStartY = touchObject.pageY;
-        e.preventDefault();
+        // e.preventDefault();
     }
 
     __onSwipeMoveHandler(target, e) {

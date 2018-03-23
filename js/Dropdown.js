@@ -1,4 +1,4 @@
-var activeDropdown = null;
+/*var activeDropdown = null;
 
 function __dropdownSetPosition() {
     if (activeDropdown) {
@@ -106,4 +106,4 @@ document.addEventListener('click', function(event) {
 
         window.addEventListener('resize', __dropdownSetPosition, false);
 	}
-});
+});*/

@@ -22,7 +22,8 @@
 				<h1 class="helvetica-thin">Выпадающее меню</h1>	
 
 				<div class="grid">
-					<div class="col-4 offset-8"><button class="button--color-blue" id="dd_demo" data-dropdown="secondDropdown" data-dropdown-position="right">Показать выпадающее меню</button></div>
+					<div class="col-4"><button onclick="modal.show();">Открыть модальное окно</button></div>
+					<div class="col-4 offset-4"><button class="button--color-blue" id="dd_demo" data-dropdown="secondDropdown" data-dropdown-position="right">Показать выпадающее меню</button></div>
 				</div>
 
 				<div class="grid">
@@ -95,7 +96,7 @@
 		<div class="dropdown__item">Quit</div>
 	</div>
 
-	<div class="dropdown dropdown--invert dropdown--color-olive" style="left: 1000px; top: 50px;">
+	<div class="dropdown dropdown--invert dropdown--color-olive" id="dropdown4" style="left: 1000px; top: 50px;">
 		<div class="dropdown__header">Editing</div>
 		<div class="dropdown__item" tabindex="0">Cut</div>
 		<div class="dropdown__item" tabindex="0">Copy</div>
@@ -117,9 +118,16 @@
 	</div>
 </div>
 
+
+<div class="modal" id="modalExample">
+	<div class="modal__header"><div class="modal__title">Modal & Popup Test</div></div>
+	<div class="modal__content">
+		<button data-dropdown="dropdown4">Open Dropdown</button>
+	</div>
+</div>
+
 <script>
-//	let modal = new Modal(document.getElementById('dropdownExample'));
-//	modal.show();
+	let modal = new Modal(document.getElementById('modalExample'));
 </script>
 </body>
 </html>
