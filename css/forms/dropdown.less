@@ -51,15 +51,21 @@
   }
 
   &.dropdown--position-left {
-    margin-right: 0.2rem;
+    margin-left: -0.2rem;
+    opacity: 1;
+    transition: margin @dropdown-time ease-in-out, opacity @dropdown-time linear;
   }
 
   &.dropdown--position-right {
     margin-left: 0.2rem;
+    opacity: 1;
+    transition: margin @dropdown-time ease-in-out, opacity @dropdown-time linear;
   }
 
   &.dropdown--position-top {
     margin-bottom: 0.2rem;
+    opacity: 1;
+    transition: margin @dropdown-time ease-in-out, opacity @dropdown-time linear;
   }
 
   .dropdown__header {

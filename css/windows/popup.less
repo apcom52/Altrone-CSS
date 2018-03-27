@@ -1,0 +1,131 @@
+.popup {
+  background-color: @white;
+  position: absolute;
+  min-width: 300px;
+  max-width: 500px;
+  border: 1px solid @l-gray;
+  border-radius: @smooth;
+  flex-direction: column;
+  display: none;
+  margin: 0.2rem;
+  //opacity: 0;
+
+  .popup__header {
+    border-bottom: 1px solid @u-gray;
+    display: flex;
+
+    .popup__title {
+      flex: 1;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      .bold();
+    }
+
+    .popup__close {
+      flex: none;
+      width: 2.5rem;
+      height: ~'calc(2rem + 4px)';
+      border: 1px solid @l-gray;
+      border-top: none;
+      cursor: pointer;
+      background-image: @remove;
+      background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: darken(@u-gray, 5%);
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .popup__content {
+    padding: 0.5rem 1rem;
+
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &.popup--show {
+    display: flex;
+  }
+
+  &.popup--position-bottom {
+    animation: 0.3s popup-show;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.popup--position-left {
+    animation: 0.3s popup-show-left;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.popup--position-right {
+    animation: 0.3s popup-show-right;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.popup--position-top {
+    animation: 0.3s popup-show-top;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes popup-show {
+  0% {
+    opacity: 0;
+    margin-top: 0px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 5px;
+  }
+}
+
+@keyframes popup-show-left {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: -5px;
+  }
+}
+
+@keyframes popup-show-right {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 5px;
+  }
+}
+
+@keyframes popup-show-top {
+  0% {
+    opacity: 0;
+    margin-top: 0px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: -5px;
+  }
+}

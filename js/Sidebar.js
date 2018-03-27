@@ -193,12 +193,10 @@ class Sidebar {
         let touchObject = e.changedTouches[0];
         target.__touchStartX = touchObject.pageX;
         target.__touchStartY = touchObject.pageY;
-        e.preventDefault();
     }
 
     __onSwipeMoveHandler(target, e) {
         window.addEventListener('touchend', target.__onSwipeEnd, {passive: false});
-        e.preventDefault();
     }
 
     __onSwipeEndHandler(target, e) {
@@ -215,6 +213,5 @@ class Sidebar {
             else
                 target.hide();
 		}
-        e.preventDefault();
     }
 }
