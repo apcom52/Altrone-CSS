@@ -1,6 +1,16 @@
 .set-navigation-color(@color) {
   .navigation__item {
     color: @color;
+
+    &.navigation__item--disabled {
+      color: darken(@l-gray, 10%);
+    }
+  }
+
+  &.navigation--invert {
+    &.navigation__item--disabled {
+      color: lighten(@d-gray, 10%);
+    }
   }
 }
 
@@ -15,6 +25,19 @@
     color: @d-gray;
     padding: 0.5em;
     .bold();
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+
+    &.navigation__item--disabled {
+      color: darken(@l-gray, 10%);
+      cursor: not-allowed;
+
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
   }
 
   ul {
@@ -46,6 +69,10 @@
   &.navigation--invert {
     .navigation__item {
       color: @u-gray;
+
+      &.navigation__item--disabled {
+        color: lighten(@d-gray, 10%);
+      }
     }
 
     .navigation {

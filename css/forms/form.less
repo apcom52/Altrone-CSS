@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
 
   .input, input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"], select, textarea {
     margin: 0.25rem 0;
@@ -67,7 +67,7 @@
       }
     }
 
-    .form__help-text {
+    .form__help {
       .pt();
       font-size: 0.8rem;
       color: @m-gray;
@@ -76,7 +76,7 @@
     .form__input-block {
       display: flex;
 
-      .form__help-block {
+      .form__attachment {
         background-color: darken(@u-gray, 5%);
         border: 1px solid @l-gray;
         padding: 0.5rem;
@@ -115,6 +115,25 @@
     }
   }
 
+  .form__actions {
+    display: flex;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
+
+    input[type="submit"], input[type="reset"], input[type="button"], button, a.button {
+      display: inline-flex;
+      align-self: start;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
   &.form--color-red { .set-form-color(@red); }
   &.form--color-orange{ .set-form-color(@orange); }
   &.form--color-yellow{ .set-form-color(@yellow); }
@@ -148,7 +167,7 @@
       }
 
       .form__input-block {
-        .form__help-block {
+        .form__attachment {
           background-color: lighten(@d-gray, 3%);
           color: @u-gray;
           border-color: lighten(@d-gray, 5%);
@@ -174,7 +193,7 @@
 
   .form__group {
     .form__input-block {
-      .form__help-block {
+      .form__attachment {
         border-color: @color;
       }
     }
@@ -187,7 +206,7 @@
 
     .form__group {
       .form__input-block {
-        .form__help-block {
+        .form__attachment {
           border-color: @color;
         }
       }
