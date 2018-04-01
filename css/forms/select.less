@@ -4,7 +4,7 @@
   }
 
   .select__options {
-    .select__options__item {
+    .select__option {
       &:hover {
         background-color: lighten(@color, 15%);
         color: @white;
@@ -15,7 +15,7 @@
         color: @white;
       }
 
-      &.select__options__item--active {
+      &.select__option--active {
         background-color: fade(@color, 90%);
         color: @white;
       }
@@ -24,7 +24,7 @@
 
   &.select--invert {
     .select__options {
-      .select__options__item {
+      .select__option {
         &:hover {
           background-color: darken(@color, 15%);
           color: @white;
@@ -35,7 +35,7 @@
           color: @white;
         }
 
-        &.select__options__item--active {
+        &.select__option--active {
           background-color: fade(@color, 90%);
           color: @white;
         }
@@ -102,7 +102,7 @@
       border-bottom-width: 0;
     }
 
-    .select__options__item {
+    .select__option {
       padding: 0.5rem 1rem;
       cursor: pointer;
       color: @d-gray;
@@ -117,7 +117,7 @@
         background-color: @l-gray;
       }
 
-      &.select__options__item--active {
+      &.select__option--active {
         background-color: @l-gray;
       }
     }
@@ -170,7 +170,7 @@
       border-color: lighten(@d-gray, 15%);
       padding: 0.25em 0;
 
-      .select__options__item {
+      .select__option {
         color: @u-gray;
 
         &:hover {
@@ -181,7 +181,7 @@
           background-color: @d-gray;
         }
 
-        &.select__options__item--active {
+        &.select__option--active {
           background-color: @d-gray;
         }
       }

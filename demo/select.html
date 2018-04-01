@@ -26,24 +26,15 @@
 
 				<div class="margin-2">
                     <div class="grid">
-                        <div class="col-4"><div class="select select--color-purple" id="example2"></div></div>
+                        <div class="col-4">
+							<div class="select select--color-purple" id="example2">
+								<div class="select__option" data-value="moscow">Москва</div>
+								<div class="select__option">Санкт-Петербург</div>
+								<div class="select__option" data-value="nn">Нижний Новгород</div>
+							</div>
+						</div>
                         <div class="col-4"><div class="select select--invert select--color-blue" id="example3"></div></div>
                     </div>
-
-					<div class="form">
-						<div class="form__group"><label for="field1"></label><input type="text" id="field1" value="Sia Furler"></div>
-						<div class="form__group"><div class="select" id="example1" tabindex="0"></div></div>
-						<div class="form__group"><select name="" id="">
-							<option value="">Sia Furler</option>
-							<option value="">Adele</option>
-							<option value="">Rihanna</option>
-						</select></div>
-					</div>
-
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi dolorem quas, esse necessitatibus accusamus ducimus, placeat blanditiis tempore impedit vel doloribus, quibusdam quam! Provident eum, nulla. Doloremque, nobis quidem praesentium.</div>
-                    <div>Illo, porro ipsa perspiciatis modi corporis nesciunt necessitatibus reprehenderit dolorem cum cumque id a, saepe est delectus. Perferendis consectetur molestiae ullam inventore labore, quisquam dolore odio a omnis praesentium quis.</div>
-                    <div>Beatae, tempora, illum! Voluptatum ipsam culpa id accusamus, nam corrupti fugit deserunt inventore explicabo, quos sint perferendis assumenda laborum. Dolorum esse est, quae natus obcaecati nemo? Accusamus quidem, pariatur ratione.</div>
-                    <div>Consequuntur repudiandae dolore asperiores possimus ducimus animi? Neque soluta suscipit eum animi, voluptate eligendi quos cumque. Harum iure explicabo obcaecati corporis amet excepturi deserunt laudantium fugit tempore, quasi culpa doloremque?</div>
                 </div>
 			</div>
 		</div>
@@ -52,22 +43,9 @@
 
 <script>
     'use strict';
-
-    let select1 = new Select(document.getElementById('example1'), {
-        options: ['Adele Adkins', 'Sia Furler', 'Lera Lynn'],
-        selectedIndex: 2,
-		name: 'singer',
-    });
-
     let select2 = new Select(document.getElementById('example2'), {
-        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
         selectedIndex: 2,
-    });
-
-    let select3 = new Select(document.getElementById('example3'), {
-        options: ['New York', 'New Orlean', 'San Francisco', 'Los Angeles', 'Seattle', 'Washington', 'Chicago', 'New Mexico', 'Albuquerque'],
-        editable: true,
-        position: 'top',
+		name: 'city',
     });
 </script>
 </body>

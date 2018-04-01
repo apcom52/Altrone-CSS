@@ -11,10 +11,10 @@ class Select {
 
         let target = this;
         target.__element = objectSender;
-        target.__options = props.options || null;
+        target.__options = target.__element.getElementsByClassName('select__option') || null;
 
         if (!target.__options || !target.__options.length) {
-            throw  "Select: props.options is empty or undefined";
+            throw  "Select: no options in select";
         }
 
         target.__visible = false;
@@ -26,8 +26,12 @@ class Select {
         target.__name = props.name || null;
         target.OnChangeCallback = props.onChange || null;
         target.__selectOptionsMaxWidth = null;
-        target.__selectOptionsElement = null;
+        target.__selectOptions = null;
         target.__value = null;
+
+        if (!target.__element.hasAttribute('tabindex')) {
+            target.__element.setAttribute('tabindex', 0);
+        }
 
         target.__selectMenu = createElement('div', 'select__menu');
         target.__element.appendChild(target.__selectMenu);
@@ -135,7 +139,7 @@ class Select {
         target.__visible = true;
 
         target.__selectMenu.classList.add('select__menu--open');
-        target.__selectOptionsElement.style.display = 'block';
+        target.__selectOptions.style.display = 'block';
         target.__setPosition();
 
         window.addEventListener('resize', target.__onResizeEvent, false);
@@ -148,7 +152,7 @@ class Select {
         let target = this;
         target.__visible = false;
         target.__selectMenu.classList.remove('select__menu--open');
-        target.__selectOptionsElement.style.display = 'none';
+        target.__selectOptions.style.display = 'none';
 
         if (target.__selectMenu.innerText.trim().length === 0) {
             target.__selectMenu.innerText = target.__options[target.__index];
@@ -180,22 +184,23 @@ class Select {
         }
 
         target.__index = index;
-        target.__selectMenu.innerText = target.__options[index];
+        target.__selectMenu.innerText = target.__options[index].innerText;
         target.__value = target.__options[index];
 
-        for (let node_index = 0; node_index < target.__selectOptionsElement.childNodes.length; node_index++) {
-            let node = target.__selectOptionsElement.childNodes[node_index];
-            node.classList.remove('select__options__item--active');
+        for (let node_index = 0; node_index < target.__selectOptions.childNodes.length; node_index++) {
+            let node = target.__selectOptions.childNodes[node_index];
+            node.classList.remove('select__option--active');
         }
 
-        target.__selectOptionsElement.childNodes[index].classList.add('select__options__item--active');
+        target.__selectOptions.childNodes[index].classList.add('select__option--active');
 
         if (target.onChangeCallback) {
             target.OnChangeCallback(target);
         }
 
         if (target.__input) {
-            target.__input.value = target.__index;
+            if (target.__value.hasAttribute('data-value')) target.__input.value = target.__value.getAttribute('data-value');
+            else target.__input.value = target.__index;
         }
 
         target.__setPosition();
@@ -207,7 +212,7 @@ class Select {
         let target = this;
 
         let value = target.__selectMenu.innerText.trim();
-        for (let element of target.__selectOptionsElement.childNodes) {
+        for (let element of target.__selectOptions.childNodes) {
             if (element.innerText.toLowerCase().includes(value.toLowerCase())) {
                 element.style.display = 'block';
             } else {
@@ -221,43 +226,45 @@ class Select {
 
     __setPosition() {
         let target = this;
-        let [options_width, menu_width] = [target.__selectOptionsElement.offsetWidth, target.__selectMenu.offsetWidth];
+        let [options_width, menu_width] = [target.__selectOptions.offsetWidth, target.__selectMenu.offsetWidth];
 
         if (!target.__selectOptionsMaxWidth) {
             target.__selectOptionsMaxWidth = options_width;
             target.__selectMenu.style.minWidth = options_width + 'px';
         }
 
-        target.__selectOptionsElement.style.width = menu_width + 'px';
-        target.__selectOptionsElement.style.left = (target.__selectMenu.offsetLeft) + 'px';
+        target.__selectOptions.style.width = menu_width + 'px';
+        target.__selectOptions.style.left = (target.__selectMenu.offsetLeft) + 'px';
 
         if (target.__position === 'top') {
-            let options_height = target.__selectOptionsElement.offsetHeight;
+            let options_height = target.__selectOptions.offsetHeight;
             let menu_top = target.__selectMenu.offsetTop;
-            target.__selectOptionsElement.style.top = (menu_top - options_height) + 'px';
+            target.__selectOptions.style.top = (menu_top - options_height) + 'px';
         }
     }
 
     __buildDOM() {
         let target = this;
-        if (target.__selectOptionsElement) {
-            target.__selectOptionsElement.remove();
+        if (target.__selectOptions) {
+            target.__selectOptions.remove();
         }
 
-        target.__selectOptionsElement = createElement('div', 'select__options');
+        target.__selectOptions = createElement('div', 'select__options');
 
         if (target.__position === 'top') {
-            target.__selectOptionsElement.classList.add('select__options--top');
+            target.__selectOptions.classList.add('select__options--top');
             target.__selectMenu.classList.add('select__menu--top');
         }
 
-        target.__options.forEach((option, index) => {
-            let selectOption = createElement('div', 'select__options__item', '', {}, option);
-            selectOption.onclick = () => target.select(index);
-            target.__selectOptionsElement.appendChild(selectOption);
+        Array.from(target.__options).forEach((option, index) => {
+            let select_option = option.cloneNode(true);
+            select_option.onclick = () => target.select(index);
+            target.__selectOptions.appendChild(select_option);
+            console.log(select_option);
+            option.remove();
         });
 
-        target.__element.appendChild(target.__selectOptionsElement);
+        target.__element.appendChild(target.__selectOptions);
 
         target.__setPosition();
     }
