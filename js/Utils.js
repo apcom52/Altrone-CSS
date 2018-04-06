@@ -80,3 +80,11 @@ function swipe(startX, startY, endX, endY) {
     else if (dist <= -150 && ydist) return 'right';
     return null;
 }
+
+function getCoordinates(element) {
+    let box = element.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+}
