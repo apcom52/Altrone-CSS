@@ -120,6 +120,8 @@ class Modal {
 		target.__visible = true;		
 		target.element.style.display = 'block';
 
+		document.body.style.overflow = 'hidden';
+
 		window.addEventListener('keydown', target.__onKeyDown);
 
 		if (target.onShowCallback) {
@@ -149,6 +151,8 @@ class Modal {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
+
+		document.body.style.overflow = 'auto';
 
 		window.removeEventListener('keydown', target.__onKeyDown);
 	}

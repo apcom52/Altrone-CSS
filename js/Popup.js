@@ -32,6 +32,7 @@ class Popup {
         if (senderBottom + popupHeight <= windowHeight) {
             popupLeft = senderLeft;
             popupTop = senderBottom;
+            target.__side = 'bottom';
         } else if (senderTop - popupHeight > 0) {
             popupLeft = senderLeft;
             popupTop = senderTop - popupHeight;

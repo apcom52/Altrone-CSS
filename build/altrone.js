@@ -287,7 +287,7 @@ class Dialog {
 		target.__successLabel = props.successLabel || 'OK';
 		target.__failLabel = props.failLabel || 'Cancel';
 		target.__invert = props.invert || false;
-		target.onSuccessCallback = props.onSuccess || null;
+		target.onSuccessCallback = props.__onSuccess || null;
 		target.onFailCallback = props.onFail || null;
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
@@ -708,6 +708,8 @@ class Modal {
 		target.__visible = true;		
 		target.element.style.display = 'block';
 
+		document.body.style.overflow = 'hidden';
+
 		window.addEventListener('keydown', target.__onKeyDown);
 
 		if (target.onShowCallback) {
@@ -737,6 +739,8 @@ class Modal {
 		if (target.onHideCallback) {
 			target.onHideCallback(target);
 		}
+
+		document.body.style.overflow = 'auto';
 
 		window.removeEventListener('keydown', target.__onKeyDown);
 	}
@@ -1015,6 +1019,7 @@ class Popup {
         if (senderBottom + popupHeight <= windowHeight) {
             popupLeft = senderLeft;
             popupTop = senderBottom;
+            target.__side = 'bottom';
         } else if (senderTop - popupHeight > 0) {
             popupLeft = senderLeft;
             popupTop = senderTop - popupHeight;

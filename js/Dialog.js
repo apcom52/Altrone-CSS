@@ -11,7 +11,7 @@ class Dialog {
 		target.__successLabel = props.successLabel || 'OK';
 		target.__failLabel = props.failLabel || 'Cancel';
 		target.__invert = props.invert || false;
-		target.onSuccessCallback = props.onSuccess || null;
+		target.onSuccessCallback = props.__onSuccess || null;
 		target.onFailCallback = props.onFail || null;
 		target.onShowCallback = props.onShow || null;
 		target.onHideCallback = props.onHide || null;
