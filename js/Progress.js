@@ -49,7 +49,6 @@ class Progress {
 
 		if (index >= 0 && index < target.__bars.length) {
 			target.__bars.splice(index, 1);
-			console.log(target.__bars);
 			target.__render();
 		} else {
 			throw "Progress: invalid index";

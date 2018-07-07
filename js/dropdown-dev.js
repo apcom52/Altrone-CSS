@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Popup.currentDropdown) Popup.currentDropdown.__calculatePosition;
         });
         document.addEventListener('click', (e) => {
-            console.log(e.target);
             if (Popup.currentDropdown && !e.target.hasAttribute('data-dropdown'))
                 Popup.currentDropdown.hide();
         });

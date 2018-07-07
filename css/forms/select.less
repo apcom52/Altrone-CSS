@@ -224,4 +224,12 @@
   &.select--color-black {
     .set-select-color(@d-gray);
   }
+
+  &.select--disabled {
+    opacity: 0.75;
+
+    .select__menu {
+      cursor: not-allowed;
+    }
+  }
 }

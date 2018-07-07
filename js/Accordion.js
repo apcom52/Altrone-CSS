@@ -14,12 +14,9 @@ class Accordion {
         target.__multi = options.multi || false;
         target.__accordionItems = target.__element.children;
 
-        console.log(target.__accordionItems);
-
         for (let index = 0; index < target.__accordionItems.length; index++) {
             let current = target.__accordionItems[index];
             let itemNodes = current.children;
-            console.log(itemNodes);
             for (let j = 0; j < itemNodes.length; j++) {
                 if (itemNodes[j].classList.contains('section__title')) {
                     itemNodes[j].onclick = () => target.open(index);
@@ -31,7 +28,7 @@ class Accordion {
 
     /**
      * Return the dom-element of Accordion
-     * @returns {node}
+     * @returns {Node}
      */
     get element() {
         return this.__element;
@@ -39,7 +36,7 @@ class Accordion {
 
     /**
      * Return the value of property 'multi'
-     * @returns {bool}
+     * @returns {Boolean}
      */
     get multi() {
         return this.__multi;
@@ -47,7 +44,7 @@ class Accordion {
 
     /**
      * Set the value of property 'multi'
-     * @param {bool} value - new value
+     * @param {Boolean} value - new value
      */
     set multi(value) {
         this.__multi = value || false;

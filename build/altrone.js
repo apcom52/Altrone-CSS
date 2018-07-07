@@ -1,7 +1,7 @@
 class Accordion {
     /**
      * Constructor of Accordion
-     * @param {node} element
+     * @param {Node} element
      * @param {Object} options
      */
     constructor(element, options = {}) {
@@ -14,14 +14,11 @@ class Accordion {
         target.__multi = options.multi || false;
         target.__accordionItems = target.__element.children;
 
-        console.log(target.__accordionItems);
-
         for (let index = 0; index < target.__accordionItems.length; index++) {
             let current = target.__accordionItems[index];
             let itemNodes = current.children;
-            console.log(itemNodes);
             for (let j = 0; j < itemNodes.length; j++) {
-                if (itemNodes[j].classList.contains('accordion__item__title')) {
+                if (itemNodes[j].classList.contains('section__title')) {
                     itemNodes[j].onclick = () => target.open(index);
                 }
             }
@@ -31,7 +28,7 @@ class Accordion {
 
     /**
      * Return the dom-element of Accordion
-     * @returns {node}
+     * @returns {Node}
      */
     get element() {
         return this.__element;
@@ -39,7 +36,7 @@ class Accordion {
 
     /**
      * Return the value of property 'multi'
-     * @returns {bool}
+     * @returns {Boolean}
      */
     get multi() {
         return this.__multi;
@@ -47,7 +44,7 @@ class Accordion {
 
     /**
      * Set the value of property 'multi'
-     * @param {bool} value - new value
+     * @param {Boolean} value - new value
      */
     set multi(value) {
         this.__multi = value || false;
@@ -63,10 +60,10 @@ class Accordion {
         if (index >= 0 && index < target.__accordionItems.length) {
             let current = target.__accordionItems[index];
 
-            if (!target.__multi && !current.classList.contains('accordion__item--active'))
+            if (!target.__multi && !current.classList.contains('section--active'))
                 target.closeAll();
 
-            current.classList.toggle('accordion__item--active');
+            current.classList.toggle('section--active');
         } else {
             throw "Accordion: invalid index";
         }
@@ -78,8 +75,66 @@ class Accordion {
     closeAll() {
         let target = this;
         for (let index = 0; index < target.__accordionItems.length; index++) {
-            target.__accordionItems[index].classList.remove('accordion__item--active');
+            target.__accordionItems[index].classList.remove('section--active');
         }
+    }
+}
+class Ajax {
+    constructor(url, method = 'GET', params = {}) {
+        let target = this;
+
+        if (url == null) {
+            throw new Error('Ajax: empty url parameter');
+        }
+
+        target.__url = url;
+        target.__method = method;
+        target.__async = params.__async || false;
+        target.__onSuccess = params.__onSuccess() || null;
+        target.__onError = params.__onError() || null;
+        target.__xhr = new XMLHttpRequest();
+
+        return target;
+    }
+
+    get xhr() {
+        return this.__xhr;
+    }
+
+    setHeader(name, value) {
+        if (name == null || value == null) {
+            throw new Error('Ajax setHeader(): empty name or value parameter');
+        }
+        this.__xhr.setRequestHeader(name, value);
+    }
+
+    getHeader(name) {
+        if (name == null) {
+            throw new Error('Ajax getHeader(): empty name parameter');
+        }
+        return this.__xhr.getResponseHeader(name);
+    }
+
+    getHeaders() {
+        return this.__xhr.getAllResponseHeaders();
+    }
+
+    send(body = '') {
+        let target = this;
+        target.__xhr.open(target.__method, target.__url, target.__async);
+        target.__xhr.send(body);
+
+        if (target.__xhr.status !== 200) {
+            if (target.__onError) {
+                target.__onError(target.__xhr);
+            }
+        } else {
+            if (target.__onSuccess) {
+                target.__onSuccess(target.__xhr);
+            }
+        }
+
+        return target;
     }
 }
 class Carousel {
@@ -869,7 +924,6 @@ class Notification {
         }
 
         if (notification.sound) {
-            console.log(notification.sound);
             notification.sound.play();
         }
 
@@ -1014,8 +1068,6 @@ class Popup {
         let popupLeft = 0,
             popupTop = 0;
 
-        console.log(senderTop);
-
         if (senderBottom + popupHeight <= windowHeight) {
             popupLeft = senderLeft;
             popupTop = senderBottom;
@@ -1040,9 +1092,6 @@ class Popup {
         if (popupTop < 0) popupTop = 0;
         else if (popupTop >= (scrollTop + windowHeight)) popupTop = (scrollTop + windowHeight) - popupHeight;
 
-        console.log(scrollTop);
-        console.log(popupLeft, popupTop);
-
         target.__dropdown.style.left = popupLeft + 'px';
         target.__dropdown.style.top = popupTop + 'px';
     }
@@ -1066,95 +1115,12 @@ class Popup {
 
     toggle() {
         let target = this;
-        console.log(target);
         if (target.__dropdown.classList.contains('popup--show')) target.hide();
         else target.show();
     }
 }
 
 Popup.currentDropdown = null;
-
-/*class Popup {
-    constructor(element, objectSender, options = {}) {
-        if (element === null) {
-            throw "Accordion: element is null or undefined";
-        }
-
-        let target = this;
-        target.__popup = element;
-        target.__sender = objectSender;
-        target.__isVisible = false;
-
-        Array.from(target.__popup.getElementsByClassName('popup__close'), (current) => {
-            current.onclick = () => target.hide();
-        });
-    }
-
-    show() {
-        let target = this;
-        target.__popup.style.display = 'flex';
-        target.__setPosition();
-        target.__isVisible = true;
-    }
-
-    hide() {
-        let target = this;
-        target.__popup.style.display = 'none';
-        target.__isVisible = false;
-    }
-
-    toggle() {
-        let target = this;
-        if (!target.__isVisible) target.show();
-        else target.hide();
-    }
-
-    __setPosition() {
-        let target = this;
-        let windowWidth = window.innerWidth,
-            windowHeight = window.innerHeight;
-        let senderRect = target.__sender.getBoundingClientRect();
-        let senderLeft = senderRect.left,
-            senderTop = senderRect.top,
-            senderRight = senderRect.right,
-            senderBottom = senderRect.bottom;
-        let popupWidth = target.__popup.offsetWidth,
-            popupHeight = target.__popup.offsetHeight;
-
-        // расположить снизу от элемента
-        const leftSide = senderLeft - popupWidth >= 0,
-            topSide = senderTop - popupHeight >= 0,
-            rightSide = senderRight + popupWidth <= windowWidth,
-            bottomSide = senderTop + popupHeight <= windowHeight;
-
-        console.log('sender', senderLeft, senderTop, senderRight, senderBottom);
-        console.log(popupWidth, popupHeight);
-
-        let popupLeft = 0,
-            popupTop = 0;
-
-        if (bottomSide) {
-            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
-            else popupLeft = senderLeft;
-            popupTop = senderBottom;
-        } else if (topSide) {
-            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
-            else popupLeft = senderLeft;
-            popupTop = senderTop - popupHeight;
-        } else if (leftSide) {
-            if (senderLeft + popupWidth >= windowWidth) popupLeft = windowWidth - popupWidth;
-            else popupLeft = senderLeft;
-            popupTop = senderTop;
-        } else if (rightSide) {
-            popupLeft = senderRight;
-            popupTop = senderTop;
-        }
-
-        console.log('popup', popupLeft, popupTop);
-        target.__popup.style.left = popupLeft + 'px';
-        target.__popup.style.top = popupTop + 'px';
-    }
-}*/
 class Progress {
     constructor(element, props = {}) {
         if (element == null) {
@@ -1206,7 +1172,6 @@ class Progress {
 
 		if (index >= 0 && index < target.__bars.length) {
 			target.__bars.splice(index, 1);
-			console.log(target.__bars);
 			target.__render();
 		} else {
 			throw "Progress: invalid index";
@@ -1310,6 +1275,7 @@ class Select {
         target.__selectOptions = props.options || ['None'];
         target.__optionsSource = target.__selectOptions;
         target.__editable = props.editable || false;
+        target.__disabled = props.disabled || false;
         target.__name = props.name || null;
         target.OnChangeCallback = props.onChange || null;
         target.__selectOptionsMaxWidth = null;
@@ -1331,7 +1297,6 @@ class Select {
 
         target.__selectMenu.onclick = () => target.toggle();
         target.__element.onkeydown = (e) => {
-            console.log(e.keyCode);
             if (e.keyCode === 32) {
                 e.preventDefault();
                 target.toggle();
@@ -1410,6 +1375,14 @@ class Select {
     }
 
     /**
+     * Get state of Select
+     * @returns {Boolean}
+     */
+    get disabled() {
+        return this.__disabled;
+    }
+
+    /**
      * Set new callback for onChangeEvent
      * @param {Function} func
      */
@@ -1418,34 +1391,52 @@ class Select {
     }
 
     /**
+     * Set state (enabled/disabled)
+     * @param {Boolean} value
+     */
+    set disabled(value) {
+        this.__disabled = value;
+
+        if (this.__visible) this.hide(true);
+
+        if (value) this.__element.classList.add('select--disabled');
+        else this.__element.classList.remove('select--disabled');
+    }
+
+    /**
      * Open Selectbox
      */
     show() {
         let target = this;
 
-        target.__visible = true;
+        if (!target.__disabled) {
+            target.__visible = true;
 
-        target.__selectMenu.classList.add('select__menu--open');
-        target.__selectOptions.style.display = 'block';
-        target.__setPosition();
+            target.__selectMenu.classList.add('select__menu--open');
+            target.__selectOptions.style.display = 'block';
+            target.__setPosition();
 
-        window.addEventListener('resize', target.__onResizeEvent, false);
+            window.addEventListener('resize', target.__onResizeEvent, false);
+        }
     }
 
     /**
      * Hide Selectbox
      */
-    hide() {
+    hide(ignoreDisabled = false) {
         let target = this;
-        target.__visible = false;
-        target.__selectMenu.classList.remove('select__menu--open');
-        target.__selectOptions.style.display = 'none';
 
-        if (target.__selectMenu.innerText.trim().length === 0) {
-            target.__selectMenu.innerText = target.__options[target.__index];
+        if (!target.__disabled || ignoreDisabled) {
+            target.__visible = false;
+            target.__selectMenu.classList.remove('select__menu--open');
+            target.__selectOptions.style.display = 'none';
+
+            if (target.__selectMenu.innerText.trim().length === 0) {
+                target.__selectMenu.innerText = target.__options[target.__index];
+            }
+
+            window.removeEventListener('resize', target.__onResizeEvent, false);
         }
-
-        window.removeEventListener('resize', target.__onResizeEvent, false);
     }
 
     /**
@@ -1547,7 +1538,6 @@ class Select {
             let select_option = option.cloneNode(true);
             select_option.onclick = () => target.select(index);
             target.__selectOptions.appendChild(select_option);
-            console.log(select_option);
             option.remove();
         });
 
@@ -2056,7 +2046,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Popup.currentDropdown) Popup.currentDropdown.__calculatePosition;
         });
         document.addEventListener('click', (e) => {
-            console.log(e.target);
             if (Popup.currentDropdown && !e.target.hasAttribute('data-dropdown'))
                 Popup.currentDropdown.hide();
         });

@@ -86,7 +86,6 @@ class Notification {
         }
 
         if (notification.sound) {
-            console.log(notification.sound);
             notification.sound.play();
         }
 

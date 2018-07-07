@@ -23,6 +23,7 @@ class Select {
         target.__selectOptions = props.options || ['None'];
         target.__optionsSource = target.__selectOptions;
         target.__editable = props.editable || false;
+        target.__disabled = props.disabled || false;
         target.__name = props.name || null;
         target.OnChangeCallback = props.onChange || null;
         target.__selectOptionsMaxWidth = null;
@@ -44,7 +45,6 @@ class Select {
 
         target.__selectMenu.onclick = () => target.toggle();
         target.__element.onkeydown = (e) => {
-            console.log(e.keyCode);
             if (e.keyCode === 32) {
                 e.preventDefault();
                 target.toggle();
@@ -123,6 +123,14 @@ class Select {
     }
 
     /**
+     * Get state of Select
+     * @returns {Boolean}
+     */
+    get disabled() {
+        return this.__disabled;
+    }
+
+    /**
      * Set new callback for onChangeEvent
      * @param {Function} func
      */
@@ -131,34 +139,52 @@ class Select {
     }
 
     /**
+     * Set state (enabled/disabled)
+     * @param {Boolean} value
+     */
+    set disabled(value) {
+        this.__disabled = value;
+
+        if (this.__visible) this.hide(true);
+
+        if (value) this.__element.classList.add('select--disabled');
+        else this.__element.classList.remove('select--disabled');
+    }
+
+    /**
      * Open Selectbox
      */
     show() {
         let target = this;
 
-        target.__visible = true;
+        if (!target.__disabled) {
+            target.__visible = true;
 
-        target.__selectMenu.classList.add('select__menu--open');
-        target.__selectOptions.style.display = 'block';
-        target.__setPosition();
+            target.__selectMenu.classList.add('select__menu--open');
+            target.__selectOptions.style.display = 'block';
+            target.__setPosition();
 
-        window.addEventListener('resize', target.__onResizeEvent, false);
+            window.addEventListener('resize', target.__onResizeEvent, false);
+        }
     }
 
     /**
      * Hide Selectbox
      */
-    hide() {
+    hide(ignoreDisabled = false) {
         let target = this;
-        target.__visible = false;
-        target.__selectMenu.classList.remove('select__menu--open');
-        target.__selectOptions.style.display = 'none';
 
-        if (target.__selectMenu.innerText.trim().length === 0) {
-            target.__selectMenu.innerText = target.__options[target.__index];
+        if (!target.__disabled || ignoreDisabled) {
+            target.__visible = false;
+            target.__selectMenu.classList.remove('select__menu--open');
+            target.__selectOptions.style.display = 'none';
+
+            if (target.__selectMenu.innerText.trim().length === 0) {
+                target.__selectMenu.innerText = target.__options[target.__index];
+            }
+
+            window.removeEventListener('resize', target.__onResizeEvent, false);
         }
-
-        window.removeEventListener('resize', target.__onResizeEvent, false);
     }
 
     /**
@@ -260,7 +286,6 @@ class Select {
             let select_option = option.cloneNode(true);
             select_option.onclick = () => target.select(index);
             target.__selectOptions.appendChild(select_option);
-            console.log(select_option);
             option.remove();
         });
 

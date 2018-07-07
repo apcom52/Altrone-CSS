@@ -33,6 +33,9 @@
 								<div class="select__option" data-value="nn">Нижний Новгород</div>
 							</div>
 						</div>
+						<div class="col-4">
+							<button onclick="changeState();">Заблокировать</button>
+						</div>
                         <div class="col-4"><div class="select select--invert select--color-blue" id="example3"></div></div>
                     </div>
                 </div>
@@ -46,8 +49,11 @@
     let select2 = new Select(document.getElementById('example2'), {
         selectedIndex: 2,
 		name: 'city',
-		editable: true,
     });
+
+    function changeState() {
+		select2.disabled = !select2.disabled;
+	}
 </script>
 </body>
 </html>
