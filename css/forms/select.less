@@ -46,6 +46,7 @@
 
 .select {
   outline: none;
+
   .select__menu {
     display: inline-block;
     margin: 0;
@@ -73,11 +74,11 @@
 
     &.select__menu--open {
       background-image: url(@d-arrow-up);
-      border-radius: @smooth @smooth 0px 0px;
+      border-radius: @smooth @smooth 0 0;
       transition: border-radius 0.3s linear;
 
       &.select__menu--top {
-        border-radius: 0px 0px @smooth @smooth;
+        border-radius: 0 0 @smooth @smooth;
       }
     }
   }

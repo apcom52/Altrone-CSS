@@ -1,11 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var less = require('gulp-less');
-var zip = require('gulp-zip');
-var cssmin = require('gulp-cssmin');
-var minify = require('gulp-minify');
-var notify = require('gulp-notify');
-var livereload = require('gulp-livereload');
+let gulp = require('gulp');
+let concat = require('gulp-concat');
+let less = require('gulp-less');
+let zip = require('gulp-zip');
+let cssmin = require('gulp-cssmin');
+let notify = require('gulp-notify');
+let livereload = require('gulp-livereload');
 
 gulp.task('js', function() {
 	return gulp.src('./js/*.js')
@@ -21,8 +20,16 @@ gulp.task('less', function() {
 		.pipe(livereload());
 });
 
+gulp.task('less-lite', function() {
+	return gulp.src('./css/altrone-lite.less')
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(gulp.dest('./build/'))
+		.pipe(livereload());
+});
+
 gulp.task('dist', function() {
-	var version = '3.0.4';
+	const version = '4.0RC';
 	return gulp.src(['./build/**/*'])
 		.pipe(zip(version + '.zip'))
 		.pipe(notify({

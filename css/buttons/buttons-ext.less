@@ -1,0 +1,30 @@
+.button-color(@l-color, @color, @f-color: @white) {
+  &.button--checked {
+    background-color: @color;
+    border: 1px solid darken(@color, 15%);
+  }
+}
+
+
+button, input[type="button"], input[type="submit"], input[type="reset"], .button, a.button {
+  &.button--checked {
+    background-color: darken(@u-gray, 15%);
+    border-color: darken(darken(@u-gray, 15%), 15%);
+    .animate(~'background-color, border-color');
+  }
+
+  &.button--loading {
+    color: transparent;
+    background-image: @loading;
+    background-repeat: no-repeat;
+    background-size: 1em 1em;
+    background-position: center center;
+
+    &.button--color-red, &.button--color-orange, &.button--color-olive,
+    &.button--color-green, &.button--color-teal, &.button--color-blue,
+    &.button--color-purple, &.button--color-violet, &.button--color-pink,
+    &.button--color-brown, &.button--color-black {
+      background-image: @loading-invert;
+    }
+  }
+}

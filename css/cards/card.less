@@ -18,7 +18,6 @@
   border-radius: @smooth;
   box-sizing: border-box;
   border: 1px solid darken(@u-gray, 10%);
-  //overflow-y: hidden;
 
   .card__header {
     width: 100%;
@@ -43,47 +42,6 @@
     }
   }
 
-  .card__image {
-    width: 100%;
-    height: auto;
-    position: relative;
-
-    img {
-      position: relative;
-      width: 100%;
-      height: auto;
-      top: 0;
-      left: 0;
-    }
-
-    .card__header {
-      display: flex;
-      width: 100%;
-      position: absolute;
-      left: 0em;
-      bottom: 0.2rem;
-      font-size: 1.5em;
-      color: @white;
-      background: linear-gradient(0deg, fade(@black, 75%), transparent);
-      align-items: center;
-
-      .card__title {
-        flex: 1;
-        padding: 1rem;
-        font-size: 1.5rem;
-        .bold();
-        .text-shadow();
-      }
-      .card__icon {
-        flex: 0;
-        .text-shadow();
-        cursor: pointer;
-        box-sizing: border-box;
-        padding: 0.5rem 1rem;
-      }
-    }
-  }
-
   .card__content {
     padding: 0.5em 1em;
     .pt();
@@ -94,53 +52,10 @@
     color: @m-gray;
     padding: 1rem;
     border-top: 1px solid @u-gray;
-    border-radius: 0em 0em @mid-smooth @mid-smooth;
+    border-radius: 0 0 @mid-smooth @mid-smooth;
     font-size: 0.9em;
     box-sizing: border-box;
   }
-
-  &.card- {
-    &-no-smooth {
-      border-radius: 0em;
-
-      .card__image {
-        img {
-          border-radius: 0em;
-        }
-      }
-
-      .card__footer {
-        border-radius: 0em;
-      }
-    }
-
-    &-rounded {
-      border-radius: @rounded;
-
-      .card__image {
-        img {
-          border-radius: @rounded @rounded 0em 0em;
-        }
-      }
-
-      .card__footer {
-        border-radius: 0em 0em @rounded @rounded;
-      }
-    }
-  }
-
-  &.card--color-red { .set-card-color(@red); }
-  &.card--color-orange { .set-card-color(@orange); }
-  &.card--color-yellow { .set-card-color(@yellow, @black); }
-  &.card--color-olive { .set-card-color(@olive); }
-  &.card--color-green { .set-card-color(@green); }
-  &.card--color-teal { .set-card-color(@teal); }
-  &.card--color-blue { .set-card-color(@blue); }
-  &.card--color-violet { .set-card-color(@violet); }
-  &.card--color-purple { .set-card-color(@purple); }
-  &.card--color-pink { .set-card-color(@pink); }
-  &.card--color-brown { .set-card-color(@brown); }
-  &.card--color-black { .set-card-color(@black); }
 }
 
 @media (max-width: @l-mobile) {
@@ -151,18 +66,6 @@
       }
       .card__icon {
         font-size: 1.25rem;
-      }
-    }
-    .card__image {
-      .card__header {
-        .card__title {
-          padding: 1rem;
-          font-size: 1.3rem;
-        }
-        .card__icon {
-          font-size: 1rem;
-          padding: 0em 1rem;
-        }
       }
     }
   }
