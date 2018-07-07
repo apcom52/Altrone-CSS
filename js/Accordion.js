@@ -21,7 +21,7 @@ class Accordion {
             let itemNodes = current.children;
             console.log(itemNodes);
             for (let j = 0; j < itemNodes.length; j++) {
-                if (itemNodes[j].classList.contains('accordion__item__title')) {
+                if (itemNodes[j].classList.contains('section__title')) {
                     itemNodes[j].onclick = () => target.open(index);
                 }
             }
@@ -63,10 +63,10 @@ class Accordion {
         if (index >= 0 && index < target.__accordionItems.length) {
             let current = target.__accordionItems[index];
 
-            if (!target.__multi && !current.classList.contains('accordion__item--active'))
+            if (!target.__multi && !current.classList.contains('section--active'))
                 target.closeAll();
 
-            current.classList.toggle('accordion__item--active');
+            current.classList.toggle('section--active');
         } else {
             throw "Accordion: invalid index";
         }
@@ -78,7 +78,7 @@ class Accordion {
     closeAll() {
         let target = this;
         for (let index = 0; index < target.__accordionItems.length; index++) {
-            target.__accordionItems[index].classList.remove('accordion__item--active');
+            target.__accordionItems[index].classList.remove('section--active');
         }
     }
 }

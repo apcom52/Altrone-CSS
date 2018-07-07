@@ -1,23 +1,23 @@
 .set-tag-color(@active-color, @invert-color) {
   border-color: darken(@active-color, 5%);
 
-  .tags__item {
+  .tag {
     &:hover {
       background-color: lighten(@active-color, 10%);
     }
 
-    &.tags__item--active {
+    &.tag--active {
       background-color: @active-color;
     }
   }
 
   &.tags--invert {
-    .tags__item {
+    .tag {
       &:hover {
         background-color: @invert-color;
       }
 
-      &.tags__item--active {
+      &.tag--active {
         background-color: @invert-color;
       }
     }
@@ -27,7 +27,7 @@
 .tags {
   overflow: hidden;
 
-  .tags__item {
+  .tag {
     display: inline-flex;
     border: 1px solid darken(@u-gray, 20%);
     border-radius: @mid-smooth;
@@ -41,18 +41,18 @@
     .animate(~'background-color');
     .pt();
 
-    .tags__item__image {
+    .tag__image {
       width: auto;
       height: 34px;
       flex: 0;
     }
 
-    .tags__item__name {
+    .tag__name {
       flex: 1;
       padding: 0.5em 1em;
     }
 
-    .tags__item__action {
+    .tag__action{
       flex: 0;
       padding-left: 1em;
     }
@@ -62,7 +62,7 @@
       .animate(~'background-color');
     }
 
-    &.tags__item--active {
+    &.tag--active {
       background-color: darken(@u-gray, 10%);
     }
   }
@@ -70,27 +70,27 @@
   &.tags--invert {
     color: @u-gray;
 
-    .tags__item {
+    .tag {
       border-color: lighten(@d-gray, 10%);
 
       &:hover {
         background-color: lighten(@d-gray, 5%);
       }
 
-      &.tags__item--active {
+      &.tag--active {
         background-color: lighten(@d-gray, 5%);
       }
     }
   }
 
   &.tags--size-small {
-    .tags__item {
+    .tag {
       font-size: 0.8rem;
     }
   }
 
   &.tags--size-large {
-    .tags__item {
+    .tag {
       font-size: 1.25rem;
     }
   }
