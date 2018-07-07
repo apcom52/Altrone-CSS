@@ -5,7 +5,10 @@
 
   &:active, &.button--active, &:focus {
     background-color: darken(@l-color, 17%);
-    border-color: darken(@l-color, 22%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem @l-color;
   }
 
   &:hover {
@@ -51,7 +54,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   user-select: none;
   cursor: pointer;
   background-color: @u-gray;
-  border: 1px solid @l-gray;
+  border: 0;
   color: @d-gray;
   zoom: 1;
   overflow: hidden;
@@ -61,6 +64,10 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
   &:hover, &:focus {
     background-color: darken(@u-gray, 5%);
     .animate(~"background-color");
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem @l-gray;
   }
 
   &:active, &.button--active {
@@ -88,7 +95,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
     &--smooth { border-radius: @mid-smooth;	}
     &--rounded { border-radius: @rounded;	}
     &--circle { border-radius: 50%; padding: 0.5rem 0.75rem; }
-    &--no-smooth { border-radius: 0rem;	}
+    &--no-smooth { border-radius: 0;	}
   }
 
   &:disabled {
@@ -98,13 +105,13 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
   &.button--icon {
     i, .icon {
-      padding: 0em;
+      padding: 0;
       padding-right: 0.5em;
     }
 
     &-only {
       i, .icon {
-        padding: 0em;
+        padding: 0;
       }
     }
   }
@@ -118,6 +125,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], .button
 
   &.button--only-borders {
     background-color: transparent;
+    border: 1px solid @u-gray;
 
     &.button--color-white {
       color: @white;

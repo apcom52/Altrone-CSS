@@ -9,7 +9,8 @@
     }
 
     &:focus + label:before {
-      box-shadow: 0 0 3px 3px @focus-color;
+      box-shadow: 0 0 0 2px @focus-color;
+      transition: box-shadow 0.15s ease;
     }
   }
 
@@ -23,7 +24,7 @@
       }
 
       &:focus + label:before {
-        box-shadow: 0 0 3px 3px @focus-color-invert;
+        box-shadow: 0 0 0 2px @focus-color-invert;
       }
     }
   }
@@ -33,7 +34,7 @@
   width: 100%;
   padding: 0;
   box-sizing: border-box;
-  margin: 1rem 0em;
+  margin: 1rem 0;
   display: flex;
 
   input[type="checkbox"] {
@@ -83,7 +84,7 @@
     }
 
     &:focus + label:before {
-      box-shadow: 0 0 3px 3px @l-gray;
+      box-shadow: 0 0 0 2px @l-gray;
       transition: box-shadow 0.3s ease-in-out;
     }
   }
