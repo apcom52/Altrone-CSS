@@ -5,6 +5,8 @@
   --formBorder: #cfd8dc;
   --interactiveFormBackground: #ffffff;
 
+  --contentBackground: #ffffff;
+
   --accent: #1e88e5;
   --accentFocusHighlight: rgba(30, 136, 229, 0.5);
   --accentTextColor: #1e88e5;
@@ -34,9 +36,11 @@
   --baseVerticalMargin: 0.5rem; //8px
   --smallVerticalMargin: 0.25rem; //4px
   --largeVerticalMargin: 0.75rem; //12px
+  --xlVerticalMargin: 1.25rem; //20px
   --baseHorizontalMargin: 1rem; //16px
   --smallHorizontalMargin: 0.5rem; //8px
   --largeHorizontalMargin: 2rem; //24px
+  --xlHorizontalMargin: 3rem; //48px
 
   --baseFont: 1rem;
   --smallFont: 0.75rem;

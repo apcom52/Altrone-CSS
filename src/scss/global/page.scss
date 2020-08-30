@@ -10,8 +10,10 @@ body {
   margin-right: auto;
 }
 
-@media (max-width: var(--tablet)) {
+@media (max-width: $tablet) {
   .page {
-    width: 100%;
+    width: calc(100% - var(--hgap));
+    margin-left: calc(var(--hgap) / 2);
+    margin-right: calc(var(--hgap) / 2);
   }
 }
