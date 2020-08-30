@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fontFamily);
+  color: var(--textColor);
+}
+
+h1 {
+  font-size: var(--headerFont);
+}
+
+h2 {
+  font-size: var(--subheaderFont);
+}
+
+h3 {
+  font-size: var(--headerLevel3);
+}
+
+h4 {
+  font-size: var(--headerLevel4);
+}
+
+h5 {
+  font-size: var(--headerLevel5);
+}
+
+h6 {
+  font-size: var(--headerLevel6);
+}

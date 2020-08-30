@@ -1,0 +1,96 @@
+.buttons-group {
+  display: inline-flex;
+  margin-right: var(--smallHorizontalMargin);
+
+  .button {
+    display: inline-block;
+    margin: 0;
+    border-radius: 0;
+    border-right-width: 0;
+
+    &:first-child {
+      border-top-left-radius: var(--baseRadius);
+      border-bottom-left-radius: var(--baseRadius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-right-radius: var(--baseRadius);
+      border-right-width: var(--buttonBorderWidth);
+    }
+  }
+}
+
+.buttons-group--rounded {
+  .button {
+    &:first-child {
+      border-top-left-radius: var(--roundedRadius);
+      border-bottom-left-radius: var(--roundedRadius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--roundedRadius);
+      border-bottom-right-radius: var(--roundedRadius);
+    }
+  }
+}
+
+.buttons-group--no-smooth {
+  .button {
+
+    &:first-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:last-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.buttons-group--vertical {
+  flex-direction: column;
+
+  .button {
+    border-right-width: var(--buttonBorderWidth);
+    border-bottom-width: 0;
+
+    &:active {
+      transform: translateX(1px);
+    }
+
+    &:first-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-left-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--baseRadius);
+      border-top-right-radius: 0;
+      border-bottom-width: var(--buttonBorderWidth);
+    }
+  }
+
+  &.buttons-group--rounded {
+    .button {
+      &:first-child {
+        border-top-right-radius: var(--roundedRadius);
+        border-bottom-left-radius: 0;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: var(--roundedRadius);
+        border-top-right-radius: 0;
+        border-bottom-width: var(--buttonBorderWidth);
+      }
+    }
+  }
+
+  &.buttons-group--no-smooth {
+    .button {
+      border-radius: 0;
+    }
+  }
+}

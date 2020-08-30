@@ -1,0 +1,59 @@
+:root {
+  --backgroundColor: #ffffff;
+
+  --formBackground: #fafafa;
+  --formBorder: #cfd8dc;
+  --interactiveFormBackground: #ffffff;
+
+  --accent: #1e88e5;
+  --accentFocusHighlight: rgba(30, 136, 229, 0.5);
+  --accentTextColor: #1e88e5;
+
+  --warning: #fff176;
+  --warningFocusHightlight: rgba(255, 160, 0, .3);
+  --warningTextColor: #fbc02d;
+
+  --danger: #f44336;
+  --dangerFocusHightlight: rgba(244, 67, 54, .3);
+  --dangerTextColor: #c62828;
+
+  --success: #4caf50;
+  --successFocusHightlight: rgba(67, 160, 71, .3);
+  --successTextColor: #43a047;
+
+  --textColor: #212121;
+  --textFaded: #999999;
+  --invertedTextColor: #ffffff;
+
+  --invertedColor: #000000;
+
+  --layout-width: 1140px;
+  --layout-vgap: 20px;
+  --layout-hgap: 20px;
+
+  --baseVerticalMargin: 0.5rem; //8px
+  --smallVerticalMargin: 0.25rem; //4px
+  --largeVerticalMargin: 0.75rem; //12px
+  --baseHorizontalMargin: 1rem; //16px
+  --smallHorizontalMargin: 0.5rem; //8px
+  --largeHorizontalMargin: 2rem; //24px
+
+  --baseFont: 1rem;
+  --smallFont: 0.75rem;
+  --largeFont: 1.3rem;
+  --headerFont: 3rem;
+  --subheaderFont: 2.25rem;
+  --headerLevel3: 1.75rem;
+  --headerLevel4: 1.5rem;
+  --headerLevel5: 1.25rem;
+  --headerLevel6: 1.125rem;
+
+  --focusOutlineWidth: 3px;
+
+  --fontFamily: 'Roboto', -apple-system, system-ui, sans-serif;
+
+  --baseRadius: 0.25rem;
+  --roundedRadius: 0.5rem;
+  --circleRadius: 50%;
+  --zeroRadius: 0rem;
+}

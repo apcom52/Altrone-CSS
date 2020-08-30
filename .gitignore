@@ -1,17 +1,2 @@
-jquery-2.1.4.min.js
-altrone_extra.css
-demo.css
-images/arrow-dark-down.png
-*.png
-*.jpg
-tt.html
-altrone_extra.less
-sh.exe.stackdump
-altrone-sb.js
-altrone-scdemo.html
 node_modules
-npm-debug.log.2123279617,npm-debug.log.3235927823
-npm-debug.log.2123279617
-npm-debug.log.3235927823
 .idea/*
-fonts/fontawesome-*.*

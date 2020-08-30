@@ -1,11 +1,8 @@
 {
   "name": "altrone-css",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "description": "CSS and JS Framework",
   "main": "build",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apcom52/Altrone2-CSS.git"
@@ -18,12 +15,14 @@
   "author": "Alexander Perevezentsev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apcom52/Altrone2-CSS/issues"
+    "url": "https://github.com/apcom52/Altrone-CSS/issues"
   },
-  "homepage": "https://github.com/apcom52/Altrone2-CSS#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/apcom52/Altrone-CSS#readme",
+  "dependencies": {
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-less": "^3.3.2",
@@ -31,6 +30,8 @@
     "gulp-minify": "^1.0.0",
     "gulp-notify": "^3.0.0",
     "gulp-prompt": "^0.4.1",
-    "gulp-zip": "^4.0.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-zip": "^4.0.0",
+    "normalize.css": "^8.0.1"
   }
 }

@@ -1,0 +1,157 @@
+.button {
+  --buttonBorderWidth: calc(1rem / 16);
+  --buttonGap: calc(1rem / 16 * 10);
+
+  display: inline-block;
+  margin-right: var(--buttonBorderWidth);
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  background: var(--formBackground);
+  border: var(--buttonBorderWidth) solid var(--formBorder);
+  color: var(--textColor);
+  border-radius: 4px;
+  font-family: var(--fontFamily);
+  font-size: var(--base-font);
+  font-weight: 400;
+  outline: 0;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-shadow: none;
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
+    z-index: 1;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  .icon {
+    margin-right: var(--smallHorizontalMargin);
+  }
+}
+
+.button--accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--invertedTextColor);
+}
+
+.button--warning {
+  background: var(--warning);
+  border-color: var(--warning);
+  color: var(--textColor);
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--warningFocusHightlight);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--backgroundColor);
+  }
+}
+
+.button--danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--invertedTextColor);
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--dangerFocusHightlight);
+  }
+}
+
+.button--success {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--invertedTextColor);
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--successFocusHightlight);
+  }
+}
+
+.button--transparent {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  color: var(--textColor);
+
+  &.button--accent {
+    color: var(--accent);
+  }
+
+  &.button--warning {
+    color: var(--warningTextColor);
+  }
+
+  &.button--danger {
+    color: var(--danger);
+  }
+
+  &.button--success {
+    color: var(--success);
+  }
+}
+
+.button--rounded {
+  border-radius: var(--roundedRadius);
+}
+
+.button--circle {
+  border-radius: var(--circleRadius);
+  padding-left: var(--baseVerticalMargin);
+  padding-right: var(--baseVerticalMargin);
+}
+
+.button--no-smooth {
+  border-radius: var(--zeroRadius);
+}
+
+.button--size-small {
+  font-size: var(--smallFont);
+}
+
+.button--size-large {
+  font-size: var(--largeFont);
+}
+
+.button--size-xl {
+  font-size: var(--headerFont);
+}
+
+.button--only-borders {
+  --buttonBorderWidth: calc(1rem / 8);
+  background: transparent;
+
+  &.button--accent {
+    color: var(--accentTextColor);
+  }
+
+  &.button--warning {
+    color: var(--warningTextColor);
+  }
+
+  &.button--danger {
+    color: var(--dangerTextColor);
+  }
+
+  &.button--success {
+    color: var(--successTextColor);
+  }
+}
+
+.button--fluid {
+  width: 100%;
+  margin-right: 0;
+}
