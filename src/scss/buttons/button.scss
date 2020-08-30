@@ -1,9 +1,10 @@
 .button {
   --buttonBorderWidth: calc(1rem / 16);
-  --buttonGap: calc(1rem / 16 * 10);
+  --buttonGap: calc(1rem / 16 * 8);
 
   display: inline-block;
-  margin-right: var(--buttonBorderWidth);
+  margin-right: var(--buttonGap);
+  margin-bottom: var(--buttonGap);
   padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
   background: var(--formBackground);
   border: var(--buttonBorderWidth) solid var(--formBorder);

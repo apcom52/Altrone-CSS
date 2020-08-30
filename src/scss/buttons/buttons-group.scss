@@ -1,6 +1,7 @@
 .buttons-group {
   display: inline-flex;
   margin-right: var(--smallHorizontalMargin);
+  margin-bottom: var(--smallVerticalMargin);
 
   .button {
     display: inline-block;

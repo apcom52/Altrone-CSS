@@ -1,0 +1,73 @@
+.grid {
+  display: flex;
+  width: calc(100% + var(--hgap));
+  margin: var(--vgap) calc(var(--hgap) / -2);
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .grid--nowrap {
+    flex-wrap: nowrap;
+  }
+}
+
+[class^='col-'] {
+  box-sizing: border-box;
+  margin-left: calc(var(--hgap) / 2);
+  margin-right: calc(var(--hgap) / 2);
+  margin-bottom: var(--vgap);
+}
+
+@for $colIndex from 1 through 12 {
+  $columnWidth: 100 * ($colIndex / 12) * 1%;
+
+  .col-#{$colIndex} {
+    flex-basis: calc(#{$columnWidth} - var(--hgap));
+    max-width: calc(#{$columnWidth} - var(--hgap));
+  }
+
+  .offset-#{$colIndex} {
+    margin-left: calc(var(--hgap) / 2 + #{$columnWidth});
+  }
+}
+
+@media (max-width: $tablet) {
+  @for $colIndex from 1 through 12 {
+    $columnWidth: 100 * ($colIndex / 12) * 1%;
+
+    .col-t-#{$colIndex} {
+      flex-basis: calc(#{$columnWidth} - var(--hgap));
+      max-width: calc(#{$columnWidth} - var(--hgap));
+    }
+
+    .offset-t-#{$colIndex} {
+      margin-left: calc(var(--hgap) / 2 + #{$columnWidth});
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  @for $colIndex from 1 through 12 {
+    $columnWidth: 100 * ($colIndex / 12) * 1%;
+
+    .col-m-#{$colIndex} {
+      flex-basis: calc(#{$columnWidth} - var(--hgap));
+      max-width: calc(#{$columnWidth} - var(--hgap));
+    }
+
+    .offset-m-#{$colIndex} {
+      margin-left: calc(var(--hgap) / 2 + #{$columnWidth});
+    }
+  }
+}
+
+.grid--no-gap {
+  --hgap: 0px;
+  --vgap: 0px;
+
+  [class^='col-'] {
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+}

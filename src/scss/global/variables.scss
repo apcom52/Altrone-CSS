@@ -27,9 +27,9 @@
 
   --invertedColor: #000000;
 
-  --layout-width: 1140px;
-  --layout-vgap: 20px;
-  --layout-hgap: 20px;
+  --pageWidth: 1140px;
+  --vgap: 16px;
+  --hgap: 20px;
 
   --baseVerticalMargin: 0.5rem; //8px
   --smallVerticalMargin: 0.25rem; //4px
@@ -56,4 +56,16 @@
   --roundedRadius: 0.5rem;
   --circleRadius: 50%;
   --zeroRadius: 0rem;
+
+  --mobile: 544px;
+  --tablet: 1024px;
+}
+
+$tablet: 1024px;
+$mobile: 544px;
+
+@media (max-width: $tablet) {
+  :root {
+    --pageWidth: 100%;
+  }
 }

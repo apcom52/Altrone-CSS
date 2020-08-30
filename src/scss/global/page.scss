@@ -1,3 +1,17 @@
 body {
   background-color: var(--backgroundColor);
+  color: var(--textColor);
+  font-family: var(--fontFamily);
+}
+
+.page {
+  width: var(--pageWidth);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: var(--tablet)) {
+  .page {
+    width: 100%;
+  }
 }

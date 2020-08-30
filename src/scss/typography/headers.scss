@@ -1,10 +1,13 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--fontFamily);
   color: var(--textColor);
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
 }
 
 h1 {
   font-size: var(--headerFont);
+  margin-top: 1em;
 }
 
 h2 {
