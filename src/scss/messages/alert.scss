@@ -1,0 +1,43 @@
+.alert {
+  --alertBorderWidth: calc(1rem / 16);
+
+  display: flex;
+  width: 100%;
+  padding: var(--xlVerticalMargin) var(--largeHorizontalMargin);
+  background-color: var(--contentBackground);
+  border: var(--alertBorderWidth) solid var(--formBorder);
+  color: var(--textColor);
+  border-radius: var(--baseRadius);
+  font-family: var(--fontFamily);
+  font-size: var(--baseFont);
+  flex-direction: column;
+}
+
+.alert__header {
+  margin-bottom: var(--largeVerticalMargin);
+  font-size: var(--largeFont);
+  font-weight: 500;
+}
+
+.alert__content {
+  display: block;
+  line-height: 1.4em;
+}
+
+.alert--warning {
+  background-color: var(--warning);
+  color: var(--textColor);
+  border: none;
+}
+
+.alert--danger {
+  background-color: var(--danger);
+  color: var(--invertedTextColor);
+  border: none;
+}
+
+.alert--success {
+  background-color: var(--success);
+  color: var(--invertedTextColor);
+  border: none;
+}

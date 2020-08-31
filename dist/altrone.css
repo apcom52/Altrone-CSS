@@ -366,14 +366,21 @@ template {
     --formBackground: #252423;
     --formBorder: #484848;
     --interactiveFormBackground: #424242;
+    --warning: #f57f17;
+    --danger: #b71c1c;
+    --success: #2e7d32;
     --textColor: #ffffff;
     --textFaded: #999999;
+    --invertedTextColor: #ffffff;
     --invertedColor: #ffffff; } }
 
 body {
   background-color: var(--backgroundColor);
   color: var(--textColor);
   font-family: var(--fontFamily); }
+
+* {
+  box-sizing: border-box; }
 
 .page {
   width: var(--pageWidth);
@@ -687,9 +694,6 @@ h6 {
   color: var(--textColor); }
   .button--warning:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--warningFocusHightlight); }
-  @media (prefers-color-scheme: dark) {
-    .button--warning {
-      color: var(--backgroundColor); } }
 
 .button--danger {
   background: var(--danger);
@@ -877,3 +881,40 @@ h6 {
     z-index: 1; }
   .card--background-cover .card__footer {
     z-index: 1; }
+
+.alert {
+  --alertBorderWidth: calc(1rem / 16);
+  display: flex;
+  width: 100%;
+  padding: var(--xlVerticalMargin) var(--largeHorizontalMargin);
+  background-color: var(--contentBackground);
+  border: var(--alertBorderWidth) solid var(--formBorder);
+  color: var(--textColor);
+  border-radius: var(--baseRadius);
+  font-family: var(--fontFamily);
+  font-size: var(--baseFont);
+  flex-direction: column; }
+
+.alert__header {
+  margin-bottom: var(--largeVerticalMargin);
+  font-size: var(--largeFont);
+  font-weight: 500; }
+
+.alert__content {
+  display: block;
+  line-height: 1.4em; }
+
+.alert--warning {
+  background-color: var(--warning);
+  color: var(--textColor);
+  border: none; }
+
+.alert--danger {
+  background-color: var(--danger);
+  color: var(--invertedTextColor);
+  border: none; }
+
+.alert--success {
+  background-color: var(--success);
+  color: var(--invertedTextColor);
+  border: none; }

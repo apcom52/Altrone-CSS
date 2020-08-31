@@ -4,6 +4,10 @@ body {
   font-family: var(--fontFamily);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .page {
   width: var(--pageWidth);
   margin-left: auto;

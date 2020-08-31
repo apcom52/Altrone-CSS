@@ -56,10 +56,6 @@
   &:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--warningFocusHightlight);
   }
-
-  @media (prefers-color-scheme: dark) {
-    color: var(--backgroundColor);
-  }
 }
 
 .button--danger {
