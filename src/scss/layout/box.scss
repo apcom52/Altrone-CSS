@@ -1,0 +1,67 @@
+.box {
+  display: block;
+  margin: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+}
+
+.vbox {
+  display: block;
+  margin-top: var(--baseVerticalMargin);
+  margin-bottom: var(--baseVerticalMargin);
+}
+
+.hbox {
+  display: block;
+  margin-left: var(--baseHorizontalMargin);
+  margin-right: var(--baseHorizontalMargin);
+}
+
+.s-box {
+  display: block;
+  margin: var(--smallVerticalMargin) var(--smallHorizontalMargin);
+}
+
+.s-vbox {
+  display: block;
+  margin-top: var(--smallVerticalMargin);
+  margin-bottom: var(--smallVerticalMargin);
+}
+
+.s-hbox {
+  display: block;
+  margin-left: var(--smallHorizontalMargin);
+  margin-right: var(--smallHorizontalMargin);
+}
+
+.l-box {
+  display: block;
+  margin: var(--largeVerticalMargin) var(--largeHorizontalMargin);
+}
+
+.l-vbox {
+  display: block;
+  margin-top: var(--largeVerticalMargin);
+  margin-bottom: var(--largeVerticalMargin);
+}
+
+.l-hbox {
+  display: block;
+  margin-left: var(--largeHorizontalMargin);
+  margin-right: var(--largeHorizontalMargin);
+}
+
+.xl-box {
+  display: block;
+  margin: var(--xlVerticalMargin) var(--xlHorizontalMargin);
+}
+
+.xl-vbox {
+  display: block;
+  margin-top: var(--xlVerticalMargin);
+  margin-bottom: var(--xlVerticalMargin);
+}
+
+.xl-hbox {
+  display: block;
+  margin-left: var(--xlHorizontalMargin);
+  margin-right: var(--xlHorizontalMargin);
+}
