@@ -918,3 +918,38 @@ h6 {
   background-color: var(--success);
   color: var(--invertedTextColor);
   border: none; }
+
+.label {
+  --labelGap: calc(1rem / 2);
+  --labelBorderWidth: calc(1rem / 16);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background-color: var(--backgroundColor);
+  border: var(--labelBorderWidth) solid var(--formBorder);
+  border-radius: var(--baseRadius);
+  color: var(--textColor);
+  font-family: var(--fontFamily);
+  font-size: var(--baseFont);
+  line-height: 1rem; }
+
+.label--accent {
+  border-color: var(--accent);
+  color: var(--accentTextColor); }
+
+.label--warning {
+  border-color: var(--warning);
+  color: var(--warningTextColor); }
+
+.label--danger {
+  border-color: var(--danger);
+  color: var(--dangerTextColor); }
+
+.label--success {
+  border-color: var(--success);
+  color: var(--successTextColor); }
+
+.label--rounded {
+  border-radius: var(--roundedRadius); }
+
+.label--circle {
+  border-radius: 1rem; }
