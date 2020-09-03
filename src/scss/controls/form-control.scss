@@ -1,0 +1,50 @@
+.form-control {
+  --iconWidth: 1rem;
+  --inputBorderWidth: calc(1rem / 16);
+
+  width: 100%;
+  flex: 1;
+}
+
+.form-control__help {
+  font-size: var(--smallFont);
+  margin-top: var(--baseVerticalMargin);
+}
+
+.form-control--invalid {
+  .input {
+    border-color: var(--danger);
+
+    &:focus {
+      box-shadow: 0 0 0 var(--focusOutlineWidth) var(--dangerFocusHightlight);
+    }
+  }
+
+  .form-control__help {
+    color: var(--dangerTextColor);
+  }
+}
+
+.form-control--valid {
+  .form-control__help {
+    color: var(--successTextColor);
+  }
+}
+
+.form-control--start-icon {
+  position: relative;
+
+  .input {
+    padding-left: calc(var(--baseHorizontalMargin) * 2 + var(--iconWidth));
+  }
+
+  .form-control__icon {
+    position: absolute;
+    top: calc(var(--baseVerticalMargin) + var(--inputBorderWidth));
+    left: var(--baseHorizontalMargin);
+
+    .icon {
+      fill: var(--textColor);
+    }
+  }
+}

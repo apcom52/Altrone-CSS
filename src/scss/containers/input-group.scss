@@ -1,0 +1,10 @@
+.input-group {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  z-index: 1;
+
+  .button {
+    margin: 0;
+  }
+}

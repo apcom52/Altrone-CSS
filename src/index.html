@@ -375,6 +375,93 @@
                 </div>
             </div>
         </section>
+
+        <section>
+            <h2>Формы</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <h3>Текстовые поля</h3>
+                    <form action="#">
+                        <div class="form-group l-vbox">
+                            <label for="username1" class="form-group__label">Ваше имя:</label>
+                            <div class="form-control form-control--valid">
+                                <input type="text" id="username1" class="input" placeholder="Введите имя">
+                                <div class="form-control__help">Все правильно</div>
+                            </div>
+                        </div>
+                        <div class="form-group l-vbox">
+                            <label for="username1" class="form-group__label">Ваш адрес:</label>
+                            <div class="form-control form-control--invalid">
+                                <input type="text" id="city1" class="input" placeholder="Введите улицу и номер дома">
+                                <div class="form-control__help">Неправильный формат адреса</div>
+                            </div>
+                        </div>
+                        <div class="form-group l-vbox">
+                            <label for="password1" class="form-group__label">Пароль:</label>
+                            <div class="input-group">
+                                <div class="form-control">
+                                    <input type="password" id="password1" class="input" placeholder="Введите пароль">
+                                    <div class="form-control__help">Пароль должен быть не короче 6-ти символов, а также содержать буквы и цифры</div>
+                                </div>
+                                <button type="button" class="button">Показать</button>
+                            </div>
+                        </div>
+
+                        <div class="vbox">
+                            <input type="submit" class="button button--accent">
+                            <input type="reset" class="button">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <h3>Разные типы полей</h3>
+                    <div class="form-group l-vbox">
+                        <label for="number-field" class="form-group__label">Числовое поле:</label>
+                        <div class="form-control">
+                            <input type="number" id="number-field" class="input" placeholder="Введите число">
+                        </div>
+                    </div>
+
+                    <div class="form-group l-vbox">
+                        <label for="phone-field" class="form-group__label">Поле для ввода телефона:</label>
+                        <div class="form-control form-control--start-icon">
+                            <input type="tel" id="phone-field" class="input" placeholder="Введите номер телефона">
+                            <div class="form-control__icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group l-vbox">
+                        <label for="web-field" class="form-group__label">Поле для ввода адреса сайта:</label>
+                        <div class="form-control form-control--start-icon">
+                            <input type="tel" id="web-field" class="input" placeholder="Введите номер телефона">
+                            <div class="form-control__icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539a8.372 8.372 0 0 1-1.198-.49 7.01 7.01 0 0 1 2.276-1.52 6.7 6.7 0 0 0-.597.932 8.854 8.854 0 0 0-.48 1.079zM3.509 7.5H1.017A6.964 6.964 0 0 1 2.38 3.825c.47.258.995.482 1.565.667A13.4 13.4 0 0 0 3.508 7.5zm1.4-2.741c.808.187 1.681.301 2.591.332V7.5H4.51c.035-.987.176-1.914.399-2.741zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5H7.5v2.409c-.91.03-1.783.145-2.591.332a12.343 12.343 0 0 1-.4-2.741zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696A12.63 12.63 0 0 1 7.5 11.91v3.014c-.67-.204-1.335-.82-1.887-1.855a7.776 7.776 0 0 1-.395-.872zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964a9.083 9.083 0 0 0-1.565.667A6.963 6.963 0 0 1 1.018 8.5h2.49a13.36 13.36 0 0 0 .437 3.008zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909c.81.03 1.577.13 2.282.287-.12.312-.252.604-.395.872-.552 1.035-1.218 1.65-1.887 1.855V11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5h-2.49a13.361 13.361 0 0 0-.437-3.008 9.123 9.123 0 0 0 1.565-.667A6.963 6.963 0 0 1 14.982 7.5zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343c-.705.157-1.473.257-2.282.287V1.077c.67.204 1.335.82 1.887 1.855.143.268.276.56.395.872z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group l-vbox">
+                        <label for="web-field" class="form-group__label">Поле поиска:</label>
+                        <div class="form-control form-control--start-icon">
+                            <input type="search" id="web-field" class="input" placeholder="Поиск...">
+                            <div class="form-control__icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
