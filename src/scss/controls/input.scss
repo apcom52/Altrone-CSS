@@ -29,8 +29,14 @@
 
   &::placeholder {
     color: var(--textFaded);
-    line-height: 1.5;
-    font-size: var(--baseFont);
+    line-height: 1.5 !important;
+    font-size: 1em;
+  }
+
+  &::-moz-placeholder {
+    padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+    line-height: 2 !important;
+    font-weight: 400;
   }
 
   &::-webkit-search-decoration, &::-webkit-search-cancel-button {
