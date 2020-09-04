@@ -1,17 +1,18 @@
 .button {
-  --buttonBorderWidth: calc(1rem / 16);
+  --buttonBorderWidth: 0.0625rem;
   --buttonGap: calc(1rem / 16 * 8);
 
-  display: inline-block;
+  display: inline-flex;
+  min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--buttonBorderWidth) * 2);
   margin-right: var(--buttonGap);
   margin-bottom: var(--buttonGap);
-  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  padding: 0 var(--baseHorizontalMargin);
   background: var(--formBackground);
   border: var(--buttonBorderWidth) solid var(--formBorder);
   color: var(--textColor);
   border-radius: 4px;
   font-family: var(--fontFamily);
-  font-size: var(--base-font);
+  font-size: var(--baseFont);
   font-weight: 400;
   outline: 0;
   transition: box-shadow 0.3s ease, transform 0.15s ease;
@@ -22,6 +23,9 @@
   -moz-appearance: none;
   appearance: none;
   text-shadow: none;
+  align-items: center;
+  line-height: 1.5;
+  vertical-align: top;
 
   &:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
@@ -39,6 +43,13 @@
 
   .icon {
     margin-right: var(--smallHorizontalMargin);
+    height: 1em;
+  }
+}
+
+.button--icon {
+  .icon {
+    margin: 0;
   }
 }
 

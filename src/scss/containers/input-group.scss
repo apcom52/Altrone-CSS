@@ -6,5 +6,64 @@
 
   .button {
     margin: 0;
+    border-radius: 0;
+    border-right-color: transparent;
+
+    &:first-child {
+      border-top-left-radius: var(--baseRadius);
+      border-bottom-left-radius: var(--baseRadius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-right-radius: var(--baseRadius);
+      border-right-color: var(--formBorder);
+    }
+  }
+
+  .form-control {
+    .input {
+      border-radius: 0;
+      border-right-color: transparent;
+    }
+
+    &:first-child {
+      .input {
+        border-top-left-radius: var(--baseRadius);
+        border-bottom-left-radius: var(--baseRadius);
+      }
+    }
+
+    &:last-child {
+      .input {
+        border-top-right-radius: var(--baseRadius);
+        border-bottom-right-radius: var(--baseRadius);
+        border-right-color: var(--formBorder);
+      }
+    }
+  }
+
+  .input-group__text {
+    display: inline-flex;
+    align-items: center;
+    min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--inputBorderWidth) * 2);
+    padding: 0 var(--baseHorizontalMargin);
+    border: calc(1rem / 16) solid var(--formBorder);
+    border-right-color: transparent;
+    background-color: var(--formBackground);
+    border-radius: 0;
+    line-height: 1.5;
+    font-size: var(--baseFont);
+
+    &:first-child {
+      border-top-left-radius: var(--baseRadius);
+      border-bottom-left-radius: var(--baseRadius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-right-radius: var(--baseRadius);
+      border-right-color: var(--formBorder);
+    }
   }
 }

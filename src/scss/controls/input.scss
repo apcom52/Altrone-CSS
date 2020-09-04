@@ -1,7 +1,8 @@
 .input {
   display: block;
   width: 100%;
-  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--inputBorderWidth) * 2);
+  padding: 0 var(--baseHorizontalMargin);
   border: var(--inputBorderWidth) solid var(--formBorder);
   transition: box-shadow 0.15s ease;
   background-color: var(--interactiveFormBackground);
@@ -11,7 +12,7 @@
   -moz-appearance: none;
   appearance: none;
   border-radius: var(--baseRadius);
-  line-height: var(--baseFont);
+  line-height: 1.5;
 
   &:focus {
     outline: 0;
@@ -28,7 +29,7 @@
 
   &::placeholder {
     color: var(--textFaded);
-    line-height: normal !important;
+    line-height: 1.5;
     font-size: var(--baseFont);
   }
 

@@ -706,18 +706,19 @@ h6 {
   margin-right: var(--xlHorizontalMargin); }
 
 .button {
-  --buttonBorderWidth: calc(1rem / 16);
+  --buttonBorderWidth: 0.0625rem;
   --buttonGap: calc(1rem / 16 * 8);
-  display: inline-block;
+  display: inline-flex;
+  min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--buttonBorderWidth) * 2);
   margin-right: var(--buttonGap);
   margin-bottom: var(--buttonGap);
-  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  padding: 0 var(--baseHorizontalMargin);
   background: var(--formBackground);
   border: var(--buttonBorderWidth) solid var(--formBorder);
   color: var(--textColor);
   border-radius: 4px;
   font-family: var(--fontFamily);
-  font-size: var(--base-font);
+  font-size: var(--baseFont);
   font-weight: 400;
   outline: 0;
   transition: box-shadow 0.3s ease, transform 0.15s ease;
@@ -727,7 +728,10 @@ h6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-shadow: none; }
+  text-shadow: none;
+  align-items: center;
+  line-height: 1.5;
+  vertical-align: top; }
   .button:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
     z-index: 1; }
@@ -737,7 +741,11 @@ h6 {
   .button:active {
     transform: translateY(1px); }
   .button .icon {
-    margin-right: var(--smallHorizontalMargin); }
+    margin-right: var(--smallHorizontalMargin);
+    height: 1em; }
+
+.button--icon .icon {
+  margin: 0; }
 
 .button--accent {
   background: var(--accent);
@@ -1144,7 +1152,44 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   width: 100%;
   z-index: 1; }
   .input-group .button {
-    margin: 0; }
+    margin: 0;
+    border-radius: 0;
+    border-right-color: transparent; }
+    .input-group .button:first-child {
+      border-top-left-radius: var(--baseRadius);
+      border-bottom-left-radius: var(--baseRadius); }
+    .input-group .button:last-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-right-radius: var(--baseRadius);
+      border-right-color: var(--formBorder); }
+  .input-group .form-control .input {
+    border-radius: 0;
+    border-right-color: transparent; }
+  .input-group .form-control:first-child .input {
+    border-top-left-radius: var(--baseRadius);
+    border-bottom-left-radius: var(--baseRadius); }
+  .input-group .form-control:last-child .input {
+    border-top-right-radius: var(--baseRadius);
+    border-bottom-right-radius: var(--baseRadius);
+    border-right-color: var(--formBorder); }
+  .input-group .input-group__text {
+    display: inline-flex;
+    align-items: center;
+    min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--inputBorderWidth) * 2);
+    padding: 0 var(--baseHorizontalMargin);
+    border: calc(1rem / 16) solid var(--formBorder);
+    border-right-color: transparent;
+    background-color: var(--formBackground);
+    border-radius: 0;
+    line-height: 1.5;
+    font-size: var(--baseFont); }
+    .input-group .input-group__text:first-child {
+      border-top-left-radius: var(--baseRadius);
+      border-bottom-left-radius: var(--baseRadius); }
+    .input-group .input-group__text:last-child {
+      border-top-right-radius: var(--baseRadius);
+      border-bottom-right-radius: var(--baseRadius);
+      border-right-color: var(--formBorder); }
 
 .form-group {
   display: flex;
@@ -1204,7 +1249,8 @@ a.breadcrumbs__main, a.breadcrumbs__item {
 .input {
   display: block;
   width: 100%;
-  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--inputBorderWidth) * 2);
+  padding: 0 var(--baseHorizontalMargin);
   border: var(--inputBorderWidth) solid var(--formBorder);
   transition: box-shadow 0.15s ease;
   background-color: var(--interactiveFormBackground);
@@ -1214,7 +1260,7 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   -moz-appearance: none;
   appearance: none;
   border-radius: var(--baseRadius);
-  line-height: var(--baseFont); }
+  line-height: 1.5; }
   .input:focus {
     outline: 0;
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
@@ -1226,7 +1272,7 @@ a.breadcrumbs__main, a.breadcrumbs__item {
     user-select: none; }
   .input::placeholder {
     color: var(--textFaded);
-    line-height: normal !important;
+    line-height: 1.5;
     font-size: var(--baseFont); }
   .input::-webkit-search-decoration, .input::-webkit-search-cancel-button {
     display: none; }
