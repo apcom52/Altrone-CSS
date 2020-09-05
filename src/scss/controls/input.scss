@@ -44,6 +44,11 @@
   }
 }
 
+textarea.input {
+  resize: vertical;
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+}
+
 .a-form-control__controls {
   display: flex;
   flex-direction: row;

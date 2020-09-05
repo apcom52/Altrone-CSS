@@ -1283,6 +1283,10 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   .input::-webkit-search-decoration, .input::-webkit-search-cancel-button {
     display: none; }
 
+textarea.input {
+  resize: vertical;
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin); }
+
 .a-form-control__controls {
   display: flex;
   flex-direction: row;
@@ -1419,7 +1423,7 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   background-image: none; }
 
 .switcher__input:checked + .switcher__label:after {
-  left: 1.45rem;
+  left: 1.4rem;
   background-color: white; }
 
 .switcher__input:disabled + .switcher__label {
