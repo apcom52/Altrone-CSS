@@ -20,6 +20,9 @@
 }
 
 .checkbox__label {
+  -webkit-user-select: none;
+  user-select: none;
+
   &:before {
     display: inline-block;
     width: var(--baseFont);
@@ -64,4 +67,19 @@
     border-radius: var(--baseRadius);
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
   }
+}
+
+.checkbox__input:disabled + .checkbox__label {
+  opacity: 0.5;
+}
+
+.checkbox__input:checked:disabled + .checkbox__label:before {
+  background-color: var(--textFaded);
+  border-color: var(--textFaded);
+}
+
+.checkbox--inline {
+  display: inline-flex;
+  margin-right: var(--baseHorizontalMargin);
+  margin-bottom: var(--baseVerticalMargin);
 }

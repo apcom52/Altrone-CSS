@@ -6,7 +6,7 @@
   min-height: calc(1rem + var(--baseVerticalMargin) * 2 + var(--buttonBorderWidth) * 2);
   margin-right: var(--buttonGap);
   margin-bottom: var(--buttonGap);
-  padding: 0 var(--baseHorizontalMargin);
+  padding: var(--smallVerticalMargin) var(--baseHorizontalMargin);
   background: var(--formBackground);
   border: var(--buttonBorderWidth) solid var(--formBorder);
   color: var(--textColor);
@@ -24,7 +24,7 @@
   appearance: none;
   text-shadow: none;
   align-items: center;
-  line-height: 1.5;
+  line-height: 1.5em;
   vertical-align: top;
 
   &:focus {
@@ -135,7 +135,7 @@
 }
 
 .button--size-xl {
-  font-size: var(--headerFont);
+  font-size: var(--headerLevel3);
 }
 
 .button--only-borders {

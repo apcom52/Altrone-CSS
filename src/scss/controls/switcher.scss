@@ -48,15 +48,14 @@
   &:after {
     display: inline-block;
     position: absolute;
-    left: 4px;
-    top: 0.325rem;
-    width: 0.75rem;
-    height: 0.75rem;
+    left: 0.15rem;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background-color: var(--accent);
     content: '';
     transition: left 0.15s ease;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -67,7 +66,25 @@
   }
 
   &:after {
-    left: 24px;
+    left: 1.45rem;
+    background-color: white;
+  }
+}
+
+.switcher__input:disabled + .switcher__label {
+  opacity: 0.5;
+
+  &:after {
+    background-color: var(--textFaded);
+  }
+}
+
+.switcher__input:checked:disabled + .switcher__label {
+  &:before {
+    background-color: var(--textFaded);
+  }
+
+  &:after {
     background-color: white;
   }
 }
