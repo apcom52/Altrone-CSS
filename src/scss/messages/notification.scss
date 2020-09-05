@@ -103,3 +103,17 @@
 .notification__actions {
   margin: var(--baseVerticalMargin) calc(-1 * var(--baseHorizontalMargin)) calc(-1 * var(--baseHorizontalMargin));
 }
+
+.notification__clear {
+  position: fixed;
+  right: var(--hgap);
+  top: 0.15rem;
+  font-size: var(--smallFont);
+  font-weight: 500;
+  color: var(--textColor);
+  background-color: var(--formBorder);
+  padding: var(--smallVerticalMargin) var(--smallHorizontalMargin);
+  border-radius: 1em;
+  cursor: pointer;
+  border: none;
+}

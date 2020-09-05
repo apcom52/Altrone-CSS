@@ -26,6 +26,7 @@
   align-items: center;
   line-height: 1.5em;
   vertical-align: top;
+  user-select: none;
 
   &:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);

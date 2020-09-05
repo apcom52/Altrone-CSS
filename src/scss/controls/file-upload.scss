@@ -1,0 +1,17 @@
+.file-upload {
+  display: flex;
+}
+
+.file-upload {
+  display: inline-flex;
+}
+
+.file-upload__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

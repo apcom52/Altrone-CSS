@@ -731,7 +731,8 @@ h6 {
   text-shadow: none;
   align-items: center;
   line-height: 1.5em;
-  vertical-align: top; }
+  vertical-align: top;
+  user-select: none; }
   .button:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
     z-index: 1; }
@@ -1068,6 +1069,19 @@ h6 {
 
 .notification__actions {
   margin: var(--baseVerticalMargin) calc(-1 * var(--baseHorizontalMargin)) calc(-1 * var(--baseHorizontalMargin)); }
+
+.notification__clear {
+  position: fixed;
+  right: var(--hgap);
+  top: 0.15rem;
+  font-size: var(--smallFont);
+  font-weight: 500;
+  color: var(--textColor);
+  background-color: var(--formBorder);
+  padding: var(--smallVerticalMargin) var(--smallHorizontalMargin);
+  border-radius: 1em;
+  cursor: pointer;
+  border: none; }
 
 .label {
   --labelGap: calc(1rem / 2);
@@ -1576,3 +1590,18 @@ textarea.input {
 
 .radio__input:checked:disabled + .radio__label:before {
   background-color: var(--textFaded); }
+
+.file-upload {
+  display: flex; }
+
+.file-upload {
+  display: inline-flex; }
+
+.file-upload__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
