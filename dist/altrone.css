@@ -1294,6 +1294,22 @@ a.breadcrumbs__main, a.breadcrumbs__item {
       border-bottom-right-radius: var(--baseRadius);
       border-right-color: var(--formBorder); }
 
+.spoiler {
+  font-size: var(--baseFont);
+  font-family: var(--fontFamily);
+  color: var(--textColor); }
+
+.spoiler__label {
+  background-color: var(--formBackground);
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  border-radius: var(--baseRadius);
+  outline: none;
+  font-weight: 500;
+  margin-bottom: var(--baseVerticalMargin);
+  cursor: pointer; }
+  .spoiler__label:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight); }
+
 .form-group {
   display: flex;
   font-family: var(--fontFamily);

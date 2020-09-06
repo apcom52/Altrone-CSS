@@ -1,0 +1,19 @@
+.spoiler {
+  font-size: var(--baseFont);
+  font-family: var(--fontFamily);
+  color: var(--textColor);
+}
+
+.spoiler__label {
+  background-color: var(--formBackground);
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  border-radius: var(--baseRadius);
+  outline: none;
+  font-weight: 500;
+  margin-bottom: var(--baseVerticalMargin);
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
+  }
+}
