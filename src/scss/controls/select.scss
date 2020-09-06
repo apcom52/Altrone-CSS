@@ -1,0 +1,64 @@
+.select {
+  display: block;
+  width: fit-content;
+}
+
+.select-menu {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  border: 1px solid var(--formBorder);
+  background-color: var(--interactiveFormBackground);
+  border-radius: var(--baseRadius);
+  color: var(--textColor);
+  align-items: center;
+}
+
+.select-menu__current {
+
+}
+
+.select-menu__icon {
+  height: 1em;
+  margin-left: var(--baseHorizontalMargin);
+}
+
+.select-options {
+  display: flex;
+  margin-top: 0.125rem;
+  padding: var(--baseVerticalMargin) var(--smallHorizontalMargin);
+  flex-direction: column;
+  border-radius: var(--baseRadius);
+  background-color: var(--interactiveFormBackground);
+  border: 1px solid var(--formBorder);
+}
+
+.select__option {
+  padding: var(--smallVerticalMargin) var(--smallHorizontalMargin);
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  color: var(--textColor);
+  border-radius: var(--baseRadius);
+  user-select: none;
+  outline: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 0.00625rem;
+  }
+
+  &:hover {
+    background-color: var(--formBackground);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);
+  }
+
+  &:active {
+    background-color: var(--accent);
+    color: var(--invertedTextColor);
+  }
+}
