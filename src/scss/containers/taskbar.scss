@@ -1,0 +1,28 @@
+.taskbar {
+  display: flex;
+  width: 100%;
+  background-color: var(--formBackground);
+  padding: var(--baseVerticalMargin) var(--smallHorizontalMargin);
+  align-items: center;
+}
+
+.taskbar--transparent {
+  background-color: transparent;
+}
+
+.taskbar__separator {
+  flex: 1;
+}
+
+.taskbar__group .button {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.taskbar__group {
+  margin: 0 var(--smallHorizontalMargin);
+}
+
+.taskbar__group--fit {
+  flex: 1;
+}

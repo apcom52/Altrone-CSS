@@ -713,7 +713,7 @@ h6 {
   margin-right: var(--buttonGap);
   margin-bottom: var(--buttonGap);
   padding: var(--smallVerticalMargin) var(--baseHorizontalMargin);
-  background: var(--formBackground);
+  background: var(--interactiveFormBackground);
   border: var(--buttonBorderWidth) solid var(--formBorder);
   color: var(--textColor);
   border-radius: 4px;
@@ -1309,6 +1309,29 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   cursor: pointer; }
   .spoiler__label:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight); }
+
+.taskbar {
+  display: flex;
+  width: 100%;
+  background-color: var(--formBackground);
+  padding: var(--baseVerticalMargin) var(--smallHorizontalMargin);
+  align-items: center; }
+
+.taskbar--transparent {
+  background-color: transparent; }
+
+.taskbar__separator {
+  flex: 1; }
+
+.taskbar__group .button {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.taskbar__group {
+  margin: 0 var(--smallHorizontalMargin); }
+
+.taskbar__group--fit {
+  flex: 1; }
 
 .form-group {
   display: flex;
