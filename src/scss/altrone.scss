@@ -30,12 +30,14 @@
 
 //navigation
 @import "navigation/breadcrumbs";
+@import "navigation/pagination";
 
 //containers
 @import "containers/tabs";
 @import "containers/input-group";
 @import "containers/spoiler";
 @import "containers/taskbar";
+@import "containers/sidebar";
 
 //controls
 @import "controls/form-group";

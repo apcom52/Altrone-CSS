@@ -1,0 +1,95 @@
+.sidebar {
+  --coverHeight: 250px;
+  --sidebarWidth: 300px;
+
+  display: flex;
+  position: fixed;
+  width: var(--sidebarWidth);
+  height: 100vh;
+  top: 0;
+  left: 0px;
+  background-color: var(--contentBackground);
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: left 0.15s ease, opacity 0.15s ease-in-out;
+  flex-direction: column;
+  border-right: 1px solid var(--formBorder);
+}
+
+.sidebar__cover {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--formBackground);
+  width: 100%;
+  height: var(--coverHeight);
+  color: var(--textColor);
+  padding: var(--xlVerticalMargin) var(--largeHorizontalMargin);
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+
+  > *:not(.sidebar__cover-background) {
+    z-index: 1;
+  }
+}
+
+.sidebar__cover-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.sidebar__title {
+  font-size: var(--largeFont);
+  margin-top: var(--largeVerticalMargin);
+  font-weight: 600;
+  z-index: 1;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+}
+
+.sidebar__group {
+  margin: var(--largeVerticalMargin) 0;
+}
+
+.sidebar__separator {
+  width: 100%;
+  height: 1px;
+  margin-left: var(--baseHorizontalMargin);
+  background-color: var(--formBorder);
+}
+
+.sidebar__header {
+  color: var(--textFaded);
+  font-weight: 500;
+  margin: var(--largeVerticalMargin) var(--largeHorizontalMargin);
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: var(--largeVerticalMargin) var(--largeHorizontalMargin);
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+
+  .icon {
+    margin: 0 var(--baseHorizontalMargin);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:hover, &:focus {
+    background-color: var(--formBackground);
+  }
+}
