@@ -654,7 +654,7 @@
 
                     <div class="taskbar__separator"></div>
 
-                    <div class="taskbar__group taskbar__group--fit">
+                    <div class="taskbar__group taskbar__group--fit" style="flex: 5;">
                         <div class="form-control">
                             <input type="text" class="input" placeholder="Введите адрес сайта...">
                         </div>
@@ -706,6 +706,18 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </section>
+
+        <section>
+            <h2>Прогресс-бар</h2>
+            <div class="progress vbox"><div class="progress__active" style="width: 45%;"></div></div>
+            <div class="progress vbox progress--warning"><div class="progress__active" style="width: 77%;"></div></div>
+            <div class="progress vbox progress--thin progress--danger"><div class="progress__active" style="width: 41%;"></div></div>
+            <div class="vbox" style="width: 144px; height: 45px;">
+                <div class="progress progress--fluid progress--success">
+                    <div class="progress__active" style="width: 76%;"></div>
+                </div>
             </div>
         </section>
     </div>

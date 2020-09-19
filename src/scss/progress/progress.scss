@@ -1,0 +1,41 @@
+.progress {
+  display: flex;
+  width: 100%;
+  height: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--formBackground);
+  border: 1px solid var(--formBorder);
+  overflow: hidden;
+}
+
+.progress__active {
+  background-color: var(--accent);
+}
+
+.progress--thin {
+  height: 0.25rem;
+  border-radius: 0.15rem;
+}
+
+.progress--fluid {
+  width: 100%;
+  height: 100%;
+}
+
+.progress--warning {
+  .progress__active {
+    background-color: var(--warning);
+  }
+}
+
+.progress--danger {
+  .progress__active {
+    background-color: var(--danger);
+  }
+}
+
+.progress--success {
+  .progress__active {
+    background-color: var(--success);
+  }
+}
