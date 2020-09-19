@@ -20,7 +20,12 @@
   "homepage": "https://github.com/apcom52/Altrone-CSS#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@popperjs/core": "^2.4.4",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.12",
+    "browserify": "^16.5.2",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
@@ -32,6 +37,7 @@
     "gulp-prompt": "^0.4.1",
     "gulp-sass": "^4.1.0",
     "gulp-zip": "^4.0.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

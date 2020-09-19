@@ -1,0 +1,18 @@
+.popup {
+  display: none;
+  position: absolute;
+  padding: var(--baseVerticalMargin) var(--baseHorizontalMargin);
+  color: var(--textColor);
+  font-size: var(--baseFont);
+  background-color: var(--contentBackground);
+  border: 1px solid var(--formBorder);
+  border-radius: var(--baseRadius);
+  z-index: 500;
+  left: -9999px;
+  top: -9999px;
+  max-width: 30vw;
+}
+
+.popup--visible {
+  display: flex;
+}
