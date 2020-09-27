@@ -1,12 +1,14 @@
 .modal {
+  --modalWidth: 800px;
+
   display: none;
   flex-direction: column;
   position: fixed;
-  width: 800px;
+  width: var(--modalWidth);
   height: auto;
   max-height: calc(100vh - 200px);
   top: 100px;
-  left: calc(50vw - 400px);
+  left: calc(50vw - var(--modalWidth) / 2);
   background-color: var(--contentBackground);
   z-index: 101;
   border-radius: var(--baseRadius);
@@ -46,6 +48,9 @@
   background-color: transparent;
   border: none;
   line-height: 2em;
+  cursor: pointer;
+  outline: 0;
+  border-radius: var(--baseRadius);
 
   &:active {
     color: var(--textColor);
@@ -69,11 +74,28 @@
 .modal__footer {
   text-align: right;
   padding: var(--largeVerticalMargin) var(--baseHorizontalMargin);
-  transition: padding 0.15s ease, font-siz  e 0.15s ease;
 }
 
 .modal--show {
   display: flex;
   transform: none;
   opacity: 1;
+}
+
+.modal--fluid {
+  width: 100vw;
+  left: 0;
+  border-radius: 0;
+}
+
+.modal--size--large {
+  width: 1000px;
+}
+
+.modal--size-small {
+  --modalWidth: 400px;
+}
+
+.modal--size-xsmall {
+  --modalWidth: 200px;
 }

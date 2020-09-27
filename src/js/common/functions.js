@@ -5,9 +5,11 @@ export function createElement(tagName = 'div', parent, attributes = {}) {
         element.setAttribute(attrName, attributes[attrName]);
     });
 
-    if (parent) {
-        parent.appendChild(element);
-    }
+    element.innerHTML = '';
 
-    return element;
+    if (parent) {
+        return parent.appendChild(element);
+    } else {
+        return element;
+    }
 }

@@ -1,6 +1,7 @@
 import {createOverlay, destroyOverlay} from "../common/overlay";
 
-window.altroneCurrentModals = [];
+window.altroneModalsInstances = [];
+window.altroneCurrentModal = null;
 
 class Modal {
     constructor(modalElement, options = {}) {
@@ -20,56 +21,47 @@ class Modal {
         this.modal = modalElement;
         this.options = {...defaultOptions, options};
 
-        console.log('constructor', this);
-        window.altroneCurrentModals.push(this);
+        window.altroneModalsInstances.push(this);
     }
 
     show() {
-        createOverlay();
-        return new Promise((resolve, reject) => {
-            console.log('promise', this);
+        if (!this.options.disableOverlay) {
+            createOverlay();
+        }
 
-            this.modal.classList.add('modal--show');
-            setTimeout(() => {
-                resolve(this);
-            }, 300);
-        })
+        this.modal.classList.add('modal--show');
+
+        window.altroneCurrentModal = this;
     }
 
     hide() {
-        return new Promise((resolve, reject) => {
-            this.modal.classList.remove('modal--show');
-            setTimeout(() => {
-                destroyOverlay();
-                resolve(this);
-            }, 300);
-        });
+        if (window.altroneCurrentOverlay) {
+            destroyOverlay();
+        }
+
+        window.altroneCurrentModal = null;
+
+        this.modal.classList.remove('modal--show');
     }
 
     static getModal(modalElement) {
-        const modal = window.altroneCurrentModals.find((modalInstance) => {
+        const modal = window.altroneModalsInstances.find((modalInstance) => {
             return modalInstance.modal === modalElement;
         });
 
         if (modal) {
-            console.log('find in existings modals', modal);
             return modal;
         } else {
-            console.log('create new modal');
             return new Modal(modalElement);
         }
     }
 }
 
-console.log('modal init');
-
 document.body.addEventListener('click', e => {
-    const currentModalElement = document.body.querySelector('.modal--show');
     const closeButton = e.target.closest('[data-modal-close]');
 
-    if (closeButton && currentModalElement) {
-        const currentModal = Modal.getModal(currentModalElement);
-        currentModal.hide();
+    if (closeButton && window.altroneCurrentModal) {
+        window.altroneCurrentModal.hide();
         return;
     }
 
@@ -82,22 +74,24 @@ document.body.addEventListener('click', e => {
     const showTargetModal = function() {
         const targetModalElement = document.body.querySelector(targetElement.dataset.modal);
 
-        console.log(targetModalElement);
         if (!targetModalElement) {
             return;
         }
 
         const targetModal = Modal.getModal(targetModalElement);
-        console.log(targetModal);
 
         targetModal.show();
     }
 
-    if (currentModalElement) {
-        const currentModal = Modal.getModal(currentModalElement);
+    if (window.altroneCurrentModal) {
+        window.altroneCurrentModal.hide();
+    }
 
-        currentModal.hide().then(showTargetModal);
-    } else {
-        showTargetModal();
+    showTargetModal();
+});
+
+document.body.addEventListener('overlay.hidden', (e) => {
+    if (window.altroneCurrentModal && window.altroneCurrentModal.options.disableOverlayClose === false) {
+        window.altroneCurrentModal.hide();
     }
 })

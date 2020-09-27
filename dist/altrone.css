@@ -1113,14 +1113,15 @@ h6 {
   display: flex; }
 
 .modal {
+  --modalWidth: 800px;
   display: none;
   flex-direction: column;
   position: fixed;
-  width: 800px;
+  width: var(--modalWidth);
   height: auto;
   max-height: calc(100vh - 200px);
   top: 100px;
-  left: calc(50vw - 400px);
+  left: calc(50vw - var(--modalWidth) / 2);
   background-color: var(--contentBackground);
   z-index: 101;
   border-radius: var(--baseRadius);
@@ -1156,7 +1157,10 @@ h6 {
   margin: 0;
   background-color: transparent;
   border: none;
-  line-height: 2em; }
+  line-height: 2em;
+  cursor: pointer;
+  outline: 0;
+  border-radius: var(--baseRadius); }
   .modal__close:active {
     color: var(--textColor); }
   .modal__close:focus {
@@ -1171,13 +1175,26 @@ h6 {
 
 .modal__footer {
   text-align: right;
-  padding: var(--largeVerticalMargin) var(--baseHorizontalMargin);
-  transition: padding 0.15s ease, font-siz  e 0.15s ease; }
+  padding: var(--largeVerticalMargin) var(--baseHorizontalMargin); }
 
 .modal--show {
   display: flex;
   transform: none;
   opacity: 1; }
+
+.modal--fluid {
+  width: 100vw;
+  left: 0;
+  border-radius: 0; }
+
+.modal--size--large {
+  width: 1000px; }
+
+.modal--size-small {
+  --modalWidth: 400px; }
+
+.modal--size-xsmall {
+  --modalWidth: 200px; }
 
 .label {
   --labelGap: calc(1rem / 2);

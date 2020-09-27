@@ -11,15 +11,18 @@ export function createOverlay(selfDestroyable = true) {
         'class': 'overlay'
     });
 
-    console.log(window.altroneCurrentOverlay);
-
     if (selfDestroyable) {
-        window.altroneCurrentOverlay.addEventListener('click', destroyOverlay());
+        window.altroneCurrentOverlay.addEventListener('click', destroyOverlay);
     }
+
+    document.body.dispatchEvent(new Event('overlay.showed'));
 }
 
 export function destroyOverlay() {
     if (window.altroneCurrentOverlay) {
         window.altroneCurrentOverlay.remove();
+        window.altroneCurrentOverlay = null;
     }
+
+    document.body.dispatchEvent(new Event('overlay.hidden'));
 }
