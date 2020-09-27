@@ -393,6 +393,15 @@ body {
     margin-left: calc(var(--hgap) / 2);
     margin-right: calc(var(--hgap) / 2); } }
 
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--fontFamily);
   color: var(--textColor);
@@ -741,6 +750,8 @@ h6 {
     opacity: 0.5; }
   .button:active {
     transform: translateY(1px); }
+  .button:last-child {
+    margin-right: 0; }
   .button .icon {
     margin-right: var(--smallHorizontalMargin);
     height: 1em; }
@@ -1100,6 +1111,73 @@ h6 {
 
 .popup--visible {
   display: flex; }
+
+.modal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  width: 800px;
+  height: auto;
+  max-height: calc(100vh - 200px);
+  top: 100px;
+  left: calc(50vw - 400px);
+  background-color: var(--contentBackground);
+  z-index: 101;
+  border-radius: var(--baseRadius);
+  overflow-y: auto;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; }
+
+.modal__header {
+  display: flex;
+  position: relative;
+  padding: var(--largeVerticalMargin) var(--baseHorizontalMargin);
+  font-weight: 600;
+  text-align: center;
+  font-size: var(--baseFont);
+  color: var(--textColor);
+  transition: padding 0.15s ease, font-size 0.15s ease;
+  line-height: 22px; }
+
+.modal__title {
+  width: 100%;
+  text-align: center;
+  color: var(--textColor);
+  line-height: 2em; }
+
+.modal__close {
+  display: flex;
+  position: absolute;
+  right: var(--baseHorizontalMargin);
+  top: var(--largeVerticalMargin);
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  line-height: 2em; }
+  .modal__close:active {
+    color: var(--textColor); }
+  .modal__close:focus {
+    box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight); }
+  .modal__close .icon {
+    width: 2em;
+    height: 2em; }
+
+.modal__content {
+  padding: 16px 32px;
+  color: var(--textColor); }
+
+.modal__footer {
+  text-align: right;
+  padding: var(--largeVerticalMargin) var(--baseHorizontalMargin);
+  transition: padding 0.15s ease, font-siz  e 0.15s ease; }
+
+.modal--show {
+  display: flex;
+  transform: none;
+  opacity: 1; }
 
 .label {
   --labelGap: calc(1rem / 2);

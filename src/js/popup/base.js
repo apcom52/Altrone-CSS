@@ -38,6 +38,8 @@ document.body.addEventListener('click', e => {
 
     popupElement.classList.add('popup--visible');
 
+    target.dispatchEvent(new Event('popup.targetClick'));
+
     window.altronePopup = createPopper(target, popupElement, {
         placement: placement,
         strategy: positionType,
@@ -50,4 +52,6 @@ document.body.addEventListener('click', e => {
             }
         ]
     });
+
+    popupElement.dispatchEvent(new Event('popup.visible'));
 })

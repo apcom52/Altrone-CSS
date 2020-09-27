@@ -76,7 +76,6 @@ function watch() {
 	gulp.watch('src/index.html', html);
 	gulp.watch('src/js/**/*.js', js);
 	// gulp.watch('./*.html').on('change', browserSync.reload);
-	gulp.watch('./js/**/*.js').on('change', browserSync.reload);
 }
 
 exports.css = css;

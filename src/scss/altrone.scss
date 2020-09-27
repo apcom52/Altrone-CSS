@@ -5,6 +5,7 @@
 @import "global/variables";
 @import "global/dark-mode";
 @import "global/page";
+@import "global/overlay";
 
 //typography
 @import "typography/headers";
@@ -24,6 +25,7 @@
 @import "messages/alert";
 @import "messages/notification";
 @import "messages/popup";
+@import "messages/modal";
 
 //labels
 @import "labels/label";

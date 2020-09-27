@@ -42,6 +42,10 @@
     transform: translateY(1px);
   }
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   .icon {
     margin-right: var(--smallHorizontalMargin);
     height: 1em;

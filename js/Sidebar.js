@@ -1,28 +1,21 @@
-var __sidebars_collection = new Array();
+window.altroneCurrentSidebar = null;
+
 class Sidebar {
-	constructor(objectSender, props = {}) {
-		if (objectSender == null) {
-			throw "Sidebar: objectSender is null or undefined";
+	constructor(element, options = {}) {
+		if (!element) {
+			throw new Error("Sidebar: element is null or undefined");
 		}
 
-		let target = this;
-		target.__add_to_collection();
+		const defaultOptions = {
+			no_overlay: false,
+			enable_swipe: false,
+			onShow: null,
+			onHide: null,
+			onToggle: null
+		}
 
-		target.onShowCallback = props.onShow || null;
-		target.onHideCallback = props.onHide || null;
-		target.onChangeCallback = props.onChange || null;
-		target.enable_scroll = props.enable_scroll || false;
-		target.push_page = props.push_page || false;		
-		target.no_overlay = props.no_overlay || false;		
-		target.__element = objectSender;
-		target.__visible = false;
-		target.__touchStartX = 0;
-		target.__touchStartY = 0;
-		target.__onScrollEvent = () => target.__scroll();
-        target.__onKeyDown = (e) => target.__onKeyDownHandler(target, e);
-        target.__onSwipeStart = (e) => target.__onSwipeHandler(target, e);
-        target.__onSwipeMove = (e) => target.__onSwipeMoveHandler(target, e);
-        target.__onSwipeEnd = (e) => target.__onSwipeEndHandler(target, e);
+		this.options = {...defaultOptions, options};
+		this.element = element;
 	}
 
 	get element() {
@@ -33,61 +26,31 @@ class Sidebar {
 		return this.__visible;
 	}
 
-	set onShow(func) {
-		this.onShowCallback = func || null;
-	}
-
-	set onHide(func) {
-		this.onHideCallback = func || null;
-	}
-
-	set onChange(func) {
-		this.onChangeCallback = func || null;
+	updateOptions(options = {}) {
+		this.options = {...this.options, options};
 	}
 
 	show() {
-		let target = this;
-		target.__hide_others();
+		if (window.altroneCurrentSidebar) {
+			window.altroneCurrentSidebar.hide();
+		}
+
+		const element = this.element;
 
 		if (target.onShowCallback) {
+
 			target.onShowCallback(target);
 		}
 
-		let element = target.__element;
+		element.classList.add('sidebar--show');
+		this.__visible = true;
 
-		element.classList.add('sidebar--show');			
-		if (target.push_page) {
-			if (element.classList.contains('sidebar--pin-right')) {
-				document.body.classList.add('body--sidebar-push-right');
-			} else {
-				document.body.classList.add('body--sidebar-push-left');
-			}
+		if (this.options.onShow) {
+			this.options.onShow(this);
 		}
 
-		if (!target.no_overlay) {
-			target.__overlay = new Overlay({
-				onDestroy: () => target.hide()
-			});
-
-			target.__overlay_element = target.__overlay.element;
-
-			if (element.classList.contains('sidebar--under-taskbar')) {
-				target.__overlay_element.classList.add('overlay--under-taskbar');			
-			}
-		}
-
-		if (target.enable_scroll && element.classList.contains('sidebar--under-taskbar')) {
-			window.addEventListener('scroll', target.__onScrollEvent, false);
-		}
-
-		target.__visible = true;
-
-		if (target.onShowCallback) {
-			target.onShowCallback(target);
-		}
-
-		if (target.onChangeCallback) {
-			target.onChangeCallback(target);
+		if (this.options.onToggle) {
+			this.options.onToggle(this);
 		}
 
 		window.addEventListener('keydown', target.__onKeyDown);
