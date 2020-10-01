@@ -25,23 +25,17 @@ class Modal {
     }
 
     show() {
-        if (!this.options.disableOverlay) {
-            createOverlay();
-        }
+        window.altroneCurrentModal = this;
 
         this.modal.classList.add('modal--show');
-
-        window.altroneCurrentModal = this;
+        document.body.classList.add('body--fix');
     }
 
     hide() {
-        if (window.altroneCurrentOverlay) {
-            destroyOverlay();
-        }
-
         window.altroneCurrentModal = null;
 
         this.modal.classList.remove('modal--show');
+        document.body.classList.remove('body--fix');
     }
 
     static getModal(modalElement) {

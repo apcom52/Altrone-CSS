@@ -1115,19 +1115,24 @@ h6 {
 .modal {
   --modalWidth: 800px;
   display: none;
-  flex-direction: column;
   position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.modal__container {
+  flex-direction: column;
   width: var(--modalWidth);
   height: auto;
   max-height: calc(100vh - 200px);
-  top: 100px;
-  left: calc(50vw - var(--modalWidth) / 2);
+  margin: 100px auto;
   background-color: var(--contentBackground);
   z-index: 101;
   border-radius: var(--baseRadius);
-  overflow-y: auto;
-  transform: translateY(-20px);
-  opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease; }
 
 .modal__header {
@@ -1160,7 +1165,8 @@ h6 {
   line-height: 2em;
   cursor: pointer;
   outline: 0;
-  border-radius: var(--baseRadius); }
+  border-radius: var(--baseRadius);
+  color: var(--textColor); }
   .modal__close:active {
     color: var(--textColor); }
   .modal__close:focus {
@@ -1178,9 +1184,7 @@ h6 {
   padding: var(--largeVerticalMargin) var(--baseHorizontalMargin); }
 
 .modal--show {
-  display: flex;
-  transform: none;
-  opacity: 1; }
+  display: block; }
 
 .modal--fluid {
   width: 100vw;
@@ -1195,6 +1199,9 @@ h6 {
 
 .modal--size-xsmall {
   --modalWidth: 200px; }
+
+.body--fix {
+  overflow: hidden; }
 
 .label {
   --labelGap: calc(1rem / 2);
