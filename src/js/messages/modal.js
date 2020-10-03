@@ -79,7 +79,7 @@ class Modal {
     }
 
     updateOptions(options = {}) {
-        this.options = Object.assign({}, this.options, options);
+        this.options = {...this.options, ...options};
     }
 
     onOverlayClick(e) {
@@ -124,9 +124,3 @@ document.body.addEventListener('click', e => {
     const targetModal = new Modal(targetModalElement);
     targetModal.show();
 });
-
-document.body.addEventListener('overlay.hidden', (e) => {
-    if (window.altroneCurrentModal && window.altroneCurrentModal.options.disableOverlayClose === false) {
-        window.altroneCurrentModal.hide();
-    }
-})
