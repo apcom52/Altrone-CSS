@@ -53,6 +53,9 @@
 }
 
 .button--icon {
+  padding-left: var(--mediumHorizontalMargin);
+  padding-right: var(--mediumHorizontalMargin);
+
   .icon {
     margin: 0;
   }

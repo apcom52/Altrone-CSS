@@ -1,7 +1,18 @@
-import {createOverlay, destroyOverlay} from "../common/overlay";
+import { createFocusTrap} from "focus-trap";
 
-window.altroneModalsInstances = [];
 window.altroneCurrentModal = null;
+
+const ModalModificators = {
+    show: 'modal--show',
+    bodyScrollFix: 'body--fix'
+}
+
+const ModalEvents = {
+    show: 'modal.show',
+    showed: 'modal.showed',
+    hide: 'modal.hide',
+    hidden: 'modal.hidden'
+}
 
 class Modal {
     constructor(modalElement, options = {}) {
@@ -10,8 +21,10 @@ class Modal {
         }
 
         const defaultOptions = {
-            disableOverlay: false,
-            disableOverlayClose: false,
+            overlayVisible: true,
+            overlayClose: true,
+            escClose: true,
+            focusTrap: true,
             onShow: null,
             onShowed: null,
             onHide: null,
@@ -20,33 +33,66 @@ class Modal {
 
         this.modal = modalElement;
         this.options = {...defaultOptions, options};
+        this.focusTrap = null;
 
-        window.altroneModalsInstances.push(this);
+        this.onOverlayClick = this.onOverlayClick.bind(this);
+        this.onESCPress = this.onESCPress.bind(this);
     }
 
     show() {
+        this.modal.dispatchEvent(new Event(ModalEvents.show));
         window.altroneCurrentModal = this;
 
-        this.modal.classList.add('modal--show');
-        document.body.classList.add('body--fix');
+        this.modal.classList.add(ModalModificators.show);
+        document.body.classList.add(ModalModificators.bodyScrollFix);
+
+        if (this.options.overlayClose) {
+            this.modal.addEventListener('click', this.onOverlayClick);
+        }
+
+        if (this.options.escClose) {
+            document.body.addEventListener('keydown', this.onESCPress);
+        }
+
+        if (this.options.focusTrap) {
+            this.focusTrap = createFocusTrap(this.modal);
+            this.focusTrap.activate();
+        }
+
+        this.modal.dispatchEvent(new Event(ModalEvents.showed));
     }
 
     hide() {
+        this.modal.dispatchEvent(new Event(ModalEvents.hide));
         window.altroneCurrentModal = null;
 
-        this.modal.classList.remove('modal--show');
-        document.body.classList.remove('body--fix');
+        this.modal.classList.remove(ModalModificators.show);
+        document.body.classList.remove(ModalModificators.bodyScrollFix);
+        this.modal.dispatchEvent(new Event(ModalEvents.hidden));
+
+        this.modal.removeEventListener('click', this.onOverlayClick);
+        document.body.removeEventListener('keydown', this.onESCPress);
+
+        if (this.focusTrap) {
+            this.focusTrap.deactivate();
+        }
     }
 
-    static getModal(modalElement) {
-        const modal = window.altroneModalsInstances.find((modalInstance) => {
-            return modalInstance.modal === modalElement;
-        });
+    updateOptions(options = {}) {
+        this.options = Object.assign({}, this.options, options);
+    }
 
-        if (modal) {
-            return modal;
-        } else {
-            return new Modal(modalElement);
+    onOverlayClick(e) {
+        if (this.options.overlayClose) {
+            this.hide();
+        }
+    }
+
+    onESCPress(e) {
+        if (this.options.escClose) {
+            if (e.code === 'Escape') {
+                this.hide();
+            }
         }
     }
 }
@@ -65,23 +111,18 @@ document.body.addEventListener('click', e => {
         return;
     }
 
-    const showTargetModal = function() {
-        const targetModalElement = document.body.querySelector(targetElement.dataset.modal);
-
-        if (!targetModalElement) {
-            return;
-        }
-
-        const targetModal = Modal.getModal(targetModalElement);
-
-        targetModal.show();
-    }
-
     if (window.altroneCurrentModal) {
         window.altroneCurrentModal.hide();
     }
 
-    showTargetModal();
+    const targetModalElement = document.body.querySelector(targetElement.dataset.modal);
+
+    if (!targetModalElement) {
+        return;
+    }
+
+    const targetModal = new Modal(targetModalElement);
+    targetModal.show();
 });
 
 document.body.addEventListener('overlay.hidden', (e) => {

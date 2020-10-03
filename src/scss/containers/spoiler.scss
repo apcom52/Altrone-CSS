@@ -12,6 +12,8 @@
   font-weight: 500;
   margin-bottom: var(--baseVerticalMargin);
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 
   &:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight);

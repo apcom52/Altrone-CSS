@@ -331,10 +331,12 @@ template {
   --hgap: 20px;
   --baseVerticalMargin: 0.5rem;
   --smallVerticalMargin: 0.25rem;
+  --mediumVerticalMargin: 0.375rem;
   --largeVerticalMargin: 0.75rem;
   --xlVerticalMargin: 1.25rem;
   --baseHorizontalMargin: 1rem;
   --smallHorizontalMargin: 0.5rem;
+  --mediumHorizontalMargin: 0.75rem;
   --largeHorizontalMargin: 2rem;
   --xlHorizontalMargin: 3rem;
   --baseFont: 1rem;
@@ -756,8 +758,11 @@ h6 {
     margin-right: var(--smallHorizontalMargin);
     height: 1em; }
 
-.button--icon .icon {
-  margin: 0; }
+.button--icon {
+  padding-left: var(--mediumHorizontalMargin);
+  padding-right: var(--mediumHorizontalMargin); }
+  .button--icon .icon {
+    margin: 0; }
 
 .button--accent {
   background: var(--accent);
@@ -1144,7 +1149,10 @@ h6 {
   font-size: var(--baseFont);
   color: var(--textColor);
   transition: padding 0.15s ease, font-size 0.15s ease;
-  line-height: 22px; }
+  line-height: 22px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default; }
 
 .modal__title {
   width: 100%;
@@ -1491,7 +1499,9 @@ a.breadcrumbs__main, a.breadcrumbs__item {
   outline: none;
   font-weight: 500;
   margin-bottom: var(--baseVerticalMargin);
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none; }
   .spoiler__label:focus {
     box-shadow: 0 0 0 var(--focusOutlineWidth) var(--accentFocusHighlight); }
 
