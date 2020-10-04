@@ -1442,6 +1442,12 @@ a.breadcrumbs__main, a.breadcrumbs__item {
     .tabs--vertical.tabs--transparent.tabs--pin-right .tabs__item:hover, .tabs--vertical.tabs--transparent.tabs--pin-right .tabs__item:focus {
       border-left-color: var(--accent); }
 
+.tab-content {
+  display: none; }
+
+.tab-content--visible {
+  display: block; }
+
 .input-group {
   display: flex;
   align-items: flex-start;

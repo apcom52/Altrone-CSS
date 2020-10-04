@@ -7,7 +7,6 @@ import './popup/select';
 
 import './messages/notification';
 import './messages/modal';
-import './messages/dialog';
 
 import './containers/sidebar';
 import './containers/tabs';

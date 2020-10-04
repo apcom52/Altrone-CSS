@@ -1,3 +1,5 @@
+import { createFocusTrap } from "focus-trap";
+
 window.altroneCurrentSidebar = null;
 
 const SidebarEvents = {
@@ -19,8 +21,8 @@ class Sidebar {
         }
 
         this.defaultOptions = {
-            overlayVisible: true,
             escClose: true,
+            focusTrap: true,
             onShow: null,
             onShowed: null,
             onHide: null,
@@ -29,12 +31,14 @@ class Sidebar {
 
         this.sidebar = element;
         this.options = {...this.defaultOptions, ...options};
+        this.focusTrap = null;
 
         this.onOverlayClick = this.onOverlayClick.bind(this);
         this.onESCPress = this.onESCPress.bind(this);
     }
 
     open() {
+        this.sidebar.dispatchEvent(new Event(SidebarEvents.show));
         this.sidebar.classList.add(SidebarModificators.visible);
 
         this.sidebar.addEventListener('click', this.onOverlayClick);
@@ -44,12 +48,26 @@ class Sidebar {
         if (this.options.escClose) {
             document.body.addEventListener('keydown', this.onESCPress);
         }
+
+        if (this.options.focusTrap) {
+            this.focusTrap = createFocusTrap(this.sidebar);
+            this.focusTrap.activate();
+        }
+
+        this.sidebar.dispatchEvent(new Event(SidebarEvents.showed));
     }
 
     close() {
+        this.sidebar.dispatchEvent(new Event(SidebarEvents.hide));
         this.sidebar.classList.remove(SidebarModificators.visible);
 
         document.body.classList.remove(SidebarModificators.bodyScrollFix);
+
+        if (this.focusTrap) {
+            this.focusTrap.deactivate();
+        }
+
+        this.sidebar.dispatchEvent(new Event(SidebarEvents.hidden));
     }
 
     onOverlayClick(e) {

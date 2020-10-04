@@ -357,13 +357,24 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <h3>Вертикальные вкладки</h3>
-                    <div class="tabs tabs--vertical">
-                        <button class="tabs__item">Spotlight</button>
-                        <button class="tabs__item">For You</button>
-                        <button class="tabs__item tabs__item--selected">Search</button>
-                        <button class="tabs__item" disabled>Library</button>
+                    <h3>Вертикальные вкладки Demo</h3>
+                    <div class="grid">
+                        <div class="col-6">
+                            <div class="tabs tabs--vertical">
+                                <button class="tabs__item" data-tab="#spotlight-content">Spotlight</button>
+                                <button class="tabs__item" data-tab="#for-you-content">For You</button>
+                                <button class="tabs__item tabs__item--selected" data-tab="#search-content">Search</button>
+                                <button class="tabs__item" data-tab="#library-content" disabled>Library</button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tab-content" id="spotlight-content">Spotlight Content Tab</div>
+                            <div class="tab-content" id="for-you-content">For You Content Tab</div>
+                            <div class="tab-content" id="search-content">Search Content Tab</div>
+                            <div class="tab-content" id="library-content">Library Content Tab</div>
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-4">
                     <h3>Вертикальные вкладки</h3>
